@@ -1,42 +1,65 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-base);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --space-small: 10px;
+  --space-medium: 40px;
+
+  --border-radius: 10px;
+
+  --height-body: 100vh;
+  --height-header: 160px;
+  --height-main: calc(100% - var(--height-header) - var(--height-footer));
+  --height-footer: 100px;
+
+  --background-color-base: #191a1c;
+  --background-color-1: #212426; /*.path*/
+  --background-color-2: #323030; /*code*/
+  --background-color-3: #8a3323; /*<ReferenceButton> button, nav*/
+  --background-color-4: #273e8a; /*aside nav*/
+
+  --font-size-xsmall: 20px; /*<ReferenceButton> li*/
+  --font-size-small: 25px; /*p, ul, li, <ReferenceButton> header*/
+  --font-size-medium: 35px; /*h3, header a*/
+  --font-size-large: 45px; /*h2*/
+  --font-size-xlarge: 55px; /*h1*/
+
+  --color-base: #9b9b9b;
+  --color-1: #e4e4e4; /*highlight*/
+  --color-2: #24801c; /*code.example*/
+  --color-3: #a58e42; /*code.emphasis*/
+
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body {
+  background-color: var(--background-color-base);
+}
+
+a:hover {
+  color: var(--color-1);
+}
+
+code {
+  font-family: "Roboto Mono", monospace;
+
+  &.example {
+    /*The below three declarations must not move to the upper part for styling <PreCode>.*/
+    border-radius: var(--border-radius);
+    padding: 0 var(--space-small);
+    background-color: var(--background-color-2);
+    color: var(--color-2);
+  }
+
+  &.emphasis {
+    border-radius: var(--border-radius);
+    padding: 0 var(--space-small);
+    background-color: var(--background-color-2);
+    color: var(--color-3);
   }
 }

@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  padding-top: var(--space-medium);
+  width: 100%;
+  height: var(--height-main);
+  text-align: center;
+
+  > section {
+    width: calc(100% / 3);
+  }
+}
+
+body:has(> main.main) {
+  height: var(--height-body);
+}

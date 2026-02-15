@@ -1,0 +1,44 @@
+.pre-code-container {
+  position: relative;
+  margin-bottom: calc(var(--space-medium) / 2);
+
+  > pre {
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-small);
+
+    > code > span {
+      font-family: "Roboto Mono", monospace;
+    }
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: var(--space-small);
+    right: var(--space-small);
+    width: 30%;
+
+    > span {
+      font-size: var(--font-size-small);
+      text-transform: uppercase;
+    }
+
+    > button {
+      display: flex;
+      align-items: center;
+      gap: var(--space-small);
+      border: 1px solid var(--color-1);
+      border-radius: var(--border-radius);
+      padding: var(--space-small);
+      background-color: transparent;
+      font-size: var(--font-size-small);
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--background-color-2);
+      }
+    }
+  }
+}
