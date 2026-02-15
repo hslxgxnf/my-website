@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "IDE Settings",
+};
+
 export default function IDESettingsPage() {
   return (
     <main>

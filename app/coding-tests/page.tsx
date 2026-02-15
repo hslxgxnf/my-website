@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Coding Tests",
+};
+
 export default function CodingTestsPage() {
   return (
     <main>

@@ -1,3 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Web",
+};
+
 export default function WebPage() {
   return (
     <main>
