@@ -1,51 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 import styles from "./Main.module.css";
+import useIntersectionObserver from "@/utils/hooks/useIntersectionObserver";
+import { reference, code, headings } from "./data";
 import ReferenceButton from "@/utils/components/ReferenceButton";
 import HeadingLink from "@/utils/components/HeadingLink";
 import PreCode from "@/utils/components/PreCode";
-import { reference, code, headings } from "./data";
 import SideNav from "@/utils/components/SideNav";
 
 export default function Main() {
-  const article = useRef<HTMLElement>(null);
-  const sideNav = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (!article.current) throw new Error("No article");
-    if (!sideNav.current) throw new Error("No sideNav");
-
-    const sections = Array.from(article.current.querySelectorAll("section"));
-    const links = Array.from(sideNav.current.querySelectorAll("a"));
-
-    const options = {
-      rootMargin: "-160px 0px 0px 0px",
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const index = sections.indexOf(entry.target as HTMLElement);
-
-        if (entry.isIntersecting) {
-          links[index].classList.add(styles.active);
-        } else {
-          links[index].classList.remove(styles.active);
-        }
-      });
-    }, options);
-
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const { article, sideNav } = useIntersectionObserver();
 
   return (
     <main className={styles.main}>
       <aside></aside>
+
       <article ref={article}>
         <section>
           <ReferenceButton reference={reference}>
@@ -195,6 +164,7 @@ export default function Main() {
           </p>
         </section>
       </article>
+
       <aside>
         <SideNav ref={sideNav} headings={headings} />
       </aside>
