@@ -26,7 +26,7 @@ export default function ReferenceButton({
   const container = useRef<HTMLElement>(null);
 
   function handleClick() {
-    if (!container.current) throw new Error("No reference button found");
+    if (!container.current) throw new Error("No container");
 
     container.current.classList.toggle(styles.active);
   }
