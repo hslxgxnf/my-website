@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import styles from "./Header.module.css";
 

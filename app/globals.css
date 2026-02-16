@@ -41,8 +41,12 @@ body {
   background-color: var(--background-color-base);
 }
 
-a:hover {
-  color: var(--color-1);
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-1);
+  }
 }
 
 code {

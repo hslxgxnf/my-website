@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import logo from "@/assets/logo.png";
-import Link from "next/link";
 import styles from "./Header.module.css";
+import Link from "next/link";
+import logo from "@/assets/logo.png";
 import HeaderLink from "@/pages/root/HeaderLink";
 
 export default function Header() {

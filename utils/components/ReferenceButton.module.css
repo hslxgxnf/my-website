@@ -65,18 +65,10 @@
             margin-bottom: 0;
           }
 
-          > a {
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-            }
-
-            > img {
-              border-radius: calc(var(--border-radius) / 2);
-              width: 20px;
-              height: 20px;
-            }
+          > a > img {
+            border-radius: calc(var(--border-radius) / 2);
+            width: var(--font-size-xsmall);
+            height: var(--font-size-xsmall);
           }
         }
       }
