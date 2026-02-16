@@ -3,8 +3,8 @@ import Image from "next/image";
 
 import styles from "./Header.module.css";
 import logo from "@/assets/logo.png";
-import HeaderLink from "@/pages/root/HeaderLink";
-import HeaderPath from "@/pages/root/HeaderPath";
+import HeaderLink from "@/app-details/root/HeaderLink";
+import HeaderPath from "@/app-details/root/HeaderPath";
 
 export default function Header() {
   return (

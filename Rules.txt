@@ -1,2 +1,2 @@
 1. Check the template title in each child page.
-2. Keep the app folder small and clean, instead, keep detail code in the pages folder.
+2. Keep the app folder small and clean, instead, keep detail code in the app-details folder.

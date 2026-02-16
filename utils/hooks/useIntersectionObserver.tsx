@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 
-import styles from "@/pages/clean-code/Main.module.css";
+import styles from "@/app-details/clean-code/Main.module.css";
 
 export default function useIntersectionObserver() {
   const article = useRef<HTMLElement>(null);

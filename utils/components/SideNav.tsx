@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Ref } from "react";
 
-import styles from "@/pages/clean-code/Main.module.css";
+import styles from "@/app-details/clean-code/Main.module.css";
 import handleClickFirstLink from "@/utils/functions/handleClickFirstLink";
 
 interface Heading {

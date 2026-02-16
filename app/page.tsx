@@ -1,4 +1,4 @@
-import Main from "@/pages/root/Main";
+import Main from "@/app-details/root/Main";
 
 export default function RootPage() {
   return <Main />;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Main from "@/pages/clean-code/Main";
+import Main from "@/app-details/clean-code/Main";
 
 export const metadata: Metadata = {
   title: "Clean Code",

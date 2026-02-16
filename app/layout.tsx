@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 import { Roboto, Roboto_Mono } from "next/font/google";
 
 import "./globals.css";
-import Header from "@/pages/root/Header";
-import Footer from "@/pages/root/Footer";
+import Header from "@/app-details/root/Header";
+import Footer from "@/app-details/root/Footer";
 
 // Google Font Initialization
 const roboto = Roboto();
