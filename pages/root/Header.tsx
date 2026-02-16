@@ -1,9 +1,10 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./Header.module.css";
-import Link from "next/link";
 import logo from "@/assets/logo.png";
 import HeaderLink from "@/pages/root/HeaderLink";
+import HeaderPath from "@/pages/root/HeaderPath";
 
 export default function Header() {
   return (
@@ -39,7 +40,11 @@ export default function Header() {
         </ul>
       </nav>
 
-      <div className={styles.path}></div>
+      <nav>
+        <div></div>
+        <HeaderPath />
+        <div></div>
+      </nav>
     </header>
   );
 }

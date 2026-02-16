@@ -4,7 +4,7 @@
   z-index: 1;
   background-color: var(--background-color-base);
 
-  > nav {
+  > nav:first-child {
     display: flex;
     justify-content: space-between;
     padding: calc(var(--space-medium) / 2) var(--space-medium);
@@ -26,7 +26,7 @@
       gap: var(--space-medium);
 
       > li {
-        list-style: none;
+        list-style-type: none;
 
         > a {
           font-size: var(--font-size-medium);
@@ -40,10 +40,33 @@
     }
   }
 
-  > .path {
+  > nav:last-child {
+    display: flex;
     border-top: 1px solid var(--color-base);
     border-bottom: 1px solid var(--color-base);
     height: var(--space-medium);
     background-color: var(--background-color-1);
+
+    > div {
+      width: 20%;
+    }
+
+    > ul {
+      display: flex;
+      align-items: center;
+      padding-left: var(--space-medium);
+      width: 60%;
+
+      > li {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        font-size: var(--font-size-small);
+
+        > a.active {
+          color: var(--color-1);
+        }
+      }
+    }
   }
 }

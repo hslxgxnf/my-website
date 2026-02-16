@@ -14,7 +14,7 @@ interface HeaderLinkProps {
 export default function HeaderLink({ href, children }: HeaderLinkProps) {
   const path = usePathname();
 
-  if (!path) throw new Error("pathname is required");
+  if (!path) throw new Error("No path");
 
   return (
     <Link
