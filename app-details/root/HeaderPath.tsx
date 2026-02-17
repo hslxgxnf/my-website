@@ -4,8 +4,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaCaretRight } from "react-icons/fa";
 
-import styles from "./Header.module.css";
-
 interface Path {
   href: string;
   name: string;
@@ -63,13 +61,7 @@ export default function HeaderPath() {
             </li>
           );
         } else {
-          return (
-            <li key={index}>
-              <Link href={item.href} className={styles.active}>
-                {item.name}
-              </Link>
-            </li>
-          );
+          return <li key={index}>{item.name}</li>;
         }
       })}
     </ul>

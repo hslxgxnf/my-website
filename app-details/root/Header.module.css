@@ -63,7 +63,7 @@
         list-style-type: none;
         font-size: var(--font-size-small);
 
-        > a.active {
+        &:last-child {
           color: var(--color-1);
         }
       }
