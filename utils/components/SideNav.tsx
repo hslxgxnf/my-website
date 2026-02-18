@@ -1,3 +1,5 @@
+"use client";
+
 import { Ref, useRef, useLayoutEffect } from "react";
 
 import styles from "@/app-details/clean-code/Main.module.css";
@@ -15,7 +17,7 @@ export default function SideNav({ articleRef }: SideNavProps) {
       throw new Error("Type Error articleRef");
     if (!articleRef || !articleRef.current) throw new Error("No articleRef");
 
-    // FInd existing headings
+    // Find existing headings
     const headings: HTMLHeadingElement[] = Array.from(
       articleRef.current.querySelectorAll("h1, h2, h3"),
     );
