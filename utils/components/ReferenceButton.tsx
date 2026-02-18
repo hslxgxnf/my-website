@@ -18,12 +18,12 @@ export default function ReferenceButton({
   reference,
   children,
 }: ReferenceButtonProps) {
-  const container = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLElement>(null);
 
   function handleClick() {
-    if (!container.current) throw new Error("No container");
+    if (!navRef.current) throw new Error("No navRef");
 
-    container.current.classList.toggle(styles.active);
+    navRef.current.classList.toggle(styles.active);
   }
 
   return (
@@ -32,15 +32,15 @@ export default function ReferenceButton({
         <IoIosLink />
       </button>
 
-      <nav ref={container}>
+      <nav ref={navRef}>
         <header>Reference</header>
         <main>
           <ul>
-            {reference.map((item) => {
+            {reference.map((item, index) => {
               switch (item.name) {
                 case "Udemy":
                   return (
-                    <li key={item.url}>
+                    <li key={index}>
                       <Link href={item.url} target="_blank">
                         <Image src={udemy} alt={`${item.name} favicon`} />{" "}
                         {item.name} {item.title}
