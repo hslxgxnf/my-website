@@ -1,21 +1,22 @@
 "use client";
 
+import { useRef } from "react";
+
 import styles from "./Main.module.css";
-import useIntersectionObserver from "@/utils/hooks/useIntersectionObserver";
-import { reference, code, headings } from "./data";
+import { reference, code } from "./data";
 import ReferenceButton from "@/utils/components/ReferenceButton";
 import HeadingLink from "@/utils/components/HeadingLink";
 import PreCode from "@/utils/components/PreCode";
 import SideNav from "@/utils/components/SideNav";
 
 export default function Main() {
-  const { article, sideNav } = useIntersectionObserver();
+  const articleRef = useRef<HTMLElement>(null);
 
   return (
     <main className={styles.main}>
       <aside></aside>
 
-      <article ref={article}>
+      <article ref={articleRef}>
         <section>
           <ReferenceButton reference={reference}>
             <HeadingLink headingNumber={1}>Clean Code</HeadingLink>
@@ -166,7 +167,7 @@ export default function Main() {
       </article>
 
       <aside>
-        <SideNav ref={sideNav} headings={headings} />
+        <SideNav articleRef={articleRef} />
       </aside>
     </main>
   );

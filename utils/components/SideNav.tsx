@@ -1,56 +1,106 @@
-import Link from "next/link";
-import { Ref } from "react";
+import { Ref, useRef, useLayoutEffect } from "react";
 
 import styles from "@/app-details/clean-code/Main.module.css";
 import handleClickFirstLink from "@/utils/functions/handleClickFirstLink";
 
-interface Heading {
-  title: string;
-  tag: string;
-}
-
 interface SideNavProps {
-  ref: Ref<HTMLElement>;
-  headings: Array<Heading>;
+  articleRef: Ref<HTMLElement>;
 }
 
-export default function SideNav({ ref, headings }: SideNavProps) {
+export default function SideNav({ articleRef }: SideNavProps) {
+  const ulRef = useRef<HTMLUListElement>(null);
+
+  useLayoutEffect(() => {
+    if (typeof articleRef === "function")
+      throw new Error("Type Error articleRef");
+    if (!articleRef || !articleRef.current) throw new Error("No articleRef");
+
+    // FInd existing headings
+    const headings: HTMLHeadingElement[] = Array.from(
+      articleRef.current.querySelectorAll("h1, h2, h3"),
+    );
+
+    // Create right side navigation headings
+    headings.forEach((heading) => {
+      if (!ulRef.current) throw new Error("No ulRef");
+
+      const tag = heading.localName;
+      const text = heading.innerText;
+      const url = `#${text.replaceAll(" ", "-").toLowerCase()}`;
+
+      switch (tag) {
+        case "h1": {
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          const hr = document.createElement("hr");
+          link.href = url;
+          link.innerText = text;
+          link.addEventListener("click", (event) =>
+            handleClickFirstLink(event, url),
+          );
+          li.append(link);
+          li.append(hr);
+          ulRef.current.append(li);
+          break;
+        }
+        case "h2": {
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = url;
+          link.innerText = text;
+          li.append(link);
+          ulRef.current.append(li);
+          break;
+        }
+        case "h3": {
+          const li = document.createElement("li");
+          const link = document.createElement("a");
+          li.classList.add(styles.indent);
+          link.href = url;
+          link.innerText = text;
+          li.append(link);
+          ulRef.current.append(li);
+          break;
+        }
+      }
+    });
+
+    // Intersection Observer API
+    if (!ulRef.current) throw new Error("No ulRef");
+
+    const sections = Array.from(articleRef.current.querySelectorAll("section"));
+    const links = Array.from(ulRef.current.querySelectorAll("a"));
+
+    const options = {
+      rootMargin: "-160px 0px 0px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const index = sections.indexOf(entry.target as HTMLElement);
+
+        if (entry.isIntersecting) {
+          links[index].classList.add(styles.active);
+        } else {
+          links[index].classList.remove(styles.active);
+        }
+      });
+    }, options);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  });
+
   return (
-    <nav ref={ref}>
+    <nav>
       <header>On this page</header>
       <main>
-        <ul>
-          {headings.map((heading, index) => {
-            const id = heading.title.replace(/\s/g, "-").toLowerCase();
-
-            switch (heading.tag) {
-              case "h1":
-                return (
-                  <li key={index}>
-                    <Link
-                      href={`#${id}`}
-                      onClick={(event) => handleClickFirstLink(event, id)}
-                    >
-                      {heading.title}
-                    </Link>
-                    <hr />
-                  </li>
-                );
-              case "h2":
-                return (
-                  <li key={index}>
-                    <Link href={`#${id}`}>{heading.title}</Link>
-                  </li>
-                );
-              case "h3":
-                return (
-                  <li key={index} className={styles.indent}>
-                    <Link href={"#vertical"}>{heading.title}</Link>
-                  </li>
-                );
-            }
-          })}
-        </ul>
+        <ul ref={ulRef}></ul>
       </main>
     </nav>
   );
