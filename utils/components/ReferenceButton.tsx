@@ -6,13 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 import styles from "./ReferenceButton.module.css";
+import type { Reference } from "@/utils/types/interfaces";
 import udemy from "@/assets/udemy.png";
-
-interface Reference {
-  url: string;
-  name: string;
-  title: string;
-}
 
 interface ReferenceButtonProps {
   reference: Array<Reference>;

@@ -1,4 +1,6 @@
-export const reference = [
+import type { Reference } from "@/utils/types/interfaces";
+
+export const reference: Array<Reference> = [
   {
     url: "https://www.udemy.com/course/writing-clean-code/",
     name: "Udemy",
@@ -6,7 +8,7 @@ export const reference = [
   },
 ];
 
-export const code = `class User1 {
+export const code: string = `class User1 {
   constructor(name, age) {
     this.name = name;
     this.age = age;
