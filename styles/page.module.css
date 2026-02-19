@@ -1,14 +1,9 @@
 .main {
   display: flex;
   padding-top: var(--space-40);
-  height: var(--height-main);
-  text-align: center;
 
   > section {
-    width: calc(100% / 3);
+    flex: 1;
+    text-align: center;
   }
-}
-
-body:has(> main.main) {
-  height: var(--height-body);
 }

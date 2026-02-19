@@ -2,7 +2,7 @@
   display: flex;
 
   > aside {
-    width: 20%;
+    flex: 1;
 
     &:nth-of-type(2) {
       > nav {
@@ -49,9 +49,9 @@
   }
 
   > article {
+    flex: 3;
     border-radius: var(--border-radius);
     padding: var(--space-40);
-    width: 60%;
 
     h1,
     h2,
@@ -60,7 +60,7 @@
     hr,
     ul,
     li {
-      margin-bottom: calc(var(--space-40) / 2);
+      margin-bottom: var(--space-20);
     }
 
     h1 {
@@ -87,8 +87,7 @@
     h1,
     h2,
     h3 {
-      position: relative;
-      scroll-margin-top: calc(var(--height-header) + var(--space-40) / 2);
+      scroll-margin-top: calc(var(--height-header) + var(--space-20));
 
       > a {
         color: var(--color-1);
@@ -140,7 +139,7 @@
       > nav {
         display: none;
         position: absolute;
-        left: -380px;
+        left: -370px;
         border-radius: var(--border-radius);
         padding: var(--space-10);
         width: 300px;
