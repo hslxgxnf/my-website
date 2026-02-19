@@ -2,12 +2,17 @@
   display: flex;
 
   > aside {
-    flex: 1;
+    flex-basis: 20%;
 
     &:nth-of-type(2) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
       > nav {
+        flex-basis: 80%;
         position: sticky;
-        top: 200px;
+        top: calc(var(--height-header) + var(--space-40));
         border-radius: var(--border-radius);
         padding: var(--space-10);
         width: 300px;
@@ -49,7 +54,7 @@
   }
 
   > article {
-    flex: 3;
+    flex-basis: 60%;
     border-radius: var(--border-radius);
     padding: var(--space-40);
 
