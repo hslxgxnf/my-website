@@ -1,8 +1,0 @@
-.footer {
-  line-height: var(--height-footer);
-  text-align: center;
-
-  > p {
-    font-size: var(--font-size-small);
-  }
-}

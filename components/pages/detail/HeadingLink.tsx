@@ -1,5 +1,5 @@
 import Link from "next/link";
-import handleClickFirstLink from "@/utils/functions/handleClickFirstLink";
+import handleClickFirstLink from "@/functions/pages/handleClickFirstLink";
 
 interface HeadingLinkProps {
   headingNumber: number;

@@ -4,8 +4,6 @@ import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import styles from "./Header.module.css";
-
 interface HeaderLinkProps {
   href: string;
   children: ReactNode;
@@ -17,10 +15,7 @@ export default function HeaderLink({ href, children }: HeaderLinkProps) {
   if (!path) throw new Error("No path");
 
   return (
-    <Link
-      href={href}
-      className={path.startsWith(href) ? styles.active : undefined}
-    >
+    <Link href={href} className={path.startsWith(href) ? "active" : undefined}>
       {children}
     </Link>
   );

@@ -1,4 +1,4 @@
-import type { Reference } from "@/utils/types/interfaces";
+import type { Reference } from "@/types/interfaces";
 
 export const reference: Array<Reference> = [
   {

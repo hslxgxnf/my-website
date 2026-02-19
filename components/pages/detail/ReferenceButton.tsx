@@ -5,8 +5,8 @@ import { ReactNode, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "./ReferenceButton.module.css";
-import type { Reference } from "@/utils/types/interfaces";
+import styles from "@/styles/pages/detail/page.module.css";
+import type { Reference } from "@/types/interfaces";
 import udemy from "@/assets/udemy.png";
 
 interface ReferenceButtonProps {

@@ -2,18 +2,18 @@
 
 import { useRef } from "react";
 
-import "@/utils/styles/detail-main.css";
-import { reference, code } from "./data";
-import ReferenceButton from "@/utils/components/ReferenceButton";
-import HeadingLink from "@/utils/components/HeadingLink";
-import PreCode from "@/utils/components/PreCode";
-import SideNav from "@/utils/components/SideNav";
+import styles from "@/styles/pages/detail/page.module.css";
+import { reference, code } from "@/app/clean-code/data";
+import ReferenceButton from "@/components/pages/detail/ReferenceButton";
+import HeadingLink from "@/components/pages/detail/HeadingLink";
+import PreCode from "@/components/pages/detail/PreCode";
+import SideNav from "@/components/pages/detail/SideNav";
 
 export default function Main() {
   const articleRef = useRef<HTMLElement>(null);
 
   return (
-    <main>
+    <main className={styles.main}>
       <aside></aside>
 
       <article ref={articleRef}>

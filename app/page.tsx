@@ -1,5 +1,17 @@
-import Main from "@/app-details/root/Main";
+import styles from "../styles/page.module.css";
 
 export default function RootPage() {
-  return <Main />;
+  return (
+    <main className={styles.main}>
+      <section>
+        <h1>Picture</h1>
+      </section>
+      <section>
+        <h1>Introduce Myself</h1>
+      </section>
+      <section>
+        <h1>Skills</h1>
+      </section>
+    </main>
+  );
 }
