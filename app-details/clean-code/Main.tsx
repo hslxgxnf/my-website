@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import styles from "./Main.module.css";
+import "@/utils/styles/detail-main.css";
 import { reference, code } from "./data";
 import ReferenceButton from "@/utils/components/ReferenceButton";
 import HeadingLink from "@/utils/components/HeadingLink";
@@ -13,7 +13,7 @@ export default function Main() {
   const articleRef = useRef<HTMLElement>(null);
 
   return (
-    <main className={styles.main}>
+    <main>
       <aside></aside>
 
       <article ref={articleRef}>

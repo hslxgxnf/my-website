@@ -1,6 +1,6 @@
 .main {
   display: flex;
-  padding-top: var(--space-medium);
+  padding-top: var(--space-40);
   width: 100%;
   height: var(--height-main);
   text-align: center;

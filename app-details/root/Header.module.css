@@ -2,12 +2,13 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  height: var(--height-header);
   background-color: var(--background-color-base);
 
   > nav:first-child {
     display: flex;
     justify-content: space-between;
-    padding: calc(var(--space-medium) / 2) var(--space-medium);
+    padding: calc(var(--space-40) / 2) var(--space-40);
 
     > a {
       width: 200px;
@@ -23,7 +24,7 @@
     > ul {
       display: flex;
       align-items: center;
-      gap: var(--space-medium);
+      gap: var(--space-40);
 
       > li {
         list-style-type: none;
@@ -44,7 +45,7 @@
     display: flex;
     border-top: 1px solid var(--color-base);
     border-bottom: 1px solid var(--color-base);
-    height: var(--space-medium);
+    height: var(--space-40);
     background-color: var(--background-color-1);
 
     > div {
@@ -54,7 +55,7 @@
     > ul {
       display: flex;
       align-items: center;
-      padding-left: var(--space-medium);
+      padding-left: var(--space-40);
       width: 60%;
 
       > li {

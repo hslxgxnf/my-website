@@ -7,34 +7,37 @@
 }
 
 :root {
-  --space-small: 10px;
-  --space-medium: 40px;
+  --space-10: 10px;
+  --space-20: 20px;
+  --space-40: 40px;
 
   --border-radius: 10px;
 
-  --height-body: 100vh;
-  --height-header: 160px;
-  --height-main: calc(100% - var(--height-header) - var(--height-footer));
-  --height-footer: 100px;
+  --height-body: 100vh; /*body:has(> main.main)*/
+  --height-header: 160px; /*.header, .main h1, .main h2, .main h3*/
+  --height-main: calc(
+    100% - var(--height-header) - var(--height-footer)
+  ); /*.main*/
+  --height-footer: 100px; /*.footer*/
 
-  --background-color-base: #191a1c;
-  --background-color-1: #212426; /*.path*/
-  --background-color-2: #323030; /*code*/
-  --background-color-3: #8a3323; /*<ReferenceButton> button, nav*/
-  --background-color-4: #273e8a; /*aside nav*/
+  --background-color-base: #191a1c; /*body, .header*/
+  --background-color-1: #212426; /*.header nav:last-child*/
+  --background-color-2: #323030; /*.code.example, code.emphasis, pre-code-container button:hover*/
+  --background-color-3: #8a3323; /*.reference-button-container button:hover svg, .reference-button-container nav*/
+  --background-color-4: #273e8a; /*.main aside:nth-of-type(2) nav*/
+
+  --color-base: #9b9b9b; /**, .header nav:last-child*/
+  --color-1: #e4e4e4; /*highlight*/
+  --color-2: #24801c; /*code.example*/
+  --color-3: #a58e42; /*code.emphasis*/
+
+  scroll-behavior: smooth;
 
   --font-size-xsmall: 20px; /*<ReferenceButton> li*/
   --font-size-small: 25px; /*p, ul, li, <ReferenceButton> header*/
   --font-size-medium: 35px; /*h3, header a*/
   --font-size-large: 45px; /*h2*/
   --font-size-xlarge: 55px; /*h1*/
-
-  --color-base: #9b9b9b;
-  --color-1: #e4e4e4; /*highlight*/
-  --color-2: #24801c; /*code.example*/
-  --color-3: #a58e42; /*code.emphasis*/
-
-  scroll-behavior: smooth;
 }
 
 body {
@@ -55,14 +58,14 @@ code {
   &.example {
     /*The below three declarations must not move to the upper part for styling <PreCode>.*/
     border-radius: var(--border-radius);
-    padding: 0 var(--space-small);
+    padding: 0 var(--space-10);
     background-color: var(--background-color-2);
     color: var(--color-2);
   }
 
   &.emphasis {
     border-radius: var(--border-radius);
-    padding: 0 var(--space-small);
+    padding: 0 var(--space-10);
     background-color: var(--background-color-2);
     color: var(--color-3);
   }

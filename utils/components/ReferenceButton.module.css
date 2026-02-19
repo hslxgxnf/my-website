@@ -37,7 +37,7 @@
     position: absolute;
     left: -380px;
     border-radius: var(--border-radius);
-    padding: var(--space-small);
+    padding: var(--space-10);
     width: 300px;
     background-color: var(--background-color-3);
 
@@ -46,7 +46,7 @@
     }
 
     > header {
-      margin-bottom: var(--space-small);
+      margin-bottom: var(--space-10);
       font-size: var(--font-size-small);
       color: var(--color-1);
     }
@@ -58,7 +58,7 @@
 
         > li {
           list-style-type: none;
-          margin-bottom: var(--space-small);
+          margin-bottom: var(--space-10);
           font-size: var(--font-size-xsmall);
 
           &:last-child {
