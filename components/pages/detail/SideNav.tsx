@@ -96,7 +96,7 @@ export default function SideNav({ articleRef }: SideNavProps) {
     return () => {
       observer.disconnect();
     };
-  });
+  }, [articleRef]);
 
   return (
     <nav>
