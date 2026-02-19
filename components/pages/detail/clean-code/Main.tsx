@@ -10,15 +10,16 @@ import PreCode from "@/components/pages/detail/PreCode";
 import SideNav from "@/components/pages/detail/SideNav";
 
 export default function Main() {
+  const asideRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLElement>(null);
 
   return (
     <main className={styles.main}>
-      <aside></aside>
+      <aside ref={asideRef}></aside>
 
       <article ref={articleRef}>
         <section>
-          <ReferenceButton reference={reference}>
+          <ReferenceButton reference={reference} asideRef={asideRef}>
             <HeadingLink headingNumber={1}>Clean Code</HeadingLink>
           </ReferenceButton>
           <p>Clean code should be readable.</p>

@@ -1,9 +1,7 @@
 "use client";
 
 import { IoIosLink } from "react-icons/io";
-import { ReactNode, useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { ReactNode, Ref, useLayoutEffect, useRef } from "react";
 
 import styles from "@/styles/pages/detail/page.module.css";
 import type { Reference } from "@/types/interfaces";
@@ -11,51 +9,64 @@ import udemy from "@/assets/udemy.png";
 
 interface ReferenceButtonProps {
   reference: Array<Reference>;
+  asideRef: Ref<HTMLElement>;
   children: ReactNode;
 }
 
 export default function ReferenceButton({
   reference,
+  asideRef,
   children,
 }: ReferenceButtonProps) {
-  const navRef = useRef<HTMLElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  function handleClick() {
-    if (!navRef.current) throw new Error("No navRef");
+  useLayoutEffect(() => {
+    const nav = document.createElement("nav");
+    const header = document.createElement("header");
+    header.innerText = "Reference";
+    const main = document.createElement("main");
 
-    navRef.current.classList.toggle(styles.active);
-  }
+    const ul = document.createElement("ul");
+    reference.forEach((item) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = item.url;
+      a.target = "_blank";
+      const image = document.createElement("img");
+      image.alt = `${item.name} favicon`;
+      li.append(a);
+      a.append(image, ` ${item.name} ${item.title}`);
+      switch (item.name) {
+        case "Udemy":
+          image.src = udemy.src;
+          break;
+        default:
+          throw new Error(`Detected an unknown site name: ${item.name}`);
+      }
+      ul.append(li);
+    });
+
+    nav.append(header, main);
+    main.append(ul);
+
+    if (typeof asideRef === "function") throw new Error("Type Error asideRef");
+    if (!asideRef || !asideRef.current) throw new Error("No asideRef");
+    asideRef.current.append(nav);
+
+    if (!buttonRef.current) throw new Error("No buttonRef");
+    buttonRef.current.addEventListener("click", () => {
+      nav.classList.toggle(styles.active);
+    });
+
+    const rect = buttonRef.current.getBoundingClientRect();
+    nav.style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
+  }, [asideRef, reference]);
 
   return (
     <div className={styles["reference-button-container"]}>
-      <button type="button" onClick={handleClick}>
+      <button type="button" ref={buttonRef}>
         <IoIosLink />
       </button>
-
-      <nav ref={navRef}>
-        <header>Reference</header>
-        <main>
-          <ul>
-            {reference.map((item, index) => {
-              switch (item.name) {
-                case "Udemy":
-                  return (
-                    <li key={index}>
-                      <Link href={item.url} target="_blank">
-                        <Image src={udemy} alt={`${item.name} favicon`} />{" "}
-                        {item.name} {item.title}
-                      </Link>
-                    </li>
-                  );
-                default:
-                  throw new Error(
-                    `Detected an unknown site name: ${item.name}`,
-                  );
-              }
-            })}
-          </ul>
-        </main>
-      </nav>
 
       {children}
     </div>
