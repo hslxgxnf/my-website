@@ -40,8 +40,7 @@ export default function SideNav({ articleRef }: SideNavProps) {
           link.addEventListener("click", (event) =>
             handleClickFirstLink(event, url),
           );
-          li.append(link);
-          li.append(hr);
+          li.append(link, hr);
           ulRef.current.append(li);
           break;
         }
