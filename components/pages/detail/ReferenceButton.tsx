@@ -5,7 +5,6 @@ import { ReactNode, Ref, useLayoutEffect, useRef } from "react";
 
 import styles from "@/styles/pages/detail/page.module.css";
 import type { Reference } from "@/types/interfaces";
-import udemy from "@/assets/udemy.png";
 
 interface ReferenceButtonProps {
   reference: Array<Reference>;
@@ -33,16 +32,10 @@ export default function ReferenceButton({
       a.href = item.url;
       a.target = "_blank";
       const image = document.createElement("img");
+      image.src = item.image.src;
       image.alt = `${item.name} favicon`;
       li.append(a);
       a.append(image, ` ${item.name} ${item.title}`);
-      switch (item.name) {
-        case "Udemy":
-          image.src = udemy.src;
-          break;
-        default:
-          throw new Error(`Detected an unknown site name: ${item.name}`);
-      }
       ul.append(li);
     });
 

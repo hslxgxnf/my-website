@@ -1,8 +1,10 @@
 import type { Reference } from "@/types/interfaces";
+import udemy from "@/assets/udemy.png";
 
 export const reference: Array<Reference> = [
   {
     url: "https://www.udemy.com/course/writing-clean-code/",
+    image: udemy,
     name: "Udemy",
     title: "Clean Code",
   },
