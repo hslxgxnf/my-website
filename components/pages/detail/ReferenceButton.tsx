@@ -7,7 +7,7 @@ import styles from "@/styles/pages/detail/page.module.css";
 import type { Reference } from "@/types/interfaces";
 
 interface ReferenceButtonProps {
-  reference: Array<Reference>;
+  reference: Reference[];
   asideRef: Ref<HTMLElement>;
   children: ReactNode;
 }

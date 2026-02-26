@@ -26,7 +26,7 @@ export default function HeaderPath() {
   const path = usePathname();
 
   const slicedPath: string[] = path.slice(1).split("/");
-  const processedPath: Array<Path> = [];
+  const processedPath: Path[] = [];
 
   for (let i = 0; i < slicedPath.length; i++) {
     let href = "";
