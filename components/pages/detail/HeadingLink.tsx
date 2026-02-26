@@ -42,10 +42,6 @@ export default function HeadingLink({
         </h3>
       );
       break;
-    default:
-      throw new Error(
-        `Entered an unspecified heading number: ${headingNumber}`,
-      );
   }
 
   return result;

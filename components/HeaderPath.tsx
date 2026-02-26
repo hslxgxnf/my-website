@@ -14,8 +14,6 @@ const upperCaseWords: string[] = ["ide", "dsa", "ai"];
 export default function HeaderPath() {
   const path = usePathname();
 
-  if (!path) throw new Error("No path");
-
   const slicedPath: string[] = path.slice(1).split("/");
   const processedPath: Array<Path> = [];
 

@@ -12,8 +12,6 @@ interface HeaderLinkProps {
 export default function HeaderLink({ href, children }: HeaderLinkProps) {
   const path = usePathname();
 
-  if (!path) throw new Error("No path");
-
   return (
     <Link href={href} className={path.startsWith(href) ? "active" : undefined}>
       {children}
