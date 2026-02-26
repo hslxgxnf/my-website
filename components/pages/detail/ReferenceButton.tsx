@@ -28,15 +28,17 @@ export default function ReferenceButton({
     const ul = document.createElement("ul");
     reference.forEach((item) => {
       const li = document.createElement("li");
+      ul.append(li);
       const a = document.createElement("a");
       a.href = item.url;
       a.target = "_blank";
+      li.append(a);
       const image = document.createElement("img");
       image.src = item.image.src;
       image.alt = `${item.name} favicon`;
-      li.append(a);
-      a.append(image, ` ${item.name} ${item.title}`);
-      ul.append(li);
+      const span = document.createElement("span");
+      span.innerText = `${item.name} ${item.title}`;
+      a.append(image, span);
     });
 
     nav.append(header, main);

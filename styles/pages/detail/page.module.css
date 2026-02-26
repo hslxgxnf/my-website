@@ -33,16 +33,32 @@
             > li {
               list-style-type: none;
               margin-bottom: var(--space-10);
-              font-size: var(--font-size-xsmall);
 
               &:last-child {
                 margin-bottom: 0;
               }
 
-              > a > img {
-                border-radius: calc(var(--border-radius) / 2);
-                width: var(--font-size-xsmall);
-                height: var(--font-size-xsmall);
+              > a {
+                display: flex;
+                align-items: center;
+                gap: var(--space-10);
+
+                > img {
+                  border-radius: calc(var(--border-radius) / 2);
+                  width: var(--font-size-xsmall);
+                  height: var(--font-size-xsmall);
+                }
+
+                > span {
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  font-size: var(--font-size-xsmall);
+                  white-space: nowrap;
+                }
+
+                &:hover > span {
+                  color: var(--color-1);
+                }
               }
             }
           }
