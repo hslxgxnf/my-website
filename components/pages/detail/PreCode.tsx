@@ -36,17 +36,19 @@ export default function PreCode({ code, language }: PreCodeProps) {
 
   return (
     <div className={styles["pre-code-container"]}>
-      <SyntaxHighlighter language={language} style={vscDarkPlus}>
-        {code}
-      </SyntaxHighlighter>
-
-      <div>
-        <span>{language}</span>
+      <header>
+        <span>{language === "haml" ? "html" : language}</span>
         <button type="button" onClick={handleClick}>
           {buttonText === "Copy" ? <FaRegCopy /> : <FaCheck />}
           {buttonText}
         </button>
-      </div>
+      </header>
+
+      <main>
+        <SyntaxHighlighter language={language} style={vscDarkPlus}>
+          {code}
+        </SyntaxHighlighter>
+      </main>
     </div>
   );
 }

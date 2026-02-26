@@ -188,26 +188,15 @@
     }
 
     .pre-code-container {
-      position: relative;
-      margin-bottom: calc(var(--space-40) / 2);
+      margin-bottom: var(--space-20);
+      border-radius: var(--border-radius);
+      background-color: var(--background-color-1);
 
-      > pre {
-        border-radius: var(--border-radius);
-
-        > code > span {
-          font-size: var(--font-size-small);
-          font-family: "Roboto Mono", monospace;
-        }
-      }
-
-      > div {
+      > header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        position: absolute;
-        top: var(--space-10);
-        right: var(--space-10);
-        width: 30%;
+        padding: var(--space-10) var(--space-20);
 
         > span {
           font-size: var(--font-size-small);
@@ -228,6 +217,15 @@
           &:hover {
             background-color: var(--background-color-2);
           }
+        }
+      }
+
+      > main > pre {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+        > code > span {
+          font-size: var(--font-size-small);
+          font-family: "Roboto Mono", monospace;
         }
       }
     }
