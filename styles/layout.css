@@ -41,11 +41,6 @@ body {
   min-height: 100vh;
   background-color: var(--background-color-base);
 
-  > main {
-    flex-grow: 1;
-    flex-basis: auto;
-  }
-
   > header {
     flex-basis: var(--height-header);
     position: sticky;
@@ -118,6 +113,11 @@ body {
         }
       }
     }
+  }
+
+  > main {
+    flex-grow: 1;
+    flex-basis: auto;
   }
 
   > footer {
