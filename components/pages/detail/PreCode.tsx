@@ -1,7 +1,7 @@
 "use client";
 
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { sunburst } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import { useState } from "react";
 
@@ -36,7 +36,7 @@ export default function PreCode({ code, language }: PreCodeProps) {
 
   return (
     <div className={styles["pre-code-container"]}>
-      <SyntaxHighlighter language={language} style={sunburst}>
+      <SyntaxHighlighter language={language} style={vscDarkPlus}>
         {code}
       </SyntaxHighlighter>
 
