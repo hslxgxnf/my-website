@@ -68,12 +68,13 @@ export default function SideNav({ articleRef }: SideNavProps) {
 
     // Intersection Observer API
     if (!ulRef.current) throw new Error("No ulRef");
-
     const sections = Array.from(articleRef.current.querySelectorAll("section"));
     const links = Array.from(ulRef.current.querySelectorAll("a"));
 
+    const header = document.querySelector("header") as HTMLElement;
+    const headerHeight = header.getBoundingClientRect().height;
     const options = {
-      rootMargin: "-160px 0px 0px 0px",
+      rootMargin: `-${headerHeight}px 0px 0px 0px`,
     };
 
     const observer = new IntersectionObserver((entries) => {
