@@ -1,0 +1,35 @@
+.main {
+  display: flex;
+
+  > aside {
+    flex-basis: 20%;
+  }
+
+  > article {
+    flex-basis: 60%;
+    padding: var(--space-40);
+
+    h1,
+    h2,
+    h3 {
+      margin-bottom: var(--space-20);
+      color: var(--color-1);
+    }
+
+    hr {
+      margin-bottom: var(--space-20);
+    }
+
+    h1 {
+      font-size: var(--font-size-xlarge);
+    }
+
+    h2 {
+      font-size: var(--font-size-large);
+    }
+
+    h3 {
+      font-size: var(--font-size-medium);
+    }
+  }
+}
