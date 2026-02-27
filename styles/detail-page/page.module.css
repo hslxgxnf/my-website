@@ -129,6 +129,10 @@
       margin-bottom: var(--space-20);
     }
 
+    li > ul {
+      margin-top: var(--space-20);
+    }
+
     h1 {
       font-size: var(--font-size-xlarge);
     }
@@ -198,6 +202,11 @@
 
         &:has(~ p) {
           left: -50px;
+          font-size: var(--font-size-small);
+        }
+
+        &:has(~ li) {
+          left: calc(-50px - var(--space-40));
           font-size: var(--font-size-small);
         }
       }

@@ -37,7 +37,7 @@ export default function ReferenceButton({
       image.src = item.image.src;
       image.alt = `${item.name} Favicon`;
       const span = document.createElement("span");
-      span.innerText = `${item.name} ${item.title}`;
+      span.innerText = `${item.name} | ${item.title}`;
       a.append(image, span);
     });
 
