@@ -1,4 +1,4 @@
-import type { Reference } from "@/types/interfaces";
+import type { Reference, Code } from "@/types/interfaces";
 import mdn from "@/assets/mdn.ico";
 
 export const reference: Reference[] = [
@@ -10,4 +10,7 @@ export const reference: Reference[] = [
   },
 ];
 
-export const code: string = `<!-- This is a comment in HTML. -->`;
+export const code: Code = {
+  language: "haml",
+  content: `<!-- This is a comment in HTML. -->`,
+};

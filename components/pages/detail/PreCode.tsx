@@ -6,22 +6,22 @@ import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import { useState } from "react";
 
 import styles from "@/styles/pages/detail/page.module.css";
+import type { Code } from "@/types/interfaces";
 
 interface PreCodeProps {
-  code: string;
-  language: string;
+  code: Code;
 }
 
 let isProcessing: boolean = false;
 
-export default function PreCode({ code, language }: PreCodeProps) {
+export default function PreCode({ code }: PreCodeProps) {
   const [buttonText, setButtonText] = useState("Copy");
 
   async function handleClick() {
     try {
       if (isProcessing) return;
 
-      await navigator.clipboard.writeText(code);
+      await navigator.clipboard.writeText(code.content);
       isProcessing = true;
       setButtonText("Copied");
 
@@ -37,7 +37,7 @@ export default function PreCode({ code, language }: PreCodeProps) {
   return (
     <div className={styles["pre-code-container"]}>
       <header>
-        <span>{language === "haml" ? "html" : language}</span>
+        <span>{code.language === "haml" ? "html" : code.language}</span>
         <button type="button" onClick={handleClick}>
           {buttonText === "Copy" ? <FaRegCopy /> : <FaCheck />}
           {buttonText}
@@ -45,8 +45,8 @@ export default function PreCode({ code, language }: PreCodeProps) {
       </header>
 
       <main>
-        <SyntaxHighlighter language={language} style={vscDarkPlus}>
-          {code}
+        <SyntaxHighlighter language={code.language} style={vscDarkPlus}>
+          {code.content}
         </SyntaxHighlighter>
       </main>
     </div>

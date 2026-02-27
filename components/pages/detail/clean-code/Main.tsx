@@ -133,7 +133,7 @@ export default function Main() {
             Multiple parameters can be minimized into one. You don&apos;t have
             to concern the order of parameters.
           </p>
-          <PreCode code={code} language="javascript" />
+          <PreCode code={code} />
           <p>
             A big function should be split into small functions that do one
             thing. The name of a function implies its level of abstraction. In a

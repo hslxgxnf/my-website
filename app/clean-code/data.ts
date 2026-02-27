@@ -1,4 +1,4 @@
-import type { Reference } from "@/types/interfaces";
+import type { Reference, Code } from "@/types/interfaces";
 import udemy from "@/assets/udemy.png";
 
 export const reference: Reference[] = [
@@ -10,7 +10,9 @@ export const reference: Reference[] = [
   },
 ];
 
-export const code: string = `class User1 {
+export const code: Code = {
+  language: "javascript",
+  content: `class User1 {
   constructor(name, age) {
     this.name = name;
     this.age = age;
@@ -26,4 +28,5 @@ class User2 {
 
 const user1 = new User1("John", 20);
 
-const user2 = new User2({ name: "John", age: 20 });`;
+const user2 = new User2({ name: "John", age: 20 });`,
+};
