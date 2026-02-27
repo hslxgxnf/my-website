@@ -14,7 +14,7 @@ export default function NamingRulesPage() {
       <article>
         <HeadingLink headingNumber={1}>Naming Rules</HeadingLink>
         <p>
-          Attribute custom names and values should be&nbsp;
+          A custom name or a custom value of an attribute should&nbsp;
           <code className="emphasis">kebab-case</code>.
           <br />
           <code className="example">data-is-clicked=&quot;true&quot;</code>
