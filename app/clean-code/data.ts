@@ -4,8 +4,8 @@ import { favicons } from "@/assets/favicons/favicons";
 export const reference: Reference[] = [
   {
     url: "https://www.udemy.com/course/writing-clean-code/",
-    image: favicons.udemy.image,
-    name: favicons.udemy.name,
+    image: favicons.Udemy.image,
+    name: favicons.Udemy.name,
     title: "Clean Code",
   },
 ];

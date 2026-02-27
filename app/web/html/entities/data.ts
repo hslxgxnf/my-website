@@ -4,22 +4,36 @@ import { favicons } from "@/assets/favicons/favicons";
 export const referenceFirst: Reference[] = [
   {
     url: "https://developer.mozilla.org/en-US/docs/Glossary/Entity",
-    image: favicons.mdn.image,
-    name: favicons.mdn.name,
+    image: favicons.MDN.image,
+    name: favicons.MDN.name,
     title: "Entity",
   },
   {
     url: "https://developer.mozilla.org/en-US/docs/Glossary/Character_reference",
-    image: favicons.mdn.image,
-    name: favicons.mdn.name,
+    image: favicons.MDN.image,
+    name: favicons.MDN.name,
     title: "Character reference",
   },
   {
     url: "https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references",
-    image: favicons.whatwg.image,
-    name: favicons.whatwg.name,
+    image: favicons.WHATWG.image,
+    name: favicons.WHATWG.name,
     title: "13.5 Named character references",
+  },
+  {
+    url: "https://www.toptal.com/designers/htmlarrows/",
+    image: favicons.HTML_Arrows.image,
+    name: favicons.HTML_Arrows.name,
+    title:
+      "A delightful reference for HTML Symbols, Entities and ASCII Character Codes",
   },
 ];
 
-export const referenceSecond: Reference[] = [];
+export const referenceSecond: Reference[] = [
+  {
+    url: "https://www.daleseo.com/html-nbsp/",
+    image: favicons.DaleSeo.image,
+    name: favicons.DaleSeo.name,
+    title: "HTML에서 &nbsp;를 언제, 왜 써야할까?",
+  },
+];

@@ -4,8 +4,8 @@ import { favicons } from "@/assets/favicons/favicons";
 export const reference: Reference[] = [
   {
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Comments",
-    image: favicons.mdn.image,
-    name: favicons.mdn.name,
+    image: favicons.MDN.image,
+    name: favicons.MDN.name,
     title: "Using HTML comments <!-- … -->",
   },
 ];

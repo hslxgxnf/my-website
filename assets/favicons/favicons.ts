@@ -1,28 +1,38 @@
-import emmetImage from "./emmet.svg";
-import inpaDevImage from "./inpa-dev.ico";
-import mdnImage from "./mdn.ico";
-import udemyImage from "./udemy.png";
-import whatwgImage from "./whatwg.svg";
+import DaleSeoImage from "./DaleSeo.png";
+import EmmetImage from "./Emmet.svg";
+import HTML_ArrowsImage from "./HTML-Arrows.ico";
+import Inpa_DevImage from "./Inpa-Dev.ico";
+import MDNImage from "./MDN.ico";
+import UdemyImage from "./Udemy.png";
+import WHATWGImage from "./WHATWG.svg";
 
 export const favicons = {
-  emmet: {
-    image: emmetImage,
+  DaleSeo: {
+    image: DaleSeoImage,
+    name: "DaleSeo",
+  },
+  Emmet: {
+    image: EmmetImage,
     name: "Emmet",
   },
-  inpaDev: {
-    image: inpaDevImage,
+  HTML_Arrows: {
+    image: HTML_ArrowsImage,
+    name: "HTML Arrows",
+  },
+  Inpa_Dev: {
+    image: Inpa_DevImage,
     name: "Inpa Dev",
   },
-  mdn: {
-    image: mdnImage,
+  MDN: {
+    image: MDNImage,
     name: "MDN",
   },
-  udemy: {
-    image: udemyImage,
+  Udemy: {
+    image: UdemyImage,
     name: "Udemy",
   },
-  whatwg: {
-    image: whatwgImage,
+  WHATWG: {
+    image: WHATWGImage,
     name: "WHATWG",
   },
 };
