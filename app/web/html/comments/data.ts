@@ -1,11 +1,11 @@
 import type { Reference, Code } from "@/types/detail-page/interfaces";
-import mdn from "@/assets/mdn.ico";
+import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference[] = [
   {
     url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Comments",
-    image: mdn,
-    name: "MDN",
+    image: favicons.mdn.image,
+    name: favicons.mdn.name,
     title: "Using HTML comments <!-- … -->",
   },
 ];

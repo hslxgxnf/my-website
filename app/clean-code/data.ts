@@ -1,11 +1,11 @@
 import type { Reference, Code } from "@/types/detail-page/interfaces";
-import udemy from "@/assets/udemy.png";
+import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference[] = [
   {
     url: "https://www.udemy.com/course/writing-clean-code/",
-    image: udemy,
-    name: "Udemy",
+    image: favicons.udemy.image,
+    name: favicons.udemy.name,
     title: "Clean Code",
   },
 ];
