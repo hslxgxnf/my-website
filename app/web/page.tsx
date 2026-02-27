@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/pages/start/page.module.css";
-import HeadingLink from "@/components/pages/start/HeadingLink";
+import styles from "@/styles/pages/junction/page.module.css";
+import HeadingLink from "@/components/pages/junction/HeadingLink";
 
 export const metadata: Metadata = {
   title: "Web",
