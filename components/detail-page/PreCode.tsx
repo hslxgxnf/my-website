@@ -5,7 +5,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import { useState } from "react";
 
-import styles from "@/styles/pages/detail/page.module.css";
+import styles from "@/styles/detail-page/page.module.css";
 import type { Code } from "@/types/interfaces";
 
 interface PreCodeProps {

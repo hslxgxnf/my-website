@@ -7,7 +7,7 @@
     - padding
   - code.emphasis
     - padding
-- clean-code/Main.module.css
+- clean-code/ClientMain.module.css
   - .main > aside:nth-of-type(2) > nav
     - padding
   - .main > aside:nth-of-type(2) > nav > header
@@ -33,6 +33,6 @@
 
 ## --space-20
 
-- clean-code/Main.module.css
+- clean-code/ClientMain.module.css
   - .main > aside:nth-of-type(2) > nav > main > ul > li.indent
     - margin-left

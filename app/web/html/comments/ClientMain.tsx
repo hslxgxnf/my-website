@@ -2,13 +2,13 @@
 
 import { useRef } from "react";
 
-import styles from "@/styles/pages/detail/page.module.css";
-import ReferenceButton from "@/components/pages/detail/ReferenceButton";
-import HeadingLink from "@/components/pages/detail/HeadingLink";
-import PreCode from "@/components/pages/detail/PreCode";
+import styles from "@/styles/detail-page/page.module.css";
+import ReferenceButton from "@/components/detail-page/ReferenceButton";
+import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import PreCode from "@/components/detail-page/PreCode";
 import { reference, code } from "@/app/web/html/comments/data";
 
-export default function Main() {
+export default function ClientMain() {
   const asideRef = useRef<HTMLElement>(null);
 
   return (
@@ -17,7 +17,7 @@ export default function Main() {
 
       <article>
         <ReferenceButton reference={reference} asideRef={asideRef}>
-          <HeadingLink headingNumber={1}>Comments</HeadingLink>
+          <HeadingLinkId headingNumber={1}>Comments</HeadingLinkId>
         </ReferenceButton>
         <PreCode code={code} />
       </article>

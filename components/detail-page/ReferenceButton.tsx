@@ -3,7 +3,7 @@
 import { IoIosLink } from "react-icons/io";
 import { ReactNode, Ref, useLayoutEffect, useRef } from "react";
 
-import styles from "@/styles/pages/detail/page.module.css";
+import styles from "@/styles/detail-page/page.module.css";
 import type { Reference } from "@/types/interfaces";
 
 interface ReferenceButtonProps {

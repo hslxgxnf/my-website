@@ -3,11 +3,11 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-interface HeadingLinkProps {
+interface HeadingLinkPageProps {
   children: string;
 }
 
-export default function HeadingLink({ children }: HeadingLinkProps) {
+export default function HeadingLinkPage({ children }: HeadingLinkPageProps) {
   const currentPath = usePathname();
   const nextPath = children.replaceAll(" ", "-").toLowerCase();
   const url = `${currentPath}/${nextPath}`;

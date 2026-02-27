@@ -5,10 +5,10 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import "../styles/layout.css";
+import "@/styles/root-layout/layout.css";
 import logo from "@/assets/logo.png";
-import HeaderLink from "@/components/HeaderLink";
-import HeaderPath from "@/components/HeaderPath";
+import HeaderLink from "@/components/root-layout/HeaderLink";
+import HeaderPath from "@/components/root-layout/HeaderPath";
 
 // Google Font Initialization
 const roboto = Roboto();

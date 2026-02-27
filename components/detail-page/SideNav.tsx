@@ -2,8 +2,8 @@
 
 import { Ref, useRef, useLayoutEffect } from "react";
 
-import styles from "@/styles/pages/detail/page.module.css";
-import handleClickFirstLink from "@/functions/pages/handleClickFirstLink";
+import styles from "@/styles/detail-page/page.module.css";
+import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
 interface SideNavProps {
   articleRef: Ref<HTMLElement>;

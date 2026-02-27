@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-import Main from "@/components/pages/detail/clean-code/Main";
+import ClientMain from "@/app/clean-code/ClientMain";
 
 export const metadata: Metadata = {
   title: "Clean Code",
 };
 
 export default function CleanCodePage() {
-  return <Main />;
+  return <ClientMain />;
 }

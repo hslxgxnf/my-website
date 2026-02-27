@@ -1,4 +1,4 @@
-import styles from "../styles/page.module.css";
+import styles from "@/styles/root-page/page.module.css";
 
 export default function RootPage() {
   return (

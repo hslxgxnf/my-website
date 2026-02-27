@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/pages/junction/page.module.css";
-import HeadingLink from "@/components/pages/junction/HeadingLink";
+import styles from "@/styles/junction-page/page.module.css";
+import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {
   title: "HTML",
@@ -14,12 +14,12 @@ export default function HTMLPage() {
       <article>
         <h1>HTML</h1>
         <hr />
-        <HeadingLink>Naming Rules</HeadingLink>
-        <HeadingLink>Comments</HeadingLink>
-        <HeadingLink>Elements</HeadingLink>
-        <HeadingLink>Attributes</HeadingLink>
-        <HeadingLink>Entities</HeadingLink>
-        <HeadingLink>Emmet</HeadingLink>
+        <HeadingLinkPage>Naming Rules</HeadingLinkPage>
+        <HeadingLinkPage>Comments</HeadingLinkPage>
+        <HeadingLinkPage>Elements</HeadingLinkPage>
+        <HeadingLinkPage>Attributes</HeadingLinkPage>
+        <HeadingLinkPage>Entities</HeadingLinkPage>
+        <HeadingLinkPage>Emmet</HeadingLinkPage>
       </article>
       <aside></aside>
     </main>

@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import handleClickFirstLink from "@/functions/pages/handleClickFirstLink";
+import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
-interface HeadingLinkProps {
+interface HeadingLinkIdProps {
   headingNumber: number;
   children: string;
 }
 
-export default function HeadingLink({
+export default function HeadingLinkId({
   headingNumber,
   children,
-}: HeadingLinkProps) {
+}: HeadingLinkIdProps) {
   let result = null;
   const id = children.replaceAll(" ", "-").toLowerCase();
   const url = `#${id}`;

@@ -2,14 +2,14 @@
 
 import { useRef } from "react";
 
-import styles from "@/styles/pages/detail/page.module.css";
+import styles from "@/styles/detail-page/page.module.css";
 import { reference, code } from "@/app/clean-code/data";
-import ReferenceButton from "@/components/pages/detail/ReferenceButton";
-import HeadingLink from "@/components/pages/detail/HeadingLink";
-import PreCode from "@/components/pages/detail/PreCode";
-import SideNav from "@/components/pages/detail/SideNav";
+import ReferenceButton from "@/components/detail-page/ReferenceButton";
+import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import PreCode from "@/components/detail-page/PreCode";
+import SideNav from "@/components/detail-page/SideNav";
 
-export default function Main() {
+export default function ClientMain() {
   const asideRef = useRef<HTMLElement>(null);
   const articleRef = useRef<HTMLElement>(null);
 
@@ -20,13 +20,13 @@ export default function Main() {
       <article ref={articleRef}>
         <section>
           <ReferenceButton reference={reference} asideRef={asideRef}>
-            <HeadingLink headingNumber={1}>Clean Code</HeadingLink>
+            <HeadingLinkId headingNumber={1}>Clean Code</HeadingLinkId>
           </ReferenceButton>
           <p>Clean code should be readable.</p>
           <p>Clean code should be maintainable.</p>
         </section>
         <section>
-          <HeadingLink headingNumber={2}>Naming</HeadingLink>
+          <HeadingLinkId headingNumber={2}>Naming</HeadingLinkId>
           <p>Names should be meaningful.</p>
           <p>Names should be distinctive.</p>
           <p>Names should be consistent.</p>
@@ -85,16 +85,16 @@ export default function Main() {
           </ul>
         </section>
         <section>
-          <HeadingLink headingNumber={2}>Formatting</HeadingLink>
+          <HeadingLinkId headingNumber={2}>Formatting</HeadingLinkId>
           <section>
-            <HeadingLink headingNumber={3}>Vertical</HeadingLink>
+            <HeadingLinkId headingNumber={3}>Vertical</HeadingLinkId>
             <p>Multiple concepts should be split into multiple files.</p>
             <p>Different concepts should be separated by spacing.</p>
             <p>Similar concepts should be together without spacing.</p>
             <p>Related concepts should be kept close together.</p>
           </section>
           <section>
-            <HeadingLink headingNumber={3}>Horizontal</HeadingLink>
+            <HeadingLinkId headingNumber={3}>Horizontal</HeadingLinkId>
             <p>Indentation</p>
             <p>
               Horizontally long statements should be broken into multiple
@@ -103,7 +103,7 @@ export default function Main() {
           </section>
         </section>
         <section>
-          <HeadingLink headingNumber={2}>Comments</HeadingLink>
+          <HeadingLinkId headingNumber={2}>Comments</HeadingLinkId>
           <p>Legal Information</p>
           <p>Warnings</p>
           <p>To-Do Notes</p>
@@ -113,7 +113,7 @@ export default function Main() {
           </p>
         </section>
         <section>
-          <HeadingLink headingNumber={2}>Objects and Classes</HeadingLink>
+          <HeadingLinkId headingNumber={2}>Objects and Classes</HeadingLinkId>
           <p>Classes should have a single responsibility.</p>
           <p>
             Classes should be open for extension but closed for modification.
@@ -127,7 +127,7 @@ export default function Main() {
           <p>Law of Demeter: Tell! Don&apos;t Ask!</p>
         </section>
         <section>
-          <HeadingLink headingNumber={2}>Functions</HeadingLink>
+          <HeadingLinkId headingNumber={2}>Functions</HeadingLinkId>
           <p>Don&apos;t Repeat Yourself (DRY)</p>
           <p>
             Multiple parameters can be minimized into one. You don&apos;t have
@@ -159,7 +159,7 @@ export default function Main() {
           <p>Unit testing helps functions to be clean.</p>
         </section>
         <section>
-          <HeadingLink headingNumber={2}>Control Structures</HeadingLink>
+          <HeadingLinkId headingNumber={2}>Control Structures</HeadingLinkId>
           <p>
             Avoid deep nesting by using error guards to fail fast, factory
             functions, and polymorphism.

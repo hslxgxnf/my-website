@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/pages/junction/page.module.css";
-import HeadingLink from "@/components/pages/junction/HeadingLink";
+import styles from "@/styles/junction-page/page.module.css";
+import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {
   title: "Web",
@@ -17,38 +17,38 @@ export default function WebPage() {
         <hr />
         <section>
           <h2>Overall</h2>
-          <HeadingLink>Line Separators</HeadingLink>
-          <HeadingLink>Security</HeadingLink>
-          <HeadingLink>Deployment</HeadingLink>
-          <HeadingLink>SEO</HeadingLink>
-          <HeadingLink>CSR vs. SSR</HeadingLink>
+          <HeadingLinkPage>Line Separators</HeadingLinkPage>
+          <HeadingLinkPage>Security</HeadingLinkPage>
+          <HeadingLinkPage>Deployment</HeadingLinkPage>
+          <HeadingLinkPage>SEO</HeadingLinkPage>
+          <HeadingLinkPage>CSR vs. SSR</HeadingLinkPage>
         </section>
         <hr />
         <section>
           <h2>Initialization</h2>
-          <HeadingLink>npm</HeadingLink>
-          <HeadingLink>pnpm</HeadingLink>
-          <HeadingLink>concurrently</HeadingLink>
-          <HeadingLink>Prettier</HeadingLink>
-          <HeadingLink>ESLint</HeadingLink>
+          <HeadingLinkPage>npm</HeadingLinkPage>
+          <HeadingLinkPage>pnpm</HeadingLinkPage>
+          <HeadingLinkPage>concurrently</HeadingLinkPage>
+          <HeadingLinkPage>Prettier</HeadingLinkPage>
+          <HeadingLinkPage>ESLint</HeadingLinkPage>
         </section>
         <hr />
         <section>
           <h2>HTML</h2>
-          <HeadingLink>HTML</HeadingLink>
+          <HeadingLinkPage>HTML</HeadingLinkPage>
         </section>
         <hr />
         <section>
           <h2>CSS</h2>
-          <HeadingLink>CSS</HeadingLink>
-          <HeadingLink>Tailwind CSS</HeadingLink>
+          <HeadingLinkPage>CSS</HeadingLinkPage>
+          <HeadingLinkPage>Tailwind CSS</HeadingLinkPage>
         </section>
         <hr />
         <section>
           <h2>JavaScript</h2>
-          <HeadingLink>Vanilla</HeadingLink>
-          <HeadingLink>React</HeadingLink>
-          <HeadingLink>Next.js</HeadingLink>
+          <HeadingLinkPage>Vanilla</HeadingLinkPage>
+          <HeadingLinkPage>React</HeadingLinkPage>
+          <HeadingLinkPage>Next.js</HeadingLinkPage>
         </section>
       </article>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/pages/detail/page.module.css";
-import HeadingLink from "@/components/pages/detail/HeadingLink";
+import styles from "@/styles/detail-page/page.module.css";
+import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 
 export const metadata: Metadata = {
   title: "Naming Rules",
@@ -12,7 +12,7 @@ export default function NamingRulesPage() {
     <main className={styles.main}>
       <aside></aside>
       <article>
-        <HeadingLink headingNumber={1}>Naming Rules</HeadingLink>
+        <HeadingLinkId headingNumber={1}>Naming Rules</HeadingLinkId>
         <p>
           A custom name or a custom value of an attribute should&nbsp;
           <code className="emphasis">kebab-case</code>.
