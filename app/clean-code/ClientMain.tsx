@@ -3,8 +3,8 @@
 import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
-import { reference, code } from "@/app/clean-code/data";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
+import { reference, code } from "@/app/clean-code/data";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import PreCode from "@/components/detail-page/PreCode";
 import SideNav from "@/components/detail-page/SideNav";

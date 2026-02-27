@@ -3,9 +3,9 @@
 import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
-import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import { reference } from "@/app/web/html/emmet/data";
+import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 
 export default function ClientMain() {
   const asideRef = useRef<HTMLElement>(null);
