@@ -1,4 +1,4 @@
-import type { Reference, Code } from "@/types/interfaces";
+import type { Reference, Code } from "@/types/detail-page/interfaces";
 import udemy from "@/assets/udemy.png";
 
 export const reference: Reference[] = [

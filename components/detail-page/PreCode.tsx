@@ -6,7 +6,7 @@ import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import { useState } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
-import type { Code } from "@/types/interfaces";
+import type { Code } from "@/types/detail-page/interfaces";
 
 interface PreCodeProps {
   code: Code;

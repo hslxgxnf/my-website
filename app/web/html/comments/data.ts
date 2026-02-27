@@ -1,4 +1,4 @@
-import type { Reference, Code } from "@/types/interfaces";
+import type { Reference, Code } from "@/types/detail-page/interfaces";
 import mdn from "@/assets/mdn.ico";
 
 export const reference: Reference[] = [
