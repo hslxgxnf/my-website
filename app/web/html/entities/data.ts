@@ -1,7 +1,7 @@
 import type { Reference } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
-export const referenceFirst: Reference[] = [
+export const referenceEntities: Reference[] = [
   {
     url: "https://developer.mozilla.org/en-US/docs/Glossary/Entity",
     image: favicons.MDN.image,
@@ -29,7 +29,7 @@ export const referenceFirst: Reference[] = [
   },
 ];
 
-export const referenceSecond: Reference[] = [
+export const referenceNonBreakingSpace: Reference[] = [
   {
     url: "https://www.daleseo.com/html-nbsp/",
     image: favicons.DaleSeo.image,

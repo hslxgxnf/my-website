@@ -4,7 +4,10 @@ import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
-import { referenceFirst, referenceSecond } from "@/app/web/html/entities/data";
+import {
+  referenceEntities,
+  referenceNonBreakingSpace,
+} from "@/app/web/html/entities/data";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 
 export default function ClientMain() {
@@ -15,7 +18,7 @@ export default function ClientMain() {
       <aside ref={asideRef}></aside>
 
       <article>
-        <ReferenceButton reference={referenceFirst} asideRef={asideRef}>
+        <ReferenceButton reference={referenceEntities} asideRef={asideRef}>
           <HeadingLinkId headingNumber={1}>Entities</HeadingLinkId>
         </ReferenceButton>
         <ul>
@@ -35,7 +38,10 @@ export default function ClientMain() {
             <code className="emphasis">Trade Mark &trade;</code>{" "}
             <code className="example">&amp;trade;</code>
           </li>
-          <ReferenceButton reference={referenceSecond} asideRef={asideRef}>
+          <ReferenceButton
+            reference={referenceNonBreakingSpace}
+            asideRef={asideRef}
+          >
             <li>
               <code className="emphasis">Non-Breaking Space &nbsp;</code>{" "}
               <code className="example">&amp;nbsp;</code>
