@@ -9,7 +9,18 @@ const upperCaseWords: string[] = [
   "css",
 ];
 
-const lowerCaseWords: string[] = ["vs.", "npm", "pnpm"];
+const lowerCaseWords: string[] = [
+  "a",
+  "an",
+  "the",
+  "and",
+  "but",
+  "for",
+  "to",
+  "vs.",
+  "npm",
+  "pnpm",
+];
 
 interface SpecialCaseWord {
   target: string;
