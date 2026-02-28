@@ -9,6 +9,7 @@ interface SideNavProps {
   articleRef: Ref<HTMLElement>;
 }
 
+// To use this component, the <article> element must be divided into <section> elements.
 export default function SideNav({ articleRef }: SideNavProps) {
   const ulRef = useRef<HTMLUListElement>(null);
 
