@@ -72,7 +72,7 @@ export default function SideNav({ articleRef }: SideNavProps) {
     const links = Array.from(ulRef.current.querySelectorAll("a"));
 
     const header = document.querySelector("header") as HTMLElement;
-    const headerHeight = header.getBoundingClientRect().height;
+    const headerHeight = header.getBoundingClientRect().height + 1;
     const options = {
       rootMargin: `-${headerHeight}px 0px 0px 0px`,
     };
