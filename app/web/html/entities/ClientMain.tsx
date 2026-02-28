@@ -39,16 +39,12 @@ export default function ClientMain() {
             <li>
               <code className="emphasis">Non-Breaking Space &nbsp;</code>&nbsp;
               <code className="example">&amp;nbsp;</code>
-              <ul>
-                <li>
-                  The <code className="example">&amp;nbsp;</code> entity is a
-                  space without creating a new line.
-                </li>
-                <li>
-                  The <code className="example">&amp;nbsp;</code> entity can be
-                  used to write two or more spaces in a row.
-                </li>
-              </ul>
+              <br />
+              The <code className="example">&amp;nbsp;</code> entity is a space
+              without creating a new line.
+              <br />
+              The <code className="example">&amp;nbsp;</code> entity can be used
+              to write two or more spaces in a row.
             </li>
           </ReferenceButton>
           <li>
