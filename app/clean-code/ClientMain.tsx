@@ -39,14 +39,14 @@ export default function ClientMain() {
             Use nouns or short phrases with adjectives for variables and
             constants.
             <br />
-            <code className="example">user</code>&nbsp;
+            <code className="example">user</code>{" "}
             <code className="example">isValid</code>
           </p>
           <p>
             Use verbs or short phrases with adjectives for functions and
             methods.
             <br />
-            <code className="example">saveUser</code>&nbsp;
+            <code className="example">saveUser</code>{" "}
             <code className="example">auth.isValid</code>
           </p>
           <p>
@@ -145,7 +145,7 @@ export default function ClientMain() {
             called a side effect. When a function has a side effect, the name of
             the function should imply that the side effect will occur.
             <br />
-            <code className="example">saveUser</code>&nbsp;
+            <code className="example">saveUser</code>{" "}
             <code className="example">showErrorMessage</code>
             <br />A pure function always yields the same output with the same
             input and has no side effects.
@@ -153,7 +153,7 @@ export default function ClientMain() {
           <p>
             Function names should be positive.
             <br />
-            <code className="example">isEmpty</code>&nbsp;
+            <code className="example">isEmpty</code>{" "}
             <code className="example">isValid</code>
           </p>
           <p>Unit testing helps functions to be clean.</p>

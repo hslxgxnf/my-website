@@ -37,10 +37,7 @@ export default function HeaderPath() {
         if (index !== processedPath.length - 1) {
           return (
             <li key={index}>
-              <Link href={item.href}>{item.name}</Link>
-              &nbsp;
-              <FaCaretRight />
-              &nbsp;
+              <Link href={item.href}>{item.name}</Link> <FaCaretRight />
             </li>
           );
         } else {
