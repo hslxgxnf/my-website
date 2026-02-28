@@ -4,23 +4,12 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaCaretRight } from "react-icons/fa";
 
+import changeCase from "@/functions/root-layout/changeCase";
+
 interface Path {
   href: string;
   name: string;
 }
-
-const upperCaseWords: string[] = [
-  "ide",
-  "dsa",
-  "ai",
-  "seo",
-  "csr",
-  "ssr",
-  "html",
-  "css",
-];
-
-const lowerCaseWords: string[] = ["vs.", "npm", "pnpm"];
 
 export default function HeaderPath() {
   const path = usePathname();
@@ -34,26 +23,7 @@ export default function HeaderPath() {
       href = `${href}/${slicedPath[j]}`;
     }
 
-    // Convert a lowercase name to an uppercase or title case
-    let name = "";
-    if (upperCaseWords.includes(slicedPath[i])) {
-      name = slicedPath[i].toUpperCase();
-    } else if (lowerCaseWords.includes(slicedPath[i])) {
-      name = slicedPath[i].toLowerCase();
-    } else {
-      name = slicedPath[i]
-        .split("-")
-        .map((word) => {
-          if (upperCaseWords.includes(word)) {
-            return word.toUpperCase();
-          } else if (lowerCaseWords.includes(word)) {
-            return word.toLowerCase();
-          } else {
-            return word.charAt(0).toUpperCase() + word.slice(1);
-          }
-        })
-        .join(" ");
-    }
+    const name = changeCase(slicedPath[i]);
 
     processedPath.push({
       href,
