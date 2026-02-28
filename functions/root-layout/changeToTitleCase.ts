@@ -61,11 +61,11 @@ function changeToSpecialCase(word: string): string {
   return result;
 }
 
-function changeToTitleCase(word: string): string {
+function changeToCapitalizedCase(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-export default function changeCase(wordChunk: string): string {
+export default function changeToTitleCase(wordChunk: string): string {
   return wordChunk
     .split("-")
     .map((word) => {
@@ -76,7 +76,7 @@ export default function changeCase(wordChunk: string): string {
       } else if (checkSpecialCase(word)) {
         return changeToSpecialCase(word);
       } else {
-        return changeToTitleCase(word);
+        return changeToCapitalizedCase(word);
       }
     })
     .join(" ");

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaCaretRight } from "react-icons/fa";
 
-import changeCase from "@/functions/root-layout/changeCase";
+import changeToTitleCase from "@/functions/root-layout/changeToTitleCase";
 
 interface Path {
   href: string;
@@ -23,7 +23,7 @@ export default function HeaderPath() {
       href = `${href}/${slicedPath[j]}`;
     }
 
-    const name = changeCase(slicedPath[i]);
+    const name = changeToTitleCase(slicedPath[i]);
 
     processedPath.push({
       href,
