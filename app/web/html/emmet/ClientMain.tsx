@@ -13,21 +13,19 @@ export default function ClientMain() {
   return (
     <main className={styles.main}>
       <aside ref={asideRef}></aside>
-
       <article>
         <ReferenceButton reference={reference} asideRef={asideRef}>
           <HeadingLinkId headingNumber={1}>Emmet</HeadingLinkId>
         </ReferenceButton>
         <ul>
           <li>
-            <code className="example">div.container</code>
+            <code className="example">div.container&#x7b;content&#x7d;</code>
           </li>
           <li>
             <code className="example">p&gt;lorem100</code>
           </li>
         </ul>
       </article>
-
       <aside></aside>
     </main>
   );
