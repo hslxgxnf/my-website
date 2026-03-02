@@ -4,7 +4,9 @@ import HTML_ArrowsImage from "./HTML_Arrows.ico";
 import Inpa_DevImage from "./Inpa_Dev.ico";
 import MDNImage from "./MDN.ico";
 import UdemyImage from "./Udemy.png";
+import W3SchoolsImage from "./W3Schools.ico";
 import WHATWGImage from "./WHATWG.svg";
+import YouTubeImage from "./YouTube.png";
 
 export const favicons = {
   DaleSeo: {
@@ -31,8 +33,16 @@ export const favicons = {
     image: UdemyImage,
     name: "Udemy",
   },
+  W3Schools: {
+    image: W3SchoolsImage,
+    name: "W3Schools",
+  },
   WHATWG: {
     image: WHATWGImage,
     name: "WHATWG",
+  },
+  YouTube: {
+    image: YouTubeImage,
+    name: "YouTube",
   },
 };
