@@ -53,6 +53,39 @@ export default function ReferenceButton({
       nav.classList.toggle(styles.active);
     });
 
+    switch (buttonRef.current.nextElementSibling!.localName) {
+      case "h1":
+        buttonRef.current.style.left = "-60px";
+        break;
+      case "h2":
+        buttonRef.current.style.left = "-60px";
+        break;
+      case "h3":
+        buttonRef.current.style.left = "-60px";
+        break;
+      case "p":
+        buttonRef.current.style.left = "-50px";
+        break;
+      case "li": {
+        let parent = buttonRef.current.parentElement!.parentElement;
+        let ulCount: number = 0;
+        while (true) {
+          if (parent!.localName === "ul") {
+            ulCount++;
+          } else if (
+            parent!.localName === "section" ||
+            parent!.localName === "article"
+          ) {
+            break;
+          }
+
+          parent = parent!.parentElement;
+        }
+        buttonRef.current.style.left = `${-50 - 40 * ulCount}px`; // -40 is for ul padding-left
+        break;
+      }
+    }
+
     const rect = buttonRef.current.getBoundingClientRect();
     nav.style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
   }, [asideRef, reference]);

@@ -181,32 +181,34 @@
         background-color: transparent;
         cursor: pointer;
 
-        &:hover > svg {
-          fill: var(--background-color-3);
+        &:hover {
+          > svg {
+            fill: var(--background-color-3);
+          }
+
+          + :is(h1, h2, h3, p, li),
+          + :is(h1, h2, h3, p, li) * {
+            color: var(--background-color-3);
+          }
         }
 
-        &:has(~ h1) {
-          left: -60px;
+        &:has(+ h1) {
           font-size: var(--font-size-xlarge);
         }
 
-        &:has(~ h2) {
-          left: -60px;
+        &:has(+ h2) {
           font-size: var(--font-size-large);
         }
 
-        &:has(~ h3) {
-          left: -55px;
+        &:has(+ h3) {
           font-size: var(--font-size-medium);
         }
 
-        &:has(~ p) {
-          left: -50px;
+        &:has(+ p) {
           font-size: var(--font-size-small);
         }
 
-        &:has(~ li) {
-          left: calc(-50px - var(--space-40));
+        &:has(+ li) {
           font-size: var(--font-size-small);
         }
       }
