@@ -430,7 +430,7 @@ export default function ClientMain() {
       </article>
 
       <aside>
-        <SideNav articleRef={articleRef}></SideNav>
+        <SideNav articleRef={articleRef} />
       </aside>
     </main>
   );
