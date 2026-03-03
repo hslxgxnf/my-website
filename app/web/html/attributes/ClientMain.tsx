@@ -17,7 +17,7 @@ import {
   referenceRole,
   referenceRel,
 } from "@/app/web/html/attributes/data";
-import SideNav from "@/components/detail-page/SideNav";
+import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
   const asideRef = useRef<HTMLElement>(null);
@@ -145,7 +145,7 @@ export default function ClientMain() {
       </article>
 
       <aside>
-        <SideNav articleRef={articleRef} />
+        <PageNav articleRef={articleRef} />
       </aside>
     </main>
   );

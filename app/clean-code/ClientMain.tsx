@@ -7,7 +7,7 @@ import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import { reference, code } from "@/app/clean-code/data";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import PreCode from "@/components/detail-page/PreCode";
-import SideNav from "@/components/detail-page/SideNav";
+import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
   const asideRef = useRef<HTMLElement>(null);
@@ -168,7 +168,7 @@ export default function ClientMain() {
       </article>
 
       <aside>
-        <SideNav articleRef={articleRef} />
+        <PageNav articleRef={articleRef} />
       </aside>
     </main>
   );
