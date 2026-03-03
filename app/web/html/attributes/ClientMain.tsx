@@ -100,7 +100,7 @@ export default function ClientMain() {
               <code className="example">rel</code>
               <ul>
                 <ReferenceButton asideRef={asideRef}>
-                  <li>
+                  <li id="rel">
                     <code className="example">rel=&quot;noopener&quot;</code>
                   </li>
                   <li>

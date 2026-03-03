@@ -104,6 +104,15 @@ export const reference: Reference = [
       title: "<table>: The Table element",
     },
   ],
+  // <a>
+  [
+    {
+      url: "/web/html/attributes#rel",
+      image: favicons.Article_Shortcut.image,
+      name: favicons.Article_Shortcut.name,
+      title: "Attributes | rel",
+    },
+  ],
 ];
 
 export const headings: Headings = [

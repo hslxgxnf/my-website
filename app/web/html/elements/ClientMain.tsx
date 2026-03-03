@@ -386,9 +386,11 @@ export default function ClientMain() {
                 <code className="example">&lt;details&gt;</code>{" "}
                 <code className="example">&lt;summary&gt;</code>
               </li>
-              <li id="<a>">
-                <code className="example">&lt;a&gt;</code>
-              </li>
+              <ReferenceButton asideRef={asideRef}>
+                <li id="<a>">
+                  <code className="example">&lt;a&gt;</code>
+                </li>
+              </ReferenceButton>
               <li>
                 <code className="example">&lt;figure&gt;</code>{" "}
                 <code className="example">&lt;figcaption&gt;</code>
