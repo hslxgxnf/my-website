@@ -142,7 +142,7 @@ export const reference: Reference = [
       title: "<a>",
     },
     {
-      url: "/web/html/attributes#rel",
+      url: '/web/html/attributes#rel="noopener"',
       image: favicons.Article_Shortcut.image,
       name: favicons.Article_Shortcut.name,
       title: "Attributes | rel",

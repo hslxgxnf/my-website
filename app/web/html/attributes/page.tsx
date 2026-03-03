@@ -99,7 +99,7 @@ export default function AttributesPage() {
               <code className="example">rel</code>
               <ul>
                 <ReferenceButton>
-                  <li id="rel">
+                  <li id='rel="noopener"'>
                     <code className="example">rel=&quot;noopener&quot;</code>
                   </li>
                   <li>
