@@ -2,8 +2,13 @@ import type { Reference } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
-  // Emmet
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Emmet",
+    },
     {
       url: "https://emmet.io/",
       image: favicons.Emmet.image,

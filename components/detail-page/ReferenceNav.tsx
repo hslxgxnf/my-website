@@ -15,7 +15,9 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
         <main>
           <ul>
             {refArray.map((ref, index) => {
-              if (ref.name === "Article Shortcut") {
+              if (index === 0) {
+                return <li key={index}>{ref.title}</li>;
+              } else if (ref.name === "Article Shortcut") {
                 return (
                   <li key={index}>
                     <Link href={ref.url}>

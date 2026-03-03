@@ -2,8 +2,13 @@ import type { Reference, Headings } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
-  // Elements
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Elements",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Glossary/Element",
       image: favicons.MDN.image,
@@ -23,8 +28,13 @@ export const reference: Reference = [
       title: "HTML elements reference",
     },
   ],
-  // Void Elements
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Void Elements",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Glossary/Void_element",
       image: favicons.MDN.image,
@@ -38,8 +48,13 @@ export const reference: Reference = [
       title: "The <label>, <input>, and <textarea> elements",
     },
   ],
-  // Content Categories
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Content Categories",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Content_categories",
       image: favicons.MDN.image,
@@ -47,8 +62,13 @@ export const reference: Reference = [
       title: "Content categories",
     },
   ],
-  // <dialog>
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "<dialog>",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
       image: favicons.MDN.image,
@@ -62,8 +82,13 @@ export const reference: Reference = [
       title: "HTMLDialogElement",
     },
   ],
-  // <form>
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "<form>",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form",
       image: favicons.MDN.image,
@@ -83,8 +108,13 @@ export const reference: Reference = [
       title: "8-2. Form 태그 요청의 처리 - GET, POST",
     },
   ],
-  // <table>
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "<table>",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics",
       image: favicons.MDN.image,
@@ -104,8 +134,13 @@ export const reference: Reference = [
       title: "<table>: The Table element",
     },
   ],
-  // <a>
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "<a>",
+    },
     {
       url: "/web/html/attributes#rel",
       image: favicons.Article_Shortcut.image,

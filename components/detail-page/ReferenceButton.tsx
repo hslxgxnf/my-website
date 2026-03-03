@@ -24,12 +24,23 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     const navs: HTMLElement[] = Array.from(
       document.querySelectorAll("body > main > aside:first-child > nav"),
     );
-    const rect = buttonRef.current.getBoundingClientRect();
-    navs[targetIndex].style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
+
+    // reference Guard
+    const pivot =
+      buttons[targetIndex].nextElementSibling!.firstElementChild!.textContent;
+    const comparison =
+      navs[targetIndex].querySelector("main > ul > li")!.textContent;
+    if (pivot !== comparison)
+      throw new Error(
+        `A mismatched reference button was found: ${comparison} -> Change to ${pivot}`,
+      );
 
     buttonRef.current.addEventListener("click", () => {
       navs[targetIndex].classList.toggle(styles.active);
     });
+
+    const rect = buttonRef.current.getBoundingClientRect();
+    navs[targetIndex].style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
   }, []);
 
   return (

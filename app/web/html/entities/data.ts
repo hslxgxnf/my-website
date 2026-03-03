@@ -2,8 +2,13 @@ import type { Reference } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
-  // Entities
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Entities",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Glossary/Entity",
       image: favicons.MDN.image,
@@ -32,6 +37,12 @@ export const reference: Reference = [
   ],
   // Non-Breaking Space
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Non-Breaking Space  ",
+    },
     {
       url: "https://www.daleseo.com/html-nbsp/",
       image: favicons.DaleSeo.image,

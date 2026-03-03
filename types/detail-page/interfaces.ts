@@ -2,7 +2,7 @@ import type { StaticImageData } from "next/image";
 
 export type Reference = {
   url: string;
-  image: StaticImageData;
+  image: StaticImageData | string;
   name: string;
   title: string;
 }[][];

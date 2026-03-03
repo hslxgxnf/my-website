@@ -2,8 +2,13 @@ import type { Reference, Code, Headings } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
-  // Attributes
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Attributes",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Glossary/Attribute",
       image: favicons.MDN.image,
@@ -23,8 +28,13 @@ export const reference: Reference = [
       title: "Global attributes",
     },
   ],
-  // Enumerated Attributes
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Enumerated Attributes",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Glossary/Enumerated",
       image: favicons.MDN.image,
@@ -32,8 +42,13 @@ export const reference: Reference = [
       title: "Enumerated",
     },
   ],
-  // Boolean Attributes
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Boolean Attributes",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Glossary/Boolean/HTML",
       image: favicons.MDN.image,
@@ -41,8 +56,13 @@ export const reference: Reference = [
       title: "Boolean attribute (HTML)",
     },
   ],
-  // rel
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: `rel="noopener"`,
+    },
     {
       url: "https://stackoverflow.com/questions/50709625/link-with-target-blank-and-rel-noopener-noreferrer-still-vulnerable",
       image: favicons.Stack_Overflow.image,
@@ -75,8 +95,13 @@ export const reference: Reference = [
       title: "Elements | <a>",
     },
   ],
-  // aria-*
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "aria-*",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes",
       image: favicons.MDN.image,
@@ -84,8 +109,13 @@ export const reference: Reference = [
       title: "ARIA states and properties (attributes)",
     },
   ],
-  // role
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "role",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Roles",
       image: favicons.MDN.image,

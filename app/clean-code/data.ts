@@ -2,8 +2,13 @@ import type { Reference, Code, Headings } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
-  // Clean Code
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Clean Code",
+    },
     {
       url: "https://www.udemy.com/course/writing-clean-code/",
       image: favicons.Udemy.image,

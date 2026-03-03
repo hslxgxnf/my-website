@@ -2,8 +2,13 @@ import type { Reference, Code } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
-  // Comments
   [
+    {
+      url: "",
+      image: "",
+      name: "",
+      title: "Comments",
+    },
     {
       url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Comments",
       image: favicons.MDN.image,
