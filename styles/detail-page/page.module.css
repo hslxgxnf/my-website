@@ -157,8 +157,6 @@
     h1,
     h2,
     h3 {
-      scroll-margin-top: calc(var(--height-header) + var(--space-20));
-
       > a {
         color: var(--color-1);
 
@@ -170,6 +168,10 @@
       > span {
         display: none;
       }
+    }
+
+    * {
+      scroll-margin-top: calc(var(--height-header) + var(--space-20));
     }
 
     .reference-button-container {

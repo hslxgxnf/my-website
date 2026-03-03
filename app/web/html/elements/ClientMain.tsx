@@ -397,7 +397,7 @@ export default function ClientMain() {
                 <code className="example">&lt;details&gt;</code>{" "}
                 <code className="example">&lt;summary&gt;</code>
               </li>
-              <li>
+              <li id="<a>">
                 <code className="example">&lt;a&gt;</code>
               </li>
               <li>

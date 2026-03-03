@@ -1,48 +1,63 @@
-import DaleSeoImage from "./DaleSeo.png";
-import EmmetImage from "./Emmet.svg";
-import HTML_ArrowsImage from "./HTML_Arrows.ico";
-import Inpa_DevImage from "./Inpa_Dev.ico";
-import MDNImage from "./MDN.ico";
-import UdemyImage from "./Udemy.png";
-import W3SchoolsImage from "./W3Schools.ico";
-import WHATWGImage from "./WHATWG.svg";
-import YouTubeImage from "./YouTube.png";
+import Article_Shortcut_Image from "./Article_Shortcut.png"; // Google Fonts
+import DaleSeo_Image from "./DaleSeo.png";
+import Emmet_Image from "./Emmet.svg";
+import HTML_Arrows_Image from "./HTML_Arrows.ico";
+import Inpa_Dev_Image from "./Inpa_Dev.ico";
+import MDN_Image from "./MDN.ico";
+import Stack_Overflow_Image from "./Stack_Overflow.ico";
+import tistory_Image from "./tistory.ico";
+import Udemy_Image from "./Udemy.png";
+import W3Schools_Image from "./W3Schools.ico";
+import WHATWG_Image from "./WHATWG.svg";
+import YouTube_Image from "./YouTube.png";
 
 export const favicons = {
+  Article_Shortcut: {
+    image: Article_Shortcut_Image,
+    name: "Article Shortcut",
+  },
   DaleSeo: {
-    image: DaleSeoImage,
+    image: DaleSeo_Image,
     name: "DaleSeo",
   },
   Emmet: {
-    image: EmmetImage,
+    image: Emmet_Image,
     name: "Emmet",
   },
   HTML_Arrows: {
-    image: HTML_ArrowsImage,
+    image: HTML_Arrows_Image,
     name: "HTML Arrows",
   },
   Inpa_Dev: {
-    image: Inpa_DevImage,
+    image: Inpa_Dev_Image,
     name: "Inpa Dev",
   },
   MDN: {
-    image: MDNImage,
+    image: MDN_Image,
     name: "MDN",
   },
+  Stack_Overflow: {
+    image: Stack_Overflow_Image,
+    name: "Stack Overflow",
+  },
+  tistory: {
+    image: tistory_Image,
+    name: "tistory",
+  },
   Udemy: {
-    image: UdemyImage,
+    image: Udemy_Image,
     name: "Udemy",
   },
   W3Schools: {
-    image: W3SchoolsImage,
+    image: W3Schools_Image,
     name: "W3Schools",
   },
   WHATWG: {
-    image: WHATWGImage,
+    image: WHATWG_Image,
     name: "WHATWG",
   },
   YouTube: {
-    image: YouTubeImage,
+    image: YouTube_Image,
     name: "YouTube",
   },
 };
