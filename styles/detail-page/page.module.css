@@ -119,6 +119,10 @@
     border-radius: var(--border-radius);
     padding: var(--space-40);
 
+    * {
+      scroll-margin-top: calc(var(--height-header) + var(--space-20));
+    }
+
     h1,
     h2,
     h3,
@@ -170,10 +174,6 @@
       }
     }
 
-    * {
-      scroll-margin-top: calc(var(--height-header) + var(--space-20));
-    }
-
     .reference-button-container {
       position: relative;
 
@@ -195,18 +195,22 @@
         }
 
         &:has(+ h1) {
+          left: -60px;
           font-size: var(--font-size-xlarge);
         }
 
         &:has(+ h2) {
+          left: -60px;
           font-size: var(--font-size-large);
         }
 
         &:has(+ h3) {
+          left: -60px;
           font-size: var(--font-size-medium);
         }
 
         &:has(+ p) {
+          left: -50px;
           font-size: var(--font-size-small);
         }
 
@@ -214,6 +218,18 @@
           font-size: var(--font-size-small);
         }
       }
+    }
+
+    ul > .reference-button-container > button {
+      left: calc(-50px - var(--space-40));
+    }
+
+    ul ul > .reference-button-container > button {
+      left: calc(-50px - var(--space-40) * 2);
+    }
+
+    ul ul ul > .reference-button-container > button {
+      left: calc(-50px - var(--space-40) * 3);
     }
 
     .pre-code-container {

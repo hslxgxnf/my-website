@@ -3,20 +3,16 @@
 import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
+import {
+  reference,
+  codeEnumeratedAttributes,
+  codeBooleanAttributes,
+  codeClass,
+} from "@/app/web/html/attributes/data";
+import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import PreCode from "@/components/detail-page/PreCode";
-import {
-  referenceAttributes,
-  referenceBooleanAttributes,
-  referenceEnumeratedAttributes,
-  codeBooleanAttributes,
-  codeEnumeratedAttributes,
-  codeClass,
-  referenceAria,
-  referenceRole,
-  referenceRel,
-} from "@/app/web/html/attributes/data";
 import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
@@ -25,11 +21,13 @@ export default function ClientMain() {
 
   return (
     <main className={styles.main}>
-      <aside ref={asideRef}></aside>
+      <aside ref={asideRef}>
+        <ReferenceNav reference={reference}></ReferenceNav>
+      </aside>
 
       <article ref={articleRef}>
         <section>
-          <ReferenceButton reference={referenceAttributes} asideRef={asideRef}>
+          <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={1}>Attributes</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -48,10 +46,7 @@ export default function ClientMain() {
           </p>
         </section>
         <section>
-          <ReferenceButton
-            reference={referenceEnumeratedAttributes}
-            asideRef={asideRef}
-          >
+          <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={2}>
               Enumerated Attributes
             </HeadingLinkId>
@@ -60,10 +55,7 @@ export default function ClientMain() {
           <PreCode code={codeEnumeratedAttributes} />
         </section>
         <section>
-          <ReferenceButton
-            reference={referenceBooleanAttributes}
-            asideRef={asideRef}
-          >
+          <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={2}>Boolean Attributes</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -106,7 +98,7 @@ export default function ClientMain() {
             <li>
               <code className="example">rel</code>
               <ul>
-                <ReferenceButton reference={referenceRel} asideRef={asideRef}>
+                <ReferenceButton asideRef={asideRef}>
                   <li>
                     <code className="example">rel=&quot;noopener&quot;</code>
                   </li>
@@ -119,7 +111,7 @@ export default function ClientMain() {
                 </ReferenceButton>
               </ul>
             </li>
-            <ReferenceButton reference={referenceAria} asideRef={asideRef}>
+            <ReferenceButton asideRef={asideRef}>
               <li>
                 <code className="example">aria-*</code>
                 <ul>
@@ -135,7 +127,7 @@ export default function ClientMain() {
                 </ul>
               </li>
             </ReferenceButton>
-            <ReferenceButton reference={referenceRole} asideRef={asideRef}>
+            <ReferenceButton asideRef={asideRef}>
               <li>
                 <code className="example">role</code>
               </li>

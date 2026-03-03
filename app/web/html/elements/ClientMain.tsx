@@ -3,15 +3,9 @@
 import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
+import { reference } from "@/app/web/html/elements/data";
+import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
-import {
-  referenceElements,
-  referenceVoidElements,
-  referenceContentCategories,
-  referenceDialog,
-  referenceForm,
-  referenceTable,
-} from "@/app/web/html/elements/data";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import PageNav from "@/components/detail-page/PageNav";
 
@@ -21,11 +15,13 @@ export default function ClientMain() {
 
   return (
     <main className={styles.main}>
-      <aside ref={asideRef}></aside>
+      <aside ref={asideRef}>
+        <ReferenceNav reference={reference} />
+      </aside>
 
       <article ref={articleRef}>
         <section>
-          <ReferenceButton reference={referenceElements} asideRef={asideRef}>
+          <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={1}>Elements</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -50,10 +46,7 @@ export default function ClientMain() {
           </p>
         </section>
         <section>
-          <ReferenceButton
-            reference={referenceVoidElements}
-            asideRef={asideRef}
-          >
+          <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={2}>Void Elements</HeadingLinkId>
           </ReferenceButton>
 
@@ -95,10 +88,7 @@ export default function ClientMain() {
           </ul>
         </section>
         <section>
-          <ReferenceButton
-            reference={referenceContentCategories}
-            asideRef={asideRef}
-          >
+          <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={2}>Content Categories</HeadingLinkId>
           </ReferenceButton>
           <ul>
@@ -177,7 +167,7 @@ export default function ClientMain() {
                 Non-Semantic Inline Grouping
               </li>
               <hr />
-              <ReferenceButton reference={referenceDialog} asideRef={asideRef}>
+              <ReferenceButton asideRef={asideRef}>
                 <li>
                   <code className="example">&lt;dialog&gt;</code>
                   <br />
@@ -221,7 +211,7 @@ export default function ClientMain() {
                   better control.
                 </li>
               </ReferenceButton>
-              <ReferenceButton reference={referenceForm} asideRef={asideRef}>
+              <ReferenceButton asideRef={asideRef}>
                 <li>
                   <code className="example">&lt;form&gt;</code>
                   <br />
@@ -262,10 +252,9 @@ export default function ClientMain() {
               <li>
                 <code className="example">&lt;output&gt;</code>
               </li>
-              <ReferenceButton reference={referenceTable} asideRef={asideRef}>
+              <ReferenceButton asideRef={asideRef}>
                 <li>
                   <code className="example">&lt;table&gt;</code>{" "}
-                  <span>Table</span>
                   <ul>
                     <li>
                       <code className="example">&lt;caption&gt;</code>
