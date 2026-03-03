@@ -12,7 +12,6 @@ import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
   const asideRef = useRef<HTMLElement>(null);
-  const articleRef = useRef<HTMLElement>(null);
 
   return (
     <main className={styles.main}>
@@ -20,7 +19,7 @@ export default function ClientMain() {
         <ReferenceNav reference={reference} />
       </aside>
 
-      <article ref={articleRef}>
+      <article>
         <section>
           <ReferenceButton asideRef={asideRef}>
             <HeadingLinkId headingNumber={1}>Clean Code</HeadingLinkId>
@@ -171,7 +170,7 @@ export default function ClientMain() {
       </article>
 
       <aside>
-        <PageNav articleRef={articleRef} headings={headings} />
+        <PageNav headings={headings} />
       </aside>
     </main>
   );

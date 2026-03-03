@@ -1,6 +1,6 @@
 "use client";
 
-import { Ref, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import Link from "next/link";
 
 import styles from "@/styles/detail-page/page.module.css";
@@ -8,22 +8,17 @@ import { Headings } from "@/types/detail-page/interfaces";
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
 interface SideNavProps {
-  articleRef: Ref<HTMLElement>;
   headings: Headings;
 }
 
 // To use this component, the <article> element must be divided into <section> elements.
-export default function PageNav({ articleRef, headings }: SideNavProps) {
+export default function PageNav({ headings }: SideNavProps) {
   const ulRef = useRef<HTMLUListElement>(null);
 
   // headings Guard
   useLayoutEffect(() => {
-    if (typeof articleRef === "function")
-      throw new Error("Type Error articleRef");
-    if (!articleRef || !articleRef.current) throw new Error("No articleRef");
-
     const articleHeadings: HTMLHeadingElement[] = Array.from(
-      articleRef.current.querySelectorAll("h1, h2, h3"),
+      document.querySelectorAll("body > main > article :is(h1, h2, h3)"),
     );
 
     if (articleHeadings.length !== headings.length) {
@@ -45,27 +40,26 @@ export default function PageNav({ articleRef, headings }: SideNavProps) {
         );
       }
     }
-  }, [articleRef, headings]);
+  }, [headings]);
 
   // Intersection Observer API
   useLayoutEffect(() => {
-    if (typeof articleRef === "function")
-      throw new Error("Type Error articleRef");
-    if (!articleRef || !articleRef.current) throw new Error("No articleRef");
-
+    const sections = Array.from(
+      document.querySelectorAll("body > main > article section"),
+    );
     if (!ulRef.current) throw new Error("No ulRef");
-    const sections = Array.from(articleRef.current.querySelectorAll("section"));
     const links = Array.from(ulRef.current.querySelectorAll("a"));
 
-    const header = document.querySelector("header") as HTMLElement;
-    const headerHeight = header.getBoundingClientRect().height + 1;
+    const headerHeight =
+      document.querySelector("body > header")!.getBoundingClientRect().height +
+      1;
     const options = {
       rootMargin: `-${headerHeight}px 0px 0px 0px`,
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const index = sections.indexOf(entry.target as HTMLElement);
+        const index = sections.indexOf(entry.target);
 
         if (entry.isIntersecting) {
           links[index].classList.add(styles.active);
@@ -82,7 +76,7 @@ export default function PageNav({ articleRef, headings }: SideNavProps) {
     return () => {
       observer.disconnect();
     };
-  }, [articleRef]);
+  }, []);
 
   return (
     <nav>
