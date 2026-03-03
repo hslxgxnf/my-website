@@ -1,6 +1,7 @@
-import { Reference } from "@/types/detail-page/interfaces";
 import Link from "next/link";
 import Image from "next/image";
+
+import { Reference } from "@/types/detail-page/interfaces";
 
 interface ReferenceNavProps {
   reference: Reference;

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
 interface HeadingLinkIdProps {
