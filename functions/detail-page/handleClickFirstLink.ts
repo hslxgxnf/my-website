@@ -1,7 +1,7 @@
 import { MouseEvent } from "react";
 
 export default function handleClickFirstLink(
-  event: PointerEvent | MouseEvent<HTMLAnchorElement>,
+  event: MouseEvent<HTMLAnchorElement>,
   url: string,
 ): void {
   event.preventDefault();

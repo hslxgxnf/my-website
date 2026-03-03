@@ -8,6 +8,7 @@ import {
   codeEnumeratedAttributes,
   codeBooleanAttributes,
   codeClass,
+  headings,
 } from "@/app/web/html/attributes/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
@@ -137,7 +138,7 @@ export default function ClientMain() {
       </article>
 
       <aside>
-        <PageNav articleRef={articleRef} />
+        <PageNav articleRef={articleRef} headings={headings} />
       </aside>
     </main>
   );

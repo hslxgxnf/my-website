@@ -12,3 +12,8 @@ export interface Code {
   language: "haml" | "css" | "javascript" | "typescript" | "git" | "powershell";
   content: string;
 }
+
+export type Headings = {
+  tag: "h1" | "h2" | "h3";
+  content: string;
+}[];

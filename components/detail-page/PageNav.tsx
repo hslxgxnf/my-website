@@ -1,73 +1,58 @@
 "use client";
 
 import { Ref, useRef, useLayoutEffect } from "react";
+import Link from "next/link";
 
 import styles from "@/styles/detail-page/page.module.css";
+import { Headings } from "@/types/detail-page/interfaces";
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
 interface SideNavProps {
   articleRef: Ref<HTMLElement>;
+  headings: Headings;
 }
 
 // To use this component, the <article> element must be divided into <section> elements.
-export default function PageNav({ articleRef }: SideNavProps) {
+export default function PageNav({ articleRef, headings }: SideNavProps) {
   const ulRef = useRef<HTMLUListElement>(null);
 
+  // headings Guard
   useLayoutEffect(() => {
     if (typeof articleRef === "function")
       throw new Error("Type Error articleRef");
     if (!articleRef || !articleRef.current) throw new Error("No articleRef");
 
-    // Find existing headings
-    const headings: HTMLHeadingElement[] = Array.from(
+    const articleHeadings: HTMLHeadingElement[] = Array.from(
       articleRef.current.querySelectorAll("h1, h2, h3"),
     );
 
-    // Create right side navigation headings
-    headings.forEach((heading) => {
-      if (!ulRef.current) throw new Error("No ulRef");
+    if (articleHeadings.length !== headings.length) {
+      throw new Error(
+        `A mismatched length was found: ${headings.length} -> Change to ${articleHeadings.length}`,
+      );
+    }
 
-      const tag = heading.localName;
-      const text = heading.innerText;
-      const url = `#${text.replaceAll(" ", "-").toLowerCase()}`;
-
-      switch (tag) {
-        case "h1": {
-          const li = document.createElement("li");
-          const link = document.createElement("a");
-          const hr = document.createElement("hr");
-          link.href = url;
-          link.innerText = text;
-          link.addEventListener("click", (event) =>
-            handleClickFirstLink(event, url),
-          );
-          li.append(link, hr);
-          ulRef.current.append(li);
-          break;
-        }
-        case "h2": {
-          const li = document.createElement("li");
-          const link = document.createElement("a");
-          link.href = url;
-          link.innerText = text;
-          li.append(link);
-          ulRef.current.append(li);
-          break;
-        }
-        case "h3": {
-          const li = document.createElement("li");
-          const link = document.createElement("a");
-          li.classList.add(styles.indent);
-          link.href = url;
-          link.innerText = text;
-          li.append(link);
-          ulRef.current.append(li);
-          break;
-        }
+    for (let i = 0; i < articleHeadings.length; ++i) {
+      if (articleHeadings[i].localName !== headings[i].tag) {
+        throw new Error(
+          `A mismatched tag was found: ${headings[i].tag} -> Change to ${articleHeadings[i].localName}`,
+        );
       }
-    });
 
-    // Intersection Observer API
+      if (articleHeadings[i].innerText !== headings[i].content) {
+        throw new Error(
+          `A mismatched content was found: ${headings[i].content} -> Change to ${articleHeadings[i].innerText}`,
+        );
+      }
+    }
+  }, [articleRef, headings]);
+
+  // Intersection Observer API
+  useLayoutEffect(() => {
+    if (typeof articleRef === "function")
+      throw new Error("Type Error articleRef");
+    if (!articleRef || !articleRef.current) throw new Error("No articleRef");
+
     if (!ulRef.current) throw new Error("No ulRef");
     const sections = Array.from(articleRef.current.querySelectorAll("section"));
     const links = Array.from(ulRef.current.querySelectorAll("a"));
@@ -103,7 +88,38 @@ export default function PageNav({ articleRef }: SideNavProps) {
     <nav>
       <header>On this page</header>
       <main>
-        <ul ref={ulRef}></ul>
+        <ul ref={ulRef}>
+          {headings.map((heading, index) => {
+            const url = `#${heading.content.replaceAll(" ", "-").toLowerCase()}`;
+
+            switch (heading.tag) {
+              case "h1":
+                return (
+                  <li key={index}>
+                    <Link
+                      href={url}
+                      onClick={(event) => handleClickFirstLink(event, url)}
+                    >
+                      {heading.content}
+                    </Link>
+                    <hr />
+                  </li>
+                );
+              case "h2":
+                return (
+                  <li key={index}>
+                    <Link href={url}>{heading.content}</Link>
+                  </li>
+                );
+              case "h3":
+                return (
+                  <li key={index} className={styles.indent}>
+                    <Link href={url}>{heading.content}</Link>
+                  </li>
+                );
+            }
+          })}
+        </ul>
       </main>
     </nav>
   );

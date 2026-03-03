@@ -3,7 +3,7 @@
 import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
-import { reference } from "@/app/web/html/elements/data";
+import { reference, headings } from "@/app/web/html/elements/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
@@ -419,7 +419,7 @@ export default function ClientMain() {
       </article>
 
       <aside>
-        <PageNav articleRef={articleRef} />
+        <PageNav articleRef={articleRef} headings={headings} />
       </aside>
     </main>
   );
