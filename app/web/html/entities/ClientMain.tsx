@@ -1,7 +1,3 @@
-"use client";
-
-import { useRef } from "react";
-
 import styles from "@/styles/detail-page/page.module.css";
 import { reference } from "@/app/web/html/entities/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
@@ -9,16 +5,14 @@ import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 
 export default function ClientMain() {
-  const asideRef = useRef<HTMLElement>(null);
-
   return (
     <main className={styles.main}>
-      <aside ref={asideRef}>
+      <aside>
         <ReferenceNav reference={reference} />
       </aside>
 
       <article>
-        <ReferenceButton asideRef={asideRef}>
+        <ReferenceButton>
           <HeadingLinkId headingNumber={1}>Entities</HeadingLinkId>
         </ReferenceButton>
         <ul>
@@ -38,7 +32,7 @@ export default function ClientMain() {
             <code className="emphasis">Trade Mark &trade;</code>{" "}
             <code className="example">&amp;trade;</code>
           </li>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <li>
               <code className="emphasis">Non-Breaking Space &nbsp;</code>{" "}
               <code className="example">&amp;nbsp;</code>

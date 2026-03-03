@@ -1,7 +1,3 @@
-"use client";
-
-import { useRef } from "react";
-
 import styles from "@/styles/detail-page/page.module.css";
 import {
   reference,
@@ -17,17 +13,15 @@ import PreCode from "@/components/detail-page/PreCode";
 import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
-  const asideRef = useRef<HTMLElement>(null);
-
   return (
     <main className={styles.main}>
-      <aside ref={asideRef}>
+      <aside>
         <ReferenceNav reference={reference}></ReferenceNav>
       </aside>
 
       <article>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={1}>Attributes</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -46,7 +40,7 @@ export default function ClientMain() {
           </p>
         </section>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={2}>
               Enumerated Attributes
             </HeadingLinkId>
@@ -55,7 +49,7 @@ export default function ClientMain() {
           <PreCode code={codeEnumeratedAttributes} />
         </section>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={2}>Boolean Attributes</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -98,7 +92,7 @@ export default function ClientMain() {
             <li>
               <code className="example">rel</code>
               <ul>
-                <ReferenceButton asideRef={asideRef}>
+                <ReferenceButton>
                   <li id="rel">
                     <code className="example">rel=&quot;noopener&quot;</code>
                   </li>
@@ -111,7 +105,7 @@ export default function ClientMain() {
                 </ReferenceButton>
               </ul>
             </li>
-            <ReferenceButton asideRef={asideRef}>
+            <ReferenceButton>
               <li>
                 <code className="example">aria-*</code>
                 <ul>
@@ -127,7 +121,7 @@ export default function ClientMain() {
                 </ul>
               </li>
             </ReferenceButton>
-            <ReferenceButton asideRef={asideRef}>
+            <ReferenceButton>
               <li>
                 <code className="example">role</code>
               </li>

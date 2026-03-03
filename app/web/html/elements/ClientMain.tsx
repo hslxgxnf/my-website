@@ -1,7 +1,3 @@
-"use client";
-
-import { useRef } from "react";
-
 import styles from "@/styles/detail-page/page.module.css";
 import { reference, headings } from "@/app/web/html/elements/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
@@ -10,17 +6,15 @@ import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
-  const asideRef = useRef<HTMLElement>(null);
-
   return (
     <main className={styles.main}>
-      <aside ref={asideRef}>
+      <aside>
         <ReferenceNav reference={reference} />
       </aside>
 
       <article>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={1}>Elements</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -45,7 +39,7 @@ export default function ClientMain() {
           </p>
         </section>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={2}>Void Elements</HeadingLinkId>
           </ReferenceButton>
 
@@ -87,7 +81,7 @@ export default function ClientMain() {
           </ul>
         </section>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={2}>Content Categories</HeadingLinkId>
           </ReferenceButton>
           <ul>
@@ -166,7 +160,7 @@ export default function ClientMain() {
                 Non-Semantic Inline Grouping
               </li>
               <hr />
-              <ReferenceButton asideRef={asideRef}>
+              <ReferenceButton>
                 <li>
                   <code className="example">&lt;dialog&gt;</code>
                   <br />
@@ -210,7 +204,7 @@ export default function ClientMain() {
                   better control.
                 </li>
               </ReferenceButton>
-              <ReferenceButton asideRef={asideRef}>
+              <ReferenceButton>
                 <li>
                   <code className="example">&lt;form&gt;</code>
                   <br />
@@ -251,7 +245,7 @@ export default function ClientMain() {
               <li>
                 <code className="example">&lt;output&gt;</code>
               </li>
-              <ReferenceButton asideRef={asideRef}>
+              <ReferenceButton>
                 <li>
                   <code className="example">&lt;table&gt;</code>{" "}
                   <ul>
@@ -385,7 +379,7 @@ export default function ClientMain() {
                 <code className="example">&lt;details&gt;</code>{" "}
                 <code className="example">&lt;summary&gt;</code>
               </li>
-              <ReferenceButton asideRef={asideRef}>
+              <ReferenceButton>
                 <li id="<a>">
                   <code className="example">&lt;a&gt;</code>
                 </li>

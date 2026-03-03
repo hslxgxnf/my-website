@@ -1,7 +1,3 @@
-"use client";
-
-import { useRef } from "react";
-
 import styles from "@/styles/detail-page/page.module.css";
 import { reference, code, headings } from "@/app/clean-code/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
@@ -11,17 +7,15 @@ import PreCode from "@/components/detail-page/PreCode";
 import PageNav from "@/components/detail-page/PageNav";
 
 export default function ClientMain() {
-  const asideRef = useRef<HTMLElement>(null);
-
   return (
     <main className={styles.main}>
-      <aside ref={asideRef}>
+      <aside>
         <ReferenceNav reference={reference} />
       </aside>
 
       <article>
         <section>
-          <ReferenceButton asideRef={asideRef}>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={1}>Clean Code</HeadingLinkId>
           </ReferenceButton>
           <p>Clean code should be readable.</p>
