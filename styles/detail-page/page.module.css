@@ -123,10 +123,6 @@
     border-radius: var(--border-radius);
     padding: var(--space-40);
 
-    * {
-      scroll-margin-top: calc(var(--height-header) + var(--space-20));
-    }
-
     h1,
     h2,
     h3,

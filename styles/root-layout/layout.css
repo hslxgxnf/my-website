@@ -26,13 +26,16 @@
   --color-2: #24801c; /*code.example*/
   --color-3: #a58e42; /*code.emphasis*/
 
-  scroll-behavior: smooth;
-
   --font-size-xsmall: 20px; /*<ReferenceButton> li*/
   --font-size-small: 25px; /*p, ul, li, <ReferenceButton> header*/
   --font-size-medium: 35px; /*h3, header a*/
   --font-size-large: 45px; /*h2*/
   --font-size-xlarge: 55px; /*h1*/
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--height-header) + var(--space-20));
 }
 
 body {
