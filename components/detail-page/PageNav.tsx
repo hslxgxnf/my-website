@@ -17,26 +17,30 @@ export default function PageNav({ headings }: SideNavProps) {
 
   // headings Guard
   useLayoutEffect(() => {
-    const articleHeadings: HTMLHeadingElement[] = Array.from(
+    const pivotHeadings: HTMLHeadingElement[] = Array.from(
       document.querySelectorAll("body > main > article :is(h1, h2, h3)"),
     );
+    const comparisonHeadings = headings;
 
-    if (articleHeadings.length !== headings.length) {
+    if (pivotHeadings.length !== comparisonHeadings.length) {
       throw new Error(
-        `A mismatched length was found: ${headings.length} -> Change to ${articleHeadings.length}`,
+        `A mismatched length was found: ${comparisonHeadings.length} -> Change to ${pivotHeadings.length}`,
       );
     }
 
-    for (let i = 0; i < articleHeadings.length; ++i) {
-      if (articleHeadings[i].localName !== headings[i].tag) {
+    for (let i = 0; i < pivotHeadings.length; ++i) {
+      if (pivotHeadings[i].localName !== comparisonHeadings[i].tag) {
         throw new Error(
-          `A mismatched tag was found: ${headings[i].tag} -> Change to ${articleHeadings[i].localName}`,
+          `A mismatched tag was found: ${comparisonHeadings[i].tag} -> Change to ${pivotHeadings[i].localName}`,
         );
       }
 
-      if (articleHeadings[i].innerText !== headings[i].content) {
+      if (
+        pivotHeadings[i].firstElementChild!.textContent !==
+        comparisonHeadings[i].content
+      ) {
         throw new Error(
-          `A mismatched content was found: ${headings[i].content} -> Change to ${articleHeadings[i].innerText}`,
+          `A mismatched content was found: ${comparisonHeadings[i].content} -> Change to ${pivotHeadings[i].firstElementChild!.textContent}`,
         );
       }
     }
