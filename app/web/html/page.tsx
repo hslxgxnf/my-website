@@ -11,6 +11,7 @@ export default function HTMLPage() {
   return (
     <main className={styles.main}>
       <aside></aside>
+
       <article>
         <h1>HTML</h1>
         <hr />
@@ -21,6 +22,7 @@ export default function HTMLPage() {
         <HeadingLinkPage>Entities</HeadingLinkPage>
         <HeadingLinkPage>Emmet</HeadingLinkPage>
       </article>
+
       <aside></aside>
     </main>
   );

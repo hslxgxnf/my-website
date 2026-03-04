@@ -15,41 +15,31 @@ export default function WebPage() {
       <article>
         <h1>Web</h1>
         <hr />
-        <section>
-          <h2>Overall</h2>
-          <HeadingLinkPage>Line Separators</HeadingLinkPage>
-          <HeadingLinkPage>Security</HeadingLinkPage>
-          <HeadingLinkPage>Deployment</HeadingLinkPage>
-          <HeadingLinkPage>SEO</HeadingLinkPage>
-          <HeadingLinkPage>CSR vs. SSR</HeadingLinkPage>
-        </section>
+        <h2>Overall</h2>
+        <HeadingLinkPage>Line Separators</HeadingLinkPage>
+        <HeadingLinkPage>Security</HeadingLinkPage>
+        <HeadingLinkPage>Deployment</HeadingLinkPage>
+        <HeadingLinkPage>SEO</HeadingLinkPage>
+        <HeadingLinkPage>CSR vs. SSR</HeadingLinkPage>
         <hr />
-        <section>
-          <h2>Initialization</h2>
-          <HeadingLinkPage>npm</HeadingLinkPage>
-          <HeadingLinkPage>pnpm</HeadingLinkPage>
-          <HeadingLinkPage>concurrently</HeadingLinkPage>
-          <HeadingLinkPage>Prettier</HeadingLinkPage>
-          <HeadingLinkPage>ESLint</HeadingLinkPage>
-        </section>
+        <h2>Initialization</h2>
+        <HeadingLinkPage>npm</HeadingLinkPage>
+        <HeadingLinkPage>pnpm</HeadingLinkPage>
+        <HeadingLinkPage>concurrently</HeadingLinkPage>
+        <HeadingLinkPage>Prettier</HeadingLinkPage>
+        <HeadingLinkPage>ESLint</HeadingLinkPage>
         <hr />
-        <section>
-          <h2>HTML</h2>
-          <HeadingLinkPage>HTML</HeadingLinkPage>
-        </section>
+        <h2>HTML</h2>
+        <HeadingLinkPage>HTML</HeadingLinkPage>
         <hr />
-        <section>
-          <h2>CSS</h2>
-          <HeadingLinkPage>CSS</HeadingLinkPage>
-          <HeadingLinkPage>Tailwind CSS</HeadingLinkPage>
-        </section>
+        <h2>CSS</h2>
+        <HeadingLinkPage>CSS</HeadingLinkPage>
+        <HeadingLinkPage>Tailwind CSS</HeadingLinkPage>
         <hr />
-        <section>
-          <h2>JavaScript</h2>
-          <HeadingLinkPage>Vanilla</HeadingLinkPage>
-          <HeadingLinkPage>React</HeadingLinkPage>
-          <HeadingLinkPage>Next.js</HeadingLinkPage>
-        </section>
+        <h2>JavaScript</h2>
+        <HeadingLinkPage>Vanilla</HeadingLinkPage>
+        <HeadingLinkPage>React</HeadingLinkPage>
+        <HeadingLinkPage>Next.js</HeadingLinkPage>
       </article>
 
       <aside></aside>
