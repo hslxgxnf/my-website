@@ -20,9 +20,17 @@ export default function NamingRulesPage() {
       <article>
         <HeadingLinkId headingNumber={1}>Naming Rules</HeadingLinkId>
         <p>
-          CSS variable names <code className="example">--*</code> should be{" "}
+          CSS variable names should be{" "}
           <code className="emphasis">kebab-case</code>.
         </p>
+        <ul>
+          <li>
+            <code className="example">--space-10</code>
+          </li>
+          <li>
+            <code className="example">--color-base</code>
+          </li>
+        </ul>
       </article>
 
       <aside></aside>
