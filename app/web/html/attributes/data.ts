@@ -126,14 +126,14 @@ export const reference: Reference = [
 ];
 
 export const codeEnumeratedAttributes: Code = {
-  language: "haml",
+  language: "handlebars",
   content: `<input type="text" />
 <input type="password" />
 <input type="email" />`,
 };
 
 export const codeBooleanAttributes: Code = {
-  language: "haml",
+  language: "handlebars",
   content: `<!--All checkboxes will be checked-->
 <input type="checkbox" checked />
 <input type="checkbox" checked="" />
@@ -142,7 +142,7 @@ export const codeBooleanAttributes: Code = {
 };
 
 export const codeClass: Code = {
-  language: "haml",
+  language: "handlebars",
   content: `<div class="common"></div>
 <div class="common another"></div>`,
 };

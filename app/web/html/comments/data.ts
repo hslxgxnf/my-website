@@ -19,6 +19,6 @@ export const reference: Reference = [
 ];
 
 export const code: Code = {
-  language: "haml",
+  language: "handlebars",
   content: `<!-- This is a comment in HTML. -->`,
 };

@@ -37,7 +37,7 @@ export default function PreCode({ code }: PreCodeProps) {
   return (
     <div className={styles["pre-code-container"]}>
       <header>
-        <span>{code.language === "haml" ? "html" : code.language}</span>
+        <span>{code.language === "handlebars" ? "html" : code.language}</span>
         <button type="button" onClick={handleClick}>
           {buttonText === "Copy" ? <FaRegCopy /> : <FaCheck />}
           {buttonText}
