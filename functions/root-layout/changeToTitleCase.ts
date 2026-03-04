@@ -43,6 +43,14 @@ const hyphenCaseWords: SpecialCaseWord[] = [
     target: "At Rules",
     result: "At-Rules",
   },
+  {
+    target: "@font Face",
+    result: "@font-face",
+  },
+  {
+    target: "@starting Style",
+    result: "@starting-style",
+  },
 ];
 
 function checkProperCase(word: string): boolean {
