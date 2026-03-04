@@ -17,7 +17,7 @@ export default function CSSPage() {
         <HeadingLinkPage>Connecting CSS to HTML</HeadingLinkPage>
         <HeadingLinkPage>Naming Rules</HeadingLinkPage>
         <HeadingLinkPage>Comments</HeadingLinkPage>
-        <HeadingLinkPage>At-Rules @</HeadingLinkPage>
+        <HeadingLinkPage>At-Rules</HeadingLinkPage>
         <HeadingLinkPage>Rulesets</HeadingLinkPage>
         <HeadingLinkPage>Selectors and Combinators</HeadingLinkPage>
         <HeadingLinkPage>Declarations</HeadingLinkPage>

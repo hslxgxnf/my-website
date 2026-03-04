@@ -27,7 +27,7 @@ interface SpecialCaseWord {
   result: string;
 }
 
-const specialCaseWords: SpecialCaseWord[] = [
+const properCaseWords: SpecialCaseWord[] = [
   {
     target: "javascript",
     result: "JavaScript",
@@ -38,9 +38,16 @@ const specialCaseWords: SpecialCaseWord[] = [
   },
 ];
 
-function checkSpecialCase(word: string): boolean {
-  for (const specialCaseWord of specialCaseWords) {
-    if (specialCaseWord.target === word) {
+const hyphenCaseWords: SpecialCaseWord[] = [
+  {
+    target: "At Rules",
+    result: "At-Rules",
+  },
+];
+
+function checkProperCase(word: string): boolean {
+  for (const properCaseWord of properCaseWords) {
+    if (properCaseWord.target === word) {
       return true;
     }
   }
@@ -48,12 +55,35 @@ function checkSpecialCase(word: string): boolean {
   return false;
 }
 
-function changeToSpecialCase(word: string): string {
+function changeToProperCase(word: string): string {
   let result = "";
 
-  for (const specialCaseWord of specialCaseWords) {
-    if (specialCaseWord.target === word) {
-      result = specialCaseWord.result;
+  for (const properCaseWord of properCaseWords) {
+    if (properCaseWord.target === word) {
+      result = properCaseWord.result;
+      break;
+    }
+  }
+
+  return result;
+}
+
+function checkHyphenCase(word: string): boolean {
+  for (const hyphenCaseWord of hyphenCaseWords) {
+    if (hyphenCaseWord.target === word) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function changeToHyphenCase(word: string): string {
+  let result = "";
+
+  for (const hyphenCaseWord of hyphenCaseWords) {
+    if (hyphenCaseWord.target === word) {
+      result = hyphenCaseWord.result;
       break;
     }
   }
@@ -66,18 +96,25 @@ function changeToCapitalizedCase(word: string): string {
 }
 
 export default function changeToTitleCase(wordChunk: string): string {
-  return wordChunk
+  const interimResult = wordChunk
     .split("-")
     .map((word) => {
       if (upperCaseWords.includes(word)) {
         return word.toUpperCase();
       } else if (lowerCaseWords.includes(word)) {
         return word.toLowerCase();
-      } else if (checkSpecialCase(word)) {
-        return changeToSpecialCase(word);
+      } else if (checkProperCase(word)) {
+        return changeToProperCase(word);
       } else {
         return changeToCapitalizedCase(word);
       }
     })
     .join(" ");
+
+  let finalResult = interimResult;
+  if (checkHyphenCase(interimResult)) {
+    finalResult = changeToHyphenCase(interimResult);
+  }
+
+  return finalResult;
 }
