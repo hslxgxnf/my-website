@@ -145,7 +145,7 @@ export const reference: Reference = [
       url: '/web/html/attributes#rel="noopener"',
       image: favicons.Article_Shortcut.image,
       name: favicons.Article_Shortcut.name,
-      title: "Attributes | rel",
+      title: 'Attributes | rel="noopener"',
     },
   ],
 ];
