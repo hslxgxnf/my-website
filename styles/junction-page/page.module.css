@@ -21,15 +21,15 @@
     }
 
     h1 {
-      font-size: var(--font-size-xlarge);
+      font-size: var(--font-size-55);
     }
 
     h2 {
-      font-size: var(--font-size-large);
+      font-size: var(--font-size-45);
     }
 
     h3 {
-      font-size: var(--font-size-medium);
+      font-size: var(--font-size-35);
     }
   }
 }

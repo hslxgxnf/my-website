@@ -10,27 +10,29 @@
   --space-10: 10px;
   --space-20: 20px;
   --space-40: 40px;
+  --space-50: 50px;
+  --space-60: 60px;
 
   --border-radius: 10px;
 
-  --height-header: 160px; /*.header, .main h1, .main h2, .main h3*/
+  --height-header: 160px;
 
-  --background-color-base: #191a1c; /*body, .header*/
-  --background-color-1: #212426; /*.header nav:last-child*/
-  --background-color-2: #323030; /*.code.example, code.emphasis, pre-code-container button:hover*/
-  --background-color-3: #8a3323; /*.reference-button-container button:hover svg, .reference-button-container nav*/
-  --background-color-4: #273e8a; /*.main aside:nth-of-type(2) nav*/
+  --background-color-base: #191a1c;
+  --background-color-1: #212426;
+  --background-color-2: #323030;
+  --background-color-3: #8a3323;
+  --background-color-4: #273e8a;
 
-  --color-base: #9b9b9b; /**, .header nav:last-child*/
-  --color-1: #e4e4e4; /*highlight*/
-  --color-2: #24801c; /*code.example*/
-  --color-3: #a58e42; /*code.emphasis*/
+  --font-size-20: 20px;
+  --font-size-25: 25px;
+  --font-size-35: 35px;
+  --font-size-45: 45px;
+  --font-size-55: 55px;
 
-  --font-size-xsmall: 20px; /*<ReferenceButton> li*/
-  --font-size-small: 25px; /*p, ul, li, <ReferenceButton> header*/
-  --font-size-medium: 35px; /*h3, header a*/
-  --font-size-large: 45px; /*h2*/
-  --font-size-xlarge: 55px; /*h1*/
+  --color-base: #9b9b9b;
+  --color-1: #e4e4e4;
+  --color-2: #24801c;
+  --color-3: #a58e42;
 }
 
 html {
@@ -76,7 +78,7 @@ body {
           list-style-type: none;
 
           > a {
-            font-size: var(--font-size-medium);
+            font-size: var(--font-size-35);
             transition: 0.2s;
 
             &.active {
@@ -108,7 +110,7 @@ body {
           display: flex;
           align-items: center;
           list-style-type: none;
-          font-size: var(--font-size-small);
+          font-size: var(--font-size-25);
 
           &:last-child {
             color: var(--color-1);
@@ -129,7 +131,7 @@ body {
     text-align: center;
 
     > p {
-      font-size: var(--font-size-small);
+      font-size: var(--font-size-25);
     }
   }
 }
