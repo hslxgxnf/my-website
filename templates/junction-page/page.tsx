@@ -4,10 +4,10 @@ import styles from "@/styles/junction-page/page.module.css";
 // import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {
-  title: "Something",
+  title: "Set this!!!",
 };
 
-export default function SomethingPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside></aside>

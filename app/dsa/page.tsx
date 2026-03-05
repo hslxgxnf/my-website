@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "DSA",
 };
 
-export default function DSAPage() {
+export default function Page() {
   return (
     <main>
       <h1>Data Structures and Algorithms</h1>

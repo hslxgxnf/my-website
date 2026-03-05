@@ -1,7 +1,6 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
 
@@ -22,11 +21,11 @@ export const metadata: Metadata = {
   publisher: "Vercel",
 };
 
-interface RootLayoutProps {
+interface LayoutProps {
   children: ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>

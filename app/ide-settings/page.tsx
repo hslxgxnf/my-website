@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "IDE Settings",
 };
 
-export default function IDESettingsPage() {
+export default function Page() {
   return (
     <main>
       <aside>Aside1</aside>

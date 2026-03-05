@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Naming Rules",
 };
 
-export default function NamingRulesPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside></aside>

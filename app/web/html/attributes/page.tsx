@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Attributes",
 };
 
-export default function AttributesPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside>

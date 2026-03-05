@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "AI",
 };
 
-export default function AIPage() {
+export default function Page() {
   return (
     <main>
       <h1>AI</h1>

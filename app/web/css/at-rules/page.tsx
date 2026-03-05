@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "At-Rules",
 };
 
-export default function AtRulesPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside></aside>

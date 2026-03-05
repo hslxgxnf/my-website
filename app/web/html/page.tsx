@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "HTML",
 };
 
-export default function HTMLPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside></aside>

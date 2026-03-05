@@ -9,10 +9,10 @@ import styles from "@/styles/detail-page/page.module.css";
 // import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
-  title: "Something",
+  title: "Set this!!!",
 };
 
-export default function SomethingPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside></aside>

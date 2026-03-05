@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Connecting CSS to HTML",
 };
 
-export default function ConnectingCSStoHTMLPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside>

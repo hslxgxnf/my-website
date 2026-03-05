@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Emmet",
 };
 
-export default function EmmetPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside>

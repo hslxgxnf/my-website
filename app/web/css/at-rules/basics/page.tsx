@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Basics",
 };
 
-export default function BasicsPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside>

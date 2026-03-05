@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Clean Code",
 };
 
-export default function CleanCodePage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside>

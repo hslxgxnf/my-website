@@ -1,6 +1,6 @@
 import styles from "@/styles/root-page/page.module.css";
 
-export default function RootPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <section>

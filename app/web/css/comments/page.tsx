@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Comments",
 };
 
-export default function CommentsPage() {
+export default function Page() {
   return (
     <main className={styles.main}>
       <aside>
