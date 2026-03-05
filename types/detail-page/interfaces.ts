@@ -16,6 +16,7 @@ export interface Code {
     | "typescript"
     | "git"
     | "powershell";
+  fileName?: string;
   content: string;
 }
 

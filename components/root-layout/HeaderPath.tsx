@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaCaretRight } from "react-icons/fa";
 
-import changeToTitleCase from "@/functions/root-layout/changeToTitleCase";
+import changeToTitleCase from "@/functions/changeToTitleCase";
 
 interface Path {
   href: string;

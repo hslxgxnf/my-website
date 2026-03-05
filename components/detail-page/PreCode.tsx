@@ -7,6 +7,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import styles from "@/styles/detail-page/page.module.css";
 import type { Code } from "@/types/detail-page/interfaces";
+import changeToTitleCase from "@/functions/changeToTitleCase";
 
 interface PreCodeProps {
   code: Code;
@@ -34,10 +35,17 @@ export default function PreCode({ code }: PreCodeProps) {
     }
   }
 
+  let fileInfo: string = code.language;
+  if (fileInfo === "handlebars") fileInfo = "html";
+  fileInfo = changeToTitleCase(fileInfo);
+
+  if (code.fileName) fileInfo = `${fileInfo} | ${code.fileName}`;
+
   return (
     <div className={styles["pre-code-container"]}>
       <header>
-        <span>{code.language === "handlebars" ? "html" : code.language}</span>
+        <span>{fileInfo}</span>
+
         <button type="button" onClick={handleClick}>
           {buttonText === "Copy" ? <FaRegCopy /> : <FaCheck />}
           {buttonText}

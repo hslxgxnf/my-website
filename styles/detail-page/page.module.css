@@ -245,7 +245,6 @@
 
         > span {
           font-size: var(--font-size-25);
-          text-transform: uppercase;
         }
 
         > button {

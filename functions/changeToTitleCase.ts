@@ -20,6 +20,7 @@ const lowerCaseWords: string[] = [
   "vs.",
   "npm",
   "pnpm",
+  "rewrites",
 ];
 
 interface SpecialCaseWord {
