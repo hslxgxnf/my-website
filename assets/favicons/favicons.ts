@@ -1,9 +1,11 @@
 import Article_Shortcut_Image from "./Article_Shortcut.png"; // Google Fonts
 import DaleSeo_Image from "./DaleSeo.png";
 import Emmet_Image from "./Emmet.svg";
+import GitHub_Image from "./GitHub.svg";
 import HTML_Arrows_Image from "./HTML_Arrows.ico";
 import Inpa_Dev_Image from "./Inpa_Dev.ico";
 import MDN_Image from "./MDN.ico";
+import Next_js_Image from "./Next_js.ico";
 import Stack_Overflow_Image from "./Stack_Overflow.ico";
 import tistory_Image from "./tistory.ico";
 import Udemy_Image from "./Udemy.png";
@@ -24,6 +26,10 @@ export const favicons = {
     image: Emmet_Image,
     name: "Emmet",
   },
+  GitHub: {
+    image: GitHub_Image,
+    name: "GitHub",
+  },
   HTML_Arrows: {
     image: HTML_Arrows_Image,
     name: "HTML Arrows",
@@ -35,6 +41,10 @@ export const favicons = {
   MDN: {
     image: MDN_Image,
     name: "MDN",
+  },
+  Next_js: {
+    image: Next_js_Image,
+    name: "Next.js",
   },
   Stack_Overflow: {
     image: Stack_Overflow_Image,
