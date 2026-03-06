@@ -32,12 +32,12 @@ export default function Page() {
         </p>
         <p>Some at-rules use at-rule functions and at-rule descriptors. </p>
         <p>
-          Some at-rules (<code className="example">@media</code>,{" "}
-          <code className="example">@supports</code>,{" "}
+          Some at-rules (<code className="example">@container</code>,{" "}
           <code className="example">@layer</code>,{" "}
+          <code className="example">@media</code>,{" "}
           <code className="example">@scope</code>,{" "}
-          <code className="example">@container</code>,{" "}
-          <code className="example">@starting-style</code>) can be nested.
+          <code className="example">@starting-style</code>,{" "}
+          <code className="example">@supports</code>) can be nested.
         </p>
       </article>
 

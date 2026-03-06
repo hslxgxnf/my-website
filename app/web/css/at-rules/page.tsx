@@ -17,19 +17,19 @@ export default function Page() {
         <HeadingLinkPage>Basics</HeadingLinkPage>
         <hr />
         <h2>Statement At-Rules</h2>
-        <HeadingLinkPage>@layer</HeadingLinkPage>
         <HeadingLinkPage>@import</HeadingLinkPage>
+        <HeadingLinkPage>@layer</HeadingLinkPage>
         <hr />
         <h2>Block At-Rules</h2>
-        <HeadingLinkPage>@layer</HeadingLinkPage>
-        <HeadingLinkPage>@media</HeadingLinkPage>
         <HeadingLinkPage>@container</HeadingLinkPage>
-        <HeadingLinkPage>@scope</HeadingLinkPage>
-        <HeadingLinkPage>@property</HeadingLinkPage>
         <HeadingLinkPage>@font-face</HeadingLinkPage>
         <HeadingLinkPage>@keyframes</HeadingLinkPage>
-        <HeadingLinkPage>@starting-style</HeadingLinkPage>
+        <HeadingLinkPage>@layer</HeadingLinkPage>
+        <HeadingLinkPage>@media</HeadingLinkPage>
         <HeadingLinkPage>@page</HeadingLinkPage>
+        <HeadingLinkPage>@property</HeadingLinkPage>
+        <HeadingLinkPage>@scope</HeadingLinkPage>
+        <HeadingLinkPage>@starting-style</HeadingLinkPage>
         <HeadingLinkPage>@supports</HeadingLinkPage>
       </article>
 
