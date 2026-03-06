@@ -4,14 +4,14 @@ import Emmet_Image from "./Emmet.svg";
 import GitHub_Image from "./GitHub.svg";
 import HTML_Arrows_Image from "./HTML_Arrows.ico";
 import Inpa_Dev_Image from "./Inpa_Dev.ico";
-import MDN_Image from "./MDN.ico";
-import Next_js_Image from "./Next_js.ico";
-import Stack_Overflow_Image from "./Stack_Overflow.ico";
-import tistory_Image from "./tistory.ico";
+import MDN_Image from "./MDN.png";
+import Next_js_Image from "./Next_js.svg";
+import Stack_Overflow_Image from "./Stack_Overflow.svg";
+import tistory_Image from "./tistory.png";
 import Udemy_Image from "./Udemy.png";
-import W3Schools_Image from "./W3Schools.ico";
+import W3Schools_Image from "./W3Schools.svg";
 import WHATWG_Image from "./WHATWG.svg";
-import YouTube_Image from "./YouTube.png";
+import YouTube_Image from "./YouTube.svg";
 
 export const favicons = {
   Article_Shortcut: {
