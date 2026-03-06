@@ -16,7 +16,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
           <ul>
             {referenceItem.sites.map((site, index) => {
               if (site.name === "Dummy") {
-                throw new Error("Dummy Image");
+                throw new Error("Change this dummy image.");
               } else if (site.name === "Article Shortcut") {
                 return (
                   <li key={index}>

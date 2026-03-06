@@ -30,8 +30,8 @@ export default function PreCode({ code }: PreCodeProps) {
         isProcessing = false;
         setButtonText("Copy");
       }, 1000);
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      throw new Error(`Could not copy to clipboard due to ${error}.`);
     }
   }
 

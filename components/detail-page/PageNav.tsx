@@ -24,14 +24,14 @@ export default function PageNav({ headings }: SideNavProps) {
 
     if (pivotHeadings.length !== comparisonHeadings.length) {
       throw new Error(
-        `A mismatched length was found: ${comparisonHeadings.length} -> Change to ${pivotHeadings.length}`,
+        `A mismatched length was found: ${comparisonHeadings.length}. Change to ${pivotHeadings.length}.`,
       );
     }
 
     for (let i = 0; i < pivotHeadings.length; ++i) {
       if (pivotHeadings[i].localName !== comparisonHeadings[i].tag) {
         throw new Error(
-          `A mismatched tag was found: ${comparisonHeadings[i].tag} -> Change to ${pivotHeadings[i].localName}`,
+          `A mismatched tag was found: ${comparisonHeadings[i].tag}. Change to ${pivotHeadings[i].localName}.`,
         );
       }
 
@@ -40,7 +40,7 @@ export default function PageNav({ headings }: SideNavProps) {
         comparisonHeadings[i].content
       ) {
         throw new Error(
-          `A mismatched content was found: ${comparisonHeadings[i].content} -> Change to ${pivotHeadings[i].firstElementChild!.textContent}`,
+          `A mismatched content was found: ${comparisonHeadings[i].content}. Change to ${pivotHeadings[i].firstElementChild!.textContent}.`,
         );
       }
     }
