@@ -8,21 +8,21 @@ interface ReferenceNavProps {
 }
 
 export default function ReferenceNav({ reference }: ReferenceNavProps) {
-  return reference.map((refArray, index) => {
+  return reference.map((referenceItem, index) => {
     return (
-      <nav key={index}>
+      <nav key={index} data-target={referenceItem.target}>
         <header>Reference</header>
         <main>
           <ul>
-            {refArray.map((ref, index) => {
-              if (index === 0) {
-                return <li key={index}>{ref.title}</li>;
-              } else if (ref.name === "Article Shortcut") {
+            {referenceItem.sites.map((site, index) => {
+              if (site.name === "Dummy") {
+                throw new Error("Dummy Image");
+              } else if (site.name === "Article Shortcut") {
                 return (
                   <li key={index}>
-                    <Link href={ref.url}>
-                      <Image src={ref.image} alt={ref.name} />
-                      <span>{ref.title}</span>
+                    <Link href={site.url}>
+                      <Image src={site.favicon} alt={site.name} />
+                      <span>{site.title}</span>
                     </Link>
                   </li>
                 );
@@ -30,13 +30,13 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                 return (
                   <li key={index}>
                     <Link
-                      href={ref.url}
+                      href={site.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Image src={ref.image} alt={ref.name} />
+                      <Image src={site.favicon} alt={site.name} />
                       <span>
-                        {ref.name} | {ref.title}
+                        {site.name} | {site.title}
                       </span>
                     </Link>
                   </li>

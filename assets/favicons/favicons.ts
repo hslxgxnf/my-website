@@ -1,5 +1,6 @@
 import Article_Shortcut_Image from "./Article_Shortcut.png"; // Google Fonts
 import DaleSeo_Image from "./DaleSeo.png";
+import Dummy_Image from "./Dummy.png";
 import Emmet_Image from "./Emmet.svg";
 import GitHub_Image from "./GitHub.svg";
 import HTML_Arrows_Image from "./HTML_Arrows.ico";
@@ -21,6 +22,10 @@ export const favicons = {
   DaleSeo: {
     image: DaleSeo_Image,
     name: "DaleSeo",
+  },
+  Dummy: {
+    image: Dummy_Image,
+    name: "Dummy",
   },
   Emmet: {
     image: Emmet_Image,

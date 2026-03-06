@@ -1,11 +1,18 @@
 import type { StaticImageData } from "next/image";
 
-export type Reference = {
+interface Site {
   url: string;
-  image: StaticImageData | string;
+  favicon: StaticImageData;
   name: string;
   title: string;
-}[][];
+}
+
+interface ReferenceItem {
+  target: string;
+  sites: Site[];
+}
+
+export type Reference = ReferenceItem[];
 
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_LANGUAGES_PRISM.MD
 export interface Code {

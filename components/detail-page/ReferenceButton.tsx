@@ -26,13 +26,12 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     );
 
     // reference Guard
-    const pivot =
+    const realTarget =
       buttons[targetIndex].nextElementSibling!.firstElementChild!.textContent;
-    const comparison =
-      navs[targetIndex].querySelector("main > ul > li")!.textContent;
-    if (pivot !== comparison)
+    const navTarget = navs[targetIndex].dataset.target;
+    if (realTarget !== navTarget)
       throw new Error(
-        `A mismatched reference button was found: ${comparison} -> Change to ${pivot}`,
+        `A mismatched target was found: ${navTarget}. Change to ${realTarget}.`,
       );
 
     buttonRef.current.addEventListener("click", () => {
