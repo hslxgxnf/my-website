@@ -1,59 +1,63 @@
 import type { Metadata } from "next";
 import { JSX } from "react";
 
+import styles from "@/styles/detail-page/page.module.css";
 import LayerPage from "@/app/web/css/at-rules/_@layer/page";
 
-const pages: Record<string, () => JSX.Element> = {
-  "@layer": LayerPage,
-};
-
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ "at-rule": string }>;
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const decodedSlug = decodeURIComponent(slug);
+  const result = await params;
+  const decodedResult = decodeURIComponent(result["at-rule"]);
 
   return {
-    title: decodedSlug,
+    title: decodedResult,
   };
 }
 
+export const dynamicParams = false;
 export async function generateStaticParams() {
   const staticParams = [
-    "@layer",
     "@import",
-    "@media",
+    "@layer",
     "@container",
-    "@scope",
-    "@property",
     "@font-face",
     "@keyframes",
-    "@starting-style",
+    "@media",
     "@page",
+    "@property",
+    "@scope",
+    "@starting-style",
     "@supports",
   ];
 
   return staticParams.map((staticParam) => ({
-    slug: staticParam,
+    "at-rule": staticParam,
   }));
 }
 
-export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
-  const decodedSlug = decodeURIComponent(slug);
+const pages: Record<string, () => JSX.Element> = {
+  "@layer": LayerPage,
+};
 
-  const TargetPage = pages[decodedSlug];
+export default async function Page({ params }: PageProps) {
+  const result = await params;
+  const decodedResult = decodeURIComponent(result["at-rule"]);
+
+  const TargetPage = pages[decodedResult];
 
   if (!TargetPage) {
     // throw new Error("No TargetPage");
     return (
-      <main>
+      <main className={styles.main}>
         <aside></aside>
-        <article>{decodedSlug}</article>
+        <article>
+          <h1>{decodedResult}</h1>
+        </article>
         <aside></aside>
       </main>
     );
