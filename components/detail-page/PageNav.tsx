@@ -11,6 +11,7 @@ interface SideNavProps {
   headings: Headings;
 }
 
+// When an article has two or more headings, use this component.
 // To use this component, the <article> element must be divided into <section> elements.
 export default function PageNav({ headings }: SideNavProps) {
   const ulRef = useRef<HTMLUListElement>(null);
@@ -51,6 +52,8 @@ export default function PageNav({ headings }: SideNavProps) {
     const sections = Array.from(
       document.querySelectorAll("body > main > article section"),
     );
+    if (sections.length === 0) throw new Error("No sections");
+
     if (!ulRef.current) throw new Error("No ulRef");
     const links = Array.from(ulRef.current.querySelectorAll("a"));
 
