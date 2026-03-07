@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JSX } from "react";
 
-import styles from "@/styles/detail-page/page.module.css";
+import ImportPage from "@/app/web/css/at-rules/_@import/page";
 import LayerPage from "@/app/web/css/at-rules/_@layer/page";
 
 interface PageProps {
@@ -41,6 +41,7 @@ export async function generateStaticParams() {
 }
 
 const pages: Record<string, () => JSX.Element> = {
+  "@import": ImportPage,
   "@layer": LayerPage,
 };
 
