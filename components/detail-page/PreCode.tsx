@@ -31,7 +31,7 @@ export default function PreCode({ code }: PreCodeProps) {
         setButtonText("Copy");
       }, 1000);
     } catch (error) {
-      throw new Error(`Could not copy to clipboard due to ${error}.`);
+      console.error(`Could not copy to clipboard due to ${error}.`);
     }
   }
 
