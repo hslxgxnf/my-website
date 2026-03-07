@@ -50,18 +50,5 @@ export default async function Page({ params }: PageProps) {
 
   const TargetPage = pages[decodedResult];
 
-  if (!TargetPage) {
-    // throw new Error("No TargetPage");
-    return (
-      <main className={styles.main}>
-        <aside></aside>
-        <article>
-          <h1>{decodedResult}</h1>
-        </article>
-        <aside></aside>
-      </main>
-    );
-  }
-
   return <TargetPage />;
 }
