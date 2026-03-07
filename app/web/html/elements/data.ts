@@ -97,6 +97,12 @@ export const reference: Reference = [
     target: "<table>",
     sites: [
       {
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table",
+        favicon: favicons.MDN.image,
+        name: favicons.MDN.name,
+        title: "<table>: The Table element",
+      },
+      {
         url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics",
         favicon: favicons.MDN.image,
         name: favicons.MDN.name,
@@ -109,10 +115,10 @@ export const reference: Reference = [
         title: "HTML table accessibility",
       },
       {
-        url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table",
+        url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Tables",
         favicon: favicons.MDN.image,
         name: favicons.MDN.name,
-        title: "<table>: The Table element",
+        title: "Styling tables",
       },
     ],
   },
