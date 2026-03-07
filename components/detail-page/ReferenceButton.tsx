@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef, useLayoutEffect } from "react";
+import { ReactNode, useRef, useEffect } from "react";
 import { IoIosLink } from "react-icons/io";
 
 import styles from "@/styles/detail-page/page.module.css";
@@ -12,7 +12,7 @@ interface ReferenceButtonProps {
 export default function ReferenceButton({ children }: ReferenceButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!buttonRef.current) throw new Error("No buttonRef");
     const buttons = Array.from(
       document.querySelectorAll(
