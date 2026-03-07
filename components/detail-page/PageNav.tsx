@@ -49,10 +49,15 @@ export default function PageNav({ headings }: SideNavProps) {
 
   // Intersection Observer API
   useLayoutEffect(() => {
+    // sections Guard
     const sections = Array.from(
       document.querySelectorAll("body > main > article section"),
     );
     if (sections.length === 0) throw new Error("No sections");
+    if (headings.length !== sections.length)
+      throw new Error(
+        `A mismatched length was found: ${sections.length}. Change to ${headings.length}.`,
+      );
 
     if (!ulRef.current) throw new Error("No ulRef");
     const links = Array.from(ulRef.current.querySelectorAll("a"));
