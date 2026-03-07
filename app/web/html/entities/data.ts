@@ -1,4 +1,4 @@
-import type { Reference } from "@/types/detail-page/interfaces";
+import type { Reference, Headings } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
@@ -42,5 +42,20 @@ export const reference: Reference = [
         title: "HTML에서 &nbsp;를 언제, 왜 써야할까?",
       },
     ],
+  },
+];
+
+export const headings: Headings = [
+  {
+    tag: "h1",
+    content: "Entities",
+  },
+  {
+    tag: "h2",
+    content: "Named Entities",
+  },
+  {
+    tag: "h2",
+    content: "Unnamed Entities",
   },
 ];
