@@ -126,14 +126,14 @@ export default function Page() {
             method uses every property. Minimum cohesion is that methods do not
             use any properties.
           </p>
-          <p>Law of Demeter: Tell! Don&apos;t Ask!</p>
+          <p>Law of Demeter: Tell! Don't Ask!</p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Functions</HeadingLinkId>
-          <p>Don&apos;t Repeat Yourself (DRY)</p>
+          <p>Don't Repeat Yourself (DRY)</p>
           <p>
-            Multiple parameters can be minimized into one. You don&apos;t have
-            to concern the order of parameters.
+            Multiple parameters can be minimized into one. You don't have to
+            concern the order of parameters.
           </p>
           <PreCode code={code} />
           <p>

@@ -32,11 +32,11 @@ export default function Page() {
           </ReferenceButton>
           <p>
             Attributes are written as{" "}
-            <code className="emphasis">name=&quot;value&quot;</code> inside an
-            element&apos;s opening tag.
+            <code className="emphasis">name="value"</code> inside an element's
+            opening tag.
           </p>
           <p>
-            Attributes provide additional information about an element&apos;s
+            Attributes provide additional information about an element's
             behavior, appearance, or metadata.
           </p>
           <p>
@@ -100,13 +100,12 @@ export default function Page() {
               <ul>
                 <ReferenceButton>
                   <li id='rel="noopener"'>
-                    <code className="example">rel=&quot;noopener&quot;</code>
+                    <code className="example">rel="noopener"</code>
                   </li>
                   <li>
-                    <code className="example">rel=&quot;noreferrer&quot;</code>
+                    <code className="example">rel="noreferrer"</code>
                     <br />
-                    Contains{" "}
-                    <code className="example">rel=&quot;noopener&quot;</code>.
+                    Contains <code className="example">rel="noopener"</code>.
                   </li>
                 </ReferenceButton>
               </ul>

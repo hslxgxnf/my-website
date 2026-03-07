@@ -6,6 +6,21 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Override default ignores of eslint-config-next.
+  {
+    files: ["**/*.jsx", "**/*.tsx"], // Only apply to JSX and TSX files.
+    rules: {
+      "react/no-unescaped-entities": [
+        "error",
+        {
+          forbid: [">", "<", "&"], // Only forbid problematic characters.
+          htmlEntities: {
+            "'": false, // Allow apostrophes in text nodes.
+            '"': false, // Allow double quotes in text nodes.
+          },
+        },
+      ],
+    },
+  },
   globalIgnores([
     // Default ignores of eslint-config-next:
     ".next/**",

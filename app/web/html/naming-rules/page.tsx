@@ -20,10 +20,10 @@ export default function Page() {
         </p>
         <ul>
           <li>
-            <code className="example">id=&quot;div-a&quot;</code>
+            <code className="example">id="div-a"</code>
           </li>
           <li>
-            <code className="example">data-is-clicked=&quot;true&quot;</code>
+            <code className="example">data-is-clicked="true"</code>
           </li>
         </ul>
       </article>

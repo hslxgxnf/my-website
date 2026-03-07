@@ -61,9 +61,7 @@ export default function Page() {
             The <code className="example">value</code> attribute sets the
             default value.
             <br />
-            <code className="example">
-              &lt;input value=&quot;Default&quot; /&gt;
-            </code>
+            <code className="example">&lt;input value="Default" /&gt;</code>
           </p>
           <ul>
             <li>
@@ -175,27 +173,22 @@ export default function Page() {
                   The <code className="example">closedby</code> attribute
                   controls how the dialog can be dismissed.
                   <br />
-                  The <code className="example">
-                    closedby=&quot;any&quot;
-                  </code>{" "}
-                  attribute closes the dialog by a light dismiss user action
-                  (e.g., clicking the backdrop), a platform-specific user action
+                  The <code className="example">closedby="any"</code> attribute
+                  closes the dialog by a light dismiss user action (e.g.,
+                  clicking the backdrop), a platform-specific user action
                   (e.g.,, pressing the ESC key) or a developer-specified
                   mechanism.
                   <br />
-                  The{" "}
-                  <code className="example">
-                    closedby=&quot;closerquest&quot;
+                  The <code className="example">
+                    closedby="closerquest"
                   </code>{" "}
                   attribute closes the dialog by a platform-specific user
                   action, or a developer-specified mechanism. This option is the
                   default for modal dialogs.
                   <br />
-                  The <code className="example">
-                    closedby=&quot;none&quot;
-                  </code>{" "}
-                  attribute closes the dialog by a developer-specified
-                  mechanism. This option is the default for non-modal dialogs.
+                  The <code className="example">closedby="none"</code> attribute
+                  closes the dialog by a developer-specified mechanism. This
+                  option is the default for non-modal dialogs.
                   <br />
                   The <code className="example">open</code> attribute is a
                   boolean attribute that determines whether the dialog is
@@ -218,10 +211,8 @@ export default function Page() {
                   a URL to which form data will be submitted. After submission,
                   the current URL will be updated to the defined URL.
                   <br />
-                  The <code className="example">
-                    method=&quot;get&quot;
-                  </code>{" "}
-                  sends the form data as a query string after the existing URL.
+                  The <code className="example">method="get"</code> sends the
+                  form data as a query string after the existing URL.
                 </li>
               </ReferenceButton>
               <li>

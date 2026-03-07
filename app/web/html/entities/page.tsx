@@ -55,11 +55,11 @@ export default function Page() {
             <code className="example">&amp;amp;</code>
           </li>
           <li>
-            <code className="emphasis">Quotation Mark &quot;</code>{" "}
+            <code className="emphasis">Quotation Mark "</code>{" "}
             <code className="example">&amp;quot;</code>
           </li>
           <li>
-            <code className="emphasis">Apostrophe &apos;</code>{" "}
+            <code className="emphasis">Apostrophe '</code>{" "}
             <code className="example">&amp;apos;</code>
           </li>
         </ul>
