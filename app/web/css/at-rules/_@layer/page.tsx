@@ -21,7 +21,7 @@ export default function Page() {
         </p>
         <p>
           The <code className="example">@layer</code> statement at-rule creates
-          more than one named layer.
+          one or more named layers.
         </p>
         <p>
           The <code className="example">@layer</code> block at-rule creates a
