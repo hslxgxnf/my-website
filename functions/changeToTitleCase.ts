@@ -37,6 +37,14 @@ const properCaseWords: SpecialCaseWord[] = [
     target: "typescript",
     result: "TypeScript",
   },
+  {
+    target: "jetbrains",
+    result: "JetBrains",
+  },
+  {
+    target: "webstorm",
+    result: "WebStorm",
+  },
 ];
 
 const hyphenCaseWords: SpecialCaseWord[] = [
