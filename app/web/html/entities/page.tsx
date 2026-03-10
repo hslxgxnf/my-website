@@ -5,7 +5,8 @@ import { reference, headings } from "@/app/web/html/entities/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import CodeExampleCopy from "@/components/detail-page/CodeExampleCopy";
+import HighlightText from "@/components/detail-page/HighlightText";
+import HighlightCode from "@/components/detail-page/HighlightCode";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -30,44 +31,44 @@ export default function Page() {
           <p>Named entities can use both the named and numeric format.</p>
           <ul>
             <li>
-              <code className="emphasis">Less-Than &lt;</code>{" "}
-              <CodeExampleCopy>&amp;lt;</CodeExampleCopy>
+              <HighlightText>Less-Than &lt;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;lt;</HighlightCode>
             </li>
             <li>
-              <code className="emphasis">Greater-Than &gt;</code>{" "}
-              <CodeExampleCopy>&amp;gt;</CodeExampleCopy>
+              <HighlightText>Greater-Than &gt;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;gt;</HighlightCode>
             </li>
             <li>
-              <code className="emphasis">Copyright &copy;</code>{" "}
-              <CodeExampleCopy>&amp;copy;</CodeExampleCopy>
+              <HighlightText>Copyright &copy;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;copy;</HighlightCode>
             </li>
             <li>
-              <code className="emphasis">Trade Mark &trade;</code>{" "}
-              <CodeExampleCopy>&amp;trade;</CodeExampleCopy>
+              <HighlightText>Trade Mark &trade;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;trade;</HighlightCode>
             </li>
             <ReferenceButton>
               <li>
-                <code className="emphasis">Non-Breaking Space &nbsp;</code>{" "}
-                <CodeExampleCopy>&amp;nbsp;</CodeExampleCopy>
+                <HighlightText>Non-Breaking Space &nbsp;</HighlightText>{" "}
+                <HighlightCode copy={true}>&amp;nbsp;</HighlightCode>
                 <br />
-                The <CodeExampleCopy>&amp;nbsp;</CodeExampleCopy> entity is a
-                space without creating a new line.
+                The <HighlightCode copy={true}>&amp;nbsp;</HighlightCode> entity
+                is a space without creating a new line.
                 <br />
-                The <CodeExampleCopy>&amp;nbsp;</CodeExampleCopy> entity can be
-                used to write two or more spaces in a row.
+                The <HighlightCode copy={true}>&amp;nbsp;</HighlightCode> entity
+                can be used to write two or more spaces in a row.
               </li>
             </ReferenceButton>
             <li>
-              <code className="emphasis">Ampersand &amp;</code>{" "}
-              <CodeExampleCopy>&amp;amp;</CodeExampleCopy>
+              <HighlightText>Ampersand &amp;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;amp;</HighlightCode>
             </li>
             <li>
-              <code className="emphasis">Quotation Mark "</code>{" "}
-              <CodeExampleCopy>&amp;quot;</CodeExampleCopy>
+              <HighlightText>Quotation Mark "</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;quot;</HighlightCode>
             </li>
             <li>
-              <code className="emphasis">Apostrophe '</code>{" "}
-              <CodeExampleCopy>&amp;apos;</CodeExampleCopy>
+              <HighlightText>Apostrophe '</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;apos;</HighlightCode>
             </li>
           </ul>
         </section>
@@ -79,12 +80,12 @@ export default function Page() {
           </p>
           <ul>
             <li>
-              <code className="emphasis">Left Brace &#123;</code>{" "}
-              <CodeExampleCopy>&amp;#123;</CodeExampleCopy>
+              <HighlightText>Left Brace &#123;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;#123;</HighlightCode>
             </li>
             <li>
-              <code className="emphasis">Right Brace &#125;</code>{" "}
-              <CodeExampleCopy>&amp;#125;</CodeExampleCopy>
+              <HighlightText>Right Brace &#125;</HighlightText>{" "}
+              <HighlightCode copy={true}>&amp;#125;</HighlightCode>
             </li>
           </ul>
         </section>
