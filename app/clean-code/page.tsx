@@ -6,6 +6,8 @@ import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import PreCode from "@/components/detail-page/PreCode";
+import HighlightCode from "@/components/detail-page/HighlightCode";
+import HighlightText from "@/components/detail-page/HighlightText";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -41,37 +43,37 @@ export default function Page() {
             Use nouns or short phrases with adjectives for variables and
             constants.
             <br />
-            <code className="example">user</code>{" "}
-            <code className="example">isValid</code>
+            <HighlightCode>user</HighlightCode>{" "}
+            <HighlightCode>isValid</HighlightCode>
           </p>
           <p>
             Use verbs or short phrases with adjectives for functions and
             methods.
             <br />
-            <code className="example">saveUser</code>{" "}
-            <code className="example">auth.isValid</code>
+            <HighlightCode>saveUser</HighlightCode>{" "}
+            <HighlightCode>auth.isValid</HighlightCode>
           </p>
           <p>
             Use nouns or short phrases with nouns for classes.
             <br />
-            <code className="example">User</code>
+            <HighlightCode>User</HighlightCode>
           </p>
           <hr />
           <p>
-            <code className="emphasis">snake_case</code>
+            <HighlightText>snake_case</HighlightText>
           </p>
           <ul>
             <li>Python Variables, Functions</li>
           </ul>
           <p>
-            <code className="emphasis">camelCase</code>
+            <HighlightText>camelCase</HighlightText>
           </p>
           <ul>
             <li>JavaScript Variables, Functions</li>
             <li>Java Variables, Functions</li>
           </ul>
           <p>
-            <code className="emphasis">PascalCase</code>
+            <HighlightText>PascalCase</HighlightText>
           </p>
           <ul>
             <li>Python Classes</li>
@@ -79,7 +81,7 @@ export default function Page() {
             <li>Java Classes</li>
           </ul>
           <p>
-            <code className="emphasis">kebab-case</code>
+            <HighlightText>kebab-case</HighlightText>
           </p>
           <ul>
             <li>HTML Element Attributes</li>
@@ -147,16 +149,16 @@ export default function Page() {
             called a side effect. When a function has a side effect, the name of
             the function should imply that the side effect will occur.
             <br />
-            <code className="example">saveUser</code>{" "}
-            <code className="example">showErrorMessage</code>
+            <HighlightCode>saveUser</HighlightCode>{" "}
+            <HighlightCode>showErrorMessage</HighlightCode>
             <br />A pure function always yields the same output with the same
             input and has no side effects.
           </p>
           <p>
             Function names should be positive.
             <br />
-            <code className="example">isEmpty</code>{" "}
-            <code className="example">isValid</code>
+            <HighlightCode>isEmpty</HighlightCode>{" "}
+            <HighlightCode>isValid</HighlightCode>
           </p>
           <p>Unit testing helps functions to be clean.</p>
         </section>
