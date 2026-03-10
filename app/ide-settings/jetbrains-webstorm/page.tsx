@@ -249,6 +249,15 @@ export default function Page() {
             </thead>
             <tbody>
               <tr>
+                <td>General</td>
+                <td>
+                  Soft Wraps
+                  <br />
+                  {entities.rightSubArrow} Soft-wrap these files:
+                </td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
                 <td>
                   General
                   <br />
