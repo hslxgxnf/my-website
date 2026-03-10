@@ -5,7 +5,7 @@ import { reference, code } from "@/app/web/next.js/rewrites/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PreCode from "@/components/detail-page/PreCode";
+import HighlightCode from "@/components/detail-page/HighlightCode";
 
 export const metadata: Metadata = {
   title: "rewrites",
@@ -27,7 +27,7 @@ export default function Page() {
           folder names starting with <code className="emphasis">@</code> as
           regular paths instead of parallel routes.
         </p>
-        <PreCode code={code} />
+        <HighlightCode code={code} />
         <p>
           This provides flexibility in routing, but the trade-off is that the
           page renders twice due to rewriting the path.

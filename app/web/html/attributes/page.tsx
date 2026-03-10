@@ -11,7 +11,7 @@ import {
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PreCode from "@/components/detail-page/PreCode";
+import HighlightCode from "@/components/detail-page/HighlightCode";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -52,7 +52,7 @@ export default function Page() {
             </HeadingLinkId>
           </ReferenceButton>
           <p>An enumerated attribute accepts a predefined set of values.</p>
-          <PreCode code={codeEnumeratedAttributes} />
+          <HighlightCode code={codeEnumeratedAttributes} />
         </section>
         <section>
           <ReferenceButton>
@@ -65,7 +65,7 @@ export default function Page() {
             considered <code className="example">false</code>. The actual value
             assigned does not matter.
           </p>
-          <PreCode code={codeBooleanAttributes} />
+          <HighlightCode code={codeBooleanAttributes} />
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Examples</HeadingLinkId>
@@ -88,7 +88,7 @@ export default function Page() {
               <br />
               An element can have multiple{" "}
               <code className="example">class</code> values.
-              <PreCode code={codeClass} />
+              <HighlightCode code={codeClass} />
             </li>
             <li>
               <code className="example">title</code>

@@ -12,7 +12,7 @@ import {
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PreCode from "@/components/detail-page/PreCode";
+import HighlightCode from "@/components/detail-page/HighlightCode";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -41,8 +41,8 @@ export default function Page() {
             <code className="example">&lt;link&gt;</code> element.
           </p>
           <p>This way is used a lot.</p>
-          <PreCode code={codeExternalCSSHTML} />
-          <PreCode code={codeExternalCSSCSS} />
+          <HighlightCode code={codeExternalCSSHTML} />
+          <HighlightCode code={codeExternalCSSCSS} />
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Internal CSS</HeadingLinkId>
@@ -50,14 +50,14 @@ export default function Page() {
             Use the <code className="example">&lt;style&gt;</code> element in
             the <code className="example">&lt;head&gt;</code> element.
           </p>
-          <PreCode code={codeInternalCSS} />
+          <HighlightCode code={codeInternalCSS} />
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Inline CSS</HeadingLinkId>
           <p>
             Use the <code className="example">&lt;style&gt;</code> attribute.
           </p>
-          <PreCode code={codeInlineCSS} />
+          <HighlightCode code={codeInlineCSS} />
         </section>
       </article>
 

@@ -5,7 +5,7 @@ import { reference, code } from "@/app/web/css/rulesets/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PreCode from "@/components/detail-page/PreCode";
+import HighlightCode from "@/components/detail-page/HighlightCode";
 
 export const metadata: Metadata = {
   title: "Rulesets",
@@ -35,7 +35,7 @@ export default function Page() {
           value for a property.
         </p>
         <p>Selectors, properties, and values are case-insensitive.</p>
-        <PreCode code={code} />
+        <HighlightCode code={code} />
       </article>
 
       <aside></aside>

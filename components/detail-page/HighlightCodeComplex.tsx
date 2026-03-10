@@ -9,13 +9,15 @@ import styles from "@/styles/detail-page/page.module.css";
 import type { Code } from "@/types/detail-page/interfaces";
 import changeToTitleCase from "@/functions/changeToTitleCase";
 
-interface PreCodeProps {
+interface HighlightCodeComplexProps {
   code: Code;
 }
 
 let isProcessing: boolean = false;
 
-export default function PreCode({ code }: PreCodeProps) {
+export default function HighlightCodeComplex({
+  code,
+}: HighlightCodeComplexProps) {
   const [buttonText, setButtonText] = useState("Copy");
 
   async function handleClick() {
@@ -31,7 +33,7 @@ export default function PreCode({ code }: PreCodeProps) {
         setButtonText("Copy");
       }, 1000);
     } catch (error) {
-      console.error(`Could not copy to clipboard due to ${error}.`);
+      console.error(`Could not copy due to ${error}.`);
     }
   }
 

@@ -5,7 +5,7 @@ import { reference, code } from "@/app/web/css/comments/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PreCode from "@/components/detail-page/PreCode";
+import HighlightCode from "@/components/detail-page/HighlightCode";
 
 export const metadata: Metadata = {
   title: "Comments",
@@ -22,7 +22,7 @@ export default function Page() {
         <ReferenceButton>
           <HeadingLinkId headingNumber={1}>Comments</HeadingLinkId>
         </ReferenceButton>
-        <PreCode code={code} />
+        <HighlightCode code={code} />
       </article>
 
       <aside></aside>

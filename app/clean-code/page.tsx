@@ -5,7 +5,6 @@ import { reference, code, headings } from "@/app/clean-code/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PreCode from "@/components/detail-page/PreCode";
 import HighlightCode from "@/components/detail-page/HighlightCode";
 import HighlightText from "@/components/detail-page/HighlightText";
 import PageNav from "@/components/detail-page/PageNav";
@@ -137,7 +136,7 @@ export default function Page() {
             Multiple parameters can be minimized into one. You don't have to
             concern the order of parameters.
           </p>
-          <PreCode code={code} />
+          <HighlightCode code={code} />
           <p>
             A big function should be split into small functions that do one
             thing. The name of a function implies its level of abstraction. In a
