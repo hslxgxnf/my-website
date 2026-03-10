@@ -3,6 +3,8 @@
 import { useRef } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
+import copyText from "@/functions/detail-page/copyText";
+import selectText from "@/functions/detail-page/selectText";
 
 interface HighlightTextProps {
   pre?: boolean;
@@ -12,37 +14,16 @@ interface HighlightTextProps {
 }
 
 export default function HighlightText({
-  pre = false,
-  copy = false,
-  underline = false,
+  pre,
+  copy,
+  underline,
   children,
 }: HighlightTextProps) {
   const emRef = useRef<HTMLElement>(null);
 
-  async function handleClick() {
-    // Copy
-    try {
-      await navigator.clipboard.writeText(children);
-    } catch (error) {
-      console.error(`Could not copy to clipboard due to ${error}.`);
-      return;
-    }
-
-    // Select
-    if (!emRef.current) {
-      console.error("No emRef");
-      return;
-    }
-    const range = document.createRange();
-    range.selectNodeContents(emRef.current);
-
-    const selection = window.getSelection();
-    if (!selection) {
-      console.error("No selection");
-      return;
-    }
-    selection.removeAllRanges();
-    selection.addRange(range);
+  function handleClick() {
+    void copyText(children);
+    selectText(emRef);
   }
 
   if (!pre && !copy && !underline) {
