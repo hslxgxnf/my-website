@@ -9,7 +9,7 @@
 - data.ts
   - reference
 
-## &lt;PreCode&gt;
+## &lt;Highlight type="complex-code"&gt;
 
 - data.ts
   - code
