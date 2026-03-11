@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import styles from "@/styles/detail-page/page.module.css";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export const metadata: Metadata = {
   title: "Naming Rules",
@@ -16,14 +17,14 @@ export default function Page() {
         <HeadingLinkId headingNumber={1}>Naming Rules</HeadingLinkId>
         <p>
           A custom name or a custom value of an attribute should be{" "}
-          <code className="emphasis">kebab-case</code>.
+          <Highlight type="text">kebab-case</Highlight>.
         </p>
         <ul>
           <li>
-            <code className="example">id="div-a"</code>
+            <Highlight type="simple-code">id="div-a"</Highlight>
           </li>
           <li>
-            <code className="example">data-is-clicked="true"</code>
+            <Highlight type="simple-code">data-is-clicked="true"</Highlight>
           </li>
         </ul>
       </article>

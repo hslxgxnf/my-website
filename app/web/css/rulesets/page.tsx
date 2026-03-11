@@ -5,7 +5,7 @@ import { reference, code } from "@/app/web/css/rulesets/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import HighlightCode from "@/components/detail-page/HighlightCode";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export const metadata: Metadata = {
   title: "Rulesets",
@@ -27,15 +27,17 @@ export default function Page() {
           a declaration block.
         </p>
         <p>
-          A declaration block <code className="example">&#123;&#125;</code>{" "}
-          contains one or more declarations.
+          A declaration block{" "}
+          <Highlight type="simple-code">&#123;&#125;</Highlight> contains one or
+          more declarations.
         </p>
         <p>
-          A declaration <code className="example">Property: Value;</code> sets a
+          A declaration{" "}
+          <Highlight type="simple-code">Property: Value;</Highlight> sets a
           value for a property.
         </p>
         <p>Selectors, properties, and values are case-insensitive.</p>
-        <HighlightCode code={code} />
+        <Highlight type="complex-code">{code}</Highlight>
       </article>
 
       <aside></aside>

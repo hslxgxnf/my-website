@@ -4,28 +4,19 @@ import { PiCaretDownBold } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 
 import styles from "@/styles/detail-page/page.module.css";
-import { headings } from "@/app/ide-settings/jetbrains-webstorm/data";
+import {
+  entities,
+  liveTemplateTextEdf,
+  liveTemplateTextUc,
+  headings,
+} from "@/app/ide-settings/jetbrains-webstorm/data";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import HighlightText from "@/components/detail-page/HighlightText";
 import PageNav from "@/components/detail-page/PageNav";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export const metadata: Metadata = {
   title: "JetBrains WebStorm",
 };
-
-const entities = {
-  checkedBox: "☑", // "\u2611"
-  emptyBox: "☐", // "\u2610"
-  rightSubArrow: "↪", // "\u21AA"
-  rightStraightArrow: "➜", // "\u279C"
-};
-
-const liveTemplateTextEdf = `export default function $NAME$() {
-  $END$
-}`;
-
-const liveTemplateTextUc = `"use client";
-$END$`;
 
 export default function Page() {
   return (
@@ -357,40 +348,41 @@ export default function Page() {
                 <td>
                   JavaScript {entities.rightStraightArrow} +{" "}
                   {entities.rightStraightArrow}{" "}
-                  <HighlightText underline={true}>1</HighlightText> Live
-                  Template
+                  <Highlight type="underline">1</Highlight> Live Template
                 </td>
                 <td></td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  A<HighlightText underline={true}>b</HighlightText>breviation:
+                  A<Highlight type="underline">b</Highlight>breviation:
                 </td>
                 <td>
-                  <HighlightText copy={true}>edf</HighlightText>
+                  <Highlight type="text" copy={true}>
+                    edf
+                  </Highlight>
                 </td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  <HighlightText underline={true}>D</HighlightText>escription:
+                  <Highlight type="underline">D</Highlight>escription:
                 </td>
                 <td>
-                  <HighlightText copy={true}>
+                  <Highlight type="text" copy={true}>
                     export default function
-                  </HighlightText>
+                  </Highlight>
                 </td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  <HighlightText underline={true}>T</HighlightText>emplate text:
+                  <Highlight type="underline">T</Highlight>emplate text:
                 </td>
                 <td>
-                  <HighlightText pre={true} copy={true}>
+                  <Highlight type="text" copy={true} pre={true}>
                     {liveTemplateTextEdf}
-                  </HighlightText>
+                  </Highlight>
                 </td>
               </tr>
               <tr>
@@ -401,7 +393,9 @@ export default function Page() {
                   {entities.rightSubArrow} Expression
                 </td>
                 <td>
-                  <HighlightText copy={true}>complete()</HighlightText>
+                  <Highlight type="text" copy={true}>
+                    complete()
+                  </Highlight>
                 </td>
               </tr>
               <tr>
@@ -435,38 +429,41 @@ export default function Page() {
                 <td>
                   React {entities.rightStraightArrow} +{" "}
                   {entities.rightStraightArrow}{" "}
-                  <HighlightText underline={true}>1</HighlightText> Live
-                  Template
+                  <Highlight type="underline">1</Highlight> Live Template
                 </td>
                 <td></td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  A<HighlightText underline={true}>b</HighlightText>breviation:
+                  A<Highlight type="underline">b</Highlight>breviation:
                 </td>
                 <td>
-                  <HighlightText copy={true}>uc</HighlightText>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>
-                  <HighlightText underline={true}>D</HighlightText>escription:
-                </td>
-                <td>
-                  <HighlightText copy={true}>"use client";</HighlightText>
+                  <Highlight type="text" copy={true}>
+                    uc
+                  </Highlight>
                 </td>
               </tr>
               <tr>
                 <td></td>
                 <td>
-                  <HighlightText underline={true}>T</HighlightText>emplate text:
+                  <Highlight type="underline">D</Highlight>escription:
                 </td>
                 <td>
-                  <HighlightText pre={true} copy={true}>
+                  <Highlight type="text" copy={true}>
+                    "use client";
+                  </Highlight>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <Highlight type="underline">T</Highlight>emplate text:
+                </td>
+                <td>
+                  <Highlight type="text" copy={true} pre={true}>
                     {liveTemplateTextUc}
-                  </HighlightText>
+                  </Highlight>
                 </td>
               </tr>
               <tr>
@@ -522,7 +519,9 @@ export default function Page() {
           <ul>
             <li>
               Marketplace {entities.rightStraightArrow}{" "}
-              <HighlightText copy={true}>Rainbow Brackets</HighlightText>
+              <Highlight type="text" copy={true}>
+                Rainbow Brackets
+              </Highlight>
             </li>
             <li>
               <IoSettingsOutline /> {entities.rightStraightArrow} Update Plugins
@@ -570,14 +569,14 @@ export default function Page() {
                   {entities.rightSubArrow} Prettier
                 </td>
                 <td>
-                  Run for <HighlightText underline={true}>f</HighlightText>iles:
+                  Run for <Highlight type="underline">f</Highlight>iles:
                 </td>
                 <td>
-                  <HighlightText copy={true}>
+                  <Highlight type="text" copy={true}>
                     {
                       "**/*.{md,html,css,js,ts,jsx,tsx,cjs,cts,mjs,mts,json,vue,astro}"
                     }
-                  </HighlightText>
+                  </Highlight>
                 </td>
               </tr>
               <tr>

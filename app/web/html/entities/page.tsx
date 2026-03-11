@@ -5,8 +5,7 @@ import { reference, headings } from "@/app/web/html/entities/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import HighlightText from "@/components/detail-page/HighlightText";
-import HighlightCode from "@/components/detail-page/HighlightCode";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -31,44 +30,66 @@ export default function Page() {
           <p>Named entities can use both the named and numeric format.</p>
           <ul>
             <li>
-              <HighlightText>Less-Than &lt;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;lt;</HighlightCode>
+              <Highlight type="text">Less-Than &lt;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;lt;
+              </Highlight>
             </li>
             <li>
-              <HighlightText>Greater-Than &gt;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;gt;</HighlightCode>
+              <Highlight type="text">Greater-Than &gt;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;gt;
+              </Highlight>
             </li>
             <li>
-              <HighlightText>Copyright &copy;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;copy;</HighlightCode>
+              <Highlight type="text">Copyright &copy;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;copy;
+              </Highlight>
             </li>
             <li>
-              <HighlightText>Trade Mark &trade;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;trade;</HighlightCode>
+              <Highlight type="text">Trade Mark &trade;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;trade;
+              </Highlight>
             </li>
             <ReferenceButton>
               <li>
-                <HighlightText>Non-Breaking Space &nbsp;</HighlightText>{" "}
-                <HighlightCode copy={true}>&amp;nbsp;</HighlightCode>
+                <Highlight type="text">Non-Breaking Space &nbsp;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;nbsp;
+                </Highlight>
                 <br />
-                The <HighlightCode copy={true}>&amp;nbsp;</HighlightCode> entity
-                is a space without creating a new line.
+                The{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;nbsp;
+                </Highlight>{" "}
+                entity is a space without creating a new line.
                 <br />
-                The <HighlightCode copy={true}>&amp;nbsp;</HighlightCode> entity
-                can be used to write two or more spaces in a row.
+                The{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;nbsp;
+                </Highlight>{" "}
+                entity can be used to write two or more spaces in a row.
               </li>
             </ReferenceButton>
             <li>
-              <HighlightText>Ampersand &amp;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;amp;</HighlightCode>
+              <Highlight type="text">Ampersand &amp;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;amp;
+              </Highlight>
             </li>
             <li>
-              <HighlightText>Quotation Mark "</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;quot;</HighlightCode>
+              <Highlight type="text">Quotation Mark "</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;quot;
+              </Highlight>
             </li>
             <li>
-              <HighlightText>Apostrophe '</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;apos;</HighlightCode>
+              <Highlight type="text">Apostrophe '</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;apos;
+              </Highlight>
             </li>
           </ul>
         </section>
@@ -80,12 +101,16 @@ export default function Page() {
           </p>
           <ul>
             <li>
-              <HighlightText>Left Brace &#123;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;#123;</HighlightCode>
+              <Highlight type="text">Left Brace &#123;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#123;
+              </Highlight>
             </li>
             <li>
-              <HighlightText>Right Brace &#125;</HighlightText>{" "}
-              <HighlightCode copy={true}>&amp;#125;</HighlightCode>
+              <Highlight type="text">Right Brace &#125;</Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#125;
+              </Highlight>
             </li>
           </ul>
         </section>

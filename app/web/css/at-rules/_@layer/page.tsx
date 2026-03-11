@@ -3,6 +3,7 @@ import { reference } from "@/app/web/css/at-rules/_@layer/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export default function Page() {
   return (
@@ -16,16 +17,16 @@ export default function Page() {
           <HeadingLinkId headingNumber={1}>@layer</HeadingLinkId>
         </ReferenceButton>
         <p>
-          The <code className="example">@layer</code> at-rule declares a cascade
-          layer.
+          The <Highlight type="simple-code">@layer</Highlight> at-rule declares
+          a cascade layer.
         </p>
         <p>
-          The <code className="example">@layer</code> statement at-rule creates
-          one or more named layers.
+          The <Highlight type="simple-code">@layer</Highlight> statement at-rule
+          creates one or more named layers.
         </p>
         <p>
-          The <code className="example">@layer</code> block at-rule creates a
-          named or anonymous layer.
+          The <Highlight type="simple-code">@layer</Highlight> block at-rule
+          creates a named or anonymous layer.
         </p>
       </article>
 

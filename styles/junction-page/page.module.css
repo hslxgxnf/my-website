@@ -9,9 +9,7 @@
     flex-basis: 60%;
     padding: var(--space-40);
 
-    h1,
-    h2,
-    h3 {
+    :is(h1, h2, h3) {
       margin-bottom: var(--space-20);
       color: var(--color-1);
     }

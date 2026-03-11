@@ -5,8 +5,7 @@ import { reference, code, headings } from "@/app/clean-code/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import HighlightCode from "@/components/detail-page/HighlightCode";
-import HighlightText from "@/components/detail-page/HighlightText";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -42,37 +41,37 @@ export default function Page() {
             Use nouns or short phrases with adjectives for variables and
             constants.
             <br />
-            <HighlightCode>user</HighlightCode>{" "}
-            <HighlightCode>isValid</HighlightCode>
+            <Highlight type="simple-code">user</Highlight>{" "}
+            <Highlight type="simple-code">isValid</Highlight>
           </p>
           <p>
             Use verbs or short phrases with adjectives for functions and
             methods.
             <br />
-            <HighlightCode>saveUser</HighlightCode>{" "}
-            <HighlightCode>auth.isValid</HighlightCode>
+            <Highlight type="simple-code">saveUser</Highlight>{" "}
+            <Highlight type="simple-code">auth.isValid</Highlight>
           </p>
           <p>
             Use nouns or short phrases with nouns for classes.
             <br />
-            <HighlightCode>User</HighlightCode>
+            <Highlight type="simple-code">User</Highlight>
           </p>
           <hr />
           <p>
-            <HighlightText>snake_case</HighlightText>
+            <Highlight type="text">snake_case</Highlight>
           </p>
           <ul>
             <li>Python Variables, Functions</li>
           </ul>
           <p>
-            <HighlightText>camelCase</HighlightText>
+            <Highlight type="text">camelCase</Highlight>
           </p>
           <ul>
             <li>JavaScript Variables, Functions</li>
             <li>Java Variables, Functions</li>
           </ul>
           <p>
-            <HighlightText>PascalCase</HighlightText>
+            <Highlight type="text">PascalCase</Highlight>
           </p>
           <ul>
             <li>Python Classes</li>
@@ -80,7 +79,7 @@ export default function Page() {
             <li>Java Classes</li>
           </ul>
           <p>
-            <HighlightText>kebab-case</HighlightText>
+            <Highlight type="text">kebab-case</Highlight>
           </p>
           <ul>
             <li>HTML Element Attributes</li>
@@ -136,7 +135,7 @@ export default function Page() {
             Multiple parameters can be minimized into one. You don't have to
             concern the order of parameters.
           </p>
-          <HighlightCode code={code} />
+          <Highlight type="complex-code">{code}</Highlight>
           <p>
             A big function should be split into small functions that do one
             thing. The name of a function implies its level of abstraction. In a
@@ -148,16 +147,16 @@ export default function Page() {
             called a side effect. When a function has a side effect, the name of
             the function should imply that the side effect will occur.
             <br />
-            <HighlightCode>saveUser</HighlightCode>{" "}
-            <HighlightCode>showErrorMessage</HighlightCode>
+            <Highlight type="simple-code">saveUser</Highlight>{" "}
+            <Highlight type="simple-code">showErrorMessage</Highlight>
             <br />A pure function always yields the same output with the same
             input and has no side effects.
           </p>
           <p>
             Function names should be positive.
             <br />
-            <HighlightCode>isEmpty</HighlightCode>{" "}
-            <HighlightCode>isValid</HighlightCode>
+            <Highlight type="simple-code">isEmpty</Highlight>{" "}
+            <Highlight type="simple-code">isValid</Highlight>
           </p>
           <p>Unit testing helps functions to be clean.</p>
         </section>

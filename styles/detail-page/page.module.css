@@ -119,13 +119,7 @@
     border-radius: var(--border-radius);
     padding: var(--space-40);
 
-    h1,
-    h2,
-    h3,
-    p,
-    hr,
-    ul,
-    li {
+    :is(h1, h2, h3, p, hr, ul, li, table) {
       margin-bottom: var(--space-20);
     }
 
@@ -150,13 +144,14 @@
     }
 
     ul {
-      padding-left: var(--space-40);
       font-size: var(--font-size-25);
     }
 
-    h1,
-    h2,
-    h3 {
+    table :is(caption, th, td) {
+      font-size: var(--font-size-25);
+    }
+
+    :is(h1, h2, h3) {
       > a {
         color: var(--color-1);
 
@@ -168,6 +163,132 @@
       > span {
         display: none;
       }
+    }
+
+    ul {
+      padding-left: var(--space-40);
+    }
+
+    table {
+      table-layout: fixed;
+      border-collapse: collapse;
+      width: 100%;
+
+      :is(caption, th, td) {
+        border: 1px solid var(--color-base);
+        padding: var(--space-10) var(--space-20);
+      }
+
+      :is(caption, th) {
+        background-color: var(--background-color-1);
+      }
+
+      :is(th, td) {
+        text-align: left;
+      }
+
+      caption {
+        font-weight: bold;
+      }
+
+      :is(th:nth-child(1), td:nth-child(2)) {
+        width: 30%;
+      }
+
+      th:nth-child(3) {
+        width: 40%;
+      }
+
+      th:has(> svg) {
+        display: flex;
+        align-items: center;
+        gap: var(--space-10);
+      }
+    }
+
+    em {
+      color: var(--color-2);
+    }
+
+    code {
+      color: var(--color-3);
+    }
+
+    :is(em.plain, em.copy, code.plain, code.copy) {
+      border-radius: var(--border-radius);
+      padding: 0 var(--space-10);
+      background-color: var(--background-color-2);
+      font-style: normal;
+      font-family: "Roboto Mono", monospace;
+      word-break: break-all;
+    }
+
+    :is(em.copy, code.copy) {
+      cursor: pointer;
+    }
+
+    :is(em.pre, code.pre) {
+      border-radius: 0;
+      padding: 0;
+      font-style: normal;
+      font-family: "Roboto Mono", monospace;
+    }
+
+    :is(pre:has(> em.pre), pre:has(> code.pre)) {
+      padding: var(--space-10);
+      overflow: auto;
+      background-color: var(--background-color-2);
+    }
+
+    span.underline {
+      font-style: normal;
+      text-decoration: underline;
+    }
+
+    .complex-code-container {
+      margin-bottom: var(--space-20);
+      border-radius: var(--border-radius);
+      background-color: var(--background-color-1);
+
+      > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-10) var(--space-20);
+
+        > span {
+          font-size: var(--font-size-25);
+        }
+
+        > button {
+          display: flex;
+          align-items: center;
+          gap: var(--space-10);
+          border: 1px solid var(--color-1);
+          border-radius: var(--border-radius);
+          padding: var(--space-10);
+          background-color: transparent;
+          font-size: var(--font-size-25);
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--background-color-2);
+          }
+        }
+      }
+
+      > main > pre {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+        > code > span {
+          font-size: var(--font-size-25);
+          font-family: "Roboto Mono", monospace;
+        }
+      }
+    }
+
+    li:has(> .complex-code-container) > .complex-code-container {
+      margin-top: var(--space-20);
     }
 
     .reference-button-container {
@@ -226,52 +347,6 @@
 
     ul ul ul > .reference-button-container > button {
       left: calc(var(--space-50) * -1 + var(--space-40) * -3);
-    }
-
-    .pre-code-container {
-      margin-bottom: var(--space-20);
-      border-radius: var(--border-radius);
-      background-color: var(--background-color-1);
-
-      > header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: var(--space-10) var(--space-20);
-
-        > span {
-          font-size: var(--font-size-25);
-        }
-
-        > button {
-          display: flex;
-          align-items: center;
-          gap: var(--space-10);
-          border: 1px solid var(--color-1);
-          border-radius: var(--border-radius);
-          padding: var(--space-10);
-          background-color: transparent;
-          font-size: var(--font-size-25);
-          cursor: pointer;
-
-          &:hover {
-            background-color: var(--background-color-2);
-          }
-        }
-      }
-
-      > main > pre {
-        border-radius: 0 0 var(--border-radius) var(--border-radius);
-
-        > code > span {
-          font-size: var(--font-size-25);
-          font-family: "Roboto Mono", monospace;
-        }
-      }
-    }
-
-    li:has(> .pre-code-container) > .pre-code-container {
-      margin-top: var(--space-20);
     }
   }
 }

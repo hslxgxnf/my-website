@@ -5,6 +5,7 @@ import { reference } from "@/app/web/html/emmet/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export const metadata: Metadata = {
   title: "Emmet",
@@ -23,10 +24,12 @@ export default function Page() {
         </ReferenceButton>
         <ul>
           <li>
-            <code className="example">div.container&#x7b;content&#x7d;</code>
+            <Highlight type="simple-code">
+              div.container&#x7b;content&#x7d;
+            </Highlight>
           </li>
           <li>
-            <code className="example">p&gt;lorem100</code>
+            <Highlight type="simple-code">p&gt;lorem100</Highlight>
           </li>
         </ul>
       </article>

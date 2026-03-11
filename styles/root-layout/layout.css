@@ -31,8 +31,8 @@
 
   --color-base: #9b9b9b;
   --color-1: #e4e4e4;
-  --color-2: #24801c;
-  --color-3: #a58e42;
+  --color-2: #a58e42;
+  --color-3: #24801c;
 }
 
 html {
@@ -141,32 +141,5 @@ a {
 
   &:hover {
     color: var(--color-1);
-  }
-}
-
-code {
-  font-family: "Roboto Mono", monospace;
-
-  &.example {
-    /*The below three declarations must not move to the upper part for styling <PreCode>.*/
-    border-radius: var(--border-radius);
-    padding: 0 var(--space-10);
-    background-color: var(--background-color-2);
-    color: var(--color-2);
-  }
-
-  &.example-copy {
-    border-radius: var(--border-radius);
-    padding: 0 var(--space-10);
-    background-color: var(--background-color-2);
-    color: var(--color-2);
-    cursor: pointer;
-  }
-
-  &.emphasis {
-    border-radius: var(--border-radius);
-    padding: 0 var(--space-10);
-    background-color: var(--background-color-2);
-    color: var(--color-3);
   }
 }

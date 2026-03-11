@@ -7,16 +7,14 @@ import copyText from "@/functions/detail-page/copyText";
 import selectText from "@/functions/detail-page/selectText";
 
 interface HighlightTextProps {
-  pre?: boolean;
   copy?: boolean;
-  underline?: boolean;
+  pre?: boolean;
   children: string;
 }
 
 export default function HighlightText({
-  pre,
   copy,
-  underline,
+  pre,
   children,
 }: HighlightTextProps) {
   const emRef = useRef<HTMLElement>(null);
@@ -26,16 +24,12 @@ export default function HighlightText({
     selectText(emRef);
   }
 
-  if (!pre && !copy && !underline) {
-    return <em className={styles.plain}>{children}</em>;
-  }
-
-  if (pre) {
-    if (copy) {
+  if (copy) {
+    if (pre) {
       return (
         <pre>
           <em
-            className={`${styles.pre} ${styles.copy}`}
+            className={`${styles.copy} ${styles.pre}`}
             title="Copy"
             ref={emRef}
             onClick={handleClick}
@@ -46,27 +40,25 @@ export default function HighlightText({
       );
     } else {
       return (
+        <em
+          className={styles.copy}
+          title="Copy"
+          ref={emRef}
+          onClick={handleClick}
+        >
+          {children}
+        </em>
+      );
+    }
+  } else {
+    if (pre) {
+      return (
         <pre>
           <em className={styles.pre}>{children}</em>
         </pre>
       );
+    } else {
+      return <em className={styles.plain}>{children}</em>;
     }
-  }
-
-  if (copy) {
-    return (
-      <em
-        className={styles.copy}
-        title="Copy"
-        ref={emRef}
-        onClick={handleClick}
-      >
-        {children}
-      </em>
-    );
-  }
-
-  if (underline) {
-    return <em className={styles.underline}>{children}</em>;
   }
 }

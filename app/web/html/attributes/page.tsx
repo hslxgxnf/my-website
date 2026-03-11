@@ -11,7 +11,7 @@ import {
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import HighlightCode from "@/components/detail-page/HighlightCode";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function Page() {
           </ReferenceButton>
           <p>
             Attributes are written as{" "}
-            <code className="emphasis">name="value"</code> inside an element's
+            <Highlight type="text">name="value"</Highlight> inside an element's
             opening tag.
           </p>
           <p>
@@ -52,7 +52,7 @@ export default function Page() {
             </HeadingLinkId>
           </ReferenceButton>
           <p>An enumerated attribute accepts a predefined set of values.</p>
-          <HighlightCode code={codeEnumeratedAttributes} />
+          <Highlight type="complex-code">{codeEnumeratedAttributes}</Highlight>
         </section>
         <section>
           <ReferenceButton>
@@ -61,74 +61,71 @@ export default function Page() {
           <p>
             A boolean attribute is determined solely by its presence or absence.
             When the attribute is present, it is considered{" "}
-            <code className="example">true</code>; when it is absent, it is
-            considered <code className="example">false</code>. The actual value
-            assigned does not matter.
+            <Highlight type="simple-code">true</Highlight>; when it is absent,
+            it is considered <Highlight type="simple-code">false</Highlight>.
+            The actual value assigned does not matter.
           </p>
-          <HighlightCode code={codeBooleanAttributes} />
+          <Highlight type="complex-code">{codeBooleanAttributes}</Highlight>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Examples</HeadingLinkId>
           <ul>
             <li>
-              <code className="example">id</code>
+              <Highlight type="simple-code">id</Highlight>
               <br />
-              Elements cannot share the same <code className="example">
-                id
-              </code>{" "}
-              value.
+              Elements cannot share the same{" "}
+              <Highlight type="simple-code">id</Highlight> value.
             </li>
             <li>
-              <code className="example">class</code>
+              <Highlight type="simple-code">class</Highlight>
               <br />
-              Elements can share the same <code className="example">
-                class
-              </code>{" "}
-              value.
+              Elements can share the same{" "}
+              <Highlight type="simple-code">class</Highlight> value.
               <br />
               An element can have multiple{" "}
-              <code className="example">class</code> values.
-              <HighlightCode code={codeClass} />
+              <Highlight type="simple-code">class</Highlight> values.
+              <Highlight type="complex-code">{codeClass}</Highlight>
             </li>
             <li>
-              <code className="example">title</code>
+              <Highlight type="simple-code">title</Highlight>
               <br />
               For a mouse hovering tooltip.
             </li>
             <li>
-              <code className="example">rel</code>
+              <Highlight type="simple-code">rel</Highlight>
               <ul>
                 <ReferenceButton>
                   <li id='rel="noopener"'>
-                    <code className="example">rel="noopener"</code>
+                    <Highlight type="simple-code">rel="noopener"</Highlight>
                   </li>
                   <li>
-                    <code className="example">rel="noreferrer"</code>
+                    <Highlight type="simple-code">rel="noreferrer"</Highlight>
                     <br />
-                    Contains <code className="example">rel="noopener"</code>.
+                    Contains{" "}
+                    <Highlight type="simple-code">rel="noopener"</Highlight>.
                   </li>
                 </ReferenceButton>
               </ul>
             </li>
             <ReferenceButton>
               <li>
-                <code className="example">aria-*</code>
+                <Highlight type="simple-code">aria-*</Highlight>
                 <ul>
                   <li>
-                    <code className="example">aria-hidden</code>
+                    <Highlight type="simple-code">aria-hidden</Highlight>
                   </li>
                   <li>
-                    <code className="example">aria-pressed</code>
+                    <Highlight type="simple-code">aria-pressed</Highlight>
                   </li>
                   <li>
-                    <code className="example">aria-sort</code>
+                    <Highlight type="simple-code">aria-sort</Highlight>
                   </li>
                 </ul>
               </li>
             </ReferenceButton>
             <ReferenceButton>
               <li>
-                <code className="example">role</code>
+                <Highlight type="simple-code">role</Highlight>
               </li>
             </ReferenceButton>
           </ul>

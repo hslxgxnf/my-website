@@ -9,15 +9,15 @@ import styles from "@/styles/detail-page/page.module.css";
 import type { Code } from "@/types/detail-page/interfaces";
 import changeToTitleCase from "@/functions/changeToTitleCase";
 
-interface HighlightCodeComplexProps {
+interface HighlightComplexCodeProps {
   code: Code;
 }
 
 let isProcessing: boolean = false;
 
-export default function HighlightCodeComplex({
+export default function HighlightComplexCode({
   code,
-}: HighlightCodeComplexProps) {
+}: HighlightComplexCodeProps) {
   const [buttonText, setButtonText] = useState("Copy");
 
   async function handleClick() {
@@ -44,7 +44,7 @@ export default function HighlightCodeComplex({
   if (code.fileName) fileInfo = `${fileInfo} | ${code.fileName}`;
 
   return (
-    <div className={styles["pre-code-container"]}>
+    <div className={styles["complex-code-container"]}>
       <header>
         <span>{fileInfo}</span>
 

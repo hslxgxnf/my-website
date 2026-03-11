@@ -12,7 +12,7 @@ import {
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import HighlightCode from "@/components/detail-page/HighlightCode";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -37,27 +37,30 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>External CSS</HeadingLinkId>
           <p>
-            Use the <code className="example">&lt;link&gt;</code> element in the{" "}
-            <code className="example">&lt;link&gt;</code> element.
+            Use the <Highlight type="simple-code">&lt;link&gt;</Highlight>{" "}
+            element in the{" "}
+            <Highlight type="simple-code">&lt;head&gt;</Highlight> element.
           </p>
           <p>This way is used a lot.</p>
-          <HighlightCode code={codeExternalCSSHTML} />
-          <HighlightCode code={codeExternalCSSCSS} />
+          <Highlight type="complex-code">{codeExternalCSSHTML}</Highlight>
+          <Highlight type="complex-code">{codeExternalCSSCSS}</Highlight>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Internal CSS</HeadingLinkId>
           <p>
-            Use the <code className="example">&lt;style&gt;</code> element in
-            the <code className="example">&lt;head&gt;</code> element.
+            Use the <Highlight type="simple-code">&lt;style&gt;</Highlight>{" "}
+            element in the{" "}
+            <Highlight type="simple-code">&lt;head&gt;</Highlight> element.
           </p>
-          <HighlightCode code={codeInternalCSS} />
+          <Highlight type="complex-code">{codeInternalCSS}</Highlight>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Inline CSS</HeadingLinkId>
           <p>
-            Use the <code className="example">&lt;style&gt;</code> attribute.
+            Use the <Highlight type="simple-code">&lt;style&gt;</Highlight>{" "}
+            attribute.
           </p>
-          <HighlightCode code={codeInlineCSS} />
+          <Highlight type="complex-code">{codeInlineCSS}</Highlight>
         </section>
       </article>
 

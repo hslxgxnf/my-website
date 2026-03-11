@@ -5,6 +5,7 @@ import { reference } from "@/app/web/css/at-rules/basics/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export const metadata: Metadata = {
   title: "Basics",
@@ -23,21 +24,22 @@ export default function Page() {
         </ReferenceButton>
         <p>At-rules instruct CSS how to behave.</p>
         <p>
-          At-rules begin with an at-sign <code className="example">@</code>.
+          At-rules begin with an at-sign{" "}
+          <Highlight type="simple-code">@</Highlight>.
         </p>
         <p>Statement at-rules end with a semicolon.</p>
         <p>
-          Block at-rules end in a <code className="example">&#x7b;&#x7d;</code>{" "}
-          block.
+          Block at-rules end in a{" "}
+          <Highlight type="simple-code">&#x7b;&#x7d;</Highlight> block.
         </p>
         <p>Some at-rules use at-rule functions and at-rule descriptors. </p>
         <p>
-          Some at-rules (<code className="example">@container</code>,{" "}
-          <code className="example">@layer</code>,{" "}
-          <code className="example">@media</code>,{" "}
-          <code className="example">@scope</code>,{" "}
-          <code className="example">@starting-style</code>,{" "}
-          <code className="example">@supports</code>) can be nested.
+          Some at-rules (<Highlight type="simple-code">@container</Highlight>,{" "}
+          <Highlight type="simple-code">@layer</Highlight>,{" "}
+          <Highlight type="simple-code">@media</Highlight>,{" "}
+          <Highlight type="simple-code">@scope</Highlight>,{" "}
+          <Highlight type="simple-code">@starting-style</Highlight>,{" "}
+          <Highlight type="simple-code">@supports</Highlight>) can be nested.
         </p>
       </article>
 

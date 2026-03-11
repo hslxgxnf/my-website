@@ -3,6 +3,7 @@ import { reference } from "@/app/web/css/at-rules/_@import/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 
 export default function Page() {
   return (
@@ -16,23 +17,23 @@ export default function Page() {
           <HeadingLinkId headingNumber={1}>@import</HeadingLinkId>
         </ReferenceButton>
         <p>
-          The <code className="example">@import</code> at-rule imports styles
-          from other stylesheets.
+          The <Highlight type="simple-code">@import</Highlight> at-rule imports
+          styles from other stylesheets.
         </p>
         <p>
-          The <code className="example">@import</code> must be at the top except
-          the <code className="example">@charset</code> and{" "}
-          <code className="example">@layer</code> at-rules.
+          The <Highlight type="simple-code">@import</Highlight> must be at the
+          top except the <Highlight type="simple-code">@charset</Highlight> and{" "}
+          <Highlight type="simple-code">@layer</Highlight> at-rules.
         </p>
         <p>
-          The <code className="example">@import</code> at-rule and the{" "}
-          <code className="example">layer</code> keyword creates an anonymous
-          layer.
-        </p>
-        <p>
-          The <code className="example">@import</code> at-rule and the{" "}
-          <code className="example">layer()</code> function creates a named or
+          The <Highlight type="simple-code">@import</Highlight> at-rule and the{" "}
+          <Highlight type="simple-code">layer</Highlight> keyword creates an
           anonymous layer.
+        </p>
+        <p>
+          The <Highlight type="simple-code">@import</Highlight> at-rule and the{" "}
+          <Highlight type="simple-code">layer()</Highlight> function creates a
+          named or anonymous layer.
         </p>
       </article>
 

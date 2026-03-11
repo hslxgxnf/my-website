@@ -5,6 +5,7 @@ import { reference, headings } from "@/app/web/html/elements/data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
+import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
@@ -30,18 +31,18 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Normal Elements</HeadingLinkId>
           <p>
-            <code className="example">
+            <Highlight type="simple-code">
               &lt;Opening Tag&gt;Nested Content&lt;/Closing Tag&gt;
-            </code>
+            </Highlight>
           </p>
           <p>Normal elements can have nested elements and text nodes.</p>
           <p>
-            The <code className="example">Nested Content</code> sets the default
-            value.
+            The <Highlight type="simple-code">Nested Content</Highlight> sets
+            the default value.
             <br />
-            <code className="example">
+            <Highlight type="simple-code">
               &lt;textarea&gt;Default&lt;/textarea&gt;
-            </code>
+            </Highlight>
           </p>
         </section>
         <section>
@@ -50,7 +51,7 @@ export default function Page() {
           </ReferenceButton>
 
           <p>
-            <code className="example">&lt;Tag /&gt;</code>
+            <Highlight type="simple-code">&lt;Tag /&gt;</Highlight>
           </p>
           <p>
             The trailing slash is not required, but it makes XHTML-compatible
@@ -58,29 +59,31 @@ export default function Page() {
           </p>
           <p>Void elements cannot have nested elements and text nodes.</p>
           <p>
-            The <code className="example">value</code> attribute sets the
-            default value.
+            The <Highlight type="simple-code">value</Highlight> attribute sets
+            the default value.
             <br />
-            <code className="example">&lt;input value="Default" /&gt;</code>
+            <Highlight type="simple-code">
+              &lt;input value="Default" /&gt;
+            </Highlight>
           </p>
           <ul>
             <li>
-              <code className="example">&lt;meta&gt;</code>
+              <Highlight type="simple-code">&lt;meta&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;link&gt;</code>
+              <Highlight type="simple-code">&lt;link&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;img&gt;</code>
+              <Highlight type="simple-code">&lt;img&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;input&gt;</code>
+              <Highlight type="simple-code">&lt;input&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;hr&gt;</code>
+              <Highlight type="simple-code">&lt;hr&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;br&gt;</code>
+              <Highlight type="simple-code">&lt;br&gt;</Highlight>
             </li>
           </ul>
         </section>
@@ -90,234 +93,252 @@ export default function Page() {
           </ReferenceButton>
           <ul>
             <li>
-              <code className="example">&lt;!doctype html&gt;</code>
+              <Highlight type="simple-code">&lt;!doctype html&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;html&gt;</code>
+              <Highlight type="simple-code">&lt;html&gt;</Highlight>
             </li>
             <li>
-              <code className="example">&lt;head&gt;</code>
+              <Highlight type="simple-code">&lt;head&gt;</Highlight>
             </li>
             <ul>
               <li>
-                <code className="example">&lt;meta&gt;</code>
+                <Highlight type="simple-code">&lt;meta&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;title&gt;</code>
+                <Highlight type="simple-code">&lt;title&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;link&gt;</code>
+                <Highlight type="simple-code">&lt;link&gt;</Highlight>
                 <br />
                 External CSS, Favicon
               </li>
               <li>
-                <code className="example">&lt;style&gt;</code>
+                <Highlight type="simple-code">&lt;style&gt;</Highlight>
                 <br />
                 Internal CSS
               </li>
               <li>
-                <code className="example">&lt;script&gt;</code>{" "}
-                <code className="example">&lt;noscript&gt;</code>
+                <Highlight type="simple-code">&lt;script&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;noscript&gt;</Highlight>
                 <br />
                 Can be nested in the{" "}
-                <code className="example">&lt;body&gt;</code> element.
+                <Highlight type="simple-code">&lt;body&gt;</Highlight> element.
               </li>
             </ul>
             <li>
-              <code className="example">&lt;body&gt;</code>
+              <Highlight type="simple-code">&lt;body&gt;</Highlight>
             </li>
             <ul>
               <li>
-                <code className="example">&lt;header&gt;</code>
+                <Highlight type="simple-code">&lt;header&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;main&gt;</code>
+                <Highlight type="simple-code">&lt;main&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;footer&gt;</code>
+                <Highlight type="simple-code">&lt;footer&gt;</Highlight>
               </li>
               <hr />
               <li>
-                <code className="example">&lt;aside&gt;</code>
+                <Highlight type="simple-code">&lt;aside&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;nav&gt;</code>
+                <Highlight type="simple-code">&lt;nav&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;article&gt;</code>
+                <Highlight type="simple-code">&lt;article&gt;</Highlight>
                 <br />
                 Independent Content
               </li>
               <li>
-                <code className="example">&lt;section&gt;</code>
+                <Highlight type="simple-code">&lt;section&gt;</Highlight>
                 <br />
                 Semantic Block Grouping
               </li>
               <li>
-                <code className="example">&lt;div&gt;</code>
+                <Highlight type="simple-code">&lt;div&gt;</Highlight>
                 <br />
                 Non-Semantic Block Grouping
               </li>
               <li>
-                <code className="example">&lt;span&gt;</code>
+                <Highlight type="simple-code">&lt;span&gt;</Highlight>
                 <br />
                 Non-Semantic Inline Grouping
               </li>
               <hr />
               <ReferenceButton>
                 <li>
-                  <code className="example">&lt;dialog&gt;</code>
+                  <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
                   <br />
                   Creates a modal or non-modal dialog box.
                   <br />
-                  The <code className="example">closedby</code> attribute
-                  controls how the dialog can be dismissed.
+                  The <Highlight type="simple-code">closedby</Highlight>{" "}
+                  attribute controls how the dialog can be dismissed.
                   <br />
-                  The <code className="example">closedby="any"</code> attribute
-                  closes the dialog by a light dismiss user action (e.g.,
-                  clicking the backdrop), a platform-specific user action
+                  The <Highlight type="simple-code">
+                    closedby="any"
+                  </Highlight>{" "}
+                  attribute closes the dialog by a light dismiss user action
+                  (e.g., clicking the backdrop), a platform-specific user action
                   (e.g.,, pressing the ESC key) or a developer-specified
                   mechanism.
                   <br />
-                  The <code className="example">
+                  The{" "}
+                  <Highlight type="simple-code">
                     closedby="closerquest"
-                  </code>{" "}
+                  </Highlight>{" "}
                   attribute closes the dialog by a platform-specific user
                   action, or a developer-specified mechanism. This option is the
                   default for modal dialogs.
                   <br />
-                  The <code className="example">closedby="none"</code> attribute
-                  closes the dialog by a developer-specified mechanism. This
-                  option is the default for non-modal dialogs.
+                  The <Highlight type="simple-code">
+                    closedby="none"
+                  </Highlight>{" "}
+                  attribute closes the dialog by a developer-specified
+                  mechanism. This option is the default for non-modal dialogs.
                   <br />
-                  The <code className="example">open</code> attribute is a
-                  boolean attribute that determines whether the dialog is
+                  The <Highlight type="simple-code">open</Highlight> attribute
+                  is a boolean attribute that determines whether the dialog is
                   currently displayed. Directly manipulating this attribute in
-                  <code className="emphasis">HTML</code> is not recommended;
-                  instead, use <code className="emphasis">JavaScript</code>{" "}
+                  <Highlight type="text">HTML</Highlight> is not recommended;
+                  instead, use <Highlight type="text">JavaScript</Highlight>{" "}
                   methods{" "}
-                  <code className="example">HTMLDialogElement.show()</code>,{" "}
-                  <code className="example">HTMLDialogElement.showModal()</code>
+                  <Highlight type="simple-code">
+                    HTMLDialogElement.show()
+                  </Highlight>
+                  ,{" "}
+                  <Highlight type="simple-code">
+                    HTMLDialogElement.showModal()
+                  </Highlight>
                   , and{" "}
-                  <code className="example">HTMLDialogElement.close()</code> for
-                  better control.
+                  <Highlight type="simple-code">
+                    HTMLDialogElement.close()
+                  </Highlight>{" "}
+                  for better control.
                 </li>
               </ReferenceButton>
               <ReferenceButton>
                 <li>
-                  <code className="example">&lt;form&gt;</code>
+                  <Highlight type="simple-code">&lt;form&gt;</Highlight>
                   <br />
-                  The <code className="example">action</code> attribute defines
-                  a URL to which form data will be submitted. After submission,
-                  the current URL will be updated to the defined URL.
+                  The <Highlight type="simple-code">action</Highlight> attribute
+                  defines a URL to which form data will be submitted. After
+                  submission, the current URL will be updated to the defined
+                  URL.
                   <br />
-                  The <code className="example">method="get"</code> sends the
-                  form data as a query string after the existing URL.
+                  The <Highlight type="simple-code">
+                    method="get"
+                  </Highlight>{" "}
+                  sends the form data as a query string after the existing URL.
                 </li>
               </ReferenceButton>
               <li>
-                <code className="example">&lt;fieldset&gt;</code>{" "}
-                <code className="example">&lt;legend&gt;</code>
+                <Highlight type="simple-code">&lt;fieldset&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;legend&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;label&gt;</code>
+                <Highlight type="simple-code">&lt;label&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;input&gt;</code>
+                <Highlight type="simple-code">&lt;input&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;button&gt;</code>
+                <Highlight type="simple-code">&lt;button&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;select&gt;</code>{" "}
-                <code className="example">&lt;optgroup&gt;</code>{" "}
-                <code className="example">&lt;option&gt;</code>
+                <Highlight type="simple-code">&lt;select&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;optgroup&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;option&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;textarea&gt;</code>
+                <Highlight type="simple-code">&lt;textarea&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;datalist&gt;</code>
+                <Highlight type="simple-code">&lt;datalist&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;output&gt;</code>
+                <Highlight type="simple-code">&lt;output&gt;</Highlight>
               </li>
               <ReferenceButton>
                 <li>
-                  <code className="example">&lt;table&gt;</code>{" "}
+                  <Highlight type="simple-code">&lt;table&gt;</Highlight>{" "}
                   <ul>
                     <li>
-                      <code className="example">&lt;caption&gt;</code>
+                      <Highlight type="simple-code">&lt;caption&gt;</Highlight>
                       <br />
                       Must be the first child of its parent{" "}
-                      <code className="example">&lt;table&gt;</code> element.
+                      <Highlight type="simple-code">
+                        &lt;table&gt;
+                      </Highlight>{" "}
+                      element.
                     </li>
                     <li>
-                      <code className="example">&lt;colgroup&gt;</code>
+                      <Highlight type="simple-code">&lt;colgroup&gt;</Highlight>
                       <br />
                       Column Group
                       <br />
-                      The <code className="example">span</code> attribute can be
-                      used when the{" "}
-                      <code className="example">&lt;colgroup&gt;</code> has no{" "}
-                      <code className="example">&lt;col&gt;</code> elements.
+                      The <Highlight type="simple-code">span</Highlight>{" "}
+                      attribute can be used when the{" "}
+                      <Highlight type="simple-code">&lt;colgroup&gt;</Highlight>{" "}
+                      has no{" "}
+                      <Highlight type="simple-code">&lt;col&gt;</Highlight>{" "}
+                      elements.
                     </li>
                     <li>
-                      <code className="example">&lt;col&gt;</code>
+                      <Highlight type="simple-code">&lt;col&gt;</Highlight>
                       <br />
                       Column
                       <br />
-                      The <code className="example">span</code> attribute can be
-                      used when its parent{" "}
-                      <code className="example">&lt;colgroup&gt;</code> element
-                      does not have the <code className="example">span</code>{" "}
-                      attribute.
+                      The <Highlight type="simple-code">span</Highlight>{" "}
+                      attribute can be used when its parent{" "}
+                      <Highlight type="simple-code">&lt;colgroup&gt;</Highlight>{" "}
+                      element does not have the{" "}
+                      <Highlight type="simple-code">span</Highlight> attribute.
                     </li>
                     <li>
-                      <code className="example">&lt;thead&gt;</code>
+                      <Highlight type="simple-code">&lt;thead&gt;</Highlight>
                       <br />
                       Table Head
                     </li>
                     <li>
-                      <code className="example">&lt;tbody&gt;</code>
+                      <Highlight type="simple-code">&lt;tbody&gt;</Highlight>
                       <br />
                       Table Body
                     </li>
                     <li>
-                      <code className="example">&lt;tfoot&gt;</code>
+                      <Highlight type="simple-code">&lt;tfoot&gt;</Highlight>
                       <br />
                       Table Foot
                     </li>
                     <ul>
                       <li>
-                        <code className="example">&lt;tr&gt;</code>
+                        <Highlight type="simple-code">&lt;tr&gt;</Highlight>
                         <br />
                         Table Row
                       </li>
                       <ul>
                         <li>
-                          <code className="example">&lt;th&gt;</code>
+                          <Highlight type="simple-code">&lt;th&gt;</Highlight>
                           <br />
                           Table Header
                           <br />
-                          Attributes: <code className="example">
-                            scope
-                          </code>{" "}
-                          <code className="example">headers</code>{" "}
-                          <code className="example">rowspan</code>{" "}
-                          <code className="example">colspan</code>{" "}
-                          <code className="example">aria-sort</code>
+                          Attributes:{" "}
+                          <Highlight type="simple-code">scope</Highlight>{" "}
+                          <Highlight type="simple-code">headers</Highlight>{" "}
+                          <Highlight type="simple-code">rowspan</Highlight>{" "}
+                          <Highlight type="simple-code">colspan</Highlight>{" "}
+                          <Highlight type="simple-code">aria-sort</Highlight>
                         </li>
                         <li>
-                          <code className="example">&lt;td&gt;</code>
+                          <Highlight type="simple-code">&lt;td&gt;</Highlight>
                           <br />
                           Table Data
                           <br />
-                          Attributes: <code className="example">
-                            headers
-                          </code>{" "}
-                          <code className="example">rowspan</code>{" "}
-                          <code className="example">colspan</code>
+                          Attributes:{" "}
+                          <Highlight type="simple-code">headers</Highlight>{" "}
+                          <Highlight type="simple-code">rowspan</Highlight>{" "}
+                          <Highlight type="simple-code">colspan</Highlight>
                         </li>
                       </ul>
                     </ul>
@@ -325,85 +346,84 @@ export default function Page() {
                 </li>
               </ReferenceButton>
               <li>
-                <code className="example">&lt;hgroup&gt;</code>
+                <Highlight type="simple-code">&lt;hgroup&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;h1&gt;</code>~
-                <code className="example">&lt;h6&gt;</code>
+                <Highlight type="simple-code">&lt;h1&gt;</Highlight>~
+                <Highlight type="simple-code">&lt;h6&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;p&gt;</code>
+                <Highlight type="simple-code">&lt;p&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;b&gt;</code>{" "}
-                <code className="example">&lt;strong&gt;</code>{" "}
-                <code className="example">&lt;i&gt;</code>{" "}
-                <code className="example">&lt;em&gt;</code>{" "}
-                <code className="example">&lt;s&gt;</code>{" "}
-                <code className="example">&lt;em&gt;</code>{" "}
-                <code className="example">&lt;mark&gt;</code>{" "}
-                <code className="example">&lt;small&gt;</code>{" "}
-                <code className="example">&lt;del&gt;</code>{" "}
-                <code className="example">&lt;ins&gt;</code>{" "}
-                <code className="example">&lt;sub&gt;</code>{" "}
-                <code className="example">&lt;sup&gt;</code>{" "}
-                <code className="example">&lt;kbd&gt;</code>{" "}
-                <code className="example">&lt;samp&gt;</code>{" "}
-                <code className="example">&lt;var&gt;</code>
+                <Highlight type="simple-code">&lt;b&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;strong&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;em&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;i&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;mark&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;small&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;s&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;del&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;ins&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;sub&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;sup&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;kbd&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;samp&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;var&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;pre&gt;</code>{" "}
-                <code className="example">&lt;code&gt;</code>{" "}
+                <Highlight type="simple-code">&lt;pre&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;code&gt;</Highlight>{" "}
               </li>
               <li>
-                <code className="example">&lt;bdo&gt;</code>
+                <Highlight type="simple-code">&lt;bdo&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;hr&gt;</code>{" "}
-                <code className="example">&lt;br&gt;</code>
+                <Highlight type="simple-code">&lt;hr&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;br&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;ul&gt;</code>{" "}
-                <code className="example">&lt;ol&gt;</code>{" "}
-                <code className="example">&lt;li&gt;</code>
+                <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;li&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;dl&gt;</code>{" "}
-                <code className="example">&lt;dt&gt;</code>{" "}
-                <code className="example">&lt;dd&gt;</code>
+                <Highlight type="simple-code">&lt;dl&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;dt&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;dd&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;details&gt;</code>{" "}
-                <code className="example">&lt;summary&gt;</code>
+                <Highlight type="simple-code">&lt;details&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;summary&gt;</Highlight>
               </li>
               <ReferenceButton>
                 <li id="<a>">
-                  <code className="example">&lt;a&gt;</code>
+                  <Highlight type="simple-code">&lt;a&gt;</Highlight>
                 </li>
               </ReferenceButton>
               <li>
-                <code className="example">&lt;figure&gt;</code>{" "}
-                <code className="example">&lt;figcaption&gt;</code>
+                <Highlight type="simple-code">&lt;figure&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;figcaption&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;img&gt;</code>{" "}
-                <code className="example">&lt;map&gt;</code>{" "}
-                <code className="example">&lt;area&gt;</code>
+                <Highlight type="simple-code">&lt;img&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;map&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;area&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;picture&gt;</code>{" "}
-                <code className="example">&lt;source&gt;</code>
+                <Highlight type="simple-code">&lt;picture&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;source&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;video&gt;</code>{" "}
-                <code className="example">&lt;source&gt;</code>
+                <Highlight type="simple-code">&lt;video&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;source&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;audio&gt;</code>{" "}
-                <code className="example">&lt;source&gt;</code>
+                <Highlight type="simple-code">&lt;audio&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;source&gt;</Highlight>
               </li>
               <li>
-                <code className="example">&lt;iframe&gt;</code>
+                <Highlight type="simple-code">&lt;iframe&gt;</Highlight>
               </li>
             </ul>
           </ul>
