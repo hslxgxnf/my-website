@@ -18,15 +18,10 @@ export default function Page() {
         <p>
           CSS variable names should be{" "}
           <Highlight type="text">kebab-case</Highlight>.
+          <br />
+          <Highlight type="simple-code">--space-10</Highlight>{" "}
+          <Highlight type="simple-code">--color-base</Highlight>
         </p>
-        <ul>
-          <li>
-            <Highlight type="simple-code">--space-10</Highlight>
-          </li>
-          <li>
-            <Highlight type="simple-code">--color-base</Highlight>
-          </li>
-        </ul>
       </article>
 
       <aside></aside>
