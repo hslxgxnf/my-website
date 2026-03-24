@@ -16,17 +16,17 @@ export default function Page() {
       <article>
         <HeadingLinkId headingNumber={1}>Naming Rules</HeadingLinkId>
         <p>
-          A custom name or a custom value of an attribute should be{" "}
+          Custom attribute names should be{" "}
           <Highlight type="text">kebab-case</Highlight>.
+          <br />
+          <Highlight type="simple-code">data-is-clicked="true"</Highlight>
         </p>
-        <ul>
-          <li>
-            <Highlight type="simple-code">id="div-a"</Highlight>
-          </li>
-          <li>
-            <Highlight type="simple-code">data-is-clicked="true"</Highlight>
-          </li>
-        </ul>
+        <p>
+          Attribute values that are not enumerated should be{" "}
+          <Highlight type="text">kebab-case</Highlight>.
+          <br />
+          <Highlight type="simple-code">id="target-container"</Highlight>
+        </p>
       </article>
 
       <aside></aside>
