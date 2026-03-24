@@ -1,20 +1,23 @@
-# page.tsx
+# Pages
 
-- Change the metadata title.
+## `page.tsx`
+
+Change the `metadata title`.
 
 # Components
 
-## &lt;ReferenceNav&gt;
+## `<ReferenceNav>`
 
-- data.ts
-  - reference
+Need the `reference` variable in the `data.ts` file.
 
-## &lt;Highlight type="complex-code"&gt;
+## `<Highlight type="complex-code">`
 
-- data.ts
-  - code
+Need the `code` variable in the `data.ts` file.
 
 ## &lt;PageNav&gt;
 
-- data.ts
-  - headings
+Need the `headings` variable in the `data.ts` file.
+
+When an article has two or more headings, use this component.
+
+To use this component, the `<article>` element must be divided into `<section>` elements.
