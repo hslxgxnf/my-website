@@ -24,8 +24,8 @@
 
         > header {
           margin-bottom: var(--space-10);
-          font-size: var(--font-size-25);
           color: var(--color-1);
+          font-size: var(--font-size-25);
         }
 
         > main {
@@ -81,8 +81,8 @@
 
         > header {
           margin-bottom: var(--space-10);
-          font-size: var(--font-size-35);
           color: var(--color-1);
+          font-size: var(--font-size-35);
         }
 
         > main {
@@ -241,8 +241,8 @@
     }
 
     span.underline {
-      font-style: normal;
       text-decoration: underline;
+      font-style: normal;
     }
 
     .complex-code-container {
