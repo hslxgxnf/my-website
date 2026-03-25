@@ -17,12 +17,13 @@ export type Reference = ReferenceItem[];
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_LANGUAGES_PRISM.MD
 export interface Code {
   language:
-    | "handlebars"
+    | "html"
     | "css"
     | "javascript"
     | "typescript"
     | "git"
-    | "powershell";
+    | "powershell"
+    | "text";
   fileName?: string;
   content: string;
 }

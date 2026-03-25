@@ -16,7 +16,7 @@ export const reference: Reference = [
 ];
 
 export const codeExternalCSSHTML: Code = {
-  language: "handlebars",
+  language: "html",
   content: `<head>
   <link rel="stylesheet" href="path" />
 </head>`,
@@ -30,7 +30,7 @@ export const codeExternalCSSCSS: Code = {
 };
 
 export const codeInternalCSS: Code = {
-  language: "handlebars",
+  language: "html",
   content: `<head>
   <style>
     body {
@@ -41,7 +41,7 @@ export const codeInternalCSS: Code = {
 };
 
 export const codeInlineCSS: Code = {
-  language: "handlebars",
+  language: "html",
   content: `<body style="background-color: gray"></body>`,
 };
 

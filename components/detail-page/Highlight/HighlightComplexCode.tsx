@@ -38,10 +38,11 @@ export default function HighlightComplexCode({
   }
 
   let fileInfo: string = code.language;
-  if (fileInfo === "handlebars") fileInfo = "html";
   fileInfo = changeToTitleCase(fileInfo);
-
   if (code.fileName) fileInfo = `${fileInfo} | ${code.fileName}`;
+
+  let language: string = code.language;
+  if (code.language === "html") language = "handlebars";
 
   return (
     <div className={styles["complex-code-container"]}>
@@ -55,7 +56,7 @@ export default function HighlightComplexCode({
       </header>
 
       <main>
-        <SyntaxHighlighter language={code.language} style={vscDarkPlus}>
+        <SyntaxHighlighter language={language} style={vscDarkPlus}>
           {code.content}
         </SyntaxHighlighter>
       </main>

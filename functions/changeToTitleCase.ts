@@ -45,6 +45,10 @@ const properCaseWords: SpecialCaseWord[] = [
     target: "webstorm",
     result: "WebStorm",
   },
+  {
+    target: "powershell",
+    result: "PowerShell",
+  },
 ];
 
 const hyphenCaseWords: SpecialCaseWord[] = [
