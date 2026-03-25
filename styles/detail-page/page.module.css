@@ -311,8 +311,8 @@
             fill: var(--background-color-3);
           }
 
-          ~ :is(h1, h2, h3, p, li),
-          ~ :is(h1, h2, h3, p, li) * {
+          ~ *,
+          ~ * * {
             color: var(--background-color-3);
           }
         }
