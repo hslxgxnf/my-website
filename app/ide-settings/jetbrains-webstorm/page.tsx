@@ -244,7 +244,8 @@ export default function Page() {
                 <td>
                   Soft Wraps
                   <br />
-                  {entities.rightSubArrow} Soft-wrap these files:
+                  {entities.rightSubArrow} Soft-wrap these files: *.md; *.txt;
+                  *.rst; *.adoc
                 </td>
                 <td>{entities.checkedBox}</td>
               </tr>
@@ -611,7 +612,7 @@ export default function Page() {
                 <td>
                   Node.js
                   <br />
-                  Coding assistance for Node.js
+                  {entities.rightSubArrow} Coding assistance for Node.js
                 </td>
                 <td>{entities.checkedBox}</td>
               </tr>
