@@ -11,6 +11,7 @@ export default function Page() {
   return (
     <main className={styles.main}>
       <aside></aside>
+
       <article>
         <h1>CSS</h1>
         <hr />
@@ -23,6 +24,7 @@ export default function Page() {
         <HeadingLinkPage>Declarations</HeadingLinkPage>
         <HeadingLinkPage>Error Handling</HeadingLinkPage>
       </article>
+
       <aside></aside>
     </main>
   );
