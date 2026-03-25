@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { FaSortAlphaDown } from "react-icons/fa";
 import { PiCaretDownBold } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
+import Link from "next/link";
 
 import styles from "@/styles/detail-page/page.module.css";
 import {
@@ -11,8 +12,8 @@ import {
   headings,
 } from "@/app/ide-settings/jetbrains-webstorm/data";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-import PageNav from "@/components/detail-page/PageNav";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
+import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
   title: "JetBrains WebStorm",
@@ -340,8 +341,13 @@ export default function Page() {
                   {entities.rightSubArrow} Custom order:
                 </td>
                 <td>
-                  {entities.checkedBox}, !!!Need a link for CSS Property
-                  Arrangement!!!
+                  {entities.checkedBox},{" "}
+                  <Link
+                    href="/web/css/declarations/property-arrangement"
+                    id="custom-order"
+                  >
+                    Property Arrangement
+                  </Link>
                 </td>
               </tr>
               <tr>

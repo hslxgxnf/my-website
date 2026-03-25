@@ -17,6 +17,12 @@ export const reference: Reference = [
         name: favicons.Non_Favicon.name,
         title: "Concentric CSS",
       },
+      {
+        url: "/ide-settings/jetbrains-webstorm#custom-order",
+        favicon: favicons.Article_Shortcut.image,
+        name: favicons.Article_Shortcut.name,
+        title: "JetBrains WebStorm | Custom Order",
+      },
     ],
   },
 ];
