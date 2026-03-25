@@ -27,6 +27,13 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                   </li>
                 );
               } else {
+                let siteInfo: string = "";
+                if (site.name === "Null") {
+                  siteInfo = site.title;
+                } else {
+                  siteInfo = `${site.name} | ${site.title}`;
+                }
+
                 return (
                   <li key={index}>
                     <Link
@@ -35,9 +42,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                       rel="noopener noreferrer"
                     >
                       <Image src={site.favicon} alt={site.name} />
-                      <span>
-                        {site.name} | {site.title}
-                      </span>
+                      <span>{siteInfo}</span>
                     </Link>
                   </li>
                 );

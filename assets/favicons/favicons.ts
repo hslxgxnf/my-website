@@ -7,6 +7,7 @@ import HTML_Arrows_Image from "./HTML_Arrows.ico";
 import Inpa_Dev_Image from "./Inpa_Dev.ico";
 import MDN_Image from "./MDN.png";
 import Next_js_Image from "./Next_js.svg";
+import Null_Image from "./Null.png";
 import Stack_Overflow_Image from "./Stack_Overflow.svg";
 import tistory_Image from "./tistory.png";
 import Udemy_Image from "./Udemy.png";
@@ -50,6 +51,10 @@ export const favicons = {
   Next_js: {
     image: Next_js_Image,
     name: "Next.js",
+  },
+  Non_Favicon: {
+    image: Null_Image,
+    name: "Null",
   },
   Stack_Overflow: {
     image: Stack_Overflow_Image,
