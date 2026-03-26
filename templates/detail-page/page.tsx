@@ -5,7 +5,7 @@ import styles from "@/styles/detail-page/page.module.css";
 // import ReferenceNav from "@/components/detail-page/ReferenceNav";
 // import ReferenceButton from "@/components/detail-page/ReferenceButton";
 // import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
-// import Highlight from "@/components/detail-page/Highlight";
+// import Highlight from "@/components/detail-page/Highlight/Highlight";
 // import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
