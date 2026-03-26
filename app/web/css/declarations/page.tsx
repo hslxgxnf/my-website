@@ -15,6 +15,7 @@ export default function Page() {
       <article>
         <h1>Declarations</h1>
         <hr />
+        <HeadingLinkPage>Property Vendor Prefixes</HeadingLinkPage>
         <HeadingLinkPage>Property Arrangement</HeadingLinkPage>
       </article>
 
