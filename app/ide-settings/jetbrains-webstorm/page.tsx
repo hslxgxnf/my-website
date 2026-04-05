@@ -5,12 +5,8 @@ import { IoSettingsOutline } from "react-icons/io5";
 import Link from "next/link";
 
 import styles from "@/styles/detail-page/page.module.css";
-import {
-  entities,
-  liveTemplateTextEdf,
-  liveTemplateTextUc,
-  headings,
-} from "@/app/ide-settings/jetbrains-webstorm/data";
+import { entities, liveTemplateTextEdf, liveTemplateTextUc } from "./data";
+import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
@@ -22,7 +18,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className={styles.main}>
-      <aside></aside>
+      <aside>
+        <ReferenceNav />
+      </aside>
 
       <article>
         <section>
@@ -732,7 +730,7 @@ export default function Page() {
         </section>
       </article>
       <aside>
-        <PageNav headings={headings} />
+        <PageNav />
       </aside>
     </main>
   );

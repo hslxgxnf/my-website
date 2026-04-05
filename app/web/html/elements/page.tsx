@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/detail-page/page.module.css";
-import { reference, headings } from "@/app/web/html/elements/data";
+import { reference } from "./data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
@@ -431,7 +431,7 @@ export default function Page() {
       </article>
 
       <aside>
-        <PageNav headings={headings} />
+        <PageNav />
       </aside>
     </main>
   );

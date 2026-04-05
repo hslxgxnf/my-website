@@ -1,4 +1,4 @@
-import type { Reference, Code, Headings } from "@/types/detail-page/interfaces";
+import type { Reference, Code } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
@@ -44,23 +44,3 @@ export const codeInlineCSS: Code = {
   language: "html",
   content: `<body style="background-color: gray"></body>`,
 };
-
-export const headings: Headings = [
-  {
-    tag: "h1",
-    content: "Connecting CSS to HTML",
-  },
-  {
-    tag: "h2",
-    content: "External CSS",
-  },
-
-  {
-    tag: "h2",
-    content: "Internal CSS",
-  },
-  {
-    tag: "h2",
-    content: "Inline CSS",
-  },
-];

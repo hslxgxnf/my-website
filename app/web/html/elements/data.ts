@@ -1,4 +1,4 @@
-import type { Reference, Headings } from "@/types/detail-page/interfaces";
+import type { Reference } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
@@ -132,24 +132,5 @@ export const reference: Reference = [
         title: 'Attributes | rel="noopener"',
       },
     ],
-  },
-];
-
-export const headings: Headings = [
-  {
-    tag: "h1",
-    content: "Elements",
-  },
-  {
-    tag: "h2",
-    content: "Normal Elements",
-  },
-  {
-    tag: "h2",
-    content: "Void Elements",
-  },
-  {
-    tag: "h2",
-    content: "Content Categories",
   },
 ];

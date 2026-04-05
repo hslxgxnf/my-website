@@ -24,15 +24,15 @@ export async function generateStaticParams() {
   const staticParams = [
     "@import",
     "@layer",
-    "@container",
-    "@font-face",
-    "@keyframes",
-    "@media",
-    "@page",
-    "@property",
-    "@scope",
-    "@starting-style",
-    "@supports",
+    // "@container",
+    // "@font-face",
+    // "@keyframes",
+    // "@media",
+    // "@page",
+    // "@property",
+    // "@scope",
+    // "@starting-style",
+    // "@supports",
   ];
 
   return staticParams.map((staticParam) => ({

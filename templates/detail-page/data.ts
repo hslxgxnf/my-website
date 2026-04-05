@@ -1,4 +1,4 @@
-import type { Reference, Code, Headings } from "@/types/detail-page/interfaces";
+import type { Reference, Code } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
@@ -19,10 +19,3 @@ export const code: Code = {
   language: "javascript",
   content: ``,
 };
-
-export const headings: Headings = [
-  {
-    tag: "h1",
-    content: "",
-  },
-];

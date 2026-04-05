@@ -1,4 +1,4 @@
-import type { Reference, Code, Headings } from "@/types/detail-page/interfaces";
+import type { Reference, Code } from "@/types/detail-page/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
@@ -128,22 +128,3 @@ export const codeClass: Code = {
   content: `<div class="common"></div>
 <div class="common another"></div>`,
 };
-
-export const headings: Headings = [
-  {
-    tag: "h1",
-    content: "Attributes",
-  },
-  {
-    tag: "h2",
-    content: "Enumerated Attributes",
-  },
-  {
-    tag: "h2",
-    content: "Boolean Attributes",
-  },
-  {
-    tag: "h2",
-    content: "Examples",
-  },
-];

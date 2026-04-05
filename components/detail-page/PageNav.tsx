@@ -1,66 +1,82 @@
 "use client";
 
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useState, JSX, useEffect } from "react";
 import Link from "next/link";
 
 import styles from "@/styles/detail-page/page.module.css";
-import { Headings } from "@/types/detail-page/interfaces";
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
-interface SideNavProps {
-  headings: Headings;
-}
-
-// When an article has two or more headings, use this component.
-// To use this component, the <article> element must be divided into <section> elements.
-export default function PageNav({ headings }: SideNavProps) {
+export default function PageNav() {
+  const navRef = useRef<HTMLElement>(null);
   const ulRef = useRef<HTMLUListElement>(null);
+  const [links, setLinks] = useState<(JSX.Element | undefined)[]>();
 
-  // headings Guard
-  useLayoutEffect(() => {
-    const pivotHeadings: HTMLHeadingElement[] = Array.from(
+  useEffect(() => {
+    const headings = Array.from(
       document.querySelectorAll("body > main > article :is(h1, h2, h3)"),
     );
-    const comparisonHeadings = headings;
 
-    if (pivotHeadings.length !== comparisonHeadings.length) {
-      throw new Error(
-        `A mismatched length was found: ${comparisonHeadings.length}. Change to ${pivotHeadings.length}.`,
-      );
+    // When an article has two or more headings, this component will be displayed.
+    if (headings.length === 1) {
+      if (!navRef.current) throw new Error("No navRef");
+      navRef.current.remove();
+      return;
     }
 
-    for (let i = 0; i < pivotHeadings.length; ++i) {
-      if (pivotHeadings[i].localName !== comparisonHeadings[i].tag) {
-        throw new Error(
-          `A mismatched tag was found: ${comparisonHeadings[i].tag}. Change to ${pivotHeadings[i].localName}.`,
-        );
-      }
+    if (!navRef.current) throw new Error("No navRef");
+    navRef.current.style.display = "block";
 
-      if (
-        pivotHeadings[i].firstElementChild!.textContent !==
-        comparisonHeadings[i].content
-      ) {
-        throw new Error(
-          `A mismatched content was found: ${comparisonHeadings[i].content}. Change to ${pivotHeadings[i].firstElementChild!.textContent}.`,
-        );
+    const newLinks = headings.map((heading, index) => {
+      const content = heading.firstElementChild!.textContent;
+      const url = `#${content.replaceAll(" ", "-").toLowerCase()}`;
+
+      switch (heading.localName) {
+        case "h1":
+          return (
+            <li key={index}>
+              <Link
+                href={url}
+                onClick={(event) => handleClickFirstLink(event, url)}
+              >
+                {content}
+              </Link>
+              <hr />
+            </li>
+          );
+        case "h2":
+          return (
+            <li key={index}>
+              <Link href={url}>{content}</Link>
+            </li>
+          );
+        case "h3":
+          return (
+            <li key={index} className={styles.indent}>
+              <Link href={url}>{content}</Link>
+            </li>
+          );
       }
-    }
-  }, [headings]);
+    });
+
+    setLinks(newLinks);
+  }, []);
 
   // Intersection Observer API
-  useLayoutEffect(() => {
-    // sections Guard
+  useEffect(() => {
+    if (!links) return;
+
+    // To use this component, the <article> element must be divided into <section> elements.
     const sections = Array.from(
       document.querySelectorAll("body > main > article section"),
     );
     if (sections.length === 0) throw new Error("No sections");
-    if (headings.length !== sections.length)
+    if (links.length !== sections.length)
       throw new Error(
-        `A mismatched length was found: ${sections.length}. Change to ${headings.length}.`,
+        `A mismatched length was found: ${sections.length}. Change to ${links.length}.`,
       );
 
     if (!ulRef.current) throw new Error("No ulRef");
-    const links = Array.from(ulRef.current.querySelectorAll("a"));
+    const newLinks = ulRef.current.querySelectorAll("a");
 
     const headerHeight =
       document.querySelector("body > header")!.getBoundingClientRect().height +
@@ -74,9 +90,9 @@ export default function PageNav({ headings }: SideNavProps) {
         const index = sections.indexOf(entry.target);
 
         if (entry.isIntersecting) {
-          links[index].classList.add(styles.active);
+          newLinks[index].classList.add(styles.active);
         } else {
-          links[index].classList.remove(styles.active);
+          newLinks[index].classList.remove(styles.active);
         }
       });
     }, options);
@@ -88,44 +104,13 @@ export default function PageNav({ headings }: SideNavProps) {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [links]);
 
   return (
-    <nav>
+    <nav ref={navRef}>
       <header>On this page</header>
       <main>
-        <ul ref={ulRef}>
-          {headings.map((heading, index) => {
-            const url = `#${heading.content.replaceAll(" ", "-").toLowerCase()}`;
-
-            switch (heading.tag) {
-              case "h1":
-                return (
-                  <li key={index}>
-                    <Link
-                      href={url}
-                      onClick={(event) => handleClickFirstLink(event, url)}
-                    >
-                      {heading.content}
-                    </Link>
-                    <hr />
-                  </li>
-                );
-              case "h2":
-                return (
-                  <li key={index}>
-                    <Link href={url}>{heading.content}</Link>
-                  </li>
-                );
-              case "h3":
-                return (
-                  <li key={index} className={styles.indent}>
-                    <Link href={url}>{heading.content}</Link>
-                  </li>
-                );
-            }
-          })}
-        </ul>
+        <ul ref={ulRef}>{links}</ul>
       </main>
     </nav>
   );

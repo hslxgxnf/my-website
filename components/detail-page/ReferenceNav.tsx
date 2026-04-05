@@ -4,10 +4,12 @@ import Image from "next/image";
 import { Reference } from "@/types/detail-page/interfaces";
 
 interface ReferenceNavProps {
-  reference: Reference;
+  reference?: Reference;
 }
 
 export default function ReferenceNav({ reference }: ReferenceNavProps) {
+  if (!reference) return;
+
   return reference.map((referenceItem, index) => {
     return (
       <nav key={index} data-target={referenceItem.target}>

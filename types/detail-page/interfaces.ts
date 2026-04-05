@@ -27,8 +27,3 @@ export interface Code {
   fileName?: string;
   content: string;
 }
-
-export type Headings = {
-  tag: "h1" | "h2" | "h3";
-  content: string;
-}[];

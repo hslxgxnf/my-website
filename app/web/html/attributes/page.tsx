@@ -6,8 +6,7 @@ import {
   codeEnumeratedAttributes,
   codeBooleanAttributes,
   codeClass,
-  headings,
-} from "@/app/web/html/attributes/data";
+} from "./data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
@@ -22,7 +21,7 @@ export default function Page() {
   return (
     <main className={styles.main}>
       <aside>
-        <ReferenceNav reference={reference}></ReferenceNav>
+        <ReferenceNav reference={reference} />
       </aside>
 
       <article>
@@ -133,7 +132,7 @@ export default function Page() {
       </article>
 
       <aside>
-        <PageNav headings={headings} />
+        <PageNav />
       </aside>
     </main>
   );
