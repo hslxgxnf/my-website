@@ -72,7 +72,6 @@
       align-items: flex-start;
 
       > nav {
-        display: none;
         flex-basis: 80%;
         position: sticky;
         top: calc(var(--height-header) + var(--space-40));
