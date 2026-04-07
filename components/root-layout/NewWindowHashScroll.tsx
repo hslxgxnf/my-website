@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function HashScroll() {
+export default function NewWindowHashScroll() {
   useEffect(() => {
     const hash = window.location.hash;
     if (!hash) return;

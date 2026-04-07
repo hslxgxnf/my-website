@@ -8,7 +8,7 @@ import "@/styles/root-layout/layout.css";
 import logo from "@/assets/logo.png";
 import HeaderLink from "@/components/root-layout/HeaderLink";
 import HeaderPath from "@/components/root-layout/HeaderPath";
-import HashScroll from "@/components/root-layout/HashScroll";
+import NewWindowHashScroll from "@/components/root-layout/NewWindowHashScroll";
 
 // Google Font Initialization
 const roboto = Roboto();
@@ -76,7 +76,7 @@ export default function Layout({ children }: LayoutProps) {
           <p>&copy; 2026 HSLee Dev</p>
         </footer>
       </body>
-      <HashScroll />
+      <NewWindowHashScroll />
     </html>
   );
 }
