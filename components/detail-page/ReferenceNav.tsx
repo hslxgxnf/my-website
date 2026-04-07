@@ -8,7 +8,7 @@ interface ReferenceNavProps {
 }
 
 export default function ReferenceNav({ reference }: ReferenceNavProps) {
-  if (!reference) return;
+  if (!reference) return null;
 
   return reference.map((referenceItem, index) => {
     return (
@@ -21,8 +21,8 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                 throw new Error("Change this dummy image.");
               } else if (site.name === "Article Shortcut") {
                 return (
-                  <li key={index}>
-                    <Link href={site.url}>
+                  <li key={index} data-article-shortcut>
+                    <Link href={site.url} target="_blank" rel="noopener ">
                       <Image src={site.favicon} alt={site.name} />
                       <span>{site.title}</span>
                     </Link>
@@ -38,11 +38,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
 
                 return (
                   <li key={index}>
-                    <Link
-                      href={site.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link href={site.url} target="_blank" rel="noopener ">
                       <Image src={site.favicon} alt={site.name} />
                       <span>{siteInfo}</span>
                     </Link>

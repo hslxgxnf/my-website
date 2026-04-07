@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import { FaSortAlphaDown } from "react-icons/fa";
 import { PiCaretDownBold } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
-import Link from "next/link";
 
 import styles from "@/styles/detail-page/page.module.css";
-import { entities, liveTemplateTextEdf, liveTemplateTextUc } from "./data";
+import {
+  reference,
+  entities,
+  liveTemplateTextEdf,
+  liveTemplateTextUc,
+} from "./data";
 import ReferenceNav from "@/components/detail-page/ReferenceNav";
+import ReferenceButton from "@/components/detail-page/ReferenceButton/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
@@ -19,7 +24,7 @@ export default function Page() {
   return (
     <main className={styles.main}>
       <aside>
-        <ReferenceNav />
+        <ReferenceNav reference={reference} />
       </aside>
 
       <article>
@@ -340,12 +345,7 @@ export default function Page() {
                 </td>
                 <td>
                   {entities.checkedBox},{" "}
-                  <Link
-                    href="/web/css/declarations/property-arrangement"
-                    id="custom-order"
-                  >
-                    Property Arrangement
-                  </Link>
+                  <ReferenceButton table={true}>Custom Order</ReferenceButton>
                 </td>
               </tr>
               <tr>

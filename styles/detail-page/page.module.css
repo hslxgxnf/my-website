@@ -297,7 +297,7 @@
       margin-top: var(--space-20);
     }
 
-    .reference-button-container {
+    .reference-button-default-container {
       position: relative;
 
       > button {
@@ -343,16 +343,36 @@
       }
     }
 
-    ul > .reference-button-container > button {
+    ul > .reference-button-default-container > button {
       left: calc(var(--space-50) * -1 + var(--space-40) * -1);
     }
 
-    ul ul > .reference-button-container > button {
+    ul ul > .reference-button-default-container > button {
       left: calc(var(--space-50) * -1 + var(--space-40) * -2);
     }
 
-    ul ul ul > .reference-button-container > button {
+    ul ul ul > .reference-button-default-container > button {
       left: calc(var(--space-50) * -1 + var(--space-40) * -3);
+    }
+
+    .reference-button-table-container {
+      > button {
+        border: none;
+        background-color: transparent;
+        font-size: var(--font-size-25);
+        cursor: pointer;
+
+        &:hover {
+          > svg {
+            fill: var(--background-color-3);
+          }
+
+          ~ *,
+          ~ * * {
+            color: var(--background-color-3);
+          }
+        }
+      }
     }
   }
 }
