@@ -12,11 +12,7 @@ const eslintConfig = defineConfig([
       "react/no-unescaped-entities": [
         "error",
         {
-          forbid: [">", "<", "&"], // Only forbid problematic characters.
-          htmlEntities: {
-            "'": false, // Allow apostrophes in text nodes.
-            '"': false, // Allow double quotes in text nodes.
-          },
+          forbid: [">", "<"], // Only forbid problematic characters.
         },
       ],
     },
