@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Reference } from "@/types/detail-page/interfaces";
+import type { Reference } from "@/types/detail-page/interfaces";
 
 interface ReferenceNavProps {
   reference?: Reference;

@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import type { RefObject } from "react";
 
 export default function selectText(ref: RefObject<HTMLElement | null>) {
   if (!ref.current) throw new Error("No ref");

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { type ReactNode, useRef } from "react";
 import { IoIosLink } from "react-icons/io";
 
 import styles from "@/styles/detail-page/page.module.css";

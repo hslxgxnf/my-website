@@ -1,4 +1,4 @@
-import { RefObject, useEffect } from "react";
+import { type RefObject, useEffect } from "react";
 
 import styles from "@/styles/detail-page/page.module.css";
 

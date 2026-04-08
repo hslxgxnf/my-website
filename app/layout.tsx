@@ -1,6 +1,6 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 

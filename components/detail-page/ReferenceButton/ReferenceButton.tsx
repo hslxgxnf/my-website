@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import ReferenceButtonDefault from "@/components/detail-page/ReferenceButton/ReferenceButtonDefault";
 import ReferenceButtonTable from "@/components/detail-page/ReferenceButton/ReferenceButtonTable";

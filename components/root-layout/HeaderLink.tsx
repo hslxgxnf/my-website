@@ -1,12 +1,11 @@
 "use client";
 
-import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface HeaderLinkProps {
   href: string;
-  children: ReactNode;
+  children: string;
 }
 
 export default function HeaderLink({ href, children }: HeaderLinkProps) {
