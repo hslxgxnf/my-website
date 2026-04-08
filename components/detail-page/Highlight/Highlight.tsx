@@ -18,7 +18,11 @@ export default function Highlight({
   children,
 }: HighlightProps) {
   if (type === "text" && typeof children === "string") {
-    return <HighlightText copy={copy} pre={pre} children={children} />;
+    return (
+      <HighlightText copy={copy} pre={pre}>
+        {children}
+      </HighlightText>
+    );
   }
 
   if (type === "underline" && typeof children === "string") {
@@ -29,7 +33,11 @@ export default function Highlight({
   }
 
   if (type === "simple-code" && typeof children === "string") {
-    return <HighlightSimpleCode copy={copy} pre={pre} children={children} />;
+    return (
+      <HighlightSimpleCode copy={copy} pre={pre}>
+        {children}
+      </HighlightSimpleCode>
+    );
   }
 
   if (type === "complex-code" && typeof children !== "string") {
@@ -38,7 +46,7 @@ export default function Highlight({
         'type="complex-code" is copy={true} and pre={pre} by default.',
       );
 
-    return <HighlightComplexCode code={children} />;
+    return <HighlightComplexCode>{children}</HighlightComplexCode>;
   }
 
   throw new Error(

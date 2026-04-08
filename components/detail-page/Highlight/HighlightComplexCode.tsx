@@ -10,13 +10,13 @@ import type { Code } from "@/types/detail-page/interfaces";
 import changeToTitleCase from "@/functions/changeToTitleCase";
 
 interface HighlightComplexCodeProps {
-  code: Code;
+  children: Code;
 }
 
 let isProcessing: boolean = false;
 
 export default function HighlightComplexCode({
-  code,
+  children,
 }: HighlightComplexCodeProps) {
   const [buttonText, setButtonText] = useState("Copy");
 
@@ -24,7 +24,7 @@ export default function HighlightComplexCode({
     try {
       if (isProcessing) return;
 
-      await navigator.clipboard.writeText(code.content);
+      await navigator.clipboard.writeText(children.content);
       isProcessing = true;
       setButtonText("Copied");
 
@@ -37,12 +37,12 @@ export default function HighlightComplexCode({
     }
   }
 
-  let fileInfo: string = code.language;
+  let fileInfo: string = children.language;
   fileInfo = changeToTitleCase(fileInfo);
-  if (code.fileName) fileInfo = `${fileInfo} | ${code.fileName}`;
+  if (children.fileName) fileInfo = `${fileInfo} | ${children.fileName}`;
 
-  let language: string = code.language;
-  if (code.language === "html") language = "handlebars";
+  let language: string = children.language;
+  if (children.language === "html") language = "handlebars";
 
   return (
     <div className={styles["complex-code-container"]}>
@@ -57,7 +57,7 @@ export default function HighlightComplexCode({
 
       <main>
         <SyntaxHighlighter language={language} style={vscDarkPlus}>
-          {code.content}
+          {children.content}
         </SyntaxHighlighter>
       </main>
     </div>
