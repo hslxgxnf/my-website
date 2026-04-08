@@ -345,7 +345,7 @@ export default function Page() {
                 </td>
                 <td>
                   {entities.checkedBox},{" "}
-                  <ReferenceButton table={true}>Custom Order</ReferenceButton>
+                  <ReferenceButton type="table">Custom Order</ReferenceButton>
                 </td>
               </tr>
               <tr>

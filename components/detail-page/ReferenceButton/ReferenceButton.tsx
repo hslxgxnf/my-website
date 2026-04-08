@@ -1,20 +1,24 @@
 import { ReactNode } from "react";
 
-import ReferenceButtonTable from "@/components/detail-page/ReferenceButton/ReferenceButtonTable";
 import ReferenceButtonDefault from "@/components/detail-page/ReferenceButton/ReferenceButtonDefault";
+import ReferenceButtonTable from "@/components/detail-page/ReferenceButton/ReferenceButtonTable";
 
 interface ReferenceButtonProps {
+  type?: "default" | "table";
   children: ReactNode;
-  table?: boolean;
 }
 
 export default function ReferenceButton({
+  type = "default",
   children,
-  table,
 }: ReferenceButtonProps) {
-  if (table) {
-    return <ReferenceButtonTable children={children} />;
+  if (type === "default") {
+    return (
+      <ReferenceButtonDefault type={type}>{children}</ReferenceButtonDefault>
+    );
+  } else if (type === "table") {
+    return <ReferenceButtonTable type={type}>{children}</ReferenceButtonTable>;
   } else {
-    return <ReferenceButtonDefault children={children} />;
+    throw new Error(`Unsupported type: ${type}`);
   }
 }

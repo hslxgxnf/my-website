@@ -3,17 +3,17 @@ import { RefObject, useEffect } from "react";
 import styles from "@/styles/detail-page/page.module.css";
 
 export default function useReferenceConnection(
-  table: boolean,
+  type: "default" | "table",
   buttonRef: RefObject<HTMLButtonElement | null>,
 ) {
   useEffect(() => {
     if (!buttonRef.current) throw new Error("No buttonRef");
     let target = "";
-    if (table) {
-      target = buttonRef.current.nextElementSibling!.textContent;
-    } else {
+    if (type === "default") {
       target =
         buttonRef.current.nextElementSibling!.firstElementChild!.textContent;
+    } else if (type === "table") {
+      target = buttonRef.current.nextElementSibling!.textContent;
     }
 
     const navs: HTMLElement[] = Array.from(

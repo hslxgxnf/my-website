@@ -7,14 +7,16 @@ import styles from "@/styles/detail-page/page.module.css";
 import useReferenceConnection from "@/hooks/useReferenceConnection";
 
 interface ReferenceButtonTableProps {
+  type: "default" | "table";
   children: ReactNode;
 }
 export default function ReferenceButtonTable({
+  type,
   children,
 }: ReferenceButtonTableProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  useReferenceConnection(true, buttonRef);
+  useReferenceConnection(type, buttonRef);
 
   return (
     <span className={styles["reference-button-table-container"]}>
