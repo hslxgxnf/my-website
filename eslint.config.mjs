@@ -1,29 +1,28 @@
-import { defineConfig, globalIgnores } from "eslint/config";
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
 
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+
 const eslintConfig = defineConfig([
+  includeIgnoreFile(gitignorePath),
+
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
+
   {
-    files: ["**/*.jsx", "**/*.tsx"], // Only apply to JSX and TSX files.
+    files: ["**/*.tsx"],
     rules: {
       "react/no-unescaped-entities": [
         "error",
         {
-          forbid: [">", "<"], // Only forbid problematic characters.
+          forbid: [">", "<"],
         },
       ],
     },
   },
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
 ]);
 
 export default eslintConfig;
