@@ -30,6 +30,11 @@ export default function Page() {
       <article>
         <section>
           <HeadingLinkId headingNumber={1}>JetBrains WebStorm</HeadingLinkId>
+          <p>
+            Settings prefixed with <strong>!</strong> are only applied to the
+            current project. In other words, they have to be set again for other
+            projects.
+          </p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Appearance & Behavior</HeadingLinkId>
@@ -516,6 +521,40 @@ export default function Page() {
                 <td>Enable abbreviation preview</td>
                 <td>{entities.checkedBox}</td>
               </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Natural Languages
+                  <br />
+                  {entities.rightSubArrow} Spelling
+                </td>
+                <td>
+                  Accepted words:
+                  <br />
+                  {entities.rightSubArrow} +
+                </td>
+                <td>
+                  <Highlight type="text" copy={true}>
+                    noopener
+                  </Highlight>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Natural Languages
+                  <br />
+                  {entities.rightSubArrow} Spelling
+                </td>
+                <td>
+                  Accepted words:
+                  <br />
+                  {entities.rightSubArrow} +
+                </td>
+                <td>
+                  <Highlight type="text" copy={true}>
+                    noreferrer
+                  </Highlight>
+                </td>
+              </tr>
             </tbody>
           </table>
         </section>
@@ -549,7 +588,7 @@ export default function Page() {
             <tbody>
               <tr>
                 <td>
-                  JavaScript
+                  <strong>!</strong> JavaScript
                   <br />
                   {entities.rightSubArrow} Code Quality Tools
                   <br />
@@ -560,7 +599,7 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  JavaScript
+                  <strong>!</strong> JavaScript
                   <br />
                   {entities.rightSubArrow} Prettier
                 </td>
@@ -569,7 +608,7 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  JavaScript
+                  <strong>!</strong> JavaScript
                   <br />
                   {entities.rightSubArrow} Prettier
                 </td>
@@ -586,7 +625,7 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  JavaScript
+                  <strong>!</strong> JavaScript
                   <br />
                   {entities.rightSubArrow} Prettier
                 </td>
@@ -595,7 +634,7 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  JavaScript
+                  <strong>!</strong> JavaScript
                   <br />
                   {entities.rightSubArrow} Prettier
                 </td>
@@ -604,7 +643,7 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  JavaScript
+                  <strong>!</strong> JavaScript
                   <br />
                   {entities.rightSubArrow} Prettier
                 </td>
@@ -612,7 +651,9 @@ export default function Page() {
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
-                <td>JavaScript Runtime</td>
+                <td>
+                  <strong>!</strong> JavaScript Runtime
+                </td>
                 <td>
                   Node.js
                   <br />
@@ -635,17 +676,23 @@ export default function Page() {
             </thead>
             <tbody>
               <tr>
-                <td>Actions on Save</td>
+                <td>
+                  <strong>!</strong> Actions on Save
+                </td>
                 <td>Reformat code</td>
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
-                <td>Actions on Save</td>
+                <td>
+                  <strong>!</strong> Actions on Save
+                </td>
                 <td>Rearrange code</td>
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
-                <td>Actions on Save</td>
+                <td>
+                  <strong>!</strong> Actions on Save
+                </td>
                 <td>Run Prettier</td>
                 <td>{entities.checkedBox}</td>
               </tr>

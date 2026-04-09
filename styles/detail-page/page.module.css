@@ -206,6 +206,10 @@
       }
     }
 
+    strong {
+      color: var(--color-4);
+    }
+
     em {
       color: var(--color-2);
     }
