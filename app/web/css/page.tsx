@@ -20,9 +20,9 @@ export default function Page() {
         <HeadingLinkPage>Comments</HeadingLinkPage>
         <HeadingLinkPage>At-Rules</HeadingLinkPage>
         <HeadingLinkPage>Rulesets</HeadingLinkPage>
-        <HeadingLinkPage>Selectors and Combinators</HeadingLinkPage>
+        {/*<HeadingLinkPage>Selectors and Combinators</HeadingLinkPage>*/}
         <HeadingLinkPage>Declarations</HeadingLinkPage>
-        <HeadingLinkPage>Error Handling</HeadingLinkPage>
+        {/*<HeadingLinkPage>Error Handling</HeadingLinkPage>*/}
       </article>
 
       <aside></aside>
