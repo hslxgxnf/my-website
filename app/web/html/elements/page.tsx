@@ -247,15 +247,13 @@ export default function Page() {
                 <Highlight type="simple-code">&lt;button&gt;</Highlight>
               </li>
               <li>
+                <Highlight type="simple-code">&lt;datalist&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;select&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;optgroup&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;option&gt;</Highlight>
               </li>
               <li>
                 <Highlight type="simple-code">&lt;textarea&gt;</Highlight>
-              </li>
-              <li>
-                <Highlight type="simple-code">&lt;datalist&gt;</Highlight>
               </li>
               <li>
                 <Highlight type="simple-code">&lt;output&gt;</Highlight>
@@ -356,27 +354,60 @@ export default function Page() {
                 <Highlight type="simple-code">&lt;p&gt;</Highlight>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;b&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;strong&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;b&gt;</Highlight>
+                <br />
+                Bold
+              </li>
+              <li>
                 <Highlight type="simple-code">&lt;em&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;i&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;mark&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;small&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;s&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;i&gt;</Highlight>
+                <br />
+                Italic
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;mark&gt;</Highlight>
+                <br />
+                Highlight
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;small&gt;</Highlight>
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;s&gt;</Highlight>
+                <br />
+                Strikethrough
+              </li>
+              <li>
                 <Highlight type="simple-code">&lt;del&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;ins&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;ins&gt;</Highlight>
+                <br />
+                Delete and Insert
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;var&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;sub&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;sup&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;kbd&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;samp&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;var&gt;</Highlight>
+                <Highlight type="simple-code">&lt;sup&gt;</Highlight>
+                <br />
+                Variable
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;kbd&gt;</Highlight>
+                <br />
+                Keyboard
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;samp&gt;</Highlight>
+                <br />
+                Program Sample Output
               </li>
               <li>
                 <Highlight type="simple-code">&lt;pre&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;code&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;code&gt;</Highlight>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;bdo&gt;</Highlight>
+                <Highlight type="simple-code">&lt;bdo&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;bdi&gt;</Highlight>
               </li>
               <li>
                 <Highlight type="simple-code">&lt;hr&gt;</Highlight>{" "}
@@ -395,6 +426,10 @@ export default function Page() {
               <li>
                 <Highlight type="simple-code">&lt;details&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;summary&gt;</Highlight>
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;data&gt;</Highlight>{" "}
+                <Highlight type="simple-code">&lt;time&gt;</Highlight>
               </li>
               <ReferenceButton>
                 <li>
