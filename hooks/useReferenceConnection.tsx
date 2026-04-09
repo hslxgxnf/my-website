@@ -19,6 +19,7 @@ export default function useReferenceConnection(
     const navs: HTMLElement[] = Array.from(
       document.querySelectorAll("body > main > aside:first-child > nav"),
     );
+    if (navs.length === 0) throw new Error("No navs");
 
     for (let i = 0; i < navs.length; i++) {
       if (navs[i].dataset.target === target) {

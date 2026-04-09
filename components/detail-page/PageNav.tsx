@@ -18,7 +18,7 @@ export default function PageNav2() {
 
     // When an article has two or more headings, this component will be displayed.
     if (foundHeadings.length === 0) {
-      throw new Error("No headings found.");
+      throw new Error("No headings");
     } else if (foundHeadings.length >= 2) {
       setShouldRender(true);
       setHeadings(foundHeadings);
@@ -35,7 +35,7 @@ export default function PageNav2() {
       if (sections.length === 0) throw new Error("No sections");
       if (headings.length !== sections.length)
         throw new Error(
-          `A mismatched length was found: ${sections.length}. Change to ${headings.length}.`,
+          `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
         );
 
       const links = ulRef.current.querySelectorAll("a");
