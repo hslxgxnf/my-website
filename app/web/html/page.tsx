@@ -15,7 +15,7 @@ export default function Page() {
       <article>
         <h1>HTML</h1>
         <hr />
-        <HeadingLinkPage>Naming Rules</HeadingLinkPage>
+        <HeadingLinkPage>Naming Cases</HeadingLinkPage>
         <HeadingLinkPage>Comments</HeadingLinkPage>
         <HeadingLinkPage>Elements</HeadingLinkPage>
         <HeadingLinkPage>Attributes</HeadingLinkPage>

@@ -16,7 +16,7 @@ export default function Page() {
         <h1>CSS</h1>
         <hr />
         <HeadingLinkPage>Connecting CSS to HTML</HeadingLinkPage>
-        <HeadingLinkPage>Naming Rules</HeadingLinkPage>
+        <HeadingLinkPage>Naming Cases</HeadingLinkPage>
         <HeadingLinkPage>Comments</HeadingLinkPage>
         <HeadingLinkPage>At-Rules</HeadingLinkPage>
         <HeadingLinkPage>Rulesets</HeadingLinkPage>

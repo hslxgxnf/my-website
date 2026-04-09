@@ -26,7 +26,7 @@ export default function Page() {
           <Highlight type="simple-code">data-is-clicked="true"</Highlight>
         </p>
         <p>
-          Attribute values that are not enumerated should be{" "}
+          Attribute values should be{" "}
           <Highlight type="text">kebab-case</Highlight>.
           <br />
           <Highlight type="simple-code">id="target-container"</Highlight>
