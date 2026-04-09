@@ -67,7 +67,7 @@ export default function PageNav2() {
         observer.disconnect();
       };
     }
-  }, [shouldRender]);
+  }, [shouldRender, headings.length]);
 
   if (!shouldRender) return null;
 

@@ -48,5 +48,5 @@ export default function useReferenceConnection(
         );
       }
     }
-  }, []);
+  }, [buttonRef, type]);
 }
