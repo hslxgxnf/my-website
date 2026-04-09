@@ -6,8 +6,8 @@ import ReferenceNav from "@/components/detail-page/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/ReferenceButton/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
-import PageNav from "@/components/detail-page/PageNav";
 import ToggleList from "@/components/detail-page/ToggleList";
+import PageNav from "@/components/detail-page/PageNav";
 
 export const metadata: Metadata = {
   title: "Elements",
@@ -174,51 +174,55 @@ export default function Page() {
                     <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
                   }
                 >
-                  Creates a modal or non-modal dialog box.
-                  <br />
-                  The <Highlight type="simple-code">closedby</Highlight>{" "}
-                  attribute controls how the dialog can be dismissed.
-                  <br />
-                  The <Highlight type="simple-code">
-                    closedby="any"
-                  </Highlight>{" "}
-                  attribute closes the dialog by a light dismiss user action
-                  (e.g., clicking the backdrop), a platform-specific user action
-                  (e.g.,, pressing the ESC key) or a developer-specified
-                  mechanism.
-                  <br />
-                  The{" "}
-                  <Highlight type="simple-code">
-                    closedby="closerequest"
-                  </Highlight>{" "}
-                  attribute closes the dialog by a platform-specific user
-                  action, or a developer-specified mechanism. This option is the
-                  default for modal dialogs.
-                  <br />
-                  The <Highlight type="simple-code">
-                    closedby="none"
-                  </Highlight>{" "}
-                  attribute closes the dialog by a developer-specified
-                  mechanism. This option is the default for non-modal dialogs.
-                  <br />
-                  The <Highlight type="simple-code">open</Highlight> attribute
-                  is a boolean attribute that determines whether the dialog is
-                  currently displayed. Directly manipulating this attribute in
-                  <Highlight type="text">HTML</Highlight> is not recommended;
-                  instead, use <Highlight type="text">JavaScript</Highlight>{" "}
-                  methods{" "}
-                  <Highlight type="simple-code">
-                    HTMLDialogElement.show()
-                  </Highlight>
-                  ,{" "}
-                  <Highlight type="simple-code">
-                    HTMLDialogElement.showModal()
-                  </Highlight>
-                  , and{" "}
-                  <Highlight type="simple-code">
-                    HTMLDialogElement.close()
-                  </Highlight>{" "}
-                  for better control.
+                  <p>Creates a modal or non-modal dialog.</p>
+                  <p>
+                    The <Highlight type="simple-code">closedby</Highlight>{" "}
+                    attribute controls how a dialog can be dismissed.
+                    <br />
+                    The <Highlight type="simple-code">
+                      closedby="any"
+                    </Highlight>{" "}
+                    attribute closes a dialog by a light dismiss user action
+                    (e.g., clicking the backdrop), a platform-specific user
+                    action (e.g., pressing the ESC key), or a
+                    developer-specified mechanism.
+                    <br />
+                    The{" "}
+                    <Highlight type="simple-code">
+                      closedby="closerequest"
+                    </Highlight>{" "}
+                    attribute closes a dialog by a platform-specific user action
+                    or a developer-specified mechanism. This option is the
+                    default for modal dialogs.
+                    <br />
+                    The{" "}
+                    <Highlight type="simple-code">
+                      closedby="none"
+                    </Highlight>{" "}
+                    attribute closes a dialog by a developer-specified
+                    mechanism. This option is the default for non-modal dialogs.
+                    <br />
+                  </p>
+                  <p>
+                    The <Highlight type="simple-code">open</Highlight> attribute
+                    is a boolean attribute that determines whether a dialog is
+                    currently displayed. Directly manipulating this attribute in
+                    <Highlight type="text">HTML</Highlight> is not recommended.
+                    Instead, use <Highlight type="text">JavaScript</Highlight>{" "}
+                    methods{" "}
+                    <Highlight type="simple-code">
+                      HTMLDialogElement.show()
+                    </Highlight>
+                    ,{" "}
+                    <Highlight type="simple-code">
+                      HTMLDialogElement.showModal()
+                    </Highlight>
+                    , and{" "}
+                    <Highlight type="simple-code">
+                      HTMLDialogElement.close()
+                    </Highlight>{" "}
+                    for better control.
+                  </p>
                 </ToggleList>
               </ReferenceButton>
               <ReferenceButton>
@@ -227,15 +231,16 @@ export default function Page() {
                     <Highlight type="simple-code">&lt;form&gt;</Highlight>
                   }
                 >
-                  The <Highlight type="simple-code">action</Highlight> attribute
-                  defines a URL to which form data will be submitted. After
-                  submission, the current URL will be updated to the defined
-                  URL.
-                  <br />
-                  The <Highlight type="simple-code">
-                    method="get"
-                  </Highlight>{" "}
-                  sends the form data as a query string after the existing URL.
+                  <p>
+                    The <Highlight type="simple-code">action</Highlight>{" "}
+                    attribute defines a URL to which form data will be
+                    submitted. After submission, the current URL will be updated
+                    to the defined URL.
+                  </p>
+                  <p>
+                    The <Highlight type="simple-code">method="get"</Highlight>{" "}
+                    sends form data as a query string after the existing URL.
+                  </p>
                 </ToggleList>
               </ReferenceButton>
               <li>
