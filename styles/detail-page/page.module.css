@@ -181,7 +181,7 @@
         user-select: none;
       }
 
-      > header {
+      > header:has(+ main > ul) {
         margin-bottom: var(--space-20);
       }
 
