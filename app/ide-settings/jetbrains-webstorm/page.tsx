@@ -32,8 +32,7 @@ export default function Page() {
           <HeadingLinkId headingNumber={1}>JetBrains WebStorm</HeadingLinkId>
           <p>
             Settings prefixed with <strong>!</strong> are only applied to the
-            current project. In other words, they have to be set again for other
-            projects.
+            current project. They have to be set again for other projects.
           </p>
         </section>
         <section>
@@ -520,40 +519,6 @@ export default function Page() {
                 </td>
                 <td>Enable abbreviation preview</td>
                 <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>!</strong> Natural Languages
-                  <br />
-                  {entities.rightSubArrow} Spelling
-                </td>
-                <td>
-                  Accepted words:
-                  <br />
-                  {entities.rightSubArrow} +
-                </td>
-                <td>
-                  <Highlight type="text" copy={true}>
-                    noopener
-                  </Highlight>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>!</strong> Natural Languages
-                  <br />
-                  {entities.rightSubArrow} Spelling
-                </td>
-                <td>
-                  Accepted words:
-                  <br />
-                  {entities.rightSubArrow} +
-                </td>
-                <td>
-                  <Highlight type="text" copy={true}>
-                    noreferrer
-                  </Highlight>
-                </td>
               </tr>
             </tbody>
           </table>
