@@ -12,8 +12,10 @@ export default function PageNav2() {
   const ulRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    const foundHeadings: HTMLHeadingElement[] = Array.from(
-      document.querySelectorAll("body > main > article :is(h1, h2, h3)"),
+    const foundHeadings = Array.from(
+      document.querySelectorAll<HTMLHeadingElement>(
+        "body > main > article :is(h1, h2, h3)",
+      ),
     );
 
     // When an article has two or more headings, this component will be displayed.
@@ -25,12 +27,12 @@ export default function PageNav2() {
     }
   }, []);
 
-  // Intersection Observer API
+  // Intersection Observer
   useEffect(() => {
     if (shouldRender && ulRef.current) {
       // To use this component, the <article> element must be divided into <section> elements.
       const sections = Array.from(
-        document.querySelectorAll("body > main > article section"),
+        document.querySelectorAll<HTMLElement>("body > main > article section"),
       );
       if (sections.length === 0) throw new Error("No sections");
       if (headings.length !== sections.length)
@@ -38,18 +40,19 @@ export default function PageNav2() {
           `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
         );
 
-      const links = ulRef.current.querySelectorAll("a");
+      const links = ulRef.current.querySelectorAll<HTMLAnchorElement>("a");
 
       const headerHeight =
-        document.querySelector("body > header")!.getBoundingClientRect()
-          .height + 1;
+        document
+          .querySelector<HTMLElement>("body > header")!
+          .getBoundingClientRect().height + 1;
       const options = {
         rootMargin: `-${headerHeight}px 0px 0px 0px`,
       };
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          const index = sections.indexOf(entry.target);
+          const index = sections.indexOf(entry.target as HTMLElement);
 
           if (entry.isIntersecting) {
             links[index].classList.add(styles.active);
@@ -63,9 +66,7 @@ export default function PageNav2() {
         observer.observe(section);
       });
 
-      return () => {
-        observer.disconnect();
-      };
+      return () => observer.disconnect();
     }
   }, [shouldRender, headings.length]);
 
