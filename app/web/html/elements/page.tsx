@@ -7,6 +7,7 @@ import ReferenceButton from "@/components/detail-page/ReferenceButton/ReferenceB
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
+import ToggleList from "@/components/detail-page/ToggleList";
 
 export const metadata: Metadata = {
   title: "Elements",
@@ -168,9 +169,11 @@ export default function Page() {
               </li>
               <hr />
               <ReferenceButton>
-                <li>
-                  <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
-                  <br />
+                <ToggleList
+                  header={
+                    <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
+                  }
+                >
                   Creates a modal or non-modal dialog box.
                   <br />
                   The <Highlight type="simple-code">closedby</Highlight>{" "}
@@ -186,7 +189,7 @@ export default function Page() {
                   <br />
                   The{" "}
                   <Highlight type="simple-code">
-                    closedby="closerquest"
+                    closedby="closerequest"
                   </Highlight>{" "}
                   attribute closes the dialog by a platform-specific user
                   action, or a developer-specified mechanism. This option is the
@@ -216,12 +219,14 @@ export default function Page() {
                     HTMLDialogElement.close()
                   </Highlight>{" "}
                   for better control.
-                </li>
+                </ToggleList>
               </ReferenceButton>
               <ReferenceButton>
-                <li>
-                  <Highlight type="simple-code">&lt;form&gt;</Highlight>
-                  <br />
+                <ToggleList
+                  header={
+                    <Highlight type="simple-code">&lt;form&gt;</Highlight>
+                  }
+                >
                   The <Highlight type="simple-code">action</Highlight> attribute
                   defines a URL to which form data will be submitted. After
                   submission, the current URL will be updated to the defined
@@ -231,7 +236,7 @@ export default function Page() {
                     method="get"
                   </Highlight>{" "}
                   sends the form data as a query string after the existing URL.
-                </li>
+                </ToggleList>
               </ReferenceButton>
               <li>
                 <Highlight type="simple-code">&lt;fieldset&gt;</Highlight>{" "}
@@ -259,8 +264,11 @@ export default function Page() {
                 <Highlight type="simple-code">&lt;output&gt;</Highlight>
               </li>
               <ReferenceButton>
-                <li>
-                  <Highlight type="simple-code">&lt;table&gt;</Highlight>{" "}
+                <ToggleList
+                  header={
+                    <Highlight type="simple-code">&lt;table&gt;</Highlight>
+                  }
+                >
                   <ul>
                     <li>
                       <Highlight type="simple-code">&lt;caption&gt;</Highlight>
@@ -341,7 +349,7 @@ export default function Page() {
                       </ul>
                     </ul>
                   </ul>
-                </li>
+                </ToggleList>
               </ReferenceButton>
               <li>
                 <Highlight type="simple-code">&lt;hgroup&gt;</Highlight>

@@ -10,8 +10,14 @@ export default function useReferenceConnection(
     if (!buttonRef.current) throw new Error("No buttonRef");
     let target = "";
     if (type === "default") {
-      target =
-        buttonRef.current.nextElementSibling!.firstElementChild!.textContent;
+      if (
+        buttonRef.current.nextElementSibling!.className.includes("toggle-list")
+      ) {
+        target = buttonRef.current.nextElementSibling!.children[1].textContent;
+      } else {
+        target =
+          buttonRef.current.nextElementSibling!.firstElementChild!.textContent;
+      }
     } else if (type === "table") {
       target = buttonRef.current.nextElementSibling!.textContent;
     }
