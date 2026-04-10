@@ -87,36 +87,32 @@ export default function useReferenceConnection(
           for (let i = 0; i < navs.length; i++) {
             const navTarget = navs[i].dataset.target;
 
-            let index = 0;
-            for (let j = 0; j < referenceContainers.length; j++) {
-              let articleTarget = "";
-              if (
-                referenceContainers[j].className.includes(
-                  "reference-button-default-container",
-                )
-              ) {
+            const foundIndex = Array.from(referenceContainers).findIndex(
+              (container) => {
+                let articleTarget = "";
                 if (
-                  referenceContainers[j].children[1].className.includes(
-                    "toggle-list",
+                  container.className.includes(
+                    "reference-button-default-container",
                   )
                 ) {
-                  articleTarget =
-                    referenceContainers[j].children[1].children[1].textContent;
+                  if (container.children[1].className.includes("toggle-list")) {
+                    articleTarget =
+                      container.children[1].children[1].textContent;
+                  } else {
+                    articleTarget =
+                      container.children[1].children[0].textContent;
+                  }
                 } else {
-                  articleTarget =
-                    referenceContainers[j].children[1].children[0].textContent;
+                  articleTarget = container.children[1].textContent;
                 }
-              } else {
-                articleTarget = referenceContainers[j].children[1].textContent;
-              }
 
-              if (articleTarget === navTarget) {
-                index = j;
-                break;
-              }
-            }
+                return articleTarget === navTarget;
+              },
+            );
+            if (foundIndex === -1) throw new Error("No foundIndex");
 
-            const rect = referenceContainers[index].getBoundingClientRect();
+            const rect =
+              referenceContainers[foundIndex].getBoundingClientRect();
             navs[i].style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
           }
         }
