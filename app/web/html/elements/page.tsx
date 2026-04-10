@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import styles from "@/styles/detail-page/page.module.css";
 import { reference } from "./data";
-import ReferenceNav from "@/components/detail-page/ReferenceNav";
-import ReferenceButton from "@/components/detail-page/ReferenceButton/ReferenceButton";
+import ReferenceNav from "@/components/detail-page/Reference/ReferenceNav";
+import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import ToggleList from "@/components/detail-page/ToggleList";

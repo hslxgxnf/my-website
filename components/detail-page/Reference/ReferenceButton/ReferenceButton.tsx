@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
-import ReferenceButtonDefault from "@/components/detail-page/ReferenceButton/ReferenceButtonDefault";
-import ReferenceButtonTable from "@/components/detail-page/ReferenceButton/ReferenceButtonTable";
+import ReferenceButtonDefault from "@/components/detail-page/Reference/ReferenceButton/ReferenceButtonDefault";
+import ReferenceButtonTable from "@/components/detail-page/Reference/ReferenceButton/ReferenceButtonTable";
 
 interface ReferenceButtonProps {
   type?: "default" | "table";

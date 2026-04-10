@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/detail-page/page.module.css";
-import ReferenceNav from "@/components/detail-page/ReferenceNav";
+import ReferenceNav from "@/components/detail-page/Reference/ReferenceNav";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
