@@ -179,6 +179,10 @@
         transition: transform 0.2s;
         cursor: pointer;
         user-select: none;
+
+        &:hover {
+          color: var(--color-1);
+        }
       }
 
       > header:has(+ main > ul) {
