@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/junction-page/page.module.css";
-import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
+// import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {
   title: "Set this!!!",
@@ -16,7 +16,7 @@ export default function Page() {
         <h1>Title</h1>
         <hr />
         <h2>Sub Title</h2>
-        <HeadingLinkPage>Target Page</HeadingLinkPage>
+        {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
       </article>
 
       <aside></aside>
