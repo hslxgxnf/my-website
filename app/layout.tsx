@@ -9,6 +9,7 @@ import logo from "@/assets/logo.png";
 import HeaderLink from "@/components/root-layout/HeaderLink";
 import HeaderPath from "@/components/root-layout/HeaderPath";
 import NewWindowHashScroll from "@/components/root-layout/NewWindowHashScroll";
+import TitleValidator from "@/components/root-layout/TitleValidator";
 
 // Google Font Initialization
 const roboto = Roboto();
@@ -77,6 +78,7 @@ export default function Layout({ children }: LayoutProps) {
         </footer>
       </body>
       <NewWindowHashScroll />
+      <TitleValidator />
     </html>
   );
 }
