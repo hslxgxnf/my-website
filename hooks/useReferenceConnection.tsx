@@ -9,34 +9,34 @@ export default function useReferenceConnection(
   const toggleListDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const button = buttonRef.current;
-    if (!button) throw new Error("No buttonRef");
-    let target = "";
-    if (type === "default") {
-      if (button.nextElementSibling!.className.includes("toggle-list")) {
-        target = button.nextElementSibling!.children[1].textContent;
-        toggleListDivRef.current = button.nextElementSibling!
-          .children[0] as HTMLDivElement;
-      } else {
-        target = button.nextElementSibling!.firstElementChild!.textContent;
-      }
-    } else if (type === "table") {
-      target = button.nextElementSibling!.textContent;
-    }
-
     const navs = document.querySelectorAll<HTMLElement>(
       "body > main > aside:first-child > nav",
     );
     if (navs.length === 0) throw new Error("No navs");
 
-    let navTarget: HTMLElement | null = null;
+    const button = buttonRef.current;
+    if (!button) throw new Error("No buttonRef");
+    let articleTarget = "";
+    if (type === "default") {
+      if (button.nextElementSibling!.className.includes("toggle-list")) {
+        toggleListDivRef.current = button.nextElementSibling!
+          .children[0] as HTMLDivElement;
+        articleTarget = button.nextElementSibling!.children[1].textContent;
+      } else {
+        articleTarget = button.nextElementSibling!.children[0].textContent;
+      }
+    } else if (type === "table") {
+      articleTarget = button.nextElementSibling!.textContent;
+    }
+
+    let nav: HTMLElement | null = null;
     function handleClick() {
-      navTarget!.classList.toggle(styles.active);
+      nav!.classList.toggle(styles.active);
     }
 
     for (let i = 0; i < navs.length; i++) {
-      if (navs[i].dataset.target === target) {
-        navTarget = navs[i];
+      if (navs[i].dataset.target === articleTarget) {
+        nav = navs[i];
         button.addEventListener("click", handleClick);
 
         const rect = button.getBoundingClientRect();
@@ -45,7 +45,7 @@ export default function useReferenceConnection(
         const lists = navs[i].querySelectorAll<HTMLLIElement>("li");
         for (const list of lists) {
           if (list.dataset.articleShortcut === "true") {
-            button.nextElementSibling!.id = target
+            button.nextElementSibling!.id = articleTarget
               .replaceAll(" ", "-")
               .toLowerCase();
           }
@@ -56,7 +56,7 @@ export default function useReferenceConnection(
 
       if (i === navs.length - 1) {
         throw new Error(
-          `A mismatched target was found. Check the reference variable. Something should be ${target}.`,
+          `A mismatched target was found. Check the reference variable. Something should be ${articleTarget}.`,
         );
       }
     }
@@ -76,13 +76,7 @@ export default function useReferenceConnection(
           );
           if (navs.length === 0) throw new Error("No navs");
 
-          const classes = [
-            styles["reference-button-default-container"],
-            styles["reference-button-table-container"],
-          ];
-          const selector = classes
-            .map((cls) => `body > main > article div.${cls}`)
-            .join(", ");
+          const selector = `body > main > article :is(div.${styles["reference-button-default-container"]}, span.${styles["reference-button-table-container"]})`;
           const referenceContainers =
             document.querySelectorAll<HTMLDivElement>(selector);
           if (navs.length !== referenceContainers.length)
@@ -91,7 +85,38 @@ export default function useReferenceConnection(
             );
 
           for (let i = 0; i < navs.length; i++) {
-            const rect = referenceContainers[i].getBoundingClientRect();
+            const navTarget = navs[i].dataset.target;
+
+            let index = 0;
+            for (let j = 0; j < referenceContainers.length; j++) {
+              let articleTarget = "";
+              if (
+                referenceContainers[j].className.includes(
+                  "reference-button-default-container",
+                )
+              ) {
+                if (
+                  referenceContainers[j].children[1].className.includes(
+                    "toggle-list",
+                  )
+                ) {
+                  articleTarget =
+                    referenceContainers[j].children[1].children[1].textContent;
+                } else {
+                  articleTarget =
+                    referenceContainers[j].children[1].children[0].textContent;
+                }
+              } else {
+                articleTarget = referenceContainers[j].children[1].textContent;
+              }
+
+              if (articleTarget === navTarget) {
+                index = j;
+                break;
+              }
+            }
+
+            const rect = referenceContainers[index].getBoundingClientRect();
             navs[i].style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
           }
         }
