@@ -79,15 +79,15 @@ export default function PageNav2() {
         <ul ref={ulRef}>
           {headings!.map((heading, index) => {
             const content = heading.firstElementChild!.textContent;
-            const url = `#${content.replaceAll(" ", "-").toLowerCase()}`;
+            const href = `#${content.replaceAll(" ", "-").toLowerCase()}`;
 
             switch (heading.localName) {
               case "h1":
                 return (
                   <li key={index}>
                     <Link
-                      href={url}
-                      onClick={(event) => handleClickFirstLink(event, url)}
+                      href={href}
+                      onClick={(event) => handleClickFirstLink(event, href)}
                     >
                       {content}
                     </Link>
@@ -97,13 +97,13 @@ export default function PageNav2() {
               case "h2":
                 return (
                   <li key={index}>
-                    <Link href={url}>{content}</Link>
+                    <Link href={href}>{content}</Link>
                   </li>
                 );
               case "h3":
                 return (
                   <li key={index} className={styles.indent}>
-                    <Link href={url}>{content}</Link>
+                    <Link href={href}>{content}</Link>
                   </li>
                 );
             }

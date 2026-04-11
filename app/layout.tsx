@@ -1,13 +1,9 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Link from "next/link";
-import Image from "next/image";
 
 import "@/styles/root-layout/layout.css";
-import logo from "@/public/logo.png";
-import HeaderLink from "@/components/root-layout/HeaderLink";
-import HeaderPath from "@/components/root-layout/HeaderPath";
+import Header from "@/components/root-layout/Header/Header";
 import NewWindowHashScroll from "@/components/root-layout/NewWindowHashScroll";
 import TitleValidator from "@/components/root-layout/TitleValidator";
 
@@ -31,44 +27,16 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <header>
-          <nav>
-            <Link href="/">
-              <Image
-                src={logo}
-                alt="logo image generate by ChatGPT"
-                loading="eager"
-              />
-            </Link>
-
-            <ul>
-              <li>
-                <HeaderLink href="/ide-settings">IDE Settings</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink href="/dsa">DSA</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink href="/coding-tests">Coding Tests</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink href="/clean-code">Clean Code</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink href="/web">Web</HeaderLink>
-              </li>
-              <li>
-                <HeaderLink href="/ai">AI</HeaderLink>
-              </li>
-            </ul>
-          </nav>
-
-          <nav>
-            <div></div>
-            <HeaderPath />
-            <div></div>
-          </nav>
-        </header>
+        <Header
+          links={[
+            "IDE Settings",
+            "DSA",
+            "Coding Tests",
+            "Clean Code",
+            "Web",
+            "AI",
+          ]}
+        />
 
         {/*main*/}
         {children}

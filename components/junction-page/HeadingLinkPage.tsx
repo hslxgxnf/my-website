@@ -10,11 +10,11 @@ interface HeadingLinkPageProps {
 export default function HeadingLinkPage({ children }: HeadingLinkPageProps) {
   const currentPath = usePathname();
   const nextPath = children.replaceAll(" ", "-").toLowerCase();
-  const url = `${currentPath}/${nextPath}`;
+  const href = `${currentPath}/${nextPath}`;
 
   return (
     <h3>
-      <Link href={url}>{children}</Link>
+      <Link href={href}>{children}</Link>
     </h3>
   );
 }

@@ -15,15 +15,15 @@ export default function HeadingLinkId({
 }: HeadingLinkIdProps) {
   let result = null;
   const id = children.replaceAll(" ", "-").toLowerCase();
-  const url = `#${id}`;
+  const href = `#${id}`;
 
   switch (headingNumber) {
     case 1:
       result = (
         <h1 id={id}>
           <Link
-            href={url}
-            onClick={(event) => handleClickFirstLink(event, url)}
+            href={href}
+            onClick={(event) => handleClickFirstLink(event, href)}
           >
             {children}
           </Link>{" "}
@@ -34,14 +34,14 @@ export default function HeadingLinkId({
     case 2:
       result = (
         <h2 id={id}>
-          <Link href={url}>{children}</Link> <span>#</span>
+          <Link href={href}>{children}</Link> <span>#</span>
         </h2>
       );
       break;
     case 3:
       result = (
         <h3 id={id}>
-          <Link href={url}>{children}</Link> <span>#</span>
+          <Link href={href}>{children}</Link> <span>#</span>
         </h3>
       );
       break;

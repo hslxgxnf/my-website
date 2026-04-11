@@ -32,18 +32,22 @@ export default function HeaderPath() {
   }
 
   return (
-    <ul>
-      {processedPath.map((item, index) => {
-        if (index !== processedPath.length - 1) {
-          return (
-            <li key={index}>
-              <Link href={item.href}>{item.name}</Link> <FaCaretRight />
-            </li>
-          );
-        } else {
-          return <li key={index}>{item.name}</li>;
-        }
-      })}
-    </ul>
+    <nav>
+      <div></div>
+      <ul>
+        {processedPath.map((item, index) => {
+          if (index !== processedPath.length - 1) {
+            return (
+              <li key={index}>
+                <Link href={item.href}>{item.name}</Link> <FaCaretRight />
+              </li>
+            );
+          } else {
+            return <li key={index}>{item.name}</li>;
+          }
+        })}
+      </ul>
+      <div></div>
+    </nav>
   );
 }

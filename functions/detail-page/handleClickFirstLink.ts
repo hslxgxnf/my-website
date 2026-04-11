@@ -2,9 +2,9 @@ import type { MouseEvent } from "react";
 
 export default function handleClickFirstLink(
   event: MouseEvent<HTMLAnchorElement>,
-  url: string,
+  href: string,
 ): void {
   event.preventDefault();
-  history.pushState({}, "", url);
+  history.pushState({}, "", href);
   window.scrollTo(0, 0);
 }
