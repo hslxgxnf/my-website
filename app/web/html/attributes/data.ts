@@ -37,6 +37,35 @@ export const reference: Reference = [
     ],
   },
   {
+    target: "Custom Attributes",
+    sites: [
+      {
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes",
+        favicon: favicons.MDN.image,
+        name: favicons.MDN.name,
+        title: "Use data attributes",
+      },
+      {
+        url: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/data-*",
+        favicon: favicons.MDN.image,
+        name: favicons.MDN.name,
+        title: "HTML data-* global attribute",
+      },
+      {
+        url: "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset",
+        favicon: favicons.MDN.image,
+        name: favicons.MDN.name,
+        title: "HTMLElement: dataset property",
+      },
+      {
+        url: "https://javascript.info/dom-attributes-and-properties",
+        favicon: favicons.JAVASCRIPT$INFO.image,
+        name: favicons.JAVASCRIPT$INFO.name,
+        title: "Attributes and properties",
+      },
+    ],
+  },
+  {
     target: "Boolean Attributes",
     sites: [
       {
@@ -44,6 +73,23 @@ export const reference: Reference = [
         favicon: favicons.MDN.image,
         name: favicons.MDN.name,
         title: "Boolean attribute (HTML)",
+      },
+    ],
+  },
+  {
+    target: "Attribute Reflection",
+    sites: [
+      {
+        url: "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Reflected_attributes",
+        favicon: favicons.MDN.image,
+        name: favicons.MDN.name,
+        title: "Attribute reflection",
+      },
+      {
+        url: "https://javascript.info/dom-attributes-and-properties",
+        favicon: favicons.JAVASCRIPT$INFO.image,
+        name: favicons.JAVASCRIPT$INFO.name,
+        title: "Attributes and properties",
       },
     ],
   },
@@ -77,8 +123,8 @@ export const reference: Reference = [
       },
       {
         url: "/web/html/elements#<a>",
-        favicon: favicons.Article_Shortcut.image,
-        name: favicons.Article_Shortcut.name,
+        favicon: favicons.self.image,
+        name: favicons.self.name,
         title: "Elements | <a>",
       },
     ],
@@ -112,6 +158,17 @@ export const codeEnumeratedAttributes: Code = {
   content: `<input type="text" />
 <input type="password" />
 <input type="email" />`,
+};
+
+export const codeCustomAttributesHTML: Code = {
+  language: "html",
+  content: `<div data-weight="100">Box</div>`,
+};
+
+export const codeCustomAttributesJS: Code = {
+  language: "typescript",
+  content: `const div = document.querySelector<HTMLDivElement>("div");
+console.log(div?.dataset.weight); // "100"`,
 };
 
 export const codeBooleanAttributes: Code = {

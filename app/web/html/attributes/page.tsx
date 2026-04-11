@@ -4,6 +4,8 @@ import styles from "@/styles/detail-page/page.module.css";
 import {
   reference,
   codeEnumeratedAttributes,
+  codeCustomAttributesHTML,
+  codeCustomAttributesJS,
   codeBooleanAttributes,
   codeClass,
 } from "./data";
@@ -29,18 +31,16 @@ export default function Page() {
           <ReferenceButton>
             <HeadingLinkId headingNumber={1}>Attributes</HeadingLinkId>
           </ReferenceButton>
+          <p>An attribute provides additional information to its element.</p>
           <p>
-            Attributes are written as{" "}
-            <Highlight type="text">name="value"</Highlight> inside an element's
-            opening tag.
-          </p>
-          <p>
-            Attributes provide additional information about an element's
-            behavior, appearance, or metadata.
+            An attribute is written as{" "}
+            <Highlight type="text">name="value"</Highlight> inside the opening
+            tag of an element.
           </p>
           <p>
             Attribute names and enumerated attribute values are
             case-insensitive, but it is recommended to use lowercase.
+            <br />
             Non-enumerated attribute values are case-sensitive.
           </p>
         </section>
@@ -55,6 +55,20 @@ export default function Page() {
         </section>
         <section>
           <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Custom Attributes</HeadingLinkId>
+          </ReferenceButton>
+          <p>
+            <Highlight type="text">HTML</Highlight>{" "}
+            <Highlight type="simple-code">data-*</Highlight>
+            {" ⇄ "}
+            <Highlight type="text">JavaScript</Highlight>{" "}
+            <Highlight type="simple-code">HTMLElement.dataset</Highlight>
+          </p>
+          <Highlight type="complex-code">{codeCustomAttributesHTML}</Highlight>
+          <Highlight type="complex-code">{codeCustomAttributesJS}</Highlight>
+        </section>
+        <section>
+          <ReferenceButton>
             <HeadingLinkId headingNumber={2}>Boolean Attributes</HeadingLinkId>
           </ReferenceButton>
           <p>
@@ -65,6 +79,18 @@ export default function Page() {
             The actual value assigned does not matter.
           </p>
           <Highlight type="complex-code">{codeBooleanAttributes}</Highlight>
+        </section>
+        <section>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>
+              Attribute Reflection
+            </HeadingLinkId>
+          </ReferenceButton>
+          <p>
+            <Highlight type="text">HTML</Highlight> Attributes are reflected in
+            corresponding <Highlight type="text">JavaScript</Highlight>{" "}
+            properties.
+          </p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Examples</HeadingLinkId>
