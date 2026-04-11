@@ -379,23 +379,23 @@ export default function Page() {
                 Italic
               </li>
               <li>
-                <Highlight type="simple-code">&lt;mark&gt;</Highlight>
-                <br />
-                Highlight
-              </li>
-              <li>
-                <Highlight type="simple-code">&lt;small&gt;</Highlight>
-              </li>
-              <li>
                 <Highlight type="simple-code">&lt;s&gt;</Highlight>
                 <br />
                 Strikethrough
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;mark&gt;</Highlight>
+                <br />
+                Highlight
               </li>
               <li>
                 <Highlight type="simple-code">&lt;del&gt;</Highlight>{" "}
                 <Highlight type="simple-code">&lt;ins&gt;</Highlight>
                 <br />
                 Delete and Insert
+              </li>
+              <li>
+                <Highlight type="simple-code">&lt;small&gt;</Highlight>
               </li>
               <li>
                 <Highlight type="simple-code">&lt;var&gt;</Highlight>{" "}
