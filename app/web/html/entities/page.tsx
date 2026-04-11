@@ -55,22 +55,20 @@ export default function Page() {
             </li>
             <ReferenceButton>
               <li>
-                <Highlight type="text">Non-Breaking Space &nbsp;</Highlight>{" "}
-                <Highlight type="simple-code" copy={true}>
-                  &amp;nbsp;
-                </Highlight>
-                <br />
-                The{" "}
-                <Highlight type="simple-code" copy={true}>
-                  &amp;nbsp;
-                </Highlight>{" "}
-                entity is a space without creating a new line.
-                <br />
-                The{" "}
-                <Highlight type="simple-code" copy={true}>
-                  &amp;nbsp;
-                </Highlight>{" "}
-                entity can be used to write two or more spaces in a row.
+                <p>
+                  <Highlight type="text">Non-Breaking Space &nbsp;</Highlight>{" "}
+                  <Highlight type="simple-code" copy={true}>
+                    &amp;nbsp;
+                  </Highlight>
+                </p>
+                <p>
+                  The{" "}
+                  <Highlight type="simple-code" copy={true}>
+                    &amp;nbsp;
+                  </Highlight>{" "}
+                  entity is a space without creating a new line and can be used
+                  to write two or more spaces in a row.
+                </p>
               </li>
             </ReferenceButton>
             <li>

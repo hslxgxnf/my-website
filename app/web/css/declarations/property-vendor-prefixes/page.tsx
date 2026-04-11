@@ -27,24 +27,28 @@ export default function Page() {
         </ReferenceButton>
         <ul>
           <li>
-            <Highlight type="simple-code">-webkit-</Highlight>
-            <br />
-            Almost All Browsers
+            <p>
+              <Highlight type="simple-code">-webkit-</Highlight>
+            </p>
+            <p>Almost All Browsers</p>
           </li>
           <li>
-            <Highlight type="simple-code">-moz-</Highlight>
-            <br />
-            Firefox
+            <p>
+              <Highlight type="simple-code">-moz-</Highlight>
+            </p>
+            <p>Firefox</p>
           </li>
           <li>
-            <Highlight type="simple-code">-o-</Highlight>
-            <br />
-            Old Opera
+            <p>
+              <Highlight type="simple-code">-o-</Highlight>
+            </p>
+            <p>Old Opera</p>
           </li>
           <li>
-            <Highlight type="simple-code">-ms-</Highlight>
-            <br />
-            Old Edge and IE
+            <p>
+              <Highlight type="simple-code">-ms-</Highlight>
+            </p>
+            <p>Old Edge and IE</p>
           </li>
         </ul>
       </article>

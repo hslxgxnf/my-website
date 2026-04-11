@@ -110,21 +110,27 @@ export default function Page() {
                 <Highlight type="simple-code">&lt;title&gt;</Highlight>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;link&gt;</Highlight>
-                <br />
-                External CSS, Favicon
+                <p>
+                  <Highlight type="simple-code">&lt;link&gt;</Highlight>
+                </p>
+                <p>External CSS, Favicon</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;style&gt;</Highlight>
-                <br />
-                Internal CSS
+                <p>
+                  <Highlight type="simple-code">&lt;style&gt;</Highlight>
+                </p>
+                <p>Internal CSS</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;script&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;noscript&gt;</Highlight>
-                <br />
-                Can be nested in the{" "}
-                <Highlight type="simple-code">&lt;body&gt;</Highlight> element.
+                <p>
+                  <Highlight type="simple-code">&lt;script&gt;</Highlight>{" "}
+                  <Highlight type="simple-code">&lt;noscript&gt;</Highlight>
+                </p>
+                <p>
+                  Can be nested in the{" "}
+                  <Highlight type="simple-code">&lt;body&gt;</Highlight>{" "}
+                  element.
+                </p>
               </li>
             </ul>
             <li>
@@ -148,24 +154,28 @@ export default function Page() {
                 <Highlight type="simple-code">&lt;nav&gt;</Highlight>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;article&gt;</Highlight>
-                <br />
-                Independent Content
+                <p>
+                  <Highlight type="simple-code">&lt;article&gt;</Highlight>
+                </p>
+                <p>Independent Content</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;section&gt;</Highlight>
-                <br />
-                Semantic Block Grouping
+                <p>
+                  <Highlight type="simple-code">&lt;section&gt;</Highlight>
+                </p>
+                <p>Semantic Block Grouping</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;div&gt;</Highlight>
-                <br />
-                Non-Semantic Block Grouping
+                <p>
+                  <Highlight type="simple-code">&lt;div&gt;</Highlight>
+                </p>
+                <p>Non-Semantic Block Grouping</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;span&gt;</Highlight>
-                <br />
-                Non-Semantic Inline Grouping
+                <p>
+                  <Highlight type="simple-code">&lt;span&gt;</Highlight>
+                </p>
+                <p>Non-Semantic Inline Grouping</p>
               </li>
               <hr />
               <ReferenceButton>
@@ -367,52 +377,60 @@ export default function Page() {
                 <Highlight type="simple-code">&lt;p&gt;</Highlight>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;strong&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;b&gt;</Highlight>
-                <br />
-                Bold
+                <p>
+                  <Highlight type="simple-code">&lt;strong&gt;</Highlight>{" "}
+                  <Highlight type="simple-code">&lt;b&gt;</Highlight>
+                </p>
+                <p>Bold</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;em&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;i&gt;</Highlight>
-                <br />
-                Italic
+                <p>
+                  <Highlight type="simple-code">&lt;em&gt;</Highlight>{" "}
+                  <Highlight type="simple-code">&lt;i&gt;</Highlight>
+                </p>
+                <p>Italic</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;s&gt;</Highlight>
-                <br />
-                Strikethrough
+                <p>
+                  <Highlight type="simple-code">&lt;s&gt;</Highlight>
+                </p>
+                <p>Strikethrough</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;mark&gt;</Highlight>
-                <br />
-                Highlight
+                <p>
+                  <Highlight type="simple-code">&lt;mark&gt;</Highlight>
+                </p>
+                <p>Highlight</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;del&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;ins&gt;</Highlight>
-                <br />
-                Delete and Insert
+                <p>
+                  <Highlight type="simple-code">&lt;del&gt;</Highlight>{" "}
+                  <Highlight type="simple-code">&lt;ins&gt;</Highlight>
+                </p>
+                <p>Delete and Insert</p>
               </li>
               <li>
                 <Highlight type="simple-code">&lt;small&gt;</Highlight>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;var&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;sub&gt;</Highlight>{" "}
-                <Highlight type="simple-code">&lt;sup&gt;</Highlight>
-                <br />
-                Variable
+                <p>
+                  <Highlight type="simple-code">&lt;var&gt;</Highlight>{" "}
+                  <Highlight type="simple-code">&lt;sub&gt;</Highlight>{" "}
+                  <Highlight type="simple-code">&lt;sup&gt;</Highlight>
+                </p>
+                <p>Variable</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;kbd&gt;</Highlight>
-                <br />
-                Keyboard
+                <p>
+                  <Highlight type="simple-code">&lt;kbd&gt;</Highlight>
+                </p>
+                <p>Keyboard</p>
               </li>
               <li>
-                <Highlight type="simple-code">&lt;samp&gt;</Highlight>
-                <br />
-                Program Sample Output
+                <p>
+                  <Highlight type="simple-code">&lt;samp&gt;</Highlight>
+                </p>
+                <p>Program Sample Output</p>
               </li>
               <li>
                 <Highlight type="simple-code">&lt;pre&gt;</Highlight>{" "}

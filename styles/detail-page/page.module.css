@@ -185,7 +185,7 @@
         }
       }
 
-      > header:has(+ main > ul) {
+      > header {
         margin-bottom: var(--space-20);
       }
 

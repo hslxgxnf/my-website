@@ -33,7 +33,7 @@ export const reference: Reference = [
     ],
   },
   {
-    target: "Non-Breaking Space  ",
+    target: "Non-Breaking Space   &nbsp;",
     sites: [
       {
         url: "https://www.daleseo.com/html-nbsp/",

@@ -96,25 +96,30 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Examples</HeadingLinkId>
           <ul>
             <li>
-              <Highlight type="simple-code">id</Highlight>
-              <br />
-              Elements cannot share the same{" "}
-              <Highlight type="simple-code">id</Highlight> value.
+              <p>
+                <Highlight type="simple-code">id</Highlight>
+              </p>
+              <p>
+                Elements cannot share the same{" "}
+                <Highlight type="simple-code">id</Highlight> value.
+              </p>
             </li>
             <li>
-              <Highlight type="simple-code">class</Highlight>
-              <br />
-              Elements can share the same{" "}
-              <Highlight type="simple-code">class</Highlight> value.
-              <br />
-              An element can have multiple{" "}
-              <Highlight type="simple-code">class</Highlight> values.
+              <p>
+                <Highlight type="simple-code">class</Highlight>
+              </p>
+              <p>
+                Elements can share the same{" "}
+                <Highlight type="simple-code">class</Highlight> value and have
+                multiple <Highlight type="simple-code">class</Highlight> values.
+              </p>
               <Highlight type="complex-code">{codeClass}</Highlight>
             </li>
             <li>
-              <Highlight type="simple-code">title</Highlight>
-              <br />
-              For a mouse hovering tooltip.
+              <p>
+                <Highlight type="simple-code">title</Highlight>
+              </p>
+              <p>For a mouse hovering tooltip.</p>
             </li>
             <li>
               <Highlight type="simple-code">rel</Highlight>
@@ -124,10 +129,13 @@ export default function Page() {
                     <Highlight type="simple-code">rel="noopener"</Highlight>
                   </li>
                   <li>
-                    <Highlight type="simple-code">rel="noreferrer"</Highlight>
-                    <br />
-                    Contains{" "}
-                    <Highlight type="simple-code">rel="noopener"</Highlight>.
+                    <p>
+                      <Highlight type="simple-code">rel="noreferrer"</Highlight>
+                    </p>
+                    <p>
+                      Contains{" "}
+                      <Highlight type="simple-code">rel="noopener"</Highlight>.
+                    </p>
                   </li>
                 </ReferenceButton>
               </ul>
