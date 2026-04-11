@@ -37,7 +37,7 @@ export default function Page() {
         {/*<HeadingLinkPage>Tailwind CSS</HeadingLinkPage>*/}
         <hr />
         <h2>JavaScript</h2>
-        {/*<HeadingLinkPage>Vanilla</HeadingLinkPage>*/}
+        <HeadingLinkPage>Vanilla</HeadingLinkPage>
         {/*<HeadingLinkPage>React</HeadingLinkPage>*/}
         <HeadingLinkPage>Next.js</HeadingLinkPage>
       </article>
