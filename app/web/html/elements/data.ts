@@ -127,8 +127,8 @@ export const reference: Reference = [
     sites: [
       {
         url: '/web/html/attributes#rel="noopener"',
-        favicon: favicons.Article_Shortcut.image,
-        name: favicons.Article_Shortcut.name,
+        favicon: favicons.self.image,
+        name: favicons.self.name,
         title: 'Attributes | rel="noopener"',
       },
     ],

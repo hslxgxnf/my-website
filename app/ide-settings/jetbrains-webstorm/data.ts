@@ -21,8 +21,8 @@ export const reference: Reference = [
     sites: [
       {
         url: "/web/css/declarations/property-arrangement",
-        favicon: favicons.Article_Shortcut.image,
-        name: favicons.Article_Shortcut.name,
+        favicon: favicons.self.image,
+        name: favicons.self.name,
         title: "Property Arrangement",
       },
     ],

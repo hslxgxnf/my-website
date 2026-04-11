@@ -13,14 +13,14 @@ export const reference: Reference = [
       },
       {
         url: "https://rhodesmill.org/brandon/2011/concentric-css/",
-        favicon: favicons.Non_Favicon.image,
-        name: favicons.Non_Favicon.name,
+        favicon: favicons.none.image,
+        name: favicons.none.name,
         title: "Concentric CSS",
       },
       {
         url: "/ide-settings/jetbrains-webstorm#custom-order",
-        favicon: favicons.Article_Shortcut.image,
-        name: favicons.Article_Shortcut.name,
+        favicon: favicons.self.image,
+        name: favicons.self.name,
         title: "JetBrains WebStorm | Custom Order",
       },
     ],

@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import "@/styles/root-layout/layout.css";
-import logo from "@/assets/logo.png";
+import logo from "@/public/logo.png";
 import HeaderLink from "@/components/root-layout/HeaderLink";
 import HeaderPath from "@/components/root-layout/HeaderPath";
 import NewWindowHashScroll from "@/components/root-layout/NewWindowHashScroll";

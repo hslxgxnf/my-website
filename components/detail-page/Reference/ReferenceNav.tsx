@@ -17,11 +17,11 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
         <main>
           <ul>
             {referenceItem.sites.map((site, index) => {
-              if (site.name === "Dummy") {
+              if (site.name === "dummy") {
                 throw new Error("Change this dummy image.");
-              } else if (site.name === "Article Shortcut") {
+              } else if (site.name === "self") {
                 return (
-                  <li key={index} data-article-shortcut>
+                  <li key={index} data-self>
                     <Link href={site.url} target="_blank" rel="noopener ">
                       <Image src={site.favicon} alt={site.name} />
                       <span>{site.title}</span>
@@ -30,7 +30,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                 );
               } else {
                 const siteInfo =
-                  site.name === "Null"
+                  site.name === "none"
                     ? site.title
                     : `${site.name} | ${site.title}`;
 

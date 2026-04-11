@@ -7,8 +7,8 @@ export const reference: Reference = [
     sites: [
       {
         url: "https://nextjs.org/docs/app/api-reference/config/next-config-js/rewrites",
-        favicon: favicons.Next_js.image,
-        name: favicons.Next_js.name,
+        favicon: favicons.Next$js.image,
+        name: favicons.Next$js.name,
         title: "rewrites",
       },
       {

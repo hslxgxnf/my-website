@@ -42,9 +42,10 @@ export default function useReferenceConnection(
         const rect = button.getBoundingClientRect();
         navs[i].style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
 
+        // This is for the <NewWindowHashScroll> component.
         const lists = navs[i].querySelectorAll<HTMLLIElement>("li");
         for (const list of lists) {
-          if (list.dataset.articleShortcut === "true") {
+          if (list.dataset.self === "true") {
             button.nextElementSibling!.id = articleTarget
               .replaceAll(" ", "-")
               .toLowerCase();

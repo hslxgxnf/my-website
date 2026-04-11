@@ -1,83 +1,90 @@
-import Article_Shortcut_Image from "./Article_Shortcut.png"; // Google Fonts
-import DaleSeo_Image from "./DaleSeo.png";
-import Dummy_Image from "./Dummy.png";
-import Emmet_Image from "./Emmet.svg";
-import GitHub_Image from "./GitHub.svg";
-import HTML_Arrows_Image from "./HTML_Arrows.ico";
-import Inpa_Dev_Image from "./Inpa_Dev.ico";
-import MDN_Image from "./MDN.png";
-import Next_js_Image from "./Next_js.svg";
-import Null_Image from "./Null.png";
-import Stack_Overflow_Image from "./Stack_Overflow.svg";
-import tistory_Image from "./tistory.png";
-import Udemy_Image from "./Udemy.png";
-import W3Schools_Image from "./W3Schools.svg";
-import WHATWG_Image from "./WHATWG.svg";
-import YouTube_Image from "./YouTube.svg";
+import dummy from "./images/_dummy.png";
+import self from "@/public/icon.png";
+import none from "./images/_none.png";
+
+import DaleSeo from "./images/DaleSeo.png";
+import Emmet from "./images/Emmet.svg";
+import GitHub from "./images/GitHub.svg";
+import HTML_Arrows from "./images/HTML-Arrows.ico";
+import Inpa_Dev from "./images/Inpa-Dev.ico";
+import JAVASCRIPT$INFO from "./images/JAVASCRIPT.INFO.png";
+import MDN from "./images/MDN.png";
+import Next$js from "./images/Next.js.svg";
+import Stack_Overflow from "./images/Stack-Overflow.svg";
+import tistory from "./images/tistory.png";
+import Udemy from "./images/Udemy.png";
+import W3Schools from "./images/W3Schools.svg";
+import WHATWG from "./images/WHATWG.svg";
+import YouTube from "./images/YouTube.svg";
 
 export const favicons = {
-  Article_Shortcut: {
-    image: Article_Shortcut_Image,
-    name: "Article Shortcut",
+  dummy: {
+    image: dummy,
+    name: "dummy",
+  },
+  self: {
+    image: self,
+    name: "self",
+  },
+  none: {
+    image: none,
+    name: "none",
   },
   DaleSeo: {
-    image: DaleSeo_Image,
+    image: DaleSeo,
     name: "DaleSeo",
   },
-  Dummy: {
-    image: Dummy_Image,
-    name: "Dummy",
-  },
   Emmet: {
-    image: Emmet_Image,
+    image: Emmet,
     name: "Emmet",
   },
   GitHub: {
-    image: GitHub_Image,
+    image: GitHub,
     name: "GitHub",
   },
   HTML_Arrows: {
-    image: HTML_Arrows_Image,
+    image: HTML_Arrows,
     name: "HTML Arrows",
   },
   Inpa_Dev: {
-    image: Inpa_Dev_Image,
+    image: Inpa_Dev,
     name: "Inpa Dev",
   },
+  JAVASCRIPT$INFO: {
+    image: JAVASCRIPT$INFO,
+    name: "JAVASCRIPT.INFO",
+  },
   MDN: {
-    image: MDN_Image,
+    image: MDN,
     name: "MDN",
   },
-  Next_js: {
-    image: Next_js_Image,
+  Next$js: {
+    image: Next$js,
     name: "Next.js",
   },
-  Non_Favicon: {
-    image: Null_Image,
-    name: "Null",
-  },
+
   Stack_Overflow: {
-    image: Stack_Overflow_Image,
+    image: Stack_Overflow,
     name: "Stack Overflow",
   },
   tistory: {
-    image: tistory_Image,
+    image: tistory,
     name: "tistory",
   },
   Udemy: {
-    image: Udemy_Image,
+    image: Udemy,
     name: "Udemy",
   },
   W3Schools: {
-    image: W3Schools_Image,
+    image: W3Schools,
     name: "W3Schools",
   },
   WHATWG: {
-    image: WHATWG_Image,
+    image: WHATWG,
     name: "WHATWG",
   },
   YouTube: {
-    image: YouTube_Image,
+    image: YouTube,
     name: "YouTube",
   },
 };

@@ -7,8 +7,8 @@ export const reference: Reference = [
     sites: [
       {
         url: "",
-        favicon: favicons.Dummy.image,
-        name: favicons.Dummy.name,
+        favicon: favicons.dummy.image,
+        name: favicons.dummy.name,
         title: "",
       },
     ],
