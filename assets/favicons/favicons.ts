@@ -11,6 +11,7 @@ import JAVASCRIPT$INFO from "./images/JAVASCRIPT.INFO.png";
 import MDN from "./images/MDN.png";
 import Next$js from "./images/Next.js.svg";
 import Stack_Overflow from "./images/Stack-Overflow.svg";
+import Stylelint from "./images/Stylelint.svg";
 import tistory from "./images/tistory.png";
 import Udemy from "./images/Udemy.png";
 import W3Schools from "./images/W3Schools.svg";
@@ -66,6 +67,10 @@ export const favicons = {
   Stack_Overflow: {
     image: Stack_Overflow,
     name: "Stack Overflow",
+  },
+  Stylelint: {
+    image: Stylelint,
+    name: "Stylelint",
   },
   tistory: {
     image: tistory,

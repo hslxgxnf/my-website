@@ -1,4 +1,29 @@
-import type { Config } from "stylelint";
+import type { Reference, Code } from "@/types/detail-page/interfaces";
+import { favicons } from "@/assets/favicons/favicons";
+
+export const reference: Reference = [
+  {
+    target: "Stylelint",
+    sites: [
+      {
+        url: "https://stylelint.io/",
+        favicon: favicons.Stylelint.image,
+        name: favicons.Stylelint.name,
+        title: "Stylelint",
+      },
+      {
+        url: "https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md",
+        favicon: favicons.GitHub.image,
+        name: favicons.GitHub.name,
+        title: "properties-order",
+      },
+    ],
+  },
+];
+
+export const code: Code = {
+  language: "typescript",
+  content: `import type { Config } from "stylelint";
 
 export default {
   customSyntax: "postcss-scss",
@@ -257,3 +282,6 @@ export default {
     ],
   },
 } satisfies Config;
+`,
+  fileName: "stylelint.config.ts",
+};

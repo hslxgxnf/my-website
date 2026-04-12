@@ -29,8 +29,9 @@ export default function Page() {
         {/*<HeadingLinkPage>npm</HeadingLinkPage>*/}
         {/*<HeadingLinkPage>pnpm</HeadingLinkPage>*/}
         {/*<HeadingLinkPage>concurrently</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>Prettier</HeadingLinkPage>*/}
         {/*<HeadingLinkPage>ESLint</HeadingLinkPage>*/}
+        {/*<HeadingLinkPage>Prettier</HeadingLinkPage>*/}
+        <HeadingLinkPage>Stylelint</HeadingLinkPage>
         <hr />
         <h2>HTML</h2>
         <HeadingLinkPage>HTML</HeadingLinkPage>
