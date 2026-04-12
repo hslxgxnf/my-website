@@ -1,6 +1,6 @@
 import { type RefObject, useRef, useEffect } from "react";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 
 export default function useReferenceConnection(
   type: "default" | "table",
@@ -25,7 +25,11 @@ export default function useReferenceConnection(
           .children[0] as HTMLDivElement;
         articleTarget = articleTargetElement.children[1].textContent;
       } else {
-        articleTarget = articleTargetElement.children[0].textContent;
+        if (articleTargetElement.children[0]) {
+          articleTarget = articleTargetElement.children[0].textContent;
+        } else {
+          articleTarget = articleTargetElement.textContent;
+        }
       }
     } else {
       articleTarget = articleTargetElement.textContent;

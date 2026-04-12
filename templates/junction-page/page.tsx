@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/junction-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
+// import { reference, code } from "./data";
+import ReferenceNav from "@/components/detail-page/Reference/ReferenceNav";
+// import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";
 // import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {
@@ -10,7 +13,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className={styles.main}>
-      <aside></aside>
+      <aside>
+        <ReferenceNav />
+      </aside>
 
       <article>
         <h1>Title</h1>

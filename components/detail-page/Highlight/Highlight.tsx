@@ -1,4 +1,4 @@
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import type { Code } from "@/types/detail-page/interfaces";
 import HighlightText from "@/components/detail-page/Highlight/HighlightText";
 import HighlightSimpleCode from "@/components/detail-page/Highlight/HighlightSimpleCode";

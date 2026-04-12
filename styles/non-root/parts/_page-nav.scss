@@ -1,0 +1,48 @@
+@mixin page-nav {
+  &:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    > nav {
+      flex-basis: 80%;
+      position: sticky;
+      top: calc(var(--height-header) + var(--space-40));
+      border-radius: var(--border-radius);
+      padding: var(--space-10);
+      background-color: var(--background-color-4);
+
+      > header {
+        margin-bottom: var(--space-10);
+        color: var(--color-1);
+        font-size: var(--font-size-35);
+      }
+
+      > main {
+        > ul {
+          > li {
+            list-style-type: none;
+            margin-bottom: var(--space-10);
+            font-size: var(--font-size-25);
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            &.indent {
+              margin-left: calc(var(--space-20));
+            }
+
+            > a.active {
+              color: var(--color-1);
+            }
+
+            > hr {
+              margin-top: var(--space-10);
+            }
+          }
+        }
+      }
+    }
+  }
+}

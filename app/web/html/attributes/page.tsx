@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import {
   reference,
   codeEnumeratedAttributes,

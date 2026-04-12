@@ -2,7 +2,7 @@ import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import "@/styles/root-layout/layout.css";
+import "@/styles/root/layout.scss";
 import Header from "@/components/root-layout/Header/Header";
 import NewWindowHashScroll from "@/components/root-layout/NewWindowHashScroll";
 import TitleValidator from "@/components/root-layout/TitleValidator";

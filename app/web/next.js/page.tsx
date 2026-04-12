@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/junction-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {

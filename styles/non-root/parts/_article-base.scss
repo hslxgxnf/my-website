@@ -1,0 +1,55 @@
+@mixin article-base {
+  flex-basis: 60%;
+  padding: var(--space-40);
+
+  :is(h1, h2, h3, p, hr, ul, li, table) {
+    margin-bottom: var(--space-20);
+  }
+
+  li > ul {
+    margin-top: var(--space-20);
+  }
+
+  h1 {
+    font-size: var(--font-size-55);
+  }
+
+  h2 {
+    font-size: var(--font-size-45);
+  }
+
+  h3 {
+    font-size: var(--font-size-35);
+  }
+
+  p {
+    font-size: var(--font-size-25);
+  }
+
+  ul {
+    padding-left: var(--space-40);
+    font-size: var(--font-size-25);
+  }
+
+  table :is(caption, th, td) {
+    font-size: var(--font-size-25);
+  }
+
+  :is(h1, h2, h3) {
+    color: var(--color-1);
+  }
+
+  :is(h1, h2, h3):has(> span) {
+    > a {
+      color: var(--color-1);
+
+      &:hover + span {
+        display: inline;
+      }
+    }
+
+    > span {
+      display: none;
+    }
+  }
+}

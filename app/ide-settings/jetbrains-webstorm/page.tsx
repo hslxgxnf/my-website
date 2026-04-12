@@ -3,7 +3,7 @@ import { FaSortAlphaDown } from "react-icons/fa";
 import { PiCaretDownBold } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import {
   reference,
   entities,

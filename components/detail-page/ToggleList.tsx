@@ -2,7 +2,7 @@
 
 import { type ReactNode, useRef } from "react";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 
 interface ToggleListProps {
   header: ReactNode;

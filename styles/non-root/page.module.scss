@@ -1,0 +1,25 @@
+@use "parts" as parts;
+
+.main {
+  display: flex;
+
+  > aside {
+    flex-basis: 20%;
+
+    @include parts.reference-nav;
+
+    @include parts.page-nav;
+  }
+
+  > article {
+    @include parts.article-base;
+
+    @include parts.toggle-list;
+
+    @include parts.table;
+
+    @include parts.code;
+
+    @include parts.reference-button;
+  }
+}

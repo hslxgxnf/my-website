@@ -1,0 +1,92 @@
+@mixin code {
+  em {
+    color: var(--color-2);
+  }
+
+  code {
+    color: var(--color-3);
+  }
+
+  :is(em.plain, em.copy, code.plain, code.copy) {
+    border-radius: var(--border-radius);
+    padding: 0 var(--space-10);
+    background-color: var(--background-color-2);
+    font-style: normal;
+    font-family: "Roboto Mono", monospace;
+    word-break: break-all;
+  }
+
+  :is(em.copy, code.copy) {
+    cursor: pointer;
+  }
+
+  :is(em.pre, code.pre) {
+    border-radius: 0;
+    padding: 0;
+    font-style: normal;
+    font-family: "Roboto Mono", monospace;
+  }
+
+  :is(pre:has(> em.pre), pre:has(> code.pre)) {
+    padding: var(--space-10);
+    overflow: auto;
+    background-color: var(--background-color-2);
+  }
+
+  span.underline {
+    text-decoration: underline;
+    font-style: normal;
+  }
+
+  .complex-code-container {
+    margin-bottom: var(--space-20);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color-1);
+
+    > header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-10) var(--space-20);
+
+      > span {
+        font-size: var(--font-size-25);
+      }
+
+      > button {
+        display: flex;
+        align-items: center;
+        gap: var(--space-10);
+        border: 1px solid var(--color-1);
+        border-radius: var(--border-radius);
+        padding: var(--space-10);
+        background-color: transparent;
+        font-size: var(--font-size-25);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--background-color-2);
+        }
+      }
+    }
+
+    > main > pre {
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+      > code {
+        color: var(--color-base) !important;
+        font-size: var(--font-size-25) !important;
+        font-family: "Roboto Mono", monospace !important;
+
+        > span {
+          font-size: var(--font-size-25);
+          font-family: "Roboto Mono", monospace;
+        }
+      }
+    }
+  }
+
+  li:has(> .complex-code-container) > .complex-code-container {
+    margin-top: var(--space-20);
+  }
+}

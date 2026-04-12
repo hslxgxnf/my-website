@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import { reference, code } from "./data";
 import ReferenceNav from "@/components/detail-page/Reference/ReferenceNav";
 import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";

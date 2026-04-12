@@ -5,7 +5,7 @@ import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import type { Code } from "@/types/detail-page/interfaces";
 import changeToTitleCase from "@/functions/changeToTitleCase";
 

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
-import styles from "@/styles/detail-page/page.module.css";
+import styles from "@/styles/non-root/page.module.scss";
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
 export default function PageNav() {

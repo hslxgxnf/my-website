@@ -1,0 +1,34 @@
+@mixin toggle-list {
+  .toggle-list {
+    list-style: none;
+    position: relative;
+
+    > div {
+      position: absolute;
+      left: calc(-1 * var(--font-size-25) + -5px);
+      transition: transform 0.2s;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: var(--color-1);
+      }
+    }
+
+    > header {
+      margin-bottom: var(--space-20);
+    }
+
+    > main {
+      display: none;
+    }
+
+    > div.open {
+      transform: rotate(90deg);
+
+      & + header + main {
+        display: block;
+      }
+    }
+  }
+}
