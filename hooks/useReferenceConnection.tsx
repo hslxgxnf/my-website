@@ -16,17 +16,19 @@ export default function useReferenceConnection(
 
     const button = buttonRef.current;
     if (!button) throw new Error("No buttonRef");
+    const articleTargetElement = button.nextElementSibling;
+    if (!articleTargetElement) throw new Error("No articleTargetElement");
     let articleTarget = "";
     if (type === "default") {
-      if (button.nextElementSibling!.className.includes("toggle-list")) {
-        toggleListDivRef.current = button.nextElementSibling!
+      if (articleTargetElement.className.includes("toggle-list")) {
+        toggleListDivRef.current = articleTargetElement
           .children[0] as HTMLDivElement;
-        articleTarget = button.nextElementSibling!.children[1].textContent;
+        articleTarget = articleTargetElement.children[1].textContent;
       } else {
-        articleTarget = button.nextElementSibling!.children[0].textContent;
+        articleTarget = articleTargetElement.children[0].textContent;
       }
-    } else if (type === "table") {
-      articleTarget = button.nextElementSibling!.textContent;
+    } else {
+      articleTarget = articleTargetElement.textContent;
     }
 
     let nav: HTMLElement | null = null;
@@ -90,26 +92,30 @@ export default function useReferenceConnection(
 
             const foundIndex = Array.from(referenceContainers).findIndex(
               (container) => {
+                const articleTargetElement = container.children[1];
+                if (!articleTargetElement)
+                  throw new Error("No articleTargetElement");
                 let articleTarget = "";
                 if (
                   container.className.includes(
                     "reference-button-default-container",
                   )
                 ) {
-                  if (container.children[1].className.includes("toggle-list")) {
+                  if (articleTargetElement.className.includes("toggle-list")) {
                     articleTarget =
-                      container.children[1].children[1].textContent;
+                      articleTargetElement.children[1].textContent;
                   } else {
                     articleTarget =
-                      container.children[1].children[0].textContent;
+                      articleTargetElement.children[0].textContent;
                   }
                 } else {
-                  articleTarget = container.children[1].textContent;
+                  articleTarget = articleTargetElement.textContent;
                 }
 
                 return articleTarget === navTarget;
               },
             );
+
             if (foundIndex === -1) throw new Error("No foundIndex");
 
             const rect =
