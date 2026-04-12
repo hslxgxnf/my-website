@@ -3,6 +3,17 @@ import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
   {
+    target: "Properties & Methods",
+    sites: [
+      {
+        url: "https://javascript.info/document",
+        favicon: favicons.JAVASCRIPT$INFO.image,
+        name: favicons.JAVASCRIPT$INFO.name,
+        title: "Document",
+      },
+    ],
+  },
+  {
     target: "Element.className",
     sites: [
       {
