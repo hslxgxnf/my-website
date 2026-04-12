@@ -11,7 +11,6 @@ import {
   liveTemplateTextUc,
 } from "./data";
 import ReferenceNav from "@/components/detail-page/Reference/ReferenceNav";
-import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
@@ -320,39 +319,6 @@ export default function Page() {
                 <td>&minus; Remove rule(s)</td>
               </tr>
               <tr>
-                <td>
-                  Code Style
-                  <br />
-                  {entities.rightSubArrow} Style Sheets
-                  <br />
-                  {entities.rightSubArrow} CSS, SCSS
-                </td>
-                <td>
-                  Arrangement
-                  <br />
-                  {entities.rightSubArrow} Sort CSS properties
-                </td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>
-                  Code Style
-                  <br />
-                  {entities.rightSubArrow} Style Sheets
-                  <br />
-                  {entities.rightSubArrow} CSS, SCSS
-                </td>
-                <td>
-                  Arrangement
-                  <br />
-                  {entities.rightSubArrow} Custom order:
-                </td>
-                <td>
-                  {entities.checkedBox},{" "}
-                  <ReferenceButton type="table">Custom Order</ReferenceButton>
-                </td>
-              </tr>
-              <tr>
                 <td>Live Templates</td>
                 <td>
                   JavaScript {entities.rightStraightArrow} +{" "}
@@ -626,6 +592,39 @@ export default function Page() {
                 </td>
                 <td>{entities.checkedBox}</td>
               </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Style Sheets
+                  <br />
+                  {entities.rightSubArrow} Stylelint
+                </td>
+                <td>Enable</td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Style Sheets
+                  <br />
+                  {entities.rightSubArrow} Stylelint
+                </td>
+                <td>
+                  Run for <Highlight type="underline">f</Highlight>iles:
+                </td>
+                <td>
+                  <Highlight type="text" copy={true}>
+                    {"**/*.{css,scss}"}
+                  </Highlight>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Style Sheets
+                  <br />
+                  {entities.rightSubArrow} Stylelint
+                </td>
+                <td>Run stylelint --fix on save</td>
+                <td>{entities.checkedBox}</td>
+              </tr>
             </tbody>
           </table>
         </section>
@@ -652,6 +651,13 @@ export default function Page() {
                   <strong>!</strong> Actions on Save
                 </td>
                 <td>Rearrange code</td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Actions on Save
+                </td>
+                <td>Run stylelint --fix</td>
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
