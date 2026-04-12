@@ -6,11 +6,12 @@ import Link from "next/link";
 import styles from "@/styles/detail-page/page.module.css";
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
 
-export default function PageNav2() {
+export default function PageNav() {
   const [shouldRender, setShouldRender] = useState(false);
   const [headings, setHeadings] = useState<HTMLHeadingElement[]>([]);
   const ulRef = useRef<HTMLUListElement>(null);
 
+  // Flow 2
   useEffect(() => {
     const foundHeadings = Array.from(
       document.querySelectorAll<HTMLHeadingElement>(
@@ -27,15 +28,17 @@ export default function PageNav2() {
     }
   }, []);
 
+  // Flow 3
+  // Flow 5 (Run after setShouldRender(true))
   // Intersection Observer
   useEffect(() => {
     if (shouldRender && ulRef.current) {
-      // To use this component, the <article> element must be divided into <section> elements.
+      // The <article> element must be divided into <section> elements.
       const sections = Array.from(
         document.querySelectorAll<HTMLElement>("body > main > article section"),
       );
       if (sections.length === 0) throw new Error("No sections");
-      if (headings.length !== sections.length)
+      if (sections.length !== headings.length)
         throw new Error(
           `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
         );
@@ -70,8 +73,10 @@ export default function PageNav2() {
     }
   }, [shouldRender, headings.length]);
 
+  // Flow 1
   if (!shouldRender) return null;
 
+  // Flow 4 (Run after setShouldRender(true))
   return (
     <nav>
       <header>On this page</header>
