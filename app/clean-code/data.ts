@@ -16,22 +16,34 @@ export const reference: Reference = [
 ];
 
 export const code: Code = {
-  language: "javascript",
+  language: "typescript",
   content: `class User1 {
-  constructor(name, age) {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
   }
 }
 
+interface UserData {
+  name: string;
+  age: number;
+}
+
 class User2 {
-  constructor(userData) {
+  name: string;
+  age: number;
+
+  constructor(userData: UserData) {
     this.name = userData.name;
     this.age = userData.age;
   }
+
 }
 
 const user1 = new User1("John", 20);
-
-const user2 = new User2({ name: "John", age: 20 });`,
+const user2 = new User2({ age: 20, name: "John" });
+`,
 };
