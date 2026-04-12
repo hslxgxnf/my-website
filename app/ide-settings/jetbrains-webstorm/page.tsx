@@ -325,7 +325,7 @@ export default function Page() {
                   <br />
                   {entities.rightSubArrow} Style Sheets
                   <br />
-                  {entities.rightSubArrow} CSS
+                  {entities.rightSubArrow} CSS, SCSS
                 </td>
                 <td>
                   Arrangement
@@ -340,7 +340,7 @@ export default function Page() {
                   <br />
                   {entities.rightSubArrow} Style Sheets
                   <br />
-                  {entities.rightSubArrow} CSS
+                  {entities.rightSubArrow} CSS, SCSS
                 </td>
                 <td>
                   Arrangement
@@ -583,7 +583,7 @@ export default function Page() {
                 <td>
                   <Highlight type="text" copy={true}>
                     {
-                      "**/*.{md,html,css,js,ts,jsx,tsx,cjs,cts,mjs,mts,json,vue,astro}"
+                      "**/*.{md,html,css,scss,js,ts,jsx,tsx,cjs,cts,mjs,mts,json,vue,astro}"
                     }
                   </Highlight>
                 </td>
