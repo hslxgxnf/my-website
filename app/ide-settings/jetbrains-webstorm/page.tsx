@@ -11,6 +11,7 @@ import {
   liveTemplateTextUc,
 } from "./data";
 import ReferenceNav from "@/components/detail-page/Reference/ReferenceNav";
+import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";
 import HeadingLinkId from "@/components/detail-page/HeadingLinkId";
 import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/detail-page/PageNav";
@@ -505,9 +506,11 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>
-            Languages & Frameworks
-          </HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>
+              Languages & Frameworks
+            </HeadingLinkId>
+          </ReferenceButton>
           <table>
             <thead>
               <tr>
@@ -629,7 +632,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
+          </ReferenceButton>
           <table>
             <thead>
               <tr>

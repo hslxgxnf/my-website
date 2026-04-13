@@ -17,13 +17,24 @@ $END$`;
 
 export const reference: Reference = [
   {
-    target: "Custom Order",
+    target: "Languages & Frameworks",
     sites: [
       {
-        url: "/web/css/declarations/property-arrangement",
+        url: "/web/stylelint",
         favicon: favicons.self.image,
         name: favicons.self.name,
-        title: "Property Arrangement",
+        title: "Stylelint",
+      },
+    ],
+  },
+  {
+    target: "Tools",
+    sites: [
+      {
+        url: "/web/stylelint",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "Stylelint",
       },
     ],
   },
