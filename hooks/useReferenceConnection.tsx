@@ -48,7 +48,8 @@ export default function useReferenceConnection(
         const rect = button.getBoundingClientRect();
         navs[i].style.top = rect.top - 160 + window.scrollY + "px"; // 160 is the height of the header
 
-        // This is for the <NewWindowHashScroll> component.
+        // This is for smooth hash scroll in a new window.
+        // This makes the id value not hard-coded.
         const lists = navs[i].querySelectorAll<HTMLLIElement>("li");
         for (const list of lists) {
           if (list.dataset.self === "true") {

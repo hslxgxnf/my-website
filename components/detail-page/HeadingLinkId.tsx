@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useEffect } from "react";
 import Link from "next/link";
 
 import handleClickFirstLink from "@/functions/detail-page/handleClickFirstLink";
@@ -13,39 +14,30 @@ export default function HeadingLinkId({
   headingNumber,
   children,
 }: HeadingLinkIdProps) {
-  let result = null;
+  const headingRef = useRef<HTMLHeadingElement>(null);
   const id = children.replaceAll(" ", "-").toLowerCase();
+
+  // This is for smooth hash scroll in a new window.
+  useEffect(() => {
+    if (!headingRef.current) throw new Error("No headingRef");
+
+    headingRef.current.id = id;
+  }, [id]);
+
+  const Tag = `h${headingNumber}` as "h1" | "h2" | "h3";
   const href = `#${id}`;
 
-  switch (headingNumber) {
-    case 1:
-      result = (
-        <h1 id={id}>
-          <Link
-            href={href}
-            onClick={(event) => handleClickFirstLink(event, href)}
-          >
-            {children}
-          </Link>{" "}
-          <span>#</span>
-        </h1>
-      );
-      break;
-    case 2:
-      result = (
-        <h2 id={id}>
-          <Link href={href}>{children}</Link> <span>#</span>
-        </h2>
-      );
-      break;
-    case 3:
-      result = (
-        <h3 id={id}>
-          <Link href={href}>{children}</Link> <span>#</span>
-        </h3>
-      );
-      break;
-  }
-
-  return result;
+  return (
+    <Tag ref={headingRef}>
+      <Link
+        href={href}
+        onClick={
+          headingNumber === 1 ? (e) => handleClickFirstLink(e, href) : undefined
+        }
+      >
+        {children}
+      </Link>{" "}
+      <span>#</span>
+    </Tag>
+  );
 }
