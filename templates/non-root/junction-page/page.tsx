@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import styles from "@/styles/non-root/shared-page/page.module.scss";
 // import { reference, code } from "./data";
 import ReferenceNav from "@/components/non-root/shared-page/Reference/ReferenceNav";
-// import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";
-// import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
+// import ReferenceButton from "@/components/non-root/shared-page/Reference/ReferenceButton/ReferenceButton";
+// import HeadingLinkPage from "@/components/non-root/junction-page/HeadingLinkPage";
 
 export const metadata: Metadata = {
-  title: "Set this!!!",
+  title: "???",
 };
 
 export default function Page() {

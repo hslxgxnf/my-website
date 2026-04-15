@@ -7,6 +7,7 @@ const upperCaseWords: string[] = [
   "ssr",
   "html",
   "css",
+  "scss",
 ];
 
 const lowerCaseWords: string[] = [
@@ -28,7 +29,7 @@ interface SpecialCaseWord {
   result: string;
 }
 
-const properCaseWords: SpecialCaseWord[] = [
+const properNouns: SpecialCaseWord[] = [
   {
     target: "javascript",
     result: "JavaScript",
@@ -49,6 +50,10 @@ const properCaseWords: SpecialCaseWord[] = [
     target: "powershell",
     result: "PowerShell",
   },
+  {
+    target: "eslint",
+    result: "ESLint",
+  },
 ];
 
 const hyphenCaseWords: SpecialCaseWord[] = [
@@ -66,8 +71,8 @@ const hyphenCaseWords: SpecialCaseWord[] = [
   },
 ];
 
-function checkProperCase(word: string): boolean {
-  for (const properCaseWord of properCaseWords) {
+function checkProperNoun(word: string): boolean {
+  for (const properCaseWord of properNouns) {
     if (properCaseWord.target === word) {
       return true;
     }
@@ -76,10 +81,10 @@ function checkProperCase(word: string): boolean {
   return false;
 }
 
-function changeToProperCase(word: string): string {
+function changeToProperNoun(word: string): string {
   let result = "";
 
-  for (const properCaseWord of properCaseWords) {
+  for (const properCaseWord of properNouns) {
     if (properCaseWord.target === word) {
       result = properCaseWord.result;
       break;
@@ -87,6 +92,10 @@ function changeToProperCase(word: string): string {
   }
 
   return result;
+}
+
+function changeToCapitalizedCase(word: string): string {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
 function checkHyphenCase(word: string): boolean {
@@ -112,10 +121,6 @@ function changeToHyphenCase(word: string): string {
   return result;
 }
 
-function changeToCapitalizedCase(word: string): string {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
-
 export default function changeToTitleCase(wordChunk: string): string {
   const interimResult = wordChunk
     .split("-")
@@ -124,8 +129,8 @@ export default function changeToTitleCase(wordChunk: string): string {
         return word.toUpperCase();
       } else if (lowerCaseWords.includes(word)) {
         return word.toLowerCase();
-      } else if (checkProperCase(word)) {
-        return changeToProperCase(word);
+      } else if (checkProperNoun(word)) {
+        return changeToProperNoun(word);
       } else {
         return changeToCapitalizedCase(word);
       }

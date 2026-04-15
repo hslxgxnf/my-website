@@ -9,7 +9,7 @@ import HeadingLinkId from "@/components/non-root/detail-page/HeadingLinkId";
 import PageNav from "@/components/non-root/detail-page/PageNav";
 
 export const metadata: Metadata = {
-  title: "???",
+  title: "SCSS",
 };
 
 export default function Page() {
@@ -20,7 +20,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1}>Title</HeadingLinkId>
+        <HeadingLinkId headingNumber={1}>SCSS</HeadingLinkId>
       </article>
 
       <aside>

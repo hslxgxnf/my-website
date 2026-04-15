@@ -29,15 +29,16 @@ export default function Page() {
         {/*<HeadingLinkPage>npm</HeadingLinkPage>*/}
         {/*<HeadingLinkPage>pnpm</HeadingLinkPage>*/}
         {/*<HeadingLinkPage>concurrently</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>ESLint</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>Prettier</HeadingLinkPage>*/}
+        <HeadingLinkPage>Prettier</HeadingLinkPage>
         <HeadingLinkPage>Stylelint</HeadingLinkPage>
+        <HeadingLinkPage>ESLint</HeadingLinkPage>
         <hr />
         <h2>HTML</h2>
         <HeadingLinkPage>HTML</HeadingLinkPage>
         <hr />
         <h2>CSS</h2>
         <HeadingLinkPage>CSS</HeadingLinkPage>
+        <HeadingLinkPage>SCSS</HeadingLinkPage>
         {/*<HeadingLinkPage>Tailwind CSS</HeadingLinkPage>*/}
         <hr />
         <h2>JavaScript</h2>

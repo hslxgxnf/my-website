@@ -24,21 +24,25 @@ export default function Page() {
           <HeadingLinkId headingNumber={1}>Stylelint</HeadingLinkId>
         </ReferenceButton>
         <p>
-          To lint <Highlight type="text">SCSS</Highlight> files and arrange
-          properties, install packages.
+          <Highlight type="text">Stylelint</Highlight> lints{" "}
+          <Highlight type="text">CSS</Highlight>,{" "}
+          <Highlight type="text">SCSS</Highlight>, etc.
+        </p>
+        <p>
+          The below packages lint <Highlight type="text">SCSS</Highlight> and
+          arrange properties.
           <br />
           <Highlight type="simple-code" copy={true}>
             npm i -D stylelint postcss-scss stylelint-scss stylelint-order
           </Highlight>
-        </p>
-        <p>The config file should be at the root.</p>
-        <p>
+          <br />
           The default IDE arrangement feature fails to arrange properties within
           nested at-rules and <Highlight type="text">SCSS</Highlight> at-rules.
           In contrast, the{" "}
           <Highlight type="simple-code">"order/properties-order"</Highlight>{" "}
           rule ensures consistent arrangement except for custom properties.
         </p>
+        <p>The config file should be at the root.</p>
         <Highlight type="complex-code">{code}</Highlight>
       </article>
 
