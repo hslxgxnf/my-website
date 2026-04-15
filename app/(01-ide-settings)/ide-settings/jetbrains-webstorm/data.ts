@@ -20,6 +20,12 @@ export const reference: Reference = [
     target: "Languages & Frameworks",
     sites: [
       {
+        url: "/web/prettier",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "Prettier",
+      },
+      {
         url: "/web/stylelint",
         favicon: favicons.self.image,
         name: favicons.self.name,
@@ -30,6 +36,12 @@ export const reference: Reference = [
   {
     target: "Tools",
     sites: [
+      {
+        url: "/web/prettier",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "Prettier",
+      },
       {
         url: "/web/stylelint",
         favicon: favicons.self.image,

@@ -29,10 +29,16 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                   </li>
                 );
               } else {
-                const siteInfo =
-                  site.name === "none"
-                    ? site.title
-                    : `${site.name} | ${site.title}`;
+                let siteInfo = "";
+                if (site.name === "none") {
+                  siteInfo = site.title;
+                } else {
+                  if (site.title === "") {
+                    siteInfo = site.name;
+                  } else {
+                    siteInfo = `${site.name} | ${site.title}`;
+                  }
+                }
 
                 return (
                   <li key={index}>

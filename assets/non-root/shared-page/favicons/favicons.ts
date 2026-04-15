@@ -10,6 +10,7 @@ import Inpa_Dev from "./images/Inpa-Dev.ico";
 import JAVASCRIPT$INFO from "./images/JAVASCRIPT.INFO.png";
 import MDN from "./images/MDN.png";
 import Next$js from "./images/Next.js.svg";
+import Prettier from "./images/Prettier.png";
 import Stack_Overflow from "./images/Stack-Overflow.svg";
 import Stylelint from "./images/Stylelint.svg";
 import tistory from "./images/tistory.png";
@@ -63,7 +64,10 @@ export const favicons = {
     image: Next$js,
     name: "Next.js",
   },
-
+  Prettier: {
+    image: Prettier,
+    name: "Prettier",
+  },
   Stack_Overflow: {
     image: Stack_Overflow,
     name: "Stack Overflow",

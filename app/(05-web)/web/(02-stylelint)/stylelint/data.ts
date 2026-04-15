@@ -10,7 +10,7 @@ export const reference: Reference = [
         url: "https://stylelint.io/",
         favicon: favicons.Stylelint.image,
         name: favicons.Stylelint.name,
-        title: "Home",
+        title: "",
       },
       {
         url: "https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md",

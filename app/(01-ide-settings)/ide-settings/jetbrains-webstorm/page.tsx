@@ -552,7 +552,7 @@ export default function Page() {
                 <td>
                   <Highlight type="text" copy={true}>
                     {
-                      "**/*.{md,html,css,scss,js,ts,jsx,tsx,cjs,cts,mjs,mts,json,vue,astro}"
+                      "**/*.{html,css,scss,js,ts,cjs,cts,mjs,mts,jsx,tsx,vue,astro,json,md}"
                     }
                   </Highlight>
                 </td>
