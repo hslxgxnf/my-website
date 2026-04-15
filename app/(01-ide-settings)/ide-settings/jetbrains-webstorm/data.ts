@@ -31,6 +31,12 @@ export const reference: Reference = [
         name: favicons.self.name,
         title: "Stylelint",
       },
+      {
+        url: "/web/eslint",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "ESLint",
+      },
     ],
   },
   {

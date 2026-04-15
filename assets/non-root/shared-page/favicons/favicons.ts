@@ -4,6 +4,7 @@ import none from "./images/_none.png";
 
 import DaleSeo from "./images/DaleSeo.png";
 import Emmet from "./images/Emmet.svg";
+import ESLint from "./images/ESLint.png";
 import GitHub from "./images/GitHub.svg";
 import HTML_Arrows from "./images/HTML-Arrows.ico";
 import Inpa_Dev from "./images/Inpa-Dev.ico";
@@ -39,6 +40,10 @@ export const favicons = {
   Emmet: {
     image: Emmet,
     name: "Emmet",
+  },
+  ESLint: {
+    image: ESLint,
+    name: "ESLint",
   },
   GitHub: {
     image: GitHub,

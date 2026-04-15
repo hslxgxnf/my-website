@@ -18,6 +18,7 @@ const commonPath = [
 
 export default async function readFile(
   fileName:
+    | "eslint.config.mjs"
     | "stylelint.config.ts"
     | "custom-properties.txt"
     | "non-custom-properties.txt",
@@ -25,6 +26,7 @@ export default async function readFile(
   try {
     let filePath = "";
     switch (fileName) {
+      case "eslint.config.mjs":
       case "stylelint.config.ts":
         filePath = join(commonPath[0], fileName);
 
@@ -38,6 +40,7 @@ export default async function readFile(
         // await clipboard.write(textCopy);
 
         break;
+
       case "custom-properties.txt":
       case "non-custom-properties.txt":
         filePath = join(...commonPath, fileName);
