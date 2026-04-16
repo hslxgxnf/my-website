@@ -1,20 +1,6 @@
-import { join } from "node:path";
+import { globby } from "globby";
 import { readFile as nodeReadFile } from "node:fs/promises";
 // import clipboard from "clipboardy";
-
-const commonPath = [
-  process.cwd(),
-  "app",
-  "(05-web)",
-  "web",
-  "(03-css)",
-  "css",
-  "(06-declarations)",
-  "declarations",
-  "(02-property-arrangement)",
-  "property-arrangement",
-  "_properties",
-];
 
 export default async function readFile(
   fileName:
@@ -23,32 +9,34 @@ export default async function readFile(
     | "custom-properties.txt"
     | "non-custom-properties.txt",
 ) {
-  try {
-    let filePath = "";
-    switch (fileName) {
-      case "eslint.config.mjs":
-      case "stylelint.config.ts":
-        filePath = join(commonPath[0], fileName);
+  const isConfig = fileName.includes(".config.");
 
-        // The following code copies non-custom properties in a desired format used in the stylelint.config.ts file.
-        // const result = await nodeReadFile(
-        //   join(...commonPath, "non-custom-properties.txt"),
-        //   "utf-8",
-        // );
-        // const resultArray = result.split("\n").map((line) => line.trim());
-        // const textCopy = JSON.stringify(resultArray, null, 2);
-        // await clipboard.write(textCopy);
+  const filePaths = await globby(`**/${fileName}`, {
+    cwd: isConfig ? process.cwd() : "app",
+    absolute: true,
+    gitignore: true,
+  });
 
-        break;
+  if (filePaths.length !== 1)
+    throw new Error(`filePaths.length: ${filePaths.length} should be 1.`);
 
-      case "custom-properties.txt":
-      case "non-custom-properties.txt":
-        filePath = join(...commonPath, fileName);
-        break;
-    }
+  // The following code copies non-custom properties in a desired format used in the stylelint.config.ts file.
+  // if (fileName === "stylelint.config.ts") {
+  //   const filePaths = await globby(`**/non-custom-properties.txt`, {
+  //     cwd: "app",
+  //     absolute: true,
+  //     gitignore: true,
+  //   });
+  //
+  //   if (filePaths.length !== 1)
+  //     throw new Error(`filePaths.length: ${filePaths.length} should be 1.`);
+  //
+  //   const result = await nodeReadFile(filePaths[0], "utf-8");
+  //   const resultArray = result.split("\n").map((line) => line.trim());
+  //
+  //   const textCopy = JSON.stringify(resultArray, null, 2);
+  //   await clipboard.write(textCopy);
+  // }
 
-    return await nodeReadFile(filePath, "utf-8");
-  } catch (error) {
-    throw error;
-  }
+  return await nodeReadFile(filePaths[0], "utf-8");
 }
