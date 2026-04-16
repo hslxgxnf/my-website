@@ -32,7 +32,7 @@ export default function Page() {
           <Highlight type="complex-code">{customPropertiesCode}</Highlight>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Properties</HeadingLinkId>
+          <HeadingLinkId headingNumber={2}>Non-Custom Properties</HeadingLinkId>
           <Highlight type="complex-code">{propertiesCode}</Highlight>
         </section>
       </article>
