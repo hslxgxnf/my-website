@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { JSX } from "react";
 
-import ImportPage from "@/app/web/css/at-rules/_@import/page";
-import LayerPage from "@/app/web/css/at-rules/_@layer/page";
+import ImportPage from "../_02-@import/page";
+import LayerPage from "../_03-@layer/page";
 
 interface PageProps {
   params: Promise<{ "at-rule": string }>;
