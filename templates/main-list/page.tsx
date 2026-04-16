@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import styles from "@/styles/main-description-&-list/page.module.scss";
 // import { reference, code } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
-import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+// import ReferenceButton from "@/components/main/ReferenceButton";
+// import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
 
 export const metadata: Metadata = {
   title: "???",
