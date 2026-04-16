@@ -1,0 +1,25 @@
+@use "mixins" as mixins;
+
+.main {
+  display: flex;
+
+  > aside {
+    flex-basis: 20%;
+
+    @include mixins.reference-nav;
+
+    @include mixins.page-nav;
+  }
+
+  > article {
+    @include mixins.article-base;
+
+    @include mixins.toggle-list;
+
+    @include mixins.table;
+
+    @include mixins.code;
+
+    @include mixins.reference-button;
+  }
+}

@@ -1,6 +1,6 @@
-import type { Reference, Code } from "@/types/non-root/shared-page/interfaces";
-import { favicons } from "@/assets/non-root/shared-page/favicons/favicons";
-import readFile from "@/functions/non-root/detail-page/readFile";
+import type { Reference, Code } from "@/types/main/interfaces";
+import { favicons } from "@/assets/main-description/favicons/favicons";
+import readFile from "@/functions/main-description/readFile";
 
 export const reference: Reference = [
   {
@@ -36,6 +36,6 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "typescript",
-  content: `${await readFile("stylelint.config.ts")}`,
   fileName: "stylelint.config.ts",
+  content: `${await readFile("stylelint.config.ts")}`,
 };

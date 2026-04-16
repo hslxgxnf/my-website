@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/non-root/shared-page/page.module.scss";
+import styles from "@/styles/main-description-&-list/page.module.scss";
 import { reference } from "./data";
-import ReferenceNav from "@/components/non-root/shared-page/Reference/ReferenceNav";
-import ReferenceButton from "@/components/non-root/shared-page/Reference/ReferenceButton/ReferenceButton";
-import HeadingLinkId from "@/components/non-root/detail-page/HeadingLinkId";
-import Highlight from "@/components/non-root/detail-page/Highlight/Highlight";
-import PageNav from "@/components/non-root/detail-page/PageNav";
+import ReferenceNav from "@/components/main/ReferenceNav";
+import ReferenceButton from "@/components/main/ReferenceButton";
+import HeadingLinkId from "@/components/main-description/HeadingLinkId";
+import Highlight from "@/components/main-description/Highlight";
+import PageNav from "@/components/main-description/PageNav";
 
 export const metadata: Metadata = {
   title: "Prettier",

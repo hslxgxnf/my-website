@@ -1,5 +1,5 @@
-import type { Reference, Code } from "@/types/non-root/shared-page/interfaces";
-import { favicons } from "@/assets/non-root/shared-page/favicons/favicons";
+import type { Reference, Code } from "@/types/main/interfaces";
+import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {

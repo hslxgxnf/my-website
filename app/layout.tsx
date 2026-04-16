@@ -2,10 +2,10 @@ import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import "@/styles/root/layout/layout.scss";
-import Header from "@/components/root/layout/Header/Header";
-import NewWindowHashScroll from "@/components/root/layout/NewWindowHashScroll";
-import TitleValidator from "@/components/root/layout/TitleValidator";
+import "@/styles/all/layout.scss";
+import Header from "@/components/header/Header";
+import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
+import TitleValidator from "@/components/all/TitleValidator";
 
 // Google Font Initialization
 const roboto = Roboto();
