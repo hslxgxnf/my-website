@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/non-root/shared-page/page.module.scss";
-// import { reference, code } from "./data";
+import { reference, code } from "./data";
 import ReferenceNav from "@/components/non-root/shared-page/Reference/ReferenceNav";
-// import ReferenceButton from "@/components/non-root/shared-page/Reference/ReferenceButton/ReferenceButton";
+import ReferenceButton from "@/components/non-root/shared-page/Reference/ReferenceButton/ReferenceButton";
 import HeadingLinkId from "@/components/non-root/detail-page/HeadingLinkId";
 // import Highlight from "@/components/non-root/detail-page/Highlight/Highlight";
 import PageNav from "@/components/non-root/detail-page/PageNav";
@@ -16,11 +16,24 @@ export default function Page() {
   return (
     <main className={styles.main}>
       <aside>
-        <ReferenceNav />
+        <ReferenceNav reference={reference} />
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1}>SCSS</HeadingLinkId>
+        <section>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={1}>SCSS</HeadingLinkId>
+          </ReferenceButton>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Variables</HeadingLinkId>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Statements</HeadingLinkId>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>At-Rules</HeadingLinkId>
+        </section>
       </article>
 
       <aside>
