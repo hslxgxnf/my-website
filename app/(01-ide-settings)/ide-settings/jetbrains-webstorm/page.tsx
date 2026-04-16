@@ -117,6 +117,11 @@ export default function Page() {
                 <td></td>
               </tr>
               <tr>
+                <td>Surround With...</td>
+                <td>Alt + T</td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
                 <td>Move Line Up</td>
                 <td>Alt + Up</td>
                 <td>{entities.checkedBox}, Remove "Next Method"</td>
