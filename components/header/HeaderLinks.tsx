@@ -15,7 +15,7 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
 
   return (
     <nav>
-      <Link href="/public">
+      <Link href="/">
         <Image
           src={logo}
           alt="logo image generate by ChatGPT"
