@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-02-20">
             Property Vendor Prefixes
           </HeadingLinkId>
         </ReferenceButton>

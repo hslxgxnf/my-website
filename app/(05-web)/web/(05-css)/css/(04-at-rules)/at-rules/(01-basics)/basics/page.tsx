@@ -21,7 +21,9 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>Basics</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-02-23">
+            Basics
+          </HeadingLinkId>
         </ReferenceButton>
         <p>At-rules instruct CSS how to behave.</p>
         <p>

@@ -18,7 +18,9 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1}>Naming Cases</HeadingLinkId>
+        <HeadingLinkId headingNumber={1} publishedAt="2026-02-10">
+          Naming Cases
+        </HeadingLinkId>
         <p>
           Custom attribute names should be{" "}
           <Highlight type="text">kebab-case</Highlight>.

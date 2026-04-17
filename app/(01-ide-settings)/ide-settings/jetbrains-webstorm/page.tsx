@@ -29,7 +29,9 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1}>JetBrains WebStorm</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-03-25">
+            JetBrains WebStorm
+          </HeadingLinkId>
           <p>
             Settings prefixed with <strong>!</strong> are only applied to the
             current project. They have to be set again for other projects.

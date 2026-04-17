@@ -22,7 +22,9 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1}>Entities</HeadingLinkId>
+            <HeadingLinkId headingNumber={1} publishedAt="2026-02-10">
+              Entities
+            </HeadingLinkId>
           </ReferenceButton>
         </section>
         <section>

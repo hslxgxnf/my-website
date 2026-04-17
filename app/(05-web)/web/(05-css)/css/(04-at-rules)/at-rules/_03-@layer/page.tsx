@@ -15,7 +15,9 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>@layer</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-02-24">
+            @layer
+          </HeadingLinkId>
         </ReferenceButton>
         <p>
           The <Highlight type="simple-code">@layer</Highlight> at-rule declares

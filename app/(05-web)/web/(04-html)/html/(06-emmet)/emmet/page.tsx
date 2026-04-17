@@ -21,7 +21,9 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>Emmet</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-02-10">
+            Emmet
+          </HeadingLinkId>
         </ReferenceButton>
         <ul>
           <li>

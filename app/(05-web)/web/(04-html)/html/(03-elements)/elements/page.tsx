@@ -23,7 +23,9 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1}>Elements</HeadingLinkId>
+            <HeadingLinkId headingNumber={1} publishedAt="2026-02-12">
+              Elements
+            </HeadingLinkId>
           </ReferenceButton>
           <p>
             Tags are case-insensitive, but it is recommended to use lowercase.

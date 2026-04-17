@@ -21,7 +21,9 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>rewrites</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-02-21">
+            rewrites
+          </HeadingLinkId>
         </ReferenceButton>
         <p>
           The <Highlight type="simple-code">rewrites</Highlight> function can

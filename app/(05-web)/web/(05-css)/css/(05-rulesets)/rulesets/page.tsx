@@ -21,7 +21,9 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>Rulesets</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-02-18">
+            Rulesets
+          </HeadingLinkId>
         </ReferenceButton>
         <p>
           A ruleset consists of a selector (or a group of selectors) paired with

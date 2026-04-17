@@ -21,7 +21,9 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1}>Stylelint</HeadingLinkId>
+          <HeadingLinkId headingNumber={1} publishedAt="2026-04-15">
+            Stylelint
+          </HeadingLinkId>
         </ReferenceButton>
         <p>
           <Highlight type="text">Stylelint</Highlight> lints{" "}
