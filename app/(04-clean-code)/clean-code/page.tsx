@@ -22,7 +22,9 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1}>Clean Code</HeadingLinkId>
+            <HeadingLinkId headingNumber={1} publishedAt="2026-03-01">
+              Clean Code
+            </HeadingLinkId>
           </ReferenceButton>
           <p>Clean code should be readable.</p>
           <p>Clean code should be maintainable.</p>

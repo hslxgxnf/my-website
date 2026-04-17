@@ -1,0 +1,33 @@
+@mixin headings {
+  :is(h1, h2, h3) {
+    color: var(--color-1);
+  }
+
+  :is(h1, h2, h3):has(> span) {
+    > a {
+      color: var(--color-1);
+
+      &:hover + span {
+        display: inline;
+      }
+    }
+
+    > span {
+      display: none;
+    }
+  }
+
+  h1 {
+    position: relative;
+
+    > aside {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-weight: normal;
+      font-size: var(--font-size-20);
+    }
+  }
+}

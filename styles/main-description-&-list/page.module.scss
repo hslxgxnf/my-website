@@ -14,6 +14,8 @@
   > article {
     @include mixins.article-base;
 
+    @include mixins.headings;
+
     @include mixins.toggle-list;
 
     @include mixins.table;

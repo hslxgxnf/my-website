@@ -4,14 +4,25 @@ import { useRef, useEffect } from "react";
 import Link from "next/link";
 
 import handleClickFirstLink from "@/functions/main-description/handleClickFirstLink";
+import ArticleMetaData from "@/components/main-description/HeadingLinkId/ArticleMetaData";
 
 interface HeadingLinkIdProps {
-  headingNumber: number;
+  headingNumber: 1 | 2 | 3;
+  /**
+   * "YYYY-MM-DD"
+   */
+  publishedAt?: string;
+  /**
+   * "YYYY-MM-DD"
+   * */
+  updatedAt?: string;
   children: string;
 }
 
 export default function HeadingLinkId({
   headingNumber,
+  publishedAt,
+  updatedAt,
   children,
 }: HeadingLinkIdProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -19,7 +30,9 @@ export default function HeadingLinkId({
 
   // This is for smooth hash scroll in a new window.
   useEffect(() => {
-    if (!headingRef.current) throw new Error("No headingRef");
+    if (!headingRef.current) {
+      throw new Error("No headingRef");
+    }
 
     headingRef.current.id = id;
   }, [id]);
@@ -38,6 +51,11 @@ export default function HeadingLinkId({
         {children}
       </Link>{" "}
       <span>#</span>
+      <ArticleMetaData
+        headingNumber={headingNumber}
+        publishedAt={publishedAt}
+        updatedAt={updatedAt}
+      />
     </Tag>
   );
 }
