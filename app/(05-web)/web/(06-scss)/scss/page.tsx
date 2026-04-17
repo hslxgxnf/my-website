@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import { reference, code } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId";
+import ReferenceButton from "@/components/main/ReferenceButton/ReferenceButton";
+import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 // import Highlight from "@/components/non-root/detail-page/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
 

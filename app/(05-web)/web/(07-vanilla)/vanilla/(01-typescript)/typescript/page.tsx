@@ -4,7 +4,7 @@ import styles from "@/styles/main-description-&-list/page.module.scss";
 // import { reference, code } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
 // import ReferenceButton from "@/components/detail-page/Reference/ReferenceButton/ReferenceButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId";
+import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 // import Highlight from "@/components/detail-page/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
 

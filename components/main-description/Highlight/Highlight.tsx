@@ -1,8 +1,8 @@
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import type { Code } from "@/types/main/interfaces";
-import HighlightText from "@/components/main-description/HighlightText";
-import HighlightSimpleCode from "@/components/main-description/HighlightSimpleCode";
-import HighlightComplexCode from "@/components/main-description/HighlightComplexCode";
+import HighlightText from "@/components/main-description/Highlight/HighlightText";
+import HighlightSimpleCode from "@/components/main-description/Highlight/HighlightSimpleCode";
+import HighlightComplexCode from "@/components/main-description/Highlight/HighlightComplexCode";
 
 interface HighlightProps {
   type: "text" | "underline" | "simple-code" | "complex-code";
