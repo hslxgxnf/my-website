@@ -12,12 +12,18 @@ export default function useReferenceConnection(
     const navs = document.querySelectorAll<HTMLElement>(
       "body > main > aside:first-child > nav",
     );
-    if (navs.length === 0) throw new Error("No navs");
+    if (navs.length === 0) {
+      throw new Error("No navs");
+    }
 
     const button = buttonRef.current;
-    if (!button) throw new Error("No buttonRef");
+    if (!button) {
+      throw new Error("No buttonRef");
+    }
     const articleTargetElement = button.nextElementSibling;
-    if (!articleTargetElement) throw new Error("No articleTargetElement");
+    if (!articleTargetElement) {
+      throw new Error("No articleTargetElement");
+    }
     let articleTarget = "";
     if (type === "default") {
       if (articleTargetElement.className.includes("toggle-list")) {
@@ -74,7 +80,9 @@ export default function useReferenceConnection(
 
   // Mutation Observer
   useEffect(() => {
-    if (!toggleListDivRef.current) return;
+    if (!toggleListDivRef.current) {
+      return;
+    }
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -82,15 +90,18 @@ export default function useReferenceConnection(
           const navs = document.querySelectorAll<HTMLElement>(
             "body > main > aside:first-child > nav",
           );
-          if (navs.length === 0) throw new Error("No navs");
+          if (navs.length === 0) {
+            throw new Error("No navs");
+          }
 
           const selector = `body > main > article :is(div.${styles["reference-button-default-container"]}, span.${styles["reference-button-table-container"]})`;
           const referenceContainers =
             document.querySelectorAll<HTMLDivElement>(selector);
-          if (navs.length !== referenceContainers.length)
+          if (navs.length !== referenceContainers.length) {
             throw new Error(
               `navs.length ${navs.length} must be the same as referenceContainers.length: ${referenceContainers.length}`,
             );
+          }
 
           for (let i = 0; i < navs.length; i++) {
             const navTarget = navs[i].dataset.target;
@@ -98,8 +109,9 @@ export default function useReferenceConnection(
             const foundIndex = Array.from(referenceContainers).findIndex(
               (container) => {
                 const articleTargetElement = container.children[1];
-                if (!articleTargetElement)
+                if (!articleTargetElement) {
                   throw new Error("No articleTargetElement");
+                }
                 let articleTarget = "";
                 if (
                   container.className.includes(
@@ -121,7 +133,9 @@ export default function useReferenceConnection(
               },
             );
 
-            if (foundIndex === -1) throw new Error("No foundIndex");
+            if (foundIndex === -1) {
+              throw new Error("No foundIndex");
+            }
 
             const rect =
               referenceContainers[foundIndex].getBoundingClientRect();

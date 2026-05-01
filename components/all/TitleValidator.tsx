@@ -9,13 +9,16 @@ export default function TitleValidator() {
 
   useEffect(() => {
     const pivotPath = changeToTitleCase(path.split("/").pop()!);
-    if (!pivotPath) return;
+    if (!pivotPath) {
+      return;
+    }
 
     const titleText = document.title.split(" | ")[0];
-    if (titleText !== pivotPath)
+    if (titleText !== pivotPath) {
       throw new Error(
         `titleText: ${titleText} must be the same as path: ${pivotPath}.`,
       );
+    }
 
     const articleHeading = document.querySelector<HTMLHeadingElement>(
       "body > main > article h1",
@@ -25,10 +28,11 @@ export default function TitleValidator() {
         ? articleHeading.children[0].textContent
         : articleHeading.textContent;
 
-    if (articleHeadingText !== pivotPath)
+    if (articleHeadingText !== pivotPath) {
       throw new Error(
         `articleHeadingText: ${articleHeadingText} must be the same as path: ${pivotPath}.`,
       );
+    }
   }, [path]);
 
   return null;

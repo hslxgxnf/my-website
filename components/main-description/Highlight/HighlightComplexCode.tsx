@@ -22,7 +22,9 @@ export default function HighlightComplexCode({
 
   async function handleClick() {
     try {
-      if (isProcessing) return;
+      if (isProcessing) {
+        return;
+      }
 
       await navigator.clipboard.writeText(children.content);
       isProcessing = true;

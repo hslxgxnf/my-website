@@ -37,11 +37,14 @@ export default function PageNav() {
       const sections = Array.from(
         document.querySelectorAll<HTMLElement>("body > main > article section"),
       );
-      if (sections.length === 0) throw new Error("No sections");
-      if (sections.length !== headings.length)
+      if (sections.length === 0) {
+        throw new Error("No sections");
+      }
+      if (sections.length !== headings.length) {
         throw new Error(
           `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
         );
+      }
 
       const links = ulRef.current.querySelectorAll<HTMLAnchorElement>("a");
 

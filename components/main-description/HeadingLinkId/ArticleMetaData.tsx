@@ -16,14 +16,12 @@ export default function ArticleMetaData({
   }
 
   if (!publishedAt) {
-    // throw new Error("No publishedAt");
-    console.error("No publishedAt");
-    return null;
+    throw new Error("No publishedAt");
   }
 
   if (updatedAt && isBefore(parseISO(updatedAt), parseISO(publishedAt))) {
     throw new Error(
-      `updatedAt: ${updatedAt} must be after publishedAt: ${publishedAt}.`,
+      `updatedAt: ${updatedAt} cannot be earlier than publishedAt: ${publishedAt}.`,
     );
   }
 

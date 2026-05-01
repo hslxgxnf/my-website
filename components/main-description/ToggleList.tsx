@@ -13,7 +13,9 @@ export default function ToggleList({ header, children }: ToggleListProps) {
   const divRef = useRef<HTMLDivElement>(null);
 
   function handleClick() {
-    if (!divRef.current) throw new Error("No divRef");
+    if (!divRef.current) {
+      throw new Error("No divRef");
+    }
     divRef.current.classList.toggle(styles.open);
   }
 

@@ -1,7 +1,9 @@
 import type { RefObject } from "react";
 
 export default function selectText(ref: RefObject<HTMLElement | null>) {
-  if (!ref.current) throw new Error("No ref");
+  if (!ref.current) {
+    throw new Error("No ref");
+  }
 
   const range = document.createRange();
   range.selectNodeContents(ref.current);
