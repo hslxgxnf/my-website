@@ -6,13 +6,14 @@ import DaleSeo from "./images/DaleSeo.png";
 import Emmet from "./images/Emmet.svg";
 import ESLint from "./images/ESLint.png";
 import GitHub from "./images/GitHub.svg";
+import HEROPY$DEV from "./images/HEROPY.DEV.png";
 import HTML_Arrows from "./images/HTML-Arrows.ico";
 import Inpa_Dev from "./images/Inpa-Dev.ico";
 import JAVASCRIPT$INFO from "./images/JAVASCRIPT.INFO.png";
 import MDN from "./images/MDN.png";
 import Next$js from "./images/Next.js.svg";
 import Prettier from "./images/Prettier.png";
-import SCSS from "./images/SCSS.png";
+import Sass from "./images/Sass.png";
 import Stack_Overflow from "./images/Stack-Overflow.svg";
 import Stylelint from "./images/Stylelint.svg";
 import tistory from "./images/tistory.png";
@@ -50,6 +51,10 @@ export const favicons = {
     image: GitHub,
     name: "GitHub",
   },
+  HEROPY$DEV: {
+    image: HEROPY$DEV,
+    name: "HEROPY.DEV",
+  },
   HTML_Arrows: {
     image: HTML_Arrows,
     name: "HTML Arrows",
@@ -74,9 +79,9 @@ export const favicons = {
     image: Prettier,
     name: "Prettier",
   },
-  SCSS: {
-    image: SCSS,
-    name: "SCSS",
+  Sass: {
+    image: Sass,
+    name: "Sass",
   },
   Stack_Overflow: {
     image: Stack_Overflow,

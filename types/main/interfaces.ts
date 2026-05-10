@@ -19,6 +19,7 @@ export interface Code {
   language:
     | "html"
     | "css"
+    | "scss"
     | "javascript"
     | "typescript"
     | "git"
