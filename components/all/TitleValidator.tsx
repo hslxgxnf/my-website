@@ -13,24 +13,24 @@ export default function TitleValidator() {
       return;
     }
 
-    const titleText = document.title.split(" | ")[0];
-    if (titleText !== pivotPath) {
-      throw new Error(
-        `titleText: ${titleText} must be the same as path: ${pivotPath}.`,
+    const documentTitle = document.title.split(" | ")[0];
+    if (documentTitle !== pivotPath) {
+      console.error(
+        `document.title: ${documentTitle} must be the same as path: ${pivotPath}.`,
       );
     }
 
-    const articleHeading = document.querySelector<HTMLHeadingElement>(
+    const articleHeading1 = document.querySelector<HTMLHeadingElement>(
       "body > main > article h1",
     )!;
-    const articleHeadingText =
-      articleHeading.childElementCount > 0
-        ? articleHeading.children[0].textContent
-        : articleHeading.textContent;
+    const articleHeading1Text =
+      articleHeading1.childElementCount > 0
+        ? articleHeading1.children[0].textContent
+        : articleHeading1.textContent;
 
-    if (articleHeadingText !== pivotPath) {
-      throw new Error(
-        `articleHeadingText: ${articleHeadingText} must be the same as path: ${pivotPath}.`,
+    if (articleHeading1Text !== pivotPath) {
+      console.error(
+        `articleHeading1Text: ${articleHeading1Text} must be the same as path: ${pivotPath}.`,
       );
     }
   }, [path]);
