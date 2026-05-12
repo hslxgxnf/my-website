@@ -5,12 +5,16 @@ import none from "./images/_none.png";
 import DaleSeo from "./images/DaleSeo.png";
 import Emmet from "./images/Emmet.svg";
 import ESLint from "./images/ESLint.png";
+import Git from "./images/Git.png";
 import GitHub from "./images/GitHub.svg";
+import GitHub_Docs from "./images/GitHub-Docs.png";
 import HEROPY$DEV from "./images/HEROPY.DEV.png";
 import HTML_Arrows from "./images/HTML-Arrows.ico";
 import Inpa_Dev from "./images/Inpa-Dev.ico";
 import JAVASCRIPT$INFO from "./images/JAVASCRIPT.INFO.png";
 import MDN from "./images/MDN.png";
+import Medium from "./images/Medium.png";
+import Naver_Blog from "./images/Naver-Blog.webp";
 import Next$js from "./images/Next.js.svg";
 import Prettier from "./images/Prettier.png";
 import Sass from "./images/Sass.png";
@@ -18,6 +22,7 @@ import Stack_Overflow from "./images/Stack-Overflow.svg";
 import Stylelint from "./images/Stylelint.svg";
 import tistory from "./images/tistory.png";
 import Udemy from "./images/Udemy.png";
+import velog from "./images/velog.webp";
 import W3Schools from "./images/W3Schools.svg";
 import WHATWG from "./images/WHATWG.svg";
 import YouTube from "./images/YouTube.svg";
@@ -47,9 +52,17 @@ export const favicons = {
     image: ESLint,
     name: "ESLint",
   },
+  Git: {
+    image: Git,
+    name: "Git",
+  },
   GitHub: {
     image: GitHub,
     name: "GitHub",
+  },
+  GitHub_Docs: {
+    image: GitHub_Docs,
+    name: "GitHub Docs",
   },
   HEROPY$DEV: {
     image: HEROPY$DEV,
@@ -70,6 +83,14 @@ export const favicons = {
   MDN: {
     image: MDN,
     name: "MDN",
+  },
+  Medium: {
+    image: Medium,
+    name: "Medium",
+  },
+  Naver_Blog: {
+    image: Naver_Blog,
+    name: "Naver Blog",
   },
   Next$js: {
     image: Next$js,
@@ -98,6 +119,10 @@ export const favicons = {
   Udemy: {
     image: Udemy,
     name: "Udemy",
+  },
+  velog: {
+    image: velog,
+    name: "velog",
   },
   W3Schools: {
     image: W3Schools,

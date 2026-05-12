@@ -30,9 +30,10 @@ export default function Layout({ children }: LayoutProps) {
         <Header
           links={[
             "IDE Settings",
+            "Git & GitHub",
+            "Clean Code",
             "DSA",
             "Coding Tests",
-            "Clean Code",
             "Web",
             "AI",
           ]}
