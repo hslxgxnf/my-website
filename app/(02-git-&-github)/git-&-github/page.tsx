@@ -54,8 +54,7 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Shows system, global, and local configuration settings and their
-                origins.
+                Shows system, global, and local configurations and their origin.
               </p>
             </li>
             <li>
@@ -83,8 +82,8 @@ export default function Page() {
                 <Highlight type="simple-code">git stash</Highlight>
               </p>
               <p>
-                Cuts changes in the current project and pastes them in the stash
-                archive.
+                Cuts the changes in the current project and pastes them into the
+                stash archive.
               </p>
               <ul>
                 <li>
@@ -94,23 +93,29 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Cuts changes in the target file and pastes them in the stash
-                    archive.
+                    Cuts the changes in the target file and pastes them into the
+                    stash archive.
                   </p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">git stash list</Highlight>
+                  </p>
+                  <p>Lists all stashes.</p>
                 </li>
                 <li>
                   <p>
                     <Highlight type="simple-code">git stash show</Highlight>
                   </p>
-                  <p>Lists all stashes.</p>
+                  <p>Shows the changes in the latest stash.</p>
                 </li>
                 <li>
                   <p>
                     <Highlight type="simple-code">git stash pop</Highlight>
                   </p>
                   <p>
-                    Cuts the latest stash in the stash archive and pastes it in
-                    the current project.
+                    Cuts the latest stash in the stash archive and pastes it
+                    into the current project.
                   </p>
                 </li>
                 <li>
@@ -118,8 +123,8 @@ export default function Page() {
                     <Highlight type="simple-code">git stash apply</Highlight>
                   </p>
                   <p>
-                    Copies the latest stash in the stash archive to the current
-                    project.
+                    Copies the latest stash in the stash archive into the
+                    current project.
                   </p>
                 </li>
                 <li>
@@ -138,7 +143,7 @@ export default function Page() {
                 <Highlight type="simple-code">git commit</Highlight>
               </p>
               <p>
-                One Task for One Commit. Avoid combining multiple changes into a
+                One task per commit. Avoid combining multiple tasks into a
                 single commit.
               </p>
               <ul>
@@ -150,8 +155,8 @@ export default function Page() {
                       </Highlight>
                     </p>
                     <p>
-                      In IDEs, a blank line is required between a summary and a
-                      description.
+                      In IDEs, a blank line is required between the summary and
+                      the description.
                     </p>
                     <Highlight type="complex-code">{code}</Highlight>
                     <p>
@@ -167,8 +172,8 @@ export default function Page() {
                     </p>
                     <p>
                       <Highlight type="text">&lt;summary&gt;</Highlight> should
-                      use the imperative mood, starting with a lowercase letter
-                      and ending without a period.
+                      use the imperative mood, start with a lowercase letter,
+                      and end without a period.
                     </p>
                   </li>
                 </ReferenceButton>
@@ -192,11 +197,31 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
+                    <Highlight type="simple-code">git branch -v</Highlight>
+                  </p>
+                  <p>Lists all local branches verbosely.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">git branch -vv</Highlight>
+                  </p>
+                  <p>Lists all local branches more verbosely.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">git branch -a</Highlight>
+                  </p>
+                  <p>
+                    Lists all local branches and remote repository branches.
+                  </p>
+                </li>
+                <li>
+                  <p>
                     <Highlight type="simple-code">
                       git branch &lt;new-branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Creates a branch.</p>
+                  <p>Creates the new branch.</p>
                 </li>
                 <li>
                   <p>
@@ -209,10 +234,11 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch -m &lt;new-branch-name&gt;
+                      git branch -m &lt;target-branch-name&gt;
+                      &lt;new-branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Renames the current branch.</p>
+                  <p>Renames the target branch.</p>
                 </li>
               </ul>
             </li>
@@ -240,6 +266,13 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
+                    <Highlight type="simple-code">git checkout -</Highlight>,{" "}
+                    <Highlight type="simple-code">git switch -</Highlight>
+                  </p>
+                  <p>Moves to the previous branch or commit.</p>
+                </li>
+                <li>
+                  <p>
                     <Highlight type="simple-code">
                       git checkout -b &lt;new-branch-name&gt;
                     </Highlight>
@@ -248,7 +281,22 @@ export default function Page() {
                       git switch -c &lt;new-branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Creates a branch and moves to the branch.</p>
+                  <p>Creates the new branch and moves to it.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git checkout &lt;commit-id&gt;
+                    </Highlight>
+                    ,{" "}
+                    <Highlight type="simple-code">
+                      git switch --detach &lt;commit-id&gt;
+                    </Highlight>
+                  </p>
+                  <p>
+                    Moves the <Highlight type="text">HEAD</Highlight> directly
+                    to the target commit without being attached to any branch.
+                  </p>
                 </li>
                 <li>
                   <p>
@@ -292,8 +340,8 @@ export default function Page() {
                   </Highlight>
                 </p>
                 <p>
-                  Creates an alias for a remote repository and connects the
-                  current project to the remote repository.
+                  Creates the alias for the remote repository and connects the
+                  current project to it.
                 </p>
               </li>
               <li>
@@ -314,23 +362,43 @@ export default function Page() {
                     &lt;remote-repository-url&gt;
                   </Highlight>
                 </p>
-                <p>Updates the URL of the target remote repository alias.</p>
+                <p>Updates the URL of the target remote repository.</p>
               </li>
             </ul>
             <li>
               <p>
                 <Highlight type="simple-code">
-                  git push -u &lt;remote-repository-alias&gt;
-                  &lt;local-branch-name&gt;
+                  git push &lt;remote-repository-alias&gt; &lt;branch-name&gt;
                 </Highlight>
               </p>
               <p>
-                Uploads a local branch to a remote repository and sets it as the
-                upstream. Once set, you can simply use{" "}
-                <Highlight type="simple-code">git push</Highlight>,{" "}
-                <Highlight type="simple-code">git fetch</Highlight>, and{" "}
-                <Highlight type="simple-code">git pull</Highlight>.
+                Uploads the local branch to the remote repository branch that
+                has the same name as the local branch. If the local and remote
+                names are different,{" "}
+                <Highlight type="simple-code">&lt;branch-name&gt;</Highlight>{" "}
+                will be{" "}
+                <Highlight type="simple-code">
+                  &lt;local-branch-name&gt;:&lt;remote-repository-branch-name&gt;
+                </Highlight>
               </p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git push -u &lt;remote-repository-alias&gt;
+                      &lt;branch-name&gt;
+                    </Highlight>
+                  </p>
+                  <p>
+                    Uploads and remembers this connection. Thereafter, you can
+                    simply run{" "}
+                    <Highlight type="simple-code">git push</Highlight>,{" "}
+                    <Highlight type="simple-code">git fetch</Highlight>, or{" "}
+                    <Highlight type="simple-code">git pull</Highlight> without
+                    arguments.
+                  </p>
+                </li>
+              </ul>
             </li>
             <li>
               <p>
@@ -339,7 +407,10 @@ export default function Page() {
                   &lt;remote-branch-name&gt;
                 </Highlight>
               </p>
-              <p>Downloads changes from a remote repository without merging.</p>
+              <p>
+                Downloads the changes from the target remote repository branch
+                without merging them.
+              </p>
             </li>
             <li>
               <p>
@@ -349,8 +420,8 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Downloads changes from a remote repository and merges them into
-                the current branch.
+                Downloads the changes from the target remote repository branch
+                and merges them into the current branch.
               </p>
             </li>
           </ul>
