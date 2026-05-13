@@ -679,6 +679,29 @@ export default function Page() {
                 <td>Run Prettier</td>
                 <td>{entities.checkedBox}</td>
               </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Terminal
+                </td>
+                <td>
+                  Command Completion
+                  <br />
+                  {entities.rightSubArrow} Insert suggestion with:
+                </td>
+                <td>Tab</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>!</strong> Terminal
+                </td>
+                <td>
+                  Font Settings
+                  <br />
+                  {entities.rightSubArrow}{" "}
+                  <Highlight type="underline">F</Highlight>ont:
+                </td>
+                <td>MesloLGM Nerd Font</td>
+              </tr>
             </tbody>
           </table>
         </section>
