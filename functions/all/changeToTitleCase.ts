@@ -8,6 +8,7 @@ const upperCaseWords: string[] = [
   "html",
   "css",
   "scss",
+  "json",
 ];
 
 const lowerCaseWords: string[] = [

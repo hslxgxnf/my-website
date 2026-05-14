@@ -29,6 +29,7 @@ export default function Layout({ children }: LayoutProps) {
       <body>
         <Header
           links={[
+            "Windows",
             "IDE Settings",
             "Git & GitHub",
             "Clean Code",

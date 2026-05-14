@@ -14,8 +14,10 @@ import Inpa_Dev from "./images/Inpa-Dev.ico";
 import JAVASCRIPT$INFO from "./images/JAVASCRIPT.INFO.png";
 import MDN from "./images/MDN.png";
 import Medium from "./images/Medium.png";
+import Microsoft from "./images/Microsoft.ico";
 import Naver_Blog from "./images/Naver-Blog.webp";
 import Next$js from "./images/Next.js.svg";
+import Oh_My_Posh from "./images/Oh-My-Posh.svg";
 import Prettier from "./images/Prettier.png";
 import Sass from "./images/Sass.png";
 import Stack_Overflow from "./images/Stack-Overflow.svg";
@@ -88,6 +90,10 @@ export const favicons = {
     image: Medium,
     name: "Medium",
   },
+  Microsoft: {
+    image: Microsoft,
+    name: "Microsoft",
+  },
   Naver_Blog: {
     image: Naver_Blog,
     name: "Naver Blog",
@@ -95,6 +101,10 @@ export const favicons = {
   Next$js: {
     image: Next$js,
     name: "Next.js",
+  },
+  Oh_My_Posh: {
+    image: Oh_My_Posh,
+    name: "Oh My Posh",
   },
   Prettier: {
     image: Prettier,
