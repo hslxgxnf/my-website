@@ -50,7 +50,7 @@ export default function Page() {
             <li>
               <p>
                 <Highlight type="simple-code">
-                  git config --list --show-origin
+                  git config list --show-origin
                 </Highlight>
               </p>
               <p>
@@ -136,12 +136,16 @@ export default function Page() {
               </ul>
             </li>
             <li>
-              <Highlight type="simple-code">git add</Highlight>
+              <p>
+                <Highlight type="simple-code">git add .</Highlight>
+              </p>
+              <p>Stages all changes.</p>
             </li>
             <li>
               <p>
                 <Highlight type="simple-code">git commit</Highlight>
               </p>
+              <p>Creates a new commit with all staged changes.</p>
               <p>
                 One task per commit. Avoid combining multiple tasks into a
                 single commit.
@@ -151,7 +155,8 @@ export default function Page() {
                   <li>
                     <p>
                       <Highlight type="simple-code">
-                        git commit -m &lt;summary&gt; -m &lt;description&gt;
+                        git commit --message &lt;summary&gt; --message
+                        &lt;description&gt;
                       </Highlight>
                     </p>
                     <p>
@@ -180,10 +185,52 @@ export default function Page() {
               </ul>
             </li>
             <li>
-              <Highlight type="simple-code">git revert</Highlight>
+              <p>
+                <Highlight type="simple-code">
+                  git revert &lt;commit-id&gt;
+                </Highlight>
+              </p>
+              <p>
+                Creates a new commit that undoes the changes of the target
+                commit.
+              </p>
             </li>
             <li>
-              <Highlight type="simple-code">git reset</Highlight>
+              <p>
+                <Highlight type="simple-code">
+                  git reset &lt;commit-id&gt;
+                </Highlight>
+              </p>
+              <p>
+                Deletes all commits after the target commit, keeps the changes
+                unstaged, and preserves the target commit. This has the implicit{" "}
+                <Highlight type="simple-code">--mixed</Highlight> flag, which is
+                the default.
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git reset --soft &lt;commit-id&gt;
+                    </Highlight>
+                  </p>
+                  <p>
+                    Deletes all commits after the target commit, keeps the
+                    changes staged, and preserves the target commit.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git reset --hard &lt;commit-id&gt;
+                    </Highlight>
+                  </p>
+                  <p>
+                    Deletes all commits after the target commit, also deletes
+                    the changes, and preserves the target commit.
+                  </p>
+                </li>
+              </ul>
             </li>
             <li>
               <Highlight type="simple-code">git log</Highlight>
@@ -197,19 +244,23 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git branch -v</Highlight>
+                    <Highlight type="simple-code">
+                      git branch --verbose
+                    </Highlight>
                   </p>
                   <p>Lists all local branches verbosely.</p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git branch -vv</Highlight>
+                    <Highlight type="simple-code">
+                      git branch --verbose --verbose
+                    </Highlight>
                   </p>
                   <p>Lists all local branches more verbosely.</p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git branch -a</Highlight>
+                    <Highlight type="simple-code">git branch --all</Highlight>
                   </p>
                   <p>
                     Lists all local branches and remote repository branches.
@@ -226,7 +277,7 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch -d &lt;target-branch-name&gt;
+                      git branch --delete &lt;target-branch-name&gt;
                     </Highlight>
                   </p>
                   <p>Deletes the target branch.</p>
@@ -234,7 +285,7 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch -m &lt;target-branch-name&gt;
+                      git branch --move &lt;target-branch-name&gt;
                       &lt;new-branch-name&gt;
                     </Highlight>
                   </p>
@@ -278,7 +329,7 @@ export default function Page() {
                     </Highlight>
                     ,{" "}
                     <Highlight type="simple-code">
-                      git switch -c &lt;new-branch-name&gt;
+                      git switch --create &lt;new-branch-name&gt;
                     </Highlight>
                   </p>
                   <p>Creates the new branch and moves to it.</p>
@@ -313,10 +364,69 @@ export default function Page() {
               </ul>
             </li>
             <li>
-              <Highlight type="simple-code">git merge &lt;name&gt;</Highlight>
+              <p>
+                <Highlight type="simple-code">
+                  git merge &lt;target-branch-name&gt;
+                </Highlight>
+              </p>
+              <p>Merges the target branch into the current branch.</p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">git merge --abort</Highlight>
+                  </p>
+                  <p>
+                    Aborts the paused merge process due to conflicts and
+                    restores the current branch to its pre-merge state.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git merge --continue
+                    </Highlight>
+                  </p>
+                  <p>
+                    Resumes the paused merge process after resolving conflicts
+                    and staging the resolved changes.
+                  </p>
+                </li>
+              </ul>
             </li>
             <li>
-              <Highlight type="simple-code">git rebase &lt;name&gt;</Highlight>
+              <p>
+                <Highlight type="simple-code">
+                  git rebase &lt;target-branch-name&gt;
+                </Highlight>
+              </p>
+              <p>
+                Cuts the commits of the current branch that diverge from the
+                target branch and pastes them onto the target branch to create a
+                linear history. After rebasing, the target branch should be
+                fast-forward merged.
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">git rebase --abort</Highlight>
+                  </p>
+                  <p>
+                    Aborts the paused rebase process due to conflicts and
+                    restores the current branch to its pre-rebase state.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git rebase --continue
+                    </Highlight>
+                  </p>
+                  <p>
+                    Resumes the paused rebase process after resolving conflicts
+                    and staging the resolved changes.
+                  </p>
+                </li>
+              </ul>
             </li>
             <hr />
             <li>
@@ -328,7 +438,7 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="simple-code">git remote -v</Highlight>
+                  <Highlight type="simple-code">git remote --verbose</Highlight>
                 </p>
                 <p>Lists all remote repository aliases and their URLs.</p>
               </li>
