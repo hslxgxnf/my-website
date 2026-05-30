@@ -63,7 +63,7 @@
 }
 
 @mixin reference-button {
-  .reference-button-default-container {
+  .reference-button-container {
     position: relative;
 
     > button {
@@ -111,30 +111,10 @@
 
   $selector: "ul";
   @for $i from 1 through 3 {
-    #{$selector} > .reference-button-default-container > button {
+    #{$selector} > .reference-button-container > button {
       left: calc(var(--space-50) * -1 + (var(--space-40) * -1 * #{$i}));
     }
 
     $selector: $selector + " ul";
-  }
-
-  .reference-button-table-container {
-    > button {
-      border: none;
-      background-color: transparent;
-      font-size: var(--font-size-25);
-      cursor: pointer;
-
-      &:hover {
-        > svg {
-          fill: var(--background-color-3);
-        }
-
-        ~ *,
-        ~ * * {
-          color: var(--background-color-3);
-        }
-      }
-    }
   }
 }
