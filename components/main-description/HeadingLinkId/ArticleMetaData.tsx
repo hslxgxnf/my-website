@@ -16,13 +16,15 @@ export default function ArticleMetaData({
   }
 
   if (!publishedAt) {
-    throw new Error("No publishedAt");
+    console.error("No publishedAt");
+    return null;
   }
 
   if (updatedAt && isBefore(parseISO(updatedAt), parseISO(publishedAt))) {
-    throw new Error(
+    console.error(
       `updatedAt: ${updatedAt} cannot be earlier than publishedAt: ${publishedAt}.`,
     );
+    return null;
   }
 
   const dateFormat = "MMMM dd, yyyy";

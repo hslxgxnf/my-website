@@ -27,7 +27,8 @@ export default function Highlight({
 
   if (type === "underline" && typeof children === "string") {
     if (copy || pre) {
-      throw new Error('type="underline" does not support copy and pre.');
+      console.error('type="underline" does not support copy and pre.');
+      return null;
     }
 
     return <span className={styles.underline}>{children}</span>;
@@ -43,15 +44,17 @@ export default function Highlight({
 
   if (type === "complex-code" && typeof children !== "string") {
     if (copy === false || pre === false) {
-      throw new Error(
+      console.error(
         'type="complex-code" is copy={true} and pre={pre} by default.',
       );
+      return null;
     }
 
     return <HighlightComplexCode>{children}</HighlightComplexCode>;
   }
 
-  throw new Error(
+  console.error(
     `Unsupported: type: ${type}, copy: ${copy}, pre: ${pre}, children: ${children}`,
   );
+  return null;
 }

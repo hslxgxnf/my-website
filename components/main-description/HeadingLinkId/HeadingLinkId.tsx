@@ -28,10 +28,11 @@ export default function HeadingLinkId({
   const headingRef = useRef<HTMLHeadingElement>(null);
   const id = children.replaceAll(" ", "-").toLowerCase();
 
-  // This is for smooth hash scroll in a new window.
+  // This is for a new window targeted to a hash to scroll smoothly.
   useEffect(() => {
     if (!headingRef.current) {
-      throw new Error("No headingRef");
+      console.error("No headingRef");
+      return;
     }
 
     headingRef.current.id = id;

@@ -13,7 +13,8 @@ export default function NewWindowHashScroll() {
     const element = document.getElementById(id);
 
     if (!element) {
-      throw new Error("No element");
+      console.error("No element");
+      return;
     }
 
     element.scrollIntoView();

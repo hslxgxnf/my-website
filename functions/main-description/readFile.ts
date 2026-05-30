@@ -18,7 +18,8 @@ export default async function readFile(
   });
 
   if (filePaths.length !== 1) {
-    throw new Error(`filePaths.length: ${filePaths.length} must be 1.`);
+    console.error(`filePaths.length: ${filePaths.length} must be 1.`);
+    return;
   }
 
   // The following code copies non-custom properties in a desired format used in the stylelint.config.ts file.
@@ -30,7 +31,8 @@ export default async function readFile(
   //   });
   //
   //   if (filePaths.length !== 1) {
-  //     throw new Error(`filePaths.length: ${filePaths.length} must be 1.`);
+  //     console.error(`filePaths.length: ${filePaths.length} must be 1.`);
+  //     return;
   //   }
   //
   //   const result = await nodeReadFile(filePaths[0], "utf-8");

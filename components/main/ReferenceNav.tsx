@@ -18,7 +18,8 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
           <ul>
             {referenceItem.sites.map((site, index) => {
               if (site.name === "dummy") {
-                throw new Error("Change this dummy image.");
+                console.error("Change this dummy image.");
+                return null;
               } else if (site.name === "self") {
                 return (
                   <li key={index} data-self>

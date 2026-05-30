@@ -21,7 +21,8 @@ export default function PageNav() {
 
     // When an article has two or more headings, this component will be displayed.
     if (foundHeadings.length === 0) {
-      throw new Error("No headings");
+      console.error("No headings");
+      return;
     } else if (foundHeadings.length >= 2) {
       setShouldRender(true);
       setHeadings(foundHeadings);
@@ -38,12 +39,14 @@ export default function PageNav() {
         document.querySelectorAll<HTMLElement>("body > main > article section"),
       );
       if (sections.length === 0) {
-        throw new Error("No sections");
+        console.error("No sections");
+        return;
       }
       if (sections.length !== headings.length) {
-        throw new Error(
+        console.error(
           `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
         );
+        return;
       }
 
       const links = ulRef.current.querySelectorAll<HTMLAnchorElement>("a");
