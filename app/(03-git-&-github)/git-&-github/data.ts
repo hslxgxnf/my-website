@@ -51,6 +51,12 @@ export const reference: Reference = [
         name: favicons.Udemy.name,
         title: "GitHub Actions - The Complete Guide",
       },
+      {
+        url: "https://docs.github.com/en/actions",
+        favicon: favicons.GitHub_Docs.image,
+        name: favicons.GitHub_Docs.name,
+        title: "GitHub Actions documentation",
+      },
     ],
   },
   {

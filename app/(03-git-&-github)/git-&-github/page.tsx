@@ -233,7 +233,22 @@ export default function Page() {
               </ul>
             </li>
             <li>
-              <Highlight type="simple-code">git log</Highlight>
+              <p>
+                <Highlight type="simple-code">git log</Highlight>
+              </p>
+              <p>Shows the commit history.</p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      git log -S &lt;string&gt;
+                    </Highlight>
+                  </p>
+                  <p>
+                    Finds commits where the target string was added or removed.
+                  </p>
+                </li>
+              </ul>
             </li>
             <hr />
             <li>
@@ -540,6 +555,94 @@ export default function Page() {
           <ReferenceButton>
             <HeadingLinkId headingNumber={2}>GitHub Actions</HeadingLinkId>
           </ReferenceButton>
+          <ul>
+            <li>
+              <p>Workflows</p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">name</Highlight>
+                  </p>
+                  <p>Are attached to a GitHub repository.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">on</Highlight>
+                  </p>
+                  <p>Are triggered upon events.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">jobs</Highlight>
+                  </p>
+                  <p>Contain one or more jobs.</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>Jobs</p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">&lt;job-name&gt;</Highlight>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">needs</Highlight>
+                  </p>
+                  <p>
+                    Run sequentially based on implicit success conditions,
+                    overriding the default parallel execution.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">if</Highlight>
+                  </p>
+                  <p>Run conditionally.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">runs-on</Highlight>
+                  </p>
+                  <p>Define a runner.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">steps</Highlight>
+                  </p>
+                  <p>Contain one or more steps.</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>Steps</p>
+              <ul>
+                <li>
+                  <p>Run in order.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">if</Highlight>
+                  </p>
+                  <p>Run conditionally.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">name</Highlight>{" "}
+                    <Highlight type="simple-code">run</Highlight>{" "}
+                    <Highlight type="simple-code">uses</Highlight>{" "}
+                    <Highlight type="simple-code">with</Highlight>
+                  </p>
+                  <p>
+                    Execute a shell command, a custom action, or a third-party
+                    action.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Errors</HeadingLinkId>
