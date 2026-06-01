@@ -12,6 +12,31 @@
       padding: var(--space-10);
       background-color: var(--background-color-4);
 
+      // headings.length === 1
+      > ul {
+        > li {
+          list-style-type: none;
+
+          > button {
+            border: none;
+            width: 100%;
+            background-color: transparent;
+            font-size: var(--font-size-25);
+            cursor: pointer;
+
+            &:hover > svg {
+              fill: var(--color-1);
+            }
+          }
+
+          > hr {
+            margin-top: var(--space-10);
+            margin-bottom: var(--space-10);
+          }
+        }
+      }
+
+      // headings.length > 1
       > header {
         margin-bottom: var(--space-10);
         color: var(--color-1);
@@ -27,18 +52,35 @@
 
             &:last-child {
               margin-bottom: 0;
+
+              > button {
+                border: none;
+                width: 100%;
+                background-color: transparent;
+                font-size: var(--font-size-25);
+                cursor: pointer;
+
+                &:hover > svg {
+                  fill: var(--color-1);
+                }
+              }
             }
 
             &.indent {
               margin-left: calc(var(--space-20));
             }
 
-            > a.active {
-              color: var(--color-1);
+            > a {
+              display: block;
+
+              &.active {
+                color: var(--color-1);
+              }
             }
 
             > hr {
               margin-top: var(--space-10);
+              margin-bottom: var(--space-10);
             }
           }
         }
