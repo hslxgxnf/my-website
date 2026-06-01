@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useRef } from "react";
+import { type ReactNode, useState } from "react";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
 
@@ -10,19 +10,15 @@ interface ToggleListProps {
 }
 
 export default function ToggleList({ header, children }: ToggleListProps) {
-  const divRef = useRef<HTMLDivElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   function handleClick() {
-    if (!divRef.current) {
-      console.error("No divRef");
-      return;
-    }
-    divRef.current.classList.toggle(styles.open);
+    setIsOpen((prev) => !prev);
   }
 
   return (
     <li className={styles["toggle-list"]}>
-      <div ref={divRef} onClick={handleClick}>
+      <div className={isOpen ? styles.open : ""} onClick={handleClick}>
         ▶
       </div>
       <header>{header}</header>

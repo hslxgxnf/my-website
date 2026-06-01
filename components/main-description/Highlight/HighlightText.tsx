@@ -1,10 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { type MouseEvent } from "react";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
-import copyText from "@/functions/main-description/copyText";
-import selectText from "@/functions/main-description/selectText";
+import selectAndCopyText from "@/functions/main-description/selectAndCopyText";
 
 interface HighlightTextProps {
   copy?: boolean;
@@ -17,11 +16,8 @@ export default function HighlightText({
   pre,
   children,
 }: HighlightTextProps) {
-  const emRef = useRef<HTMLElement>(null);
-
-  function handleClick() {
-    void copyText(children);
-    selectText(emRef);
+  async function handleClick(event: MouseEvent<HTMLElement>) {
+    await selectAndCopyText(event);
   }
 
   if (copy) {
@@ -31,7 +27,6 @@ export default function HighlightText({
           <em
             className={`${styles.copy} ${styles.pre}`}
             title="Copy"
-            ref={emRef}
             onClick={handleClick}
           >
             {children}
@@ -40,12 +35,7 @@ export default function HighlightText({
       );
     } else {
       return (
-        <em
-          className={styles.copy}
-          title="Copy"
-          ref={emRef}
-          onClick={handleClick}
-        >
+        <em className={styles.copy} title="Copy" onClick={handleClick}>
           {children}
         </em>
       );
