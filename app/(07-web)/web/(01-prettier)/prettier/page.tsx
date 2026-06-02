@@ -36,7 +36,7 @@ export default function Page() {
         </p>
         <p>
           <Highlight type="simple-code" copy={true}>
-            npm install --save-dev --save-exact prettier
+            npm install -D prettier
           </Highlight>
         </p>
       </article>
