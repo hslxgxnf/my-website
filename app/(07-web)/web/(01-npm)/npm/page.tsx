@@ -69,7 +69,7 @@ export default function Page() {
                 </p>
                 <p>
                   Installs the specified packages into the{" "}
-                  <Highlight type="text">dependencies</Highlight> property.
+                  <Highlight type="text">dependencies</Highlight> section.
                 </p>
               </li>
               <li>
@@ -80,7 +80,7 @@ export default function Page() {
                 </p>
                 <p>
                   Installs the specified packages into the{" "}
-                  <Highlight type="text">devDependencies</Highlight> property.
+                  <Highlight type="text">devDependencies</Highlight> section.
                 </p>
               </li>
               <li>
@@ -125,7 +125,7 @@ export default function Page() {
               <Highlight type="simple-code">npm run</Highlight>
             </p>
             <p>
-              Lists the <Highlight type="text">scripts</Highlight> property.
+              Lists the <Highlight type="text">scripts</Highlight> section.
             </p>
             <ul>
               <li>
