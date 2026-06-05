@@ -26,9 +26,7 @@ export default function Page() {
         {/*<HeadingLinkPage>CSR vs. SSR</HeadingLinkPage>*/}
         <hr />
         <h2>Initialization</h2>
-        {/*<HeadingLinkPage>npm</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>pnpm</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>concurrently</HeadingLinkPage>*/}
+        <HeadingLinkPage>npm</HeadingLinkPage>
         <HeadingLinkPage>Prettier</HeadingLinkPage>
         <HeadingLinkPage>Stylelint</HeadingLinkPage>
         <HeadingLinkPage>ESLint</HeadingLinkPage>

@@ -17,6 +17,7 @@ import Medium from "./images/Medium.png";
 import Microsoft from "./images/Microsoft.ico";
 import Naver_Blog from "./images/Naver-Blog.webp";
 import Next$js from "./images/Next.js.svg";
+import npm from "./images/npm.png";
 import Oh_My_Posh from "./images/Oh-My-Posh.svg";
 import Prettier from "./images/Prettier.png";
 import Sass from "./images/Sass.png";
@@ -101,6 +102,10 @@ export const favicons = {
   Next$js: {
     image: Next$js,
     name: "Next.js",
+  },
+  npm: {
+    image: npm,
+    name: "npm",
   },
   Oh_My_Posh: {
     image: Oh_My_Posh,
