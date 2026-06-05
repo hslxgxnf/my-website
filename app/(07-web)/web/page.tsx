@@ -27,6 +27,7 @@ export default function Page() {
         <hr />
         <h2>Initialization</h2>
         <HeadingLinkPage>npm</HeadingLinkPage>
+        <HeadingLinkPage>npm-check-updates</HeadingLinkPage>
         <HeadingLinkPage>Prettier</HeadingLinkPage>
         <HeadingLinkPage>Stylelint</HeadingLinkPage>
         <HeadingLinkPage>ESLint</HeadingLinkPage>

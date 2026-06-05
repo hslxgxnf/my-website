@@ -74,6 +74,10 @@ const hyphenCaseWords: SpecialCaseWord[] = [
     target: "@starting Style",
     result: "@starting-style",
   },
+  {
+    target: "npm Check Updates",
+    result: "npm-check-updates",
+  },
 ];
 
 function checkProperNoun(word: string): boolean {
