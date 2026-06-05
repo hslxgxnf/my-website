@@ -27,7 +27,8 @@ export default function Page() {
         </ReferenceButton>
         <p>
           <Highlight type="text">npm-check-updates</Highlight> manages versions
-          of installed packages.
+          of installed packages in the{" "}
+          <Highlight type="text">package.json</Highlight> file.
         </p>
         <ul>
           <li>
