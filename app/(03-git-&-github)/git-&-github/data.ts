@@ -26,7 +26,7 @@ export const reference: Reference = [
     ],
   },
   {
-    target: "git commit --message <summary> --message <description>",
+    target: "git commit --message (-m) <summary> --message (-m) <description>",
     sites: [
       {
         url: "https://blog.naver.com/dudu1104/221580086250",

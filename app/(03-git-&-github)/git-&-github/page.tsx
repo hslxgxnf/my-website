@@ -54,7 +54,7 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Shows system, global, and local configurations and their origin.
+                Lists system, global, and local configurations and their origin.
               </p>
             </li>
             <li>
@@ -93,8 +93,8 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Cuts the changes in the target file and pastes them into the
-                    stash archive.
+                    Cuts the changes in the specified file and pastes them into
+                    the stash archive.
                   </p>
                 </li>
                 <li>
@@ -155,7 +155,7 @@ export default function Page() {
                   <li>
                     <p>
                       <Highlight type="simple-code">
-                        git commit --message &lt;summary&gt; --message
+                        git commit --message (-m) &lt;summary&gt; --message (-m)
                         &lt;description&gt;
                       </Highlight>
                     </p>
@@ -191,7 +191,7 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Creates a new commit that undoes the changes of the target
+                Creates a new commit that undoes the changes of the specified
                 commit.
               </p>
             </li>
@@ -202,10 +202,10 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Deletes all commits after the target commit, keeps the changes
-                unstaged, and preserves the target commit. This has the implicit{" "}
-                <Highlight type="simple-code">--mixed</Highlight> flag, which is
-                the default.
+                Deletes all commits after the specified commit, keeps the
+                changes unstaged, and preserves the specified commit. This has
+                the implicit <Highlight type="simple-code">--mixed</Highlight>{" "}
+                flag, which is the default.
               </p>
               <ul>
                 <li>
@@ -215,8 +215,8 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Deletes all commits after the target commit, keeps the
-                    changes staged, and preserves the target commit.
+                    Deletes all commits after the specified commit, keeps the
+                    changes staged, and preserves the specified commit.
                   </p>
                 </li>
                 <li>
@@ -226,8 +226,8 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Deletes all commits after the target commit, also deletes
-                    the changes, and preserves the target commit.
+                    Deletes all commits after the specified commit, also deletes
+                    the changes, and preserves the specified commit.
                   </p>
                 </li>
               </ul>
@@ -236,7 +236,7 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">git log</Highlight>
               </p>
-              <p>Shows the commit history.</p>
+              <p>Lists the commit history.</p>
               <ul>
                 <li>
                   <p>
@@ -245,10 +245,17 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Finds commits where the target string was added or removed.
+                    Finds commits where the specified string was added or
+                    removed.
                   </p>
                 </li>
               </ul>
+            </li>
+            <li>
+              <p>
+                <Highlight type="simple-code">git show</Highlight>
+              </p>
+              <p>Shows the latest commit with its diff.</p>
             </li>
             <hr />
             <li>
@@ -260,7 +267,7 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch --verbose
+                      git branch --verbose (-v)
                     </Highlight>
                   </p>
                   <p>Lists all local branches verbosely.</p>
@@ -268,14 +275,16 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch --verbose --verbose
+                      git branch --verbose --verbose (-vv)
                     </Highlight>
                   </p>
                   <p>Lists all local branches more verbosely.</p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git branch --all</Highlight>
+                    <Highlight type="simple-code">
+                      git branch --all (-a)
+                    </Highlight>
                   </p>
                   <p>
                     Lists all local branches and remote repository branches.
@@ -284,7 +293,7 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch &lt;new-branch-name&gt;
+                      git branch &lt;branch-name&gt;
                     </Highlight>
                   </p>
                   <p>Creates the new branch.</p>
@@ -292,19 +301,19 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch --delete &lt;target-branch-name&gt;
+                      git branch --delete (-d) &lt;branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Deletes the target branch.</p>
+                  <p>Deletes the specified branch.</p>
                 </li>
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git branch --move &lt;target-branch-name&gt;
+                      git branch --move (-m) &lt;specified-branch-name&gt;
                       &lt;new-branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Renames the target branch.</p>
+                  <p>Renames the specified branch.</p>
                 </li>
               </ul>
             </li>
@@ -312,22 +321,22 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">git checkout</Highlight>
               </p>
-              <p>Displays a brief status of the current branch.</p>
+              <p>Shows a brief status of the current branch.</p>
               <ul>
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git checkout &lt;target-branch-name&gt;
+                      git checkout &lt;branch-name&gt;
                     </Highlight>
                     ,{" "}
                     <Highlight type="simple-code">
-                      git switch &lt;target-branch-name&gt;
+                      git switch &lt;branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Moves from the current branch to the target branch.</p>
+                  <p>Moves from the current branch to the specified branch.</p>
                   <p>
-                    Uncommited changes are carried over to the target branch if
-                    there is no conflict.
+                    Uncommited changes are carried over to the specified branch
+                    if there is no conflict.
                   </p>
                 </li>
                 <li>
@@ -340,11 +349,11 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git checkout -b &lt;new-branch-name&gt;
+                      git checkout -b &lt;branch-name&gt;
                     </Highlight>
                     ,{" "}
                     <Highlight type="simple-code">
-                      git switch --create &lt;new-branch-name&gt;
+                      git switch --create (-c) &lt;branch-name&gt;
                     </Highlight>
                   </p>
                   <p>Creates the new branch and moves to it.</p>
@@ -361,7 +370,8 @@ export default function Page() {
                   </p>
                   <p>
                     Moves the <Highlight type="text">HEAD</Highlight> directly
-                    to the target commit without being attached to any branch.
+                    to the specified commit without being attached to any
+                    branch.
                   </p>
                 </li>
                 <li>
@@ -374,17 +384,17 @@ export default function Page() {
                       git restore &lt;file-name&gt;
                     </Highlight>
                   </p>
-                  <p>Restores the target file to the last commit state.</p>
+                  <p>Restores the specified file to the last commit state.</p>
                 </li>
               </ul>
             </li>
             <li>
               <p>
                 <Highlight type="simple-code">
-                  git merge &lt;target-branch-name&gt;
+                  git merge &lt;branch-name&gt;
                 </Highlight>
               </p>
-              <p>Merges the target branch into the current branch.</p>
+              <p>Merges the specified branch into the current branch.</p>
               <ul>
                 <li>
                   <p>
@@ -411,14 +421,14 @@ export default function Page() {
             <li>
               <p>
                 <Highlight type="simple-code">
-                  git rebase &lt;target-branch-name&gt;
+                  git rebase &lt;branch-name&gt;
                 </Highlight>
               </p>
               <p>
                 Cuts the commits of the current branch that diverge from the
-                target branch and pastes them onto the target branch to create a
-                linear history. After rebasing, the target branch should be
-                fast-forward merged.
+                specified branch and pastes them onto the specified branch to
+                create a linear history. After rebasing, the specified branch
+                should be fast-forward merged.
               </p>
               <ul>
                 <li>
@@ -453,7 +463,9 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="simple-code">git remote --verbose</Highlight>
+                  <Highlight type="simple-code">
+                    git remote --verbose (-v)
+                  </Highlight>
                 </p>
                 <p>Lists all remote repository aliases and their URLs.</p>
               </li>
@@ -472,11 +484,11 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="simple-code">
-                    git remote remove &lt;remote-repository-alias&gt;
+                    git remote remove (rm) &lt;remote-repository-alias&gt;
                   </Highlight>
                 </p>
                 <p>
-                  Disconnects the current project from the target remote
+                  Disconnects the current project from the specified remote
                   repository.
                 </p>
               </li>
@@ -487,7 +499,7 @@ export default function Page() {
                     &lt;remote-repository-url&gt;
                   </Highlight>
                 </p>
-                <p>Updates the URL of the target remote repository.</p>
+                <p>Updates the URL of the specified remote repository.</p>
               </li>
             </ul>
             <li>
@@ -510,8 +522,8 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">
-                      git push -u &lt;remote-repository-alias&gt;
-                      &lt;branch-name&gt;
+                      git push --set-upstream (-u)
+                      &lt;remote-repository-alias&gt; &lt;branch-name&gt;
                     </Highlight>
                   </p>
                   <p>
@@ -533,8 +545,8 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Downloads the changes from the target remote repository branch
-                without merging them.
+                Downloads the changes from the specified remote repository
+                branch without merging them.
               </p>
             </li>
             <li>
@@ -545,8 +557,8 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Downloads the changes from the target remote repository branch
-                and merges them into the current branch.
+                Downloads the changes from the specified remote repository
+                branch and merges them into the current branch.
               </p>
             </li>
           </ul>
