@@ -145,7 +145,7 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">git commit</Highlight>
               </p>
-              <p>Creates a new commit with all staged changes.</p>
+              <p>Creates a commit with all staged changes.</p>
               <p>
                 One task per commit. Avoid combining multiple tasks into a
                 single commit.
@@ -191,7 +191,7 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Creates a new commit that undoes the changes of the specified
+                Creates a commit that undoes the changes of the specified
                 commit.
               </p>
             </li>
@@ -296,7 +296,7 @@ export default function Page() {
                       git branch &lt;branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Creates the new branch.</p>
+                  <p>Creates the specified branch.</p>
                 </li>
                 <li>
                   <p>
@@ -356,7 +356,7 @@ export default function Page() {
                       git switch --create (-c) &lt;branch-name&gt;
                     </Highlight>
                   </p>
-                  <p>Creates the new branch and moves to it.</p>
+                  <p>Creates the specified branch and moves to it.</p>
                 </li>
                 <li>
                   <p>
