@@ -26,8 +26,8 @@ export default function Page() {
           </HeadingLinkId>
         </ReferenceButton>
         <p>
-          <Highlight type="text">npm-check-updates</Highlight> manages versions
-          of installed packages in the{" "}
+          <Highlight type="text">npm-check-updates</Highlight> manages the
+          versions of installed packages in the{" "}
           <Highlight type="text">package.json</Highlight> file.
         </p>
         <ul>
@@ -56,12 +56,13 @@ export default function Page() {
                 <Highlight type="simple-code">ncu --upgrade (-u)</Highlight>
               </p>
               <p>
-                Only upgrades versions in the{" "}
+                Only upgrades the versions in the{" "}
                 <Highlight type="text">package.json</Highlight> file to the
-                latest versions. This doesn't upgrade the{" "}
-                <Highlight type="text">package-lock.json</Highlight> file and{" "}
+                latest versions. It does not upgrade the{" "}
+                <Highlight type="text">package-lock.json</Highlight> file or the{" "}
                 <Highlight type="text">node_modules</Highlight> folder. To
-                upgrade them, <Highlight type="simple-code">npm i</Highlight>.
+                upgrade them, run{" "}
+                <Highlight type="simple-code">npm i</Highlight>.
               </p>
             </li>
             <li>
@@ -69,8 +70,7 @@ export default function Page() {
                 <Highlight type="simple-code">ncu --interactive (-i)</Highlight>
               </p>
               <p>
-                Enables the interactive mode to choose which packages to
-                upgrade.
+                Runs in interactive mode to choose which packages to upgrade.
               </p>
             </li>
             <li>
