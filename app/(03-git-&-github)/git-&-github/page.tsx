@@ -26,18 +26,42 @@ export default function Page() {
               Git & GitHub
             </HeadingLinkId>
           </ReferenceButton>
+          <p>
+            While <Highlight type="text">Git</Highlight> is a local version
+            control system, <Highlight type="text">GitHub</Highlight> is a
+            cloud-based platform for hosting{" "}
+            <Highlight type="text">Git</Highlight> repositories.
+          </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Files</HeadingLinkId>
+          <HeadingLinkId headingNumber={2}>Files & Folders</HeadingLinkId>
           <ul>
             <li>
-              <Highlight type="text">README.md</Highlight>
+              <Highlight type="text">Git</Highlight>
             </li>
+            <ul>
+              <li>
+                <Highlight type="text">README.md</Highlight>
+              </li>
+              <li>
+                <Highlight type="text">.gitignore</Highlight>
+              </li>
+              <li>
+                <Highlight type="text">.gitattributes</Highlight>
+              </li>
+            </ul>
             <li>
-              <Highlight type="text">.gitignore</Highlight>
-            </li>
-            <li>
-              <Highlight type="text">.gitattributes</Highlight>
+              <Highlight type="text">GitHub Actions</Highlight>
+              <ul>
+                <li>
+                  <Highlight type="text">.github/workflows</Highlight>
+                </li>
+                <ul>
+                  <li>
+                    <Highlight type="text">*.yml</Highlight>
+                  </li>
+                </ul>
+              </ul>
             </li>
           </ul>
         </section>
@@ -567,94 +591,28 @@ export default function Page() {
           <ReferenceButton>
             <HeadingLinkId headingNumber={2}>GitHub Actions</HeadingLinkId>
           </ReferenceButton>
-          <ul>
-            <li>
-              <p>Workflows</p>
-              <ul>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">name</Highlight>
-                  </p>
-                  <p>Are attached to a GitHub repository.</p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">on</Highlight>
-                  </p>
-                  <p>Are triggered upon events.</p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">jobs</Highlight>
-                  </p>
-                  <p>Contain one or more jobs.</p>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>Jobs</p>
-              <ul>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">&lt;job-name&gt;</Highlight>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">needs</Highlight>
-                  </p>
-                  <p>
-                    Run sequentially based on implicit success conditions,
-                    overriding the default parallel execution.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">if</Highlight>
-                  </p>
-                  <p>Run conditionally.</p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">runs-on</Highlight>
-                  </p>
-                  <p>Define a runner.</p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">steps</Highlight>
-                  </p>
-                  <p>Contain one or more steps.</p>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>Steps</p>
-              <ul>
-                <li>
-                  <p>Run in order.</p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">if</Highlight>
-                  </p>
-                  <p>Run conditionally.</p>
-                </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">name</Highlight>{" "}
-                    <Highlight type="simple-code">run</Highlight>{" "}
-                    <Highlight type="simple-code">uses</Highlight>{" "}
-                    <Highlight type="simple-code">with</Highlight>
-                  </p>
-                  <p>
-                    Execute a shell command, a custom action, or a third-party
-                    action.
-                  </p>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <p>
+            <Highlight type="text">GitHub Actions</Highlight> is a continuous
+            integration and continuous deployment (CI/CD) service.
+          </p>
+          <p>
+            <Highlight type="text">GitHub Actions</Highlight> provides secrets,
+            variables, artifacts, and outputs.
+          </p>
+          <p>
+            <Highlight type="text">GitHub Actions</Highlight> consists of
+            workflows. Workflows are triggered by events and have one or more
+            jobs.
+          </p>
+          <p>
+            Jobs run on a runner and have one or more steps. Jobs run in
+            parallel by default but can run sequentially by specifying{" "}
+            <Highlight type="simple-code">needs</Highlight>.
+          </p>
+          <p>
+            Steps execute a shell command, a custom action, or a third-party
+            action. Steps run in order.
+          </p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Errors</HeadingLinkId>
