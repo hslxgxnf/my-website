@@ -1,6 +1,8 @@
 import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/styles/all/layout.scss";
 import Header from "@/components/header/Header";
@@ -46,6 +48,9 @@ export default function Layout({ children }: LayoutProps) {
         <footer>
           <p>&copy; 2026 HSLee Dev</p>
         </footer>
+
+        <Analytics />
+        <SpeedInsights />
       </body>
       <NewWindowHashScroll />
       <TitleValidator />
