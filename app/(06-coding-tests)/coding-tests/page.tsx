@@ -18,7 +18,7 @@ export default function Page() {
       <article>
         <h1>Coding Tests</h1>
         <hr />
-        <h2>Sub Title</h2>
+        <h2>Preparing...</h2>
         {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
       </article>
 
