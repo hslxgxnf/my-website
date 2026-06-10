@@ -8,6 +8,12 @@ export default function Page() {
       </section>
       <section>
         <h1>Introduce Myself</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>Preparing...</h1>
       </section>
       <section>
         <h1>Skills</h1>
