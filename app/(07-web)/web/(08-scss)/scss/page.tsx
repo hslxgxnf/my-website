@@ -22,7 +22,11 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} publishedAt="2026-05-10">
+            <HeadingLinkId
+              headingNumber={1}
+              publishedAt="2026-05-10"
+              updatedAt="2026-06-13"
+            >
               SCSS
             </HeadingLinkId>
           </ReferenceButton>
@@ -33,12 +37,12 @@ export default function Page() {
             Syntactically awesome style sheets vs. Sassy Cascading Style Sheets
           </p>
           <p>
-            <Highlight type="text">Sass</Highlight> and{" "}
+            Both <Highlight type="text">Sass</Highlight> and{" "}
             <Highlight type="text">SCSS</Highlight> are{" "}
-            <Highlight type="text">CSS</Highlight> preprocessors. While{" "}
+            <Highlight type="text">CSS</Highlight> preprocessors. Although{" "}
             <Highlight type="text">SCSS</Highlight> was introduced after{" "}
             <Highlight type="text">Sass</Highlight>, it is now more widely
-            recommended because its syntax is fully compatible with standard{" "}
+            recommended due to its full compatibility with standard{" "}
             <Highlight type="text">CSS</Highlight>.
           </p>
         </section>
@@ -46,12 +50,12 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Files</HeadingLinkId>
           <p>
             An <Highlight type="text">SCSS</Highlight> file with a leading
-            underscore is a partial, meaning it is not compiled to a standalone{" "}
-            <Highlight type="text">CSS</Highlight> file.
+            underscore is a partial, meaning it does not compile into a
+            standalone <Highlight type="text">CSS</Highlight> file.
           </p>
           <p>
-            The <Highlight type="text">_index.scss</Highlight> file is a
-            reserved file to gather partials.
+            <Highlight type="text">_index.scss</Highlight> is reserved for
+            gathering partials.
           </p>
         </section>
         <section>
@@ -61,13 +65,13 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Variables</HeadingLinkId>
           <p>
-            <Highlight type="text">SCSS</Highlight> variables are scoped to the
-            file or block where they are defined. Therefore, a{" "}
-            <Highlight type="text">SCSS</Highlight> variable in the{" "}
-            <Highlight type="text">:root</Highlight> selector is treated as
-            local and cannot be accessed by other selectors or files. To achieve
-            global-like behavior, define the variable outside of any selector
-            and import it in other files.
+            <Highlight type="text">SCSS</Highlight> variables are scoped to
+            their defining file or block. Declaring an{" "}
+            <Highlight type="text">SCSS</Highlight> variable inside a selector,
+            such as <Highlight type="text">:root</Highlight>, makes it local to
+            that block and inaccessible from the outside. To make an{" "}
+            <Highlight type="text">SCSS</Highlight> variable global, define it
+            outside of all selectors and import it where needed.
           </p>
           <Highlight type="complex-code">{variablesCode}</Highlight>
         </section>
@@ -98,9 +102,8 @@ export default function Page() {
               </p>
               <p>
                 The <Highlight type="simple-code">@forward</Highlight> at-rule
-                acts as an intermediate bridge between an imported module and an
-                importing file. It is primarily used in the{" "}
-                <Highlight type="text">_index.scss</Highlight> file.
+                acts as a bridge between modules. It is primarily used in{" "}
+                <Highlight type="text">_index.scss</Highlight>.
               </p>
             </li>
             <li>
@@ -109,15 +112,13 @@ export default function Page() {
               </p>
               <p>
                 The <Highlight type="simple-code">@use</Highlight> at-rule loads
-                a module only once, regardless of how many times it is
-                referenced.
+                a module only once, no matter how often it is imported.
               </p>
               <p>
-                By convention, a leading underscore and{" "}
-                <Highlight type="text">.scss</Highlight> extension should be
-                omitted from a path. Additionally, when importing the{" "}
-                <Highlight type="text">_index.scss</Highlight> file, only its
-                directory name should be referenced.
+                By convention, omit leading underscores and{" "}
+                <Highlight type="text">.scss</Highlight> from paths. For{" "}
+                <Highlight type="text">_index.scss</Highlight>, simply use its
+                directory instead.
               </p>
             </li>
             <li>
