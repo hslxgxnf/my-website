@@ -27,7 +27,7 @@ export const customPropertiesCode: Code = {
   content: `${await readFile("custom-properties.txt")}`,
 };
 
-export const propertiesCode: Code = {
+export const nonCustomPropertiesCode: Code = {
   language: "text",
   content: `${await readFile("non-custom-properties.txt")}`,
 };

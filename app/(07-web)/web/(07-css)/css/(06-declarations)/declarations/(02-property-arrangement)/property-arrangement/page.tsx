@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
-import { reference, customPropertiesCode, propertiesCode } from "./data";
+import {
+  reference,
+  customPropertiesCode,
+  nonCustomPropertiesCode,
+} from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
 import ReferenceButton from "@/components/main/ReferenceButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
@@ -33,7 +37,7 @@ export default function Page() {
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Non-Custom Properties</HeadingLinkId>
-          <Highlight type="complex-code">{propertiesCode}</Highlight>
+          <Highlight type="complex-code">{nonCustomPropertiesCode}</Highlight>
         </section>
       </article>
 
