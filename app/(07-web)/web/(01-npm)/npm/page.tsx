@@ -98,7 +98,7 @@ export default function Page() {
             <p>
               <Highlight type="simple-code">npm list (ls)</Highlight>
             </p>
-            <p>Lists all installed packages.</p>
+            <p>Lists installed packages.</p>
             <ul>
               <li>
                 <p>

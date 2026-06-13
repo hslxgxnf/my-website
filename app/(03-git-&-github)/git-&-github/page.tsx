@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-05-11">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
               Git & GitHub
             </HeadingLinkId>
           </ReferenceButton>
@@ -125,7 +125,7 @@ export default function Page() {
                   <p>
                     <Highlight type="simple-code">git stash list</Highlight>
                   </p>
-                  <p>Lists all stashes.</p>
+                  <p>Lists stashes.</p>
                 </li>
                 <li>
                   <p>
@@ -163,13 +163,13 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">git add .</Highlight>
               </p>
-              <p>Stages all changes.</p>
+              <p>Stages changes.</p>
             </li>
             <li>
               <p>
                 <Highlight type="simple-code">git commit</Highlight>
               </p>
-              <p>Creates a commit with all staged changes.</p>
+              <p>Creates a commit with staged changes.</p>
               <p>
                 One task per commit. Avoid combining multiple tasks into a
                 single commit.
@@ -226,10 +226,10 @@ export default function Page() {
                 </Highlight>
               </p>
               <p>
-                Deletes all commits after the specified commit, keeps the
-                changes unstaged, and preserves the specified commit. This has
-                the implicit <Highlight type="simple-code">--mixed</Highlight>{" "}
-                flag, which is the default.
+                Deletes commits after the specified commit, keeps the changes
+                unstaged, and preserves the specified commit. This has the
+                implicit <Highlight type="simple-code">--mixed</Highlight> flag,
+                which is the default.
               </p>
               <ul>
                 <li>
@@ -239,7 +239,7 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Deletes all commits after the specified commit, keeps the
+                    Deletes commits after the specified commit, keeps the
                     changes staged, and preserves the specified commit.
                   </p>
                 </li>
@@ -250,8 +250,8 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Deletes all commits after the specified commit, also deletes
-                    the changes, and preserves the specified commit.
+                    Deletes commits after the specified commit, also deletes the
+                    changes, and preserves the specified commit.
                   </p>
                 </li>
               </ul>
@@ -286,7 +286,7 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">git branch</Highlight>
               </p>
-              <p>Lists all local branches.</p>
+              <p>Lists local branches.</p>
               <ul>
                 <li>
                   <p>
@@ -294,7 +294,7 @@ export default function Page() {
                       git branch --verbose (-v)
                     </Highlight>
                   </p>
-                  <p>Lists all local branches verbosely.</p>
+                  <p>Lists local branches verbosely.</p>
                 </li>
                 <li>
                   <p>
@@ -302,7 +302,7 @@ export default function Page() {
                       git branch --verbose --verbose (-vv)
                     </Highlight>
                   </p>
-                  <p>Lists all local branches more verbosely.</p>
+                  <p>Lists local branches more verbosely.</p>
                 </li>
                 <li>
                   <p>
@@ -310,9 +310,7 @@ export default function Page() {
                       git branch --all (-a)
                     </Highlight>
                   </p>
-                  <p>
-                    Lists all local branches and remote repository branches.
-                  </p>
+                  <p>Lists local branches and remote repository branches.</p>
                 </li>
                 <li>
                   <p>
@@ -393,9 +391,8 @@ export default function Page() {
                     </Highlight>
                   </p>
                   <p>
-                    Moves the <Highlight type="text">HEAD</Highlight> directly
-                    to the specified commit without being attached to any
-                    branch.
+                    Moves <Highlight type="text">HEAD</Highlight> directly to
+                    the specified commit without being attached to any branch.
                   </p>
                 </li>
                 <li>
@@ -482,7 +479,7 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">git remote</Highlight>
               </p>
-              <p>Lists all remote repository aliases.</p>
+              <p>Lists remote repository aliases.</p>
             </li>
             <ul>
               <li>
@@ -491,7 +488,7 @@ export default function Page() {
                     git remote --verbose (-v)
                   </Highlight>
                 </p>
-                <p>Lists all remote repository aliases and their URLs.</p>
+                <p>Lists remote repository aliases and their URLs.</p>
               </li>
               <li>
                 <p>

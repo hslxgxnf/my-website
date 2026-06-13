@@ -72,26 +72,31 @@ export default function Page() {
               </p>
             </li>
             <li>
-              <p>
-                <Highlight type="simple-code">
-                  --target (-t) &lt;version-name&gt;
-                </Highlight>
-              </p>
-              <p>Scopes packages to the specified version.</p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">
-                  --dep &lt;section-names&gt;
-                </Highlight>
-              </p>
-              <p>Scopes packages to the specified dependency sections.</p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">--global (-g)</Highlight>
-              </p>
-              <p>Scopes global packages.</p>
+              Options
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      --target (-t) &lt;version-name&gt;
+                    </Highlight>
+                  </p>
+                  <p>Scopes packages to the specified version.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">
+                      --dep &lt;section-names&gt;
+                    </Highlight>
+                  </p>
+                  <p>Scopes packages to the specified dependency sections.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">--global (-g)</Highlight>
+                  </p>
+                  <p>Scopes global packages.</p>
+                </li>
+              </ul>
             </li>
           </ul>
         </ul>
