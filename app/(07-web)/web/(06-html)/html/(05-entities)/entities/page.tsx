@@ -29,30 +29,44 @@ export default function Page() {
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Named Entities</HeadingLinkId>
-          <p>Named entities can use both the named and numeric format.</p>
+          <p>
+            Named entities can use both the named format and the numeric format.
+          </p>
           <ul>
             <li>
               <Highlight type="text">Less-Than &lt;</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;lt;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#60;
               </Highlight>
             </li>
             <li>
               <Highlight type="text">Greater-Than &gt;</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;gt;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#62;
               </Highlight>
             </li>
             <li>
               <Highlight type="text">Copyright &copy;</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;copy;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#169;
               </Highlight>
             </li>
             <li>
               <Highlight type="text">Trade Mark &trade;</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;trade;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#8482;
               </Highlight>
             </li>
             <ReferenceButton>
@@ -61,6 +75,9 @@ export default function Page() {
                   <Highlight type="text">Non-Breaking Space &nbsp;</Highlight>{" "}
                   <Highlight type="simple-code" copy={true}>
                     &amp;nbsp;
+                  </Highlight>{" "}
+                  <Highlight type="simple-code" copy={true}>
+                    &amp;#160;
                   </Highlight>
                 </p>
                 <p>
@@ -77,28 +94,34 @@ export default function Page() {
               <Highlight type="text">Ampersand &amp;</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;amp;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#38;
               </Highlight>
             </li>
             <li>
               <Highlight type="text">Quotation Mark "</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;quot;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#34;
               </Highlight>
             </li>
             <li>
               <Highlight type="text">Apostrophe '</Highlight>{" "}
               <Highlight type="simple-code" copy={true}>
                 &amp;apos;
+              </Highlight>{" "}
+              <Highlight type="simple-code" copy={true}>
+                &amp;#39;
               </Highlight>
             </li>
           </ul>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Unnamed Entities</HeadingLinkId>
-          <p>
-            Unnamed entities cannot use the named format, and must use the the
-            numeric format.
-          </p>
+          <p>Unnamed entities only can use the numeric format.</p>
           <ul>
             <li>
               <Highlight type="text">Left Brace &#123;</Highlight>{" "}
