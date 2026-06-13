@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-05-14">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
             Windows
           </HeadingLinkId>
         </section>
@@ -43,7 +43,7 @@ export default function Page() {
                 </ul>
               </li>
               <li>
-                Install a <Highlight type="text">Nerd Font</Highlight>.
+                Install a font.
                 <ul>
                   <li>
                     <Highlight type="simple-code" copy={true}>
@@ -53,7 +53,7 @@ export default function Page() {
                 </ul>
               </li>
               <li>
-                Set the font as the{" "}
+                Set the installed font as the{" "}
                 <Highlight type="text">PowerShell</Highlight> default font.
                 <ul>
                   <li>
@@ -67,27 +67,59 @@ export default function Page() {
                 Apply <Highlight type="text">Oh My Posh</Highlight>.
                 <ul>
                   <li>
-                    <Highlight type="simple-code" copy={true}>
-                      notepad $PROFILE
-                    </Highlight>
-                  </li>
-                  <li>
-                    <Highlight type="complex-code">{ps1Code}</Highlight>
-                  </li>
-                  <li>
-                    Create the <Highlight type="text">cert.omp.json</Highlight>{" "}
-                    file in the same directory as the{" "}
+                    Open{" "}
                     <Highlight type="text">
                       Microsoft.PowerShell_profile.ps1
-                    </Highlight>{" "}
-                    file.
-                    <br />
-                    <Highlight type="complex-code">{ompCode}</Highlight>
+                    </Highlight>
+                    .
+                    <ul>
+                      <li>
+                        <Highlight type="simple-code" copy={true}>
+                          notepad $PROFILE
+                        </Highlight>
+                      </li>
+                    </ul>
                   </li>
                   <li>
-                    <Highlight type="simple-code" copy={true}>
-                      . $PROFILE
+                    Modify{" "}
+                    <Highlight type="text">
+                      Microsoft.PowerShell_profile.ps1
                     </Highlight>
+                    .
+                    <ul>
+                      <li>
+                        <Highlight type="complex-code">{ps1Code}</Highlight>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>
+                      Create <Highlight type="text">cert.omp.json</Highlight> in
+                      the same directory as{" "}
+                      <Highlight type="text">
+                        Microsoft.PowerShell_profile.ps1
+                      </Highlight>
+                      .
+                    </p>
+                    <ul>
+                      <li>
+                        <Highlight type="complex-code">{ompCode}</Highlight>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Refresh{" "}
+                    <Highlight type="text">
+                      Microsoft.PowerShell_profile.ps1
+                    </Highlight>
+                    .
+                    <ul>
+                      <li>
+                        <Highlight type="simple-code" copy={true}>
+                          . $PROFILE
+                        </Highlight>
+                      </li>
+                    </ul>
                   </li>
                 </ul>
               </li>
