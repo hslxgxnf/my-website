@@ -121,7 +121,7 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">title</Highlight>
               </p>
-              <p>For a mouse hovering tooltip.</p>
+              <p>Displays a tooltip on mouse hover.</p>
             </li>
             <li>
               <Highlight type="simple-code">rel</Highlight>
