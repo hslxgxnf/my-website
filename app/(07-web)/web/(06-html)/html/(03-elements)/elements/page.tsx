@@ -40,8 +40,8 @@ export default function Page() {
           </p>
           <p>Normal elements can have nested elements and text nodes.</p>
           <p>
-            The <Highlight type="simple-code">Nested Content</Highlight> sets
-            the default value.
+            <Highlight type="simple-code">Nested Content</Highlight> sets the
+            default value.
             <br />
             <Highlight type="simple-code">
               &lt;textarea&gt;Default&lt;/textarea&gt;
@@ -52,7 +52,6 @@ export default function Page() {
           <ReferenceButton>
             <HeadingLinkId headingNumber={2}>Void Elements</HeadingLinkId>
           </ReferenceButton>
-
           <p>
             <Highlight type="simple-code">&lt;Tag /&gt;</Highlight>
           </p>
@@ -115,13 +114,17 @@ export default function Page() {
                 <p>
                   <Highlight type="simple-code">&lt;link&gt;</Highlight>
                 </p>
-                <p>External CSS, Favicon</p>
+                <p>
+                  External <Highlight type="text">CSS</Highlight>, Favicon
+                </p>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code">&lt;style&gt;</Highlight>
                 </p>
-                <p>Internal CSS</p>
+                <p>
+                  Internal <Highlight type="text">CSS</Highlight>
+                </p>
               </li>
               <li>
                 <p>
@@ -251,7 +254,8 @@ export default function Page() {
                   </p>
                   <p>
                     The <Highlight type="simple-code">method="get"</Highlight>{" "}
-                    sends form data as a query string after the existing URL.
+                    attribute sends form data as a query string after the
+                    existing URL.
                   </p>
                 </ToggleList>
               </ReferenceButton>
@@ -288,80 +292,102 @@ export default function Page() {
                 >
                   <ul>
                     <li>
-                      <Highlight type="simple-code">&lt;caption&gt;</Highlight>
-                      <br />
-                      Must be the first child of its parent{" "}
-                      <Highlight type="simple-code">
-                        &lt;table&gt;
-                      </Highlight>{" "}
-                      element.
+                      <p>
+                        <Highlight type="simple-code">
+                          &lt;caption&gt;
+                        </Highlight>
+                      </p>
+                      <p>
+                        Must be the first child of its parent{" "}
+                        <Highlight type="simple-code">&lt;table&gt;</Highlight>{" "}
+                        element.
+                      </p>
                     </li>
                     <li>
-                      <Highlight type="simple-code">&lt;colgroup&gt;</Highlight>
-                      <br />
-                      Column Group
-                      <br />
-                      The <Highlight type="simple-code">span</Highlight>{" "}
-                      attribute can be used when the{" "}
-                      <Highlight type="simple-code">&lt;colgroup&gt;</Highlight>{" "}
-                      has no{" "}
-                      <Highlight type="simple-code">&lt;col&gt;</Highlight>{" "}
-                      elements.
+                      <p>
+                        <Highlight type="simple-code">
+                          &lt;colgroup&gt;
+                        </Highlight>
+                      </p>
+                      <p>Column Group</p>
+                      <p>
+                        The <Highlight type="simple-code">span</Highlight>{" "}
+                        attribute can be used when the{" "}
+                        <Highlight type="simple-code">
+                          &lt;colgroup&gt;
+                        </Highlight>{" "}
+                        has no{" "}
+                        <Highlight type="simple-code">&lt;col&gt;</Highlight>{" "}
+                        elements.
+                      </p>
                     </li>
                     <li>
-                      <Highlight type="simple-code">&lt;col&gt;</Highlight>
-                      <br />
-                      Column
-                      <br />
-                      The <Highlight type="simple-code">span</Highlight>{" "}
-                      attribute can be used when its parent{" "}
-                      <Highlight type="simple-code">&lt;colgroup&gt;</Highlight>{" "}
-                      element does not have the{" "}
-                      <Highlight type="simple-code">span</Highlight> attribute.
+                      <p>
+                        <Highlight type="simple-code">&lt;col&gt;</Highlight>
+                      </p>
+                      <p>Column</p>
+                      <p>
+                        The <Highlight type="simple-code">span</Highlight>{" "}
+                        attribute can be used when its parent{" "}
+                        <Highlight type="simple-code">
+                          &lt;colgroup&gt;
+                        </Highlight>{" "}
+                        element does not have the{" "}
+                        <Highlight type="simple-code">span</Highlight>{" "}
+                        attribute.
+                      </p>
                     </li>
                     <li>
-                      <Highlight type="simple-code">&lt;thead&gt;</Highlight>
-                      <br />
-                      Table Head
+                      <p>
+                        <Highlight type="simple-code">&lt;thead&gt;</Highlight>
+                      </p>
+                      <p>Table Head</p>
                     </li>
                     <li>
-                      <Highlight type="simple-code">&lt;tbody&gt;</Highlight>
-                      <br />
-                      Table Body
+                      <p>
+                        <Highlight type="simple-code">&lt;tbody&gt;</Highlight>
+                      </p>
+                      <p>Table Body</p>
                     </li>
                     <li>
-                      <Highlight type="simple-code">&lt;tfoot&gt;</Highlight>
-                      <br />
-                      Table Foot
+                      <p>
+                        <Highlight type="simple-code">&lt;tfoot&gt;</Highlight>
+                      </p>
+                      <p>Table Foot</p>
                     </li>
                     <ul>
                       <li>
-                        <Highlight type="simple-code">&lt;tr&gt;</Highlight>
-                        <br />
-                        Table Row
+                        <p>
+                          <Highlight type="simple-code">&lt;tr&gt;</Highlight>
+                        </p>
+                        <p>Table Row</p>
                       </li>
                       <ul>
                         <li>
-                          <Highlight type="simple-code">&lt;th&gt;</Highlight>
-                          <br />
-                          Table Header
-                          <br />
-                          Attributes:{" "}
-                          <Highlight type="simple-code">scope</Highlight>{" "}
-                          <Highlight type="simple-code">headers</Highlight>{" "}
-                          <Highlight type="simple-code">rowspan</Highlight>{" "}
-                          <Highlight type="simple-code">colspan</Highlight>{" "}
-                          <Highlight type="simple-code">aria-sort</Highlight>
+                          <p>
+                            <Highlight type="simple-code">&lt;th&gt;</Highlight>
+                          </p>
+                          <p>Table Header</p>
+                          <p>
+                            Attributes:{" "}
+                            <Highlight type="simple-code">scope</Highlight>{" "}
+                            <Highlight type="simple-code">headers</Highlight>{" "}
+                            <Highlight type="simple-code">rowspan</Highlight>{" "}
+                            <Highlight type="simple-code">colspan</Highlight>{" "}
+                            <Highlight type="simple-code">aria-sort</Highlight>
+                          </p>
                         </li>
                         <li>
-                          <Highlight type="simple-code">&lt;td&gt;</Highlight>
-                          <br />
-                          Table Data
-                          <br />
-                          Attributes:{" "}
-                          <Highlight type="simple-code">headers</Highlight>{" "}
-                          <Highlight type="simple-code">rowspan</Highlight>{" "}
-                          <Highlight type="simple-code">colspan</Highlight>
+                          <p>
+                            <Highlight type="simple-code">&lt;td&gt;</Highlight>
+                          </p>
+                          <p>Table Data</p>
+                          <p>
+                            Attributes:{" "}
+                            <Highlight type="simple-code">headers</Highlight>{" "}
+                            <Highlight type="simple-code">rowspan</Highlight>{" "}
+                            <Highlight type="simple-code">colspan</Highlight>
+                          </p>
                         </li>
                       </ul>
                     </ul>
