@@ -28,7 +28,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} publishedAt="2026-02-17">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-02-17">
               Connecting CSS to HTML
             </HeadingLinkId>
           </ReferenceButton>

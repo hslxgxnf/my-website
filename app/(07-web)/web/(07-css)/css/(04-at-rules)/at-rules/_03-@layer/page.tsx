@@ -15,7 +15,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} publishedAt="2026-02-24">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-02-24">
             @layer
           </HeadingLinkId>
         </ReferenceButton>

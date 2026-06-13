@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} publishedAt="2026-06-05">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-05">
             npm-check-updates
           </HeadingLinkId>
         </ReferenceButton>

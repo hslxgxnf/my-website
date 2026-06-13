@@ -18,7 +18,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1} publishedAt="2026-02-17">
+        <HeadingLinkId headingNumber={1} lastUpdated="2026-02-17">
           Naming Cases
         </HeadingLinkId>
         <p>

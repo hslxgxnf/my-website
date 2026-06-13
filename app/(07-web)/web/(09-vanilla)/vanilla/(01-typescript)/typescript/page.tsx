@@ -20,7 +20,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1} publishedAt="2026-04-18">
+        <HeadingLinkId headingNumber={1} lastUpdated="2026-04-18">
           TypeScript
         </HeadingLinkId>
       </article>

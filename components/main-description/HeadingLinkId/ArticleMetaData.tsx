@@ -1,29 +1,20 @@
-import { isBefore, parseISO, format } from "date-fns";
+import { format, parseISO } from "date-fns";
 
 interface DateProps {
   headingNumber: 1 | 2 | 3;
-  publishedAt?: string;
-  updatedAt?: string;
+  lastUpdated?: string;
 }
 
 export default function ArticleMetaData({
   headingNumber,
-  publishedAt,
-  updatedAt,
+  lastUpdated,
 }: DateProps) {
   if (headingNumber !== 1) {
     return null;
   }
 
-  if (!publishedAt) {
-    console.error("No publishedAt");
-    return null;
-  }
-
-  if (updatedAt && isBefore(parseISO(updatedAt), parseISO(publishedAt))) {
-    console.error(
-      `updatedAt: ${updatedAt} cannot be earlier than publishedAt: ${publishedAt}.`,
-    );
+  if (!lastUpdated) {
+    console.error("No lastUpdated");
     return null;
   }
 
@@ -32,19 +23,11 @@ export default function ArticleMetaData({
   return (
     <aside>
       <small>
-        Published:{" "}
-        <time dateTime={publishedAt}>
-          {format(parseISO(publishedAt), dateFormat)}
+        Last Updated:{" "}
+        <time dateTime={lastUpdated}>
+          {format(parseISO(lastUpdated), dateFormat)}
         </time>
       </small>
-      {updatedAt && (
-        <small>
-          Updated:{" "}
-          <time dateTime={updatedAt}>
-            {format(parseISO(updatedAt), dateFormat)}
-          </time>
-        </small>
-      )}
     </aside>
   );
 }

@@ -29,7 +29,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} publishedAt="2026-03-25">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-03-25">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>

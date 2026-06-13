@@ -11,18 +11,13 @@ interface HeadingLinkIdProps {
   /**
    * "YYYY-MM-DD"
    */
-  publishedAt?: string;
-  /**
-   * "YYYY-MM-DD"
-   * */
-  updatedAt?: string;
+  lastUpdated?: string;
   children: string;
 }
 
 export default function HeadingLinkId({
   headingNumber,
-  publishedAt,
-  updatedAt,
+  lastUpdated,
   children,
 }: HeadingLinkIdProps) {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -54,8 +49,7 @@ export default function HeadingLinkId({
       <span>#</span>
       <ArticleMetaData
         headingNumber={headingNumber}
-        publishedAt={publishedAt}
-        updatedAt={updatedAt}
+        lastUpdated={lastUpdated}
       />
     </Tag>
   );

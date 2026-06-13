@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} publishedAt="2026-05-14">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-05-14">
             Windows
           </HeadingLinkId>
         </section>

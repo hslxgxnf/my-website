@@ -20,7 +20,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1} publishedAt="YYYY-MM-DD">
+        <HeadingLinkId headingNumber={1} lastUpdated="YYYY-MM-DD">
           Title
         </HeadingLinkId>
       </article>
