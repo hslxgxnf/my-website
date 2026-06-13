@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-02">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
             npm
           </HeadingLinkId>
         </ReferenceButton>
@@ -35,8 +35,8 @@ export default function Page() {
               <Highlight type="simple-code">npm init</Highlight>
             </p>
             <p>
-              Initializes a project and creates a{" "}
-              <Highlight type="text">package.json</Highlight> file through
+              Initializes a project and creates{" "}
+              <Highlight type="text">package.json</Highlight> through
               interactive prompts.
             </p>
             <ul>
@@ -45,9 +45,9 @@ export default function Page() {
                   <Highlight type="simple-code">npm init --yes (-y)</Highlight>
                 </p>
                 <p>
-                  Skips the questionnaire and creates a{" "}
-                  <Highlight type="text">package.json</Highlight> file with
-                  default values.
+                  Initializes a project, skips interactive prompts, and creates{" "}
+                  <Highlight type="text">package.json</Highlight> with default
+                  values.
                 </p>
               </li>
             </ul>
@@ -57,8 +57,8 @@ export default function Page() {
               <Highlight type="simple-code">npm install (i)</Highlight>
             </p>
             <p>
-              Installs packages listed in the{" "}
-              <Highlight type="text">package.json</Highlight> file.
+              Installs packages in{" "}
+              <Highlight type="text">package.json</Highlight>.
             </p>
             <ul>
               <li>
@@ -68,8 +68,8 @@ export default function Page() {
                   </Highlight>
                 </p>
                 <p>
-                  Installs the specified packages into the{" "}
-                  <Highlight type="text">dependencies</Highlight> section.
+                  Installs the specified packages into{" "}
+                  <Highlight type="text">dependencies</Highlight>.
                 </p>
               </li>
               <li>
@@ -79,8 +79,8 @@ export default function Page() {
                   </Highlight>
                 </p>
                 <p>
-                  Installs the specified packages into the{" "}
-                  <Highlight type="text">devDependencies</Highlight> section.
+                  Installs the specified packages into{" "}
+                  <Highlight type="text">devDependencies</Highlight>.
                 </p>
               </li>
               <li>
@@ -125,7 +125,7 @@ export default function Page() {
               <Highlight type="simple-code">npm run</Highlight>
             </p>
             <p>
-              Lists the <Highlight type="text">scripts</Highlight> section.
+              Lists <Highlight type="text">scripts</Highlight>.
             </p>
             <ul>
               <li>
@@ -143,8 +143,8 @@ export default function Page() {
               <Highlight type="simple-code">npm root</Highlight>
             </p>
             <p>
-              Shows the absolute path to the local{" "}
-              <Highlight type="text">node_modules</Highlight> folder.
+              Shows the absolute path to{" "}
+              <Highlight type="text">node_modules</Highlight>.
             </p>
           </li>
         </ul>
