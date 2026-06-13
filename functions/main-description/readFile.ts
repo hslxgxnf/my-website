@@ -41,6 +41,8 @@ export default async function readFile(
 
       const text = JSON.stringify(pivotProperties, null, 2);
       await clipboard.write(text);
+    } else {
+      console.log("Test");
     }
   }
 
