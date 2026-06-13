@@ -87,18 +87,14 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">@mixin</Highlight>
               </p>
-              <p>
-                The <Highlight type="simple-code">@mixin</Highlight> at-rule
-                creates a reusable set of styles.
-              </p>
+              <p>Creates a reusable set of styles.</p>
             </li>
             <li>
               <p>
                 <Highlight type="simple-code">@forward</Highlight>
               </p>
               <p>
-                The <Highlight type="simple-code">@forward</Highlight> at-rule
-                acts as a bridge between modules. It is primarily used in{" "}
+                Acts as a bridge between modules. It is primarily used in{" "}
                 <Highlight type="text">_index.scss</Highlight>.
               </p>
             </li>
@@ -107,8 +103,7 @@ export default function Page() {
                 <Highlight type="simple-code">@use</Highlight>
               </p>
               <p>
-                The <Highlight type="simple-code">@use</Highlight> at-rule loads
-                a module only once, no matter how often it is imported.
+                Loads a module only once, no matter how often it is imported.
               </p>
               <p>
                 By convention, omit leading underscores and{" "}
@@ -121,10 +116,7 @@ export default function Page() {
               <p>
                 <Highlight type="simple-code">@include</Highlight>
               </p>
-              <p>
-                The <Highlight type="simple-code">@include</Highlight> at-rule
-                applies a mixin to a selector.
-              </p>
+              <p>Applies a mixin to a selector.</p>
             </li>
             <li>
               <Highlight type="simple-code">@if</Highlight>,{" "}
