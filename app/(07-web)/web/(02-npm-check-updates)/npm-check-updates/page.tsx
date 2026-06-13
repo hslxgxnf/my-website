@@ -21,14 +21,14 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-05">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
             npm-check-updates
           </HeadingLinkId>
         </ReferenceButton>
         <p>
           <Highlight type="text">npm-check-updates</Highlight> manages the
-          versions of installed packages in the{" "}
-          <Highlight type="text">package.json</Highlight> file.
+          versions of installed packages in{" "}
+          <Highlight type="text">package.json</Highlight>.
         </p>
         <ul>
           <li>
@@ -41,8 +41,7 @@ export default function Page() {
               <Highlight type="simple-code">ncu</Highlight>
             </p>
             <p>
-              Checks for the latest versions of installed packages in the
-              following sections:{" "}
+              Checks for the latest versions of installed packages in{" "}
               <Highlight type="text">dependencies</Highlight>,{" "}
               <Highlight type="text">devDependencies</Highlight>,{" "}
               <Highlight type="text">peerDependencies</Highlight>,{" "}
@@ -56,13 +55,12 @@ export default function Page() {
                 <Highlight type="simple-code">ncu --upgrade (-u)</Highlight>
               </p>
               <p>
-                Only upgrades the versions in the{" "}
-                <Highlight type="text">package.json</Highlight> file to the
-                latest versions. It does not upgrade the{" "}
-                <Highlight type="text">package-lock.json</Highlight> file or the{" "}
-                <Highlight type="text">node_modules</Highlight> folder. To
-                upgrade them, run{" "}
-                <Highlight type="simple-code">npm i</Highlight>.
+                Only upgrades the versions in{" "}
+                <Highlight type="text">package.json</Highlight> to the latest
+                versions. It does not upgrade{" "}
+                <Highlight type="text">package-lock.json</Highlight> or{" "}
+                <Highlight type="text">node_modules</Highlight>. To upgrade
+                them, run <Highlight type="simple-code">npm i</Highlight>.
               </p>
             </li>
             <li>
