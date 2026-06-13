@@ -44,10 +44,10 @@ export default async function readFile(
     }
   }
 
-  const isConfig = fileName.includes(".config.");
+  const isConfigFile = fileName.includes(".config.");
 
   const filePaths = await globby(`**/${fileName}`, {
-    cwd: isConfig ? process.cwd() : "app",
+    cwd: isConfigFile ? process.cwd() : "app",
     absolute: true,
     gitignore: true,
   });
