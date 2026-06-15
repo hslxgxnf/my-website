@@ -93,8 +93,6 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     let resizeObserver: ResizeObserver | null = null;
     if (navs.length === foundIndex + 1) {
       resizeObserver = new ResizeObserver(() => {
-        console.log("ResizeObserver Update Navs");
-
         const header = document.querySelector<HTMLElement>("body > header");
         if (!header) {
           console.error("No header");
