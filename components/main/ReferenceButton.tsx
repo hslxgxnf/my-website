@@ -13,7 +13,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    // Connect the buttonRef to its corresponding nav
+    // Connect buttonRef to its corresponding nav
     const navs = document.querySelectorAll<HTMLElement>(
       "body > main > aside:first-child > nav",
     );
@@ -51,9 +51,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
       return;
     }
     let articleTarget = "";
-    let toggleListDiv: HTMLDivElement | null = null;
     if (articleTargetElement.className.includes("toggle-list")) {
-      toggleListDiv = articleTargetElement.children[0] as HTMLDivElement;
       articleTarget = articleTargetElement.children[1].textContent;
     } else {
       if (articleTargetElement.children[0]) {
@@ -79,14 +77,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
         signal: controller.signal,
       },
     );
-    const header = document.querySelector<HTMLElement>("body > header");
-    if (!header) {
-      console.error("No header");
-      return;
-    }
-    const headerHeight = header.getBoundingClientRect().height;
-    navs[foundIndex].style.top =
-      button.getBoundingClientRect().top - headerHeight + window.scrollY + "px";
+
     // Dynamically assign the id value instead of hard-coding it,
     // allowing a new window targeted to a hash to scroll smoothly.
     const lists = navs[foundIndex].querySelectorAll<HTMLLIElement>("li");
@@ -98,31 +89,19 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
       }
     }
 
-    // Observe the class changes to the toggleListDiv
-    let observer: MutationObserver | null = null;
-    if (toggleListDiv) {
-      observer = new MutationObserver((mutations) => {
-        mutations.forEach(() => {
-          for (let i = 0; i < navs.length; i++) {
-            navs[i].style.top =
-              referenceButtonContainers[i].getBoundingClientRect().top -
-              headerHeight +
-              window.scrollY +
-              "px";
-          }
-        });
-      });
+    // Observe the size changes of main to reposition navs
+    let resizeObserver: ResizeObserver | null = null;
+    if (navs.length === foundIndex + 1) {
+      resizeObserver = new ResizeObserver(() => {
+        console.log("ResizeObserver Update Navs");
 
-      observer.observe(toggleListDiv, {
-        attributes: true,
-        attributeFilter: ["class"],
-      });
-    }
+        const header = document.querySelector<HTMLElement>("body > header");
+        if (!header) {
+          console.error("No header");
+          return;
+        }
+        const headerHeight = header.getBoundingClientRect().height;
 
-    // Observe the scale changes to the window viewport
-    // Prevent duplicate event listeners
-    if (window.visualViewport && !window.visualViewport.onresize) {
-      window.visualViewport.onresize = () => {
         for (let i = 0; i < navs.length; i++) {
           navs[i].style.top =
             referenceButtonContainers[i].getBoundingClientRect().top -
@@ -130,16 +109,21 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
             window.scrollY +
             "px";
         }
-      };
+      });
+
+      const main = document.querySelector("body > main");
+      if (!main) {
+        console.error("No main");
+        return;
+      }
+
+      resizeObserver.observe(main);
     }
 
     return () => {
       controller.abort();
-      if (observer) {
-        observer.disconnect();
-      }
-      if (window.visualViewport && window.visualViewport.onresize) {
-        window.visualViewport.onresize = null;
+      if (resizeObserver) {
+        resizeObserver.disconnect();
       }
     };
   }, []);
