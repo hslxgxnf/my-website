@@ -8,74 +8,98 @@ import styles from "@/styles/main-description-&-list/page.module.scss";
 import handleClickFirstLink from "@/functions/main-description/handleClickFirstLink";
 
 // if (!shouldRender) return null;
-// - Nothing
+// - No Paint
 // useEffect 1
 // - set...
 // useEffect 2
 // - Nothing
-// useState
-// - shouldRender: true
+// useState, ResizeObserver
+// - shouldRender, headings, headerHeight, isScrollable
 // if (headings.length === 1) ...
-// - Page Navigation
+// - Paint
 // useEffect 2
 // - Intersection Observer
 
 export default function PageNav() {
   const [shouldRender, setShouldRender] = useState(false);
   const [headings, setHeadings] = useState<HTMLHeadingElement[]>([]);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const [isScrollable, setIsScrollable] = useState(false);
+
   const ulRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
+    setShouldRender(true);
+
     const foundHeadings = Array.from(
       document.querySelectorAll<HTMLHeadingElement>(
         "body > main > article :is(h1, h2, h3)",
       ),
     );
-
     if (foundHeadings.length === 0) {
       console.error("No headings");
-    } else if (foundHeadings.length >= 1) {
-      setShouldRender(true);
-      setHeadings(foundHeadings);
+      return;
+    }
+    setHeadings(foundHeadings);
 
+    function updateHeaderHeight() {
+      const header = document.querySelector<HTMLElement>("body > header");
+      if (!header) {
+        console.error("No header");
+        return;
+      }
+      setHeaderHeight(header.getBoundingClientRect().height);
+    }
+    updateHeaderHeight();
+
+    function updateIsScrollable() {
       const docHeight = document.documentElement.scrollHeight;
       const windowHeight = document.documentElement.clientHeight;
-      const isScrollable = docHeight > windowHeight;
-      setIsScrollable(isScrollable);
+      setIsScrollable(docHeight > windowHeight);
     }
+    updateIsScrollable();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateHeaderHeight();
+      updateIsScrollable();
+    });
+    resizeObserver.observe(document.documentElement);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, []);
 
   // Intersection Observer
   // When an article has two or more headings, the Intersection Observer will be used.
   // The <article> element must be divided into <section> elements.
   useEffect(() => {
-    if (shouldRender && headings.length >= 2 && ulRef.current) {
-      const sections = Array.from(
-        document.querySelectorAll<HTMLElement>("body > main > article section"),
+    if (
+      !shouldRender ||
+      headings.length === 1 ||
+      headerHeight === 0 ||
+      !ulRef.current
+    ) {
+      return;
+    }
+
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("body > main > article section"),
+    );
+    if (sections.length === 0) {
+      console.error("No sections");
+      return;
+    }
+    if (sections.length !== headings.length) {
+      console.error(
+        `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
       );
-      if (sections.length === 0) {
-        console.error("No sections");
-        return;
-      }
-      if (sections.length !== headings.length) {
-        console.error(
-          `sections.length: ${sections.length} must be the same as headings.length: ${headings.length}.`,
-        );
-        return;
-      }
+      return;
+    }
 
-      const links = ulRef.current.querySelectorAll<HTMLAnchorElement>("a");
-
-      const headerHeight =
-        document
-          .querySelector<HTMLElement>("body > header")!
-          .getBoundingClientRect().height + 1;
-      const options = {
-        rootMargin: `-${headerHeight}px 0px 0px 0px`,
-      };
-
-      const observer = new IntersectionObserver((entries) => {
+    const links = ulRef.current.querySelectorAll<HTMLAnchorElement>("a");
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
         entries.forEach((entry) => {
           const index = sections.indexOf(entry.target as HTMLElement);
 
@@ -85,17 +109,24 @@ export default function PageNav() {
             links[index].classList.remove(styles.active);
           }
         });
-      }, options);
+      },
+      {
+        rootMargin: `-${Math.floor(headerHeight) + 1}px 0px 0px 0px`,
+        threshold: [0, 0.05, 0.95, 1],
+      },
+    );
+    sections.forEach((section) => {
+      intersectionObserver.observe(section);
+    });
 
-      sections.forEach((section) => {
-        observer.observe(section);
-      });
+    return () => {
+      intersectionObserver.disconnect();
+    };
+  }, [shouldRender, headings.length, headerHeight]);
 
-      return () => observer.disconnect();
-    }
-  }, [shouldRender, headings.length]);
-
-  if (!shouldRender) return null;
+  if (!shouldRender) {
+    return null;
+  }
 
   if (headings.length === 1) {
     if (isScrollable) {
@@ -137,7 +168,7 @@ export default function PageNav() {
         <header>On this page</header>
         <main>
           <ul ref={ulRef}>
-            {headings!.map((heading, index) => {
+            {headings.map((heading, index) => {
               const content = heading.firstElementChild!.textContent;
               const href = `#${content.replaceAll(" ", "-").toLowerCase()}`;
 
