@@ -17,34 +17,25 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     const navs = document.querySelectorAll<HTMLElement>(
       "body > main > aside:first-child > nav",
     );
-    const selector = `body > main > article div.${styles["reference-button-container"]}`;
-    const referenceButtonContainers =
-      document.querySelectorAll<HTMLDivElement>(selector);
+    const referenceButtonContainers = document.querySelectorAll<HTMLDivElement>(
+      `body > main > article div.${styles["reference-button-container"]}`,
+    );
     if (navs.length !== referenceButtonContainers.length) {
       console.error(
         `navs.length ${navs.length} must be the same as referenceButtonContainers.length: ${referenceButtonContainers.length}`,
       );
       return;
     }
+
     const button = buttonRef.current;
     if (!button) {
       console.error("No button");
       return;
     }
-
     const currentReferenceButtonContainer = button.parentElement;
-    let foundIndex = -1;
-    for (let i = 0; i < referenceButtonContainers.length; i++) {
-      if (referenceButtonContainers[i] === currentReferenceButtonContainer) {
-        foundIndex = i;
-        break;
-      }
-    }
-    if (foundIndex === -1) {
-      console.error("No foundIndex");
-      return;
-    }
-
+    const index = Array.from(referenceButtonContainers).indexOf(
+      currentReferenceButtonContainer as HTMLDivElement,
+    );
     const articleTargetElement = button.nextElementSibling;
     if (!articleTargetElement) {
       console.error("No articleTargetElement");
@@ -60,18 +51,18 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
         articleTarget = articleTargetElement.textContent;
       }
     }
-
-    if (navs[foundIndex].dataset.target !== articleTarget) {
+    if (navs[index].dataset.target !== articleTarget) {
       console.error(
-        `A mismatched connection was found. navs[${foundIndex}].dataset.target: ${navs[foundIndex].dataset.target} must be the same as articleTarget: ${articleTarget}.`,
+        `A mismatched connection was found. navs[${index}].dataset.target: ${navs[index].dataset.target} must be the same as articleTarget: ${articleTarget}.`,
       );
       return;
     }
+
     const controller = new AbortController();
     button.addEventListener(
       "click",
       () => {
-        navs[foundIndex].classList.toggle(styles.active);
+        navs[index].classList.toggle(styles.active);
       },
       {
         signal: controller.signal,
@@ -80,7 +71,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
 
     // Dynamically assign the id value instead of hard-coding it,
     // allowing a new window targeted to a hash to scroll smoothly.
-    const lists = navs[foundIndex].querySelectorAll<HTMLLIElement>("li");
+    const lists = navs[index].querySelectorAll<HTMLLIElement>("li");
     for (const list of lists) {
       if (list.dataset.self === "true") {
         button.nextElementSibling!.id = articleTarget
@@ -89,9 +80,9 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
       }
     }
 
-    // Observe the size changes of main to reposition navs
+    // Observe the size changes of viewport and reposition navs
     let resizeObserver: ResizeObserver | null = null;
-    if (navs.length === foundIndex + 1) {
+    if (navs.length === index + 1) {
       resizeObserver = new ResizeObserver(() => {
         const header = document.querySelector<HTMLElement>("body > header");
         if (!header) {
@@ -109,13 +100,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
         }
       });
 
-      const main = document.querySelector("body > main");
-      if (!main) {
-        console.error("No main");
-        return;
-      }
-
-      resizeObserver.observe(main);
+      resizeObserver.observe(document.documentElement);
     }
 
     return () => {
