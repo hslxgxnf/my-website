@@ -49,8 +49,8 @@ export default function Layout({ children }: LayoutProps) {
           <p>&copy; 2026 HSLee Dev</p>
         </footer>
 
-        <Analytics />
-        <SpeedInsights />
+        <Analytics debug={false} />
+        <SpeedInsights debug={false} />
       </body>
       <NewWindowHashScroll />
       <TitleValidator />
