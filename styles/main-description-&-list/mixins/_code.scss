@@ -1,4 +1,8 @@
 @mixin code {
+  span.underline {
+    text-decoration: underline;
+  }
+
   em {
     color: var(--color-2);
   }
@@ -12,7 +16,7 @@
     padding: 0 var(--space-10);
     background-color: var(--background-color-2);
     font-style: normal;
-    font-family: "Roboto Mono", monospace;
+    font-family: var(--font-roboto-mono);
     word-break: break-all;
   }
 
@@ -24,18 +28,13 @@
     border-radius: 0;
     padding: 0;
     font-style: normal;
-    font-family: "Roboto Mono", monospace;
+    font-family: var(--font-roboto-mono);
   }
 
   :is(pre:has(> em.pre), pre:has(> code.pre)) {
     padding: var(--space-10);
     overflow: auto;
     background-color: var(--background-color-2);
-  }
-
-  span.underline {
-    text-decoration: underline;
-    font-style: normal;
   }
 
   .complex-code-container {
@@ -76,11 +75,11 @@
       > code {
         color: var(--color-base) !important;
         font-size: var(--font-size-25) !important;
-        font-family: "Roboto Mono", monospace !important;
+        font-family: var(--font-roboto-mono) !important;
 
         > span {
           font-size: var(--font-size-25);
-          font-family: "Roboto Mono", monospace;
+          font-family: var(--font-roboto-mono);
         }
       }
     }

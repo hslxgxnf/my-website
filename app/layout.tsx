@@ -9,9 +9,14 @@ import Header from "@/components/header/Header";
 import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
 import TitleValidator from "@/components/all/TitleValidator";
 
-// Google Font Initialization
-const roboto = Roboto();
-const robotoMono = Roboto_Mono();
+const roboto = Roboto({
+  subsets: ["latin"],
+  variable: "--font-roboto",
+});
+const roboto_mono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-roboto-mono",
+});
 
 export const metadata: Metadata = {
   title: { default: "HSLee Dev", template: "%s | HSLee Dev" },
@@ -27,7 +32,11 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${roboto.variable} ${roboto_mono.variable}`}
+    >
       <body>
         <Header
           links={[

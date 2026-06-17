@@ -5,7 +5,7 @@ import HighlightSimpleCode from "@/components/main-description/Highlight/Highlig
 import HighlightComplexCode from "@/components/main-description/Highlight/HighlightComplexCode";
 
 interface HighlightProps {
-  type: "text" | "underline" | "simple-code" | "complex-code";
+  type: "underline" | "text" | "simple-code" | "complex-code";
   copy?: boolean;
   pre?: boolean;
   children: string | Code;
@@ -17,14 +17,6 @@ export default function Highlight({
   pre,
   children,
 }: HighlightProps) {
-  if (type === "text" && typeof children === "string") {
-    return (
-      <HighlightText copy={copy} pre={pre}>
-        {children}
-      </HighlightText>
-    );
-  }
-
   if (type === "underline" && typeof children === "string") {
     if (copy || pre) {
       console.error('type="underline" does not support copy and pre.');
@@ -32,6 +24,14 @@ export default function Highlight({
     }
 
     return <span className={styles.underline}>{children}</span>;
+  }
+
+  if (type === "text" && typeof children === "string") {
+    return (
+      <HighlightText copy={copy} pre={pre}>
+        {children}
+      </HighlightText>
+    );
   }
 
   if (type === "simple-code" && typeof children === "string") {
