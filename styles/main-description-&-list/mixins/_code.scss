@@ -16,7 +16,7 @@
     padding: 0 var(--space-10);
     background-color: var(--background-color-2);
     font-style: normal;
-    font-family: var(--font-roboto-mono);
+    font-family: var(--font-roboto-mono), monospace;
     word-break: break-all;
   }
 
@@ -28,7 +28,7 @@
     border-radius: 0;
     padding: 0;
     font-style: normal;
-    font-family: var(--font-roboto-mono);
+    font-family: var(--font-roboto-mono), monospace;
   }
 
   :is(pre:has(> em.pre), pre:has(> code.pre)) {
@@ -75,11 +75,11 @@
       > code {
         color: var(--color-base) !important;
         font-size: var(--font-size-25) !important;
-        font-family: var(--font-roboto-mono) !important;
+        font-family: var(--font-roboto-mono), monospace !important;
 
         > span {
           font-size: var(--font-size-25);
-          font-family: var(--font-roboto-mono);
+          font-family: var(--font-roboto-mono), monospace;
         }
       }
     }
