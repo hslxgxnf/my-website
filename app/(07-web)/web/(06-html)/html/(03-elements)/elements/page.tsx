@@ -191,52 +191,59 @@ export default function Page() {
                 >
                   <p>Creates a modal or non-modal dialog.</p>
                   <p>
-                    The <Highlight type="simple-code">closedby</Highlight>{" "}
-                    attribute controls how a dialog can be dismissed.
-                    <br />
-                    The <Highlight type="simple-code">
-                      closedby="any"
-                    </Highlight>{" "}
-                    attribute closes a dialog by a light dismiss user action
-                    (e.g., clicking the backdrop), a platform-specific user
-                    action (e.g., pressing the ESC key), or a
-                    developer-specified mechanism.
-                    <br />
-                    The{" "}
-                    <Highlight type="simple-code">
-                      closedby="closerequest"
-                    </Highlight>{" "}
-                    attribute closes a dialog by a platform-specific user action
-                    or a developer-specified mechanism. This option is the
-                    default for modal dialogs.
-                    <br />
-                    The{" "}
-                    <Highlight type="simple-code">
-                      closedby="none"
-                    </Highlight>{" "}
-                    attribute closes a dialog by a developer-specified
-                    mechanism. This option is the default for non-modal dialogs.
-                    <br />
-                  </p>
-                  <p>
                     The <Highlight type="simple-code">open</Highlight> attribute
-                    is a boolean attribute that determines whether a dialog is
-                    currently displayed. Directly manipulating this attribute in
-                    <Highlight type="text">HTML</Highlight> is not recommended.
-                    Instead, use <Highlight type="text">JavaScript</Highlight>{" "}
-                    methods{" "}
+                    is a boolean attribute that controls the visibility of a
+                    dialog. Rather than manipulating this attribute directly in{" "}
+                    <Highlight type="text">HTML</Highlight>, it is recommended
+                    to use the <Highlight type="text">JavaScript</Highlight>{" "}
+                    methods:{" "}
                     <Highlight type="simple-code">
-                      HTMLDialogElement.show()
+                      HTMLDialogElement: showModal()
                     </Highlight>
                     ,{" "}
                     <Highlight type="simple-code">
-                      HTMLDialogElement.showModal()
+                      HTMLDialogElement: show()
                     </Highlight>
                     , and{" "}
                     <Highlight type="simple-code">
-                      HTMLDialogElement.close()
+                      HTMLDialogElement: close()
+                    </Highlight>
+                    .
+                    <br />
+                    <Highlight type="simple-code">
+                      HTMLDialogElement: showModal()
                     </Highlight>{" "}
-                    for better control.
+                    opens a modal dialog, whereas{" "}
+                    <Highlight type="simple-code">
+                      HTMLDialogElement: show()
+                    </Highlight>{" "}
+                    opens a non-modal dialog. Lastly,{" "}
+                    <Highlight type="simple-code">
+                      HTMLDialogElement: close()
+                    </Highlight>{" "}
+                    closes the dialog regardless of how it was opened.
+                  </p>
+                  <p>
+                    The <Highlight type="simple-code">closedby</Highlight>{" "}
+                    attribute controls how a dialog can be closed.
+                    <br />
+                    The <Highlight type="simple-code">any</Highlight> value
+                    closes a dialog by clicking the backdrop, pressing{" "}
+                    <Highlight type="text">Esc</Highlight>, or a
+                    developer-specified mechanism.
+                    <br />
+                    The <Highlight type="simple-code">
+                      closerequest
+                    </Highlight>{" "}
+                    value closes a dialog by pressing{" "}
+                    <Highlight type="text">Esc</Highlight> or a
+                    developer-specified mechanism. This option is the default
+                    for modal dialogs.
+                    <br />
+                    The <Highlight type="simple-code">none</Highlight> value
+                    closes a dialog only by a developer-specified mechanism.
+                    This option is the default for non-modal dialogs.
+                    <br />
                   </p>
                 </ToggleList>
               </ReferenceButton>
