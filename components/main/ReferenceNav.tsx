@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 import type { Reference } from "@/types/main/interfaces";
 import type { MouseEvent } from "react";
+import ReferenceNavImage from "@/components/main/ReferenceNavImage";
 
 interface ReferenceNavProps {
   reference?: Reference;
@@ -47,7 +47,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                       rel="noopener"
                       onMouseEnter={handleMouseEnter}
                     >
-                      <Image src={site.favicon} alt={site.name} />
+                      <ReferenceNavImage site={site} />
                       <span>{site.title}</span>
                     </Link>
                   </li>
@@ -72,7 +72,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                       rel="noopener"
                       onMouseEnter={handleMouseEnter}
                     >
-                      <Image src={site.favicon} alt={site.name} />
+                      <ReferenceNavImage site={site} />
                       <span>{siteInfo}</span>
                     </Link>
                   </li>

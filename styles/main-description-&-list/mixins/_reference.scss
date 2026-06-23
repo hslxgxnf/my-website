@@ -38,10 +38,35 @@
               align-items: center;
               gap: var(--space-10);
 
-              > img {
+              &:hover > span {
+                color: var(--color-1);
+              }
+
+              > div {
                 border-radius: calc(var(--border-radius) / 2);
                 width: var(--font-size-20);
                 height: var(--font-size-20);
+                background-color: transparent;
+
+                &.loading {
+                  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+                  @keyframes pulse {
+                    0%,
+                    100% {
+                      background-color: var(--background-color-1);
+                    }
+                    50% {
+                      background-color: var(--background-color-2);
+                    }
+                  }
+                }
+
+                > img {
+                  border-radius: calc(var(--border-radius) / 2);
+                  width: var(--font-size-20);
+                  height: var(--font-size-20);
+                }
               }
 
               > span {
@@ -49,10 +74,6 @@
                 text-overflow: ellipsis;
                 font-size: var(--font-size-20);
                 white-space: nowrap;
-              }
-
-              &:hover > span {
-                color: var(--color-1);
               }
             }
           }

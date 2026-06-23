@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
 
-interface Site {
+export interface Site {
   url: string;
   favicon: StaticImageData;
   name: string;
