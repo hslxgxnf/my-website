@@ -1,6 +1,6 @@
 "use client";
 
-import { type MouseEvent } from "react";
+import type { MouseEvent } from "react";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import selectAndCopyText from "@/functions/main-description/selectAndCopyText";
