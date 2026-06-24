@@ -1,10 +1,5 @@
-"use client";
-
-import Link from "next/link";
-
 import type { Reference } from "@/types/main/interfaces";
-import type { MouseEvent } from "react";
-import ReferenceNavImage from "@/components/main/ReferenceNavImage";
+import ReferenceNavLink from "@/components/main/ReferenceNavLink";
 
 interface ReferenceNavProps {
   reference?: Reference;
@@ -12,21 +7,6 @@ interface ReferenceNavProps {
 
 export default function ReferenceNav({ reference }: ReferenceNavProps) {
   if (!reference) return null;
-
-  function handleMouseEnter(event: MouseEvent<HTMLAnchorElement>) {
-    const span = event.currentTarget.querySelector("span");
-
-    if (!span) {
-      console.error("No span");
-      return;
-    }
-
-    if (span.scrollWidth > span.clientWidth) {
-      event.currentTarget.setAttribute("title", span.textContent);
-    } else {
-      event.currentTarget.removeAttribute("title");
-    }
-  }
 
   return reference.map((referenceItem, index) => {
     return (
@@ -41,40 +21,13 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
               } else if (site.name === "self") {
                 return (
                   <li key={index} data-self>
-                    <Link
-                      href={site.url}
-                      target="_blank"
-                      rel="noopener"
-                      onMouseEnter={handleMouseEnter}
-                    >
-                      <ReferenceNavImage site={site} />
-                      <span>{site.title}</span>
-                    </Link>
+                    <ReferenceNavLink site={site} />
                   </li>
                 );
               } else {
-                let siteInfo = "";
-                if (site.name === "none") {
-                  siteInfo = site.title;
-                } else {
-                  if (site.title === "") {
-                    siteInfo = site.name;
-                  } else {
-                    siteInfo = `${site.name} | ${site.title}`;
-                  }
-                }
-
                 return (
                   <li key={index}>
-                    <Link
-                      href={site.url}
-                      target="_blank"
-                      rel="noopener"
-                      onMouseEnter={handleMouseEnter}
-                    >
-                      <ReferenceNavImage site={site} />
-                      <span>{siteInfo}</span>
-                    </Link>
+                    <ReferenceNavLink site={site} />
                   </li>
                 );
               }
