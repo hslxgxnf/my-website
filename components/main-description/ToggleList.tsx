@@ -18,7 +18,7 @@ export default function ToggleList({ header, children }: ToggleListProps) {
 
   return (
     <li className={styles["toggle-list"]}>
-      <div className={isOpen ? styles.open : ""} onClick={handleClick}>
+      <div className={isOpen ? styles.open : undefined} onClick={handleClick}>
         ▶
       </div>
       <header>{header}</header>
