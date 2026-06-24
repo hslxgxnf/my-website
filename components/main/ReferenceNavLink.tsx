@@ -31,12 +31,10 @@ export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
   let spanText = "";
   if (site.name === "self") {
     spanText = site.title;
+  } else if (site.title === "") {
+    spanText = site.name;
   } else {
-    if (site.title === "") {
-      spanText = site.name;
-    } else {
-      spanText = `${site.name} | ${site.title}`;
-    }
+    spanText = `${site.name} | ${site.title}`;
   }
 
   return (
