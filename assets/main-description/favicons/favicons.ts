@@ -1,6 +1,5 @@
 import dummy from "./images/_dummy.png";
 import self from "@/public/icon.png";
-import none from "./images/_none.png";
 
 import DaleSeo from "./images/DaleSeo.png";
 import Emmet from "./images/Emmet.svg";
@@ -20,6 +19,7 @@ import Next$js from "./images/Next.js.svg";
 import npm from "./images/npm.png";
 import Oh_My_Posh from "./images/Oh-My-Posh.svg";
 import Prettier from "./images/Prettier.png";
+import Rhodes_Mill from "./images/Rhodes-Mill.png";
 import Sass from "./images/Sass.png";
 import Stack_Overflow from "./images/Stack-Overflow.svg";
 import Stylelint from "./images/Stylelint.svg";
@@ -39,10 +39,7 @@ export const favicons = {
     image: self,
     name: "self",
   },
-  none: {
-    image: none,
-    name: "none",
-  },
+
   DaleSeo: {
     image: DaleSeo,
     name: "DaleSeo",
@@ -114,6 +111,10 @@ export const favicons = {
   Prettier: {
     image: Prettier,
     name: "Prettier",
+  },
+  Rhodes_Mill: {
+    image: Rhodes_Mill,
+    name: "Rhodes Mill",
   },
   Sass: {
     image: Sass,

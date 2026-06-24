@@ -14,8 +14,8 @@ export const reference: Reference = [
       },
       {
         url: "https://rhodesmill.org/brandon/2011/concentric-css/",
-        favicon: favicons.none.image,
-        name: favicons.none.name,
+        favicon: favicons.Rhodes_Mill.image,
+        name: favicons.Rhodes_Mill.name,
         title: "Concentric CSS",
       },
     ],
