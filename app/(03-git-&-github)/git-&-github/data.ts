@@ -46,16 +46,16 @@ export const reference: Reference = [
     target: "GitHub Actions",
     sites: [
       {
-        url: "https://www.udemy.com/course/github-actions-the-complete-guide/",
-        favicon: favicons.Udemy.image,
-        name: favicons.Udemy.name,
-        title: "GitHub Actions - The Complete Guide",
-      },
-      {
         url: "https://docs.github.com/en/actions",
         favicon: favicons.GitHub_Docs.image,
         name: favicons.GitHub_Docs.name,
         title: "GitHub Actions documentation",
+      },
+      {
+        url: "https://www.udemy.com/course/github-actions-the-complete-guide/",
+        favicon: favicons.Udemy.image,
+        name: favicons.Udemy.name,
+        title: "GitHub Actions - The Complete Guide",
       },
     ],
   },

@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-25">
               Git & GitHub
             </HeadingLinkId>
           </ReferenceButton>
@@ -206,6 +206,15 @@ export default function Page() {
                     </p>
                   </li>
                 </ReferenceButton>
+                <li>
+                  <p>
+                    <Highlight type="simple-code">git commit --amend</Highlight>
+                  </p>
+                  <p>
+                    Adds staged changes to the latest commit and updates its
+                    message.
+                  </p>
+                </li>
               </ul>
             </li>
             <li>
@@ -418,24 +427,10 @@ export default function Page() {
               <p>Merges the specified branch into the current branch.</p>
               <ul>
                 <li>
-                  <p>
-                    <Highlight type="simple-code">git merge --abort</Highlight>
-                  </p>
-                  <p>
-                    Aborts the paused merge process due to conflicts and
-                    restores the current branch to its pre-merge state.
-                  </p>
+                  <Highlight type="simple-code">git merge --abort</Highlight>
                 </li>
                 <li>
-                  <p>
-                    <Highlight type="simple-code">
-                      git merge --continue
-                    </Highlight>
-                  </p>
-                  <p>
-                    Resumes the paused merge process after resolving conflicts
-                    and staging the resolved changes.
-                  </p>
+                  <Highlight type="simple-code">git merge --continue</Highlight>
                 </li>
               </ul>
             </li>
@@ -454,23 +449,27 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git rebase --abort</Highlight>
-                  </p>
-                  <p>
-                    Aborts the paused rebase process due to conflicts and
-                    restores the current branch to its pre-rebase state.
-                  </p>
-                </li>
-                <li>
-                  <p>
                     <Highlight type="simple-code">
-                      git rebase --continue
+                      git rebase --interactive (-i) HEAD~&lt;number&gt;
                     </Highlight>
                   </p>
                   <p>
-                    Resumes the paused rebase process after resolving conflicts
-                    and staging the resolved changes.
+                    Goes back to the specified number of commits and modifies
+                    them interactively (<Highlight type="text">pick</Highlight>,{" "}
+                    <Highlight type="text">edit</Highlight>,{" "}
+                    <Highlight type="text">squash</Highlight>,{" "}
+                    <Highlight type="text">fixup</Highlight>,{" "}
+                    <Highlight type="text">reword</Highlight>,{" "}
+                    <Highlight type="text">drop</Highlight>, etc.).
                   </p>
+                </li>
+                <li>
+                  <Highlight type="simple-code">git rebase --abort</Highlight>
+                </li>
+                <li>
+                  <Highlight type="simple-code">
+                    git rebase --continue
+                  </Highlight>
                 </li>
               </ul>
             </li>
