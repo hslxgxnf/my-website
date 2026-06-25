@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type MouseEvent } from "react";
+import { type MouseEvent, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,8 +11,6 @@ interface ReferenceNavImageProps {
   site: Site;
 }
 export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
-  const [isLoading, setIsLoading] = useState(true);
-
   function handleMouseEnter(event: MouseEvent<HTMLAnchorElement>) {
     const span = event.currentTarget.querySelector("span");
 
@@ -27,6 +25,8 @@ export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
       event.currentTarget.removeAttribute("title");
     }
   }
+
+  const [isLoading, setIsLoading] = useState(true);
 
   let spanText = "";
   if (site.name === "self") {
