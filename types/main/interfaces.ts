@@ -22,6 +22,7 @@ export interface Code {
     | "scss"
     | "javascript"
     | "typescript"
+    | "python"
     | "json"
     | "git"
     | "powershell"
