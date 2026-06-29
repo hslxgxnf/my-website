@@ -29,7 +29,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-03-25">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-30">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -91,7 +91,7 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
           <table>
-            <caption>Visual Studio</caption>
+            <caption>Visual Studio 2022</caption>
             <thead>
               <tr>
                 <th scope="col">Name</th>
@@ -111,7 +111,7 @@ export default function Page() {
               <tr>
                 <td>Move Line Down</td>
                 <td>Alt + Down</td>
-                <td>{entities.checkedBox}, Remove "Previous Method"</td>
+                <td></td>
               </tr>
               <tr>
                 <td>Show Context Actions</td>
@@ -126,7 +126,7 @@ export default function Page() {
               <tr>
                 <td>Move Line Up</td>
                 <td>Alt + Up</td>
-                <td>{entities.checkedBox}, Remove "Next Method"</td>
+                <td></td>
               </tr>
               {/*Ctrl*/}
               <tr>
@@ -203,6 +203,14 @@ export default function Page() {
                 <td>Parameter Info</td>
                 <td>Ctrl + Shift + Space</td>
                 <td></td>
+              </tr>
+              <tr>
+                <td>Reopen Closed Tab</td>
+                <td>Ctrl + Shift + T</td>
+                <td>
+                  {entities.checkedBox}, Remove{" "}
+                  <Highlight type="text">Go to File...</Highlight>
+                </td>
               </tr>
               <tr>
                 <td>
@@ -501,14 +509,25 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
           <ul>
             <li>
-              Marketplace {entities.rightStraightArrow}{" "}
-              <Highlight type="text" copy={true}>
-                Rainbow Brackets
-              </Highlight>
+              Marketplace
+              <ul>
+                <li>
+                  <Highlight type="text" copy={true}>
+                    Visual Studio 2022 Keymap
+                  </Highlight>
+                </li>
+                <li>
+                  <Highlight type="text" copy={true}>
+                    Rainbow Brackets
+                  </Highlight>
+                </li>
+              </ul>
             </li>
             <li>
-              <IoSettingsOutline /> {entities.rightStraightArrow} Update Plugins
-              Automatically
+              <IoSettingsOutline />
+              <ul>
+                <li>Update Plugins Automatically</li>
+              </ul>
             </li>
           </ul>
         </section>
