@@ -41,10 +41,14 @@ export default function HighlightComplexCode({
 
   let fileInfo: string = children.language;
   fileInfo = changeToTitleCase(fileInfo);
-  if (children.fileName) fileInfo = `${fileInfo} | ${children.fileName}`;
+  if (children.fileName) {
+    fileInfo = `${fileInfo} | ${children.fileName}`;
+  }
 
   let language: string = children.language;
-  if (children.language === "html") language = "handlebars";
+  if (children.language === "html") {
+    language = "handlebars";
+  }
 
   return (
     <div className={styles["complex-code-container"]}>
