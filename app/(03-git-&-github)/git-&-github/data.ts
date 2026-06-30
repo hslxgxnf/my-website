@@ -152,7 +152,7 @@ Did you update the 'lastUpdated' variable?\\";
     " | tr -d '\\r')
 
     if [ "$USER_CHOICE" = "No" ] || [ -z "$USER_CHOICE" ]; then
-        echo "❌ Commit canceled by the user. Please check your code again."
+        echo "❌ The commit was canceled. Please update the 'lastUpdated' variable."
         exit 1
     fi
 fi
