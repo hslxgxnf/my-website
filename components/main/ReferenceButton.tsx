@@ -44,12 +44,10 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     let articleTarget = "";
     if (articleTargetElement.className.includes("toggle-list")) {
       articleTarget = articleTargetElement.children[1].textContent;
+    } else if (articleTargetElement.children[0]) {
+      articleTarget = articleTargetElement.children[0].textContent;
     } else {
-      if (articleTargetElement.children[0]) {
-        articleTarget = articleTargetElement.children[0].textContent;
-      } else {
-        articleTarget = articleTargetElement.textContent;
-      }
+      articleTarget = articleTargetElement.textContent;
     }
     if (navs[index].dataset.target !== articleTarget) {
       console.error(
