@@ -59,6 +59,10 @@ const properNouns: SpecialCaseWord[] = [
     target: "github",
     result: "GitHub",
   },
+  {
+    target: "pycharm",
+    result: "PyCharm",
+  },
 ];
 
 const hyphenCaseWords: SpecialCaseWord[] = [
