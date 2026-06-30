@@ -17,6 +17,28 @@ $END$`;
 
 export const reference: Reference = [
   {
+    target: "Appearance & Behavior",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-pycharm#appearance-&-behavior",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains PyCharm | Appearance & Behavior",
+      },
+    ],
+  },
+  {
+    target: "Keymap",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-pycharm#keymap",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains PyCharm | Keymap",
+      },
+    ],
+  },
+  {
     target: "Languages & Frameworks",
     sites: [
       {
@@ -53,6 +75,17 @@ export const reference: Reference = [
         favicon: favicons.self.image,
         name: favicons.self.name,
         title: "Stylelint",
+      },
+    ],
+  },
+  {
+    target: "Backup and Sync",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-pycharm#backup-and-sync",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains PyCharm | Backup and Sync",
       },
     ],
   },

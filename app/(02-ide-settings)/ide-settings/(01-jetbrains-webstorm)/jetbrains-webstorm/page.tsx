@@ -38,7 +38,11 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Appearance & Behavior</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>
+              Appearance & Behavior
+            </HeadingLinkId>
+          </ReferenceButton>
           <table>
             <thead>
               <tr>
@@ -89,7 +93,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
+          </ReferenceButton>
           <table>
             <caption>Visual Studio 2022</caption>
             <thead>
@@ -703,17 +709,6 @@ export default function Page() {
                   <strong>!</strong> Terminal
                 </td>
                 <td>
-                  Command Completion
-                  <br />
-                  {entities.rightSubArrow} Insert suggestion with:
-                </td>
-                <td>Tab</td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>!</strong> Terminal
-                </td>
-                <td>
                   Font Settings
                   <br />
                   {entities.rightSubArrow}{" "}
@@ -725,7 +720,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Backup and Sync</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Backup and Sync</HeadingLinkId>
+          </ReferenceButton>
           <table>
             <thead>
               <tr>
@@ -761,6 +758,15 @@ export default function Page() {
                   <br />
                   {entities.rightSubArrow} Confirm rerun with process
                   termination
+                </td>
+                <td>{entities.emptyBox}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  Version Control
+                  <br />
+                  {entities.rightSubArrow} Open Diff as Editor Tab
                 </td>
                 <td>{entities.emptyBox}</td>
               </tr>
