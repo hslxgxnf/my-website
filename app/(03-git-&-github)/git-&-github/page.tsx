@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
-import { reference, code } from "./data";
+import { reference, gitCommitMessageCode, gitHookCode } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
 import ReferenceButton from "@/components/main/ReferenceButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-25">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-30">
               Git & GitHub
             </HeadingLinkId>
           </ReferenceButton>
@@ -49,18 +49,16 @@ export default function Page() {
               <li>
                 <Highlight type="text">.gitattributes</Highlight>
               </li>
+              <li>
+                <Highlight type="text">.git/hooks</Highlight>
+              </li>
             </ul>
             <li>
               <Highlight type="text">GitHub Actions</Highlight>
               <ul>
                 <li>
-                  <Highlight type="text">.github/workflows</Highlight>
+                  <Highlight type="text">.github/workflows/*.yml</Highlight>
                 </li>
-                <ul>
-                  <li>
-                    <Highlight type="text">*.yml</Highlight>
-                  </li>
-                </ul>
               </ul>
             </li>
           </ul>
@@ -187,7 +185,9 @@ export default function Page() {
                       In IDEs, a blank line is required between the summary and
                       the description.
                     </p>
-                    <Highlight type="complex-code">{code}</Highlight>
+                    <Highlight type="complex-code">
+                      {gitCommitMessageCode}
+                    </Highlight>
                     <p>
                       <Highlight type="text">&lt;type&gt;</Highlight> can be{" "}
                       <Highlight type="text">feat</Highlight>,{" "}
@@ -584,9 +584,32 @@ export default function Page() {
           </ul>
         </section>
         <section>
+          <HeadingLinkId headingNumber={2}>Git Hooks</HeadingLinkId>
+          <p>
+            <Highlight type="text">Git Hooks</Highlight> are located in{" "}
+            <Highlight type="text">.git/hooks</Highlight> and must not have a
+            file extension.
+          </p>
+          <p>
+            <Highlight type="text">Git Hooks</Highlight> are custom scripts that
+            trigger actions whenever a specified event occurs. They are divided
+            into client-side hooks and server-side hooks.
+          </p>
+          <p>
+            <Highlight type="text">commit-msg</Highlight> is a client-side hook
+            that runs right after the commit message is created, allowing for
+            its validation.
+            <br />
+            The following code creates a custom modal box that checks if the
+            commit message contains <Highlight type="text">content</Highlight>.
+          </p>
+          <Highlight type="complex-code">{gitHookCode}</Highlight>
+        </section>
+        <section>
           <ReferenceButton>
             <HeadingLinkId headingNumber={2}>GitHub Actions</HeadingLinkId>
           </ReferenceButton>
+
           <p>
             <Highlight type="text">GitHub Actions</Highlight> is a continuous
             integration and continuous deployment (CI/CD) service.
@@ -597,11 +620,13 @@ export default function Page() {
           </p>
           <p>
             <Highlight type="text">GitHub Actions</Highlight> consists of
-            workflows. Workflows are triggered by events and have one or more
-            jobs.
+            workflows that are located in{" "}
+            <Highlight type="text">.github/workflows</Highlight> with{" "}
+            <Highlight type="text">.yml</Highlight>. Workflows are triggered by
+            specific events and contain one or more jobs.
           </p>
           <p>
-            Jobs run on a runner and have one or more steps. Jobs run in
+            Jobs run on a runner and contain one or more steps. Jobs run in
             parallel by default but can run sequentially by specifying{" "}
             <Highlight type="simple-code">needs</Highlight>.
           </p>
@@ -611,14 +636,22 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Errors</HeadingLinkId>
+          <HeadingLinkId headingNumber={2}>Troubleshooting</HeadingLinkId>
           <ul>
             <ReferenceButton>
-              <li>Korean comments are broken in GitHub.</li>
+              <li>
+                <p>
+                  Korean comments are garbled in{" "}
+                  <Highlight type="text">GitHub</Highlight>.
+                </p>
+              </li>
             </ReferenceButton>
             <ReferenceButton>
               <li>
-                The connection between a local repository and GitHub is broken.
+                <p>
+                  The connection between a local repository and{" "}
+                  <Highlight type="text">GitHub</Highlight> is lost.
+                </p>
               </li>
             </ReferenceButton>
           </ul>

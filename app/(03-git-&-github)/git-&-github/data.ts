@@ -60,7 +60,7 @@ export const reference: Reference = [
     ],
   },
   {
-    target: "Korean comments are broken in GitHub.",
+    target: "Korean comments are garbled in GitHub.",
     sites: [
       {
         url: "https://strawberry-smoothie.tistory.com/1",
@@ -71,7 +71,7 @@ export const reference: Reference = [
     ],
   },
   {
-    target: "The connection between a local repository and GitHub is broken.",
+    target: "The connection between a local repository and GitHub is lost.",
     sites: [
       {
         url: "https://velog.io/@nies/git%EC%97%90-push%ED%95%98%EB%A0%A4%EB%8A%94%EB%8D%B0-remote-Permission-to-git%EC%A3%BC%EC%86%8C-denied-to-user%EC%9D%B4%EB%A6%84-403-error-%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95-AI-%EC%9B%B9-%EA%B0%9C%EB%B0%9C-%EB%8B%A4%EC%84%AF%EC%A7%B8-%EC%A3%BC2%EC%9D%BC%EC%B0%A8",
@@ -84,9 +84,78 @@ export const reference: Reference = [
   },
 ];
 
-export const code: Code = {
+export const gitCommitMessageCode: Code = {
   language: "text",
   content: `<type>(optional scope): <summary>
 
 <description>`,
+};
+
+export const gitHookCode: Code = {
+  language: "bash",
+  fileName: "commit-msg",
+  content: `#!/bin/sh
+COMMIT_MSG=$(cat "$1")
+if echo "$COMMIT_MSG" | grep -iq "content"; then
+    USER_CHOICE=$(powershell.exe -Command "
+        [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null;
+        [System.Reflection.Assembly]::LoadWithPartialName('System.Drawing') | Out-Null;
+
+        # Play default notification sound (Asterisk) when the window appears
+        [System.Media.SystemSounds]::Asterisk.Play();
+
+        # 1. Create the main window form
+        \\$form = New-Object System.Windows.Forms.Form;
+        \\$form.Text = '⚠️ Git Hook commit-msg';
+        \\$form.Size = New-Object System.Drawing.Size(550, 260);
+        \\$form.StartPosition = 'CenterScreen';
+        \\$form.FormBorderStyle = 'FixedDialog';
+        \\$form.MaximizeBox = \\$false;
+        \\$form.MinimizeBox = \\$false;
+        \\$form.TopMost = \\$true;
+
+        # 2. Create the message text label
+        \\$label = New-Object System.Windows.Forms.Label;
+        \\$label.Text = \\"The 'content' type has been detected!
+
+Did you update the 'lastUpdated' variable?\\";
+        \\$label.Location = New-Object System.Drawing.Point(30, 30);
+        \\$label.Size = New-Object System.Drawing.Size(490, 100);
+        \\$label.Font = New-Object System.Drawing.Font('Malgun Gothic', 14, [System.Drawing.FontStyle]::Bold); 
+
+        # 3. Create the [Yes] button (No click sound)
+        \\$btnYes = New-Object System.Windows.Forms.Button;
+        \\$btnYes.Text = 'Yes';
+        \\$btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes;
+        \\$btnYes.Location = New-Object System.Drawing.Point(140, 150);
+        \\$btnYes.Size = New-Object System.Drawing.Size(120, 45);
+        \\$btnYes.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+
+        # 4. Create the [No] button
+        \\$btnNo = New-Object System.Windows.Forms.Button;
+        \\$btnNo.Text = 'No';
+        \\$btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No;
+        \\$btnNo.Location = New-Object System.Drawing.Point(280, 150);
+        \\$btnNo.Size = New-Object System.Drawing.Size(120, 45);
+        \\$btnNo.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Play heavy error sound (Hand) when [No] is clicked
+        \\$btnNo.Add_Click({ [System.Media.SystemSounds]::Hand.Play() });
+
+        # 5. Add components to the window form
+        \\$form.Controls.Add(\\$label);
+        \\$form.Controls.Add(\\$btnYes);
+        \\$form.Controls.Add(\\$btnNo);
+
+        # 6. Open the window and output the user click result
+        \\$result = \\$form.ShowDialog();
+        Write-Output \\$result;
+    " | tr -d '\\r')
+
+    if [ "$USER_CHOICE" = "No" ] || [ -z "$USER_CHOICE" ]; then
+        echo "❌ Commit canceled by the user. Please check your code again."
+        exit 1
+    fi
+fi
+exit 0
+`,
 };
