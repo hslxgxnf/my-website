@@ -37,29 +37,20 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Files & Folders</HeadingLinkId>
           <ul>
             <li>
-              <Highlight type="text">Git</Highlight>
+              <Highlight type="text">README.md</Highlight>
             </li>
-            <ul>
-              <li>
-                <Highlight type="text">README.md</Highlight>
-              </li>
-              <li>
-                <Highlight type="text">.gitignore</Highlight>
-              </li>
-              <li>
-                <Highlight type="text">.gitattributes</Highlight>
-              </li>
-              <li>
-                <Highlight type="text">.git/hooks</Highlight>
-              </li>
-            </ul>
             <li>
-              <Highlight type="text">GitHub Actions</Highlight>
-              <ul>
-                <li>
-                  <Highlight type="text">.github/workflows/*.yml</Highlight>
-                </li>
-              </ul>
+              <Highlight type="text">.gitignore</Highlight>
+            </li>
+            <li>
+              <Highlight type="text">.gitattributes</Highlight>
+            </li>
+            <li>
+              <Highlight type="text">.git/hooks</Highlight>
+            </li>
+
+            <li>
+              <Highlight type="text">.github/workflows/*.yml</Highlight>
             </li>
           </ul>
         </section>
