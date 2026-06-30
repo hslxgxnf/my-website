@@ -19,6 +19,7 @@ export default function Page() {
         <h1>IDE Settings</h1>
         <hr />
         <HeadingLinkPage>JetBrains WebStorm</HeadingLinkPage>
+        <HeadingLinkPage>JetBrains PyCharm</HeadingLinkPage>
       </article>
 
       <aside></aside>
