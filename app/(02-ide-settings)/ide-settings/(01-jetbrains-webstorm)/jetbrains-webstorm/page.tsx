@@ -680,20 +680,6 @@ export default function Page() {
                 <td>
                   <strong>!</strong> Actions on Save
                 </td>
-                <td>Reformat code</td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>!</strong> Actions on Save
-                </td>
-                <td>Rearrange code</td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>!</strong> Actions on Save
-                </td>
                 <td>Run stylelint --fix</td>
                 <td>{entities.checkedBox}</td>
               </tr>
