@@ -26,6 +26,7 @@ export interface Code {
     | "json"
     | "git"
     | "powershell"
+    | "bash"
     | "text";
   fileName?: string;
   content: string;
