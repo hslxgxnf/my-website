@@ -23,7 +23,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-06-30">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-01">
             JetBrains PyCharm
           </HeadingLinkId>
           <p>
@@ -88,7 +88,9 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
+          </ReferenceButton>
           <table>
             <thead>
               <tr>

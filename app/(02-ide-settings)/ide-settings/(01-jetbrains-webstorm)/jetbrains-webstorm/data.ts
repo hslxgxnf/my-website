@@ -42,6 +42,12 @@ export const reference: Reference = [
     target: "Languages & Frameworks",
     sites: [
       {
+        url: "/web/eslint",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "ESLint",
+      },
+      {
         url: "/web/prettier",
         favicon: favicons.self.image,
         name: favicons.self.name,
@@ -52,12 +58,6 @@ export const reference: Reference = [
         favicon: favicons.self.image,
         name: favicons.self.name,
         title: "Stylelint",
-      },
-      {
-        url: "/web/eslint",
-        favicon: favicons.self.image,
-        name: favicons.self.name,
-        title: "ESLint",
       },
     ],
   },
@@ -65,16 +65,22 @@ export const reference: Reference = [
     target: "Tools",
     sites: [
       {
+        url: "/web/stylelint",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "Stylelint",
+      },
+      {
         url: "/web/prettier",
         favicon: favicons.self.image,
         name: favicons.self.name,
         title: "Prettier",
       },
       {
-        url: "/web/stylelint",
+        url: "/windows#oh-my-posh",
         favicon: favicons.self.image,
         name: favicons.self.name,
-        title: "Stylelint",
+        title: "Windows | Oh My Posh",
       },
     ],
   },

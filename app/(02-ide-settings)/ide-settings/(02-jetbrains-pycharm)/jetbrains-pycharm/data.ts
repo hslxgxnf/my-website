@@ -25,6 +25,17 @@ export const reference: Reference = [
     ],
   },
   {
+    target: "Tools",
+    sites: [
+      {
+        url: "/windows#oh-my-posh",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "Windows | Oh My Posh",
+      },
+    ],
+  },
+  {
     target: "Backup and Sync",
     sites: [
       {

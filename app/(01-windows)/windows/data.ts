@@ -11,6 +11,18 @@ export const reference: Reference = [
         name: favicons.Oh_My_Posh.name,
         title: "",
       },
+      {
+        url: "/ide-settings/jetbrains-webstorm#tools",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains WebStorm | Tools",
+      },
+      {
+        url: "/ide-settings/jetbrains-pycharm#tools",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains PyCharm | Tools",
+      },
     ],
   },
   {
@@ -34,6 +46,7 @@ export const reference: Reference = [
 
 export const ps1Code: Code = {
   language: "powershell",
+  fileName: "Microsoft.PowerShell_profile.ps1",
   content: `# Find your local configuration file.
 $MyThemePath = Join-Path (Split-Path $PROFILE) "cert.omp.json"
 oh-my-posh init pwsh --config $MyThemePath | Invoke-Expression
@@ -41,11 +54,11 @@ oh-my-posh init pwsh --config $MyThemePath | Invoke-Expression
 # Press the Tab key to accept the cloudy gray suggestion.
 Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestion
 `,
-  fileName: "Microsoft.PowerShell_profile.ps1",
 };
 
 export const ompCode: Code = {
   language: "json",
+  fileName: "cert.omp.json",
   content: `{
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [
@@ -117,5 +130,4 @@ export const ompCode: Code = {
   "version": 4
 }
 `,
-  fileName: "cert.omp.json",
 };
