@@ -301,6 +301,8 @@ export default function Page() {
                   General
                   <br />
                   {entities.rightSubArrow} Code Completion
+                  <br />
+                  {entities.rightSubArrow} Popup
                 </td>
                 <td>Match case:</td>
                 <td>{entities.emptyBox}</td>
@@ -330,15 +332,6 @@ export default function Page() {
                   {entities.rightSubArrow} Mark modified
                 </td>
                 <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>
-                  Code Style
-                  <br />
-                  {entities.rightSubArrow} HTML
-                </td>
-                <td>Arrangement</td>
-                <td>&minus; Remove rule(s)</td>
               </tr>
               <tr>
                 <td>Live Templates</td>

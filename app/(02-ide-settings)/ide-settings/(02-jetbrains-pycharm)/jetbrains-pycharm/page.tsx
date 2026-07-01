@@ -23,7 +23,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-01">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-03">
             JetBrains PyCharm
           </HeadingLinkId>
           <p>
@@ -65,6 +65,44 @@ export default function Page() {
           <ReferenceButton>
             <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
           </ReferenceButton>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Editor</HeadingLinkId>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Left Section</th>
+                <th scope="col">Right Section</th>
+                <th scope="col">Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  General
+                  <br />
+                  {entities.rightSubArrow} Code Completion
+                  <br />
+                  {entities.rightSubArrow} Popup
+                </td>
+                <td>Match case:</td>
+                <td>{entities.emptyBox}</td>
+              </tr>
+              <tr>
+                <td>
+                  General
+                  <br />
+                  {entities.rightSubArrow} Editor Tabs
+                </td>
+                <td>
+                  Appearance
+                  <br />
+                  {entities.rightSubArrow} Mark modified
+                </td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
@@ -145,6 +183,15 @@ export default function Page() {
                   <br />
                   {entities.rightSubArrow} Confirm rerun with process
                   termination
+                </td>
+                <td>{entities.emptyBox}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  Version Control
+                  <br />
+                  {entities.rightSubArrow} Open Diff as Editor Tab
                 </td>
                 <td>{entities.emptyBox}</td>
               </tr>
