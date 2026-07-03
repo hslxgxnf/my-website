@@ -4,6 +4,7 @@ import self from "@/public/icon.png";
 import DaleSeo from "./images/DaleSeo.png";
 import Emmet from "./images/Emmet.svg";
 import ESLint from "./images/ESLint.png";
+import GeeksforGeeks from "./images/GeeksforGeeks.svg";
 import Git from "./images/Git.png";
 import GitHub from "./images/GitHub.svg";
 import GitHub_Docs from "./images/GitHub-Docs.png";
@@ -51,6 +52,10 @@ export const favicons = {
   ESLint: {
     image: ESLint,
     name: "ESLint",
+  },
+  GeeksforGeeks: {
+    image: GeeksforGeeks,
+    name: "GeeksforGeeks",
   },
   Git: {
     image: Git,

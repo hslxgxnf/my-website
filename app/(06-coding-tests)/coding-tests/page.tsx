@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import ReferenceNav from "@/components/main/ReferenceNav";
-// import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
+import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
 
 export const metadata: Metadata = {
   title: "Coding Tests",
@@ -18,8 +18,7 @@ export default function Page() {
       <article>
         <h1>Coding Tests</h1>
         <hr />
-        <h2>Preparing...</h2>
-        {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
+        <HeadingLinkPage>Second Largest</HeadingLinkPage>
       </article>
 
       <aside></aside>
