@@ -18,6 +18,7 @@ export default function Page() {
       <article>
         <h1>Coding Tests</h1>
         <hr />
+        <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
         <HeadingLinkPage>Second Largest</HeadingLinkPage>
       </article>
 
