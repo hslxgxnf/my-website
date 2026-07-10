@@ -9,7 +9,7 @@ import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
 
 export const metadata: Metadata = {
-  title: "Reverse an Array",
+  title: "Find Second Largest Number",
 };
 
 export default function Page() {
@@ -23,16 +23,16 @@ export default function Page() {
         <section>
           <ReferenceButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-10">
-              Reverse an Array
+              Find Second Largest Number
             </HeadingLinkId>
           </ReferenceButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
           <p>
-            You are given an array of integers. You have to reverse the given
-            array in place, meaning you should not use extra space for another
-            array.
+            You are given an array of positive integers. You have to find the
+            second largest number from the array. If the second largest number
+            doesn't exist then return -1.
           </p>
           <section>
             <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
@@ -40,28 +40,33 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [1, 4, 3, 2, 6, 5]
+                    [12, 35, 1, 10, 34, 1]
                   </Highlight>{" "}
-                  &#10140;{" "}
-                  <Highlight type="simple-code">[5, 6, 2, 3, 4, 1]</Highlight>
+                  &#10140; <Highlight type="simple-code">34</Highlight>
                 </p>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [4, 5, 2]
+                    [10, 5, 10]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">[2, 5, 4]</Highlight>
+                  &#10140; <Highlight type="simple-code">5</Highlight>
                 </p>
               </li>
-
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [1]
+                    [10, 10, 10]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">[1]</Highlight>
+                  &#10140; <Highlight type="simple-code">-1</Highlight>
                 </p>
+                <ul>
+                  <li>
+                    <p>
+                      The largest is 10 and the second largest does not exist.
+                    </p>
+                  </li>
+                </ul>
               </li>
             </ul>
           </section>
@@ -70,12 +75,12 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="simple-code">1 ≤ arr.size() ≤ 10⁵</Highlight>
+                  <Highlight type="simple-code">2 ≤ arr.size() ≤ 10⁵</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  <Highlight type="simple-code">0 ≤ arr[i] ≤ 10⁵</Highlight>
+                  <Highlight type="simple-code">1 ≤ arr[i] ≤ 10⁵</Highlight>
                 </p>
               </li>
             </ul>

@@ -3,7 +3,7 @@ import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {
-    target: "Second Largest",
+    target: "Find Second Largest Number",
     sites: [
       {
         url: "https://www.geeksforgeeks.org/problems/second-largest3735/1",
@@ -17,7 +17,7 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `def get_second_largest(arr: list[int]) -> int:
+  content: `def find_second_largest_number(arr: list[int]) -> int:
     n: int = len(arr)
     largest: int = -1
     second_largest: int = -1
@@ -32,7 +32,8 @@ export const code: Code = {
     return second_largest
 
 
-print(get_second_largest([12, 35, 1, 10, 34, 1]))
-print(get_second_largest([10, 5, 10]))
-print(get_second_largest([10, 10, 10]))`,
+print(find_second_largest_number([12, 35, 1, 10, 34, 1]))
+print(find_second_largest_number([10, 5, 10]))
+print(find_second_largest_number([10, 10, 10]))
+`,
 };

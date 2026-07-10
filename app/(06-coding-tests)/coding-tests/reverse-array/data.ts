@@ -3,7 +3,7 @@ import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {
-    target: "Reverse an Array",
+    target: "Reverse Array",
     sites: [
       {
         url: "https://www.geeksforgeeks.org/problems/reverse-an-array/1",

@@ -18,9 +18,9 @@ export default function Page() {
       <article>
         <h1>Coding Tests</h1>
         <hr />
+        <HeadingLinkPage>Find Second Largest Number</HeadingLinkPage>
         <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
-        <HeadingLinkPage>Reverse an Array</HeadingLinkPage>
-        <HeadingLinkPage>Second Largest</HeadingLinkPage>
+        <HeadingLinkPage>Reverse Array</HeadingLinkPage>
       </article>
 
       <aside></aside>
