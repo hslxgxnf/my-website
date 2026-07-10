@@ -17,15 +17,27 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `def reverse_array(arr: list[int]) -> list[int]:
+  content: `def reverse_array_single_pointer(arr: list[int]) -> list[int]:
     for i in range(0, len(arr) // 2):
-        arr[i], arr[len(arr) - 1 - i] = arr[len(arr) - 1 - i], arr[i]
+        arr[i], arr[-1 - i] = arr[-1 - i], arr[i]
 
     return arr
 
 
-print(reverse_array([1, 4, 3, 2, 6, 5]))
-print(reverse_array([4, 5, 2]))
-print(reverse_array([1]))
+def reverse_array_two_pointers(arr: list[int]) -> list[int]:
+    left_index: int = 0
+    right_index: int = len(arr) - 1
+
+    while left_index < right_index:
+        arr[left_index], arr[right_index] = arr[right_index], arr[left_index]
+        left_index += 1
+        right_index -= 1
+
+    return arr
+
+
+print(reverse_array_single_pointer([1, 4, 3, 2, 6, 5]))
+print(reverse_array_single_pointer([4, 5, 2]))
+print(reverse_array_single_pointer([1]))
 `,
 };

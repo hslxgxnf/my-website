@@ -22,18 +22,14 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-10">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-11">
               Reverse Array
             </HeadingLinkId>
           </ReferenceButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
-          <p>
-            You are given an array of integers. You have to reverse the given
-            array in place, meaning you should not use extra space for another
-            array.
-          </p>
+          <p>Given an array. Reverse the array in place.</p>
           <section>
             <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
             <ul>
@@ -54,7 +50,6 @@ export default function Page() {
                   &#10140; <Highlight type="simple-code">[2, 5, 4]</Highlight>
                 </p>
               </li>
-
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
@@ -76,6 +71,23 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="simple-code">0 ≤ arr[i] ≤ 10⁵</Highlight>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Expected Complexities
+            </HeadingLinkId>
+            <ul>
+              <li>
+                <p>
+                  Time Complexity: <Highlight type="math">O(n)</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Auxiliary Space: <Highlight type="math">O(1)</Highlight>
                 </p>
               </li>
             </ul>
