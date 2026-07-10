@@ -19,6 +19,7 @@ export default function Page() {
         <h1>Coding Tests</h1>
         <hr />
         <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
+        <HeadingLinkPage>Reverse an Array</HeadingLinkPage>
         <HeadingLinkPage>Second Largest</HeadingLinkPage>
       </article>
 
