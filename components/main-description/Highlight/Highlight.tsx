@@ -1,11 +1,12 @@
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import type { Code } from "@/types/main/interfaces";
+import HighlightMath from "@/components/main-description/Highlight/HighlightMath";
 import HighlightText from "@/components/main-description/Highlight/HighlightText";
 import HighlightSimpleCode from "@/components/main-description/Highlight/HighlightSimpleCode";
 import HighlightComplexCode from "@/components/main-description/Highlight/HighlightComplexCode";
 
 interface HighlightProps {
-  type: "underline" | "text" | "simple-code" | "complex-code";
+  type: "underline" | "math" | "text" | "simple-code" | "complex-code";
   copy?: boolean;
   pre?: boolean;
   children: string | Code;
@@ -24,6 +25,15 @@ export default function Highlight({
     }
 
     return <span className={styles.underline}>{children}</span>;
+  }
+
+  if (type === "math" && typeof children === "string") {
+    if (copy || pre) {
+      console.error('type="math" does not support copy and pre.');
+      return null;
+    }
+
+    return <HighlightMath>{children}</HighlightMath>;
   }
 
   if (type === "text" && typeof children === "string") {
