@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-10">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-11">
               Find Second Largest Number
             </HeadingLinkId>
           </ReferenceButton>
@@ -30,9 +30,9 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
           <p>
-            You are given an array of positive integers. You have to find the
-            second largest number from the array. If the second largest number
-            doesn't exist then return -1.
+            Given an array of positive integers. Find the second largest number
+            from the array. If the second largest number doesn't exist then
+            return -1.
           </p>
           <section>
             <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
@@ -81,6 +81,23 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="simple-code">1 ≤ arr[i] ≤ 10⁵</Highlight>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Expected Complexities
+            </HeadingLinkId>
+            <ul>
+              <li>
+                <p>
+                  Time Complexity: <Highlight type="math">O(n)</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Auxiliary Space: <Highlight type="math">O(1)</Highlight>
                 </p>
               </li>
             </ul>

@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-10">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-11">
               Move All Zeroes to End
             </HeadingLinkId>
           </ReferenceButton>
@@ -30,10 +30,9 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
           <p>
-            You are given an array of integers. You have to move all the zeroes
-            in the array to the right end while maintaining the relative order
-            of the non-zero elements. The operation must be performed in place,
-            meaning you should not use extra space for another array.
+            Given an array. Move all the zeroes in the array to the right end
+            while maintaining the relative order of the non-zero elements. The
+            operation must be performed in place.
           </p>
           <section>
             <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
@@ -108,6 +107,23 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="simple-code">0 ≤ arr[i] ≤ 10⁵</Highlight>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Expected Complexities
+            </HeadingLinkId>
+            <ul>
+              <li>
+                <p>
+                  Time Complexity: <Highlight type="math">O(n)</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Auxiliary Space: <Highlight type="math">O(1)</Highlight>
                 </p>
               </li>
             </ul>
