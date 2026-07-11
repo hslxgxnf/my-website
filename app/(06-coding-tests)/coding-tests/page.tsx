@@ -21,6 +21,8 @@ export default function Page() {
         <HeadingLinkPage>Find Second Largest Number</HeadingLinkPage>
         <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
         <HeadingLinkPage>Reverse Array</HeadingLinkPage>
+        <HeadingLinkPage>Rotate Array Clockwise</HeadingLinkPage>
+        <HeadingLinkPage>Rotate Array Counterclockwise</HeadingLinkPage>
       </article>
 
       <aside></aside>
