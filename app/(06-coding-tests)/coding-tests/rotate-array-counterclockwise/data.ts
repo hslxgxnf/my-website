@@ -37,9 +37,9 @@ def rotate_array_counterclockwise_reversal(arr: list[int], d: int) -> list[int]:
 
 
 def rotate_array_counterclockwise_juggling(arr: list[int], d: int) -> list[int]:
-    n = len(arr)
+    n: int = len(arr)
     d %= n
-    cycles = math.gcd(n, d)
+    cycles: int = math.gcd(n, d)
 
     for i in range(cycles):
         start = arr[i]
