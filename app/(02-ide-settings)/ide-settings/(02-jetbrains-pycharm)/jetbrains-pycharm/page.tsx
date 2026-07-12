@@ -23,7 +23,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-03">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-12">
             JetBrains PyCharm
           </HeadingLinkId>
           <p>
@@ -97,9 +97,32 @@ export default function Page() {
                 <td>
                   Appearance
                   <br />
+                  {entities.rightSubArrow} Tab placement:
+                </td>
+                <td>Left</td>
+              </tr>
+              <tr>
+                <td>
+                  General
+                  <br />
+                  {entities.rightSubArrow} Editor Tabs
+                </td>
+                <td>
+                  Appearance
+                  <br />
                   {entities.rightSubArrow} Mark modified
                 </td>
                 <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>Inlay Hints</td>
+                <td>Parameter Names</td>
+                <td>{entities.emptyBox}</td>
+              </tr>
+              <tr>
+                <td>Inlay Hints</td>
+                <td>Types</td>
+                <td>{entities.emptyBox}</td>
               </tr>
             </tbody>
           </table>
