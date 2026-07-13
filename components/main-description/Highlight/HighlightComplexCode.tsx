@@ -7,7 +7,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import type { Code } from "@/types/main/interfaces";
-import changeToTitleCase from "@/functions/all/changeToTitleCase";
+import toTitleCase from "@/functions/all/toTitleCase";
 
 interface HighlightComplexCodeProps {
   children: Code;
@@ -40,7 +40,7 @@ export default function HighlightComplexCode({
   }
 
   let fileInfo: string = children.language;
-  fileInfo = changeToTitleCase(fileInfo);
+  fileInfo = toTitleCase(fileInfo);
   if (children.fileName) {
     fileInfo = `${fileInfo} | ${children.fileName}`;
   }

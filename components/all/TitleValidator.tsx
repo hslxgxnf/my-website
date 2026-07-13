@@ -2,13 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import changeToTitleCase from "@/functions/all/changeToTitleCase";
+import toTitleCase from "@/functions/all/toTitleCase";
 
 export default function TitleValidator() {
   const path = usePathname();
 
   useEffect(() => {
-    const pivotPath = changeToTitleCase(path.split("/").pop()!);
+    const pivotPath = toTitleCase(path.split("/").pop()!);
     if (!pivotPath) {
       return;
     }
