@@ -9,7 +9,7 @@ import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
 
 export const metadata: Metadata = {
-  title: "Find Max Subarray Sum",
+  title: "Find Max Sum of Subarray",
 };
 
 export default function Page() {
@@ -23,7 +23,7 @@ export default function Page() {
         <section>
           <ReferenceButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-13">
-              Find Max Subarray Sum
+              Find Max Sum of Subarray
             </HeadingLinkId>
           </ReferenceButton>
         </section>

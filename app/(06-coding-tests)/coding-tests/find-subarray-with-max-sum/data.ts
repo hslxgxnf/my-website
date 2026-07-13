@@ -3,7 +3,7 @@ import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {
-    target: "Find Max Sum Subarray",
+    target: "Find Subarray with Max Sum",
     sites: [
       {
         url: "https://www.geeksforgeeks.org/dsa/print-the-maximum-subarray-sum/",

@@ -18,9 +18,9 @@ export default function Page() {
       <article>
         <h1>Coding Tests</h1>
         <hr />
-        <HeadingLinkPage>Find Max Subarray Sum</HeadingLinkPage>
-        <HeadingLinkPage>Find Max Sum Subarray</HeadingLinkPage>
+        <HeadingLinkPage>Find Max Sum of Subarray</HeadingLinkPage>
         <HeadingLinkPage>Find Second Largest Number</HeadingLinkPage>
+        <HeadingLinkPage>Find Subarray with Max Sum</HeadingLinkPage>
         <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
         <HeadingLinkPage>Reverse Array</HeadingLinkPage>
         <HeadingLinkPage>Rotate Array Clockwise</HeadingLinkPage>
