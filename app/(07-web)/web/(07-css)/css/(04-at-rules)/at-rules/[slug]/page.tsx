@@ -4,8 +4,10 @@ import LayerPage from "../_slug-03-@layer/page";
 import createSlugPages from "@/functions/main-description/createSlugPages";
 
 const pages: Pages = new Map([
-  ["@import", ImportPage],
-  ["@layer", LayerPage],
+  /* eslint-disable react/jsx-key */
+  ["@import", <ImportPage />],
+  ["@layer", <LayerPage />],
+  /* eslint-enable react/jsx-key */
 ]);
 
 const { generateMetadata, Page } = createSlugPages(pages);

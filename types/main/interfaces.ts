@@ -31,6 +31,4 @@ export interface Code {
   content: string;
 }
 
-type Slug = string;
-type Page = () => JSX.Element;
-export type Pages = Map<Slug, Page>;
+export type Pages = Map<string, JSX.Element>;
