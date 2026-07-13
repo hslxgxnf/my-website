@@ -3,7 +3,7 @@ import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {
-    target: "Kadane's Algorithm",
+    target: "Find Max Subarray Sum",
     sites: [
       {
         url: "https://www.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1",
@@ -17,6 +17,22 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `
+  content: `Numeric = int | float
+
+
+def find_max_subarray_sum(arr: list[Numeric]) -> Numeric:
+    current_sum: Numeric = arr[0]
+    max_sum: Numeric = arr[0]
+
+    for i in range(1, len(arr)):
+        current_sum = max(current_sum + arr[i], arr[i])
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum
+
+
+print(find_max_subarray_sum([2, 3, -8, 7, -1, 2, 3]))
+print(find_max_subarray_sum([-2, -4]))
+print(find_max_subarray_sum([5, 4, 1, 7, 8]))
 `,
 };

@@ -9,7 +9,7 @@ import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
 
 export const metadata: Metadata = {
-  title: "Kadane's Algorithm",
+  title: "Find Max Subarray Sum",
 };
 
 export default function Page() {
@@ -23,70 +23,67 @@ export default function Page() {
         <section>
           <ReferenceButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-13">
-              Kadane's Algorithm
+              Find Max Subarray Sum
             </HeadingLinkId>
           </ReferenceButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
-          <p>Given an integer array.</p>
+          <p>
+            Given an array. Find the max sum of a subarray containing at least
+            one element.
+          </p>
           <section>
             <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
             <ul>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [1, 2, 0, 4, 3, 0, 5, 0]
+                    [2, 3, -8, 7, -1, 2, 3]
                   </Highlight>{" "}
-                  &#10140;{" "}
-                  <Highlight type="simple-code">
-                    [1, 2, 4, 3, 5, 0, 0, 0]
-                  </Highlight>
+                  &#10140; <Highlight type="simple-code">11</Highlight>
                 </p>
                 <ul>
                   <li>
-                    <p>There are three 0s that are moved to the end.</p>
+                    <p>
+                      The subarray{" "}
+                      <Highlight type="simple-code">[7, -1, 2, 3]</Highlight>{" "}
+                      has the largest sum.
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [0, 0, 0, 3, 1, 4]
+                    [-2, -4]
                   </Highlight>{" "}
-                  &#10140;{" "}
-                  <Highlight type="simple-code">[3, 1, 4, 0, 0, 0]</Highlight>
+                  &#10140; <Highlight type="simple-code">-2</Highlight>
                 </p>
                 <ul>
                   <li>
-                    <p>There are three 0s that are moved to the end.</p>
+                    <p>
+                      The subarray{" "}
+                      <Highlight type="simple-code">[-2]</Highlight> has the
+                      largest sum.
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [10, 20, 30]
+                    [5, 4, 1, 7, 8]
                   </Highlight>{" "}
-                  &#10140;{" "}
-                  <Highlight type="simple-code">[10, 20, 30]</Highlight>
+                  &#10140; <Highlight type="simple-code">25</Highlight>
                 </p>
                 <ul>
                   <li>
-                    <p>No change in array as there are no 0s.</p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p>
-                  <Highlight type="simple-code" copy={true}>
-                    [0, 0]
-                  </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">[0, 0]</Highlight>
-                </p>
-                <ul>
-                  <li>
-                    <p>No change in array as there are all 0s.</p>
+                    <p>
+                      The subarray{" "}
+                      <Highlight type="simple-code">[5, 4, 1, 7, 8]</Highlight>{" "}
+                      has the largest sum.
+                    </p>
                   </li>
                 </ul>
               </li>
@@ -102,7 +99,7 @@ export default function Page() {
               </li>
               <li>
                 <p>
-                  <Highlight type="simple-code">0 ≤ arr[i] ≤ 10⁵</Highlight>
+                  <Highlight type="simple-code">-10⁴ ≤ arr[i] ≤ 10⁴</Highlight>
                 </p>
               </li>
             </ul>
