@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import { JSX } from "react";
 
 export interface Site {
   url: string;
@@ -7,12 +8,10 @@ export interface Site {
   title: string;
 }
 
-interface ReferenceItem {
+export type Reference = {
   target: string;
   sites: Site[];
-}
-
-export type Reference = ReferenceItem[];
+}[];
 
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_LANGUAGES_PRISM.MD
 export interface Code {
@@ -31,3 +30,7 @@ export interface Code {
   fileName?: string;
   content: string;
 }
+
+type Slug = string;
+type Page = () => JSX.Element;
+export type Pages = Map<Slug, Page>;
