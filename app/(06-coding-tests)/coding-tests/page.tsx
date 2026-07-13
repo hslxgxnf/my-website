@@ -19,6 +19,7 @@ export default function Page() {
         <h1>Coding Tests</h1>
         <hr />
         <HeadingLinkPage>Find Second Largest Number</HeadingLinkPage>
+        <HeadingLinkPage>Kadane's Algorithm</HeadingLinkPage>
         <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
         <HeadingLinkPage>Reverse Array</HeadingLinkPage>
         <HeadingLinkPage>Rotate Array Clockwise</HeadingLinkPage>
