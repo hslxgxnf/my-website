@@ -17,7 +17,10 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `def move_all_zeroes_to_end(arr: list[int]) -> list[int]:
+  content: `Numeric = int | float
+
+
+def move_all_zeroes_to_end(arr: list[Numeric]) -> list[Numeric]:
     zero_index: int = 0
 
     for i in range(len(arr)):

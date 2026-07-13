@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-12">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-13">
               Rotate Array Clockwise
             </HeadingLinkId>
           </ReferenceButton>

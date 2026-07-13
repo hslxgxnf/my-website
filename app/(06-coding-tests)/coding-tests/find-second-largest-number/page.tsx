@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-11">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-13">
               Find Second Largest Number
             </HeadingLinkId>
           </ReferenceButton>
@@ -30,7 +30,7 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
           <p>
-            Given an array of positive integers. Find the second largest number
+            Given an array of positive numbers. Find the second largest number
             from the array. If the second largest number doesn't exist then
             return -1.
           </p>

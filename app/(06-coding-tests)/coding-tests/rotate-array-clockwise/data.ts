@@ -23,21 +23,30 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `import math
+  content: `Numeric = int | float
 
 
-def rotate_array_clockwise_reversal(arr: list[int], d: int) -> list[int]:
+def rotate_array_clockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]:
     n: int = len(arr)
     d %= n
 
-    arr[0 : n - d] = arr[0 : n - d][::-1]
-    arr[n - d :] = arr[n - d :][::-1]
-    arr[:] = arr[::-1]
+    def reverse(start_index: int, end_index: int) -> None:
+        while start_index < end_index:
+            arr[start_index], arr[end_index] = arr[end_index], arr[start_index]
+            start_index += 1
+            end_index -= 1
+
+    reverse(0, n - d - 1)
+    reverse(n - d, n - 1)
+    reverse(0, n - 1)
 
     return arr
 
 
-def rotate_array_clockwise_juggling(arr: list[int], d: int) -> list[int]:
+import math
+
+
+def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]:
     n: int = len(arr)
     d %= n
     cycles: int = math.gcd(n, d)

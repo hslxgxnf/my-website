@@ -17,10 +17,13 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `def find_second_largest_number(arr: list[int]) -> int:
+  content: `Numeric = int | float
+
+
+def find_second_largest_number(arr: list[Numeric]) -> Numeric:
     n: int = len(arr)
-    largest: int = -1
-    second_largest: int = -1
+    largest: Numeric = -1
+    second_largest: Numeric = -1
 
     for i in range(n):
         if largest < arr[i]:
