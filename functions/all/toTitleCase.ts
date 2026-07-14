@@ -61,15 +61,9 @@ export default function toTitleCase(wordChunk: string): string {
         return word.toLowerCase();
       }
 
-      const properNoun = properNouns.get(word);
-      if (properNoun) {
-        return properNoun;
-      }
-
-      return toCapitalized(word);
+      return properNouns.get(word) ?? toCapitalized(word);
     })
     .join(" ");
 
-  const hyphenatedWord = hyphenatedWords.get(interimResult);
-  return hyphenatedWord ? hyphenatedWord : interimResult;
+  return hyphenatedWords.get(interimResult) ?? interimResult;
 }
