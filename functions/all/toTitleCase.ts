@@ -19,6 +19,8 @@ const lowerCaseWords = new Set<string>([
   "but",
   "for",
   "to",
+  "of",
+  "with",
   "vs.",
   "npm",
   "pnpm",
