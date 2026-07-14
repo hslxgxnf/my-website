@@ -124,11 +124,15 @@ export default function Page() {
               <p>Displays a tooltip on mouse hover.</p>
             </li>
             <li>
-              <Highlight type="simple-code">rel</Highlight>
+              <p>
+                <Highlight type="simple-code">rel</Highlight>
+              </p>
               <ul>
                 <ReferenceButton>
                   <li>
-                    <Highlight type="simple-code">rel="noopener"</Highlight>
+                    <p>
+                      <Highlight type="simple-code">rel="noopener"</Highlight>
+                    </p>
                   </li>
                   <li>
                     <p>
@@ -144,23 +148,33 @@ export default function Page() {
             </li>
             <ReferenceButton>
               <li>
-                <Highlight type="simple-code">aria-*</Highlight>
+                <p>
+                  <Highlight type="simple-code">aria-*</Highlight>
+                </p>
                 <ul>
                   <li>
-                    <Highlight type="simple-code">aria-hidden</Highlight>
+                    <p>
+                      <Highlight type="simple-code">aria-hidden</Highlight>
+                    </p>
                   </li>
                   <li>
-                    <Highlight type="simple-code">aria-pressed</Highlight>
+                    <p>
+                      <Highlight type="simple-code">aria-pressed</Highlight>
+                    </p>
                   </li>
                   <li>
-                    <Highlight type="simple-code">aria-sort</Highlight>
+                    <p>
+                      <Highlight type="simple-code">aria-sort</Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
             </ReferenceButton>
             <ReferenceButton>
               <li>
-                <Highlight type="simple-code">role</Highlight>
+                <p>
+                  <Highlight type="simple-code">role</Highlight>
+                </p>
               </li>
             </ReferenceButton>
           </ul>

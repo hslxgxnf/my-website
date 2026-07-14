@@ -33,59 +33,77 @@ export default function Page() {
             </ReferenceButton>
             <ul>
               <li>
-                Install <Highlight type="text">Oh My Posh</Highlight>.
+                <p>
+                  Install <Highlight type="text">Oh My Posh</Highlight>.
+                </p>
                 <ul>
                   <li>
-                    <Highlight type="simple-code" copy={true}>
-                      winget install JanDeDobbeleer.OhMyPosh --source winget
-                    </Highlight>
+                    <p>
+                      <Highlight type="simple-code" copy={true}>
+                        winget install JanDeDobbeleer.OhMyPosh --source winget
+                      </Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
-                Install a font.
+                <p>Install a font.</p>
                 <ul>
                   <li>
-                    <Highlight type="simple-code" copy={true}>
-                      oh-my-posh font install meslo
-                    </Highlight>
+                    <p>
+                      <Highlight type="simple-code" copy={true}>
+                        oh-my-posh font install meslo
+                      </Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
-                Set the installed font as the{" "}
-                <Highlight type="text">PowerShell</Highlight> default font.
+                <p>
+                  Set the installed font as the{" "}
+                  <Highlight type="text">PowerShell</Highlight> default font.
+                </p>
                 <ul>
                   <li>
-                    <Highlight type="text" copy={true}>
-                      MesloLGM Nerd Font
-                    </Highlight>
+                    <p>
+                      <Highlight type="text" copy={true}>
+                        MesloLGM Nerd Font
+                      </Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
               <li>
-                Apply <Highlight type="text">Oh My Posh</Highlight>.
+                <p>
+                  Apply <Highlight type="text">Oh My Posh</Highlight>.
+                </p>
                 <ul>
                   <li>
-                    Open{" "}
-                    <Highlight type="text">
-                      Microsoft.PowerShell_profile.ps1
-                    </Highlight>
-                    .
+                    <p>
+                      Open{" "}
+                      <Highlight type="text">
+                        Microsoft.PowerShell_profile.ps1
+                      </Highlight>
+                      .
+                    </p>
                     <ul>
                       <li>
-                        <Highlight type="simple-code" copy={true}>
-                          notepad $PROFILE
-                        </Highlight>
+                        <p>
+                          <Highlight type="simple-code" copy={true}>
+                            notepad $PROFILE
+                          </Highlight>
+                        </p>
                       </li>
                     </ul>
                   </li>
                   <li>
-                    Modify{" "}
-                    <Highlight type="text">
-                      Microsoft.PowerShell_profile.ps1
-                    </Highlight>
-                    .
+                    <p>
+                      Modify{" "}
+                      <Highlight type="text">
+                        Microsoft.PowerShell_profile.ps1
+                      </Highlight>
+                      .
+                    </p>
                     <ul>
                       <li>
                         <Highlight type="complex-code">{ps1Code}</Highlight>
@@ -108,11 +126,13 @@ export default function Page() {
                     </ul>
                   </li>
                   <li>
-                    Refresh{" "}
-                    <Highlight type="text">
-                      Microsoft.PowerShell_profile.ps1
-                    </Highlight>
-                    .
+                    <p>
+                      Refresh{" "}
+                      <Highlight type="text">
+                        Microsoft.PowerShell_profile.ps1
+                      </Highlight>
+                      .
+                    </p>
                     <ul>
                       <li>
                         <Highlight type="simple-code" copy={true}>

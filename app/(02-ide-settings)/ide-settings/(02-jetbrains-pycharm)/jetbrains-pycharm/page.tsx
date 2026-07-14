@@ -131,19 +131,25 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
           <ul>
             <li>
-              Marketplace
+              <p>Marketplace</p>
               <ul>
                 <li>
-                  <Highlight type="text" copy={true}>
-                    Visual Studio 2022 Keymap
-                  </Highlight>
+                  <p>
+                    <Highlight type="text" copy={true}>
+                      Visual Studio 2022 Keymap
+                    </Highlight>
+                  </p>
                 </li>
               </ul>
             </li>
             <li>
-              <IoSettingsOutline />
+              <p>
+                <IoSettingsOutline />
+              </p>
               <ul>
-                <li>Update Plugins Automatically</li>
+                <li>
+                  <p>Update Plugins Automatically</p>
+                </li>
               </ul>
             </li>
           </ul>

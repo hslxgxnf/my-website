@@ -81,7 +81,9 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>At-Rules</HeadingLinkId>
           <ul>
             <li>
-              <Highlight type="simple-code">@at-root</Highlight>
+              <p>
+                <Highlight type="simple-code">@at-root</Highlight>
+              </p>
             </li>
             <li>
               <p>
@@ -119,11 +121,15 @@ export default function Page() {
               <p>Applies a mixin to a selector.</p>
             </li>
             <li>
-              <Highlight type="simple-code">@if</Highlight>,{" "}
-              <Highlight type="simple-code">@else</Highlight>
+              <p>
+                <Highlight type="simple-code">@if</Highlight>,{" "}
+                <Highlight type="simple-code">@else</Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="simple-code">@each</Highlight>
+              <p>
+                <Highlight type="simple-code">@each</Highlight>
+              </p>
             </li>
             <li>
               <p>
@@ -132,7 +138,9 @@ export default function Page() {
               <Highlight type="complex-code">{forCode}</Highlight>
             </li>
             <li>
-              <Highlight type="simple-code">@while</Highlight>
+              <p>
+                <Highlight type="simple-code">@while</Highlight>
+              </p>
             </li>
           </ul>
         </section>

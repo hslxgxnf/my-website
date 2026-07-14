@@ -37,20 +37,29 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Files & Folders</HeadingLinkId>
           <ul>
             <li>
-              <Highlight type="text">README.md</Highlight>
+              <p>
+                <Highlight type="text">README.md</Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">.gitignore</Highlight>
+              <p>
+                <Highlight type="text">.gitignore</Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">.gitattributes</Highlight>
+              <p>
+                <Highlight type="text">.gitattributes</Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">.git/hooks</Highlight>
+              <p>
+                <Highlight type="text">.git/hooks</Highlight>
+              </p>
             </li>
-
             <li>
-              <Highlight type="text">.github/workflows/*.yml</Highlight>
+              <p>
+                <Highlight type="text">.github/workflows/*.yml</Highlight>
+              </p>
             </li>
           </ul>
         </section>
@@ -58,7 +67,9 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Git Command Lines</HeadingLinkId>
           <ul>
             <li>
-              <Highlight type="simple-code">git version</Highlight>
+              <p>
+                <Highlight type="simple-code">git version</Highlight>
+              </p>
             </li>
             <li>
               <p>
@@ -71,24 +82,34 @@ export default function Page() {
               </p>
             </li>
             <li>
-              <Highlight type="simple-code">
-                git config --global user.name &lt;name&gt;
-              </Highlight>
+              <p>
+                <Highlight type="simple-code">
+                  git config --global user.name &lt;name&gt;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="simple-code">
-                git config --global user.email &lt;email&gt;
-              </Highlight>
+              <p>
+                <Highlight type="simple-code">
+                  git config --global user.email &lt;email&gt;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="simple-code">git clone &lt;url&gt;</Highlight>
+              <p>
+                <Highlight type="simple-code">git clone &lt;url&gt;</Highlight>
+              </p>
             </li>
             <hr />
             <li>
-              <Highlight type="simple-code">git init</Highlight>
+              <p>
+                <Highlight type="simple-code">git init</Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="simple-code">git status</Highlight>
+              <p>
+                <Highlight type="simple-code">git status</Highlight>
+              </p>
             </li>
             <li>
               <p>
@@ -418,10 +439,16 @@ export default function Page() {
               <p>Merges the specified branch into the current branch.</p>
               <ul>
                 <li>
-                  <Highlight type="simple-code">git merge --abort</Highlight>
+                  <p>
+                    <Highlight type="simple-code">git merge --abort</Highlight>
+                  </p>
                 </li>
                 <li>
-                  <Highlight type="simple-code">git merge --continue</Highlight>
+                  <p>
+                    <Highlight type="simple-code">
+                      git merge --continue
+                    </Highlight>
+                  </p>
                 </li>
               </ul>
             </li>
@@ -455,12 +482,16 @@ export default function Page() {
                   </p>
                 </li>
                 <li>
-                  <Highlight type="simple-code">git rebase --abort</Highlight>
+                  <p>
+                    <Highlight type="simple-code">git rebase --abort</Highlight>
+                  </p>
                 </li>
                 <li>
-                  <Highlight type="simple-code">
-                    git rebase --continue
-                  </Highlight>
+                  <p>
+                    <Highlight type="simple-code">
+                      git rebase --continue
+                    </Highlight>
+                  </p>
                 </li>
               </ul>
             </li>

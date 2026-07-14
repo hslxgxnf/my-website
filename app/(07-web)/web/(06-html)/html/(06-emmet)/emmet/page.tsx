@@ -27,12 +27,16 @@ export default function Page() {
         </ReferenceButton>
         <ul>
           <li>
-            <Highlight type="simple-code">
-              div.container&#x7b;content&#x7d;
-            </Highlight>
+            <p>
+              <Highlight type="simple-code">
+                div.container&#x7b;content&#x7d;
+              </Highlight>
+            </p>
           </li>
           <li>
-            <Highlight type="simple-code">p&gt;lorem100</Highlight>
+            <p>
+              <Highlight type="simple-code">p&gt;lorem100</Highlight>
+            </p>
           </li>
         </ul>
       </article>

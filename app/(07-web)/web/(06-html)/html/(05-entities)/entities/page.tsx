@@ -34,40 +34,48 @@ export default function Page() {
           </p>
           <ul>
             <li>
-              <Highlight type="text">Less-Than &lt;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;lt;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#60;
-              </Highlight>
+              <p>
+                <Highlight type="text">Less-Than &lt;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;lt;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#60;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">Greater-Than &gt;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;gt;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#62;
-              </Highlight>
+              <p>
+                <Highlight type="text">Greater-Than &gt;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;gt;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#62;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">Copyright &copy;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;copy;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#169;
-              </Highlight>
+              <p>
+                <Highlight type="text">Copyright &copy;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;copy;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#169;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">Trade Mark &trade;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;trade;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#8482;
-              </Highlight>
+              <p>
+                <Highlight type="text">Trade Mark &trade;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;trade;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#8482;
+                </Highlight>
+              </p>
             </li>
             <ReferenceButton>
               <li>
@@ -91,31 +99,37 @@ export default function Page() {
               </li>
             </ReferenceButton>
             <li>
-              <Highlight type="text">Ampersand &amp;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;amp;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#38;
-              </Highlight>
+              <p>
+                <Highlight type="text">Ampersand &amp;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;amp;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#38;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">Quotation Mark "</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;quot;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#34;
-              </Highlight>
+              <p>
+                <Highlight type="text">Quotation Mark "</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;quot;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#34;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">Apostrophe '</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;apos;
-              </Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#39;
-              </Highlight>
+              <p>
+                <Highlight type="text">Apostrophe '</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;apos;
+                </Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#39;
+                </Highlight>
+              </p>
             </li>
           </ul>
         </section>
@@ -124,16 +138,20 @@ export default function Page() {
           <p>Unnamed entities only can use the numeric format.</p>
           <ul>
             <li>
-              <Highlight type="text">Left Brace &#123;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#123;
-              </Highlight>
+              <p>
+                <Highlight type="text">Left Brace &#123;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#123;
+                </Highlight>
+              </p>
             </li>
             <li>
-              <Highlight type="text">Right Brace &#125;</Highlight>{" "}
-              <Highlight type="simple-code" copy={true}>
-                &amp;#125;
-              </Highlight>
+              <p>
+                <Highlight type="text">Right Brace &#125;</Highlight>{" "}
+                <Highlight type="simple-code" copy={true}>
+                  &amp;#125;
+                </Highlight>
+              </p>
             </li>
           </ul>
         </section>

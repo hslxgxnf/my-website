@@ -27,10 +27,14 @@ export default function Page() {
         </ReferenceButton>
         <ul>
           <li>
-            <Highlight type="simple-code">window</Highlight>
+            <p>
+              <Highlight type="simple-code">window</Highlight>
+            </p>
           </li>
           <li>
-            <Highlight type="simple-code">document</Highlight>
+            <p>
+              <Highlight type="simple-code">document</Highlight>
+            </p>
           </li>
           <li>
             <p>
@@ -38,7 +42,7 @@ export default function Page() {
             </p>
             <p>
               <Highlight type="simple-code">&lt;html&gt;</Highlight>
-            </p>{" "}
+            </p>
           </li>
           <li>
             <p>
@@ -49,7 +53,9 @@ export default function Page() {
             </p>
           </li>
           <li>
-            <Highlight type="simple-code">document.title</Highlight>
+            <p>
+              <Highlight type="simple-code">document.title</Highlight>
+            </p>
           </li>
           <li>
             <p>
@@ -61,12 +67,15 @@ export default function Page() {
           </li>
           <hr />
           <li>
-            <Highlight type="simple-code">Node.parentNode</Highlight>
+            <p>
+              <Highlight type="simple-code">Node.parentNode</Highlight>
+            </p>
           </li>
           <li>
-            <Highlight type="simple-code">Node.parentElement</Highlight>
+            <p>
+              <Highlight type="simple-code">Node.parentElement</Highlight>
+            </p>
           </li>
-          {/*Here Let's gogo*/}
           <hr />
           <ReferenceButton>
             <li>

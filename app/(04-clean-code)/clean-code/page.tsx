@@ -59,33 +59,59 @@ export default function Page() {
             <Highlight type="simple-code">User</Highlight>
           </p>
           <hr />
-          <p>
-            <Highlight type="text">snake_case</Highlight>
-          </p>
           <ul>
-            <li>Python Variables, Functions</li>
-          </ul>
-          <p>
-            <Highlight type="text">camelCase</Highlight>
-          </p>
-          <ul>
-            <li>JavaScript Variables, Functions</li>
-            <li>Java Variables, Functions</li>
-          </ul>
-          <p>
-            <Highlight type="text">PascalCase</Highlight>
-          </p>
-          <ul>
-            <li>Python Classes</li>
-            <li>JavaScript Classes</li>
-            <li>Java Classes</li>
-          </ul>
-          <p>
-            <Highlight type="text">kebab-case</Highlight>
-          </p>
-          <ul>
-            <li>HTML Element Attributes</li>
-            <li>CSS Variables</li>
+            <li>
+              <p>
+                <Highlight type="text">snake_case</Highlight>
+              </p>
+              <ul>
+                <li>
+                  <p>Python Variables, Functions</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <Highlight type="text">camelCase</Highlight>
+              </p>
+              <ul>
+                <li>
+                  <p>JavaScript Variables, Functions</p>
+                </li>
+                <li>
+                  <p>Java Variables, Functions</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <Highlight type="text">PascalCase</Highlight>
+              </p>
+              <ul>
+                <li>
+                  <p>Python Classes</p>
+                </li>
+                <li>
+                  <p>JavaScript Classes</p>
+                </li>
+                <li>
+                  <p>Java Classes</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>
+                <Highlight type="text">kebab-case</Highlight>
+              </p>
+              <ul>
+                <li>
+                  <p>HTML Element Attributes</p>
+                </li>
+                <li>
+                  <p>CSS Variables</p>
+                </li>
+              </ul>
+            </li>
           </ul>
         </section>
         <section>
