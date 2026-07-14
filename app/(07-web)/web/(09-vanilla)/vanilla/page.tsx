@@ -22,7 +22,6 @@ export default function Page() {
           <h1>Vanilla</h1>
         </ReferenceButton>
         <hr />
-        <HeadingLinkPage>TypeScript</HeadingLinkPage>
         <HeadingLinkPage>Properties & Methods</HeadingLinkPage>
       </article>
     </main>

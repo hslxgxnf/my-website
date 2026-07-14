@@ -42,6 +42,7 @@ export default function Page() {
         <hr />
         <h2>JavaScript</h2>
         <HeadingLinkPage>Vanilla</HeadingLinkPage>
+        <HeadingLinkPage>TypeScript</HeadingLinkPage>
         {/*<HeadingLinkPage>React</HeadingLinkPage>*/}
         <HeadingLinkPage>Next.js</HeadingLinkPage>
       </article>
