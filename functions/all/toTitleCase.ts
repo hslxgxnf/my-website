@@ -9,6 +9,7 @@ const upperCaseWords = new Set<string>([
   "css",
   "scss",
   "json",
+  "sql",
 ]);
 
 const lowerCaseWords = new Set<string>([
