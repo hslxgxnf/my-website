@@ -520,7 +520,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
+          </ReferenceButton>
           <ul>
             <li>
               <p>Marketplace</p>

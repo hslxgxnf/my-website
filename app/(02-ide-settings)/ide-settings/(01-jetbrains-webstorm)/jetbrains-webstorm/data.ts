@@ -39,6 +39,17 @@ export const reference: Reference = [
     ],
   },
   {
+    target: "Plugins",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-pycharm#plugins",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains PyCharm | Plugins",
+      },
+    ],
+  },
+  {
     target: "Languages & Frameworks",
     sites: [
       {

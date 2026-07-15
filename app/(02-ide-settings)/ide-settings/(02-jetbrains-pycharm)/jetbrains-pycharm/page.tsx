@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { IoSettingsOutline } from "react-icons/io5";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import { reference } from "./data";
@@ -128,31 +127,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
-          <ul>
-            <li>
-              <p>Marketplace</p>
-              <ul>
-                <li>
-                  <p>
-                    <Highlight type="text" copy={true}>
-                      Visual Studio 2022 Keymap
-                    </Highlight>
-                  </p>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <p>
-                <IoSettingsOutline />
-              </p>
-              <ul>
-                <li>
-                  <p>Update Plugins Automatically</p>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
+          </ReferenceButton>
         </section>
         <section>
           <ReferenceButton>

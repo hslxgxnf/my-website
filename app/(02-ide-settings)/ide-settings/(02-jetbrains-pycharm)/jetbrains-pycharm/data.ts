@@ -1,4 +1,4 @@
-import type { Reference, Code } from "@/types/main/interfaces";
+import type { Reference } from "@/types/main/interfaces";
 import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
@@ -25,6 +25,17 @@ export const reference: Reference = [
     ],
   },
   {
+    target: "Plugins",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-webstorm#plugins",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains WebStorm | Plugins",
+      },
+    ],
+  },
+  {
     target: "Tools",
     sites: [
       {
@@ -47,8 +58,3 @@ export const reference: Reference = [
     ],
   },
 ];
-
-export const code: Code = {
-  language: "javascript",
-  content: ``,
-};
