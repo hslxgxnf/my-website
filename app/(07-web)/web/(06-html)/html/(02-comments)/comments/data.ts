@@ -17,5 +17,11 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "html",
-  content: `<!--This is a comment in HTML-->`,
+  content: `<!-- Comment -->
+
+<!-- 
+  Multiline
+  Comment
+-->
+`,
 };

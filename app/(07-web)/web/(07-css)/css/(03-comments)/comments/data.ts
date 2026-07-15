@@ -17,5 +17,16 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "css",
-  content: `/*This is a comment in CSS*/`,
+  content: `/* Comment */
+  
+/*
+ * Multiline
+ * Comment
+ */
+ 
+/*!
+ * This comment is still after deployment minification.
+ * This comment is used for copyright.
+ */
+`,
 };

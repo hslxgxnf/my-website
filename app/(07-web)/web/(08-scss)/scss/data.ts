@@ -23,14 +23,18 @@ export const reference: Reference = [
 
 export const commentsCode: Code = {
   language: "scss",
-  content: `//One-Line Comment
+  content: `// This comment is gone after CSS compilation.
 
-/*One-Line Comment*/
+// Multiline
+// Comment
+
+/* This comment is still after CSS compilation. */
 
 /*
-Multi-Line
-Comment
-*/`,
+ * Multiline
+ * Comment
+ */
+`,
 };
 
 export const variablesCode: Code = {

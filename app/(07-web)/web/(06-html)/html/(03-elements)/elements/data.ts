@@ -137,7 +137,7 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "html",
-  content: `<!--❌-->
+  content: `<!-- ❌ -->
 <ul>
   <li>List 1</li>
   <ul>
@@ -147,7 +147,7 @@ export const code: Code = {
   <li>List 2</li>
 </ul>
 
-<!--✅-->
+<!-- ✅ -->
 <ul>
   <li>
     List 1
