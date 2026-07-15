@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
-import { reference } from "./data";
+import { reference, code } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
 import ReferenceButton from "@/components/main/ReferenceButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
@@ -23,7 +23,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
               Elements
             </HeadingLinkId>
           </ReferenceButton>
@@ -569,13 +569,28 @@ export default function Page() {
                     <Highlight type="simple-code">&lt;br&gt;</Highlight>
                   </p>
                 </li>
-                <li>
-                  <p>
-                    <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}
-                    <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
-                    <Highlight type="simple-code">&lt;li&gt;</Highlight>
-                  </p>
-                </li>
+                <ToggleList
+                  header={
+                    <p>
+                      <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}
+                      <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
+                      <Highlight type="simple-code">&lt;li&gt;</Highlight>
+                    </p>
+                  }
+                >
+                  <ul>
+                    <li>
+                      <p>
+                        When creating nested lists, any nested{" "}
+                        <Highlight type="simple-code">&lt;ul&gt;</Highlight> or{" "}
+                        <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
+                        must be placed inside{" "}
+                        <Highlight type="simple-code">&lt;li&gt;</Highlight>.
+                      </p>
+                      <Highlight type="complex-code">{code}</Highlight>
+                    </li>
+                  </ul>
+                </ToggleList>
                 <li>
                   <p>
                     <Highlight type="simple-code">&lt;dl&gt;</Highlight>{" "}

@@ -1,4 +1,4 @@
-import type { Reference } from "@/types/main/interfaces";
+import type { Reference, Code } from "@/types/main/interfaces";
 import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
@@ -134,3 +134,29 @@ export const reference: Reference = [
     ],
   },
 ];
+
+export const code: Code = {
+  language: "html",
+  content: `<!--❌-->
+<ul>
+  <li>List 1</li>
+  <ul>
+    <li>Sub-List 1</li>
+    <li>Sub-List 2</li>
+  </ul>
+  <li>List 2</li>
+</ul>
+
+<!--✅-->
+<ul>
+  <li>
+    List 1
+    <ul>
+      <li>Sub-List 1</li>
+      <li>Sub-List 2</li>
+    </ul>
+  </li>
+  <li>List 2</li>
+</ul>
+`,
+};
