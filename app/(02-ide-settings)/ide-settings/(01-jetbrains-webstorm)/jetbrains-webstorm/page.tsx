@@ -29,7 +29,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-01">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -166,6 +166,11 @@ export default function Page() {
                 <td></td>
               </tr>
               <tr>
+                <td>Select Last Row</td>
+                <td>Ctrl + End</td>
+                <td></td>
+              </tr>
+              <tr>
                 <td>Find</td>
                 <td>Ctrl + F</td>
                 <td></td>
@@ -178,6 +183,11 @@ export default function Page() {
               <tr>
                 <td>Replace</td>
                 <td>Ctrl + H</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Select First Row</td>
+                <td>Ctrl + Home</td>
                 <td></td>
               </tr>
               <tr>
@@ -484,12 +494,17 @@ export default function Page() {
               </tr>
               <tr>
                 <td>Inlay Hints</td>
-                <td>Parameter Names</td>
+                <td>Parameter names</td>
                 <td>{entities.emptyBox}</td>
               </tr>
               <tr>
                 <td>Inlay Hints</td>
                 <td>Types</td>
+                <td>{entities.emptyBox}</td>
+              </tr>
+              <tr>
+                <td>Inlay Hints</td>
+                <td>Method chains</td>
                 <td>{entities.emptyBox}</td>
               </tr>
               <tr>
@@ -781,12 +796,35 @@ export default function Page() {
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
+                <td>Indent guidelines Highlighting</td>
+                <td>
+                  Indent guidelines Highlighting
+                  <br />
+                  {entities.rightSubArrow} Only current indent guide
+                </td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
                 <td>Language Specific</td>
                 <td>
                   Language Specific
                   <br />
                   {entities.rightSubArrow} Rainbowify tag name in
                   XML/HTML/template files
+                </td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>Rainbow Variables</td>
+                <td>Enable Rainbow Variables(restart required)</td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>Scope Highlighting</td>
+                <td>
+                  Scope Highlighting
+                  <br />
+                  {entities.rightSubArrow} Border
                 </td>
                 <td>{entities.checkedBox}</td>
               </tr>
