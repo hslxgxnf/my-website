@@ -22,7 +22,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     );
     if (navs.length !== referenceButtonContainers.length) {
       console.error(
-        `navs.length ${navs.length} must be the same as referenceButtonContainers.length: ${referenceButtonContainers.length}`,
+        `navs.length ${navs.length} must be the same as referenceButtonContainers.length: ${referenceButtonContainers.length}.`,
       );
       return;
     }
