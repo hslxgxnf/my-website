@@ -16,7 +16,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <h1>CSS</h1>
+        <h1>CSS (Cascading Style Sheets)</h1>
         <hr />
         <HeadingLinkPage>Connecting CSS to HTML</HeadingLinkPage>
         <HeadingLinkPage>Naming Cases</HeadingLinkPage>

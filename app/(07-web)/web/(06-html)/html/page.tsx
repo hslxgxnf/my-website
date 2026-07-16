@@ -16,7 +16,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <h1>HTML</h1>
+        <h1>HTML (HyperText Markup Language)</h1>
         <hr />
         <HeadingLinkPage>Naming Cases</HeadingLinkPage>
         <HeadingLinkPage>Comments</HeadingLinkPage>

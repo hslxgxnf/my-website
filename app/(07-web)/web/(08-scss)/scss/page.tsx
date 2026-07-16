@@ -23,15 +23,13 @@ export default function Page() {
         <section>
           <ReferenceButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
-              SCSS
+              SCSS (Sassy CSS)
             </HeadingLinkId>
           </ReferenceButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Sass vs. SCSS</HeadingLinkId>
-          <p>
-            Syntactically awesome style sheets vs. Sassy Cascading Style Sheets
-          </p>
+          <p>Syntactically awesome style sheets vs. Sassy CSS</p>
           <p>
             Both <Highlight type="text">Sass</Highlight> and{" "}
             <Highlight type="text">SCSS</Highlight> are{" "}

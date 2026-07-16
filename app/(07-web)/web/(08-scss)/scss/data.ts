@@ -3,7 +3,7 @@ import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {
-    target: "SCSS",
+    target: "SCSS (Sassy CSS)",
     sites: [
       {
         url: "https://sass-lang.com/",
@@ -54,14 +54,14 @@ p {
 
 export const forCode: Code = {
   language: "scss",
-  content: `//1, 2, 3
+  content: `// 1, 2, 3
 @for $i from 1 through 3 {
   .through:nth-child(#{$i}) {
     width: 20px * $i;
   }
 }
 
-//1, 2
+// 1, 2
 @for $i from 1 to 3 {
   .to:nth-child(#{$i}) {
     width: 20px * $i;
