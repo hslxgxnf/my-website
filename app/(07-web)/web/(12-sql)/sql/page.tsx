@@ -20,118 +20,137 @@ export default function Page() {
       </aside>
 
       <article>
-        <ReferenceButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-14">
-            SQL (Structured Query Language)
-          </HeadingLinkId>
-        </ReferenceButton>
-        <p>
-          <Highlight type="text">SQL</Highlight> is used for managing data in
-          RDBMS (Relational Database Management Systems).
-        </p>
-        <p>
-          Data is normalized that is split across multiple tables rather than a
-          big single table.
-        </p>
-        <p>
-          Vertical data is called columns or fields. Horizontal data is called
-          rows, records, or entries.
-        </p>
-        <ul>
-          <li>
-            <p>
-              <Highlight type="simple-code">
-                SELECT name, salary FROM employees WHERE salary &gt; 5000;
-              </Highlight>
-            </p>
-            <ul>
-              <li>
-                <p>Clauses</p>
-                <ul>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">
-                        SELECT name, salary
-                      </Highlight>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">FROM employees</Highlight>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">
-                        WHERE salary &gt; 5000;
-                      </Highlight>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p>Keywords</p>
-                <ul>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">SELECT</Highlight>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">FROM</Highlight>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">WHERE</Highlight>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p>Identifiers</p>
-                <ul>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">name</Highlight>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">salary</Highlight>
-                    </p>
-                  </li>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">employees</Highlight>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p>Operators</p>
-                <ul>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">&gt;</Highlight>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <p>Values (Expressions)</p>
-                <ul>
-                  <li>
-                    <p>
-                      <Highlight type="simple-code">5000</Highlight>
-                    </p>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <section>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-14">
+              SQL (Structured Query Language)
+            </HeadingLinkId>
+          </ReferenceButton>
+          <p>
+            <Highlight type="text">SQL</Highlight> is used for managing data in
+            RDBMS (Relational Database Management Systems).
+          </p>
+          <p>
+            Data is normalized that is split across multiple tables rather than
+            a big single table.
+          </p>
+          <p>
+            Vertical data is called columns or fields. Horizontal data is called
+            rows, records, or entries.
+          </p>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Syntax</HeadingLinkId>
+          <p>
+            Statements must end with <Highlight type="simple-code">;</Highlight>
+            . A single statement can omit it.
+          </p>
+          <p>Statements are case-insensitive.</p>
+          <p>
+            The order of clauses must be kept.{" "}
+            <Highlight type="simple-code">SELECT FROM WHERE</Highlight>
+          </p>
+          <p>
+            Identifiers can be surrounded with{" "}
+            <Highlight type="simple-code">""</Highlight> to avoid clashes with
+            built-in keywords.
+          </p>
+          <ul>
+            <li>
+              <p>
+                <Highlight type="simple-code">
+                  SELECT name, salary FROM employees WHERE salary &gt; 5000;
+                </Highlight>
+              </p>
+              <ul>
+                <li>
+                  <p>Clauses</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">
+                          SELECT name, salary
+                        </Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">FROM employees</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">
+                          WHERE salary &gt; 5000;
+                        </Highlight>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Keywords</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">SELECT</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">FROM</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">WHERE</Highlight>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Identifiers</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">name</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">salary</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">employees</Highlight>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Operators</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">&gt;</Highlight>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <p>Values (Expressions)</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">5000</Highlight>
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
       </article>
 
       <aside>

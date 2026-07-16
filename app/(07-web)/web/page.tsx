@@ -45,6 +45,9 @@ export default function Page() {
         <HeadingLinkPage>TypeScript</HeadingLinkPage>
         {/*<HeadingLinkPage>React</HeadingLinkPage>*/}
         <HeadingLinkPage>Next.js</HeadingLinkPage>
+        <hr />
+        <h2>Databases</h2>
+        <HeadingLinkPage>SQL</HeadingLinkPage>
       </article>
 
       <aside></aside>
