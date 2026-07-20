@@ -25,7 +25,6 @@ export default function Page() {
             Prettier
           </HeadingLinkId>
         </ReferenceButton>
-
         <p>
           <Highlight type="text">Prettier</Highlight> formats{" "}
           <Highlight type="text">HTML</Highlight>,{" "}
