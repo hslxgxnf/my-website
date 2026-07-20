@@ -23,7 +23,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
               Elements
             </HeadingLinkId>
           </ReferenceButton>
@@ -41,11 +41,11 @@ export default function Page() {
           <p>Normal elements can have nested elements and text nodes.</p>
           <p>
             <Highlight type="simple-code">Nested Content</Highlight> sets the
-            default value.
-            <br />
+            default value (e.g.,{" "}
             <Highlight type="simple-code">
               &lt;textarea&gt;Default&lt;/textarea&gt;
             </Highlight>
+            ).
           </p>
         </section>
         <section>
@@ -62,44 +62,12 @@ export default function Page() {
           <p>Void elements cannot have nested elements and text nodes.</p>
           <p>
             The <Highlight type="simple-code">value</Highlight> attribute sets
-            the default value.
-            <br />
+            the default value (e.g.,{" "}
             <Highlight type="simple-code">
               &lt;input value="Default" /&gt;
             </Highlight>
+            ).
           </p>
-          <ul>
-            <li>
-              <p>
-                <Highlight type="simple-code">&lt;meta&gt;</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">&lt;link&gt;</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">&lt;img&gt;</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">&lt;input&gt;</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">&lt;hr&gt;</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="simple-code">&lt;br&gt;</Highlight>
-              </p>
-            </li>
-          </ul>
         </section>
         <section>
           <ReferenceButton>
