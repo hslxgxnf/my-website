@@ -16,6 +16,12 @@ export const reference: Reference = [
 ];
 
 export const code: Code = {
-  language: "javascript",
-  content: ``,
+  language: "sql",
+  content: `-- Comment
+
+/*
+ * Multiline
+ * Comment
+ */
+`,
 };
