@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
-import { reference, code } from "./data";
+import { reference, paramterOptimizationCode, lawOfDemeterCode } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
 import ReferenceButton from "@/components/main/ReferenceButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
@@ -22,12 +22,39 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-03-01">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
               Clean Code
             </HeadingLinkId>
           </ReferenceButton>
           <p>Clean code should be readable.</p>
           <p>Clean code should be maintainable.</p>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Formatting</HeadingLinkId>
+          <section>
+            <HeadingLinkId headingNumber={3}>Vertical</HeadingLinkId>
+            <p>
+              Different concepts should be separated by blank lines, while
+              closely related concepts should be kept together without blank
+              lines.
+            </p>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>Horizontal</HeadingLinkId>
+            <p>Indentation</p>
+            <p>
+              Horizontally long statements should be broken down into multiple
+              shorter ones.
+            </p>
+          </section>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Comments</HeadingLinkId>
+          <p>
+            Comments which cannot be replaced by good naming are good comments.
+            Legal information, warnings, and to-do notes are legitimate reasons
+            to write comments.
+          </p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Naming</HeadingLinkId>
@@ -40,23 +67,17 @@ export default function Page() {
           </p>
           <hr />
           <p>
-            Use nouns or short phrases with adjectives for variables and
-            constants.
-            <br />
-            <Highlight type="simple-code">user</Highlight>{" "}
-            <Highlight type="simple-code">isValid</Highlight>
+            Use nouns or noun phrases for variables and constants (e.g.,{" "}
+            <Highlight type="simple-code">user</Highlight>,{" "}
+            <Highlight type="simple-code">isValid</Highlight>).
           </p>
           <p>
-            Use verbs or short phrases with adjectives for functions and
-            methods.
-            <br />
-            <Highlight type="simple-code">saveUser</Highlight>{" "}
-            <Highlight type="simple-code">auth.isValid</Highlight>
+            Use verbs or verb phrases for functions (e.g.,{" "}
+            <Highlight type="simple-code">saveUser</Highlight>).
           </p>
           <p>
-            Use nouns or short phrases with nouns for classes.
-            <br />
-            <Highlight type="simple-code">User</Highlight>
+            Use nouns or noun phrases for classes (e.g.,{" "}
+            <Highlight type="simple-code">User</Highlight>).
           </p>
           <hr />
           <ul>
@@ -64,129 +85,102 @@ export default function Page() {
               <p>
                 <Highlight type="text">snake_case</Highlight>
               </p>
-              <ul>
-                <li>
-                  <p>Python Variables, Functions</p>
-                </li>
-              </ul>
             </li>
             <li>
               <p>
                 <Highlight type="text">camelCase</Highlight>
               </p>
-              <ul>
-                <li>
-                  <p>JavaScript Variables, Functions</p>
-                </li>
-                <li>
-                  <p>Java Variables, Functions</p>
-                </li>
-              </ul>
             </li>
             <li>
               <p>
                 <Highlight type="text">PascalCase</Highlight>
               </p>
-              <ul>
-                <li>
-                  <p>Python Classes</p>
-                </li>
-                <li>
-                  <p>JavaScript Classes</p>
-                </li>
-                <li>
-                  <p>Java Classes</p>
-                </li>
-              </ul>
             </li>
             <li>
               <p>
                 <Highlight type="text">kebab-case</Highlight>
               </p>
-              <ul>
-                <li>
-                  <p>HTML Element Attributes</p>
-                </li>
-                <li>
-                  <p>CSS Variables</p>
-                </li>
-              </ul>
             </li>
           </ul>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Formatting</HeadingLinkId>
+          <HeadingLinkId headingNumber={2}>Functions</HeadingLinkId>
           <section>
-            <HeadingLinkId headingNumber={3}>Vertical</HeadingLinkId>
-            <p>Multiple concepts should be split into multiple files.</p>
-            <p>Different concepts should be separated by spacing.</p>
-            <p>Similar concepts should be together without spacing.</p>
-            <p>Related concepts should be kept close together.</p>
+            <HeadingLinkId headingNumber={3}>
+              Don't Repeat Yourself (DRY)
+            </HeadingLinkId>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Horizontal</HeadingLinkId>
-            <p>Indentation</p>
+            <HeadingLinkId headingNumber={3}>
+              Parameter Optimization
+            </HeadingLinkId>
             <p>
-              Horizontally long statements should be broken into multiple
-              shorter ones.
+              Multiple parameters can be consolidated into a single object
+              parameter. This eliminates the need to maintain a strict order of
+              arguments.
+            </p>
+            <Highlight type="complex-code">
+              {paramterOptimizationCode}
+            </Highlight>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Function Single Responsibility
+            </HeadingLinkId>
+            <p>
+              A bloated function should be split into smaller functions that do
+              only one thing. Smaller functions should maintain the same level
+              of abstraction.
+            </p>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>Side Effects</HeadingLinkId>
+            <p>
+              When a function affects the outside of its scope, it is called a
+              side effect. If a function has a side effect, its name should
+              imply the impact (e.g.,{" "}
+              <Highlight type="simple-code">saveUser</Highlight>,{" "}
+              <Highlight type="simple-code">showErrorMessage</Highlight>).
+            </p>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>Pure Functions</HeadingLinkId>
+            <p>
+              Pure functions yield the same output for the same input and have
+              no side effects.
             </p>
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Comments</HeadingLinkId>
-          <p>Legal Information</p>
-          <p>Warnings</p>
-          <p>To-Do Notes</p>
-          <p>
-            Explanations which cannot be replaced by good naming are good
-            comments.
-          </p>
-        </section>
-        <section>
-          <HeadingLinkId headingNumber={2}>Objects and Classes</HeadingLinkId>
-          <p>Classes should have a single responsibility.</p>
-          <p>
-            Classes should be open for extension but closed for modification.
-          </p>
-          <p>
-            Classes should be highly cohesive. Cohesion describes the extent to
-            which methods rely on properties. Maximum cohesion is that every
-            method uses every property. Minimum cohesion is that methods do not
-            use any properties.
-          </p>
-          <p>Law of Demeter: Tell! Don't Ask!</p>
-        </section>
-        <section>
-          <HeadingLinkId headingNumber={2}>Functions</HeadingLinkId>
-          <p>Don't Repeat Yourself (DRY)</p>
-          <p>
-            Multiple parameters can be minimized into one. You don't have to
-            concern the order of parameters.
-          </p>
-          <Highlight type="complex-code">{code}</Highlight>
-          <p>
-            A big function should be split into small functions that do one
-            thing. The name of a function implies its level of abstraction. In a
-            big function, small functions should have the same level of
-            abstraction.
-          </p>
-          <p>
-            In a function, when something affects outside of the function, it is
-            called a side effect. When a function has a side effect, the name of
-            the function should imply that the side effect will occur.
-            <br />
-            <Highlight type="simple-code">saveUser</Highlight>{" "}
-            <Highlight type="simple-code">showErrorMessage</Highlight>
-            <br />A pure function always yields the same output with the same
-            input and has no side effects.
-          </p>
-          <p>
-            Function names should be positive.
-            <br />
-            <Highlight type="simple-code">isEmpty</Highlight>{" "}
-            <Highlight type="simple-code">isValid</Highlight>
-          </p>
-          <p>Unit testing helps functions to be clean.</p>
+          <HeadingLinkId headingNumber={2}>Classes</HeadingLinkId>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Class Single Responsibility
+            </HeadingLinkId>
+            <p>Classes should have a single responsibility.</p>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>Open/Closed</HeadingLinkId>
+            <p>
+              Classes should be open for extension but closed for modification.
+            </p>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>Cohesion</HeadingLinkId>
+            <p>
+              Classes should be highly cohesive. Cohesion describes the extent
+              to which methods rely on properties. Maximum cohesion occurs when
+              every method uses every property, while minimum cohesion occurs
+              when methods do not use any properties.
+            </p>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>Law of Demeter</HeadingLinkId>
+            <p>
+              An object should communicate only with its immediate neighbors.
+            </p>
+            <Highlight type="complex-code">{lawOfDemeterCode}</Highlight>
+          </section>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Control Structures</HeadingLinkId>

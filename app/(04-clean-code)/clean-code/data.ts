@@ -15,35 +15,33 @@ export const reference: Reference = [
   },
 ];
 
-export const code: Code = {
+export const paramterOptimizationCode: Code = {
   language: "typescript",
-  content: `class User1 {
-  name: string;
-  age: number;
-
-  constructor(name: string, age: number) {
-    this.name = name;
-    this.age = age;
-  }
+  content: `function printUserInfo(name: string, age: number) {
+  console.log(\`Name: \${name}, Age: \${age}\`);
 }
+
+printUserInfo("John", 30);
 
 interface UserData {
   name: string;
   age: number;
 }
 
-class User2 {
-  name: string;
-  age: number;
-
-  constructor(userData: UserData) {
-    this.name = userData.name;
-    this.age = userData.age;
-  }
-
+function printUserInfo2(user: UserData) {
+  console.log(\`Name: \${user.name}, Age: \${user.age}\`);
 }
 
-const user1 = new User1("John", 20);
-const user2 = new User2({ age: 20, name: "John" });
+printUserInfo2({ age: 30, name: "John" });
+`,
+};
+
+export const lawOfDemeterCode: Code = {
+  language: "typescript",
+  content: `// ❌
+const userStreet = user.getWallet().getCard().getAddress();
+
+// ⭕
+const userStreet = user.getAddress();
 `,
 };
