@@ -31,9 +31,10 @@ export default function Page() {
           <Highlight type="text">SCSS</Highlight>, etc.
         </p>
         <p>
-          The default IDE arrangement feature fails to arrange properties within
-          nested at-rules and <Highlight type="text">SCSS</Highlight> at-rules.
-          The <Highlight type="simple-code">"order/properties-order"</Highlight>{" "}
+          If the default IDE arrangement feature fails to arrange properties
+          within nested at-rules and <Highlight type="text">SCSS</Highlight>{" "}
+          at-rules, the{" "}
+          <Highlight type="simple-code">"order/properties-order"</Highlight>{" "}
           rule ensures consistent arrangement except for custom properties.
         </p>
         <p>
