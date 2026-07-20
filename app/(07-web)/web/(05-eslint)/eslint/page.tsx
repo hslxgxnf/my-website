@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-04-15">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
             ESLint
           </HeadingLinkId>
         </ReferenceButton>
@@ -33,7 +33,8 @@ export default function Page() {
         <p>
           The below config file can be used in{" "}
           <Highlight type="text">Next.js</Highlight> projects.
-          <br />
+        </p>
+        <p>
           <Highlight type="simple-code" copy={true}>
             npm i -D eslint eslint-config-next @eslint/compat
           </Highlight>
