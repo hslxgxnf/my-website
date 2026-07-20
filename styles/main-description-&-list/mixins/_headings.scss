@@ -22,7 +22,7 @@
 
     > aside {
       position: absolute;
-      top: 0;
+      top: calc(var(--space-20) * -1);
       right: 0;
       font-weight: normal;
       font-size: var(--font-size-20);
