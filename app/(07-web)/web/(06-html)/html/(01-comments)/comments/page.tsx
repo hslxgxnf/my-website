@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
             Comments
           </HeadingLinkId>
         </ReferenceButton>

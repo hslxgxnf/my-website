@@ -20,8 +20,8 @@ export const code: Code = {
   content: `<!-- Comment -->
 
 <!-- 
-  Multiline
-  Comment
+ Multiline
+ Comment
 -->
 `,
 };

@@ -18,8 +18,8 @@ export default function Page() {
       <article>
         <h1>HTML (HyperText Markup Language)</h1>
         <hr />
-        <HeadingLinkPage>Naming Cases</HeadingLinkPage>
         <HeadingLinkPage>Comments</HeadingLinkPage>
+        <HeadingLinkPage>Naming Cases</HeadingLinkPage>
         <HeadingLinkPage>Elements</HeadingLinkPage>
         <HeadingLinkPage>Attributes</HeadingLinkPage>
         <HeadingLinkPage>Entities</HeadingLinkPage>

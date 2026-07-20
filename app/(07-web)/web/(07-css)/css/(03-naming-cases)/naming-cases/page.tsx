@@ -18,20 +18,14 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1} lastUpdated="2026-02-10">
+        <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
           Naming Cases
         </HeadingLinkId>
         <p>
-          Custom attribute names should be{" "}
-          <Highlight type="text">kebab-case</Highlight>.
-          <br />
-          <Highlight type="simple-code">data-is-clicked="true"</Highlight>
-        </p>
-        <p>
-          Attribute values should be{" "}
-          <Highlight type="text">kebab-case</Highlight>.
-          <br />
-          <Highlight type="simple-code">id="target-container"</Highlight>
+          CSS variable names should be written in{" "}
+          <Highlight type="text">kebab-case</Highlight> (e.g.,{" "}
+          <Highlight type="simple-code">--space-10</Highlight>,{" "}
+          <Highlight type="simple-code">--color-base</Highlight>).
         </p>
       </article>
 

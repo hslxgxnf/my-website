@@ -28,7 +28,7 @@ export const commentsCode: Code = {
 // Multiline
 // Comment
 
-/* This comment is still after CSS compilation. */
+/* This comment is still maintained after CSS compilation. */
 
 /*
  * Multiline
