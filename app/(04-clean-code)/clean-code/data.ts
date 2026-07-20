@@ -39,9 +39,9 @@ printUserInfo2({ age: 30, name: "John" });
 export const lawOfDemeterCode: Code = {
   language: "typescript",
   content: `// ❌
-const userStreet = user.getWallet().getCard().getAddress();
+const userAddress = user.getWallet().getCard().getAddress();
 
 // ⭕
-const userStreet = user.getAddress();
+const userAddress = user.getAddress();
 `,
 };

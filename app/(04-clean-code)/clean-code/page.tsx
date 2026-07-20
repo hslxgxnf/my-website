@@ -65,43 +65,59 @@ export default function Page() {
             Names should not include redundant information, disinformation,
             slang, or unclear abbreviations.
           </p>
-          <hr />
-          <p>
-            Use nouns or noun phrases for variables and constants (e.g.,{" "}
-            <Highlight type="simple-code">user</Highlight>,{" "}
-            <Highlight type="simple-code">isValid</Highlight>).
-          </p>
-          <p>
-            Use verbs or verb phrases for functions (e.g.,{" "}
-            <Highlight type="simple-code">saveUser</Highlight>).
-          </p>
-          <p>
-            Use nouns or noun phrases for classes (e.g.,{" "}
-            <Highlight type="simple-code">User</Highlight>).
-          </p>
-          <hr />
-          <ul>
-            <li>
-              <p>
-                <Highlight type="text">snake_case</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="text">camelCase</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="text">PascalCase</Highlight>
-              </p>
-            </li>
-            <li>
-              <p>
-                <Highlight type="text">kebab-case</Highlight>
-              </p>
-            </li>
-          </ul>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Naming Convention 1: Parts of Speech
+            </HeadingLinkId>
+            <ul>
+              <li>
+                <p>
+                  Use nouns or noun phrases for variables and constants (e.g.,{" "}
+                  <Highlight type="simple-code">user</Highlight>,{" "}
+                  <Highlight type="simple-code">isValid</Highlight>).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Use verbs or verb phrases for functions (e.g.,{" "}
+                  <Highlight type="simple-code">saveUser</Highlight>).
+                </p>
+              </li>
+              <li>
+                <p>
+                  Use nouns or noun phrases for classes (e.g.,{" "}
+                  <Highlight type="simple-code">User</Highlight>).
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Naming Convention 2: Cases
+            </HeadingLinkId>
+            <ul>
+              <li>
+                <p>
+                  <Highlight type="text">snake_case</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">camelCase</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">PascalCase</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">kebab-case</Highlight>
+                </p>
+              </li>
+            </ul>
+          </section>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Functions</HeadingLinkId>
