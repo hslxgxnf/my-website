@@ -29,21 +29,15 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
               Attributes
             </HeadingLinkId>
           </ReferenceButton>
           <p>An attribute provides additional information to its element.</p>
           <p>
             An attribute is written as{" "}
-            <Highlight type="text">name="value"</Highlight> inside the opening
-            tag of an element.
-          </p>
-          <p>
-            Attribute names and enumerated attribute values are
-            case-insensitive, but it is recommended to use lowercase.
-            <br />
-            Non-enumerated attribute values are case-sensitive.
+            <Highlight type="simple-code">name="value"</Highlight> inside the
+            opening tag of an element.
           </p>
         </section>
         <section>

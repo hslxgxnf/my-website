@@ -173,7 +173,7 @@ console.log(div?.dataset.weight); // "100"`,
 
 export const codeBooleanAttributes: Code = {
   language: "html",
-  content: `<!--All checkboxes will be checked-->
+  content: `<!-- All checkboxes will be checked. -->
 <input type="checkbox" checked />
 <input type="checkbox" checked="" />
 <input type="checkbox" checked="true" />

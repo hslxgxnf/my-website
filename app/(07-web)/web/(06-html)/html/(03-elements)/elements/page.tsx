@@ -27,9 +27,6 @@ export default function Page() {
               Elements
             </HeadingLinkId>
           </ReferenceButton>
-          <p>
-            Tags are case-insensitive, but it is recommended to use lowercase.
-          </p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Normal Elements</HeadingLinkId>

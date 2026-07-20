@@ -18,19 +18,51 @@ export default function Page() {
       </aside>
 
       <article>
-        <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
-          Naming Cases
-        </HeadingLinkId>
-        <p>
-          Custom attribute names should be written in{" "}
-          <Highlight type="text">kebab-case</Highlight> (e.g.,{" "}
-          <Highlight type="simple-code">data-is-clicked="true"</Highlight>).
-        </p>
-        <p>
-          Attribute values should be written in{" "}
-          <Highlight type="text">kebab-case</Highlight> (e.g.,{" "}
-          <Highlight type="simple-code">id="target-container"</Highlight>).
-        </p>
+        <section>
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
+            Naming Cases
+          </HeadingLinkId>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Elements</HeadingLinkId>
+          <p>
+            Element tags are case-insensitive, but using{" "}
+            <Highlight type="text">lowercase</Highlight> is recommended.
+          </p>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Attribute Names</HeadingLinkId>
+          <p>
+            Attribute names are case-insensitive, but using{" "}
+            <Highlight type="text">lowercase</Highlight> or{" "}
+            <Highlight type="text">kebab-case</Highlight> is recommended (e.g.,{" "}
+            <Highlight type="simple-code">tabindex</Highlight>,{" "}
+            <Highlight type="simple-code">popover-target</Highlight>
+            ).
+          </p>
+          <p>
+            Custom attribute names are case-insensitive, but using{" "}
+            <Highlight type="text">kebab-case</Highlight> is recommended. They
+            must start with <Highlight type="simple-code">data-</Highlight>{" "}
+            (e.g., <Highlight type="simple-code">data-is-clicked</Highlight>).
+          </p>
+        </section>
+        <section>
+          <HeadingLinkId headingNumber={2}>Attribute Values</HeadingLinkId>
+          <p>
+            Enumerated attribute values are case-insensitive, but using{" "}
+            <Highlight type="text">lowercase</Highlight> or{" "}
+            <Highlight type="text">kebab-case</Highlight> is recommended (e.g.,{" "}
+            <Highlight type="simple-code">formaction</Highlight>,{" "}
+            <Highlight type="simple-code">user-credentials</Highlight>
+            ).
+          </p>
+          <p>
+            Non-enumerated attribute values are case-sensitive, and using{" "}
+            <Highlight type="text">kebab-case</Highlight> is recommended (e.g.,{" "}
+            <Highlight type="simple-code">id="target-container"</Highlight>).
+          </p>
+        </section>
       </article>
 
       <aside>
