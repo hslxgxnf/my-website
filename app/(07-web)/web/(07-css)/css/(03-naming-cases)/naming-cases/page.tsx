@@ -58,9 +58,9 @@ export default function Page() {
           <HeadingLinkId headingNumber={2}>Variables</HeadingLinkId>
           <p>
             Variable names are case-sensitive, and using{" "}
-            <Highlight type="text">kebab-case</Highlight> for is recommended.
-            They must start with <Highlight type="simple-code">--</Highlight>{" "}
-            (e.g., <Highlight type="simple-code">--space-10</Highlight>,{" "}
+            <Highlight type="text">kebab-case</Highlight> is recommended. They
+            must start with <Highlight type="simple-code">--</Highlight> (e.g.,{" "}
+            <Highlight type="simple-code">--space-10</Highlight>,{" "}
             <Highlight type="simple-code">--color-base</Highlight>).
           </p>
         </section>
