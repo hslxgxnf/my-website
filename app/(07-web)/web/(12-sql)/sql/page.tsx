@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
               SQL (Structured Query Language)
             </HeadingLinkId>
           </ReferenceButton>
@@ -48,14 +48,12 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Naming Cases</HeadingLinkId>
           <p>
-            While <Highlight type="text">SQL</Highlight> is case-insensitive, it
-            is recommended to use uppercase for keywords and lowercase for
-            identifiers.
+            <Highlight type="text">SQL</Highlight> is case-insensitive, but
+            using <Highlight type="text">UPPERCASE</Highlight> for keywords and{" "}
+            <Highlight type="text">snake_case</Highlight> for identifiers is
+            recommended.
           </p>
           <p>
-            Identifiers should be written in{" "}
-            <Highlight type="text">snake_case</Highlight>.
-            <br />
             Use double quotes around identifiers to avoid conflicts with
             reserved keywords.
           </p>
@@ -63,8 +61,8 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Statement Delimiter</HeadingLinkId>
           <p>
-            Multiple statements must end with a semicolon, while a single
-            statement can omit it. Regardless, adding one is recommended.
+            Statements must end with a semicolon, except for a single statement.
+            Adding a semicolon to it is recommended, though.
           </p>
         </section>
         <section>
