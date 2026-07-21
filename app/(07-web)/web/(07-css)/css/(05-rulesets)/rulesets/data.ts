@@ -24,6 +24,9 @@ export const code: Code = {
 
 h1,
 h2 {
-  font-size: 30px;
-}`,
+  color: black;
+  font-weight: bold;
+  font-size: 3rem;
+}
+`,
 };

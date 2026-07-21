@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
               Clean Code
             </HeadingLinkId>
           </ReferenceButton>
@@ -67,54 +67,120 @@ export default function Page() {
           </p>
           <section>
             <HeadingLinkId headingNumber={3}>
-              Naming Convention 1: Parts of Speech
+              Step 1: Choose a Case
             </HeadingLinkId>
             <ul>
               <li>
                 <p>
-                  Use nouns or noun phrases for variables and constants (e.g.,{" "}
-                  <Highlight type="simple-code">user</Highlight>,{" "}
-                  <Highlight type="simple-code">isValid</Highlight>).
+                  <Highlight type="text">lowercase</Highlight>
                 </p>
-              </li>
-              <li>
-                <p>
-                  Use verbs or verb phrases for functions (e.g.,{" "}
-                  <Highlight type="simple-code">saveUser</Highlight>).
-                </p>
-              </li>
-              <li>
-                <p>
-                  Use nouns or noun phrases for classes (e.g.,{" "}
-                  <Highlight type="simple-code">User</Highlight>).
-                </p>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <HeadingLinkId headingNumber={3}>
-              Naming Convention 2: Cases
-            </HeadingLinkId>
-            <ul>
-              <li>
-                <p>
-                  <Highlight type="text">snake_case</Highlight>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <Highlight type="text">camelCase</Highlight>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <Highlight type="text">PascalCase</Highlight>
-                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">isclicked</Highlight>
+                    </p>
+                  </li>
+                </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="text">kebab-case</Highlight>
                 </p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">is-clicked</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">camelCase</Highlight>
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">isClicked</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">snake_case</Highlight>
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">is_clicked</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">UPPERCASE</Highlight>
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">ISCLICKED</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="text">PascalCase</Highlight>
+                </p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">IsClicked</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <HeadingLinkId headingNumber={3}>
+              Step 2: Choose a Part of Speech
+            </HeadingLinkId>
+            <ul>
+              <li>
+                <p>Use nouns or noun phrases for variables and constants.</p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">user</Highlight>,{" "}
+                      <Highlight type="simple-code">isValid</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Use verbs or verb phrases for functions.</p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">print</Highlight>,{" "}
+                      <Highlight type="simple-code">printInfo</Highlight>
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <p>Use nouns or noun phrases for classes.</p>
+                <ul>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">User</Highlight>,{" "}
+                      <Highlight type="simple-code">UserAuth</Highlight>
+                    </p>
+                  </li>
+                </ul>
               </li>
             </ul>
           </section>

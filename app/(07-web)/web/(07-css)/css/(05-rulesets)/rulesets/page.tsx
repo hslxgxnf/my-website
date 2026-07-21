@@ -21,7 +21,7 @@ export default function Page() {
 
       <article>
         <ReferenceButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-02-18">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
             Rulesets
           </HeadingLinkId>
         </ReferenceButton>
@@ -39,7 +39,10 @@ export default function Page() {
           <Highlight type="simple-code">Property: Value;</Highlight> sets a
           value for a property.
         </p>
-        <p>Selectors, properties, and values are case-insensitive.</p>
+        <p>
+          Declarations must end with a semicolon, except for the last one.
+          Adding a semicolon to it is recommended, though.
+        </p>
         <Highlight type="complex-code">{code}</Highlight>
       </article>
 
