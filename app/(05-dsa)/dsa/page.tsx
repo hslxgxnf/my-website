@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
 import ReferenceNav from "@/components/main/ReferenceNav";
-// import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
+import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
 
 export const metadata: Metadata = {
   title: "DSA",
@@ -16,10 +16,12 @@ export default function Page() {
       </aside>
 
       <article>
-        <h1>DSA</h1>
+        <h1>DSA (Data Structures and Algorithms)</h1>
         <hr />
-        <h2>Preparing...</h2>
-        {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
+        <h2>Data Structures</h2>
+        <hr />
+        <h2>Algorithms</h2>
+        <HeadingLinkPage>Asymptotic Analysis</HeadingLinkPage>
       </article>
 
       <aside></aside>
