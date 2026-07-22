@@ -30,8 +30,9 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
           <p>
-            Given an array. Find the max sum of a subarray containing at least
-            one element.
+            Given an array. Find the next permutation that rearranges the array
+            into the next lexicographical order. If there is no next
+            permutation, rearrange the array into the lowest possible order.
           </p>
           <section>
             <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
@@ -39,50 +40,37 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [2, 3, -8, 7, -1, 2, 3]
+                    [2, 4, 1, 7, 5, 0]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">11</Highlight>
+                  &#10140;{" "}
+                  <Highlight type="simple-code">[2, 4, 5, 0, 1, 7]</Highlight>
                 </p>
-                <ul>
-                  <li>
-                    <p>
-                      The subarray{" "}
-                      <Highlight type="simple-code">[7, -1, 2, 3]</Highlight>{" "}
-                      has the largest sum.
-                    </p>
-                  </li>
-                </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [-2, -4]
+                    [3, 4, 2, 5, 1]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">-2</Highlight>
+                  &#10140;{" "}
+                  <Highlight type="simple-code">[3, 4, 5, 1, 2]</Highlight>
                 </p>
-                <ul>
-                  <li>
-                    <p>
-                      The subarray{" "}
-                      <Highlight type="simple-code">[-2]</Highlight> has the
-                      largest sum.
-                    </p>
-                  </li>
-                </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
-                    [5, 4, 1, 7, 8]
+                    [3, 2, 1]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">25</Highlight>
+                  &#10140; <Highlight type="simple-code">[1, 2, 3]</Highlight>
                 </p>
                 <ul>
                   <li>
                     <p>
-                      The subarray{" "}
-                      <Highlight type="simple-code">[5, 4, 1, 7, 8]</Highlight>{" "}
-                      has the largest sum.
+                      As{" "}
+                      <Highlight type="simple-code" copy={true}>
+                        [3, 2, 1]
+                      </Highlight>{" "}
+                      is the last permutation, the next permutation is the
+                      lowest one.
                     </p>
                   </li>
                 </ul>

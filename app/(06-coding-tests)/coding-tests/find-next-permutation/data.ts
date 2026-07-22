@@ -20,19 +20,36 @@ export const code: Code = {
   content: `Numeric = int | float
 
 
-def find_max_subarray_sum(arr: list[Numeric]) -> Numeric:
-    current_sum: Numeric = arr[0]
-    max_sum: Numeric = arr[0]
+def find_next_permutation(arr: list[Numeric]) -> list[Numeric]:
+    n: int = len(arr)
 
-    for i in range(1, len(arr)):
-        current_sum = max(current_sum + arr[i], arr[i])
-        max_sum = max(max_sum, current_sum)
+    def reverse(left_index: int, right_index: int) -> None:
+        while left_index < right_index:
+            arr[left_index], arr[right_index] = arr[right_index], arr[left_index]
+            left_index += 1
+            right_index -= 1
 
-    return max_sum
+    pivot_index: int = -1
+    for i in range(n - 2, -1, -1):
+        if arr[i] < arr[i + 1]:
+            pivot_index = i
+            break
+
+    if pivot_index == -1:
+        reverse(0, n - 1)
+        return arr
+
+    for i in range(n - 1, pivot_index, -1):
+        if arr[i] > arr[pivot_index]:
+            arr[i], arr[pivot_index] = arr[pivot_index], arr[i]
+            break
+
+    reverse(pivot_index + 1, n - 1)
+    return arr
 
 
-print(find_max_subarray_sum([2, 3, -8, 7, -1, 2, 3]))
-print(find_max_subarray_sum([-2, -4]))
-print(find_max_subarray_sum([5, 4, 1, 7, 8]))
+print(find_next_permutation([2, 4, 1, 7, 5, 0]))
+print(find_next_permutation([3, 4, 2, 5, 1]))
+print(find_next_permutation([3, 2, 1]))
 `,
 };
