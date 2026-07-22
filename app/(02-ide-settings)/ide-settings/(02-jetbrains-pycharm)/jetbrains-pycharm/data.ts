@@ -57,4 +57,15 @@ export const reference: Reference = [
       },
     ],
   },
+  {
+    target: "Rainbow Brackets",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-webstorm#rainbow-brackets",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains WebStorm | Rainbow Brackets",
+      },
+    ],
+  },
 ];

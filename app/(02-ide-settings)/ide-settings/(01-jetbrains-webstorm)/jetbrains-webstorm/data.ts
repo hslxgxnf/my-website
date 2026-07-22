@@ -106,4 +106,15 @@ export const reference: Reference = [
       },
     ],
   },
+  {
+    target: "Rainbow Brackets",
+    sites: [
+      {
+        url: "/ide-settings/jetbrains-pycharm#rainbow-brackets",
+        favicon: favicons.self.image,
+        name: favicons.self.name,
+        title: "JetBrains PyCharm | Rainbow Brackets",
+      },
+    ],
+  },
 ];

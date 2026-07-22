@@ -29,7 +29,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-22">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -778,7 +778,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
+          </ReferenceButton>
           <table>
             <thead>
               <tr>
@@ -802,7 +804,7 @@ export default function Page() {
                 <td>
                   Indent guidelines Highlighting
                   <br />
-                  {entities.rightSubArrow} Only current indent guide
+                  {entities.rightSubArrow} Focus mode
                 </td>
                 <td>{entities.checkedBox}</td>
               </tr>
@@ -817,6 +819,15 @@ export default function Page() {
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
+                <td>Language Specific</td>
+                <td>
+                  Language Specific
+                  <br />
+                  {entities.rightSubArrow} Rainbowify Python keywords
+                </td>
+                <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
                 <td>Rainbow Variables</td>
                 <td>Enable Rainbow Variables(restart required)</td>
                 <td>{entities.checkedBox}</td>
@@ -826,9 +837,18 @@ export default function Page() {
                 <td>
                   Scope Highlighting
                   <br />
-                  {entities.rightSubArrow} Border
+                  {entities.rightSubArrow} Highlight
                 </td>
                 <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>Scope Highlighting</td>
+                <td>
+                  Scope Highlighting
+                  <br />
+                  {entities.rightSubArrow} Scope highlighting effect strength:
+                </td>
+                <td>5%</td>
               </tr>
             </tbody>
           </table>

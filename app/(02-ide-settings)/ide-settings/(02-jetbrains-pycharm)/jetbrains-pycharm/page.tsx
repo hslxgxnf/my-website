@@ -22,7 +22,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-15">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-22">
             JetBrains PyCharm
           </HeadingLinkId>
           <p>
@@ -215,59 +215,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">Left Section</th>
-                <th scope="col">Right Section</th>
-                <th scope="col">Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Color</td>
-                <td>
-                  Color
-                  <br />
-                  {entities.rightSubArrow} Cycle count on all brackets
-                </td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>Indent guidelines Highlighting</td>
-                <td>
-                  Indent guidelines Highlighting
-                  <br />
-                  {entities.rightSubArrow} Only current indent guide
-                </td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>Language Specific</td>
-                <td>
-                  Language Specific
-                  <br />
-                  {entities.rightSubArrow} Rainbowify Python keywords
-                </td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>Rainbow Variables</td>
-                <td>Enable Rainbow Variables(restart required)</td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>Scope Highlighting</td>
-                <td>
-                  Scope Highlighting
-                  <br />
-                  {entities.rightSubArrow} Border
-                </td>
-                <td>{entities.checkedBox}</td>
-              </tr>
-            </tbody>
-          </table>
+          <ReferenceButton>
+            <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
+          </ReferenceButton>
         </section>
       </article>
 
