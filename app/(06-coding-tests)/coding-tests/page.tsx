@@ -19,6 +19,7 @@ export default function Page() {
         <h1>Coding Tests</h1>
         <hr />
         <HeadingLinkPage>Find Max Sum of Subarray</HeadingLinkPage>
+        <HeadingLinkPage>Find Next Permutation</HeadingLinkPage>
         <HeadingLinkPage>Find Second Largest Number</HeadingLinkPage>
         <HeadingLinkPage>Find Subarray with Max Sum</HeadingLinkPage>
         <HeadingLinkPage>Move All Zeroes to End</HeadingLinkPage>
