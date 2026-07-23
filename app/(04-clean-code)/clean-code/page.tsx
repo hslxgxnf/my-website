@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-23">
               Clean Code
             </HeadingLinkId>
           </ReferenceButton>
@@ -198,8 +198,8 @@ export default function Page() {
             </HeadingLinkId>
             <p>
               Multiple parameters can be consolidated into a single object
-              parameter. This eliminates the need to maintain a strict order of
-              arguments.
+              parameter. This eliminates the need to maintain the strict order
+              of arguments.
             </p>
             <Highlight type="complex-code">
               {paramterOptimizationCode}
