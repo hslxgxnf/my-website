@@ -5,7 +5,7 @@ import ReferenceNav from "@/components/main/ReferenceNav";
 import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
 
 export const metadata: Metadata = {
-  title: "Coding Tests",
+  title: "Problems",
 };
 
 export default function Page() {
@@ -16,7 +16,7 @@ export default function Page() {
       </aside>
 
       <article>
-        <h1>Coding Tests</h1>
+        <h1>Problems</h1>
         <hr />
         <HeadingLinkPage>Find Max Sum of Subarray</HeadingLinkPage>
         <HeadingLinkPage>Find Next Permutation</HeadingLinkPage>

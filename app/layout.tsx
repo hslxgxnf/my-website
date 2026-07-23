@@ -45,7 +45,7 @@ export default function Layout({ children }: LayoutProps) {
             "Git & GitHub",
             "Clean Code",
             "DSA",
-            "Coding Tests",
+            "Problems",
             "Web",
             "AI",
           ]}
