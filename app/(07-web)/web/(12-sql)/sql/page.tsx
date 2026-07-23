@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-23">
               SQL (Structured Query Language)
             </HeadingLinkId>
           </ReferenceButton>
@@ -68,9 +68,8 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Statements</HeadingLinkId>
           <p>
-            A statement consists of clauses.
-            <br />A clause consists of keywords, identifiers, operators, and
-            values (expressions).
+            A statement consists of clauses, and a clause consists of keywords,
+            identifiers, operators, and values (expressions).
           </p>
           <p>
             The order of clauses must be maintained.{" "}
