@@ -34,30 +34,27 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Time Complexity</HeadingLinkId>
           <p>
-            Since actual execution time is machine-dependent,{" "}
-            <Highlight type="text">time complexity</Highlight> measures how many
-            times each statement executes.
+            Since actual execution time is machine-dependent, time complexity
+            measures how many times each statement executes.
           </p>
           <p>
-            <Highlight type="text">Time complexity</Highlight> is commonly
-            expressed using <Highlight type="text">Big-O</Highlight> notation.
+            Time complexity is commonly expressed using{" "}
+            <Highlight type="text">Big-O</Highlight> notation.
           </p>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Space Complexity</HeadingLinkId>
           <p>
-            <Highlight type="text">Auxiliary space</Highlight> is the extra
-            temporary space required by an algorithm.
+            Auxiliary space is the extra temporary space required by an
+            algorithm.
           </p>
           <p>
-            <Highlight type="text">Space complexity</Highlight> is the total
-            space required, including both input space and{" "}
-            <Highlight type="text">auxiliary space</Highlight>.
+            Space complexity is the total space required, including both input
+            space and auxiliary space.
           </p>
           <p>
-            Both <Highlight type="text">auxiliary space</Highlight> and{" "}
-            <Highlight type="text">space complexity</Highlight> are commonly
-            expressed using <Highlight type="text">Big-O</Highlight> notation.
+            Both auxiliary space and space complexity are commonly expressed
+            using <Highlight type="text">Big-O</Highlight> notation.
           </p>
         </section>
         <section>
