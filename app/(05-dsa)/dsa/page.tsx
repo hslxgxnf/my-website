@@ -19,6 +19,7 @@ export default function Page() {
         <h1>DSA (Data Structures and Algorithms)</h1>
         <hr />
         <h2>Data Structures</h2>
+        <HeadingLinkPage>Array</HeadingLinkPage>
         <hr />
         <h2>Algorithms</h2>
         <HeadingLinkPage>Asymptotic Analysis</HeadingLinkPage>
