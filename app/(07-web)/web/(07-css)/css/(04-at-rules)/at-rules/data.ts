@@ -1,4 +1,4 @@
-import type { Reference, Code } from "@/types/main/interfaces";
+import type { Reference } from "@/types/main/interfaces";
 import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
@@ -60,8 +60,3 @@ export const reference: Reference = [
     ],
   },
 ];
-
-export const code: Code = {
-  language: "javascript",
-  content: ``,
-};

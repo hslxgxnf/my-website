@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import styles from "@/styles/main-description-&-list/page.module.scss";
-import { reference, code } from "./data";
+import { reference } from "./data";
 import ReferenceNav from "@/components/main/ReferenceNav";
 import ReferenceButton from "@/components/main/ReferenceButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
@@ -22,7 +22,7 @@ export default function Page() {
       <article>
         <section>
           <ReferenceButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-23">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-24">
               At-Rules
             </HeadingLinkId>
           </ReferenceButton>
@@ -51,22 +51,21 @@ export default function Page() {
               <HeadingLinkId headingNumber={3}>@import</HeadingLinkId>
             </ReferenceButton>
             <p>
-              The <Highlight type="simple-code">@import</Highlight> at-rule
-              imports styles from other stylesheets.
+              <Highlight type="simple-code">@import</Highlight> imports styles
+              from other stylesheets.
             </p>
             <p>
-              The <Highlight type="simple-code">@import</Highlight> must be at
-              the top except the{" "}
-              <Highlight type="simple-code">@charset</Highlight> and{" "}
-              <Highlight type="simple-code">@layer</Highlight> at-rules.
+              <Highlight type="simple-code">@import</Highlight> must be at the
+              top except <Highlight type="simple-code">@charset</Highlight> and{" "}
+              <Highlight type="simple-code">@layer</Highlight>.
             </p>
             <p>
-              The <Highlight type="simple-code">@import</Highlight> at-rule and
+              The <Highlight type="simple-code">@import</Highlight> at-rule with
               the <Highlight type="simple-code">layer</Highlight> keyword
               creates an anonymous layer.
             </p>
             <p>
-              The <Highlight type="simple-code">@import</Highlight> at-rule and
+              The <Highlight type="simple-code">@import</Highlight> at-rule with
               the <Highlight type="simple-code">layer()</Highlight> function
               creates a named or anonymous layer.
             </p>
@@ -76,16 +75,16 @@ export default function Page() {
               <HeadingLinkId headingNumber={3}>@layer</HeadingLinkId>
             </ReferenceButton>
             <p>
-              The <Highlight type="simple-code">@layer</Highlight> at-rule
-              declares a cascade layer.
+              <Highlight type="simple-code">@layer</Highlight> declares a
+              cascade layer.
             </p>
             <p>
-              The <Highlight type="simple-code">@layer</Highlight> statement
-              at-rule creates one or more named layers.
+              <Highlight type="simple-code">@layer</Highlight> creates one or
+              more named layers as a statement at-rule.
             </p>
             <p>
-              The <Highlight type="simple-code">@layer</Highlight> block at-rule
-              creates a named or anonymous layer.
+              <Highlight type="simple-code">@layer</Highlight> creates a named
+              or anonymous layer as a block at-rule.
             </p>
           </section>
         </section>
