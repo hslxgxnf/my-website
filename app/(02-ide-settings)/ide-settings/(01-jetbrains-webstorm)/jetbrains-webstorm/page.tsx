@@ -29,7 +29,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-22">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-13">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -849,6 +849,16 @@ export default function Page() {
                   {entities.rightSubArrow} Scope highlighting effect strength:
                 </td>
                 <td>5%</td>
+              </tr>
+              <tr>
+                <td>Scope Highlighting</td>
+                <td>
+                  Scope Highlighting
+                  <br />
+                  {entities.rightSubArrow} Suppress scope highlighting when
+                  diffing
+                </td>
+                <td>{entities.checkedBox}</td>
               </tr>
             </tbody>
           </table>
