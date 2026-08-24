@@ -29,7 +29,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-13">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-25">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -837,18 +837,9 @@ export default function Page() {
                 <td>
                   Scope Highlighting
                   <br />
-                  {entities.rightSubArrow} Highlight
+                  {entities.rightSubArrow} Border
                 </td>
                 <td>{entities.checkedBox}</td>
-              </tr>
-              <tr>
-                <td>Scope Highlighting</td>
-                <td>
-                  Scope Highlighting
-                  <br />
-                  {entities.rightSubArrow} Scope highlighting effect strength:
-                </td>
-                <td>5%</td>
               </tr>
               <tr>
                 <td>Scope Highlighting</td>
