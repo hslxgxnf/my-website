@@ -62,7 +62,7 @@ export default function Layout({ children }: LayoutProps) {
         <SpeedInsights debug={false} />
       </body>
       <NewWindowHashScroll />
-      <TitleValidator />
+      {process.env.NODE_ENV === "development" && <TitleValidator />}
     </html>
   );
 }
