@@ -21,9 +21,9 @@ const roboto_mono = Roboto_Mono({
 export const metadata: Metadata = {
   title: { default: "HSLee Dev", template: "%s | HSLee Dev" },
   description: "Hoseon Lee Development Blog",
-  generator: "Next.js",
+  generator: "Next.js (Deployed on Vercel)",
   creator: "Hoseon Lee",
-  publisher: "Vercel",
+  publisher: "Hoseon Lee",
 };
 
 interface LayoutProps {
