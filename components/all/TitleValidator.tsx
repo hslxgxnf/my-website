@@ -8,24 +8,28 @@ export default function TitleValidator() {
   const path = usePathname();
 
   useEffect(() => {
-    const noDelayPath = window.location.pathname;
-    const pivotPath = toTitleCase(noDelayPath.split("/").pop()!);
-    if (!pivotPath) {
-      return; // Home
-    }
-
-    function validate(): boolean {
-      const titleElement = document.querySelector<HTMLTitleElement>("title");
-      if (!titleElement || !titleElement.textContent) {
-        return false;
+    const timer = setTimeout(() => {
+      const pivotPath = toTitleCase(path.split("/").pop()!);
+      if (!pivotPath) {
+        return; // Home
       }
 
+      const titleElement =
+        document.querySelector<HTMLTitleElement>("head title");
+      if (!titleElement) {
+        console.error("No titleElement");
+        return;
+      }
+      if (!titleElement.textContent) {
+        console.error("No titleElement.textContent");
+        return;
+      }
       const titleText = titleElement.textContent.split(" | ")[0];
       if (titleText !== pivotPath) {
         console.error(
           `titleText: ${titleText} must be the same as pivotPath: ${pivotPath}.`,
         );
-        return false;
+        return;
       }
 
       const articleH1 = document.querySelector<HTMLHeadingElement>(
@@ -33,7 +37,7 @@ export default function TitleValidator() {
       );
       if (!articleH1) {
         console.error("No articleH1");
-        return false;
+        return;
       }
       let articleH1Text =
         articleH1.childElementCount > 0
@@ -44,33 +48,12 @@ export default function TitleValidator() {
         console.error(
           `articleH1Text: ${articleH1Text} must be the same as pivotPath: ${pivotPath}.`,
         );
-        return false;
+        return;
       }
-
-      return true;
-    }
-
-    let headObserver: MutationObserver | null = null;
-
-    // If the title element is present, validate it immediately.
-    if (validate()) {
-      return;
-    }
-
-    // If the title element is not present, wait for it to be added.
-    headObserver = new MutationObserver(() => {
-      validate();
-    });
-    headObserver.observe(document.head, {
-      childList: true,
-      subtree: true,
-      characterData: true,
-    });
+    }, 1000);
 
     return () => {
-      if (headObserver) {
-        headObserver.disconnect();
-      }
+      clearTimeout(timer);
     };
   }, [path]);
 
