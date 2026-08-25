@@ -8,7 +8,8 @@ export default function TitleValidator() {
   const path = usePathname();
 
   useEffect(() => {
-    const pivotPath = toTitleCase(path.split("/").pop()!);
+    const noDelayPath = window.location.pathname;
+    const pivotPath = toTitleCase(noDelayPath.split("/").pop()!);
     if (!pivotPath) {
       return; // Home
     }
