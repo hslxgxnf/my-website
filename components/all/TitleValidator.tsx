@@ -14,17 +14,12 @@ export default function TitleValidator() {
         return; // Home
       }
 
-      const titleElement =
-        document.querySelector<HTMLTitleElement>("head title");
-      if (!titleElement) {
-        console.error("No titleElement");
+      const title = document.querySelector<HTMLTitleElement>("head title");
+      if (!title) {
+        console.error("No title");
         return;
       }
-      if (!titleElement.textContent) {
-        console.error("No titleElement.textContent");
-        return;
-      }
-      const titleText = titleElement.textContent.split(" | ")[0];
+      const titleText = title.textContent.split(" | ")[0];
       if (titleText !== pivotPath) {
         console.error(
           `titleText: ${titleText} must be the same as pivotPath: ${pivotPath}.`,
@@ -50,7 +45,7 @@ export default function TitleValidator() {
         );
         return;
       }
-    }, 1000);
+    }, 500);
 
     return () => {
       clearTimeout(timer);

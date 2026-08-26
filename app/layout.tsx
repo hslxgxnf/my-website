@@ -31,6 +31,9 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const devOnly = process.env.NODE_ENV === "development";
+  const prodOnly = process.env.NODE_ENV === "production";
+
   return (
     <html
       lang="en"
@@ -58,11 +61,15 @@ export default function Layout({ children }: LayoutProps) {
           <p>&copy; 2026 HSLee Dev</p>
         </footer>
 
-        <Analytics debug={false} />
-        <SpeedInsights debug={false} />
+        <NewWindowHashScroll />
+        {devOnly && <TitleValidator />}
+        {prodOnly && (
+          <>
+            <Analytics debug={false} />
+            <SpeedInsights debug={false} />
+          </>
+        )}
       </body>
-      <NewWindowHashScroll />
-      {process.env.NODE_ENV === "development" && <TitleValidator />}
     </html>
   );
 }
