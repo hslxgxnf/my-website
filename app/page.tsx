@@ -1,8 +1,6 @@
-import styles from "@/styles/main-home/page.module.scss";
-
 export default function Page() {
   return (
-    <main className={styles.main}>
+    <main className="main-home">
       <section>
         <h1>Picture</h1>
       </section>

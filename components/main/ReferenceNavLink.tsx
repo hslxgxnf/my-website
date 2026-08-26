@@ -4,7 +4,6 @@ import { type MouseEvent, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import type { Site } from "@/types/main/interfaces";
 
 interface ReferenceNavImageProps {
@@ -44,7 +43,7 @@ export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
       rel="noopener"
       onMouseEnter={handleMouseEnter}
     >
-      <div className={isLoading ? styles.loading : undefined}>
+      <div className={isLoading ? "loading" : undefined}>
         <Image
           src={site.favicon}
           alt={site.name}

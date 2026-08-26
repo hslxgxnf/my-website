@@ -2,8 +2,6 @@
 
 import { type ReactNode, useState } from "react";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
-
 interface ToggleListProps {
   header: ReactNode;
   children: ReactNode;
@@ -17,8 +15,8 @@ export default function ToggleList({ header, children }: ToggleListProps) {
   }
 
   return (
-    <li className={styles["toggle-list"]}>
-      <div className={isOpen ? styles.open : undefined} onClick={handleClick}>
+    <li className="toggle-list">
+      <div className={isOpen ? "open" : undefined} onClick={handleClick}>
         ▶
       </div>
       <header>{header}</header>

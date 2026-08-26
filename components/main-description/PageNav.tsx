@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { FaAngleDoubleUp, FaAngleDoubleDown } from "react-icons/fa";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import handleClickFirstLink from "@/functions/main-description/handleClickFirstLink";
 
 // if (!shouldRender) return null;
@@ -104,9 +103,9 @@ export default function PageNav() {
           const index = sections.indexOf(entry.target as HTMLElement);
 
           if (entry.isIntersecting) {
-            links[index].classList.add(styles.active);
+            links[index].classList.add("active");
           } else {
-            links[index].classList.remove(styles.active);
+            links[index].classList.remove("active");
           }
         });
       },
@@ -196,7 +195,7 @@ export default function PageNav() {
                     );
                   case "h3":
                     return (
-                      <li key={index} className={styles.indent}>
+                      <li key={index} className="indent">
                         <Link href={href}>{content}</Link>
                       </li>
                     );

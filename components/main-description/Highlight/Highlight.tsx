@@ -1,4 +1,3 @@
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import type { Code } from "@/types/main/interfaces";
 import HighlightMath from "@/components/main-description/Highlight/HighlightMath";
 import HighlightText from "@/components/main-description/Highlight/HighlightText";
@@ -24,7 +23,7 @@ export default function Highlight({
       return null;
     }
 
-    return <span className={styles.underline}>{children}</span>;
+    return <span className="underline">{children}</span>;
   }
 
   if (type === "math" && typeof children === "string") {

@@ -5,7 +5,6 @@ import { FaRegCopy, FaCheck } from "react-icons/fa6";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import type { Code } from "@/types/main/interfaces";
 import toTitleCase from "@/functions/all/toTitleCase";
 
@@ -51,7 +50,7 @@ export default function HighlightComplexCode({
   }
 
   return (
-    <div className={styles["complex-code-container"]}>
+    <div className="complex-code-container">
       <header>
         <span>{fileInfo}</span>
 

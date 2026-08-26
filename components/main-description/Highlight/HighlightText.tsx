@@ -2,7 +2,6 @@
 
 import type { MouseEvent } from "react";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import selectAndCopyText from "@/functions/main-description/selectAndCopyText";
 
 interface HighlightTextProps {
@@ -24,18 +23,14 @@ export default function HighlightText({
     if (pre) {
       return (
         <pre>
-          <em
-            className={`${styles.copy} ${styles.pre}`}
-            title="Copy"
-            onClick={handleClick}
-          >
+          <em className="copy pre" title="Copy" onClick={handleClick}>
             {children}
           </em>
         </pre>
       );
     } else {
       return (
-        <em className={styles.copy} title="Copy" onClick={handleClick}>
+        <em className="copy" title="Copy" onClick={handleClick}>
           {children}
         </em>
       );
@@ -44,11 +39,11 @@ export default function HighlightText({
     if (pre) {
       return (
         <pre>
-          <em className={styles.pre}>{children}</em>
+          <em className="pre">{children}</em>
         </pre>
       );
     } else {
-      return <em className={styles.plain}>{children}</em>;
+      return <em className="plain">{children}</em>;
     }
   }
 }

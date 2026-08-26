@@ -3,8 +3,6 @@
 import { type ReactNode, useRef, useEffect } from "react";
 import { IoIosLink } from "react-icons/io";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
-
 interface ReferenceButtonProps {
   children: ReactNode;
 }
@@ -18,7 +16,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
       "body > main > aside:first-child > nav",
     );
     const referenceButtonContainers = document.querySelectorAll<HTMLDivElement>(
-      `body > main > article div.${styles["reference-button-container"]}`,
+      `body > main > article div.reference-button-container`,
     );
     if (navs.length !== referenceButtonContainers.length) {
       console.error(
@@ -60,7 +58,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
     button.addEventListener(
       "click",
       () => {
-        navs[index].classList.toggle(styles.active);
+        navs[index].classList.toggle("active");
       },
       {
         signal: controller.signal,
@@ -110,7 +108,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
   }, []);
 
   return (
-    <div className={styles["reference-button-container"]}>
+    <div className="reference-button-container">
       <button type="button" ref={buttonRef}>
         <IoIosLink />
       </button>

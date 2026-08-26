@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import ReferenceNav from "@/components/main/ReferenceNav";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className={styles.main}>
+    <main>
       <aside>
         <ReferenceNav />
       </aside>

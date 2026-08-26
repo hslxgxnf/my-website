@@ -1,8 +1,6 @@
-@use "mixins" as mixins;
+@use "main-desciprtion-and-list-mixins" as mixins;
 
-.main {
-  display: flex;
-
+main {
   > aside {
     flex-basis: 20%;
 

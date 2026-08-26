@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 
-import styles from "@/styles/main-description-&-list/page.module.scss";
 import { reference } from "./data";
 import { entities } from "../../(01-jetbrains-webstorm)/jetbrains-webstorm/data";
 import ReferenceNav from "@/components/main/ReferenceNav";
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className={styles.main}>
+    <main>
       <aside>
         <ReferenceNav reference={reference} />
       </aside>
