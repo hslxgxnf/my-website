@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-    <main className="main-home">
+    <main>
       <section>
         <h1>Picture</h1>
       </section>

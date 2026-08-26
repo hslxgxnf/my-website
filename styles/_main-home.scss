@@ -1,8 +1,7 @@
-.main-home {
-  padding-top: var(--space-40);
-
+main {
   > section {
     flex: 1;
+    padding-top: var(--space-40);
     text-align: center;
   }
 }
