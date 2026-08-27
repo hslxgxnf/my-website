@@ -1,6 +1,10 @@
-@use "main-desciprtion-and-list-mixins" as mixins;
+@use "main-mixins" as mixins;
 
 main {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: auto;
+
   > aside {
     flex-basis: 20%;
 
