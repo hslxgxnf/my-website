@@ -1,12 +1,10 @@
 @mixin header-links {
   > nav:first-child {
     display: flex;
-    justify-content: space-between;
     gap: var(--space-40);
     padding: var(--space-20) var(--space-40);
 
     > a {
-      flex-shrink: 0;
       width: 200px;
       height: 80px;
 
@@ -17,33 +15,69 @@
       }
     }
 
-    > ul {
+    div {
       display: flex;
       align-items: center;
-      gap: var(--space-40);
-      overflow-x: auto;
-      scrollbar-width: none;
-      cursor: grab;
+      gap: var(--space-10);
+      flex: 1;
+      min-width: 0;
 
-      &.dragging {
-        cursor: grabbing;
+      > button {
+        display: flex;
+        opacity: 0;
+        border: none;
+        background-color: transparent;
+        font-size: var(--font-size-35);
+        cursor: pointer;
+        pointer-events: none;
+
+        &:hover {
+          > svg {
+            fill: var(--color-1);
+          }
+        }
+
+        &.scrollable {
+          opacity: 1;
+          pointer-events: all;
+        }
+
+        &.clamped {
+          opacity: 0;
+          pointer-events: none;
+        }
       }
 
-      > li {
-        flex-shrink: 0;
-        list-style-type: none;
+      > ul {
+        display: flex;
+        gap: var(--space-40);
+        overflow-x: auto;
+        scrollbar-width: none;
 
-        > a {
-          font-size: var(--font-size-35);
-          transition: 0.2s;
-          user-select: none;
+        &.scrollable {
+          cursor: grab;
+        }
 
-          &.active {
-            color: var(--color-1);
-          }
+        &.dragging {
+          cursor: grabbing;
 
-          &.dragging {
+          & > li > a {
             cursor: grabbing;
+          }
+        }
+
+        > li {
+          flex-shrink: 0;
+          list-style-type: none;
+
+          > a {
+            font-size: var(--font-size-35);
+            transition: 0.2s;
+            user-select: none;
+
+            &.active {
+              color: var(--color-1);
+            }
           }
         }
       }
