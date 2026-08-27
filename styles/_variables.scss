@@ -1,0 +1,37 @@
+@mixin root-variables {
+  :root {
+    --tablet-width: 768px;
+    --desktop-width: 1280px;
+
+    --space-10: 10px;
+    --space-20: 20px;
+    --space-40: 40px;
+    --space-50: 50px;
+    --space-60: 60px;
+
+    --border-radius: 10px;
+
+    --height-header: 160px;
+
+    --background-color-base: #191a1c;
+    --background-color-1: #212426;
+    --background-color-2: #323030;
+    --background-color-3: #8a3323;
+    --background-color-4: #273e8a;
+
+    --font-size-20: 20px;
+    --font-size-25: 25px;
+    --font-size-35: 35px;
+    --font-size-45: 45px;
+    --font-size-55: 55px;
+
+    --color-base: #9b9b9b;
+    --color-1: #e4e4e4;
+    --color-2: #a58e42;
+    --color-3: #24801c;
+    --color-4: #d11078;
+  }
+}
+
+@mixin media-variables {
+}

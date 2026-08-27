@@ -1,29 +1,31 @@
 @use "main-mixins" as mixins;
 
-main {
-  display: flex;
-  flex-grow: 1;
-  flex-basis: auto;
+@mixin main {
+  > main {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: auto;
 
-  > aside {
-    flex-basis: 20%;
+    > aside {
+      flex-basis: 20%;
 
-    @include mixins.reference-nav;
+      @include mixins.reference-nav;
 
-    @include mixins.page-nav;
-  }
+      @include mixins.page-nav;
+    }
 
-  > article {
-    @include mixins.article-base;
+    > article {
+      @include mixins.article-base;
 
-    @include mixins.headings;
+      @include mixins.headings;
 
-    @include mixins.toggle-list;
+      @include mixins.toggle-list;
 
-    @include mixins.table;
+      @include mixins.table;
 
-    @include mixins.code;
+      @include mixins.code;
 
-    @include mixins.reference-button;
+      @include mixins.reference-button;
+    }
   }
 }

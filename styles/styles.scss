@@ -1,3 +1,48 @@
-@use "globals";
-@use "main";
+@use "variables" as *;
+@use "header" as *;
+@use "main" as *;
 @use "katex/dist/katex.min.css";
+
+@include root-variables;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: var(--color-base);
+  font-family: var(--font-roboto), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--height-header) + var(--space-20));
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color-base);
+
+  @include header;
+
+  @include main;
+
+  > footer {
+    flex-basis: 100px;
+    line-height: 100px;
+    text-align: center;
+
+    > p {
+      font-size: var(--font-size-25);
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-1);
+  }
+}

@@ -1,0 +1,15 @@
+@use "header-mixins" as mixins;
+
+@mixin header {
+  > header {
+    flex-basis: var(--height-header);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: var(--background-color-base);
+
+    @include mixins.header-links;
+
+    @include mixins.header-path;
+  }
+}
