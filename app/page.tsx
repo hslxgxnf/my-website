@@ -1,21 +1,16 @@
 export default function Page() {
   return (
     <main>
-      <section>
-        <h1>Picture</h1>
-      </section>
-      <section>
-        <h1>Introduce Myself</h1>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>Preparing...</h1>
-      </section>
-      <section>
-        <h1>Skills</h1>
-      </section>
+      <aside></aside>
+      <article>
+        <h1>Archive of My Learning Journey</h1>
+        <p>Hi, I'm Hoseon Lee.</p>
+        <p>
+          Welcome to my digital garden for exploring, reviewing, and deepening
+          engineering insights.
+        </p>
+      </article>
+      <aside></aside>
     </main>
   );
 }
