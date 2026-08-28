@@ -38,8 +38,16 @@
               align-items: center;
               gap: var(--space-10);
 
-              &:hover > span {
-                color: var(--color-1);
+              @media (hover: hover) and (pointer: fine) {
+                &:hover > span {
+                  color: var(--color-1);
+                }
+              }
+
+              @media (hover: none) {
+                &:active > span {
+                  color: var(--color-1);
+                }
               }
 
               > div {

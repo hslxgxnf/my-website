@@ -40,17 +40,25 @@ body {
 }
 
 a {
-  text-decoration: none;
-
   @media (hover: hover) and (pointer: fine) {
+    text-decoration: none;
+
     &:hover {
       color: var(--color-1);
     }
   }
 
   @media (hover: none) {
+    -webkit-tap-highlight-color: transparent;
+
     &:active {
       color: var(--color-1);
     }
+  }
+}
+
+button {
+  @media (hover: none) {
+    -webkit-tap-highlight-color: transparent;
   }
 }
