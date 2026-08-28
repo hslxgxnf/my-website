@@ -27,18 +27,26 @@ export default async function readFile(
     const pivot = await nodeReadFile(filePaths[0], "utf-8");
     const pivotProperties = pivot.split("\n").map((line) => line.trim());
 
-    const isEqual =
-      stylelintProperties.length === pivotProperties.length &&
-      stylelintProperties.every(
-        (stylelintProperty, index) =>
-          stylelintProperty === pivotProperties[index],
-      );
-
-    if (!isEqual) {
+    let success = true;
+    if (stylelintProperties.length !== pivotProperties.length) {
       console.error(
-        "stylelintProperties is not up to date. Update it using paste.",
+        `stylelintProperties.length: ${stylelintProperties.length} must be the same as pivotProperties.length: ${pivotProperties.length}.`,
       );
+      success = false;
+    } else {
+      stylelintProperties.every((stylelintProperty, index) => {
+        const comparison = stylelintProperty === pivotProperties[index];
+        if (!comparison) {
+          console.error(
+            `stylelintProperties[${index}]: ${stylelintProperty} must be the same as pivotProperties[${index}]: ${pivotProperties[index]}.`,
+          );
+          success = false;
+        }
+        return comparison;
+      });
+    }
 
+    if (!success) {
       const text = JSON.stringify(pivotProperties, null, 2);
       await clipboard.write(text);
     }
