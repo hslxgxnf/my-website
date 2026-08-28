@@ -248,6 +248,7 @@ const config = {
         "cursor",
         "pointer-events",
         "user-select",
+        "-webkit-tap-highlight-color",
       ],
       {
         unspecified: "bottom",
