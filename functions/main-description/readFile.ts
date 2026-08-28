@@ -1,4 +1,4 @@
-import stylelintConfig from "@/stylelint.config";
+import stylelintConfig from "@/stylelint.config.mjs";
 import { globby } from "globby";
 import { readFile as nodeReadFile } from "node:fs/promises";
 import clipboard from "clipboardy";
@@ -6,12 +6,12 @@ import clipboard from "clipboardy";
 export default async function readFile(
   fileName:
     | "eslint.config.mjs"
-    | "stylelint.config.ts"
+    | "stylelint.config.mjs"
     | "custom-properties.txt"
     | "non-custom-properties.txt",
 ) {
-  if (fileName === "stylelint.config.ts") {
-    const stylelintProperties = stylelintConfig.rules[
+  if (fileName === "stylelint.config.mjs") {
+    const stylelintProperties = stylelintConfig.rules![
       "order/properties-order"
     ][0] as string[];
 

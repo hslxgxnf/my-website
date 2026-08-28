@@ -35,7 +35,7 @@ export const reference: Reference = [
 ];
 
 export const code: Code = {
-  language: "typescript",
-  fileName: "stylelint.config.ts",
-  content: `${await readFile("stylelint.config.ts")}`,
+  language: "javascript",
+  fileName: "stylelint.config.mjs",
+  content: `${await readFile("stylelint.config.mjs")}`,
 };

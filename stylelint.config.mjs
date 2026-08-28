@@ -1,6 +1,5 @@
-import type { Config } from "stylelint";
-
-export default {
+/** @type {import('stylelint').Config} */
+const config = {
   customSyntax: "postcss-scss",
   plugins: ["stylelint-scss", "stylelint-order"],
   rules: {
@@ -256,4 +255,6 @@ export default {
       },
     ],
   },
-} satisfies Config;
+};
+
+export default config;
