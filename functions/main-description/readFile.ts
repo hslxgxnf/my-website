@@ -5,10 +5,10 @@ import clipboard from "clipboardy";
 
 export default async function readFile(
   fileName:
-    | "eslint.config.mjs"
-    | "stylelint.config.mjs"
-    | "custom-properties.txt"
-    | "non-custom-properties.txt",
+    | "eslint.config.mjs" // ESLint
+    | "stylelint.config.mjs" // Stylelint
+    | "custom-properties.txt" // Property Arrangement
+    | "non-custom-properties.txt", // Property Arrangement
 ) {
   if (fileName === "stylelint.config.mjs") {
     const stylelintProperties = stylelintConfig.rules![
