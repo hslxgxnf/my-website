@@ -78,20 +78,19 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     let startX: number;
     let scrollLeft: number;
 
-    let areEventsAdded = false;
+    let scrollEventsController: AbortController | null = null;
 
-    const handleMouseDown = (event: MouseEvent) => {
+    const handlePointerDown = (event: PointerEvent) => {
       isDown = true;
       isDragging = false;
       startX = event.pageX - scrollContainer.offsetLeft;
       scrollLeft = scrollContainer.scrollLeft;
     };
 
-    const handleMouseMove = (event: MouseEvent) => {
+    const handlePointerMove = (event: PointerEvent) => {
       if (!isDown) {
         return;
       }
-      event.preventDefault();
 
       const x = event.pageX - scrollContainer.offsetLeft;
       const deltaX = x - startX;
@@ -105,14 +104,6 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     const stopDrag = () => {
       isDown = false;
       scrollContainer.classList.remove("dragging");
-    };
-
-    const handleMouseUp = () => {
-      stopDrag();
-    };
-
-    const handleMouseLeave = () => {
-      stopDrag();
     };
 
     const handleClick = (event: MouseEvent) => {
@@ -147,16 +138,27 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     };
 
     const handleScrollableState = () => {
-      if (!areEventsAdded) {
-        areEventsAdded = true;
+      if (!scrollEventsController) {
         scrollContainer.classList.add("scrollable");
-        scrollContainer.addEventListener("mousedown", handleMouseDown);
-        scrollContainer.addEventListener("mousemove", handleMouseMove);
-        scrollContainer.addEventListener("mouseup", handleMouseUp);
-        scrollContainer.addEventListener("mouseleave", handleMouseLeave);
-        scrollContainer.addEventListener("click", handleClick, true);
-        scrollContainer.addEventListener("dragstart", handleDragStart);
-        scrollContainer.addEventListener("scroll", handleScroll);
+        scrollEventsController = new AbortController();
+        const { signal } = scrollEventsController;
+        scrollContainer.addEventListener("pointerdown", handlePointerDown, {
+          signal,
+        });
+        scrollContainer.addEventListener("pointermove", handlePointerMove, {
+          signal,
+        });
+        scrollContainer.addEventListener("pointerup", stopDrag, { signal });
+        scrollContainer.addEventListener("pointerleave", stopDrag, { signal });
+        scrollContainer.addEventListener("pointercancel", stopDrag, { signal });
+        scrollContainer.addEventListener("click", handleClick, {
+          capture: true,
+          signal,
+        });
+        scrollContainer.addEventListener("dragstart", handleDragStart, {
+          signal,
+        });
+        scrollContainer.addEventListener("scroll", handleScroll, { signal });
       }
 
       if (!leftButton.classList.contains("scrollable")) {
@@ -172,27 +174,19 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     };
 
     const handleUnscrollableState = () => {
-      if (areEventsAdded) {
-        areEventsAdded = false;
+      if (scrollEventsController) {
         scrollContainer.classList.remove("scrollable");
-        scrollContainer.removeEventListener("mousedown", handleMouseDown);
-        scrollContainer.removeEventListener("mousemove", handleMouseMove);
-        scrollContainer.removeEventListener("mouseup", handleMouseUp);
-        scrollContainer.removeEventListener("mouseleave", handleMouseLeave);
-        scrollContainer.removeEventListener("click", handleClick, true);
-        scrollContainer.removeEventListener("dragstart", handleDragStart);
-        scrollContainer.removeEventListener("scroll", handleScroll);
+        scrollEventsController.abort();
+        scrollEventsController = null;
       }
 
       if (leftButton.classList.contains("scrollable")) {
-        leftButton.classList.remove("scrollable");
-        leftButton.classList.remove("clamped");
+        leftButton.classList.remove("scrollable", "clamped");
         leftButton.disabled = true;
       }
 
       if (rightButton.classList.contains("scrollable")) {
-        rightButton.classList.remove("scrollable");
-        rightButton.classList.remove("clamped");
+        rightButton.classList.remove("scrollable", "clamped");
         rightButton.disabled = true;
       }
 
@@ -228,9 +222,10 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
       <div>
         <button
           ref={leftButtonRef}
-          onMouseDown={() => startAnimationScroll("left")}
-          onMouseUp={stopAnimationScroll}
-          onMouseLeave={stopAnimationScroll}
+          onPointerDown={() => startAnimationScroll("left")}
+          onPointerUp={stopAnimationScroll}
+          onPointerLeave={stopAnimationScroll}
+          onPointerCancel={stopAnimationScroll}
         >
           <FaAngleLeft />
         </button>
@@ -252,9 +247,10 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
         </ul>
         <button
           ref={rightButtonRef}
-          onMouseDown={() => startAnimationScroll("right")}
-          onMouseUp={stopAnimationScroll}
-          onMouseLeave={stopAnimationScroll}
+          onPointerDown={() => startAnimationScroll("right")}
+          onPointerUp={stopAnimationScroll}
+          onPointerLeave={stopAnimationScroll}
+          onPointerCancel={stopAnimationScroll}
         >
           <FaAngleRight />
         </button>
