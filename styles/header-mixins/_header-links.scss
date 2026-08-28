@@ -31,9 +31,19 @@
         cursor: pointer;
         pointer-events: none;
 
-        &:hover {
-          > svg {
-            fill: var(--color-1);
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            > svg {
+              fill: var(--color-1);
+            }
+          }
+        }
+
+        @media (hover: none) {
+          &:active {
+            > svg {
+              fill: var(--color-1);
+            }
           }
         }
 

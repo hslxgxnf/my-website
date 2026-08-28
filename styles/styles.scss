@@ -42,7 +42,15 @@ body {
 a {
   text-decoration: none;
 
-  &:hover {
-    color: var(--color-1);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--color-1);
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      color: var(--color-1);
+    }
   }
 }
