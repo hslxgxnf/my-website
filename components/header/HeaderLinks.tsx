@@ -78,7 +78,7 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     let startX: number;
     let scrollLeft: number;
 
-    let scrollEventsController: AbortController | null = null;
+    let scrollContainerController: AbortController | null = null;
 
     const handlePointerDown = (event: PointerEvent) => {
       isDown = true;
@@ -138,10 +138,10 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     };
 
     const handleScrollableState = () => {
-      if (!scrollEventsController) {
+      if (!scrollContainerController) {
         scrollContainer.classList.add("scrollable");
-        scrollEventsController = new AbortController();
-        const { signal } = scrollEventsController;
+        scrollContainerController = new AbortController();
+        const { signal } = scrollContainerController;
         scrollContainer.addEventListener("pointerdown", handlePointerDown, {
           signal,
         });
@@ -174,10 +174,10 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
     };
 
     const handleUnscrollableState = () => {
-      if (scrollEventsController) {
+      if (scrollContainerController) {
         scrollContainer.classList.remove("scrollable");
-        scrollEventsController.abort();
-        scrollEventsController = null;
+        scrollContainerController.abort();
+        scrollContainerController = null;
       }
 
       if (leftButton.classList.contains("scrollable")) {
