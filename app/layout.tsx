@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/styles/styles.scss";
+import TouchInitializer from "@/components/all/TouchInitializer";
 import Header from "@/components/header/Header";
 import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
 import TitleValidator from "@/components/all/TitleValidator";
@@ -41,6 +42,8 @@ export default function Layout({ children }: LayoutProps) {
       className={`${roboto.variable} ${roboto_mono.variable}`}
     >
       <body>
+        <TouchInitializer />
+
         <Header
           links={[
             "Windows",
