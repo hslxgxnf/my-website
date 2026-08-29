@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @mixin hover-type($type) {
   @if $type == "hover" {
     @media (hover: hover) and (pointer: fine) {
@@ -19,8 +21,8 @@ $breakpoints: (
 );
 
 @mixin max-width-size($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    $value: map-get($breakpoints, $breakpoint);
+  @if map.has-key($breakpoints, $breakpoint) {
+    $value: map.get($breakpoints, $breakpoint);
     // width <= x
     @media (max-width: $value) {
       @content;
