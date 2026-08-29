@@ -1,4 +1,5 @@
 @use "main-mixins" as mixins;
+@use "media" as *;
 
 @mixin main {
   > main {
@@ -12,6 +13,12 @@
       @include mixins.reference-nav;
 
       @include mixins.page-nav;
+
+      &:last-child {
+        @include max-width-size("tablet-lg") {
+          flex-basis: 0;
+        }
+      }
     }
 
     > article {

@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 @mixin header-path {
   > nav:last-child {
     display: flex;
@@ -6,24 +8,71 @@
     height: var(--space-40);
     background-color: var(--background-color-1);
 
-    > div {
+    > aside {
       flex-basis: 20%;
     }
 
-    > ul {
+    > main {
       display: flex;
-      align-items: center;
-      flex-basis: 60%;
-      padding-left: var(--space-40);
+      justify-content: space-between;
+      flex-basis: 80%;
+      padding: 0 var(--space-40);
 
-      > li {
+      > ul {
         display: flex;
-        align-items: center;
-        list-style-type: none;
-        font-size: var(--font-size-25);
 
-        &:last-child {
-          color: var(--color-1);
+        > li {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          font-size: var(--font-size-25);
+
+          &:last-child {
+            color: var(--color-1);
+          }
+        }
+      }
+
+      > button {
+        display: none;
+        border: none;
+        border-radius: var(--border-radius);
+        padding: 0 var(--space-10);
+        background-color: var(--background-color-4);
+        font-size: var(--font-size-25);
+        cursor: pointer;
+
+        @include max-width-size("tablet-lg") {
+          &.active {
+            display: flex;
+            align-items: center;
+
+            @include hover-type("hover") {
+              &:hover {
+                > svg {
+                  fill: var(--color-1);
+                }
+              }
+            }
+
+            @include hover-type("none") {
+              &:active {
+                > svg {
+                  fill: var(--color-1);
+                }
+              }
+            }
+
+            > svg {
+              transition: transform 0.2s;
+            }
+
+            &.open {
+              > svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
         }
       }
     }

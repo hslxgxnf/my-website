@@ -1,7 +1,13 @@
+@use "../media" as *;
+
 @mixin article-base {
   flex-basis: 60%;
   padding: var(--space-40);
   min-width: 0;
+
+  @include max-width-size("tablet-lg") {
+    flex-basis: 80%;
+  }
 
   :is(h1, h2, h3, p, hr, ul, li, table) {
     margin-bottom: var(--space-20);

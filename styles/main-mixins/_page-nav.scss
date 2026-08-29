@@ -1,17 +1,26 @@
+@use "../media" as *;
+
 @mixin page-nav {
   &:nth-of-type(2) {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
     > div {
-      flex-basis: 80%;
-      position: sticky;
+      display: block;
+      position: fixed;
       top: calc(var(--height-header) + var(--space-40));
+      right: 40px;
+      width: 17%;
       height: 600px;
       overflow-y: auto;
-      overscroll-behavior-y: contain;
       scrollbar-width: none;
+
+      @include max-width-size("tablet-lg") {
+        display: none;
+        top: var(--height-header);
+        width: 300px;
+
+        &.open {
+          display: block;
+        }
+      }
 
       > nav {
         border-radius: var(--border-radius);
