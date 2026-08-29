@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 @mixin header-links {
   > nav:first-child {
     display: flex;
@@ -31,7 +33,7 @@
         cursor: pointer;
         pointer-events: none;
 
-        @media (hover: hover) and (pointer: fine) {
+        @include hover-type("hover") {
           &:hover {
             > svg {
               fill: var(--color-1);
@@ -39,7 +41,7 @@
           }
         }
 
-        @media (hover: none) {
+        @include hover-type("none") {
           &:active {
             > svg {
               fill: var(--color-1);

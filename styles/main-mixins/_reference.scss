@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 @mixin reference-nav {
   &:nth-of-type(1) {
     display: flex;
@@ -38,13 +40,13 @@
               align-items: center;
               gap: var(--space-10);
 
-              @media (hover: hover) and (pointer: fine) {
+              @include hover-type("hover") {
                 &:hover > span {
                   color: var(--color-1);
                 }
               }
 
-              @media (hover: none) {
+              @include hover-type("none") {
                 &:active > span {
                   color: var(--color-1);
                 }
@@ -101,7 +103,7 @@
       background-color: transparent;
       cursor: pointer;
 
-      @media (hover: hover) and (pointer: fine) {
+      @include hover-type("hover") {
         &:hover {
           > svg {
             fill: var(--background-color-3);
@@ -114,7 +116,7 @@
         }
       }
 
-      @media (hover: none) {
+      @include hover-type("none") {
         &:active {
           > svg {
             fill: var(--background-color-3);

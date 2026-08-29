@@ -2,6 +2,7 @@
 @use "header" as *;
 @use "main" as *;
 @use "katex/dist/katex.min.css";
+@use "media" as *;
 
 @include root-variables;
 
@@ -40,7 +41,7 @@ body {
 }
 
 a {
-  @media (hover: hover) and (pointer: fine) {
+  @include hover-type("hover") {
     text-decoration: none;
 
     &:hover {
@@ -48,7 +49,7 @@ a {
     }
   }
 
-  @media (hover: none) {
+  @include hover-type("none") {
     -webkit-tap-highlight-color: transparent;
 
     &:active {
@@ -58,7 +59,7 @@ a {
 }
 
 button {
-  @media (hover: none) {
+  @include hover-type("none") {
     -webkit-tap-highlight-color: transparent;
   }
 }

@@ -1,0 +1,31 @@
+@mixin hover-type($type) {
+  @if $type == "hover" {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  } @else if $type == "none" {
+    @media (hover: none) {
+      @content;
+    }
+  } @else {
+    @error "Invalid hover type: #{$type}";
+  }
+}
+
+$breakpoints: (
+  "tablet-lg": 1200px,
+  "tablet": 1024px,
+  "mobile": 768px,
+);
+
+@mixin max-width-size($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    // width <= x
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "Invalid breakpoint: #{$breakpoint}";
+  }
+}
