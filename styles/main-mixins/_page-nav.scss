@@ -78,6 +78,7 @@
 
               > a {
                 display: block;
+                overflow-wrap: break-word;
 
                 &.active {
                   color: var(--color-1);
