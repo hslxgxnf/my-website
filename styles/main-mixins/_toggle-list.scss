@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 @mixin toggle-list {
   .toggle-list {
     list-style: none;
@@ -10,8 +12,26 @@
       cursor: pointer;
       user-select: none;
 
-      &:hover {
-        color: var(--color-1);
+      &.open {
+        transform: rotate(90deg);
+
+        & + header + main {
+          display: block;
+        }
+      }
+
+      @include hover-type("hover") {
+        &:hover {
+          color: var(--color-1);
+        }
+      }
+
+      @include hover-type("none") {
+        -webkit-tap-highlight-color: transparent;
+
+        &:active {
+          color: var(--color-1);
+        }
       }
     }
 
@@ -21,14 +41,6 @@
 
     > main {
       display: none;
-    }
-
-    > div.open {
-      transform: rotate(90deg);
-
-      & + header + main {
-        display: block;
-      }
     }
   }
 }
