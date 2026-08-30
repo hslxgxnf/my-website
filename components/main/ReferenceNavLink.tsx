@@ -1,30 +1,16 @@
 "use client";
 
-import { type MouseEvent, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import type { Site } from "@/types/main/interfaces";
+import setTooltip from "@/functions/main/setTooltip";
 
 interface ReferenceNavImageProps {
   site: Site;
 }
 export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
-  function handleMouseEnter(event: MouseEvent<HTMLAnchorElement>) {
-    const span = event.currentTarget.querySelector("span");
-
-    if (!span) {
-      console.error("No span");
-      return;
-    }
-
-    if (span.scrollWidth > span.clientWidth) {
-      event.currentTarget.setAttribute("title", span.textContent);
-    } else {
-      event.currentTarget.removeAttribute("title");
-    }
-  }
-
   const [isLoading, setIsLoading] = useState(true);
 
   let spanText = "";
@@ -37,12 +23,7 @@ export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
   }
 
   return (
-    <Link
-      href={site.url}
-      target="_blank"
-      rel="noopener"
-      onMouseEnter={handleMouseEnter}
-    >
+    <Link href={site.url} target="_blank" rel="noopener">
       <div className={isLoading ? "loading" : undefined}>
         <Image
           src={site.favicon}
@@ -50,7 +31,7 @@ export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
           onLoad={() => setIsLoading(false)}
         />
       </div>
-      <span>{spanText}</span>
+      <span onMouseEnter={setTooltip}>{spanText}</span>
     </Link>
   );
 }

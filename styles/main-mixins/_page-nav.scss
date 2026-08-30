@@ -6,16 +6,17 @@
       display: block;
       position: fixed;
       top: calc(var(--height-header) + var(--space-40));
-      right: 40px;
+      right: var(--space-40);
+      z-index: 1;
       width: 17%;
-      height: 600px;
+      height: calc(var(--width-sidebar) * 2);
       overflow-y: auto;
       scrollbar-width: none;
 
       @include max-width-size("tablet-lg") {
         display: none;
         top: var(--height-header);
-        width: 300px;
+        width: var(--width-sidebar);
 
         &.open {
           display: block;
@@ -39,8 +40,16 @@
               font-size: var(--font-size-25);
               cursor: pointer;
 
-              &:hover > svg {
-                fill: var(--color-1);
+              @include hover-type("hover") {
+                &:hover > svg {
+                  fill: var(--color-1);
+                }
+              }
+
+              @include hover-type("none") {
+                &:active > svg {
+                  fill: var(--color-1);
+                }
               }
             }
 
@@ -75,8 +84,16 @@
                   font-size: var(--font-size-25);
                   cursor: pointer;
 
-                  &:hover > svg {
-                    fill: var(--color-1);
+                  @include hover-type("hover") {
+                    &:hover > svg {
+                      fill: var(--color-1);
+                    }
+                  }
+
+                  @include hover-type("none") {
+                    &:active > svg {
+                      fill: var(--color-1);
+                    }
                   }
                 }
               }

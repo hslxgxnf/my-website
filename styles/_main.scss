@@ -19,6 +19,12 @@
           flex-basis: 0;
         }
       }
+
+      &:first-child {
+        @include max-width-size("tablet") {
+          flex-basis: 0;
+        }
+      }
     }
 
     > article {

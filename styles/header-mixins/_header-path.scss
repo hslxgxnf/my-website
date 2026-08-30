@@ -10,6 +10,10 @@
 
     > aside {
       flex-basis: 20%;
+
+      @include max-width-size("tablet") {
+        flex-basis: 0;
+      }
     }
 
     > main {
@@ -17,6 +21,10 @@
       justify-content: space-between;
       flex-basis: 80%;
       padding: 0 var(--space-40);
+
+      @include max-width-size("tablet") {
+        flex-basis: 100%;
+      }
 
       > ul {
         display: flex;
@@ -33,44 +41,64 @@
         }
       }
 
-      > button {
-        display: none;
-        border: none;
-        border-radius: var(--border-radius);
-        padding: 0 var(--space-10);
-        background-color: var(--background-color-4);
-        font-size: var(--font-size-25);
-        cursor: pointer;
+      > div {
+        display: flex;
 
-        @include max-width-size("tablet-lg") {
-          &.active {
-            display: flex;
-            align-items: center;
+        > button {
+          display: flex;
+          align-items: center;
+          opacity: 0;
+          border: none;
+          border-radius: var(--border-radius);
+          padding: 0 var(--space-10);
+          font-size: var(--font-size-25);
+          cursor: pointer;
+          pointer-events: none;
 
-            @include hover-type("hover") {
-              &:hover {
-                > svg {
-                  fill: var(--color-1);
-                }
-              }
-            }
-
-            @include hover-type("none") {
-              &:active {
-                > svg {
-                  fill: var(--color-1);
-                }
-              }
-            }
-
-            > svg {
-              transition: transform 0.2s;
-            }
-
-            &.open {
+          @include hover-type("hover") {
+            &:hover {
               > svg {
-                transform: rotate(180deg);
+                fill: var(--color-1);
               }
+            }
+          }
+
+          @include hover-type("none") {
+            &:active {
+              > svg {
+                fill: var(--color-1);
+              }
+            }
+          }
+          > svg {
+            transition: transform 0.2s;
+          }
+
+          &.open {
+            > svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        > button:first-child {
+          background-color: var(--background-color-3);
+
+          @include max-width-size("tablet") {
+            &.active {
+              opacity: 1;
+              pointer-events: auto;
+            }
+          }
+        }
+
+        > button:last-child {
+          background-color: var(--background-color-4);
+
+          @include max-width-size("tablet-lg") {
+            &.active {
+              opacity: 1;
+              pointer-events: auto;
             }
           }
         }

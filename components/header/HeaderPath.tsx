@@ -30,14 +30,33 @@ export default function HeaderPath() {
     });
   }
 
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  function handleClick() {
-    if (!buttonRef.current) {
-      console.error("No buttonRef");
+  const referenceNavButtonRef = useRef<HTMLButtonElement>(null);
+  function handleReferenceNavButtonClick() {
+    if (!referenceNavButtonRef.current) {
+      console.error("No referenceNavButtonRef");
       return;
     }
 
-    buttonRef.current.classList.toggle("open");
+    referenceNavButtonRef.current.classList.toggle("open");
+
+    const referenceNav = document.querySelector<HTMLDivElement>(
+      "body > main > aside:first-child > div",
+    );
+    if (!referenceNav) {
+      console.error("No referenceNav");
+      return;
+    }
+    referenceNav.classList.toggle("open");
+  }
+
+  const pageNavButtonRef = useRef<HTMLButtonElement>(null);
+  function handlePageNavButtonClick() {
+    if (!pageNavButtonRef.current) {
+      console.error("No pageNavButtonRef");
+      return;
+    }
+
+    pageNavButtonRef.current.classList.toggle("open");
 
     const pageNav = document.querySelector<HTMLDivElement>(
       "body > main > aside:last-child > div",
@@ -51,11 +70,32 @@ export default function HeaderPath() {
 
   useEffect(() => {
     // Reset the class attribute after page transition.
-    if (!buttonRef.current) {
-      console.error("No buttonRef");
+    if (!referenceNavButtonRef.current) {
+      console.error("No referenceNavButtonRef");
       return;
     }
-    buttonRef.current.className = "";
+    if (!pageNavButtonRef.current) {
+      console.error("No pageNavButtonRef");
+      return;
+    }
+    referenceNavButtonRef.current.className = "";
+    pageNavButtonRef.current.className = "";
+
+    // Check if ReferenceNav and PageNav exist.
+    const referenceNavParent = document.querySelector<HTMLElement>(
+      "body > main > aside:first-child",
+    );
+    if (!referenceNavParent) {
+      console.error("No referenceNavParent");
+      return;
+    }
+    if (referenceNavParent.children.length === 0) {
+      referenceNavButtonRef.current.classList.remove("active");
+      referenceNavButtonRef.current.disabled = true;
+    } else {
+      referenceNavButtonRef.current.classList.add("active");
+      referenceNavButtonRef.current.disabled = false;
+    }
 
     const pageNavParent = document.querySelector<HTMLElement>(
       "body > main > aside:last-child",
@@ -64,21 +104,21 @@ export default function HeaderPath() {
       console.error("No pageNavParent");
       return;
     }
-
     const checkChildren = () => {
-      if (!buttonRef.current) {
-        console.error("No buttonRef");
+      if (!pageNavButtonRef.current) {
+        console.error("No pageNavButtonRef");
         return;
       }
 
       if (pageNavParent.children.length === 0) {
-        buttonRef.current.classList.remove("active");
+        pageNavButtonRef.current.classList.remove("active");
+        pageNavButtonRef.current.disabled = true;
       } else {
-        buttonRef.current.classList.add("active");
+        pageNavButtonRef.current.classList.add("active");
+        pageNavButtonRef.current.disabled = false;
       }
     };
     checkChildren();
-
     const observer = new MutationObserver(() => {
       checkChildren();
     });
@@ -107,9 +147,17 @@ export default function HeaderPath() {
           })}
         </ul>
 
-        <button ref={buttonRef} onClick={handleClick}>
-          <FaChevronUp />
-        </button>
+        <div>
+          <button
+            ref={referenceNavButtonRef}
+            onClick={handleReferenceNavButtonClick}
+          >
+            <FaChevronUp />
+          </button>
+          <button ref={pageNavButtonRef} onClick={handlePageNavButtonClick}>
+            <FaChevronUp />
+          </button>
+        </div>
       </main>
     </nav>
   );

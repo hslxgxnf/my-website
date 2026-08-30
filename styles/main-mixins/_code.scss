@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 @mixin code {
   span.underline {
     text-decoration: underline;
@@ -63,8 +65,16 @@
         font-size: var(--font-size-25);
         cursor: pointer;
 
-        &:hover {
-          background-color: var(--background-color-2);
+        @include hover-type("hover") {
+          &:hover {
+            background-color: var(--background-color-2);
+          }
+        }
+
+        @include hover-type("none") {
+          &:active {
+            background-color: var(--background-color-2);
+          }
         }
       }
     }

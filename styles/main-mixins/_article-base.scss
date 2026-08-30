@@ -9,6 +9,10 @@
     flex-basis: 80%;
   }
 
+  @include max-width-size("tablet") {
+    flex-basis: 100%;
+  }
+
   :is(h1, h2, h3, p, hr, ul, li, table) {
     margin-bottom: var(--space-20);
   }
