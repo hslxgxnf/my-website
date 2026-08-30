@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "header" as *;
 @use "main" as *;
+@use "footer" as *;
 @use "katex/dist/katex.min.css";
 @use "media" as *;
 
@@ -29,17 +30,7 @@ body {
 
   @include main;
 
-  > footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    height: 100px;
-
-    > p {
-      font-size: var(--font-size-25);
-    }
-  }
+  @include footer;
 }
 
 a {
