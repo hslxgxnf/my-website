@@ -4,8 +4,7 @@
 @mixin main {
   > main {
     display: flex;
-    flex-grow: 1;
-    flex-basis: auto;
+    flex: 1;
 
     > aside {
       flex-basis: 20%;
