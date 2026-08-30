@@ -23,6 +23,8 @@ export default function Page() {
         <hr />
         <HeadingLinkPage>Properties & Methods</HeadingLinkPage>
       </article>
+
+      <aside></aside>
     </main>
   );
 }
