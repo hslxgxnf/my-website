@@ -1,18 +1,25 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { Dispatch, SetStateAction, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { IoMenu, IoClose } from "react-icons/io5";
 
 import logo from "@/public/logo.png";
 
 interface HeaderLinksProps {
   links: string[];
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function HeaderLinks({ links }: HeaderLinksProps) {
+export default function HeaderLinks({
+  links,
+  isOpen,
+  setIsOpen,
+}: HeaderLinksProps) {
   const ulRef = useRef<HTMLUListElement>(null);
   const animationRef = useRef<number | null>(null);
   const startAnimationScroll = (dir: "left" | "right") => {
@@ -192,6 +199,39 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
   }, []);
 
   const path = usePathname();
+
+  function handleClick() {
+    setIsOpen((prev) => !prev);
+  }
+  useEffect(() => {
+    // Close the open menu on page change.
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }, [path]);
+  useEffect(() => {
+    // Close the open menu when the Escape key is pressed.
+    if (!isOpen) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+
+        // Remove the focus effect after the menu is closed.
+        if (document.activeElement instanceof HTMLElement) {
+          document.activeElement.blur();
+        }
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
   return (
     <nav>
       <Link href="/">
@@ -237,6 +277,28 @@ export default function HeaderLinks({ links }: HeaderLinksProps) {
         >
           <FaAngleRight />
         </button>
+      </div>
+
+      <div>
+        <button onClick={handleClick} className={isOpen ? "open" : undefined}>
+          {isOpen ? <IoClose /> : <IoMenu />}
+        </button>
+        <ul className={isOpen ? "open" : undefined}>
+          {links.map((link, index) => {
+            const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
+
+            return (
+              <li key={index}>
+                <Link
+                  href={href}
+                  className={path.startsWith(href) ? "active" : undefined}
+                >
+                  {link}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );
