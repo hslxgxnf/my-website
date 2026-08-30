@@ -283,7 +283,7 @@ export default function HeaderLinks({
         <button onClick={handleClick} className={isOpen ? "open" : undefined}>
           {isOpen ? <IoClose /> : <IoMenu />}
         </button>
-        <ul className={isOpen ? "open" : undefined}>
+        <ul className={`menu ${isOpen ? "open" : ""}`}>
           {links.map((link, index) => {
             const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
 

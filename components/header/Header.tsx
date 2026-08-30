@@ -26,7 +26,7 @@ export default function Header({ links }: HeaderProps) {
       }
 
       const target = event.target as HTMLElement | null;
-      if (target && target.closest("ul")) {
+      if (target && target.closest("ul")?.classList.contains("menu")) {
         return;
       }
 
