@@ -1,6 +1,6 @@
 @use "../media" as *;
 
-@mixin header-links {
+@mixin header-link-1 {
   > nav:first-child {
     display: flex;
     gap: var(--space-40);
@@ -11,18 +11,25 @@
       justify-content: space-between;
     }
 
-    > a {
-      width: 200px;
-      height: 80px;
+    > div:first-child {
+      width: var(--width-logo);
+      height: var(--height-logo);
 
-      > img {
+      > a {
+        display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+
+        > img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
     }
 
-    > div:first-of-type {
+    > div:nth-child(2) {
       display: flex;
       align-items: center;
       gap: var(--space-10);
@@ -103,7 +110,7 @@
       }
     }
 
-    > div:last-of-type {
+    > div:last-child {
       display: none;
 
       @include max-width-size("mobile") {

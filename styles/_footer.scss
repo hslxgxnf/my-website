@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    height: 100px;
+    height: var(--height-footer);
 
     > p {
       font-size: var(--font-size-25);
