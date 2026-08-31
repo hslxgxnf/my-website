@@ -1,6 +1,6 @@
 @use "../media" as *;
 
-@mixin header-path {
+@mixin header-article-nav {
   > nav:last-child {
     display: flex;
     border-top: 1px solid var(--color-base);
@@ -19,6 +19,7 @@
     > main {
       display: flex;
       justify-content: space-between;
+      gap: var(--space-10);
       flex-basis: 80%;
       padding: 0 var(--space-40);
 
@@ -27,30 +28,113 @@
       }
 
       > ul {
-        display: flex;
+        display: none;
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        &.active {
+          display: flex;
+        }
+
+        &.overflow {
+          > li:not(:last-child) {
+            display: none;
+          }
+
+          > li:last-child {
+            display: flex;
+          }
+
+          + div:first-of-type {
+          }
+        }
 
         > li {
           display: flex;
           align-items: center;
+          flex-shrink: 0;
           list-style-type: none;
           font-size: var(--font-size-25);
 
-          &:last-child {
+          &:nth-last-child(2) {
             color: var(--color-1);
+          }
+
+          &:last-child {
+            display: none;
+
+            > button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: none;
+              border-radius: var(--border-radius);
+              width: var(--space-40);
+              height: 100%;
+              background-color: var(--background-color-5);
+              font-size: var(--font-size-25);
+              transform: rotate(-90deg);
+              cursor: pointer;
+
+              @include hover-type("hover") {
+                &:hover {
+                  > svg {
+                    fill: var(--color-1);
+                  }
+                }
+              }
+
+              @include hover-type("none") {
+                &:active {
+                  > svg {
+                    fill: var(--color-1);
+                  }
+                }
+              }
+
+              > svg {
+                transition: transform 0.2s;
+              }
+
+              &.open {
+                > svg {
+                  transform: rotate(180deg);
+                }
+              }
+            }
           }
         }
       }
 
-      > div {
+      > div:first-of-type {
+        position: fixed;
+        top: var(--height-header);
+        z-index: 1;
+
+        > ul {
+          border-radius: var(--border-radius);
+          padding: var(--space-10);
+          width: var(--width-sidebar);
+          max-height: calc(var(--width-sidebar) * 2);
+          background-color: var(--background-color-5);
+
+          > li {
+            list-style-type: none;
+          }
+        }
+      }
+
+      > div:last-of-type {
         display: flex;
 
         > button {
           display: flex;
+          justify-content: center;
           align-items: center;
           opacity: 0;
           border: none;
           border-radius: var(--border-radius);
-          padding: 0 var(--space-10);
+          width: var(--space-40);
           font-size: var(--font-size-25);
           cursor: pointer;
           pointer-events: none;
@@ -70,6 +154,7 @@
               }
             }
           }
+
           > svg {
             transition: transform 0.2s;
           }

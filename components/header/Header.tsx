@@ -1,5 +1,5 @@
-import HeaderLink1 from "@/components/header/HeaderLink1";
-import HeaderPath from "@/components/header/HeaderPath";
+import HeaderMainNav from "@/components/header/HeaderMainNav";
+import HeaderArticleNav from "@/components/header/HeaderArticleNav";
 
 interface HeaderProps {
   links: string[];
@@ -8,8 +8,8 @@ interface HeaderProps {
 export default function Header({ links }: HeaderProps) {
   return (
     <header>
-      <HeaderLink1 links={links} />
-      <HeaderPath />
+      <HeaderMainNav links={links} />
+      <HeaderArticleNav />
     </header>
   );
 }

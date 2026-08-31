@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Link from "next/link";
 
-export default function HeaderLink1Nav2({ links }: { links: string[] }) {
+export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
   const scrollContainerRef = useRef<HTMLUListElement>(null);
   const animationFrameIDRef = useRef<number | null>(null);
 
@@ -196,16 +196,19 @@ export default function HeaderLink1Nav2({ links }: { links: string[] }) {
   return (
     <div>
       <button
+        type="button"
+        aria-label="Scroll left"
+        aria-controls="scroll-menu"
         ref={leftButtonRef}
         onPointerDown={() => startAnimationScroll("left")}
         onPointerUp={stopAnimationScroll}
         onPointerLeave={stopAnimationScroll}
         onPointerCancel={stopAnimationScroll}
       >
-        <FaAngleLeft />
+        <FaAngleLeft aria-hidden="true" />
       </button>
 
-      <ul ref={scrollContainerRef}>
+      <ul id="scroll-menu" ref={scrollContainerRef}>
         {links.map((link, index) => {
           const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
 
@@ -223,13 +226,16 @@ export default function HeaderLink1Nav2({ links }: { links: string[] }) {
       </ul>
 
       <button
+        type="button"
+        aria-label="Scroll right"
+        aria-controls="scroll-menu"
         ref={rightButtonRef}
         onPointerDown={() => startAnimationScroll("right")}
         onPointerUp={stopAnimationScroll}
         onPointerLeave={stopAnimationScroll}
         onPointerCancel={stopAnimationScroll}
       >
-        <FaAngleRight />
+        <FaAngleRight aria-hidden="true" />
       </button>
     </div>
   );

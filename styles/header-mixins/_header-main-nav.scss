@@ -1,6 +1,6 @@
 @use "../media" as *;
 
-@mixin header-link-1 {
+@mixin header-main-nav {
   > nav:first-child {
     display: flex;
     gap: var(--space-40);

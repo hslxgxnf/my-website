@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 import { IoClose, IoMenu } from "react-icons/io5";
 import Link from "next/link";
 
-export default function HeaderLink1Nav3({ links }: { links: string[] }) {
+export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
   const [isOpen, setIsOpen] = useState(false);
   function handleClick() {
     setIsOpen((prev) => !prev);
@@ -70,11 +70,22 @@ export default function HeaderLink1Nav3({ links }: { links: string[] }) {
 
   return (
     <div>
-      <button onClick={handleClick} className={isOpen ? "open" : undefined}>
-        {isOpen ? <IoClose /> : <IoMenu />}
+      <button
+        type="button"
+        aria-label="Toggle menu"
+        aria-expanded={isOpen}
+        aria-controls="dropdown-menu"
+        onClick={handleClick}
+        className={isOpen ? "open" : undefined}
+      >
+        {isOpen ? (
+          <IoClose aria-hidden="true" />
+        ) : (
+          <IoMenu aria-hidden="true" />
+        )}
       </button>
 
-      <ul className={`menu ${isOpen ? "open" : ""}`}>
+      <ul id="dropdown-menu" className={`menu ${isOpen ? "open" : ""}`}>
         {links.map((link, index) => {
           const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
 

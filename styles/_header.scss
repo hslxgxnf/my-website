@@ -8,8 +8,8 @@
     z-index: 2;
     height: var(--height-header);
 
-    @include mixins.header-link-1;
+    @include mixins.header-main-nav;
 
-    @include mixins.header-path;
+    @include mixins.header-article-nav;
   }
 }
