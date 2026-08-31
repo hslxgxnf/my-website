@@ -28,7 +28,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-25">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-31">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -239,7 +239,10 @@ export default function Page() {
               <tr>
                 <td>Close Tab</td>
                 <td>Ctrl + W</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  {entities.checkedBox}, Remove{" "}
+                  <Highlight type="text">Extend Selection</Highlight>
+                </td>
               </tr>
               {/*F*/}
               <tr>
