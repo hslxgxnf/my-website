@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import ReferenceNav from "@/components/main/ReferenceNav";
+import RefNav from "@/components/main/RefNav";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <main>
       <aside>
-        <ReferenceNav />
+        <RefNav />
       </aside>
 
       <article>

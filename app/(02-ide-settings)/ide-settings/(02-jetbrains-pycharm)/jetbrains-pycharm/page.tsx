@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import { reference } from "./data";
 import { entities } from "../../(01-jetbrains-webstorm)/jetbrains-webstorm/data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
@@ -51,16 +51,16 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>
               Appearance & Behavior
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Editor</HeadingLinkId>
@@ -124,14 +124,14 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <thead>
               <tr>
@@ -164,9 +164,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Backup and Sync</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Advanced Settings</HeadingLinkId>
@@ -212,9 +212,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
       </article>
 

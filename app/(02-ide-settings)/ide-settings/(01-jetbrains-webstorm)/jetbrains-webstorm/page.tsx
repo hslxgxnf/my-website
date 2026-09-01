@@ -9,8 +9,8 @@ import {
   liveTemplateTextEdf,
   liveTemplateTextUc,
 } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
@@ -35,11 +35,11 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>
               Appearance & Behavior
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <thead>
               <tr>
@@ -90,9 +90,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <caption>Visual Studio 2022</caption>
             <thead>
@@ -520,9 +520,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <ul>
             <li>
               <p>Marketplace</p>
@@ -556,11 +556,11 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>
               Languages & Frameworks
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <thead>
               <tr>
@@ -682,9 +682,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <thead>
               <tr>
@@ -724,9 +724,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Backup and Sync</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <thead>
               <tr>
@@ -778,9 +778,9 @@ export default function Page() {
           </table>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <table>
             <thead>
               <tr>

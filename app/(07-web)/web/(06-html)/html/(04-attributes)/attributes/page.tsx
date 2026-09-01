@@ -8,8 +8,8 @@ import {
   codeBooleanAttributes,
   codeClass,
 } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
               Attributes
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>An attribute provides additional information to its element.</p>
           <p>
             An attribute is written as{" "}
@@ -38,18 +38,18 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>
               Enumerated Attributes
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>An enumerated attribute accepts a predefined set of values.</p>
           <Highlight type="complex-code">{codeEnumeratedAttributes}</Highlight>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Custom Attributes</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>
             <Highlight type="text">HTML</Highlight>{" "}
             <Highlight type="simple-code">data-*</Highlight>
@@ -61,9 +61,9 @@ export default function Page() {
           <Highlight type="complex-code">{codeCustomAttributesJS}</Highlight>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Boolean Attributes</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>
             A boolean attribute is determined solely by its presence or absence.
             When the attribute is present, it is considered{" "}
@@ -74,11 +74,11 @@ export default function Page() {
           <Highlight type="complex-code">{codeBooleanAttributes}</Highlight>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>
               Attribute Reflection
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>
             <Highlight type="text">HTML</Highlight> Attributes are reflected in
             corresponding <Highlight type="text">JavaScript</Highlight>{" "}
@@ -119,7 +119,7 @@ export default function Page() {
                 <Highlight type="simple-code">rel</Highlight>
               </p>
               <ul>
-                <ReferenceButton>
+                <RefButton>
                   <li>
                     <p>
                       <Highlight type="simple-code">rel="noopener"</Highlight>
@@ -134,10 +134,10 @@ export default function Page() {
                       <Highlight type="simple-code">rel="noopener"</Highlight>.
                     </p>
                   </li>
-                </ReferenceButton>
+                </RefButton>
               </ul>
             </li>
-            <ReferenceButton>
+            <RefButton>
               <li>
                 <p>
                   <Highlight type="simple-code">aria-*</Highlight>
@@ -160,14 +160,14 @@ export default function Page() {
                   </li>
                 </ul>
               </li>
-            </ReferenceButton>
-            <ReferenceButton>
+            </RefButton>
+            <RefButton>
               <li>
                 <p>
                   <Highlight type="simple-code">role</Highlight>
                 </p>
               </li>
-            </ReferenceButton>
+            </RefButton>
           </ul>
         </section>
       </article>

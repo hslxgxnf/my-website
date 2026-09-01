@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
-        <ReferenceButton>
+        <RefButton>
           <HeadingLinkId headingNumber={1} lastUpdated="2026-02-20">
             Property Vendor Prefixes
           </HeadingLinkId>
-        </ReferenceButton>
+        </RefButton>
         <ul>
           <li>
             <p>

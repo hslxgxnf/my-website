@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 // import { reference, code } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-// import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+// import RefButton from "@/components/main/RefButton";
 // import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav />
+      <RefNav /* reference={reference} */ />
 
       <article>
         <h1>Title</h1>

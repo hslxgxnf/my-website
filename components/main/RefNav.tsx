@@ -1,15 +1,31 @@
 "use client";
 
+import { useLayoutEffect } from "react";
+
 import type { Reference } from "@/types/main/interfaces";
-import ReferenceNavLink from "@/components/main/ReferenceNavLink";
+import { useNavStore } from "@/stores/useNavStore";
+import RefNavLink from "@/components/main/RefNavLink";
 import setTooltip from "@/functions/main/setTooltip";
 
 interface ReferenceNavProps {
   reference?: Reference;
 }
 
-export default function ReferenceNav({ reference }: ReferenceNavProps) {
-  if (!reference) return null;
+export default function RefNav({ reference }: ReferenceNavProps) {
+  const setRefNavActive = useNavStore((state) => state.setRefNavActive);
+  const isRefNavOpen = useNavStore((state) => state.isRefNavOpen);
+
+  useLayoutEffect(() => {
+    if (!reference) {
+      setRefNavActive(false);
+    } else {
+      setRefNavActive(true);
+    }
+  }, [reference, setRefNavActive]);
+
+  if (!reference) {
+    return null;
+  }
 
   const defaultNavs = reference.map((referenceItem, index) => {
     return (
@@ -24,13 +40,13 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
               } else if (site.name === "self") {
                 return (
                   <li key={index} data-self>
-                    <ReferenceNavLink site={site} />
+                    <RefNavLink site={site} />
                   </li>
                 );
               } else {
                 return (
                   <li key={index}>
-                    <ReferenceNavLink site={site} />
+                    <RefNavLink site={site} />
                   </li>
                 );
               }
@@ -42,7 +58,7 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
   });
 
   const smallViewNav = (
-    <div>
+    <div className={isRefNavOpen ? "open" : undefined}>
       <nav>
         <header>Reference</header>
         <hr />
@@ -62,13 +78,13 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
                       } else if (site.name === "self") {
                         return (
                           <li key={index} data-self>
-                            <ReferenceNavLink site={site} />
+                            <RefNavLink site={site} />
                           </li>
                         );
                       } else {
                         return (
                           <li key={index}>
-                            <ReferenceNavLink site={site} />
+                            <RefNavLink site={site} />
                           </li>
                         );
                       }

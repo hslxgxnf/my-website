@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
-        <ReferenceButton>
+        <RefButton>
           <HeadingLinkId headingNumber={1} lastUpdated="2026-04-18">
             Properties & Methods
           </HeadingLinkId>
-        </ReferenceButton>
+        </RefButton>
         <ul>
           <li>
             <p>
@@ -74,7 +74,7 @@ export default function Page() {
             </p>
           </li>
           <hr />
-          <ReferenceButton>
+          <RefButton>
             <li>
               <p>
                 <Highlight type="simple-code">Element.className</Highlight>
@@ -88,8 +88,8 @@ export default function Page() {
                 matters the inclusion.
               </p>
             </li>
-          </ReferenceButton>
-          <ReferenceButton>
+          </RefButton>
+          <RefButton>
             <li>
               <p>
                 <Highlight type="simple-code">Element.classList</Highlight>
@@ -108,7 +108,7 @@ export default function Page() {
                 <Highlight type="simple-code">DOMTokenList.replace()</Highlight>
               </p>
             </li>
-          </ReferenceButton>
+          </RefButton>
         </ul>
       </article>
 

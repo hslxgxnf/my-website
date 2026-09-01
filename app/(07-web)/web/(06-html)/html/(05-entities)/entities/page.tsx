@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-06-13">
               Entities
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Named Entities</HeadingLinkId>
@@ -74,7 +74,7 @@ export default function Page() {
                 </Highlight>
               </p>
             </li>
-            <ReferenceButton>
+            <RefButton>
               <li>
                 <p>
                   <Highlight type="text">Non-Breaking Space &nbsp;</Highlight>{" "}
@@ -94,7 +94,7 @@ export default function Page() {
                   to write two or more spaces in a row.
                 </p>
               </li>
-            </ReferenceButton>
+            </RefButton>
             <li>
               <p>
                 <Highlight type="text">Ampersand &amp;</Highlight>{" "}

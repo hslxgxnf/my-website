@@ -7,7 +7,7 @@ interface ReferenceButtonProps {
   children: ReactNode;
 }
 
-export default function ReferenceButton({ children }: ReferenceButtonProps) {
+export default function RefButton({ children }: ReferenceButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export default function ReferenceButton({ children }: ReferenceButtonProps) {
       console.error("No articleTargetElement");
       return;
     }
-    let articleTarget = "";
+    let articleTarget: string;
     if (articleTargetElement.className.includes("toggle-list")) {
       articleTarget = articleTargetElement.children[1].textContent;
     } else if (articleTargetElement.children[0]) {

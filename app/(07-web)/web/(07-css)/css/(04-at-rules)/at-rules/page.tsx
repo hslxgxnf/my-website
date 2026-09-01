@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-24">
               At-Rules
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>
             At-rules control how <Highlight type="text">CSS</Highlight> behaves.
           </p>
@@ -44,9 +44,9 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Statement At-Rules</HeadingLinkId>
           <section>
-            <ReferenceButton>
+            <RefButton>
               <HeadingLinkId headingNumber={3}>@import</HeadingLinkId>
-            </ReferenceButton>
+            </RefButton>
             <p>
               <Highlight type="simple-code">@import</Highlight> imports styles
               from other stylesheets.
@@ -68,9 +68,9 @@ export default function Page() {
             </p>
           </section>
           <section>
-            <ReferenceButton>
+            <RefButton>
               <HeadingLinkId headingNumber={3}>@layer</HeadingLinkId>
-            </ReferenceButton>
+            </RefButton>
             <p>
               <Highlight type="simple-code">@layer</Highlight> declares a
               cascade layer.

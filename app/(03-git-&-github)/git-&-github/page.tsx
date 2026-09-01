@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference, gitCommitMessageCode, gitHookCode } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-06-30">
               Git & GitHub
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>
             While <Highlight type="text">Git</Highlight> is a local version
             control system, <Highlight type="text">GitHub</Highlight> is a
@@ -182,7 +182,7 @@ export default function Page() {
                 single commit.
               </p>
               <ul>
-                <ReferenceButton>
+                <RefButton>
                   <li>
                     <p>
                       <Highlight type="simple-code">
@@ -214,7 +214,7 @@ export default function Page() {
                       and end without a period.
                     </p>
                   </li>
-                </ReferenceButton>
+                </RefButton>
                 <li>
                   <p>
                     <Highlight type="simple-code">git commit --amend</Highlight>
@@ -625,9 +625,9 @@ export default function Page() {
           <Highlight type="complex-code">{gitHookCode}</Highlight>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>GitHub Actions</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
 
           <p>
             <Highlight type="text">GitHub Actions</Highlight> is a continuous
@@ -657,22 +657,22 @@ export default function Page() {
         <section>
           <HeadingLinkId headingNumber={2}>Troubleshooting</HeadingLinkId>
           <ul>
-            <ReferenceButton>
+            <RefButton>
               <li>
                 <p>
                   Korean comments are garbled in{" "}
                   <Highlight type="text">GitHub</Highlight>.
                 </p>
               </li>
-            </ReferenceButton>
-            <ReferenceButton>
+            </RefButton>
+            <RefButton>
               <li>
                 <p>
                   The connection between a local repository and{" "}
                   <Highlight type="text">GitHub</Highlight> is lost.
                 </p>
               </li>
-            </ReferenceButton>
+            </RefButton>
           </ul>
         </section>
       </article>

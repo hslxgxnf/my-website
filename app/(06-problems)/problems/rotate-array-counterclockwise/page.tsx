@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference, code } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main-description/PageNav";
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-13">
               Rotate Array Counterclockwise
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 // import { reference, code } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
+import RefNav from "@/components/main/RefNav";
 // import ReferenceButton from "@/components/main/ReferenceButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 // import Highlight from "@/components/main-description/Highlight/Highlight";
@@ -15,7 +15,7 @@ export default function Page() {
   return (
     <main>
       <aside>
-        <ReferenceNav />
+        <RefNav />
       </aside>
 
       <article>

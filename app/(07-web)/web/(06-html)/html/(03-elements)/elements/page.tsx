@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { reference, code } from "./data";
-import ReferenceNav from "@/components/main/ReferenceNav";
-import ReferenceButton from "@/components/main/ReferenceButton";
+import RefNav from "@/components/main/RefNav";
+import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import ToggleList from "@/components/main-description/ToggleList";
@@ -15,15 +15,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <ReferenceNav reference={reference} />
+      <RefNav reference={reference} />
 
       <article>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
               Elements
             </HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
         </section>
         <section>
           <HeadingLinkId headingNumber={2}>Normal Elements</HeadingLinkId>
@@ -43,9 +43,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Void Elements</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <p>
             <Highlight type="simple-code">&lt;Tag /&gt;</Highlight>
           </p>
@@ -64,9 +64,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <ReferenceButton>
+          <RefButton>
             <HeadingLinkId headingNumber={2}>Content Categories</HeadingLinkId>
-          </ReferenceButton>
+          </RefButton>
           <ul>
             <li>
               <p>
@@ -178,7 +178,7 @@ export default function Page() {
                   <p>Non-Semantic Inline Grouping</p>
                 </li>
                 <hr />
-                <ReferenceButton>
+                <RefButton>
                   <ToggleList
                     header={
                       <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
@@ -242,8 +242,8 @@ export default function Page() {
                       <br />
                     </p>
                   </ToggleList>
-                </ReferenceButton>
-                <ReferenceButton>
+                </RefButton>
+                <RefButton>
                   <ToggleList
                     header={
                       <Highlight type="simple-code">&lt;form&gt;</Highlight>
@@ -261,7 +261,7 @@ export default function Page() {
                       existing URL.
                     </p>
                   </ToggleList>
-                </ReferenceButton>
+                </RefButton>
                 <li>
                   <p>
                     <Highlight type="simple-code">&lt;fieldset&gt;</Highlight>{" "}
@@ -301,7 +301,7 @@ export default function Page() {
                     <Highlight type="simple-code">&lt;output&gt;</Highlight>
                   </p>
                 </li>
-                <ReferenceButton>
+                <RefButton>
                   <ToggleList
                     header={
                       <Highlight type="simple-code">&lt;table&gt;</Highlight>
@@ -440,7 +440,7 @@ export default function Page() {
                       </li>
                     </ul>
                   </ToggleList>
-                </ReferenceButton>
+                </RefButton>
                 <li>
                   <p>
                     <Highlight type="simple-code">&lt;hgroup&gt;</Highlight>
@@ -572,13 +572,13 @@ export default function Page() {
                     <Highlight type="simple-code">&lt;time&gt;</Highlight>
                   </p>
                 </li>
-                <ReferenceButton>
+                <RefButton>
                   <li>
                     <p>
                       <Highlight type="simple-code">&lt;a&gt;</Highlight>
                     </p>
                   </li>
-                </ReferenceButton>
+                </RefButton>
                 <li>
                   <p>
                     <Highlight type="simple-code">&lt;figure&gt;</Highlight>{" "}

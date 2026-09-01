@@ -10,10 +10,10 @@ import setTooltip from "@/functions/main/setTooltip";
 interface ReferenceNavImageProps {
   site: Site;
 }
-export default function ReferenceNavLink({ site }: ReferenceNavImageProps) {
+export default function RefNavLink({ site }: ReferenceNavImageProps) {
   const [isLoading, setIsLoading] = useState(true);
 
-  let spanText = "";
+  let spanText: string;
   if (site.name === "self") {
     spanText = site.title;
   } else if (site.title === "") {
