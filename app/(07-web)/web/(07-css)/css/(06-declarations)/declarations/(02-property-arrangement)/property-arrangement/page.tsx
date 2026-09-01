@@ -18,9 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <aside>
-        <ReferenceNav reference={reference} />
-      </aside>
+      <ReferenceNav reference={reference} />
 
       <article>
         <section>

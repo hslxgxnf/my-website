@@ -85,9 +85,9 @@ export default function ReferenceNav({ reference }: ReferenceNavProps) {
   );
 
   return (
-    <>
+    <aside>
       {defaultNavs}
       {smallViewNav}
-    </>
+    </aside>
   );
 }
