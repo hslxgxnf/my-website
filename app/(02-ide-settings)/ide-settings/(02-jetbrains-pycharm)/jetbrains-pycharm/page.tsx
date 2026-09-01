@@ -218,9 +218,7 @@ export default function Page() {
         </section>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

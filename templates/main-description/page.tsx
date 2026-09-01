@@ -14,9 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <aside>
-        <ReferenceNav />
-      </aside>
+      <ReferenceNav />
 
       <article>
         <HeadingLinkId headingNumber={1} lastUpdated="YYYY-MM-DD">
@@ -24,9 +22,7 @@ export default function Page() {
         </HeadingLinkId>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

@@ -855,9 +855,7 @@ export default function Page() {
           </table>
         </section>
       </article>
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

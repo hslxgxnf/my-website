@@ -24,9 +24,7 @@ export default function Page() {
         </HeadingLinkId>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

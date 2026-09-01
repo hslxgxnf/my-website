@@ -39,9 +39,7 @@ export default function Page() {
         <Highlight type="complex-code">{code}</Highlight>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

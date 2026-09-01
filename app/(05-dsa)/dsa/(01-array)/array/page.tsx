@@ -35,9 +35,7 @@ export default function Page() {
         <p>There are one-dimensional and multi-dimensional arrays.</p>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

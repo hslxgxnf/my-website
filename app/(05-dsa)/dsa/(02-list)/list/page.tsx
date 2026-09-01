@@ -32,9 +32,7 @@ export default function Page() {
         <p>There are singly, doubly, and circular linked lists.</p>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

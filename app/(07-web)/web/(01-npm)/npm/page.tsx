@@ -146,9 +146,7 @@ export default function Page() {
         </ul>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

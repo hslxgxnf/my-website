@@ -130,80 +130,23 @@ export default function PageNav() {
   if (headings.length === 1) {
     if (isScrollable) {
       return (
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <button
-                  onClick={() => {
-                    window.scrollTo({
-                      top: 0,
-                    });
-                  }}
-                >
-                  <FaAngleDoubleUp />
-                </button>
-                <hr />
-              </li>
-              <li>
-                <button
-                  onClick={() => {
-                    window.scrollTo({
-                      top: document.documentElement.scrollHeight,
-                    });
-                  }}
-                >
-                  <FaAngleDoubleDown />
-                </button>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  } else {
-    return (
-      <div>
-        <nav>
-          <header>On this page</header>
-          <main>
-            <ul ref={ulRef}>
-              {headings.map((heading, index) => {
-                const content = heading.firstElementChild!.textContent;
-                const href = `#${content.replaceAll(" ", "-").toLowerCase()}`;
-
-                switch (heading.localName) {
-                  case "h1":
-                    return (
-                      <li key={index}>
-                        <Link
-                          href={href}
-                          onClick={(event) => handleClickFirstLink(event, href)}
-                        >
-                          {content}
-                        </Link>
-                        <hr />
-                      </li>
-                    );
-                  case "h2":
-                    return (
-                      <li key={index}>
-                        <Link href={href}>{content}</Link>
-                      </li>
-                    );
-                  case "h3":
-                    return (
-                      <li key={index} className="indent">
-                        <Link href={href}>{content}</Link>
-                      </li>
-                    );
-                }
-              })}
-              {isScrollable && (
+        <aside>
+          <div>
+            <nav>
+              <ul>
                 <li>
+                  <button
+                    onClick={() => {
+                      window.scrollTo({
+                        top: 0,
+                      });
+                    }}
+                  >
+                    <FaAngleDoubleUp />
+                  </button>
                   <hr />
+                </li>
+                <li>
                   <button
                     onClick={() => {
                       window.scrollTo({
@@ -214,11 +157,74 @@ export default function PageNav() {
                     <FaAngleDoubleDown />
                   </button>
                 </li>
-              )}
-            </ul>
-          </main>
-        </nav>
-      </div>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+      );
+    } else {
+      return null;
+    }
+  } else {
+    return (
+      <aside>
+        <div>
+          <nav>
+            <header>On this page</header>
+            <main>
+              <ul ref={ulRef}>
+                {headings.map((heading, index) => {
+                  const content = heading.firstElementChild!.textContent;
+                  const href = `#${content.replaceAll(" ", "-").toLowerCase()}`;
+
+                  switch (heading.localName) {
+                    case "h1":
+                      return (
+                        <li key={index}>
+                          <Link
+                            href={href}
+                            onClick={(event) =>
+                              handleClickFirstLink(event, href)
+                            }
+                          >
+                            {content}
+                          </Link>
+                          <hr />
+                        </li>
+                      );
+                    case "h2":
+                      return (
+                        <li key={index}>
+                          <Link href={href}>{content}</Link>
+                        </li>
+                      );
+                    case "h3":
+                      return (
+                        <li key={index} className="indent">
+                          <Link href={href}>{content}</Link>
+                        </li>
+                      );
+                  }
+                })}
+                {isScrollable && (
+                  <li>
+                    <hr />
+                    <button
+                      onClick={() => {
+                        window.scrollTo({
+                          top: document.documentElement.scrollHeight,
+                        });
+                      }}
+                    >
+                      <FaAngleDoubleDown />
+                    </button>
+                  </li>
+                )}
+              </ul>
+            </main>
+          </nav>
+        </div>
+      </aside>
     );
   }
 }

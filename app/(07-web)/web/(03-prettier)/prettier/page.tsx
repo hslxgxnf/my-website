@@ -37,9 +37,7 @@ export default function Page() {
         </p>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }

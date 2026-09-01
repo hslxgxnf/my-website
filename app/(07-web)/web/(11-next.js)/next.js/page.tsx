@@ -24,9 +24,7 @@ export default function Page() {
         </ReferenceButton>
       </article>
 
-      <aside>
-        <PageNav />
-      </aside>
+      <PageNav />
     </main>
   );
 }
