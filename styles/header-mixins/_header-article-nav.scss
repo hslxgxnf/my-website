@@ -8,7 +8,8 @@
     height: var(--space-40);
     background-color: var(--background-color-1);
 
-    > aside {
+    // Blank Container
+    > div:first-child {
       flex-basis: 20%;
 
       @include max-width-size("tablet") {
@@ -16,7 +17,8 @@
       }
     }
 
-    > main {
+    // Main Container
+    > div:last-child {
       display: flex;
       justify-content: space-between;
       gap: var(--space-10);
@@ -27,6 +29,7 @@
         flex-basis: 100%;
       }
 
+      // pathHistory
       > ul {
         display: none;
         overflow-x: auto;
@@ -37,16 +40,7 @@
         }
 
         &.overflow {
-          > li:not(:last-child) {
-            display: none;
-          }
-
-          > li:last-child {
-            display: flex;
-          }
-
-          + div:first-of-type {
-          }
+          display: none;
         }
 
         > li {
@@ -56,30 +50,97 @@
           list-style-type: none;
           font-size: var(--font-size-25);
 
-          &:nth-last-child(2) {
+          &:last-child {
             color: var(--color-1);
           }
+        }
+      }
 
-          &:last-child {
-            display: none;
+      // pathHistoryMenuButton & pathHistoryMenu Container
+      > div:first-of-type {
+        display: none;
 
-            > button {
+        &.overflow {
+          display: block;
+        }
+
+        // pathHistoryMenuButton
+        > button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          border-radius: var(--border-radius);
+          width: var(--space-40);
+          height: 100%;
+          background-color: var(--background-color-5);
+          font-size: var(--font-size-25);
+          cursor: pointer;
+
+          @include hover-type("hover") {
+            &:hover {
+              > svg {
+                fill: var(--color-1);
+              }
+            }
+          }
+
+          @include hover-type("none") {
+            &:active {
+              > svg {
+                fill: var(--color-1);
+              }
+            }
+          }
+
+          > svg {
+            transition: transform 0.2s;
+          }
+
+          &.open {
+            > svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        // pathHistoryMenu
+        > ul {
+          display: none;
+          position: fixed;
+          top: var(--height-header);
+          z-index: -2;
+          border-radius: var(--border-radius);
+          padding: var(--space-10);
+          width: var(--width-sidebar);
+          max-height: calc(var(--width-sidebar) * 2);
+          background-color: var(--background-color-5);
+
+          &.open {
+            display: block;
+          }
+
+          > li {
+            list-style-type: none;
+            font-size: var(--font-size-25);
+
+            &:not(:last-child) {
+              margin-bottom: var(--space-10);
+            }
+
+            > a {
               display: flex;
-              justify-content: center;
               align-items: center;
-              border: none;
-              border-radius: var(--border-radius);
-              width: var(--space-40);
-              height: 100%;
-              background-color: var(--background-color-5);
-              font-size: var(--font-size-25);
-              transform: rotate(-90deg);
-              cursor: pointer;
+              gap: var(--space-10);
 
               @include hover-type("hover") {
                 &:hover {
                   > svg {
                     fill: var(--color-1);
+                  }
+
+                  > span {
+                    color: var(--color-1);
                   }
                 }
               }
@@ -89,44 +150,36 @@
                   > svg {
                     fill: var(--color-1);
                   }
+
+                  > span {
+                    color: var(--color-1);
+                  }
                 }
               }
+            }
+
+            &:last-child {
+              display: flex;
+              align-items: center;
+              gap: var(--space-10);
 
               > svg {
-                transition: transform 0.2s;
+                fill: var(--color-1);
               }
 
-              &.open {
-                > svg {
-                  transform: rotate(180deg);
-                }
+              > span {
+                color: var(--color-1);
               }
             }
           }
         }
       }
 
-      > div:first-of-type {
-        position: fixed;
-        top: var(--height-header);
-        z-index: 1;
-
-        > ul {
-          border-radius: var(--border-radius);
-          padding: var(--space-10);
-          width: var(--width-sidebar);
-          max-height: calc(var(--width-sidebar) * 2);
-          background-color: var(--background-color-5);
-
-          > li {
-            list-style-type: none;
-          }
-        }
-      }
-
+      // referenceNavButton & pageNavButton Container
       > div:last-of-type {
         display: flex;
 
+        // referenceNavButton & pageNavButton
         > button {
           display: flex;
           justify-content: center;
@@ -166,6 +219,7 @@
           }
         }
 
+        // referenceNavButton
         > button:first-child {
           background-color: var(--background-color-3);
 
@@ -177,6 +231,7 @@
           }
         }
 
+        // pageNavButton
         > button:last-child {
           background-color: var(--background-color-4);
 
