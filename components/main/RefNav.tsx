@@ -3,7 +3,7 @@
 import { useLayoutEffect } from "react";
 
 import type { Reference } from "@/types/main/interfaces";
-import { useNavStore } from "@/stores/useNavStore";
+import { useStore } from "@/stores/useStore";
 import RefNavLink from "@/components/main/RefNavLink";
 import setTooltip from "@/functions/main/setTooltip";
 
@@ -12,16 +12,14 @@ interface ReferenceNavProps {
 }
 
 export default function RefNav({ reference }: ReferenceNavProps) {
-  const setRefNavActive = useNavStore((state) => state.setRefNavActive);
-  const isRefNavOpen = useNavStore((state) => state.isRefNavOpen);
+  const setRefNavBtnActive = useStore((state) => state.setRefNavBtnActive);
+  const isRefNavBtnOpen = useStore((state) => state.isRefNavBtnOpen);
 
   useLayoutEffect(() => {
-    if (!reference) {
-      setRefNavActive(false);
-    } else {
-      setRefNavActive(true);
+    if (reference) {
+      setRefNavBtnActive(true);
     }
-  }, [reference, setRefNavActive]);
+  }, [reference, setRefNavBtnActive]);
 
   if (!reference) {
     return null;
@@ -58,7 +56,7 @@ export default function RefNav({ reference }: ReferenceNavProps) {
   });
 
   const smallViewNav = (
-    <div className={isRefNavOpen ? "open" : undefined}>
+    <div className={isRefNavBtnOpen ? "open" : undefined}>
       <nav>
         <header>Reference</header>
         <hr />
