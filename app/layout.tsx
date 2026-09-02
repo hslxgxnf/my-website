@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/styles/styles.scss";
 import TouchInitializer from "@/components/all/TouchInitializer";
+import StoreInitializer from "@/components/all/StoreInitializer";
 import Header from "@/components/header/Header";
 import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
 import TitleValidator from "@/components/all/TitleValidator";
@@ -43,6 +44,7 @@ export default function Layout({ children }: LayoutProps) {
     >
       <body>
         <TouchInitializer />
+        <StoreInitializer />
 
         <Header
           links={[
