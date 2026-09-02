@@ -40,14 +40,14 @@ export default function HeaderArticleNav() {
 
       <div>
         <HeaderArticleNavSubNav1
-          pathHistoryRef={pathHistoryRef}
+          ref={pathHistoryRef} // forwardRef
           path={path}
           processedPath={processedPath}
         />
 
         <HeaderArticleNavSubNav2
-          pathHistoryButtonRef={pathHistoryButtonRef}
-          path={path}
+          key={`HeaderArticleNavSubNav2-${path}`} // Close the open menu on page transition.
+          ref={pathHistoryButtonRef} // forwardRef
           processedPath={processedPath}
         />
 

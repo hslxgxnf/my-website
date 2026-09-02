@@ -1,34 +1,23 @@
-import { type RefObject, useLayoutEffect } from "react";
+import { type Ref } from "react";
 import Link from "next/link";
 import { FaCaretRight } from "react-icons/fa";
 
 import type { Path } from "./HeaderArticleNav";
 
 export default function HeaderArticleNavSubNav1({
-  pathHistoryRef,
+  ref,
   path,
   processedPath,
 }: {
-  pathHistoryRef: RefObject<HTMLUListElement | null>;
+  ref: Ref<HTMLUListElement>;
   path: string;
   processedPath: Path[];
 }) {
-  useLayoutEffect(() => {
-    // Check active.
-    const pathHistory = pathHistoryRef.current;
-    if (!pathHistory) {
-      console.error("No pathHistory");
-      return;
-    }
-    if (path === "/") {
-      pathHistory.classList.remove("active");
-    } else {
-      pathHistory.classList.add("active");
-    }
-  }, [path]);
+  // Check active.
+  const isActive = path !== "/";
 
   return (
-    <ul ref={pathHistoryRef}>
+    <ul ref={ref} className={isActive ? "active" : undefined}>
       {processedPath.map((item, index) => {
         if (index !== processedPath.length - 1) {
           return (

@@ -1,4 +1,4 @@
-import { type RefObject, useRef, useLayoutEffect } from "react";
+import { type Ref, useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import Link from "next/link";
 import { HiMiniArrowTurnDownRight } from "react-icons/hi2";
@@ -6,57 +6,29 @@ import { HiMiniArrowTurnDownRight } from "react-icons/hi2";
 import type { Path } from "./HeaderArticleNav";
 
 export default function HeaderArticleNavSubNav2({
-  pathHistoryButtonRef,
-
-  path,
+  ref,
   processedPath,
 }: {
-  pathHistoryButtonRef: RefObject<HTMLButtonElement | null>;
-  path: string;
+  ref: Ref<HTMLButtonElement>;
   processedPath: Path[];
 }) {
-  const pathHistoryMenuRef = useRef<HTMLUListElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  function handlePathHistoryButtonClick() {
-    const pathHistoryButton = pathHistoryButtonRef.current;
-    if (!pathHistoryButton) {
-      console.error("No pathHistoryButton");
-      return;
-    }
-    pathHistoryButton.classList.toggle("open");
-
-    const pathHistoryMenu = pathHistoryMenuRef.current;
-    if (!pathHistoryMenu) {
-      console.error("No pathHistoryMenu");
-      return;
-    }
-    pathHistoryMenu.classList.toggle("open");
+  function handleClick() {
+    setIsOpen((prev) => !prev);
   }
-
-  useLayoutEffect(() => {
-    // Reset the settings from the previous page.
-    const pathHistoryButton = pathHistoryButtonRef.current;
-    if (!pathHistoryButton) {
-      console.error("No pathHistoryButton");
-      return;
-    }
-    const pathHistoryMenu = pathHistoryMenuRef.current;
-    if (!pathHistoryMenu) {
-      console.error("No pathHistoryMenu");
-      return;
-    }
-
-    pathHistoryButton.className = "";
-    pathHistoryMenu.className = "";
-  }, [path]);
 
   return (
     <div>
-      <button ref={pathHistoryButtonRef} onClick={handlePathHistoryButtonClick}>
+      <button
+        ref={ref}
+        className={isOpen ? "open" : undefined}
+        onClick={handleClick}
+      >
         <FaChevronUp />
       </button>
 
-      <ul ref={pathHistoryMenuRef}>
+      <ul className={isOpen ? "open" : undefined}>
         {processedPath.map((item, index) => {
           if (index !== processedPath.length - 1) {
             return (
