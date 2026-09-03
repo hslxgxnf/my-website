@@ -1,129 +1,34 @@
-import { type RefObject, useRef, useLayoutEffect } from "react";
+import { type Ref, useRef, useLayoutEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
+
+import { useStore } from "@/stores/useStore";
 
 export default function HeaderArticleNavSubNav3({
   pathHistoryRef,
   pathHistoryButtonRef,
   path,
 }: {
-  pathHistoryRef: RefObject<HTMLUListElement | null>;
-  pathHistoryButtonRef: RefObject<HTMLButtonElement | null>;
+  pathHistoryRef: Ref<HTMLUListElement>;
+  pathHistoryButtonRef: Ref<HTMLButtonElement>;
   path: string;
 }) {
+  const isRefNavBtnActive = useStore((state) => state.isRefNavBtnActive);
+  const isRefNavBtnOpen = useStore((state) => state.isRefNavBtnOpen);
+  const toggleRefNavBtnOpen = useStore((state) => state.toggleRefNavBtnOpen);
+
+  const isPageNavBtnActive = useStore((state) => state.isPageNavBtnActive);
+  const isPageNavBtnOpen = useStore((state) => state.isPageNavBtnOpen);
+  const togglePageNavBtnOpen = useStore((state) => state.togglePageNavBtnOpen);
+
   const referenceNavButtonRef = useRef<HTMLButtonElement>(null);
   const pageNavButtonRef = useRef<HTMLButtonElement>(null);
 
-  function handleReferenceNavButtonClick() {
-    const referenceNavButton = referenceNavButtonRef.current;
-    if (!referenceNavButton) {
-      console.error("No referenceNavButton");
-      return;
-    }
-    referenceNavButton.classList.toggle("open");
-
-    const referenceNav = document.querySelector<HTMLDivElement>(
-      "body > main > aside:first-child > div",
-    );
-    if (!referenceNav) {
-      console.error("No referenceNav");
-      return;
-    }
-    referenceNav.classList.toggle("open");
-  }
-
-  function handlePageNavButtonClick() {
-    const pageNavButton = pageNavButtonRef.current;
-    if (!pageNavButton) {
-      console.error("No pageNavButton");
-      return;
-    }
-    pageNavButton.classList.toggle("open");
-
-    const pageNav = document.querySelector<HTMLDivElement>(
-      "body > main > aside:last-child > div",
-    );
-    if (!pageNav) {
-      console.error("No pageNav");
-      return;
-    }
-    pageNav.classList.toggle("open");
-  }
-
-  useLayoutEffect(() => {
-    // Reset the settings from the previous page.
-    const referenceNavButton = referenceNavButtonRef.current;
-    if (!referenceNavButton) {
-      console.error("No referenceNavButton");
-      return;
-    }
-    const pageNavButton = pageNavButtonRef.current;
-    if (!pageNavButton) {
-      console.error("No pageNavButton");
-      return;
-    }
-
-    referenceNavButton.className = "";
-    pageNavButton.className = "";
-  }, [path]);
-
-  useLayoutEffect(() => {
-    // Check active.
-    const referenceNavButton = referenceNavButtonRef.current;
-    if (!referenceNavButton) {
-      console.error("No referenceNavButton");
-      return;
-    }
-    const pageNavButton = pageNavButtonRef.current;
-    if (!pageNavButton) {
-      console.error("No pageNavButton");
-      return;
-    }
-
-    const referenceNavParent = document.querySelector<HTMLElement>(
-      "body > main > aside:first-child",
-    );
-    if (!referenceNavParent) {
-      console.error("No referenceNavParent");
-      return;
-    }
-    if (referenceNavParent.children.length === 0) {
-      referenceNavButton.classList.remove("active");
-      referenceNavButton.disabled = true;
-    } else {
-      referenceNavButton.classList.add("active");
-      referenceNavButton.disabled = false;
-    }
-
-    const pageNavParent = document.querySelector<HTMLElement>(
-      "body > main > aside:last-child",
-    );
-    if (!pageNavParent) {
-      console.error("No pageNavParent");
-      return;
-    }
-    const checkChildren = () => {
-      if (pageNavParent.children.length === 0) {
-        pageNavButton.classList.remove("active");
-        pageNavButton.disabled = true;
-      } else {
-        pageNavButton.classList.add("active");
-        pageNavButton.disabled = false;
-      }
-    };
-    checkChildren();
-    const mutationObserver = new MutationObserver(() => {
-      checkChildren();
-    });
-    mutationObserver.observe(pageNavParent, { childList: true, subtree: true });
-
-    return () => {
-      mutationObserver.disconnect();
-    };
-  }, [path]);
-
   useLayoutEffect(() => {
     // Check overflow.
-    const pathHistory = pathHistoryRef.current;
+    const pathHistory =
+      typeof pathHistoryRef === "object" && pathHistoryRef
+        ? pathHistoryRef.current
+        : null;
     if (!pathHistory) {
       console.error("No pathHistory");
       return;
@@ -138,7 +43,10 @@ export default function HeaderArticleNavSubNav3({
       console.error("No pageNavButton");
       return;
     }
-    const pathHistoryButton = pathHistoryButtonRef.current;
+    const pathHistoryButton =
+      typeof pathHistoryButtonRef === "object" && pathHistoryButtonRef
+        ? pathHistoryButtonRef.current
+        : null;
     if (!pathHistoryButton) {
       console.error("No pathHistoryButton");
       return;
@@ -160,13 +68,8 @@ export default function HeaderArticleNavSubNav3({
       const isOverflow =
         defaultPathHistoryWidth + fixedWidth > changingContainerWidth;
 
-      if (isOverflow) {
-        pathHistory.classList.add("overflow");
-        pathHistoryButton.parentElement!.classList.add("overflow");
-      } else {
-        pathHistory.classList.remove("overflow");
-        pathHistoryButton.parentElement!.classList.remove("overflow");
-      }
+      pathHistory.classList.toggle("overflow", isOverflow);
+      pathHistoryButton.parentElement!.classList.toggle("overflow", isOverflow);
     };
     checkOverflow();
     const resizeObserver = new ResizeObserver(() => {
@@ -177,17 +80,24 @@ export default function HeaderArticleNavSubNav3({
     return () => {
       resizeObserver.disconnect();
     };
-  }, [path]);
+  }, [path, pathHistoryButtonRef, pathHistoryRef]);
 
   return (
     <div>
       <button
         ref={referenceNavButtonRef}
-        onClick={handleReferenceNavButtonClick}
+        className={`${isRefNavBtnActive ? "active" : ""} ${isRefNavBtnOpen ? "open" : ""}`.trim()}
+        disabled={!isRefNavBtnActive}
+        onClick={toggleRefNavBtnOpen}
       >
         <FaChevronUp />
       </button>
-      <button ref={pageNavButtonRef} onClick={handlePageNavButtonClick}>
+      <button
+        ref={pageNavButtonRef}
+        className={`${isPageNavBtnActive ? "active" : ""} ${isPageNavBtnOpen ? "open" : ""}`.trim()}
+        disabled={!isPageNavBtnActive}
+        onClick={togglePageNavBtnOpen}
+      >
         <FaChevronUp />
       </button>
     </div>
