@@ -26,7 +26,7 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
+            <HeadingLinkId headingNumber={1} lastUpdated="2026-09-03">
               Attributes
             </HeadingLinkId>
           </RefButton>
@@ -145,7 +145,22 @@ export default function Page() {
                 <ul>
                   <li>
                     <p>
+                      <Highlight type="simple-code">aria-label</Highlight>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
                       <Highlight type="simple-code">aria-hidden</Highlight>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">aria-disabled</Highlight>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">aria-checked</Highlight>
                     </p>
                   </li>
                   <li>
@@ -156,6 +171,21 @@ export default function Page() {
                   <li>
                     <p>
                       <Highlight type="simple-code">aria-sort</Highlight>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">aria-expanded</Highlight>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">aria-controls</Highlight>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <Highlight type="simple-code">aria-current</Highlight>
                     </p>
                   </li>
                 </ul>
