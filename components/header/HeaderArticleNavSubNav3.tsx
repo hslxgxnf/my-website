@@ -68,8 +68,8 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
       <button
         type="button"
         aria-label="Toggle all reference navigation"
-        aria-expanded={isRefNavBtnOpen}
         aria-controls="all-reference-navigation"
+        aria-expanded={isRefNavBtnOpen}
         ref={referenceNavButtonRef}
         className={`${isRefNavBtnActive ? "active" : ""} ${isRefNavBtnOpen ? "open" : ""}`.trim()}
         disabled={!isRefNavBtnActive}
@@ -80,8 +80,8 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
       <button
         type="button"
         aria-label="Toggle page navigation"
-        aria-expanded={isPageNavBtnOpen}
         aria-controls="page-navigation"
+        aria-expanded={isPageNavBtnOpen}
         ref={pageNavButtonRef}
         className={`${isPageNavBtnActive ? "active" : ""} ${isPageNavBtnOpen ? "open" : ""}`.trim()}
         disabled={!isPageNavBtnActive}

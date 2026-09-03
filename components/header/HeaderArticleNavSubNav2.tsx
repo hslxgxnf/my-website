@@ -20,8 +20,8 @@ export default function HeaderArticleNavSubNav2({
       <button
         type="button"
         aria-label="Toggle path history"
-        aria-expanded={isOpen}
         aria-controls="path-history"
+        aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
         onClick={() => setIsOpen((prev) => !prev)}
       >

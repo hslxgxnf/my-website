@@ -73,8 +73,8 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
       <button
         type="button"
         aria-label="Toggle menu"
-        aria-expanded={isOpen}
         aria-controls="dropdown-menu"
+        aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
         onClick={handleClick}
       >

@@ -57,11 +57,20 @@ export default function RefButton({ children }: ReferenceButtonProps) {
       return;
     }
 
+    // ARIA
+    button.ariaLabel = `Toggle reference navigation ${index}`;
+    button.setAttribute("aria-controls", navs[index].id);
+    button.setAttribute("aria-expanded", "false");
+
     const controller = new AbortController();
     button.addEventListener(
       "click",
       () => {
         navs[index].classList.toggle("open");
+
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+        const nextState = !isExpanded;
+        button.setAttribute("aria-expanded", nextState.toString());
       },
       {
         signal: controller.signal,
