@@ -7,7 +7,7 @@
     align-items: center;
     position: relative;
 
-    > nav {
+    > nav:not(:last-child) {
       display: none;
       position: absolute;
       border-radius: var(--border-radius);
@@ -15,31 +15,90 @@
       width: 80%;
       background-color: var(--background-color-3);
 
-      &.active {
+      &.open {
         display: block;
       }
 
       @include max-width-size("tablet") {
-        &.active {
+        &.open {
           display: none;
         }
       }
 
-      > header {
+      > h4 {
         margin-bottom: var(--space-10);
         color: var(--color-1);
+        font-weight: normal;
         font-size: var(--font-size-25);
       }
 
-      > main {
+      > ul {
+        > li {
+          list-style-type: none;
+          margin-bottom: var(--space-10);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          > a {
+          }
+        }
+      }
+    }
+
+    > nav:last-child {
+      display: none;
+      position: fixed;
+      top: var(--height-header);
+      right: calc(var(--space-40) * 2);
+      z-index: 1;
+      border-radius: var(--border-radius);
+      padding: var(--space-10);
+      width: var(--width-sidebar);
+      max-height: calc(var(--width-sidebar) * 2);
+      overflow-y: auto;
+      scrollbar-width: none;
+      background-color: var(--background-color-3);
+
+      @include max-width-size("tablet") {
+        &.open {
+          display: block;
+        }
+      }
+
+      > h4 {
+        margin-bottom: var(--space-10);
+        color: var(--color-1);
+        font-weight: normal;
+        font-size: var(--font-size-35);
+      }
+
+      hr {
+        margin-bottom: var(--space-10);
+      }
+
+      > div {
+        &:last-child {
+          > ul > li:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        > h5 {
+          margin-bottom: var(--space-10);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: var(--color-1);
+          font-weight: normal;
+          font-size: var(--font-size-25);
+          white-space: nowrap;
+        }
+
         > ul {
           > li {
             list-style-type: none;
             margin-bottom: var(--space-10);
-
-            &:last-child {
-              margin-bottom: 0;
-            }
 
             > a {
             }
@@ -48,71 +107,7 @@
       }
     }
 
-    > div {
-      display: none;
-      position: fixed;
-      top: var(--height-header);
-      right: calc(var(--space-40) * 2);
-      z-index: 1;
-      width: var(--width-sidebar);
-      height: calc(var(--width-sidebar) * 2);
-      overflow-y: auto;
-      scrollbar-width: none;
-
-      @include max-width-size("tablet") {
-        &.open {
-          display: block;
-        }
-      }
-
-      > nav {
-        border-radius: var(--border-radius);
-        padding: var(--space-10);
-        background-color: var(--background-color-3);
-
-        > header {
-          margin-bottom: var(--space-10);
-          color: var(--color-1);
-          font-size: var(--font-size-35);
-        }
-
-        hr {
-          margin-bottom: var(--space-10);
-        }
-
-        > main > section {
-          &:last-child {
-            > main > ul > li:last-child {
-              margin-bottom: 0;
-            }
-          }
-
-          > header {
-            margin-bottom: var(--space-10);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: var(--color-1);
-            font-size: var(--font-size-25);
-            white-space: nowrap;
-          }
-
-          > main {
-            > ul {
-              > li {
-                list-style-type: none;
-                margin-bottom: var(--space-10);
-
-                > a {
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    > nav,
-    > div {
+    > nav {
       a {
         display: flex;
         align-items: center;

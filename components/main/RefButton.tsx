@@ -16,7 +16,7 @@ export default function RefButton({ children }: ReferenceButtonProps) {
   useEffect(() => {
     // Connect buttonRef to its corresponding nav
     const navs = document.querySelectorAll<HTMLElement>(
-      "body > main > aside:first-child > nav",
+      "body > main > aside:first-child > nav:not(:last-child)",
     );
     const referenceButtonContainers = document.querySelectorAll<HTMLDivElement>(
       `body > main > article div.reference-button-container`,
@@ -61,7 +61,7 @@ export default function RefButton({ children }: ReferenceButtonProps) {
     button.addEventListener(
       "click",
       () => {
-        navs[index].classList.toggle("active");
+        navs[index].classList.toggle("open");
       },
       {
         signal: controller.signal,
@@ -106,7 +106,7 @@ export default function RefButton({ children }: ReferenceButtonProps) {
   return (
     <div className="reference-button-container">
       <button type="button" ref={buttonRef}>
-        <IoIosLink />
+        <IoIosLink aria-hidden="true" />
       </button>
 
       {children}

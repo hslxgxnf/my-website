@@ -67,9 +67,9 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
     <div>
       <button
         type="button"
-        aria-label="Toggle reference navigation"
+        aria-label="Toggle all reference navigation"
         aria-expanded={isRefNavBtnOpen}
-        aria-controls="reference-navigation"
+        aria-controls="all-reference-navigation"
         ref={referenceNavButtonRef}
         className={`${isRefNavBtnActive ? "active" : ""} ${isRefNavBtnOpen ? "open" : ""}`.trim()}
         disabled={!isRefNavBtnActive}

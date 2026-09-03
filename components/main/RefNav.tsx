@@ -25,86 +25,81 @@ export default function RefNav({ reference }: ReferenceNavProps) {
     return null;
   }
 
-  const defaultNavs = reference.map((referenceItem, index) => {
+  const eachReference = reference.map((referenceItem, index) => {
     return (
-      <nav key={index} data-target={referenceItem.target}>
-        <header>Reference</header>
-        <main>
-          <ul>
-            {referenceItem.sites.map((site, index) => {
-              if (site.name === "dummy") {
-                console.error("Change this dummy image.");
-                return null;
-              } else if (site.name === "self") {
-                return (
-                  <li key={index} data-self>
-                    <RefNavLink site={site} />
-                  </li>
-                );
-              } else {
-                return (
-                  <li key={index}>
-                    <RefNavLink site={site} />
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </main>
+      <nav
+        aria-label={`Reference navigation for ${referenceItem.target}`}
+        key={index}
+        data-target={referenceItem.target}
+      >
+        <h4>Reference</h4>
+        <ul>
+          {referenceItem.sites.map((site, index) => {
+            if (site.name === "dummy") {
+              console.error("Change this dummy image.");
+              return null;
+            } else if (site.name === "self") {
+              return (
+                <li key={index} data-self>
+                  <RefNavLink site={site} />
+                </li>
+              );
+            } else {
+              return (
+                <li key={index}>
+                  <RefNavLink site={site} />
+                </li>
+              );
+            }
+          })}
+        </ul>
       </nav>
     );
   });
 
-  const smallViewNav = (
-    <div
-      id="reference-navigation"
+  const allReference = (
+    <nav
+      aria-label="All reference navigation"
+      id="all-reference-navigation"
       className={isRefNavBtnOpen ? "open" : undefined}
     >
-      <nav>
-        <header>Reference</header>
-        <hr />
-        <main>
-          {reference.map((referenceItem, index) => {
-            return (
-              <section key={index}>
-                <header onMouseEnter={setTooltip}>
-                  {referenceItem.target}
-                </header>
-                <main>
-                  <ul>
-                    {referenceItem.sites.map((site, index) => {
-                      if (site.name === "dummy") {
-                        console.error("Change this dummy image.");
-                        return null;
-                      } else if (site.name === "self") {
-                        return (
-                          <li key={index} data-self>
-                            <RefNavLink site={site} />
-                          </li>
-                        );
-                      } else {
-                        return (
-                          <li key={index}>
-                            <RefNavLink site={site} />
-                          </li>
-                        );
-                      }
-                    })}
-                  </ul>
-                </main>
-                {index !== reference.length - 1 && <hr />}
-              </section>
-            );
-          })}
-        </main>
-      </nav>
-    </div>
+      <h4>Reference</h4>
+      <hr />
+      {reference.map((referenceItem, index) => {
+        return (
+          <div key={index}>
+            <h5 onMouseEnter={setTooltip}>{referenceItem.target}</h5>
+            <ul>
+              {referenceItem.sites.map((site, index) => {
+                if (site.name === "dummy") {
+                  console.error("Change this dummy image.");
+                  return null;
+                } else if (site.name === "self") {
+                  return (
+                    <li key={index} data-self>
+                      <RefNavLink site={site} />
+                    </li>
+                  );
+                } else {
+                  return (
+                    <li key={index}>
+                      <RefNavLink site={site} />
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+            {index !== reference.length - 1 && <hr />}
+          </div>
+        );
+      })}
+    </nav>
   );
 
   return (
     <aside>
-      {defaultNavs}
-      {smallViewNav}
+      {eachReference}
+      {allReference}
     </aside>
   );
 }
