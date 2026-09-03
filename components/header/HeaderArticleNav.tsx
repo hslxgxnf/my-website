@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef } from "react";
 import { usePathname } from "next/navigation";
 
 import toTitleCase from "@/functions/all/toTitleCase";
@@ -14,9 +13,6 @@ export interface Path {
 }
 
 export default function HeaderArticleNav() {
-  const pathHistoryRef = useRef<HTMLUListElement>(null);
-  const pathHistoryButtonRef = useRef<HTMLButtonElement>(null);
-
   const path = usePathname();
   const slicedPath: string[] = path.slice(1).split("/");
   const processedPath: Path[] = [];
@@ -39,23 +35,14 @@ export default function HeaderArticleNav() {
       <div></div>
 
       <div>
-        <HeaderArticleNavSubNav1
-          ref={pathHistoryRef} // forwardRef
-          path={path}
-          processedPath={processedPath}
-        />
+        <HeaderArticleNavSubNav1 path={path} processedPath={processedPath} />
 
         <HeaderArticleNavSubNav2
-          key={`HeaderArticleNavSubNav2-${path}`} // Close the open menu on page transition.
-          ref={pathHistoryButtonRef} // forwardRef
+          key={path} // Close the open menu on page transition.
           processedPath={processedPath}
         />
 
-        <HeaderArticleNavSubNav3
-          pathHistoryRef={pathHistoryRef}
-          pathHistoryButtonRef={pathHistoryButtonRef}
-          path={path}
-        />
+        <HeaderArticleNavSubNav3 path={path} />
       </div>
     </nav>
   );

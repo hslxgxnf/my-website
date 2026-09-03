@@ -9,6 +9,9 @@ interface Design {
   headerHeight: number;
   setHeaderHeight: (height: number) => void;
 
+  isPathOverflow: boolean;
+  setPathOverflow: (overflow: boolean) => void;
+
   isRefNavBtnActive: boolean;
   setRefNavBtnActive: (active: boolean) => void;
 
@@ -31,6 +34,9 @@ export const useStore = create<Design>((set) => ({
   headerHeight: 0,
   setHeaderHeight: (height) => set({ headerHeight: height }),
 
+  isPathOverflow: false,
+  setPathOverflow: (overflow) => set({ isPathOverflow: overflow }),
+
   isRefNavBtnActive: false,
   setRefNavBtnActive: (active) => set({ isRefNavBtnActive: active }),
 
@@ -51,6 +57,7 @@ export const useStore = create<Design>((set) => ({
 
   initialize: () =>
     set({
+      isPathOverflow: false,
       isRefNavBtnActive: false,
       isRefNavBtnOpen: false,
       isPageNavBtnActive: false,

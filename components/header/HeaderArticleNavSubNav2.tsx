@@ -1,29 +1,25 @@
-import { type Ref, useState } from "react";
+import { useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
 import Link from "next/link";
 import { HiMiniArrowTurnDownRight } from "react-icons/hi2";
 
+import { useStore } from "@/stores/useStore";
+
 import type { Path } from "./HeaderArticleNav";
 
 export default function HeaderArticleNavSubNav2({
-  ref,
   processedPath,
 }: {
-  ref: Ref<HTMLButtonElement>;
   processedPath: Path[];
 }) {
+  const isPathOverflow = useStore((state) => state.isPathOverflow);
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleClick() {
-    setIsOpen((prev) => !prev);
-  }
-
   return (
-    <div>
+    <div className={isPathOverflow ? "overflow" : undefined}>
       <button
-        ref={ref}
         className={isOpen ? "open" : undefined}
-        onClick={handleClick}
+        onClick={() => setIsOpen((prev) => !prev)}
       >
         <FaChevronUp />
       </button>

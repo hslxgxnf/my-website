@@ -1,17 +1,11 @@
-import { type Ref, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 
 import { useStore } from "@/stores/useStore";
 
-export default function HeaderArticleNavSubNav3({
-  pathHistoryRef,
-  pathHistoryButtonRef,
-  path,
-}: {
-  pathHistoryRef: Ref<HTMLUListElement>;
-  pathHistoryButtonRef: Ref<HTMLButtonElement>;
-  path: string;
-}) {
+export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
+  const setPathOverflow = useStore((state) => state.setPathOverflow);
+
   const isRefNavBtnActive = useStore((state) => state.isRefNavBtnActive);
   const isRefNavBtnOpen = useStore((state) => state.isRefNavBtnOpen);
   const toggleRefNavBtnOpen = useStore((state) => state.toggleRefNavBtnOpen);
@@ -25,14 +19,6 @@ export default function HeaderArticleNavSubNav3({
 
   useLayoutEffect(() => {
     // Check overflow.
-    const pathHistory =
-      typeof pathHistoryRef === "object" && pathHistoryRef
-        ? pathHistoryRef.current
-        : null;
-    if (!pathHistory) {
-      console.error("No pathHistory");
-      return;
-    }
     const referenceNavButton = referenceNavButtonRef.current;
     if (!referenceNavButton) {
       console.error("No referenceNavButton");
@@ -43,44 +29,39 @@ export default function HeaderArticleNavSubNav3({
       console.error("No pageNavButton");
       return;
     }
-    const pathHistoryButton =
-      typeof pathHistoryButtonRef === "object" && pathHistoryButtonRef
-        ? pathHistoryButtonRef.current
-        : null;
-    if (!pathHistoryButton) {
-      console.error("No pathHistoryButton");
-      return;
-    }
 
-    const defaultPathHistoryWidth = pathHistory.scrollWidth;
-    const container = pathHistory.parentElement!;
+    const pathHistory = referenceNavButton.parentElement!
+      .previousElementSibling!.previousElementSibling as HTMLUListElement;
+    const container = pathHistory.parentElement! as HTMLDivElement;
+
+    const initialPathHistoryWidth = pathHistory.scrollWidth;
     const fixedWidth =
       parseFloat(window.getComputedStyle(container).gap) +
       referenceNavButton.getBoundingClientRect().width +
       pageNavButton.getBoundingClientRect().width;
+    const containerPadding =
+      parseFloat(window.getComputedStyle(container).paddingLeft) +
+      parseFloat(window.getComputedStyle(container).paddingRight);
 
-    const checkOverflow = () => {
+    const resizeObserver = new ResizeObserver(() => {
       const changingContainerWidth =
-        container.getBoundingClientRect().width -
-        parseFloat(window.getComputedStyle(container).paddingLeft) -
-        parseFloat(window.getComputedStyle(container).paddingRight);
+        container.getBoundingClientRect().width - containerPadding;
 
       const isOverflow =
-        defaultPathHistoryWidth + fixedWidth > changingContainerWidth;
+        initialPathHistoryWidth + fixedWidth > changingContainerWidth;
 
-      pathHistory.classList.toggle("overflow", isOverflow);
-      pathHistoryButton.parentElement!.classList.toggle("overflow", isOverflow);
-    };
-    checkOverflow();
-    const resizeObserver = new ResizeObserver(() => {
-      checkOverflow();
+      if (isOverflow) {
+        setPathOverflow(true);
+      } else {
+        setPathOverflow(false);
+      }
     });
     resizeObserver.observe(container);
 
     return () => {
       resizeObserver.disconnect();
     };
-  }, [path, pathHistoryButtonRef, pathHistoryRef]);
+  }, [path, setPathOverflow]);
 
   return (
     <div>
