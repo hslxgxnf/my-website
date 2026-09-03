@@ -2,16 +2,19 @@
 
 @mixin page-nav {
   &:nth-of-type(2) {
-    > div {
+    > nav {
       display: block;
       position: fixed;
       top: calc(var(--height-header) + var(--space-40));
       right: var(--space-40);
       z-index: 1;
+      border-radius: var(--border-radius);
+      padding: var(--space-10);
       width: 17%;
-      height: calc(var(--width-sidebar) * 2);
+      max-height: calc(var(--width-sidebar) * 2);
       overflow-y: auto;
       scrollbar-width: none;
+      background-color: var(--background-color-4);
 
       @include max-width-size("tablet-lg") {
         display: none;
@@ -23,15 +26,64 @@
         }
       }
 
-      > nav {
-        border-radius: var(--border-radius);
-        padding: var(--space-10);
-        background-color: var(--background-color-4);
+      // headings.length === 1
+      > ol.single {
+        > li {
+          list-style-type: none;
 
-        // headings.length === 1
-        > ul {
-          > li {
-            list-style-type: none;
+          &:first-child {
+            margin-bottom: var(--space-10);
+            border-bottom: 2px solid;
+            padding-bottom: var(--space-10);
+          }
+
+          > button {
+            border: none;
+            width: 100%;
+            background-color: transparent;
+            font-size: var(--font-size-25);
+            cursor: pointer;
+
+            @include hover-type("hover") {
+              &:hover > svg {
+                fill: var(--color-1);
+              }
+            }
+
+            @include hover-type("none") {
+              &:active > svg {
+                fill: var(--color-1);
+              }
+            }
+          }
+        }
+      }
+
+      // headings.length > 1
+      > h2 {
+        margin-bottom: var(--space-10);
+        color: var(--color-1);
+        font-weight: normal;
+        font-size: var(--font-size-35);
+      }
+
+      > ol.multi {
+        > li {
+          list-style-type: none;
+          font-size: var(--font-size-25);
+
+          &:not(:last-child) {
+            margin-bottom: var(--space-10);
+          }
+
+          &:first-child {
+            border-bottom: 2px solid;
+            padding-bottom: var(--space-10);
+          }
+
+          &:last-child {
+            border-top: 2px solid;
+            padding-top: var(--space-10);
 
             > button {
               border: none;
@@ -52,69 +104,17 @@
                 }
               }
             }
-
-            > hr {
-              margin-top: var(--space-10);
-              margin-bottom: var(--space-10);
-            }
           }
-        }
 
-        // headings.length > 1
-        > header {
-          margin-bottom: var(--space-10);
-          color: var(--color-1);
-          font-size: var(--font-size-35);
-        }
+          &.indent {
+            margin-left: calc(var(--space-20));
+          }
 
-        > main {
-          > ul {
-            > li {
-              list-style-type: none;
-              margin-bottom: var(--space-10);
-              font-size: var(--font-size-25);
+          > a {
+            display: block;
 
-              &:last-child {
-                margin-bottom: 0;
-
-                > button {
-                  border: none;
-                  width: 100%;
-                  background-color: transparent;
-                  font-size: var(--font-size-25);
-                  cursor: pointer;
-
-                  @include hover-type("hover") {
-                    &:hover > svg {
-                      fill: var(--color-1);
-                    }
-                  }
-
-                  @include hover-type("none") {
-                    &:active > svg {
-                      fill: var(--color-1);
-                    }
-                  }
-                }
-              }
-
-              &.indent {
-                margin-left: calc(var(--space-20));
-              }
-
-              > a {
-                display: block;
-                overflow-wrap: break-word;
-
-                &.active {
-                  color: var(--color-1);
-                }
-              }
-
-              > hr {
-                margin-top: var(--space-10);
-                margin-bottom: var(--space-10);
-              }
+            &.active {
+              color: var(--color-1);
             }
           }
         }

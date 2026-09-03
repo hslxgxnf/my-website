@@ -47,7 +47,7 @@ export default function PageNav() {
   }, [articleHeadings, isScrollable, setPageNavBtnActive]);
 
   // IntersectionObserver <section> <-> PageNav
-  const ulRef = useRef<HTMLUListElement>(null);
+  const olRef = useRef<HTMLOListElement>(null);
   const headerHeight = useStore((state) => state.headerHeight);
   useLayoutEffect(() => {
     // Need at least 2 articleHeadings.
@@ -87,11 +87,11 @@ export default function PageNav() {
       return;
     }
 
-    if (!ulRef.current) {
-      console.error("No ulRef.current");
+    if (!olRef.current) {
+      console.error("No olRef.current");
       return;
     }
-    const links = ulRef.current.querySelectorAll<HTMLAnchorElement>("a");
+    const links = olRef.current.querySelectorAll<HTMLAnchorElement>("a");
     const intersectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -125,38 +125,40 @@ export default function PageNav() {
     if (isScrollable) {
       return (
         <aside>
-          <div
+          <nav
+            aria-label="Page navigation"
             id="page-navigation"
             className={isPageNavBtnOpen ? "open" : undefined}
           >
-            <nav>
-              <ul>
-                <li>
-                  <button
-                    onClick={() => {
-                      window.scrollTo({
-                        top: 0,
-                      });
-                    }}
-                  >
-                    <FaAngleDoubleUp />
-                  </button>
-                  <hr />
-                </li>
-                <li>
-                  <button
-                    onClick={() => {
-                      window.scrollTo({
-                        top: document.documentElement.scrollHeight,
-                      });
-                    }}
-                  >
-                    <FaAngleDoubleDown />
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </div>
+            <ol className="single">
+              <li>
+                <button
+                  type="button"
+                  aria-label="Scroll to top"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                    });
+                  }}
+                >
+                  <FaAngleDoubleUp aria-hidden="true" />
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  aria-label="Scroll to bottom"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: document.documentElement.scrollHeight,
+                    });
+                  }}
+                >
+                  <FaAngleDoubleDown aria-hidden="true" />
+                </button>
+              </li>
+            </ol>
+          </nav>
         </aside>
       );
     } else {
@@ -165,55 +167,51 @@ export default function PageNav() {
   } else {
     return (
       <aside>
-        <div
+        <nav
+          aria-label="Page navigation"
           id="page-navigation"
           className={isPageNavBtnOpen ? "open" : undefined}
         >
-          <nav>
-            <header>On this page</header>
-            <main>
-              <ul ref={ulRef}>
-                {articleHeadings.map((heading, index) => {
-                  const content = heading.content;
-                  const href = `#${content.replaceAll(" ", "-").toLowerCase()}`;
+          <h2>On this page</h2>
+          <ol ref={olRef} className="multi">
+            {articleHeadings.map((heading, index) => {
+              const href = `#${heading.content.replaceAll(" ", "-").toLowerCase()}`;
 
-                  return (
-                    <li
-                      key={index}
-                      className={heading.tag === "h3" ? "indent" : undefined}
-                    >
-                      <Link
-                        href={href}
-                        onClick={
-                          heading.tag === "h1"
-                            ? (e) => handleClickFirstLink(e, href)
-                            : undefined
-                        }
-                      >
-                        {content}
-                      </Link>
-                      {heading.tag === "h1" && <hr />}
-                    </li>
-                  );
-                })}
-                {isScrollable && (
-                  <li>
-                    <hr />
-                    <button
-                      onClick={() => {
-                        window.scrollTo({
-                          top: document.documentElement.scrollHeight,
-                        });
-                      }}
-                    >
-                      <FaAngleDoubleDown />
-                    </button>
-                  </li>
-                )}
-              </ul>
-            </main>
-          </nav>
-        </div>
+              return (
+                <li
+                  key={index}
+                  className={heading.tag === "h3" ? "indent" : undefined}
+                >
+                  <Link
+                    href={href}
+                    onClick={
+                      heading.tag === "h1"
+                        ? (e) => handleClickFirstLink(e, href)
+                        : undefined
+                    }
+                  >
+                    {heading.content}
+                  </Link>
+                </li>
+              );
+            })}
+            {isScrollable && (
+              <li>
+                <button
+                  type="button"
+                  aria-label="Scroll to bottom"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: document.documentElement.scrollHeight,
+                    });
+                  }}
+                >
+                  <FaAngleDoubleDown aria-hidden="true" />
+                </button>
+              </li>
+            )}
+          </ol>
+        </nav>
       </aside>
     );
   }
