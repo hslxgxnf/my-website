@@ -3,12 +3,15 @@
 import { type ReactNode, useRef, useEffect } from "react";
 import { IoIosLink } from "react-icons/io";
 
+import { useStore } from "@/stores/useStore";
+
 interface ReferenceButtonProps {
   children: ReactNode;
 }
 
 export default function RefButton({ children }: ReferenceButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const headerHeight = useStore((state) => state.headerHeight);
 
   useEffect(() => {
     // Connect buttonRef to its corresponding nav
@@ -80,13 +83,6 @@ export default function RefButton({ children }: ReferenceButtonProps) {
     let resizeObserver: ResizeObserver | null = null;
     if (navs.length === index + 1) {
       resizeObserver = new ResizeObserver(() => {
-        const header = document.querySelector<HTMLElement>("body > header");
-        if (!header) {
-          console.error("No header");
-          return;
-        }
-        const headerHeight = header.getBoundingClientRect().height;
-
         for (let i = 0; i < navs.length; i++) {
           navs[i].style.top =
             referenceButtonContainers[i].getBoundingClientRect().top -
@@ -105,7 +101,7 @@ export default function RefButton({ children }: ReferenceButtonProps) {
         resizeObserver.disconnect();
       }
     };
-  }, []);
+  }, [headerHeight]);
 
   return (
     <div className="reference-button-container">
