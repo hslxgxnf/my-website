@@ -18,19 +18,23 @@ export default function HeaderArticleNavSubNav2({
   return (
     <div className={isPathOverflow ? "overflow" : undefined}>
       <button
+        type="button"
+        aria-label="Toggle path history"
+        aria-expanded={isOpen}
+        aria-controls="path-history"
         className={isOpen ? "open" : undefined}
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <FaChevronUp />
+        <FaChevronUp aria-hidden="true" />
       </button>
 
-      <ul className={isOpen ? "open" : undefined}>
+      <ol id="path-history" className={isOpen ? "open" : undefined}>
         {processedPath.map((item, index) => {
           if (index !== processedPath.length - 1) {
             return (
               <li key={index}>
                 <Link href={item.href}>
-                  <HiMiniArrowTurnDownRight />
+                  <HiMiniArrowTurnDownRight aria-hidden="true" />
                   <span>{item.name}</span>
                 </Link>
               </li>
@@ -38,13 +42,13 @@ export default function HeaderArticleNavSubNav2({
           } else {
             return (
               <li key={index}>
-                <HiMiniArrowTurnDownRight />
-                <span>{item.name}</span>
+                <HiMiniArrowTurnDownRight aria-hidden="true" />
+                <span aria-current="page">{item.name}</span>
               </li>
             );
           }
         })}
-      </ul>
+      </ol>
     </div>
   );
 }

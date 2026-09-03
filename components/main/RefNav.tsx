@@ -56,7 +56,10 @@ export default function RefNav({ reference }: ReferenceNavProps) {
   });
 
   const smallViewNav = (
-    <div className={isRefNavBtnOpen ? "open" : undefined}>
+    <div
+      id="reference-navigation"
+      className={isRefNavBtnOpen ? "open" : undefined}
+    >
       <nav>
         <header>Reference</header>
         <hr />

@@ -31,8 +31,8 @@ export default function HeaderArticleNav() {
   }
 
   return (
-    <nav>
-      <div></div>
+    <nav aria-label="Article Navigation">
+      <div aria-hidden="true"></div>
 
       <div>
         <HeaderArticleNavSubNav1 path={path} processedPath={processedPath} />

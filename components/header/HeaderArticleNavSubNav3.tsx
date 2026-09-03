@@ -17,8 +17,8 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
   const referenceNavButtonRef = useRef<HTMLButtonElement>(null);
   const pageNavButtonRef = useRef<HTMLButtonElement>(null);
 
+  // ResizeObserver overflow
   useLayoutEffect(() => {
-    // Check overflow.
     const referenceNavButton = referenceNavButtonRef.current;
     if (!referenceNavButton) {
       console.error("No referenceNavButton");
@@ -66,20 +66,28 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
   return (
     <div>
       <button
+        type="button"
+        aria-label="Toggle reference navigation"
+        aria-expanded={isRefNavBtnOpen}
+        aria-controls="reference-navigation"
         ref={referenceNavButtonRef}
         className={`${isRefNavBtnActive ? "active" : ""} ${isRefNavBtnOpen ? "open" : ""}`.trim()}
         disabled={!isRefNavBtnActive}
         onClick={toggleRefNavBtnOpen}
       >
-        <FaChevronUp />
+        <FaChevronUp aria-hidden="true" />
       </button>
       <button
+        type="button"
+        aria-label="Toggle page navigation"
+        aria-expanded={isPageNavBtnOpen}
+        aria-controls="page-navigation"
         ref={pageNavButtonRef}
         className={`${isPageNavBtnActive ? "active" : ""} ${isPageNavBtnOpen ? "open" : ""}`.trim()}
         disabled={!isPageNavBtnActive}
         onClick={togglePageNavBtnOpen}
       >
-        <FaChevronUp />
+        <FaChevronUp aria-hidden="true" />
       </button>
     </div>
   );

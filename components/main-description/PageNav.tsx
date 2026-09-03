@@ -125,7 +125,10 @@ export default function PageNav() {
     if (isScrollable) {
       return (
         <aside>
-          <div className={isPageNavBtnOpen ? "open" : undefined}>
+          <div
+            id="page-navigation"
+            className={isPageNavBtnOpen ? "open" : undefined}
+          >
             <nav>
               <ul>
                 <li>
@@ -162,7 +165,10 @@ export default function PageNav() {
   } else {
     return (
       <aside>
-        <div className={isPageNavBtnOpen ? "open" : undefined}>
+        <div
+          id="page-navigation"
+          className={isPageNavBtnOpen ? "open" : undefined}
+        >
           <nav>
             <header>On this page</header>
             <main>

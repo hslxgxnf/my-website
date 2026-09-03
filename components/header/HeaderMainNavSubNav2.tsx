@@ -215,6 +215,7 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
           return (
             <li key={index}>
               <Link
+                aria-current={path.startsWith(href) ? "page" : undefined}
                 href={href}
                 className={path.startsWith(href) ? "active" : undefined}
               >

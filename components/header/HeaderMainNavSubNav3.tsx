@@ -75,8 +75,8 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
         aria-label="Toggle menu"
         aria-expanded={isOpen}
         aria-controls="dropdown-menu"
-        onClick={handleClick}
         className={isOpen ? "open" : undefined}
+        onClick={handleClick}
       >
         {isOpen ? (
           <IoClose aria-hidden="true" />
@@ -92,6 +92,7 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
           return (
             <li key={index}>
               <Link
+                aria-current={path.startsWith(href) ? "page" : undefined}
                 href={href}
                 className={path.startsWith(href) ? "active" : undefined}
               >

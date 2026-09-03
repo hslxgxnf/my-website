@@ -30,7 +30,7 @@
       }
 
       // pathHistory
-      > ul {
+      > ol {
         display: none;
         overflow-x: auto;
         scrollbar-width: none;
@@ -50,7 +50,7 @@
           list-style-type: none;
           font-size: var(--font-size-25);
 
-          &:last-child {
+          > span {
             color: var(--color-1);
           }
         }
@@ -105,7 +105,7 @@
         }
 
         // pathHistoryMenu
-        > ul {
+        > ol {
           display: none;
           position: fixed;
           top: var(--height-header);

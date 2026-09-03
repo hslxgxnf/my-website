@@ -12,25 +12,29 @@ export default function HeaderArticleNavSubNav1({
   path: string;
   processedPath: Path[];
 }) {
-  // Check active.
   const isActive = path !== "/";
   const isPathOverflow = useStore((state) => state.isPathOverflow);
 
   return (
-    <ul
+    <ol
       className={`${isActive ? "active" : ""} ${isPathOverflow ? "overflow" : ""}`.trim()}
     >
       {processedPath.map((item, index) => {
         if (index !== processedPath.length - 1) {
           return (
             <li key={index}>
-              <Link href={item.href}>{item.name}</Link> <FaCaretRight />
+              <Link href={item.href}>{item.name}</Link>{" "}
+              <FaCaretRight aria-hidden="true" />
             </li>
           );
         } else {
-          return <li key={index}>{item.name}</li>;
+          return (
+            <li key={index}>
+              <span aria-current="page">{item.name}</span>
+            </li>
+          );
         }
       })}
-    </ul>
+    </ol>
   );
 }

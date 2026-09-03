@@ -5,8 +5,8 @@ import logo from "@/public/logo.png";
 export default function HeaderMainNavSubNav1() {
   return (
     <div>
-      <Link href="/" aria-label="Home">
-        <Image src={logo} alt="" loading="eager" />
+      <Link href="/">
+        <Image src={logo} alt="Home" loading="eager" />
       </Link>
     </div>
   );
