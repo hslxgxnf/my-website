@@ -67,8 +67,6 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
 
     const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
 
-    console.log(scrollLeft, scrollWidth, clientWidth);
-
     setCanScrollLeft(scrollLeft > 1);
     setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
   }, []);
