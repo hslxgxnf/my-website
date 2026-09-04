@@ -2,43 +2,36 @@ import { useRef, useLayoutEffect } from "react";
 import { FaChevronUp } from "react-icons/fa";
 
 import { useStore } from "@/stores/useStore";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { breakpoints } from "@/constants/breakpoints";
 
 export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
   const setPathOverflow = useStore((state) => state.setPathOverflow);
-
-  const isRefNavBtnActive = useStore((state) => state.isRefNavBtnActive);
-  const isRefNavBtnOpen = useStore((state) => state.isRefNavBtnOpen);
-  const toggleRefNavBtnOpen = useStore((state) => state.toggleRefNavBtnOpen);
-
-  const isPageNavBtnActive = useStore((state) => state.isPageNavBtnActive);
-  const isPageNavBtnOpen = useStore((state) => state.isPageNavBtnOpen);
-  const togglePageNavBtnOpen = useStore((state) => state.togglePageNavBtnOpen);
-
-  const referenceNavButtonRef = useRef<HTMLButtonElement>(null);
-  const pageNavButtonRef = useRef<HTMLButtonElement>(null);
+  const refNavBtnRef = useRef<HTMLButtonElement>(null);
+  const pageNavBtnRef = useRef<HTMLButtonElement>(null);
 
   // ResizeObserver overflow
   useLayoutEffect(() => {
-    const referenceNavButton = referenceNavButtonRef.current;
-    if (!referenceNavButton) {
-      console.error("No referenceNavButton");
+    const refNavBtn = refNavBtnRef.current;
+    if (!refNavBtn) {
+      console.error("No refNavBtn");
       return;
     }
-    const pageNavButton = pageNavButtonRef.current;
-    if (!pageNavButton) {
-      console.error("No pageNavButton");
+    const pageNavBtn = pageNavBtnRef.current;
+    if (!pageNavBtn) {
+      console.error("No pageNavBtn");
       return;
     }
 
-    const pathHistory = referenceNavButton.parentElement!
-      .previousElementSibling!.previousElementSibling as HTMLElement;
+    const pathHistory = refNavBtn.parentElement!.previousElementSibling!
+      .previousElementSibling as HTMLElement;
     const container = pathHistory.parentElement! as HTMLDivElement;
 
     const initialPathHistoryWidth = pathHistory.scrollWidth;
     const fixedWidth =
       parseFloat(window.getComputedStyle(container).gap) +
-      referenceNavButton.getBoundingClientRect().width +
-      pageNavButton.getBoundingClientRect().width;
+      refNavBtn.getBoundingClientRect().width +
+      pageNavBtn.getBoundingClientRect().width;
     const containerPadding =
       parseFloat(window.getComputedStyle(container).paddingLeft) +
       parseFloat(window.getComputedStyle(container).paddingRight);
@@ -63,6 +56,20 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
     };
   }, [path, setPathOverflow]);
 
+  const isRefNavBtnActive = useStore((state) => state.isRefNavBtnActive);
+  const isRefNavBtnMediaMatched = useMediaQuery(
+    `(max-width: ${breakpoints.tablet})`,
+  );
+  const isRefNavBtnOpen = useStore((state) => state.isRefNavBtnOpen);
+  const toggleRefNavBtnOpen = useStore((state) => state.toggleRefNavBtnOpen);
+
+  const isPageNavBtnActive = useStore((state) => state.isPageNavBtnActive);
+  const isPageNavBtnMediaMatched = useMediaQuery(
+    `(max-width: ${breakpoints["tablet-lg"]})`,
+  );
+  const isPageNavBtnOpen = useStore((state) => state.isPageNavBtnOpen);
+  const togglePageNavBtnOpen = useStore((state) => state.togglePageNavBtnOpen);
+
   return (
     <nav aria-label="Reference and page navigations">
       <button
@@ -70,9 +77,9 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
         aria-label="Toggle all reference navigation"
         aria-controls="all-reference-navigation"
         aria-expanded={isRefNavBtnOpen}
-        ref={referenceNavButtonRef}
+        ref={refNavBtnRef}
         className={`${isRefNavBtnActive ? "active" : ""} ${isRefNavBtnOpen ? "open" : ""}`.trim()}
-        disabled={!isRefNavBtnActive}
+        disabled={!(isRefNavBtnActive && isRefNavBtnMediaMatched)}
         onClick={toggleRefNavBtnOpen}
       >
         <FaChevronUp aria-hidden="true" />
@@ -82,9 +89,9 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
         aria-label="Toggle page navigation"
         aria-controls="page-navigation"
         aria-expanded={isPageNavBtnOpen}
-        ref={pageNavButtonRef}
+        ref={pageNavBtnRef}
         className={`${isPageNavBtnActive ? "active" : ""} ${isPageNavBtnOpen ? "open" : ""}`.trim()}
-        disabled={!isPageNavBtnActive}
+        disabled={!(isPageNavBtnActive && isPageNavBtnMediaMatched)}
         onClick={togglePageNavBtnOpen}
       >
         <FaChevronUp aria-hidden="true" />
