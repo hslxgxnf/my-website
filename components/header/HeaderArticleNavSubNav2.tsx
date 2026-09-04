@@ -16,11 +16,14 @@ export default function HeaderArticleNavSubNav2({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={isPathOverflow ? "overflow" : undefined}>
+    <nav
+      aria-label="Dropdown breadcrumb navigation"
+      className={isPathOverflow ? "overflow" : undefined}
+    >
       <button
         type="button"
-        aria-label="Toggle path history"
-        aria-controls="path-history"
+        aria-label="Toggle dropdown breadcrumb navigation"
+        aria-controls="dropdown-breadcrumb-navigation"
         aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
         onClick={() => setIsOpen((prev) => !prev)}
@@ -28,7 +31,10 @@ export default function HeaderArticleNavSubNav2({
         <FaChevronUp aria-hidden="true" />
       </button>
 
-      <ol id="path-history" className={isOpen ? "open" : undefined}>
+      <ol
+        id="dropdown-breadcrumb-navigation"
+        className={isOpen ? "open" : undefined}
+      >
         {processedPath.map((item, index) => {
           if (index !== processedPath.length - 1) {
             return (
@@ -49,6 +55,6 @@ export default function HeaderArticleNavSubNav2({
           }
         })}
       </ol>
-    </div>
+    </nav>
   );
 }

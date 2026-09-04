@@ -31,7 +31,7 @@ export default function HeaderArticleNav() {
   }
 
   return (
-    <nav aria-label="Article Navigation">
+    <div>
       <div aria-hidden="true"></div>
 
       <div>
@@ -44,6 +44,6 @@ export default function HeaderArticleNav() {
 
         <HeaderArticleNavSubNav3 path={path} />
       </div>
-    </nav>
+    </div>
   );
 }

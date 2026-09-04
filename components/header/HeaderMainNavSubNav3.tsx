@@ -15,21 +15,21 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
     isOpenRef.current = isOpen;
   }, [isOpen]);
   useEffect(() => {
-    // Prevent background scroll when the menu is open.
+    // Scope scrolling the open navigation.
     function preventScroll(event: WheelEvent | TouchEvent) {
       if (!isOpenRef.current) {
         return;
       }
 
       const target = event.target as HTMLElement | null;
-      if (target && target.closest("ul")?.classList.contains("menu")) {
+      if (target && target.closest("ul")?.classList.contains("target")) {
         return;
       }
 
       event.preventDefault();
     }
 
-    // Close the open menu and release focus when pressing the Escape key.
+    // Close the open navigation and release focus when pressing the Escape key.
     function handleKeyDown(event: KeyboardEvent) {
       if (!isOpenRef.current) {
         return;
@@ -59,7 +59,7 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
 
   const path = usePathname();
   const [prevPath, setPrevPath] = useState(path);
-  // Close the open menu on page transition during render (avoiding useEffect).
+  // Close the open navigation on page transition during render (avoiding useEffect).
   if (prevPath !== path) {
     setPrevPath(path);
 
@@ -69,11 +69,11 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
   }
 
   return (
-    <div>
+    <nav aria-label="Dropdown main navigation">
       <button
         type="button"
-        aria-label="Toggle menu"
-        aria-controls="dropdown-menu"
+        aria-label="Toggle dropdown main navigation"
+        aria-controls="dropdown-main-navigation"
         aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
         onClick={handleClick}
@@ -85,7 +85,10 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
         )}
       </button>
 
-      <ul id="dropdown-menu" className={`menu ${isOpen ? "open" : ""}`}>
+      <ul
+        id="dropdown-main-navigation"
+        className={`target ${isOpen ? "open" : ""}`.trim()}
+      >
         {links.map((link, index) => {
           const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
 
@@ -102,6 +105,6 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 }

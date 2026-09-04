@@ -16,25 +16,28 @@ export default function HeaderArticleNavSubNav1({
   const isPathOverflow = useStore((state) => state.isPathOverflow);
 
   return (
-    <ol
+    <nav
+      aria-label="Breadcrumb navigation"
       className={`${isActive ? "active" : ""} ${isPathOverflow ? "overflow" : ""}`.trim()}
     >
-      {processedPath.map((item, index) => {
-        if (index !== processedPath.length - 1) {
-          return (
-            <li key={index}>
-              <Link href={item.href}>{item.name}</Link>{" "}
-              <FaCaretRight aria-hidden="true" />
-            </li>
-          );
-        } else {
-          return (
-            <li key={index}>
-              <span aria-current="page">{item.name}</span>
-            </li>
-          );
-        }
-      })}
-    </ol>
+      <ol>
+        {processedPath.map((item, index) => {
+          if (index !== processedPath.length - 1) {
+            return (
+              <li key={index}>
+                <Link href={item.href}>{item.name}</Link>{" "}
+                <FaCaretRight aria-hidden="true" />
+              </li>
+            );
+          } else {
+            return (
+              <li key={index}>
+                <span aria-current="page">{item.name}</span>
+              </li>
+            );
+          }
+        })}
+      </ol>
+    </nav>
   );
 }

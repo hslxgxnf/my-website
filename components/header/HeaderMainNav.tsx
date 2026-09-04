@@ -10,10 +10,10 @@ interface HeaderLinksProps {
 
 export default function HeaderMainNav({ links }: HeaderLinksProps) {
   return (
-    <nav aria-label="Main Navigation">
+    <div>
       <HeaderMainNavSubNav1 />
       <HeaderMainNavSubNav2 links={links} />
       <HeaderMainNavSubNav3 links={links} />
-    </nav>
+    </div>
   );
 }

@@ -194,11 +194,11 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
 
   const path = usePathname();
   return (
-    <div>
+    <nav aria-label="Scroll main navigation">
       <button
         type="button"
         aria-label="Scroll left"
-        aria-controls="scroll-menu"
+        aria-controls="scroll-main-navigation"
         ref={leftButtonRef}
         onPointerDown={() => startAnimationScroll("left")}
         onPointerUp={stopAnimationScroll}
@@ -208,7 +208,7 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
         <FaAngleLeft aria-hidden="true" />
       </button>
 
-      <ul id="scroll-menu" ref={scrollContainerRef}>
+      <ul id="scroll-main-navigation" ref={scrollContainerRef}>
         {links.map((link, index) => {
           const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
 
@@ -229,7 +229,7 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
       <button
         type="button"
         aria-label="Scroll right"
-        aria-controls="scroll-menu"
+        aria-controls="scroll-main-navigation"
         ref={rightButtonRef}
         onPointerDown={() => startAnimationScroll("right")}
         onPointerUp={stopAnimationScroll}
@@ -238,6 +238,6 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
       >
         <FaAngleRight aria-hidden="true" />
       </button>
-    </div>
+    </nav>
   );
 }

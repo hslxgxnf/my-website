@@ -4,10 +4,10 @@ import logo from "@/public/logo.png";
 
 export default function HeaderMainNavSubNav1() {
   return (
-    <div>
+    <nav aria-label="Logo navigation">
       <Link href="/">
         <Image src={logo} alt="Home" loading="eager" />
       </Link>
-    </div>
+    </nav>
   );
 }

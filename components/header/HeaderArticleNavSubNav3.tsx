@@ -31,7 +31,7 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
     }
 
     const pathHistory = referenceNavButton.parentElement!
-      .previousElementSibling!.previousElementSibling as HTMLUListElement;
+      .previousElementSibling!.previousElementSibling as HTMLElement;
     const container = pathHistory.parentElement! as HTMLDivElement;
 
     const initialPathHistoryWidth = pathHistory.scrollWidth;
@@ -64,7 +64,7 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
   }, [path, setPathOverflow]);
 
   return (
-    <div>
+    <nav aria-label="Reference and page navigations">
       <button
         type="button"
         aria-label="Toggle all reference navigation"
@@ -89,6 +89,6 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
       >
         <FaChevronUp aria-hidden="true" />
       </button>
-    </div>
+    </nav>
   );
 }
