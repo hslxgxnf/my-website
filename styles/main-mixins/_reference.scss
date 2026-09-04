@@ -195,6 +195,11 @@
         + li > :is(p:first-child, header) {
           text-decoration: underline var(--background-color-3);
         }
+
+        ~ *.hover,
+        ~ * *.hover {
+          color: var(--background-color-3);
+        }
       }
 
       @include hover-type("hover") {

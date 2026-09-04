@@ -11,26 +11,47 @@ interface ReferenceNavProps {
   reference?: Reference;
 }
 
-function Sites({ sites }: { sites: Site[] }) {
+function Sites({ sites, index }: { sites: Site[]; index?: number }) {
+  function toggleHover(isHover: boolean) {
+    if (index === undefined) {
+      return;
+    }
+
+    const referenceButtonContainers = document.querySelectorAll<HTMLDivElement>(
+      "body > main > article div.reference-button-container",
+    );
+    const targetContainer = referenceButtonContainers[index];
+    const targetElements = targetContainer.querySelectorAll(
+      ":scope > *:nth-child(n+2), :scope > *:nth-child(n+2) *",
+    );
+
+    targetElements.forEach((targetElement) => {
+      targetElement.classList.toggle("hover", isHover);
+    });
+  }
+
   return (
     <ul>
       {sites.map((site, index) => {
         if (site.name === "dummy") {
           console.error("Change this dummy image.");
           return null;
-        } else if (site.name === "self") {
-          return (
-            <li key={index} data-self>
-              <RefNavLink site={site} />
-            </li>
-          );
-        } else {
-          return (
-            <li key={index}>
-              <RefNavLink site={site} />
-            </li>
-          );
         }
+
+        return (
+          <li
+            key={index}
+            data-self={site.name === "self" || undefined}
+            onMouseEnter={() => {
+              toggleHover(true);
+            }}
+            onMouseLeave={() => {
+              toggleHover(false);
+            }}
+          >
+            <RefNavLink site={site} />
+          </li>
+        );
       })}
     </ul>
   );
@@ -75,7 +96,7 @@ export default function RefNav({ reference }: ReferenceNavProps) {
         return (
           <div key={index}>
             <h3 onMouseEnter={setTooltip}>{referenceItem.target}</h3>
-            <Sites sites={referenceItem.sites} />
+            <Sites sites={referenceItem.sites} index={index} />
           </div>
         );
       })}
