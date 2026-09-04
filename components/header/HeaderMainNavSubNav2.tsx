@@ -1,21 +1,42 @@
-import { useRef, useEffect } from "react";
+import {
+  useRef,
+  useCallback,
+  useState,
+  useEffect,
+  PointerEvent,
+  MouseEvent,
+} from "react";
 import { usePathname } from "next/navigation";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Link from "next/link";
 
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { breakpoints } from "@/constants/breakpoints";
+
 export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
+  // Scroll Animation
   const scrollContainerRef = useRef<HTMLUListElement>(null);
   const animationFrameIDRef = useRef<number | null>(null);
 
-  function startAnimationScroll(dir: "left" | "right") {
+  const stopAnimationScroll = useCallback(() => {
+    if (animationFrameIDRef.current !== null) {
+      cancelAnimationFrame(animationFrameIDRef.current);
+      animationFrameIDRef.current = null;
+    }
+  }, []);
+
+  const startAnimationScroll = (dir: "left" | "right") => {
+    stopAnimationScroll();
+
     function scrollStep() {
       const scrollContainer = scrollContainerRef.current;
       if (!scrollContainer) {
-        console.error("No scrollContainer");
+        console.error("No scrollContainerRef");
         return;
       }
 
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+
       if (dir === "left" && scrollLeft <= 1) {
         stopAnimationScroll();
         return;
@@ -26,180 +47,144 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
       }
 
       const delta = 6;
-      const speed = dir === "left" ? -delta : delta;
-      scrollContainer.scrollLeft += speed;
+      scrollContainer.scrollLeft += dir === "left" ? -delta : delta;
       animationFrameIDRef.current = requestAnimationFrame(scrollStep);
     }
 
     animationFrameIDRef.current = requestAnimationFrame(scrollStep);
-  }
+  };
 
-  function stopAnimationScroll() {
-    if (animationFrameIDRef.current) {
-      cancelAnimationFrame(animationFrameIDRef.current);
-      animationFrameIDRef.current = null;
+  // canScrollLeft, canScrollRight
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateButtonScrollState = useCallback(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) {
+      console.error("No scrollContainerRef");
+      return;
     }
-  }
 
-  const leftButtonRef = useRef<HTMLButtonElement>(null);
-  const rightButtonRef = useRef<HTMLButtonElement>(null);
+    const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
+
+    console.log(scrollLeft, scrollWidth, clientWidth);
+
+    setCanScrollLeft(scrollLeft > 1);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
+  }, []);
+
+  // ResizeObserver isScrollable
+  const [isScrollable, setIsScrollable] = useState(false);
+
   useEffect(() => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) {
-      console.error("No scrollContainer");
+      console.error("No scrollContainerRef");
       return;
     }
 
-    let isDown = false;
-    let isDragging = false;
-    let startX: number;
-    let scrollLeft: number;
+    const checkScrollable = () => {
+      const isOverflow =
+        scrollContainer.scrollWidth > scrollContainer.clientWidth;
 
-    const handlePointerDown = (event: PointerEvent) => {
-      isDown = true;
-      isDragging = false;
-      startX = event.pageX - scrollContainer.offsetLeft;
-      scrollLeft = scrollContainer.scrollLeft;
-    };
-
-    const handlePointerMove = (event: PointerEvent) => {
-      if (!isDown) {
-        return;
-      }
-      const x = event.pageX - scrollContainer.offsetLeft;
-      const deltaX = x - startX;
-      if (Math.abs(deltaX) > 5) {
-        isDragging = true;
-        scrollContainer.classList.add("dragging");
-      }
-      scrollContainer.scrollLeft = scrollLeft - deltaX;
-    };
-
-    const stopDrag = () => {
-      isDown = false;
-      scrollContainer.classList.remove("dragging");
-    };
-
-    const handleClick = (event: MouseEvent) => {
-      if (isDragging) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-    };
-
-    const handleDragStart = (event: DragEvent) => {
-      event.preventDefault();
-    };
-
-    const leftButton = leftButtonRef.current;
-    if (!leftButton) {
-      console.error("No leftButton");
-      return;
-    }
-    const rightButton = rightButtonRef.current;
-    if (!rightButton) {
-      console.error("No rightButton");
-      return;
-    }
-    const handleScroll = () => {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainer;
-
-      if (scrollLeft <= 1) {
-        leftButton.classList.add("clamped");
-        leftButton.disabled = true;
+      if (isOverflow) {
+        setIsScrollable(true);
+        updateButtonScrollState();
       } else {
-        leftButton.classList.remove("clamped");
-        leftButton.disabled = false;
-      }
-
-      if (scrollLeft + clientWidth >= scrollWidth - 1) {
-        rightButton.classList.add("clamped");
-        rightButton.disabled = true;
-      } else {
-        rightButton.classList.remove("clamped");
-        rightButton.disabled = false;
+        setIsScrollable(false);
+        stopAnimationScroll();
       }
     };
 
-    let scrollContainerController: AbortController | null = null;
-    const handleScrollableState = () => {
-      if (!scrollContainerController) {
-        scrollContainer.classList.add("scrollable");
-        scrollContainerController = new AbortController();
-        const { signal } = scrollContainerController;
-        scrollContainer.addEventListener("pointerdown", handlePointerDown, {
-          signal,
-        });
-        scrollContainer.addEventListener("pointermove", handlePointerMove, {
-          signal,
-        });
-        scrollContainer.addEventListener("pointerup", stopDrag, { signal });
-        scrollContainer.addEventListener("pointerleave", stopDrag, { signal });
-        scrollContainer.addEventListener("pointercancel", stopDrag, { signal });
-        scrollContainer.addEventListener("click", handleClick, {
-          capture: true,
-          signal,
-        });
-        scrollContainer.addEventListener("dragstart", handleDragStart, {
-          signal,
-        });
-        scrollContainer.addEventListener("scroll", handleScroll, { signal });
-      }
-
-      if (!leftButton.classList.contains("scrollable")) {
-        leftButton.classList.add("scrollable");
-        leftButton.disabled = false;
-        handleScroll();
-      }
-
-      if (!rightButton.classList.contains("scrollable")) {
-        rightButton.classList.add("scrollable");
-        rightButton.disabled = false;
-      }
-    };
-    const handleUnscrollableState = () => {
-      if (scrollContainerController) {
-        scrollContainer.classList.remove("scrollable");
-        scrollContainerController.abort();
-        scrollContainerController = null;
-      }
-
-      if (leftButton.classList.contains("scrollable")) {
-        leftButton.classList.remove("scrollable", "clamped");
-        leftButton.disabled = true;
-      }
-
-      if (rightButton.classList.contains("scrollable")) {
-        rightButton.classList.remove("scrollable", "clamped");
-        rightButton.disabled = true;
-      }
-
-      stopAnimationScroll();
-    };
-
-    const resizeObserver = new ResizeObserver(() => {
-      if (scrollContainer.scrollWidth > scrollContainer.clientWidth) {
-        handleScrollableState();
-      } else {
-        handleUnscrollableState();
-      }
-    });
+    const resizeObserver = new ResizeObserver(checkScrollable);
     resizeObserver.observe(document.documentElement);
+    resizeObserver.observe(scrollContainer);
 
     return () => {
-      handleUnscrollableState();
+      stopAnimationScroll();
       resizeObserver.disconnect();
     };
-  }, []);
+  }, [updateButtonScrollState, stopAnimationScroll]);
+
+  // scrollContainer Events
+  const dragInfoRef = useRef({
+    isDown: false,
+    startX: 0,
+    scrollLeft: 0,
+  });
+  const [isDragging, setIsDragging] = useState(false);
+  const wasDraggingRef = useRef(false);
+
+  function handlePointerDown(event: PointerEvent<HTMLUListElement>) {
+    if (!isScrollable) {
+      return;
+    }
+
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) {
+      console.error("No scrollContainerRef");
+      return;
+    }
+
+    dragInfoRef.current = {
+      isDown: true,
+      startX: event.pageX - scrollContainer.offsetLeft,
+      scrollLeft: scrollContainer.scrollLeft,
+    };
+    setIsDragging(false);
+    wasDraggingRef.current = false;
+  }
+
+  function handlePointerMove(event: PointerEvent<HTMLUListElement>) {
+    const { isDown, startX, scrollLeft } = dragInfoRef.current;
+
+    if (!isScrollable || !isDown) {
+      return;
+    }
+
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) {
+      console.error("No scrollContainerRef");
+      return;
+    }
+
+    const x = event.pageX - scrollContainer.offsetLeft;
+    const deltaX = x - startX;
+
+    if (Math.abs(deltaX) > 5 && !isDragging) {
+      setIsDragging(true);
+      wasDraggingRef.current = true;
+    }
+
+    scrollContainer.scrollLeft = scrollLeft - deltaX;
+  }
+
+  const handlePointerStop = () => {
+    dragInfoRef.current.isDown = false;
+    setIsDragging(false);
+  };
+
+  // Prevent navigation on click after dragging.
+  const handleClickCapture = (event: MouseEvent<HTMLUListElement>) => {
+    if (wasDraggingRef.current) {
+      event.preventDefault();
+      event.stopPropagation();
+      wasDraggingRef.current = false;
+    }
+  };
+
+  const isMobile = useMediaQuery(`(max-width: ${breakpoints.mobile})`);
 
   const path = usePathname();
+
   return (
     <nav aria-label="Scroll main navigation">
       <button
         type="button"
         aria-label="Scroll left"
         aria-controls="scroll-main-navigation"
-        ref={leftButtonRef}
+        className={`${isScrollable ? "scrollable" : ""} ${!canScrollLeft ? "clamped" : ""}`.trim()}
+        disabled={!isScrollable || !canScrollLeft || isMobile}
         onPointerDown={() => startAnimationScroll("left")}
         onPointerUp={stopAnimationScroll}
         onPointerLeave={stopAnimationScroll}
@@ -208,7 +193,18 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
         <FaAngleLeft aria-hidden="true" />
       </button>
 
-      <ul id="scroll-main-navigation" ref={scrollContainerRef}>
+      <ul
+        id="scroll-main-navigation"
+        ref={scrollContainerRef}
+        className={`${isScrollable ? "scrollable" : ""} ${isDragging ? "dragging" : ""}`.trim()}
+        onScroll={updateButtonScrollState}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerStop}
+        onPointerLeave={handlePointerStop}
+        onPointerCancel={handlePointerStop}
+        onClickCapture={handleClickCapture}
+      >
         {links.map((link, index) => {
           const href = `/${link.replaceAll(" ", "-").toLowerCase()}`;
 
@@ -218,6 +214,7 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
                 aria-current={path.startsWith(href) ? "page" : undefined}
                 href={href}
                 className={path.startsWith(href) ? "active" : undefined}
+                onDragStart={(e) => e.preventDefault()}
               >
                 {link}
               </Link>
@@ -230,7 +227,8 @@ export default function HeaderMainNavSubNav2({ links }: { links: string[] }) {
         type="button"
         aria-label="Scroll right"
         aria-controls="scroll-main-navigation"
-        ref={rightButtonRef}
+        className={`${isScrollable ? "scrollable" : ""} ${!canScrollRight ? "clamped" : ""}`.trim()}
+        disabled={!isScrollable || !canScrollRight || isMobile}
         onPointerDown={() => startAnimationScroll("right")}
         onPointerUp={stopAnimationScroll}
         onPointerLeave={stopAnimationScroll}
