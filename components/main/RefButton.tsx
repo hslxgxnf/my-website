@@ -4,6 +4,8 @@ import { type ReactNode, useRef, useEffect } from "react";
 import { IoIosLink } from "react-icons/io";
 
 import { useStore } from "@/stores/useStore";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { breakpoints } from "@/constants/breakpoints";
 
 interface ReferenceButtonProps {
   children: ReactNode;
@@ -112,9 +114,11 @@ export default function RefButton({ children }: ReferenceButtonProps) {
     };
   }, [headerHeight]);
 
+  const isTablet = useMediaQuery(`(max-width: ${breakpoints.tablet})`);
+
   return (
     <div className="reference-button-container">
-      <button type="button" ref={buttonRef}>
+      <button type="button" ref={buttonRef} disabled={isTablet}>
         <IoIosLink aria-hidden="true" />
       </button>
 

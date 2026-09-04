@@ -26,6 +26,7 @@ export default function HeaderArticleNavSubNav2({
         aria-controls="dropdown-breadcrumb-navigation"
         aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
+        disabled={!isPathOverflow}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <FaChevronUp aria-hidden="true" />

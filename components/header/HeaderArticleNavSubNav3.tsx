@@ -57,14 +57,12 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
   }, [path, setPathOverflow]);
 
   const isRefNavBtnActive = useStore((state) => state.isRefNavBtnActive);
-  const isRefNavBtnMediaMatched = useMediaQuery(
-    `(max-width: ${breakpoints.tablet})`,
-  );
+  const isTablet = useMediaQuery(`(max-width: ${breakpoints.tablet})`);
   const isRefNavBtnOpen = useStore((state) => state.isRefNavBtnOpen);
   const toggleRefNavBtnOpen = useStore((state) => state.toggleRefNavBtnOpen);
 
   const isPageNavBtnActive = useStore((state) => state.isPageNavBtnActive);
-  const isPageNavBtnMediaMatched = useMediaQuery(
+  const isTableLarge = useMediaQuery(
     `(max-width: ${breakpoints["tablet-lg"]})`,
   );
   const isPageNavBtnOpen = useStore((state) => state.isPageNavBtnOpen);
@@ -79,7 +77,7 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
         aria-expanded={isRefNavBtnOpen}
         ref={refNavBtnRef}
         className={`${isRefNavBtnActive ? "active" : ""} ${isRefNavBtnOpen ? "open" : ""}`.trim()}
-        disabled={!(isRefNavBtnActive && isRefNavBtnMediaMatched)}
+        disabled={!(isRefNavBtnActive && isTablet)}
         onClick={toggleRefNavBtnOpen}
       >
         <FaChevronUp aria-hidden="true" />
@@ -91,7 +89,7 @@ export default function HeaderArticleNavSubNav3({ path }: { path: string }) {
         aria-expanded={isPageNavBtnOpen}
         ref={pageNavBtnRef}
         className={`${isPageNavBtnActive ? "active" : ""} ${isPageNavBtnOpen ? "open" : ""}`.trim()}
-        disabled={!(isPageNavBtnActive && isPageNavBtnMediaMatched)}
+        disabled={!(isPageNavBtnActive && isTableLarge)}
         onClick={togglePageNavBtnOpen}
       >
         <FaChevronUp aria-hidden="true" />

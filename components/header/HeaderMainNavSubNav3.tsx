@@ -3,8 +3,25 @@ import { usePathname } from "next/navigation";
 import { IoClose, IoMenu } from "react-icons/io5";
 import Link from "next/link";
 
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { breakpoints } from "@/constants/breakpoints";
+
 export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close the open navigation on page transition during render (avoiding useEffect).
+  const path = usePathname();
+  const [prevPath, setPrevPath] = useState(path);
+  if (prevPath !== path) {
+    setPrevPath(path);
+
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }
+
+  const isMobile = useMediaQuery(`(max-width: ${breakpoints.mobile})`);
+
   function handleClick() {
     setIsOpen((prev) => !prev);
   }
@@ -57,17 +74,6 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
     };
   }, []);
 
-  const path = usePathname();
-  const [prevPath, setPrevPath] = useState(path);
-  // Close the open navigation on page transition during render (avoiding useEffect).
-  if (prevPath !== path) {
-    setPrevPath(path);
-
-    if (isOpen) {
-      setIsOpen(false);
-    }
-  }
-
   return (
     <nav aria-label="Dropdown main navigation">
       <button
@@ -76,6 +82,7 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
         aria-controls="dropdown-main-navigation"
         aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
+        disabled={!isMobile}
         onClick={handleClick}
       >
         {isOpen ? (
