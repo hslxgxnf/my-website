@@ -2,13 +2,38 @@
 
 import { useLayoutEffect } from "react";
 
-import type { Reference } from "@/types/main/interfaces";
+import type { Reference, Site } from "@/types/main/interfaces";
 import { useStore } from "@/stores/useStore";
 import RefNavLink from "@/components/main/RefNavLink";
 import setTooltip from "@/functions/main/setTooltip";
 
 interface ReferenceNavProps {
   reference?: Reference;
+}
+
+function Sites({ sites }: { sites: Site[] }) {
+  return (
+    <ul>
+      {sites.map((site, index) => {
+        if (site.name === "dummy") {
+          console.error("Change this dummy image.");
+          return null;
+        } else if (site.name === "self") {
+          return (
+            <li key={index} data-self>
+              <RefNavLink site={site} />
+            </li>
+          );
+        } else {
+          return (
+            <li key={index}>
+              <RefNavLink site={site} />
+            </li>
+          );
+        }
+      })}
+    </ul>
+  );
 }
 
 export default function RefNav({ reference }: ReferenceNavProps) {
@@ -33,27 +58,8 @@ export default function RefNav({ reference }: ReferenceNavProps) {
         key={index}
         data-target={referenceItem.target}
       >
-        <h4>Reference</h4>
-        <ul>
-          {referenceItem.sites.map((site, index) => {
-            if (site.name === "dummy") {
-              console.error("Change this dummy image.");
-              return null;
-            } else if (site.name === "self") {
-              return (
-                <li key={index} data-self>
-                  <RefNavLink site={site} />
-                </li>
-              );
-            } else {
-              return (
-                <li key={index}>
-                  <RefNavLink site={site} />
-                </li>
-              );
-            }
-          })}
-        </ul>
+        <h2>Reference</h2>
+        <Sites sites={referenceItem.sites} />
       </nav>
     );
   });
@@ -64,33 +70,12 @@ export default function RefNav({ reference }: ReferenceNavProps) {
       id="all-reference-navigation"
       className={isRefNavBtnOpen ? "open" : undefined}
     >
-      <h4>Reference</h4>
-      <hr />
+      <h2>Reference</h2>
       {reference.map((referenceItem, index) => {
         return (
           <div key={index}>
-            <h5 onMouseEnter={setTooltip}>{referenceItem.target}</h5>
-            <ul>
-              {referenceItem.sites.map((site, index) => {
-                if (site.name === "dummy") {
-                  console.error("Change this dummy image.");
-                  return null;
-                } else if (site.name === "self") {
-                  return (
-                    <li key={index} data-self>
-                      <RefNavLink site={site} />
-                    </li>
-                  );
-                } else {
-                  return (
-                    <li key={index}>
-                      <RefNavLink site={site} />
-                    </li>
-                  );
-                }
-              })}
-            </ul>
-            {index !== reference.length - 1 && <hr />}
+            <h3 onMouseEnter={setTooltip}>{referenceItem.target}</h3>
+            <Sites sites={referenceItem.sites} />
           </div>
         );
       })}
