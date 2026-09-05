@@ -1,5 +1,5 @@
-import { Roboto, Roboto_Mono } from "next/font/google";
 import type { Metadata } from "next";
+import { Roboto, Roboto_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -11,6 +11,43 @@ import Header from "@/components/header/Header";
 import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
 import TitleValidator from "@/components/all/TitleValidator";
 
+const siteUrl = "https://hslee.dev";
+export const metadata: Metadata = {
+  title: { default: "HSLee Dev", template: "%s | HSLee Dev" },
+  description: "Hoseon Lee Development Blog",
+  generator: "Next.js (Deployed on Vercel)",
+  creator: "Hoseon Lee",
+  publisher: "Hoseon Lee",
+
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "HSLee Dev",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
 const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
@@ -19,20 +56,7 @@ const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
   variable: "--font-roboto-mono",
 });
-
-export const metadata: Metadata = {
-  title: { default: "HSLee Dev", template: "%s | HSLee Dev" },
-  description: "Hoseon Lee Development Blog",
-  generator: "Next.js (Deployed on Vercel)",
-  creator: "Hoseon Lee",
-  publisher: "Hoseon Lee",
-};
-
-interface LayoutProps {
-  children: ReactNode;
-}
-
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: { children: ReactNode }) {
   const devOnly = process.env.NODE_ENV === "development";
   const prodOnly = process.env.NODE_ENV === "production";
 
