@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import RefNav from "@/components/main/RefNav";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
-import PageNav from "@/components/main-description/PageNav";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "Naming Cases",

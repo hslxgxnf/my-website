@@ -4,6 +4,7 @@ import { reference } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "DSA",
@@ -33,7 +34,7 @@ export default function Page() {
         <HeadingLinkPage>Asymptotic Analysis</HeadingLinkPage>
       </article>
 
-      <aside></aside>
+      <PageNav />
     </main>
   );
 }

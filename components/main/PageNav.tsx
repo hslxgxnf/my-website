@@ -122,7 +122,7 @@ export default function PageNav() {
 
   const isPageNavBtnOpen = useStore((state) => state.isPageNavBtnOpen);
   if (articleHeadings.length === 0) {
-    return null;
+    return <aside></aside>;
   } else if (articleHeadings.length === 1) {
     if (isScrollable) {
       return (

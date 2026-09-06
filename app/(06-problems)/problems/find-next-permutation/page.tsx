@@ -5,7 +5,7 @@ import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
-import PageNav from "@/components/main-description/PageNav";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "Find Next Permutation",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
 import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "HTML",
@@ -23,7 +24,7 @@ export default function Page() {
         <HeadingLinkPage>Emmet</HeadingLinkPage>
       </article>
 
-      <aside></aside>
+      <PageNav />
     </main>
   );
 }

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import RefNav from "@/components/main/RefNav";
 // import RefButton from "@/components/main/RefButton";
 // import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "???",
@@ -21,7 +22,7 @@ export default function Page() {
         {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
       </article>
 
-      <aside></aside>
+      <PageNav />
     </main>
   );
 }

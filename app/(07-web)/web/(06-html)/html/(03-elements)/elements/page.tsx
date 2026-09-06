@@ -6,7 +6,7 @@ import RefButton from "@/components/main/RefButton";
 import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import ToggleList from "@/components/main-description/ToggleList";
-import PageNav from "@/components/main-description/PageNav";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "Elements",

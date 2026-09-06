@@ -1,4 +1,5 @@
 import RefNav from "@/components/main/RefNav";
+import PageNav from "@/components/main/PageNav";
 
 export default function Page() {
   return (
@@ -14,7 +15,7 @@ export default function Page() {
         </p>
       </article>
 
-      <aside></aside>
+      <PageNav />
     </main>
   );
 }

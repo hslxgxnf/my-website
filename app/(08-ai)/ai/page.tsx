@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
 // import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "AI",
@@ -19,7 +20,7 @@ export default function Page() {
         {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
       </article>
 
-      <aside></aside>
+      <PageNav />
     </main>
   );
 }
