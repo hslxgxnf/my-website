@@ -77,7 +77,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routeInfos.map(({ route, lastModified }) => {
     return {
-      url: escapeXml(`https://hslee.dev${route}`),
+      url: escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${route}`),
       lastModified: lastModified,
     };
   });

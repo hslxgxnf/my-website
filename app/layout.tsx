@@ -11,7 +11,6 @@ import Header from "@/components/header/Header";
 import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
 import TitleValidator from "@/components/all/TitleValidator";
 
-const siteUrl = "https://hslee.dev";
 export const metadata: Metadata = {
   title: { default: "HSLee Dev", template: "%s | HSLee Dev" },
   description: "Hoseon Lee Development Blog",
@@ -19,13 +18,13 @@ export const metadata: Metadata = {
   creator: "Hoseon Lee",
   publisher: "Hoseon Lee",
 
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
   alternates: { canonical: "/" },
 
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
+    url: process.env.NEXT_PUBLIC_SITE_URL,
     siteName: "HSLee Dev",
   },
 
