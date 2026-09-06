@@ -46,6 +46,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
+  verification: {
+    other: {
+      "naver-site-verification": "4230f2aba428933fa6f21b449a85c3b0a946fce6",
+    },
+  },
 };
 
 const roboto = Roboto({
