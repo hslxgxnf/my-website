@@ -73,8 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routeInfos = getStaticRoutes(appDirectory);
 
-  console.log(routeInfos.length);
-
   return routeInfos.map(({ route, lastModified }) => {
     return {
       url: escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${route}`),
