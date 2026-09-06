@@ -3,11 +3,11 @@
 import { type ReactNode, useState } from "react";
 
 interface ToggleListProps {
-  header: ReactNode;
+  summary: ReactNode;
   children: ReactNode;
 }
 
-export default function ToggleList({ header, children }: ToggleListProps) {
+export default function ToggleList({ summary, children }: ToggleListProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleClick() {
@@ -19,8 +19,8 @@ export default function ToggleList({ header, children }: ToggleListProps) {
       <div className={isOpen ? "open" : undefined} onClick={handleClick}>
         ▶
       </div>
-      <header>{header}</header>
-      <main>{children}</main>
+      <div>{summary}</div>
+      <div>{children}</div>
     </li>
   );
 }

@@ -180,19 +180,23 @@
       @include max-width-size("tablet") {
         display: none;
 
-        // main-description
+        // main-description Headings
         + :is(h1, h2, h3):has(a) > a {
           text-decoration: underline var(--background-color-3);
         }
 
-        // main-list
+        // main-list Headings
         + :is(h1, h2, h3):not(:has(a)) {
           text-decoration: underline var(--background-color-3);
         }
 
         // ToggleList
-        + p,
-        + li > :is(p:first-child, header) {
+        + li > div:nth-child(2) {
+          text-decoration: underline var(--background-color-3);
+        }
+
+        + li > p:first-child,
+        + p {
           text-decoration: underline var(--background-color-3);
         }
 

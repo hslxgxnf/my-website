@@ -180,8 +180,10 @@ export default function Page() {
                 <hr />
                 <RefButton>
                   <ToggleList
-                    header={
-                      <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
+                    summary={
+                      <p>
+                        <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
+                      </p>
                     }
                   >
                     <p>Creates a modal or non-modal dialog.</p>
@@ -245,8 +247,10 @@ export default function Page() {
                 </RefButton>
                 <RefButton>
                   <ToggleList
-                    header={
-                      <Highlight type="simple-code">&lt;form&gt;</Highlight>
+                    summary={
+                      <p>
+                        <Highlight type="simple-code">&lt;form&gt;</Highlight>
+                      </p>
                     }
                   >
                     <p>
@@ -303,8 +307,10 @@ export default function Page() {
                 </li>
                 <RefButton>
                   <ToggleList
-                    header={
-                      <Highlight type="simple-code">&lt;table&gt;</Highlight>
+                    summary={
+                      <p>
+                        <Highlight type="simple-code">&lt;table&gt;</Highlight>
+                      </p>
                     }
                   >
                     <ul>
@@ -532,7 +538,7 @@ export default function Page() {
                   </p>
                 </li>
                 <ToggleList
-                  header={
+                  summary={
                     <p>
                       <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}
                       <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
