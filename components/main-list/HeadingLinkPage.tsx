@@ -13,7 +13,7 @@ export default function HeadingLinkPage({ children }: HeadingLinkPageProps) {
   const href = `${currentPath}/${nextPath}`;
 
   return (
-    <h3>
+    <h3 className="heading-link-page">
       <Link href={href}>{children}</Link>
     </h3>
   );

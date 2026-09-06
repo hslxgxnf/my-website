@@ -198,7 +198,7 @@
 
         ~ *.hover,
         ~ * *.hover {
-          color: var(--background-color-3);
+          color: var(--background-color-3) !important;
         }
       }
 
@@ -210,7 +210,7 @@
 
           ~ *,
           ~ * * {
-            color: var(--background-color-3);
+            color: var(--background-color-3) !important;
           }
         }
       }
@@ -223,7 +223,7 @@
 
           ~ *,
           ~ * * {
-            color: var(--background-color-3);
+            color: var(--background-color-3) !important;
           }
         }
       }

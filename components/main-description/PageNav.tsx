@@ -65,7 +65,9 @@ export default function PageNav() {
       return;
     }
     const success = realHeadings.every((heading, index) => {
-      const realHeading = heading.firstElementChild!.textContent;
+      const firstChild = heading.children[0].cloneNode(true) as HTMLElement;
+      firstChild.querySelector("span")?.remove();
+      const realHeading = firstChild.textContent.trim();
       return realHeading === articleHeadings[index].content;
     });
     if (!success) {

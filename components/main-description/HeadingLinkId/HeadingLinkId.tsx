@@ -45,16 +45,15 @@ export default function HeadingLinkId({
 
   const href = `#${id}`;
   return (
-    <Tag ref={headingRef}>
+    <Tag ref={headingRef} className="heading-link-id">
       <Link
         href={href}
         onClick={
           headingNumber === 1 ? (e) => handleClickFirstLink(e, href) : undefined
         }
       >
-        {children}
-      </Link>{" "}
-      <span>#</span>
+        {children} <span>#</span>
+      </Link>
       <ArticleMetaData
         headingNumber={headingNumber}
         lastUpdated={lastUpdated}

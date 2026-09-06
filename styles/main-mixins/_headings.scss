@@ -1,33 +1,30 @@
 @use "../media" as *;
 
 @mixin headings {
-  :is(h1, h2, h3) {
-    color: var(--color-1);
-  }
-
-  :is(h1, h2, h3):has(> span) {
+  :is(h1, h2, h3).heading-link-id {
     > a {
+      display: block;
       color: var(--color-1);
 
+      > span {
+        display: none;
+      }
+
       @include hover-type("hover") {
-        &:hover + span {
+        &:hover > span {
           display: inline;
         }
       }
 
       @include hover-type("none") {
-        &:active + span {
+        &:active > span {
           display: inline;
         }
       }
     }
-
-    > span {
-      display: none;
-    }
   }
 
-  h1 {
+  h1.heading-link-id {
     position: relative;
 
     > aside {
@@ -36,6 +33,16 @@
       right: 0;
       font-weight: normal;
       font-size: var(--font-size-20);
+    }
+  }
+
+  :is(h1, h2) {
+    color: var(--color-1);
+  }
+
+  h3.heading-link-page {
+    > a {
+      display: block;
     }
   }
 }

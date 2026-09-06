@@ -48,7 +48,11 @@ export default function RefButton({ children }: ReferenceButtonProps) {
     if (articleTargetElement.className.includes("toggle-list")) {
       articleTarget = articleTargetElement.children[1].textContent;
     } else if (articleTargetElement.children[0]) {
-      articleTarget = articleTargetElement.children[0].textContent;
+      const firstChild = articleTargetElement.children[0].cloneNode(
+        true,
+      ) as HTMLElement;
+      firstChild.querySelector("span")?.remove();
+      articleTarget = firstChild.textContent.trim();
     } else {
       articleTarget = articleTargetElement.textContent;
     }
