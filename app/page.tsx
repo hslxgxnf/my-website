@@ -1,7 +1,10 @@
+import RefNav from "@/components/main/RefNav";
+
 export default function Page() {
   return (
     <main>
-      <aside></aside>
+      <RefNav />
+
       <article>
         <h1>Archive of My Learning Journey</h1>
         <p>Hi, I'm Hoseon Lee.</p>
@@ -10,6 +13,7 @@ export default function Page() {
           engineering insights.
         </p>
       </article>
+
       <aside></aside>
     </main>
   );

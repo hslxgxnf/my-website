@@ -14,9 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <aside>
-        <RefNav />
-      </aside>
+      <RefNav />
 
       <article>
         <HeadingLinkId headingNumber={1} lastUpdated="2026-07-14">

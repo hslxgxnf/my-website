@@ -68,7 +68,7 @@ export default function RefNav({ reference }: ReferenceNavProps) {
   }, [reference, setRefNavBtnActive]);
 
   if (!reference) {
-    return null;
+    return <aside></aside>;
   }
 
   const eachReference = reference.map((referenceItem, index) => {
