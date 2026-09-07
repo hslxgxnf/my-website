@@ -166,6 +166,18 @@
 }
 
 @mixin reference-button {
+  ul {
+    --ul-depth: 1;
+
+    ul {
+      --ul-depth: 2;
+
+      ul {
+        --ul-depth: 3;
+      }
+    }
+  }
+
   .reference-button-container {
     position: relative;
 
@@ -174,6 +186,69 @@
       border: none;
       background-color: transparent;
       cursor: pointer;
+
+      &:has(+ h1) {
+        left: calc(var(--space-60) * -1);
+        width: var(--font-size-55);
+        height: var(--font-size-55);
+        font-size: var(--font-size-55);
+      }
+
+      &:has(+ h2) {
+        left: calc(var(--space-60) * -1);
+        width: var(--font-size-45);
+        height: var(--font-size-45);
+        font-size: var(--font-size-45);
+      }
+
+      &:has(+ h3) {
+        left: calc(var(--space-60) * -1);
+        width: var(--font-size-35);
+        height: var(--font-size-35);
+        font-size: var(--font-size-35);
+      }
+
+      &:has(+ li) {
+        left: calc(
+          (var(--space-50) + var(--space-40) * var(--ul-depth, 1)) * -1
+        );
+        width: var(--font-size-25);
+        height: var(--font-size-25);
+        font-size: var(--font-size-25);
+      }
+
+      &:has(+ p) {
+        left: calc(var(--space-50) * -1);
+        width: var(--font-size-25);
+        height: var(--font-size-25);
+        font-size: var(--font-size-25);
+      }
+
+      @include hover-type("hover") {
+        &:hover {
+          > svg {
+            fill: var(--background-color-3);
+          }
+
+          ~ *,
+          ~ * * {
+            color: var(--background-color-3) !important;
+          }
+        }
+      }
+
+      @include hover-type("none") {
+        &:active {
+          > svg {
+            fill: var(--background-color-3);
+          }
+
+          ~ *,
+          ~ * * {
+            color: var(--background-color-3) !important;
+          }
+        }
+      }
 
       @include max-width-size("tablet") {
         display: none;
@@ -203,68 +278,6 @@
           color: var(--background-color-3) !important;
         }
       }
-
-      @include hover-type("hover") {
-        &:hover {
-          > svg {
-            fill: var(--background-color-3);
-          }
-
-          ~ *,
-          ~ * * {
-            color: var(--background-color-3) !important;
-          }
-        }
-      }
-
-      @include hover-type("none") {
-        &:active {
-          > svg {
-            fill: var(--background-color-3);
-          }
-
-          ~ *,
-          ~ * * {
-            color: var(--background-color-3) !important;
-          }
-        }
-      }
-
-      &:has(+ h1) {
-        left: calc(var(--space-60) * -1);
-        font-size: var(--font-size-55);
-      }
-
-      &:has(+ h2) {
-        left: calc(var(--space-60) * -1);
-        font-size: var(--font-size-45);
-      }
-
-      &:has(+ h3) {
-        left: calc(var(--space-60) * -1);
-        font-size: var(--font-size-35);
-      }
-
-      &:has(+ p) {
-        top: var(--space-05);
-        left: calc(var(--space-50) * -1);
-
-        font-size: var(--font-size-25);
-      }
-
-      &:has(+ li) {
-        top: var(--space-05);
-        font-size: var(--font-size-25);
-      }
     }
-  }
-
-  $selector: "ul";
-  @for $i from 1 through 3 {
-    #{$selector} > .reference-button-container > button {
-      left: calc(var(--space-50) * -1 + (var(--space-40) * -1 * #{$i}));
-    }
-
-    $selector: $selector + " ul";
   }
 }
