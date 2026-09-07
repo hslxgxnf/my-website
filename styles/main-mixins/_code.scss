@@ -5,6 +5,12 @@
     text-decoration: underline;
   }
 
+  span.math {
+    span.katex-mathml {
+      user-select: none;
+    }
+  }
+
   em {
     color: var(--color-2);
   }

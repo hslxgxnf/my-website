@@ -10,5 +10,5 @@ export default function HighlightMath({ children }: HighlightMathProps) {
     displayMode: false,
   });
 
-  return <span dangerouslySetInnerHTML={{ __html: html }} />;
+  return <span className="math" dangerouslySetInnerHTML={{ __html: html }} />;
 }
