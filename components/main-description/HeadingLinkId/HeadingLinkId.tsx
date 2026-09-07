@@ -52,7 +52,7 @@ export default function HeadingLinkId({
           headingNumber === 1 ? (e) => handleClickFirstLink(e, href) : undefined
         }
       >
-        {children} <span>#</span>
+        {children} <span aria-hidden="true">#</span>
       </Link>
       <ArticleMetaData
         headingNumber={headingNumber}

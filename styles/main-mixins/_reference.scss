@@ -248,11 +248,14 @@
       }
 
       &:has(+ p) {
+        top: 5px;
         left: calc(var(--space-50) * -1);
+
         font-size: var(--font-size-25);
       }
 
       &:has(+ li) {
+        top: 5px;
         font-size: var(--font-size-25);
       }
     }

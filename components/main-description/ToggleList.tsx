@@ -3,11 +3,12 @@
 import { type ReactNode, useState } from "react";
 
 interface ToggleListProps {
+  id: string;
   summary: ReactNode;
   children: ReactNode;
 }
 
-export default function ToggleList({ summary, children }: ToggleListProps) {
+export default function ToggleList({ id, summary, children }: ToggleListProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleClick() {
@@ -16,11 +17,18 @@ export default function ToggleList({ summary, children }: ToggleListProps) {
 
   return (
     <li className="toggle-list">
-      <div className={isOpen ? "open" : undefined} onClick={handleClick}>
-        ▶
-      </div>
+      <button
+        type="button"
+        aria-label={`Toggle ${id}`}
+        aria-controls={id}
+        aria-expanded={isOpen}
+        className={isOpen ? "open" : undefined}
+        onClick={handleClick}
+      >
+        <span aria-hidden="true">▶</span>
+      </button>
       <div>{summary}</div>
-      <div>{children}</div>
+      <div id={id}>{children}</div>
     </li>
   );
 }

@@ -180,6 +180,7 @@ export default function Page() {
                 <hr />
                 <RefButton>
                   <ToggleList
+                    id="dialog"
                     summary={
                       <p>
                         <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
@@ -247,6 +248,7 @@ export default function Page() {
                 </RefButton>
                 <RefButton>
                   <ToggleList
+                    id="form"
                     summary={
                       <p>
                         <Highlight type="simple-code">&lt;form&gt;</Highlight>
@@ -307,6 +309,7 @@ export default function Page() {
                 </li>
                 <RefButton>
                   <ToggleList
+                    id="table"
                     summary={
                       <p>
                         <Highlight type="simple-code">&lt;table&gt;</Highlight>
@@ -538,6 +541,7 @@ export default function Page() {
                   </p>
                 </li>
                 <ToggleList
+                  id="lists"
                   summary={
                     <p>
                       <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}

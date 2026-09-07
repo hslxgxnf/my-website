@@ -5,9 +5,11 @@
     list-style: none;
     position: relative;
 
-    > div:nth-child(1) {
+    > button {
       position: absolute;
       left: calc(-1 * var(--font-size-25) + -5px);
+      border: none;
+      background-color: transparent;
       transition: transform 0.2s;
       cursor: pointer;
       user-select: none;
@@ -20,9 +22,15 @@
         }
       }
 
+      > span {
+        font-size: var(--font-size-25);
+      }
+
       @include hover-type("hover") {
         &:hover {
-          color: var(--color-1);
+          > span {
+            color: var(--color-1);
+          }
         }
       }
 
@@ -30,7 +38,9 @@
         -webkit-tap-highlight-color: transparent;
 
         &:active {
-          color: var(--color-1);
+          > span {
+            color: var(--color-1);
+          }
         }
       }
     }
