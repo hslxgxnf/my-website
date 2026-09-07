@@ -7,7 +7,7 @@
 
     > button {
       position: absolute;
-      left: calc(-1 * var(--font-size-25) + -5px);
+      left: calc(-1 * var(--font-size-25) - var(--space-05));
       border: none;
       background-color: transparent;
       transition: transform 0.2s;

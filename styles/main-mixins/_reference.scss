@@ -130,10 +130,8 @@
         }
 
         > div {
-          border-radius: calc(var(--border-radius) / 2);
           width: var(--font-size-20);
           height: var(--font-size-20);
-          background-color: transparent;
 
           &.loading {
             animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -248,14 +246,14 @@
       }
 
       &:has(+ p) {
-        top: 5px;
+        top: var(--space-05);
         left: calc(var(--space-50) * -1);
 
         font-size: var(--font-size-25);
       }
 
       &:has(+ li) {
-        top: 5px;
+        top: var(--space-05);
         font-size: var(--font-size-25);
       }
     }
