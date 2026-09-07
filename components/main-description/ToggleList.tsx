@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode, useState } from "react";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 interface ToggleListProps {
   id: string;
@@ -25,7 +26,7 @@ export default function ToggleList({ id, summary, children }: ToggleListProps) {
         className={isOpen ? "open" : undefined}
         onClick={handleClick}
       >
-        <span aria-hidden="true">▶</span>
+        <BiSolidRightArrow aria-hidden="true" />
       </button>
       <div>{summary}</div>
       <div id={id}>{children}</div>

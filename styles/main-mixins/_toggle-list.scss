@@ -9,27 +9,19 @@
       position: absolute;
       left: calc(-1 * var(--font-size-25) - var(--space-05));
       border: none;
+      width: var(--font-size-25);
+      height: var(--font-size-25);
       background-color: transparent;
+
+      font-size: var(--font-size-25);
       transition: transform 0.2s;
       cursor: pointer;
       user-select: none;
 
-      &.open {
-        transform: rotate(90deg);
-
-        & + div + div {
-          display: block;
-        }
-      }
-
-      > span {
-        font-size: var(--font-size-25);
-      }
-
       @include hover-type("hover") {
         &:hover {
-          > span {
-            color: var(--color-1);
+          svg {
+            fill: var(--color-1);
           }
         }
       }
@@ -38,9 +30,17 @@
         -webkit-tap-highlight-color: transparent;
 
         &:active {
-          > span {
-            color: var(--color-1);
+          > svg {
+            fill: var(--color-1);
           }
+        }
+      }
+
+      &.open {
+        transform: rotate(90deg);
+
+        & + div + div {
+          display: block;
         }
       }
     }
