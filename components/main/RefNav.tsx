@@ -75,7 +75,7 @@ export default function RefNav({ reference }: ReferenceNavProps) {
     return (
       <nav
         aria-label={`Reference navigation for ${referenceItem.target}`}
-        id={`reference-navigation-${index}`}
+        id={`reference-navigation-for-${referenceItem.target.replaceAll(" ", "-").toLowerCase()}`}
         key={index}
         data-target={referenceItem.target}
       >

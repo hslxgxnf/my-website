@@ -64,7 +64,14 @@ export default function RefButton({ children }: ReferenceButtonProps) {
     }
 
     // ARIA
-    button.ariaLabel = `Toggle reference navigation ${index}`;
+    const targetNavAriaLabel = navs[index].ariaLabel;
+    if (!targetNavAriaLabel) {
+      console.error("No targetNavAriaLabel");
+      return;
+    }
+    const buttonAriaLabel =
+      targetNavAriaLabel.charAt(0).toLowerCase() + targetNavAriaLabel.slice(1);
+    button.setAttribute("aria-label", `Toggle ${buttonAriaLabel}`);
     button.setAttribute("aria-controls", navs[index].id);
     button.setAttribute("aria-expanded", "false");
 
