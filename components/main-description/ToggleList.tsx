@@ -1,17 +1,18 @@
 "use client";
 
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useId, useState } from "react";
 import { BiSolidRightArrow } from "react-icons/bi";
 
 interface ToggleListProps {
-  id: string;
   summary: ReactNode;
-  children: ReactNode;
+  content: ReactNode;
 }
 
-export default function ToggleList({ id, summary, children }: ToggleListProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function ToggleList({ summary, content }: ToggleListProps) {
+  const summaryId = useId();
+  const contentId = useId();
 
+  const [isOpen, setIsOpen] = useState(false);
   function handleClick() {
     setIsOpen((prev) => !prev);
   }
@@ -20,16 +21,16 @@ export default function ToggleList({ id, summary, children }: ToggleListProps) {
     <li className="toggle-list">
       <button
         type="button"
-        aria-label={`Toggle ${id}`}
-        aria-controls={id}
+        aria-labelledby={summaryId}
+        aria-controls={contentId}
         aria-expanded={isOpen}
         className={isOpen ? "open" : undefined}
         onClick={handleClick}
       >
         <BiSolidRightArrow aria-hidden="true" />
       </button>
-      <div>{summary}</div>
-      <div id={id}>{children}</div>
+      <div id={summaryId}>{summary}</div>
+      <div id={contentId}>{content}</div>
     </li>
   );
 }

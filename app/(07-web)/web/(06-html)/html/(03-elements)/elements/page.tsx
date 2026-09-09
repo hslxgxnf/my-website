@@ -180,93 +180,102 @@ export default function Page() {
                 <hr />
                 <RefButton>
                   <ToggleList
-                    id="dialog"
                     summary={
                       <p>
                         <Highlight type="simple-code">&lt;dialog&gt;</Highlight>
                       </p>
                     }
-                  >
-                    <p>Creates a modal or non-modal dialog.</p>
-                    <p>
-                      The <Highlight type="simple-code">open</Highlight>{" "}
-                      attribute is a boolean attribute that controls the
-                      visibility of a dialog. Rather than manipulating this
-                      attribute directly in{" "}
-                      <Highlight type="text">HTML</Highlight>, it is recommended
-                      to use the <Highlight type="text">JavaScript</Highlight>{" "}
-                      methods:{" "}
-                      <Highlight type="simple-code">
-                        HTMLDialogElement: showModal()
-                      </Highlight>
-                      ,{" "}
-                      <Highlight type="simple-code">
-                        HTMLDialogElement: show()
-                      </Highlight>
-                      , and{" "}
-                      <Highlight type="simple-code">
-                        HTMLDialogElement: close()
-                      </Highlight>
-                      .
-                      <br />
-                      <Highlight type="simple-code">
-                        HTMLDialogElement: showModal()
-                      </Highlight>{" "}
-                      opens a modal dialog, whereas{" "}
-                      <Highlight type="simple-code">
-                        HTMLDialogElement: show()
-                      </Highlight>{" "}
-                      opens a non-modal dialog. Lastly,{" "}
-                      <Highlight type="simple-code">
-                        HTMLDialogElement: close()
-                      </Highlight>{" "}
-                      closes the dialog regardless of how it was opened.
-                    </p>
-                    <p>
-                      The <Highlight type="simple-code">closedby</Highlight>{" "}
-                      attribute controls how a dialog can be closed.
-                      <br />
-                      The <Highlight type="simple-code">any</Highlight> value
-                      closes a dialog by clicking the backdrop, pressing{" "}
-                      <Highlight type="text">Esc</Highlight>, or a
-                      developer-specified mechanism.
-                      <br />
-                      The <Highlight type="simple-code">
-                        closerequest
-                      </Highlight>{" "}
-                      value closes a dialog by pressing{" "}
-                      <Highlight type="text">Esc</Highlight> or a
-                      developer-specified mechanism. This option is the default
-                      for modal dialogs.
-                      <br />
-                      The <Highlight type="simple-code">none</Highlight> value
-                      closes a dialog only by a developer-specified mechanism.
-                      This option is the default for non-modal dialogs.
-                      <br />
-                    </p>
-                  </ToggleList>
+                    content={
+                      <>
+                        <p>Creates a modal or non-modal dialog.</p>
+                        <p>
+                          The <Highlight type="simple-code">open</Highlight>{" "}
+                          attribute is a boolean attribute that controls the
+                          visibility of a dialog. Rather than manipulating this
+                          attribute directly in{" "}
+                          <Highlight type="text">HTML</Highlight>, it is
+                          recommended to use the{" "}
+                          <Highlight type="text">JavaScript</Highlight> methods:{" "}
+                          <Highlight type="simple-code">
+                            HTMLDialogElement: showModal()
+                          </Highlight>
+                          ,{" "}
+                          <Highlight type="simple-code">
+                            HTMLDialogElement: show()
+                          </Highlight>
+                          , and{" "}
+                          <Highlight type="simple-code">
+                            HTMLDialogElement: close()
+                          </Highlight>
+                          .
+                          <br />
+                          <Highlight type="simple-code">
+                            HTMLDialogElement: showModal()
+                          </Highlight>{" "}
+                          opens a modal dialog, whereas{" "}
+                          <Highlight type="simple-code">
+                            HTMLDialogElement: show()
+                          </Highlight>{" "}
+                          opens a non-modal dialog. Lastly,{" "}
+                          <Highlight type="simple-code">
+                            HTMLDialogElement: close()
+                          </Highlight>{" "}
+                          closes the dialog regardless of how it was opened.
+                        </p>
+                        <p>
+                          The <Highlight type="simple-code">closedby</Highlight>{" "}
+                          attribute controls how a dialog can be closed.
+                          <br />
+                          The <Highlight type="simple-code">any</Highlight>{" "}
+                          value closes a dialog by clicking the backdrop,
+                          pressing <Highlight type="text">Esc</Highlight>, or a
+                          developer-specified mechanism.
+                          <br />
+                          The{" "}
+                          <Highlight type="simple-code">
+                            closerequest
+                          </Highlight>{" "}
+                          value closes a dialog by pressing{" "}
+                          <Highlight type="text">Esc</Highlight> or a
+                          developer-specified mechanism. This option is the
+                          default for modal dialogs.
+                          <br />
+                          The <Highlight type="simple-code">
+                            none
+                          </Highlight>{" "}
+                          value closes a dialog only by a developer-specified
+                          mechanism. This option is the default for non-modal
+                          dialogs.
+                          <br />
+                        </p>
+                      </>
+                    }
+                  />
                 </RefButton>
                 <RefButton>
                   <ToggleList
-                    id="form"
                     summary={
                       <p>
                         <Highlight type="simple-code">&lt;form&gt;</Highlight>
                       </p>
                     }
-                  >
-                    <p>
-                      The <Highlight type="simple-code">action</Highlight>{" "}
-                      attribute defines a URL to which form data will be
-                      submitted. After submission, the current URL will be
-                      updated to the defined URL.
-                    </p>
-                    <p>
-                      The <Highlight type="simple-code">method="get"</Highlight>{" "}
-                      attribute sends form data as a query string after the
-                      existing URL.
-                    </p>
-                  </ToggleList>
+                    content={
+                      <>
+                        <p>
+                          The <Highlight type="simple-code">action</Highlight>{" "}
+                          attribute defines a URL to which form data will be
+                          submitted. After submission, the current URL will be
+                          updated to the defined URL.
+                        </p>
+                        <p>
+                          The{" "}
+                          <Highlight type="simple-code">method="get"</Highlight>{" "}
+                          attribute sends form data as a query string after the
+                          existing URL.
+                        </p>
+                      </>
+                    }
+                  />
                 </RefButton>
                 <li>
                   <p>
@@ -309,146 +318,150 @@ export default function Page() {
                 </li>
                 <RefButton>
                   <ToggleList
-                    id="table"
                     summary={
                       <p>
                         <Highlight type="simple-code">&lt;table&gt;</Highlight>
                       </p>
                     }
-                  >
-                    <ul>
-                      <li>
-                        <p>
-                          <Highlight type="simple-code">
-                            &lt;caption&gt;
-                          </Highlight>
-                        </p>
-                        <p>
-                          Must be the first child of its parent{" "}
-                          <Highlight type="simple-code">
-                            &lt;table&gt;
-                          </Highlight>{" "}
-                          element.
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          <Highlight type="simple-code">
-                            &lt;colgroup&gt;
-                          </Highlight>
-                        </p>
-                        <p>Column Group</p>
-                        <p>
-                          The <Highlight type="simple-code">span</Highlight>{" "}
-                          attribute can be used when the{" "}
-                          <Highlight type="simple-code">
-                            &lt;colgroup&gt;
-                          </Highlight>{" "}
-                          has no{" "}
-                          <Highlight type="simple-code">&lt;col&gt;</Highlight>{" "}
-                          elements.
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          <Highlight type="simple-code">&lt;col&gt;</Highlight>
-                        </p>
-                        <p>Column</p>
-                        <p>
-                          The <Highlight type="simple-code">span</Highlight>{" "}
-                          attribute can be used when its parent{" "}
-                          <Highlight type="simple-code">
-                            &lt;colgroup&gt;
-                          </Highlight>{" "}
-                          element does not have the{" "}
-                          <Highlight type="simple-code">span</Highlight>{" "}
-                          attribute.
-                        </p>
-                      </li>
-                      <li>
-                        <p>
-                          <Highlight type="simple-code">
-                            &lt;thead&gt;
-                          </Highlight>
-                        </p>
-                        <p>Table Head</p>
-                      </li>
-                      <li>
-                        <p>
-                          <Highlight type="simple-code">
-                            &lt;tbody&gt;
-                          </Highlight>
-                        </p>
-                        <p>Table Body</p>
-                      </li>
-                      <li>
-                        <p>
-                          <Highlight type="simple-code">
-                            &lt;tfoot&gt;
-                          </Highlight>
-                        </p>
-                        <p>Table Foot</p>
-                        <ul>
-                          <li>
-                            <p>
-                              <Highlight type="simple-code">
-                                &lt;tr&gt;
-                              </Highlight>
-                            </p>
-                            <p>Table Row</p>
-                            <ul>
-                              <li>
-                                <p>
-                                  <Highlight type="simple-code">
-                                    &lt;th&gt;
-                                  </Highlight>
-                                </p>
-                                <p>Table Header</p>
-                                <p>
-                                  Attributes:{" "}
-                                  <Highlight type="simple-code">
-                                    scope
-                                  </Highlight>{" "}
-                                  <Highlight type="simple-code">
-                                    headers
-                                  </Highlight>{" "}
-                                  <Highlight type="simple-code">
-                                    rowspan
-                                  </Highlight>{" "}
-                                  <Highlight type="simple-code">
-                                    colspan
-                                  </Highlight>{" "}
-                                  <Highlight type="simple-code">
-                                    aria-sort
-                                  </Highlight>
-                                </p>
-                              </li>
-                              <li>
-                                <p>
-                                  <Highlight type="simple-code">
-                                    &lt;td&gt;
-                                  </Highlight>
-                                </p>
-                                <p>Table Data</p>
-                                <p>
-                                  Attributes:{" "}
-                                  <Highlight type="simple-code">
-                                    headers
-                                  </Highlight>{" "}
-                                  <Highlight type="simple-code">
-                                    rowspan
-                                  </Highlight>{" "}
-                                  <Highlight type="simple-code">
-                                    colspan
-                                  </Highlight>
-                                </p>
-                              </li>
-                            </ul>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </ToggleList>
+                    content={
+                      <ul>
+                        <li>
+                          <p>
+                            <Highlight type="simple-code">
+                              &lt;caption&gt;
+                            </Highlight>
+                          </p>
+                          <p>
+                            Must be the first child of its parent{" "}
+                            <Highlight type="simple-code">
+                              &lt;table&gt;
+                            </Highlight>{" "}
+                            element.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            <Highlight type="simple-code">
+                              &lt;colgroup&gt;
+                            </Highlight>
+                          </p>
+                          <p>Column Group</p>
+                          <p>
+                            The <Highlight type="simple-code">span</Highlight>{" "}
+                            attribute can be used when the{" "}
+                            <Highlight type="simple-code">
+                              &lt;colgroup&gt;
+                            </Highlight>{" "}
+                            has no{" "}
+                            <Highlight type="simple-code">
+                              &lt;col&gt;
+                            </Highlight>{" "}
+                            elements.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            <Highlight type="simple-code">
+                              &lt;col&gt;
+                            </Highlight>
+                          </p>
+                          <p>Column</p>
+                          <p>
+                            The <Highlight type="simple-code">span</Highlight>{" "}
+                            attribute can be used when its parent{" "}
+                            <Highlight type="simple-code">
+                              &lt;colgroup&gt;
+                            </Highlight>{" "}
+                            element does not have the{" "}
+                            <Highlight type="simple-code">span</Highlight>{" "}
+                            attribute.
+                          </p>
+                        </li>
+                        <li>
+                          <p>
+                            <Highlight type="simple-code">
+                              &lt;thead&gt;
+                            </Highlight>
+                          </p>
+                          <p>Table Head</p>
+                        </li>
+                        <li>
+                          <p>
+                            <Highlight type="simple-code">
+                              &lt;tbody&gt;
+                            </Highlight>
+                          </p>
+                          <p>Table Body</p>
+                        </li>
+                        <li>
+                          <p>
+                            <Highlight type="simple-code">
+                              &lt;tfoot&gt;
+                            </Highlight>
+                          </p>
+                          <p>Table Foot</p>
+                          <ul>
+                            <li>
+                              <p>
+                                <Highlight type="simple-code">
+                                  &lt;tr&gt;
+                                </Highlight>
+                              </p>
+                              <p>Table Row</p>
+                              <ul>
+                                <li>
+                                  <p>
+                                    <Highlight type="simple-code">
+                                      &lt;th&gt;
+                                    </Highlight>
+                                  </p>
+                                  <p>Table Header</p>
+                                  <p>
+                                    Attributes:{" "}
+                                    <Highlight type="simple-code">
+                                      scope
+                                    </Highlight>{" "}
+                                    <Highlight type="simple-code">
+                                      headers
+                                    </Highlight>{" "}
+                                    <Highlight type="simple-code">
+                                      rowspan
+                                    </Highlight>{" "}
+                                    <Highlight type="simple-code">
+                                      colspan
+                                    </Highlight>{" "}
+                                    <Highlight type="simple-code">
+                                      aria-sort
+                                    </Highlight>
+                                  </p>
+                                </li>
+                                <li>
+                                  <p>
+                                    <Highlight type="simple-code">
+                                      &lt;td&gt;
+                                    </Highlight>
+                                  </p>
+                                  <p>Table Data</p>
+                                  <p>
+                                    Attributes:{" "}
+                                    <Highlight type="simple-code">
+                                      headers
+                                    </Highlight>{" "}
+                                    <Highlight type="simple-code">
+                                      rowspan
+                                    </Highlight>{" "}
+                                    <Highlight type="simple-code">
+                                      colspan
+                                    </Highlight>
+                                  </p>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    }
+                  />
                 </RefButton>
                 <li>
                   <p>
@@ -541,7 +554,6 @@ export default function Page() {
                   </p>
                 </li>
                 <ToggleList
-                  id="lists"
                   summary={
                     <p>
                       <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}
@@ -549,20 +561,22 @@ export default function Page() {
                       <Highlight type="simple-code">&lt;li&gt;</Highlight>
                     </p>
                   }
-                >
-                  <ul>
-                    <li>
-                      <p>
-                        When creating nested lists, any nested{" "}
-                        <Highlight type="simple-code">&lt;ul&gt;</Highlight> or{" "}
-                        <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
-                        must be placed inside{" "}
-                        <Highlight type="simple-code">&lt;li&gt;</Highlight>.
-                      </p>
-                      <Highlight type="complex-code">{code}</Highlight>
-                    </li>
-                  </ul>
-                </ToggleList>
+                  content={
+                    <ul>
+                      <li>
+                        <p>
+                          When creating nested lists, any nested{" "}
+                          <Highlight type="simple-code">&lt;ul&gt;</Highlight>{" "}
+                          or{" "}
+                          <Highlight type="simple-code">&lt;ol&gt;</Highlight>{" "}
+                          must be placed inside{" "}
+                          <Highlight type="simple-code">&lt;li&gt;</Highlight>.
+                        </p>
+                        <Highlight type="complex-code">{code}</Highlight>
+                      </li>
+                    </ul>
+                  }
+                />
                 <li>
                   <p>
                     <Highlight type="simple-code">&lt;dl&gt;</Highlight>{" "}
