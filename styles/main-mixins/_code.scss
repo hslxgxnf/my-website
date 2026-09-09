@@ -44,7 +44,7 @@
     border-radius: var(--border-radius);
     background-color: var(--background-color-1);
 
-    > header {
+    > div:first-child {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -79,7 +79,7 @@
       }
     }
 
-    > main > pre {
+    > div:last-child > pre {
       border-radius: 0 0 var(--border-radius) var(--border-radius);
 
       > code {
@@ -93,9 +93,5 @@
         }
       }
     }
-  }
-
-  li:has(> .complex-code-container) > .complex-code-container {
-    margin-top: var(--space-20);
   }
 }

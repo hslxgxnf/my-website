@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { FaRegCopy, FaCheck } from "react-icons/fa6";
+import { useRef, useEffect, useState } from "react";
+import { FaCheck, FaRegCopy } from "react-icons/fa6";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -12,26 +12,30 @@ interface HighlightComplexCodeProps {
   children: Code;
 }
 
-let isProcessing: boolean = false;
-
 export default function HighlightComplexCode({
   children,
 }: HighlightComplexCodeProps) {
-  const [buttonText, setButtonText] = useState("Copy");
-
-  async function handleClick() {
-    try {
-      if (isProcessing) {
-        return;
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
+    };
+  }, []);
 
+  const [isProcessing, setIsProcessing] = useState(false);
+  async function handleClick() {
+    if (isProcessing) {
+      return;
+    }
+
+    try {
       await navigator.clipboard.writeText(children.content);
-      isProcessing = true;
-      setButtonText("Copied");
+      setIsProcessing(true);
 
-      setTimeout(() => {
-        isProcessing = false;
-        setButtonText("Copy");
+      timeoutRef.current = setTimeout(() => {
+        setIsProcessing(false);
       }, 1000);
     } catch (error) {
       console.error(`Could not copy due to ${error}.`);
@@ -51,20 +55,28 @@ export default function HighlightComplexCode({
 
   return (
     <div className="complex-code-container">
-      <header>
+      <div>
         <span>{fileInfo}</span>
 
-        <button type="button" onClick={handleClick}>
-          {buttonText === "Copy" ? <FaRegCopy /> : <FaCheck />}
-          {buttonText}
+        <button
+          type="button"
+          aria-label={isProcessing ? "Code copied" : "Copy code"}
+          onClick={handleClick}
+        >
+          {isProcessing ? (
+            <FaCheck aria-hidden="true" />
+          ) : (
+            <FaRegCopy aria-hidden="true" />
+          )}
+          {isProcessing ? "Copied!" : "Copy"}
         </button>
-      </header>
+      </div>
 
-      <main>
+      <div>
         <SyntaxHighlighter language={language} style={vscDarkPlus}>
           {children.content}
         </SyntaxHighlighter>
-      </main>
+      </div>
     </div>
   );
 }
