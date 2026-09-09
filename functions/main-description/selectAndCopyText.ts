@@ -1,11 +1,7 @@
-import type { MouseEvent } from "react";
-
-export default async function selectAndCopyText(
-  event: MouseEvent<HTMLElement>,
-) {
+export default async function selectAndCopyText(element: HTMLElement) {
   // Select
   const range = document.createRange();
-  range.selectNodeContents(event.currentTarget);
+  range.selectNodeContents(element);
   const selection = window.getSelection();
   if (!selection) {
     console.error("No selection");
@@ -15,7 +11,7 @@ export default async function selectAndCopyText(
   }
 
   // Copy
-  const text = event.currentTarget.textContent;
+  const text = element.textContent;
   try {
     await navigator.clipboard.writeText(text);
   } catch (error) {
