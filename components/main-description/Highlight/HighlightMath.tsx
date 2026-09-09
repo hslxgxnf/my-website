@@ -33,16 +33,12 @@ export default function HighlightMath({ children }: HighlightMathProps) {
         mathElement.replaceWith(`$${annotation.textContent}$`);
       }
 
-      const blockElements = tempDiv.querySelectorAll("h1, h2, h3, p, li, br");
+      const blockElements = tempDiv.querySelectorAll("h1, h2, h3, li, p, br");
       blockElements.forEach((blockElement) => {
         blockElement.append("\n");
       });
 
-      const formattedText = tempDiv.textContent
-        .split("\n")
-        .map((line) => line.trim())
-        .join("\n")
-        .trimEnd();
+      const formattedText = tempDiv.textContent.trimEnd();
 
       if (event.clipboardData) {
         event.preventDefault();
