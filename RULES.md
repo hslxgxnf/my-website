@@ -6,7 +6,7 @@ Change the `metadata title`.
 
 # Components
 
-## `<ReferenceNav>`
+## `<RefNav>`
 
 Need the `reference` variable in the `data.ts` file.
 
