@@ -25,6 +25,7 @@ export default function Page() {
         </RefButton>
         <HeadingLinkPage>Array</HeadingLinkPage>
         <HeadingLinkPage>List</HeadingLinkPage>
+        <HeadingLinkPage>Stack</HeadingLinkPage>
         <hr />
         <RefButton>
           <h2>Non-Linear Data Structures</h2>
