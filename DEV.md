@@ -1,3 +1,9 @@
+# Windows
+
+- PowerShell
+  - Suggestion Tab
+  - Oh My Posh
+
 # Git Hooks
 
 Set up project-specific Git hooks.
