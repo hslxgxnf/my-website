@@ -4,9 +4,15 @@ Set up project-specific Git hooks.
 
 - commit-msg
 
+# `npm i`
+
 # IDE Settings
 
 Set up project-specific IDE settings.
+
+- ESLint
+- Prettier
+- Stylelint
 
 # Vercel
 
