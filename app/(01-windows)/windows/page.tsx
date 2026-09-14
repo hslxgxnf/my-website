@@ -226,15 +226,6 @@ export default function Page() {
               <HeadingLinkId headingNumber={3}>PowerRename</HeadingLinkId>
             </RefButton>
           </section>
-          <section>
-            <HeadingLinkId headingNumber={3}>Color Picker</HeadingLinkId>
-          </section>
-          <section>
-            <HeadingLinkId headingNumber={3}>Screen Ruler</HeadingLinkId>
-          </section>
-          <section>
-            <HeadingLinkId headingNumber={3}>Mouse Utilities</HeadingLinkId>
-          </section>
         </section>
       </article>
 
