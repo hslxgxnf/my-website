@@ -26,9 +26,12 @@ export default function Page() {
         <HeadingLinkPage>Array</HeadingLinkPage>
         <HeadingLinkPage>List</HeadingLinkPage>
         <HeadingLinkPage>Stack</HeadingLinkPage>
+        <HeadingLinkPage>Queue</HeadingLinkPage>
         <hr />
         <RefButton>
           <h2>Non-Linear Data Structures</h2>
+          <h3>Graph</h3>
+          <h3>Tree</h3>
         </RefButton>
         <hr />
         <h2>Algorithms</h2>
