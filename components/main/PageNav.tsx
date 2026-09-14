@@ -198,7 +198,7 @@ export default function PageNav() {
               );
             })}
             {isScrollable && (
-              <li>
+              <li className="scrollable">
                 <button
                   type="button"
                   aria-label="Scroll to bottom"
