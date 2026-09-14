@@ -344,15 +344,6 @@ export default function Page() {
                 <td>{entities.checkedBox}</td>
               </tr>
               <tr>
-                <td>Code Style</td>
-                <td>
-                  General
-                  <br />
-                  {entities.rightSubArrow} Line separator:
-                </td>
-                <td>Windows (\r\n)</td>
-              </tr>
-              <tr>
                 <td>Live Templates</td>
                 <td>
                   JavaScript {entities.rightStraightArrow} +{" "}
