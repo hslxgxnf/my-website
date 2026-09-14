@@ -24,7 +24,7 @@ export default function Page() {
           <h2>Linear Data Structures</h2>
         </RefButton>
         <HeadingLinkPage>Array</HeadingLinkPage>
-        <HeadingLinkPage>List</HeadingLinkPage>
+        <HeadingLinkPage>Linked List</HeadingLinkPage>
         <HeadingLinkPage>Stack</HeadingLinkPage>
         <HeadingLinkPage>Queue</HeadingLinkPage>
         <hr />

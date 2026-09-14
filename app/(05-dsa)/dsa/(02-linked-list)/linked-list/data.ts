@@ -3,7 +3,7 @@ import { favicons } from "@/assets/main-description/favicons/favicons";
 
 export const reference: Reference = [
   {
-    target: "List",
+    target: "Linked List",
     sites: [
       {
         url: "https://www.geeksforgeeks.org/dsa/linked-list-data-structure/",

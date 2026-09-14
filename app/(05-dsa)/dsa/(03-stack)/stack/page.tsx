@@ -18,18 +18,18 @@ export default function Page() {
 
       <article>
         <RefButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-09-12">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-09-14">
             Stack
           </HeadingLinkId>
         </RefButton>
         <p>LIFO (Last In, First Out)</p>
         <p>
-          Data access is only possible at the top{" "}
-          <Highlight type="math">(O(1))</Highlight>.
+          Access at the top is{" "}
+          <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>.
         </p>
         <p>
-          Data insertion and deletion are only possible at the top{" "}
-          <Highlight type="math">(O(1))</Highlight>.
+          Insertion and deletion at the top are{" "}
+          <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>.
         </p>
       </article>
 

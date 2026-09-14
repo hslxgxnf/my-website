@@ -18,21 +18,25 @@ export default function Page() {
 
       <article>
         <RefButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-25">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-09-14">
             Array
           </HeadingLinkId>
         </RefButton>
         <p>
-          Index-based data access is fast{" "}
-          <Highlight type="math">(O(1))</Highlight>.
+          Access by index is{" "}
+          <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>.
         </p>
         <p>
-          Data insertion and deletion are slow{" "}
-          <Highlight type="math">(O(n))</Highlight>, except at the end{" "}
-          <Highlight type="math">(O(1))</Highlight>.
+          While insertion and deletion at the end are{" "}
+          <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>, those at
+          arbitrary positions are{" "}
+          <Highlight type="math">{`\\mathcal{O}(n)`}</Highlight> due to element
+          shifting.
         </p>
-        <p>There are fixed-size and dynamic-size arrays.</p>
-        <p>There are one-dimensional and multi-dimensional arrays.</p>
+        <p>Types by Size: Fixed-Size Array, Dynamic-Size Array</p>
+        <p>
+          Types by Dimension: One-Dimensional Array, Multi-Dimensional Array
+        </p>
       </article>
 
       <PageNav />

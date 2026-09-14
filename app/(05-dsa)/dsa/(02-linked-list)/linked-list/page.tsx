@@ -8,7 +8,7 @@ import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
-  title: "List",
+  title: "Linked List",
 };
 
 export default function Page() {
@@ -18,18 +18,23 @@ export default function Page() {
 
       <article>
         <RefButton>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-25">
-            List
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-09-14">
+            Linked List
           </HeadingLinkId>
         </RefButton>
         <p>
-          Data access is slow <Highlight type="math">(O(n))</Highlight>.
+          Access is <Highlight type="math">{`\\mathcal{O}(n)`}</Highlight>.
         </p>
         <p>
-          Data insertion and deletion are fast{" "}
-          <Highlight type="math">(O(1))</Highlight>.
+          While insertion and deletion at known positions are{" "}
+          <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>, those at
+          arbitrary positions are{" "}
+          <Highlight type="math">{`\\mathcal{O}(n)`}</Highlight> due to
+          traversal.
         </p>
-        <p>There are singly, doubly, and circular linked lists.</p>
+        <p>
+          Types: Singly Linked List, Doubly Linked List, Circular Linked List
+        </p>
       </article>
 
       <PageNav />
