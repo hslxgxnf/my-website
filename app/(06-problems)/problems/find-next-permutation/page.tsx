@@ -96,12 +96,12 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  Time Complexity: <Highlight type="math">O(n)</Highlight>
+                  Time Complexity: <Highlight type="math">{`\\mathcal{O}(n)`}</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  Auxiliary Space: <Highlight type="math">O(1)</Highlight>
+                  Auxiliary Space: <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>
                 </p>
               </li>
             </ul>
