@@ -44,15 +44,20 @@ export const reference: Reference = [
   },
 ];
 
-export const ps1Code: Code = {
+export const ps1CodeSuggestionTab: Code = {
+  language: "powershell",
+  fileName: "Microsoft.PowerShell_profile.ps1",
+  content: `# Press the Tab key to accept the cloudy gray suggestion.
+Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestion
+`,
+};
+
+export const ps1CodeOhMyPosh: Code = {
   language: "powershell",
   fileName: "Microsoft.PowerShell_profile.ps1",
   content: `# Find your local configuration file.
 $MyThemePath = Join-Path (Split-Path $PROFILE) "cert.omp.json"
 oh-my-posh init pwsh --config $MyThemePath | Invoke-Expression
-
-# Press the Tab key to accept the cloudy gray suggestion.
-Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestion
 `,
 };
 
