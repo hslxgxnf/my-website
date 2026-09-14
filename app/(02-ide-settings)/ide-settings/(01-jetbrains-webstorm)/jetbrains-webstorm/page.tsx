@@ -26,7 +26,7 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-08-31">
+          <HeadingLinkId headingNumber={1} lastUpdated="2026-09-14">
             JetBrains WebStorm
           </HeadingLinkId>
           <p>
@@ -342,6 +342,15 @@ export default function Page() {
                   {entities.rightSubArrow} Mark modified
                 </td>
                 <td>{entities.checkedBox}</td>
+              </tr>
+              <tr>
+                <td>Code Style</td>
+                <td>
+                  General
+                  <br />
+                  {entities.rightSubArrow} Line separator:
+                </td>
+                <td>Windows (\r\n)</td>
               </tr>
               <tr>
                 <td>Live Templates</td>
