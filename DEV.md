@@ -1,10 +1,16 @@
+# Git Hooks
+
+Set up project-specific Git hooks.
+
+- commit-msg
+
 # IDE Settings
 
-Set up the IDE settings that are initialized per project.
+Set up project-specific IDE settings.
 
 # Vercel
 
-Download the environment variables from Vercel.
+Download project-specific environment variables from Vercel.
 
 - `vercel login`
 - `vercel link`
