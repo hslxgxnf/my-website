@@ -85,11 +85,8 @@ export default function HeaderMainNavSubNav3({ links }: { links: string[] }) {
         disabled={!isMobile}
         onClick={handleClick}
       >
-        {isOpen ? (
-          <IoClose aria-hidden="true" />
-        ) : (
-          <IoMenu aria-hidden="true" />
-        )}
+        <IoMenu aria-hidden="true" />
+        <IoClose aria-hidden="true" />
       </button>
 
       <ul

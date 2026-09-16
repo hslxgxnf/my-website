@@ -126,13 +126,44 @@
 
       > button {
         display: flex;
+        justify-content: center;
         align-items: center;
+        position: relative;
         border: none;
+        width: var(--font-size-55);
         height: 100%;
         background-color: transparent;
         font-size: var(--font-size-55);
-        transition: transform 0.2s;
         cursor: pointer;
+
+        > svg {
+          position: absolute;
+          transition:
+            opacity 0.2s,
+            transform 0.2s;
+        }
+
+        > svg:first-child {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+
+        > svg:last-child {
+          opacity: 0;
+          transform: rotate(-180deg);
+        }
+
+        &.open {
+          > svg:first-child {
+            opacity: 0;
+            transform: rotate(180deg);
+          }
+
+          > svg:last-child {
+            opacity: 1;
+            transform: rotate(0deg);
+          }
+        }
 
         @include hover-type("hover") {
           &:hover {
@@ -150,10 +181,6 @@
               stroke: var(--color-1);
             }
           }
-        }
-
-        &.open {
-          transform: rotate(180deg);
         }
       }
 
