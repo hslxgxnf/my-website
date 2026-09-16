@@ -186,6 +186,7 @@ text-emphasis-position
 text-transform
 color
 fill
+stroke
 font
 font-style
 font-variant

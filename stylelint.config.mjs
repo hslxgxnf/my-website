@@ -193,6 +193,7 @@ const config = {
         "text-transform",
         "color",
         "fill",
+        "stroke",
         "font",
         "font-style",
         "font-variant",
