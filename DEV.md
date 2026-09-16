@@ -50,8 +50,6 @@ Need the `code` variable in the `data.ts` file.
 
 # Design
 
-- Mobile Responsive Design
-
 # Later...
 
 - Documentation Search
