@@ -1,3 +1,5 @@
+@use "../media" as *;
+
 @mixin table {
   table {
     table-layout: fixed;
@@ -7,6 +9,11 @@
     :is(caption, th, td) {
       border: 1px solid var(--color-base);
       padding: var(--space-10) var(--space-20);
+      overflow-wrap: break-word;
+
+      @include max-width-size("mobile-sm") {
+        padding: var(--space-10);
+      }
     }
 
     :is(caption, th) {
@@ -21,18 +28,16 @@
       font-weight: bold;
     }
 
-    :is(th:nth-child(1), td:nth-child(2)) {
+    th:nth-child(1) {
       width: 30%;
     }
 
-    th:nth-child(3) {
+    td:nth-child(2) {
       width: 40%;
     }
 
-    th:has(> svg) {
-      display: flex;
-      align-items: center;
-      gap: var(--space-10);
+    th:nth-child(3) {
+      width: 30%;
     }
   }
 
