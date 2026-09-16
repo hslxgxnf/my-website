@@ -192,6 +192,7 @@ const config = {
         "text-emphasis-position",
         "text-transform",
         "color",
+        "fill",
         "font",
         "font-style",
         "font-variant",

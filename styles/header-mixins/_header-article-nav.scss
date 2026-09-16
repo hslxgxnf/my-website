@@ -138,6 +138,10 @@
               align-items: center;
               gap: var(--space-10);
 
+              > svg {
+                flex-shrink: 0;
+              }
+
               @include hover-type("hover") {
                 &:hover {
                   > svg {
@@ -169,6 +173,7 @@
               gap: var(--space-10);
 
               > svg {
+                flex-shrink: 0;
                 fill: var(--color-1);
               }
 
