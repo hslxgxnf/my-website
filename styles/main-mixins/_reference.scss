@@ -67,6 +67,10 @@
         }
       }
 
+      @include max-width-size("mobile-sm") {
+        right: calc(var(--space-10) + var(--space-40));
+      }
+
       > h2 {
         margin-bottom: var(--space-10);
         border-bottom: 2px solid var(--color-base);

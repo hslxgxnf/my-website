@@ -26,6 +26,10 @@
         }
       }
 
+      @include max-width-size("mobile-sm") {
+        right: var(--space-10);
+      }
+
       // headings.length === 1
       > ol.single {
         > li {

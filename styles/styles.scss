@@ -18,6 +18,10 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--height-header) + var(--space-20));
+
+  @include max-width-size("mobile-sm") {
+    scroll-padding-top: calc(var(--height-header) + var(--space-10));
+  }
 }
 
 body {

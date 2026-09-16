@@ -13,12 +13,24 @@
     flex-basis: 100%;
   }
 
+  @include max-width-size("mobile-sm") {
+    padding: var(--space-10);
+  }
+
   :is(h1, h2, h3, p, hr, ul, li, table) {
     margin-bottom: var(--space-20);
+
+    @include max-width-size("mobile-sm") {
+      margin-bottom: var(--space-10);
+    }
   }
 
   li > ul {
     margin-top: var(--space-20);
+
+    @include max-width-size("mobile-sm") {
+      margin-top: var(--space-10);
+    }
   }
 
   h1 {
@@ -40,9 +52,14 @@
   ul {
     padding-left: var(--space-40);
     font-size: var(--font-size-25);
+
+    @include max-width-size("mobile-sm") {
+      padding-left: var(--space-20);
+    }
   }
 
   table :is(caption, th, td) {
     font-size: var(--font-size-25);
+    overflow-wrap: break-word;
   }
 }

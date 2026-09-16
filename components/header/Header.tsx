@@ -21,7 +21,14 @@ export default function Header({ links }: HeaderProps) {
       return;
     }
 
-    setHeaderHeight(header.getBoundingClientRect().height);
+    const resizeObserver = new ResizeObserver(() => {
+      setHeaderHeight(header.getBoundingClientRect().height);
+    });
+    resizeObserver.observe(header);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [setHeaderHeight]);
 
   return (

@@ -29,6 +29,10 @@
         flex-basis: 100%;
       }
 
+      @include max-width-size("mobile-sm") {
+        padding: 0 var(--space-10);
+      }
+
       // Breadcrumb Navigation
       > nav:first-child {
         display: none;

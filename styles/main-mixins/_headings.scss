@@ -33,6 +33,10 @@
       right: 0;
       font-weight: normal;
       font-size: var(--font-size-20);
+
+      @include max-width-size("mobile-sm") {
+        top: calc(var(--space-10) * -1);
+      }
     }
   }
 

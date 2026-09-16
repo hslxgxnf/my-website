@@ -44,14 +44,22 @@
     border-radius: var(--border-radius);
     background-color: var(--background-color-1);
 
+    @include max-width-size("mobile-sm") {
+      margin-bottom: var(--space-10);
+    }
+
     > div:first-child {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: var(--space-10) var(--space-20);
+      gap: var(--space-10);
+      padding: var(--space-10);
 
       > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: var(--font-size-25);
+        white-space: nowrap;
       }
 
       > button {
@@ -80,7 +88,9 @@
     }
 
     > div:last-child > pre {
+      margin: 0 !important;
       border-radius: 0 0 var(--border-radius) var(--border-radius);
+      padding: var(--space-10) !important;
 
       > code {
         color: var(--color-base) !important;

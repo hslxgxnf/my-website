@@ -11,6 +11,10 @@
       justify-content: space-between;
     }
 
+    @include max-width-size("mobile-sm") {
+      padding: var(--space-10);
+    }
+
     // Logo Navigation
     > nav:first-child {
       width: var(--width-logo);
@@ -169,6 +173,11 @@
         overscroll-behavior-y: contain;
         scrollbar-width: none;
         background-color: var(--background-color-1);
+
+        @include max-width-size("mobile-sm") {
+          padding: calc(var(--height-header) + var(--space-40)) var(--space-10)
+            var(--space-10);
+        }
 
         &.open {
           display: flex;
