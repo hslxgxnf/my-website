@@ -19,7 +19,7 @@
     background-color: var(--background-color-2);
     font-style: normal;
     font-family: var(--font-roboto-mono), monospace;
-    word-break: break-all;
+    overflow-wrap: anywhere;
   }
 
   :is(em.copy, code.copy) {
