@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "@/styles/styles.scss";
-import TouchInitializer from "@/components/all/TouchInitializer";
+import GlobalEvents from "@/components/all/GlobalEvents";
 import StoreInitializer from "@/components/all/StoreInitializer";
 import Header from "@/components/header/Header";
 import NewWindowHashScroll from "@/components/all/NewWindowHashScroll";
@@ -72,7 +72,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       className={`${roboto.variable} ${roboto_mono.variable}`}
     >
       <body>
-        <TouchInitializer />
+        <GlobalEvents />
         <StoreInitializer />
 
         <Header
