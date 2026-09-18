@@ -246,7 +246,6 @@ export default function Page() {
                           value closes a dialog only by a developer-specified
                           mechanism. This option is the default for non-modal
                           dialogs.
-                          <br />
                         </p>
                       </>
                     }
