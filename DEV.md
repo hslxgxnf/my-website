@@ -10,7 +10,11 @@ Set up project-specific Git hooks.
 
 - commit-msg
 
-# `npm i`
+# npm
+
+- `npm i`
+- `npm i -g npm-check-updates`
+- `npm i -g vercel`
 
 # IDE Settings
 
@@ -31,24 +35,18 @@ Download project-specific environment variables from Vercel.
 
 # Pages
 
-## `page.tsx`
+## Always Commit! Keep Clean Status!
 
-Change the `metadata title`.
+Otherwise, you may encounter data loss.
+
+## `page.tsx`
 
 - DSA 1
 - Problem 1
 
-# Components
+## Components
 
-## `<RefNav>`
-
-Need the `reference` variable in the `data.ts` file.
-
-## `<Highlight type="complex-code">`
-
-Need the `code` variable in the `data.ts` file.
-
-# Design
+## Design
 
 # Later...
 
