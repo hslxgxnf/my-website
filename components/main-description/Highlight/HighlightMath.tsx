@@ -7,52 +7,106 @@ interface HighlightMathProps {
   children: string;
 }
 
-export default function HighlightMath({ children }: HighlightMathProps) {
-  useEffect(() => {
-    function handleCopy(event: ClipboardEvent) {
-      const selection = window.getSelection();
-      if (!selection || selection.rangeCount === 0) {
-        return;
-      }
+let listenerCount = 0;
+let isCopyListenerAdded = false;
 
-      const range = selection.getRangeAt(0);
-      const fragment = range.cloneContents();
-      const tempDiv = document.createElement("div");
-      tempDiv.appendChild(fragment);
+function handleCopy(event: ClipboardEvent) {
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+    return;
+  }
 
-      const mathElements = tempDiv.querySelectorAll(".math");
-      if (mathElements.length === 0) {
-        return;
-      }
-      for (const mathElement of mathElements) {
-        const annotation = mathElement.querySelector("annotation");
-        if (!annotation) {
-          console.error("No annotation");
-          return;
-        }
+  const range = selection.getRangeAt(0);
+  const targetElement =
+    range.commonAncestorContainer instanceof Element
+      ? range.commonAncestorContainer
+      : range.commonAncestorContainer.parentElement;
+  if (!targetElement) {
+    console.error("No targetElement");
+    return;
+  }
+  const katexElement = targetElement.closest(".katex");
+
+  let formattedText = "";
+  if (katexElement) {
+    const annotation = katexElement.querySelector("annotation");
+    if (!annotation) {
+      console.error("No annotation");
+      return;
+    }
+
+    formattedText = `$${annotation.textContent}$`;
+  } else {
+    const fragment = range.cloneContents();
+    const tempDiv = document.createElement("div");
+    tempDiv.appendChild(fragment);
+
+    const mathElements = tempDiv.querySelectorAll(".math");
+    if (mathElements.length === 0) {
+      return;
+    }
+    for (const mathElement of mathElements) {
+      const annotation = mathElement.querySelector("annotation");
+      if (annotation) {
         mathElement.replaceWith(`$${annotation.textContent}$`);
-      }
-
-      const blockElements = tempDiv.querySelectorAll("h1, h2, h3, li, p, br");
-      blockElements.forEach((blockElement) => {
-        blockElement.append("\n");
-      });
-
-      const formattedText = tempDiv.textContent.trimEnd();
-
-      if (event.clipboardData) {
-        event.preventDefault();
-        event.clipboardData.setData("text/plain", formattedText);
+      } else {
+        mathElement.remove();
       }
     }
 
-    if (!document.oncopy) {
-      document.oncopy = handleCopy;
+    const blockElements = tempDiv.querySelectorAll(
+      "section, h1, h2, h3, p, br",
+    );
+    blockElements.forEach((blockElement) => {
+      if (blockElement.localName === "p") {
+        if (blockElement.closest("li")) {
+          let listDepth = 0;
+          let currentElement = blockElement;
+
+          while (currentElement) {
+            const listParent = currentElement.parentElement?.closest("ul, ol");
+
+            if (listParent) {
+              listDepth++;
+              currentElement = listParent;
+            } else {
+              break;
+            }
+          }
+
+          if (listDepth > 0) {
+            blockElement.prepend("*".repeat(listDepth) + " ");
+          }
+        }
+      }
+
+      blockElement.append("\n");
+    });
+
+    formattedText = tempDiv.textContent.trimEnd();
+  }
+
+  if (event.clipboardData) {
+    event.preventDefault();
+    event.clipboardData.setData("text/plain", formattedText);
+  }
+}
+
+export default function HighlightMath({ children }: HighlightMathProps) {
+  useEffect(() => {
+    listenerCount++;
+
+    if (!isCopyListenerAdded) {
+      document.addEventListener("copy", handleCopy);
+      isCopyListenerAdded = true;
     }
 
     return () => {
-      if (document.oncopy) {
-        document.oncopy = null;
+      listenerCount--;
+
+      if (listenerCount === 0 && isCopyListenerAdded) {
+        document.removeEventListener("copy", handleCopy);
+        isCopyListenerAdded = false;
       }
     };
   }, []);
