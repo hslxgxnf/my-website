@@ -18,9 +18,7 @@ export default function GlobalEvents() {
   }, []);
 
   // copy
-  // header
   // complex-container
-  // ToggleList
   useEffect(() => {
     function handleCopy(event: ClipboardEvent) {
       const selection = window.getSelection();
@@ -53,9 +51,27 @@ export default function GlobalEvents() {
         const tempDiv = document.createElement("div");
         tempDiv.appendChild(fragment);
 
-        const redundantNavs = tempDiv.querySelectorAll(
-          'aside > nav[aria-label^="Reference navigation"]',
-        );
+        const necessaryAriaLabels = [
+          "Scroll main navigation",
+          "Breadcrumb navigation",
+          "All reference navigation",
+          "Page navigation",
+        ];
+        const redundantNavs = Array.from(
+          tempDiv.querySelectorAll("nav"),
+        ).filter((nav) => {
+          const label = nav.getAttribute("aria-label") ?? "";
+
+          if (label === necessaryAriaLabels[0]) {
+            nav.prepend("Main Navigation\n");
+          }
+
+          if (label === necessaryAriaLabels[1]) {
+            nav.prepend("\nArticle Navigation\n");
+          }
+
+          return !necessaryAriaLabels.includes(label);
+        });
         redundantNavs.forEach((nav) => {
           nav.remove();
         });
@@ -80,10 +96,11 @@ export default function GlobalEvents() {
           }
 
           if (blockElement.localName === "aside") {
-            const selector =
-              "nav[aria-label='All reference navigation'], nav[aria-label='Page navigation']";
-            if (blockElement.querySelector(selector)) {
-              blockElement.append("\n\n");
+            const label =
+              blockElement.querySelector("nav")?.getAttribute("aria-label") ??
+              "";
+            if (necessaryAriaLabels.includes(label)) {
+              blockElement.append("\n");
             }
 
             return;
@@ -101,25 +118,9 @@ export default function GlobalEvents() {
         });
 
         formattedText = tempDiv.textContent;
+
+        console.log(tempDiv);
       }
-
-      const asides = formattedText.split("\n\n");
-      const updatedAsides = asides.map((aside) => {
-        if (aside.startsWith("Reference") || aside.startsWith("On this page")) {
-          const lines = aside.split("\n");
-          const maxLength = Math.max(...lines.map((line) => line.length));
-
-          const horizontalWrapper = "=".repeat(maxLength + 4);
-          const verticalWrapper = lines.map(
-            (line) => `| ${line.padEnd(maxLength)} |`,
-          );
-
-          return `\n${horizontalWrapper}\n${verticalWrapper.join("\n")}\n${horizontalWrapper}`;
-        }
-
-        return aside;
-      });
-      formattedText = updatedAsides.join("\n");
 
       formattedText = formattedText.replace("#Last Updated:", "# Last Updated");
 
