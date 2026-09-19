@@ -512,7 +512,9 @@ export default function Page() {
                   <p>Delete and Insert</p>
                 </li>
                 <li>
-                  <Highlight type="simple-code">&lt;small&gt;</Highlight>
+                  <p>
+                    <Highlight type="simple-code">&lt;small&gt;</Highlight>
+                  </p>
                 </li>
                 <li>
                   <p>

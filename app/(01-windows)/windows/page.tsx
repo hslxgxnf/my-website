@@ -49,10 +49,12 @@ export default function Page() {
                     </p>
                   </li>
                   <li>
-                    If it doesn't exist, create it.{" "}
-                    <Highlight type="simple-code" copy={true}>
-                      New-Item -Path $PROFILE -Type File -Force
-                    </Highlight>
+                    <p>
+                      If it doesn't exist, create it.{" "}
+                      <Highlight type="simple-code" copy={true}>
+                        New-Item -Path $PROFILE -Type File -Force
+                      </Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
@@ -71,12 +73,14 @@ export default function Page() {
                     </Highlight>
                   </li>
                   <li>
-                    If the version of{" "}
-                    <Highlight type="simple-code">PSReadLine</Highlight> is
-                    outdated, errors can occur. Upgrade it.{" "}
-                    <Highlight type="simple-code" copy={true}>
-                      Install-Module PSReadLine -Force -AllowClobber
-                    </Highlight>
+                    <p>
+                      If the version of{" "}
+                      <Highlight type="simple-code">PSReadLine</Highlight> is
+                      outdated, errors can occur. Upgrade it.{" "}
+                      <Highlight type="simple-code" copy={true}>
+                        Install-Module PSReadLine -Force -AllowClobber
+                      </Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
