@@ -18,7 +18,6 @@ export default function GlobalEvents() {
   }, []);
 
   // copy
-  // complex-container
   useEffect(() => {
     function handleCopy(event: ClipboardEvent) {
       const selection = window.getSelection();
@@ -60,10 +59,6 @@ export default function GlobalEvents() {
         const redundantNavs = Array.from(
           tempDiv.querySelectorAll("nav"),
         ).filter((nav) => {
-          if (nav.textContent === "") {
-            return true;
-          }
-
           const ariaLabel = nav.getAttribute("aria-label") ?? "";
           return !necessaryAriaLabels.includes(ariaLabel);
         });
@@ -81,53 +76,102 @@ export default function GlobalEvents() {
           }
         }
 
-        const blockElements = tempDiv.querySelectorAll(
-          "header, nav, article, h1, h2, h3, p, li, br, .complex-code-container",
-        );
-        blockElements.forEach((blockElement) => {
-          if (blockElement.localName === "header") {
-            blockElement.append("\n\n");
-            return;
-          }
+        const tableRows = tempDiv.querySelectorAll("tr");
+        tableRows.forEach((tableRow) => {
+          const tableColumns = Array.from(tableRow.querySelectorAll("th, td"));
 
-          if (blockElement.localName === "nav") {
-            const ariaLabel = blockElement.getAttribute("aria-label") ?? "";
+          tableColumns.forEach((tableColumn) => {
+            const breaks = Array.from(tableColumn.querySelectorAll("br"));
+            breaks.forEach((br) => br.replaceWith(" "));
+
+            if (!tableColumn.textContent) {
+              tableColumn.textContent = "X";
+            }
+          });
+
+          let text = "";
+          for (let i = 1; i < tableColumns.length; i++) {
+            text += ` | ${tableColumns[i].textContent}`;
+            tableColumns[i].textContent = "";
+          }
+          tableColumns[0].textContent += text;
+        });
+
+        const newLineElements = tempDiv.querySelectorAll(
+          "header, nav, article, h1, h2, h3, p, li, br, .complex-code-container, table, caption, tr",
+        );
+        newLineElements.forEach((newLineElement) => {
+          if (newLineElement.localName === "nav") {
+            const ariaLabel = newLineElement.getAttribute("aria-label") ?? "";
 
             switch (ariaLabel) {
               case necessaryAriaLabels[0]:
-                blockElement.prepend("Main Navigation\n");
-                blockElement.append("\n");
+                newLineElement.prepend("Main Navigation\n");
+                newLineElement.append("\n");
                 return;
               case necessaryAriaLabels[1]:
-                blockElement.prepend("Article Navigation\n");
+                if (newLineElement.textContent === "") {
+                  newLineElement.prepend("Home");
+                }
+                newLineElement.prepend("Article Navigation\n");
+                newLineElement.append("\n");
                 return;
               case necessaryAriaLabels[2]:
-                blockElement.append("\n");
+                newLineElement.querySelector("h2")!.textContent =
+                  "Reference Navigation";
+                newLineElement.append("\n");
                 return;
               case necessaryAriaLabels[3]:
-                blockElement.append("\n");
+                newLineElement.prepend("Page Navigation\n");
+                newLineElement.append("\n");
                 return;
               default:
                 return;
             }
           }
 
-          if (blockElement.localName === "li") {
-            if (blockElement.querySelector("a")) {
-              blockElement.append("\n");
+          if (newLineElement.localName === "article") {
+            newLineElement.prepend("Article\n");
+            newLineElement.append("\n");
+            return;
+          }
+
+          if (newLineElement.localName === "p") {
+            // JetBrains WebStorm Plugins
+            if (
+              newLineElement.childElementCount === 1 &&
+              newLineElement.children[0].localName === "svg"
+            ) {
+              newLineElement.textContent =
+                newLineElement.children[0].ariaLabel ?? "";
+            }
+
+            newLineElement.append("\n");
+            return;
+          }
+
+          if (newLineElement.localName === "li") {
+            if (newLineElement.querySelector("a")) {
+              newLineElement.append("\n");
             }
             return;
           }
 
-          if (blockElement.classList.contains("complex-code-container")) {
-            blockElement.querySelector("span")?.append("\n");
-            blockElement.querySelector("button")?.remove();
-            blockElement.prepend("```code\n");
-            blockElement.append("```\n");
+          if (newLineElement.classList.contains("complex-code-container")) {
+            newLineElement.querySelector("span")?.append("\n");
+            newLineElement.querySelector("button")?.remove();
+            newLineElement.prepend("```code\n");
+            newLineElement.append("```\n");
             return;
           }
 
-          blockElement.append("\n");
+          if (newLineElement.localName === "table") {
+            newLineElement.prepend("```table\n");
+            newLineElement.append("```\n");
+            return;
+          }
+
+          newLineElement.append("\n"); // header, h1, h2, h3, br, caption, tr
         });
 
         formattedText = tempDiv.textContent;
@@ -138,8 +182,16 @@ export default function GlobalEvents() {
       const lines = [];
       let isCodeBlock = false;
       for (const line of formattedText.split("\n")) {
-        if (line.trim().startsWith("```")) {
-          isCodeBlock = !isCodeBlock;
+        const trimmedLine = line.trim();
+
+        if (!isCodeBlock && trimmedLine === "```code") {
+          isCodeBlock = true;
+          lines.push(line);
+          continue;
+        }
+
+        if (isCodeBlock && trimmedLine === "```") {
+          isCodeBlock = false;
           lines.push(line);
           continue;
         }
@@ -147,7 +199,7 @@ export default function GlobalEvents() {
         if (isCodeBlock) {
           lines.push(line);
         } else {
-          lines.push(line.trim());
+          lines.push(trimmedLine);
         }
       }
 
@@ -162,8 +214,8 @@ export default function GlobalEvents() {
       formattedText = formattedText.trim();
 
       formattedText = formattedText.replace(
-        /(```[\s\S]*?```)|((\n\s*){2,})/g,
-        (match, codeBlock) => {
+        /(```code[\s\S]*?```)|((\n\s*){2,})/g,
+        (_, codeBlock) => {
           if (codeBlock) {
             return codeBlock;
           }
