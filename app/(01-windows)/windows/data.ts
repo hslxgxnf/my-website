@@ -38,7 +38,7 @@ export const reference: Reference = [
         url: "https://www.youtube.com/watch?v=RFYTpgb4_JA",
         favicon: favicons.YouTube.image,
         name: favicons.YouTube.name,
-        title: "How to use Windows PowerToys' PowerRename utility\n",
+        title: "How to use Windows PowerToys' PowerRename utility",
       },
     ],
   },
