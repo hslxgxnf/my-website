@@ -90,9 +90,11 @@ export default function Page() {
                 </p>
                 <ul>
                   <li>
-                    <Highlight type="simple-code" copy={true}>
-                      . $PROFILE
-                    </Highlight>
+                    <p>
+                      <Highlight type="simple-code" copy={true}>
+                        . $PROFILE
+                      </Highlight>
+                    </p>
                   </li>
                 </ul>
               </li>
@@ -208,9 +210,11 @@ export default function Page() {
                     </p>
                     <ul>
                       <li>
-                        <Highlight type="simple-code" copy={true}>
-                          . $PROFILE
-                        </Highlight>
+                        <p>
+                          <Highlight type="simple-code" copy={true}>
+                            . $PROFILE
+                          </Highlight>
+                        </p>
                       </li>
                     </ul>
                   </li>
