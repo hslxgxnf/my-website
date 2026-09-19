@@ -65,12 +65,14 @@ export default function Page() {
           <ul>
             <li>
               <p>
-                <Highlight type="simple-code">git version</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git version
+                </Highlight>
               </p>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git config list --show-origin
                 </Highlight>
               </p>
@@ -80,37 +82,45 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git config --global user.name &lt;name&gt;
                 </Highlight>
               </p>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git config --global user.email &lt;email&gt;
                 </Highlight>
               </p>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git clone &lt;url&gt;</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git clone &lt;url&gt;
+                </Highlight>
               </p>
             </li>
             <hr />
             <li>
               <p>
-                <Highlight type="simple-code">git init</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git init
+                </Highlight>
               </p>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git status</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git status
+                </Highlight>
               </p>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git stash</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git stash
+                </Highlight>
               </p>
               <p>
                 Cuts the changes in the current project and pastes them into the
@@ -119,7 +129,7 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git stash push &lt;file-name&gt;
                     </Highlight>
                   </p>
@@ -130,19 +140,25 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git stash list</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git stash list
+                    </Highlight>
                   </p>
                   <p>Lists stashes.</p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git stash show</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git stash show
+                    </Highlight>
                   </p>
                   <p>Shows the changes in the latest stash.</p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git stash pop</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git stash pop
+                    </Highlight>
                   </p>
                   <p>
                     Cuts the latest stash in the stash archive and pastes it
@@ -151,7 +167,9 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git stash apply</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git stash apply
+                    </Highlight>
                   </p>
                   <p>
                     Copies the latest stash in the stash archive into the
@@ -160,7 +178,9 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git stash drop</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git stash drop
+                    </Highlight>
                   </p>
                   <p>Deletes the latest stash in the stash archive.</p>
                 </li>
@@ -168,13 +188,17 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git add .</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git add .
+                </Highlight>
               </p>
               <p>Stages changes.</p>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git commit</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git commit
+                </Highlight>
               </p>
               <p>Creates a commit with staged changes.</p>
               <p>
@@ -185,7 +209,7 @@ export default function Page() {
                 <RefButton>
                   <li>
                     <p>
-                      <Highlight type="simple-code">
+                      <Highlight type="simple-code" copy={true}>
                         git commit --message (-m) &lt;summary&gt; --message (-m)
                         &lt;description&gt;
                       </Highlight>
@@ -217,7 +241,9 @@ export default function Page() {
                 </RefButton>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git commit --amend</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git commit --amend
+                    </Highlight>
                   </p>
                   <p>
                     Adds staged changes to the latest commit and updates its
@@ -228,7 +254,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git revert &lt;commit-id&gt;
                 </Highlight>
               </p>
@@ -239,7 +265,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git reset &lt;commit-id&gt;
                 </Highlight>
               </p>
@@ -252,7 +278,7 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git reset --soft &lt;commit-id&gt;
                     </Highlight>
                   </p>
@@ -263,7 +289,7 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git reset --hard &lt;commit-id&gt;
                     </Highlight>
                   </p>
@@ -276,13 +302,15 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git log</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git log
+                </Highlight>
               </p>
               <p>Lists the commit history.</p>
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git log -S &lt;string&gt;
                     </Highlight>
                   </p>
@@ -295,20 +323,24 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git show</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git show
+                </Highlight>
               </p>
               <p>Shows the latest commit with its diff.</p>
             </li>
             <hr />
             <li>
               <p>
-                <Highlight type="simple-code">git branch</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git branch
+                </Highlight>
               </p>
               <p>Lists local branches.</p>
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git branch --verbose (-v)
                     </Highlight>
                   </p>
@@ -316,7 +348,7 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git branch --verbose --verbose (-vv)
                     </Highlight>
                   </p>
@@ -324,7 +356,7 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git branch --all (-a)
                     </Highlight>
                   </p>
@@ -332,7 +364,7 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git branch &lt;branch-name&gt;
                     </Highlight>
                   </p>
@@ -340,7 +372,7 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git branch --delete (-d) &lt;branch-name&gt;
                     </Highlight>
                   </p>
@@ -348,7 +380,7 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git branch --move (-m) &lt;specified-branch-name&gt;
                       &lt;new-branch-name&gt;
                     </Highlight>
@@ -359,17 +391,19 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">git checkout</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git checkout
+                </Highlight>
               </p>
               <p>Shows a brief status of the current branch.</p>
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git checkout &lt;branch-name&gt;
                     </Highlight>
                     ,{" "}
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git switch &lt;branch-name&gt;
                     </Highlight>
                   </p>
@@ -381,18 +415,23 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git checkout -</Highlight>,{" "}
-                    <Highlight type="simple-code">git switch -</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git checkout -
+                    </Highlight>
+                    ,{" "}
+                    <Highlight type="simple-code" copy={true}>
+                      git switch -
+                    </Highlight>
                   </p>
                   <p>Moves to the previous branch or commit.</p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git checkout -b &lt;branch-name&gt;
                     </Highlight>
                     ,{" "}
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git switch --create (-c) &lt;branch-name&gt;
                     </Highlight>
                   </p>
@@ -400,11 +439,11 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git checkout &lt;commit-id&gt;
                     </Highlight>
                     ,{" "}
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git switch --detach &lt;commit-id&gt;
                     </Highlight>
                   </p>
@@ -415,11 +454,11 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git checkout -- &lt;file-name&gt;
                     </Highlight>
                     ,{" "}
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git restore &lt;file-name&gt;
                     </Highlight>
                   </p>
@@ -429,7 +468,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git merge &lt;branch-name&gt;
                 </Highlight>
               </p>
@@ -437,12 +476,14 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git merge --abort</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git merge --abort
+                    </Highlight>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git merge --continue
                     </Highlight>
                   </p>
@@ -451,7 +492,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git rebase &lt;branch-name&gt;
                 </Highlight>
               </p>
@@ -464,7 +505,7 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git rebase --interactive (-i) HEAD~&lt;number&gt;
                     </Highlight>
                   </p>
@@ -480,12 +521,14 @@ export default function Page() {
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">git rebase --abort</Highlight>
+                    <Highlight type="simple-code" copy={true}>
+                      git rebase --abort
+                    </Highlight>
                   </p>
                 </li>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git rebase --continue
                     </Highlight>
                   </p>
@@ -495,14 +538,16 @@ export default function Page() {
             <hr />
             <li>
               <p>
-                <Highlight type="simple-code">git remote</Highlight>
+                <Highlight type="simple-code" copy={true}>
+                  git remote
+                </Highlight>
               </p>
               <p>Lists remote repository aliases.</p>
             </li>
             <ul>
               <li>
                 <p>
-                  <Highlight type="simple-code">
+                  <Highlight type="simple-code" copy={true}>
                     git remote --verbose (-v)
                   </Highlight>
                 </p>
@@ -510,7 +555,7 @@ export default function Page() {
               </li>
               <li>
                 <p>
-                  <Highlight type="simple-code">
+                  <Highlight type="simple-code" copy={true}>
                     git remote add &lt;remote-repository-alias&gt;
                     &lt;remote-repository-url&gt;
                   </Highlight>
@@ -522,7 +567,7 @@ export default function Page() {
               </li>
               <li>
                 <p>
-                  <Highlight type="simple-code">
+                  <Highlight type="simple-code" copy={true}>
                     git remote remove (rm) &lt;remote-repository-alias&gt;
                   </Highlight>
                 </p>
@@ -533,7 +578,7 @@ export default function Page() {
               </li>
               <li>
                 <p>
-                  <Highlight type="simple-code">
+                  <Highlight type="simple-code" copy={true}>
                     git remote set-url &lt;remote-repository-alias&gt;
                     &lt;remote-repository-url&gt;
                   </Highlight>
@@ -543,7 +588,7 @@ export default function Page() {
             </ul>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git push &lt;remote-repository-alias&gt; &lt;branch-name&gt;
                 </Highlight>
               </p>
@@ -560,7 +605,7 @@ export default function Page() {
               <ul>
                 <li>
                   <p>
-                    <Highlight type="simple-code">
+                    <Highlight type="simple-code" copy={true}>
                       git push --set-upstream (-u)
                       &lt;remote-repository-alias&gt; &lt;branch-name&gt;
                     </Highlight>
@@ -568,17 +613,25 @@ export default function Page() {
                   <p>
                     Uploads and remembers this connection. Thereafter, you can
                     simply run{" "}
-                    <Highlight type="simple-code">git push</Highlight>,{" "}
-                    <Highlight type="simple-code">git fetch</Highlight>, or{" "}
-                    <Highlight type="simple-code">git pull</Highlight> without
-                    arguments.
+                    <Highlight type="simple-code" copy={true}>
+                      git push
+                    </Highlight>
+                    ,{" "}
+                    <Highlight type="simple-code" copy={true}>
+                      git fetch
+                    </Highlight>
+                    , or{" "}
+                    <Highlight type="simple-code" copy={true}>
+                      git pull
+                    </Highlight>{" "}
+                    without arguments.
                   </p>
                 </li>
               </ul>
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git fetch &lt;remote-repository-alias&gt;
                   &lt;remote-branch-name&gt;
                 </Highlight>
@@ -590,7 +643,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <Highlight type="simple-code">
+                <Highlight type="simple-code" copy={true}>
                   git pull &lt;remote-repository-alias&gt;
                   &lt;remote-branch-name&gt;
                 </Highlight>
