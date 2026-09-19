@@ -60,17 +60,12 @@ export default function GlobalEvents() {
         const redundantNavs = Array.from(
           tempDiv.querySelectorAll("nav"),
         ).filter((nav) => {
-          const label = nav.getAttribute("aria-label") ?? "";
-
-          if (label === necessaryAriaLabels[0]) {
-            nav.prepend("Main Navigation\n");
+          if (nav.textContent === "") {
+            return true;
           }
 
-          if (label === necessaryAriaLabels[1]) {
-            nav.prepend("\nArticle Navigation\n");
-          }
-
-          return !necessaryAriaLabels.includes(label);
+          const ariaLabel = nav.getAttribute("aria-label") ?? "";
+          return !necessaryAriaLabels.includes(ariaLabel);
         });
         redundantNavs.forEach((nav) => {
           nav.remove();
@@ -87,7 +82,7 @@ export default function GlobalEvents() {
         }
 
         const blockElements = tempDiv.querySelectorAll(
-          "header, aside, article, h1, h2, h3, p, li, br",
+          "header, nav, article, h1, h2, h3, p, li, br, .complex-code-container",
         );
         blockElements.forEach((blockElement) => {
           if (blockElement.localName === "header") {
@@ -95,22 +90,40 @@ export default function GlobalEvents() {
             return;
           }
 
-          if (blockElement.localName === "aside") {
-            const label =
-              blockElement.querySelector("nav")?.getAttribute("aria-label") ??
-              "";
-            if (necessaryAriaLabels.includes(label)) {
-              blockElement.append("\n");
-            }
+          if (blockElement.localName === "nav") {
+            const ariaLabel = blockElement.getAttribute("aria-label") ?? "";
 
-            return;
+            switch (ariaLabel) {
+              case necessaryAriaLabels[0]:
+                blockElement.prepend("Main Navigation\n");
+                blockElement.append("\n");
+                return;
+              case necessaryAriaLabels[1]:
+                blockElement.prepend("Article Navigation\n");
+                return;
+              case necessaryAriaLabels[2]:
+                blockElement.append("\n");
+                return;
+              case necessaryAriaLabels[3]:
+                blockElement.append("\n");
+                return;
+              default:
+                return;
+            }
           }
 
           if (blockElement.localName === "li") {
             if (blockElement.querySelector("a")) {
               blockElement.append("\n");
             }
+            return;
+          }
 
+          if (blockElement.classList.contains("complex-code-container")) {
+            blockElement.querySelector("span")?.append("\n");
+            blockElement.querySelector("button")?.remove();
+            blockElement.prepend("```code\n");
+            blockElement.append("```\n");
             return;
           }
 
@@ -118,21 +131,46 @@ export default function GlobalEvents() {
         });
 
         formattedText = tempDiv.textContent;
-
-        console.log(tempDiv);
       }
 
       formattedText = formattedText.replace("#Last Updated:", "# Last Updated");
 
-      const lines = formattedText.split("\n");
+      const lines = [];
+      let isCodeBlock = false;
+      for (const line of formattedText.split("\n")) {
+        if (line.trim().startsWith("```")) {
+          isCodeBlock = !isCodeBlock;
+          lines.push(line);
+          continue;
+        }
+
+        if (isCodeBlock) {
+          lines.push(line);
+        } else {
+          lines.push(line.trim());
+        }
+      }
+
       for (let i = 1; i < lines.length; i++) {
         if (lines[i].endsWith("#") && lines[i - 1] !== "") {
           lines[i - 1] += "\n";
         }
       }
+
       formattedText = lines.join("\n");
 
       formattedText = formattedText.trim();
+
+      formattedText = formattedText.replace(
+        /(```[\s\S]*?```)|((\n\s*){2,})/g,
+        (match, codeBlock) => {
+          if (codeBlock) {
+            return codeBlock;
+          }
+
+          return "\n\n";
+        },
+      );
 
       if (event.clipboardData) {
         event.preventDefault();
