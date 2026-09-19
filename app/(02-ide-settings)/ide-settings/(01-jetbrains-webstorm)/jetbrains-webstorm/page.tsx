@@ -545,7 +545,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <IoSettingsOutline />
+                <IoSettingsOutline aria-label="Settings icon" />
               </p>
               <ul>
                 <li>
