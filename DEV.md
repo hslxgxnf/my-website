@@ -33,13 +33,11 @@ Download project-specific environment variables from Vercel.
 - `vercel env pull`
   - `.env.local`
 
-# Pages
-
-## Always Commit! Keep Clean Status!
+# Always Commit! Keep Clean Status!
 
 Otherwise, you may encounter data loss.
 
-## `page.tsx`
+# Pages
 
 - DSA 1
 - Problem 1
