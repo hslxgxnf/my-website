@@ -2,51 +2,9 @@ import fs from "fs";
 import path from "path";
 import type { MetadataRoute } from "next";
 
-interface RouteInfo {
-  route: string;
-  lastModified: Date;
-}
-
-function getStaticRoutes(dir: string, baseDir = dir): RouteInfo[] {
-  let routes: RouteInfo[] = [];
-
-  if (!fs.existsSync(dir)) {
-    return routes;
-  }
-
-  const items = fs.readdirSync(dir, { withFileTypes: true });
-
-  for (const item of items) {
-    const fullPath = path.join(dir, item.name);
-
-    if (item.isDirectory()) {
-      if (item.name.startsWith("[") || item.name.startsWith("_")) {
-        continue;
-      }
-
-      routes = routes.concat(getStaticRoutes(fullPath, baseDir));
-    } else if (item.isFile() && /^page\.(tsx|jsx|js|ts)$/.test(item.name)) {
-      const relativePath = path.relative(baseDir, dir);
-
-      const normalizedPath = relativePath.replaceAll("\\", "/");
-
-      const cleanRoute = normalizedPath
-        .split("/")
-        .filter((segment) => !/^\([^)]+\)$/.test(segment))
-        .join("/");
-
-      const route = cleanRoute === "" ? "" : `/${cleanRoute}`;
-
-      const fileStats = fs.statSync(fullPath);
-
-      routes.push({
-        route,
-        lastModified: fileStats.mtime,
-      });
-    }
-  }
-
-  return routes;
+interface UrlInfo {
+  url: string;
+  lastModified: string;
 }
 
 function escapeXml(unsafe: string): string {
@@ -68,15 +26,53 @@ function escapeXml(unsafe: string): string {
   });
 }
 
+function getStaticUrls(dir: string, baseDir = dir): UrlInfo[] {
+  let urlInfos: UrlInfo[] = [];
+
+  if (!fs.existsSync(dir)) {
+    return urlInfos;
+  }
+
+  const items = fs.readdirSync(dir, { withFileTypes: true });
+  for (const item of items) {
+    const fullPath = path.join(dir, item.name);
+
+    if (item.isDirectory()) {
+      if (item.name.startsWith("[") || item.name.startsWith("_")) {
+        continue;
+      }
+
+      urlInfos = urlInfos.concat(getStaticUrls(fullPath, baseDir));
+    } else if (item.isFile() && item.name === "page.tsx") {
+      const relativePath = path.relative(baseDir, dir);
+      const normalizedPath = relativePath.replaceAll("\\", "/");
+      let cleanUrl = normalizedPath
+        .split("/")
+        .filter((segment) => !/^\([^)]+\)$/.test(segment))
+        .join("/");
+      cleanUrl = cleanUrl === "" ? "" : `/${cleanUrl}`;
+      const url = escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${cleanUrl}`);
+
+      const fileContent = fs.readFileSync(fullPath, "utf-8");
+      const match = fileContent.match(/lastUpdated=["']([^"']+)["']/);
+      const fileStats = fs.statSync(fullPath);
+      const lastModified =
+        match && match[1]
+          ? match[1]
+          : fileStats.mtime.toISOString().split("T")[0];
+
+      urlInfos.push({
+        url,
+        lastModified,
+      });
+    }
+  }
+
+  return urlInfos;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const appDirectory = path.join(process.cwd(), "app");
 
-  const routeInfos = getStaticRoutes(appDirectory);
-
-  return routeInfos.map(({ route, lastModified }) => {
-    return {
-      url: escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${route}`),
-      lastModified: lastModified,
-    };
-  });
+  return getStaticUrls(appDirectory);
 }
