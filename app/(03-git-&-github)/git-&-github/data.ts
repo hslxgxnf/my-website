@@ -96,68 +96,71 @@ export const gitHookCommitMsgCode: Code = {
   fileName: "commit-msg",
   content: `#!/bin/sh
 
-COMMIT_TITLE=$(head -n 1 "$1")
+SUMMARY=$(head -n 1 "$1")
 
-if echo "$COMMIT_TITLE" | grep -iq "^content"; then
-    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null;
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Drawing') | Out-Null;
+if echo "$SUMMARY" | grep -iq "^content"; then
+    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '
+        # Play the notification sound.
+        [System.Media.SystemSounds]::Asterisk.Play()
 
-        # 1. Play default notification sound when the window appears
-        [System.Media.SystemSounds]::Asterisk.Play();
+        # Load the required assemblies.
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") | Out-Null
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") | Out-Null
 
-        # 2. Create the main window form
-        \\$form = New-Object System.Windows.Forms.Form;
-        \\$form.Text = '⚠️ Git Hook commit-msg';
-        \\$form.Size = New-Object System.Drawing.Size(550, 260);
-        \\$form.StartPosition = 'CenterScreen';
-        \\$form.FormBorderStyle = 'FixedDialog';
-        \\$form.MaximizeBox = \\$false;
-        \\$form.MinimizeBox = \\$false;
-        \\$form.TopMost = \\$true;
+        # Create the window form.
+        $form = New-Object System.Windows.Forms.Form
+        $form.Text = "⚠️ Git Hook commit-msg"
+        $form.Size = New-Object System.Drawing.Size(550, 260)
+        $form.StartPosition = "CenterScreen"
+        $form.FormBorderStyle = "FixedDialog"
+        $form.MaximizeBox = $false
+        $form.MinimizeBox = $false
+        $form.TopMost = $true
 
-        # 3. Create the message text label
-        \\$label = New-Object System.Windows.Forms.Label;
-        \\$label.Text = \\"The 'content' type has been detected!
+        # Create the message label.
+        $label = New-Object System.Windows.Forms.Label
+        $label.Text = "The [content] type has been detected!\`n\`nDid you update the [lastUpdated] variable?"
+        $label.Location = New-Object System.Drawing.Point(30, 30)
+        $label.Size = New-Object System.Drawing.Size(490, 100)
+        $label.Font = New-Object System.Drawing.Font("Malgun Gothic", 14, [System.Drawing.FontStyle]::Bold)
 
-Did you update the 'lastUpdated' variable?\\";
-        \\$label.Location = New-Object System.Drawing.Point(30, 30);
-        \\$label.Size = New-Object System.Drawing.Size(490, 100);
-        \\$label.Font = New-Object System.Drawing.Font('Malgun Gothic', 14, [System.Drawing.FontStyle]::Bold);
+        # Create the "Yes" button.
+        $btnYes = New-Object System.Windows.Forms.Button
+        $btnYes.Text = "Yes"
+        $btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes
+        $btnYes.Location = New-Object System.Drawing.Point(140, 150)
+        $btnYes.Size = New-Object System.Drawing.Size(120, 45)
+        $btnYes.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 4. Create the [Yes] button
-        \\$btnYes = New-Object System.Windows.Forms.Button;
-        \\$btnYes.Text = 'Yes';
-        \\$btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes;
-        \\$btnYes.Location = New-Object System.Drawing.Point(140, 150);
-        \\$btnYes.Size = New-Object System.Drawing.Size(120, 45);
-        \\$btnYes.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Create the "No" button.
+        $btnNo = New-Object System.Windows.Forms.Button
+        $btnNo.Text = "No"
+        $btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No
+        $btnNo.Location = New-Object System.Drawing.Point(280, 150)
+        $btnNo.Size = New-Object System.Drawing.Size(120, 45)
+        $btnNo.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 5. Create the [No] button
-        \\$btnNo = New-Object System.Windows.Forms.Button;
-        \\$btnNo.Text = 'No';
-        \\$btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No;
-        \\$btnNo.Location = New-Object System.Drawing.Point(280, 150);
-        \\$btnNo.Size = New-Object System.Drawing.Size(120, 45);
-        \\$btnNo.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Set the keyboard shortcuts (Enter -> "Yes", Esc -> "No").
+        $form.AcceptButton = $btnYes
+        $form.CancelButton = $btnNo
 
-        # 6. Set Keyboard Shortcuts (Enter -> Yes, Esc -> No)
-        \\$form.AcceptButton = \\$btnYes;
-        \\$form.CancelButton = \\$btnNo;
+        # Add the created components to the window form.
+        $form.Controls.Add($label)
+        $form.Controls.Add($btnYes)
+        $form.Controls.Add($btnNo)
 
-        # 7. Add components to the window form
-        \\$form.Controls.Add(\\$label);
-        \\$form.Controls.Add(\\$btnYes);
-        \\$form.Controls.Add(\\$btnNo);
+        # Open the window.
+        $result = $form.ShowDialog()
 
-        # 8. Open the window and output the user click result
-        \\$result = \\$form.ShowDialog();
-        Write-Output \\$result;
-    " | tr -d '\\r')
+        # Return result to USER_CHOICE.
+        Write-Output $result
+    ' | tr -d '\\r')
 
-    if [ "$USER_CHOICE" = "No" ] || [ "$USER_CHOICE" != "Yes" ]; then
+    # Cancel the current message if the user selects anything other than "Yes"
+    if [ "$USER_CHOICE" != "Yes" ]; then
         powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[System.Media.SystemSounds]::Hand.Play()"
-        echo "❌ The commit was canceled. Please update the 'lastUpdated' variable."
+        echo "❌ The commit was canceled. Please update the [lastUpdated] variable."
+
         exit 1
     fi
 fi
@@ -170,72 +173,75 @@ export const gitHookPrePushCode: Code = {
   fileName: "pre-push",
   content: `#!/bin/sh
 
-COMMIT_TITLES=$(git log @{u}..HEAD --pretty=format:"%s" 2>/dev/null)
+SUMMARIES=$(git log @{u}..HEAD --pretty=format:"%s" 2>/dev/null)
 
-if [ -z "$COMMIT_TITLES" ]; then
-    COMMIT_TITLES=$(git log -n 5 --pretty=format:"%s")
+if [ -z "$SUMMARIES" ]; then
+    SUMMARIES=$(git log -n 5 --pretty=format:"%s")
 fi
 
-if echo "$COMMIT_TITLES" | grep -iq "^content"; then
-    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null;
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Drawing') | Out-Null;
+if echo "$SUMMARIES" | grep -iq "^content"; then
+    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '
+        # Play the notification sound.
+        [System.Media.SystemSounds]::Asterisk.Play()
 
-        # 1. Play default notification sound when the window appears
-        [System.Media.SystemSounds]::Asterisk.Play();
+        # Load the required assemblies.
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") | Out-Null
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") | Out-Null
 
-        # 2. Create the main window form
-        \\$form = New-Object System.Windows.Forms.Form;
-        \\$form.Text = '⚠️ Git Hook pre-push';
-        \\$form.Size = New-Object System.Drawing.Size(550, 260);
-        \\$form.StartPosition = 'CenterScreen';
-        \\$form.FormBorderStyle = 'FixedDialog';
-        \\$form.MaximizeBox = \\$false;
-        \\$form.MinimizeBox = \\$false;
-        \\$form.TopMost = \\$true;
+        # Create the window form.
+        $form = New-Object System.Windows.Forms.Form
+        $form.Text = "⚠️ Git Hook pre-push"
+        $form.Size = New-Object System.Drawing.Size(550, 260)
+        $form.StartPosition = "CenterScreen"
+        $form.FormBorderStyle = "FixedDialog"
+        $form.MaximizeBox = $false
+        $form.MinimizeBox = $false
+        $form.TopMost = $true
 
-        # 3. Create the message text label
-        \\$label = New-Object System.Windows.Forms.Label;
-        \\$label.Text = \\"The 'content' type has been detected!
+        # Create the message label.
+        $label = New-Object System.Windows.Forms.Label
+        $label.Text = "The [content] type has been detected!\`n\`nDid you update the [search/pages] folder?\`n[npm run crawl]"
+        $label.Location = New-Object System.Drawing.Point(30, 30)
+        $label.Size = New-Object System.Drawing.Size(490, 100)
+        $label.Font = New-Object System.Drawing.Font("Malgun Gothic", 14, [System.Drawing.FontStyle]::Bold)
 
-Did you update the 'search/pages' folder?\\";
-        \\$label.Location = New-Object System.Drawing.Point(30, 30);
-        \\$label.Size = New-Object System.Drawing.Size(490, 100);
-        \\$label.Font = New-Object System.Drawing.Font('Malgun Gothic', 13, [System.Drawing.FontStyle]::Bold);
+        # Create the "Yes" button.
+        $btnYes = New-Object System.Windows.Forms.Button
+        $btnYes.Text = "Yes"
+        $btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes
+        $btnYes.Location = New-Object System.Drawing.Point(140, 150)
+        $btnYes.Size = New-Object System.Drawing.Size(120, 45)
+        $btnYes.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 4. Create the [Yes] button
-        \\$btnYes = New-Object System.Windows.Forms.Button;
-        \\$btnYes.Text = 'Yes';
-        \\$btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes;
-        \\$btnYes.Location = New-Object System.Drawing.Point(140, 150);
-        \\$btnYes.Size = New-Object System.Drawing.Size(120, 45);
-        \\$btnYes.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Create the "No" button.
+        $btnNo = New-Object System.Windows.Forms.Button
+        $btnNo.Text = "No"
+        $btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No
+        $btnNo.Location = New-Object System.Drawing.Point(280, 150)
+        $btnNo.Size = New-Object System.Drawing.Size(120, 45)
+        $btnNo.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 5. Create the [No] button
-        \\$btnNo = New-Object System.Windows.Forms.Button;
-        \\$btnNo.Text = 'No';
-        \\$btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No;
-        \\$btnNo.Location = New-Object System.Drawing.Point(280, 150);
-        \\$btnNo.Size = New-Object System.Drawing.Size(120, 45);
-        \\$btnNo.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Set the keyboard shortcuts (Enter -> "Yes", Esc -> "No").
+        $form.AcceptButton = $btnYes
+        $form.CancelButton = $btnNo
 
-        # 6. Set Keyboard Shortcuts (Enter -> Yes, Esc -> No)
-        \\$form.AcceptButton = \\$btnYes;
-        \\$form.CancelButton = \\$btnNo;
+        # Add the created components to the window form.
+        $form.Controls.Add($label)
+        $form.Controls.Add($btnYes)
+        $form.Controls.Add($btnNo)
 
-        # 7. Add components to the window form
-        \\$form.Controls.Add(\\$label);
-        \\$form.Controls.Add(\\$btnYes);
-        \\$form.Controls.Add(\\$btnNo);
+        # Open the window.
+        $result = $form.ShowDialog()
 
-        # 8. Open the window and output the user click result
-        \\$result = \\$form.ShowDialog();
-        Write-Output \\$result;
-    " | tr -d '\\r')
+        # Return result to USER_CHOICE.
+        Write-Output $result
+    ' | tr -d '\\r')
 
-    if [ "$USER_CHOICE" = "No" ] || [ "$USER_CHOICE" != "Yes" ]; then
+    # Cancel the current push if the user selects anything other than "Yes"
+    if [ "$USER_CHOICE" != "Yes" ]; then
         powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[System.Media.SystemSounds]::Hand.Play()"
-        echo "❌ The push was canceled. Please update the 'search/pages' folder. npm run crawl"
+        echo "❌ The push was canceled. Please update the [search/pages] folder. [npm run crawl]"
+
         exit 1
     fi
 fi

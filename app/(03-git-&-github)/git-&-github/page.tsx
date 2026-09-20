@@ -694,7 +694,7 @@ export default function Page() {
                   <p>
                     The following code creates a custom{" "}
                     <Highlight type="text">Windows</Highlight> modal dialog that
-                    checks if the commit message contains the{" "}
+                    checks if the message summary to commit contains the{" "}
                     <Highlight type="text">content</Highlight> type, prompting
                     the user to confirm whether the{" "}
                     <Highlight type="simple-code">lastUpdated</Highlight> prop
@@ -717,7 +717,7 @@ export default function Page() {
                   <p>
                     The following code creates a custom{" "}
                     <Highlight type="text">Windows</Highlight> modal dialog that
-                    checks if the commit messages to push contain the{" "}
+                    checks if the commit message summaries to push contain the{" "}
                     <Highlight type="text">content</Highlight> type, prompting
                     the user to confirm whether the{" "}
                     <Highlight type="text">search/pages</Highlight> folder was
