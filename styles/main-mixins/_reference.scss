@@ -234,8 +234,9 @@
             fill: var(--background-color-3);
           }
 
-          ~ *,
-          ~ * * {
+          // :not(#_) increases the specificity over .complex-code-container !important
+          ~ *:not(#_),
+          ~ * *:not(#_) {
             color: var(--background-color-3) !important;
           }
         }
@@ -247,8 +248,8 @@
             fill: var(--background-color-3);
           }
 
-          ~ *,
-          ~ * * {
+          ~ *:not(#_),
+          ~ * *:not(#_) {
             color: var(--background-color-3) !important;
           }
         }
@@ -257,28 +258,13 @@
       @include max-width-size("tablet") {
         display: none;
 
-        // main-description Headings
-        + :is(h1, h2, h3):has(a) > a {
+        ~ *,
+        ~ * * {
           text-decoration: underline var(--background-color-3);
         }
 
-        // main-list Headings
-        + :is(h1, h2, h3):not(:has(a)) {
-          text-decoration: underline var(--background-color-3);
-        }
-
-        // ToggleList
-        + li > div:nth-child(2) {
-          text-decoration: underline var(--background-color-3);
-        }
-
-        + li > p:first-child,
-        + p {
-          text-decoration: underline var(--background-color-3);
-        }
-
-        ~ *.hover,
-        ~ * *.hover {
+        ~ *:not(#_).hover,
+        ~ * *:not(#_).hover {
           color: var(--background-color-3) !important;
         }
       }
