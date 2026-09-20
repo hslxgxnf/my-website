@@ -9,6 +9,7 @@
 Set up project-specific Git hooks.
 
 - commit-msg
+- pre-push
 
 # npm
 
@@ -46,6 +47,11 @@ Otherwise, you may encounter data loss.
 
 ## Design
 
+## Documentation Search
+
 # Later...
 
 - Documentation Search
+  - ~~Search Archive~~
+  - Search Logic
+  - Search Icon
