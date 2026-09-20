@@ -27,12 +27,14 @@ This way is used a lot.
 HTML
 <head>
   <link rel="stylesheet" href="path" />
-</head>```
+</head>
+```
 ```code
 CSS
 body {
   background-color: gray;
-}```
+}
+```
 
 Internal CSS #
 Use the <style> element in the <head> element.
@@ -44,13 +46,15 @@ HTML
       background-color: gray;
     }
   </style>
-</head>```
+</head>
+```
 
 Inline CSS #
 Use the <style> attribute.
 ```code
 HTML
-<body style="background-color: gray"></body>```
+<body style="background-color: gray"></body>
+```
 
 Page Navigation
 On this page

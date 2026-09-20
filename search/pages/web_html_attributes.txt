@@ -52,17 +52,20 @@ An enumerated attribute accepts a predefined set of values.
 HTML
 <input type="text" />
 <input type="password" />
-<input type="email" />```
+<input type="email" />
+```
 
 Custom Attributes #
 HTML data-* ⇄ JavaScript HTMLElement.dataset
 ```code
 HTML
-<div data-weight="100">Box</div>```
+<div data-weight="100">Box</div>
+```
 ```code
 TypeScript
 const div = document.querySelector<HTMLDivElement>("div");
-console.log(div?.dataset.weight); // "100"```
+console.log(div?.dataset.weight); // "100"
+```
 
 Boolean Attributes #
 A boolean attribute is determined solely by its presence or absence. When the attribute is present, it is considered true; when it is absent, it is considered false. The actual value assigned does not matter.
@@ -72,7 +75,8 @@ HTML
 <input type="checkbox" checked />
 <input type="checkbox" checked="" />
 <input type="checkbox" checked="true" />
-<input type="checkbox" checked="false" />```
+<input type="checkbox" checked="false" />
+```
 
 Attribute Reflection #
 HTML Attributes are reflected in corresponding JavaScript properties.
@@ -85,7 +89,8 @@ Elements can share the same class value and have multiple class values.
 ```code
 HTML
 <div class="common"></div>
-<div class="common another"></div>```
+<div class="common another"></div>
+```
 title
 Displays a tooltip on mouse hover.
 rel

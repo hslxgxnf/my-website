@@ -62,7 +62,8 @@ Text
 --color-1
 --color-2
 --color-3
---color-4```
+--color-4
+```
 
 Non-Custom Properties #
 ```code
@@ -312,7 +313,8 @@ transition-behavior
 cursor
 pointer-events
 user-select
-tap-highlight-color```
+tap-highlight-color
+```
 
 Page Navigation
 On this page
