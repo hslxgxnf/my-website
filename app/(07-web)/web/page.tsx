@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -14,38 +14,90 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <h1>Web</h1>
+        <Heading type="none" number={1} lastUpdated="2026-09-20">
+          Web
+        </Heading>
         <hr />
-        <h2>Overall</h2>
-        {/*<HeadingLinkPage>Line Separators</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>Security</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>Deployment</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>SEO</HeadingLinkPage>*/}
-        {/*<HeadingLinkPage>CSR vs. SSR</HeadingLinkPage>*/}
+        <Heading type="none" number={2}>
+          Overall
+        </Heading>
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  Line Separators*/}
+        {/*</Heading>*/}
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  Security*/}
+        {/*</Heading>*/}
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  Deployment*/}
+        {/*</Heading>*/}
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  SEO*/}
+        {/*</Heading>*/}
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  CSR vs. SSR*/}
+        {/*</Heading>*/}
         <hr />
-        <h2>Initialization</h2>
-        <HeadingLinkPage>npm</HeadingLinkPage>
-        <HeadingLinkPage>npm-check-updates</HeadingLinkPage>
-        <HeadingLinkPage>Prettier</HeadingLinkPage>
-        <HeadingLinkPage>Stylelint</HeadingLinkPage>
-        <HeadingLinkPage>ESLint</HeadingLinkPage>
+        <Heading type="none" number={2}>
+          Initialization
+        </Heading>
+        <Heading type="link-page" number={3}>
+          npm
+        </Heading>
+        <Heading type="link-page" number={3}>
+          npm-check-updates
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Prettier
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Stylelint
+        </Heading>
+        <Heading type="link-page" number={3}>
+          ESLint
+        </Heading>
         <hr />
-        <h2>HTML</h2>
-        <HeadingLinkPage>HTML</HeadingLinkPage>
+        <Heading type="none" number={2}>
+          HTML
+        </Heading>
+        <Heading type="link-page" number={3}>
+          HTML
+        </Heading>
         <hr />
-        <h2>CSS</h2>
-        <HeadingLinkPage>CSS</HeadingLinkPage>
-        <HeadingLinkPage>SCSS</HeadingLinkPage>
-        {/*<HeadingLinkPage>Tailwind CSS</HeadingLinkPage>*/}
+        <Heading type="none" number={2}>
+          CSS
+        </Heading>
+        <Heading type="link-page" number={3}>
+          CSS
+        </Heading>
+        <Heading type="link-page" number={3}>
+          SCSS
+        </Heading>
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  Tailwind CSS*/}
+        {/*</Heading>*/}
         <hr />
-        <h2>JavaScript</h2>
-        <HeadingLinkPage>Vanilla</HeadingLinkPage>
-        <HeadingLinkPage>TypeScript</HeadingLinkPage>
-        {/*<HeadingLinkPage>React</HeadingLinkPage>*/}
-        <HeadingLinkPage>Next.js</HeadingLinkPage>
+        <Heading type="none" number={2}>
+          JavaScript
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Vanilla
+        </Heading>
+        <Heading type="link-page" number={3}>
+          TypeScript
+        </Heading>
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  React*/}
+        {/*</Heading>*/}
+        <Heading type="link-page" number={3}>
+          Next.js
+        </Heading>
         <hr />
-        <h2>Databases</h2>
-        <HeadingLinkPage>SQL</HeadingLinkPage>
+        <Heading type="none" number={2}>
+          Databases
+        </Heading>
+        <Heading type="link-page" number={3}>
+          SQL
+        </Heading>
       </article>
 
       <PageNav />

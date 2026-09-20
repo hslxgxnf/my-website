@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference, code } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,9 +19,9 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-23">
+            <Heading type="link-id" number={1} lastUpdated="2026-07-23">
               SQL (Structured Query Language)
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>
             <Highlight type="text">SQL</Highlight> is used for managing data in
@@ -39,11 +39,15 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Comments</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Comments
+          </Heading>
           <Highlight type="complex-code">{code}</Highlight>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Naming Cases</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Naming Cases
+          </Heading>
           <p>
             <Highlight type="text">SQL</Highlight> is case-insensitive, but
             using <Highlight type="text">UPPERCASE</Highlight> for keywords and{" "}
@@ -56,14 +60,18 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Statement Delimiter</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Statement Delimiter
+          </Heading>
           <p>
             Statements must end with a semicolon, except for a single statement.
             Adding a semicolon to it is recommended, though.
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Statements</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Statements
+          </Heading>
           <p>
             A statement consists of clauses, and a clause consists of keywords,
             identifiers, operators, and values (expressions).
@@ -171,7 +179,9 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Data Types</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Data Types
+          </Heading>
           <ul>
             <li>
               <p>String</p>

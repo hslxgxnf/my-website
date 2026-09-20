@@ -7,7 +7,7 @@ import {
 } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -23,17 +23,21 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-02-22">
+            <Heading type="link-id" number={1} lastUpdated="2026-02-22">
               Property Arrangement
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Custom Properties</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Custom Properties
+          </Heading>
           <Highlight type="complex-code">{customPropertiesCode}</Highlight>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Non-Custom Properties</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Non-Custom Properties
+          </Heading>
           <Highlight type="complex-code">{nonCustomPropertiesCode}</Highlight>
         </section>
       </article>

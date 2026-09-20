@@ -1,28 +1,25 @@
 "use client";
 
-import { useRef, useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect, useRef, useEffect } from "react";
 import Link from "next/link";
 
 import { useStore } from "@/stores/useStore";
 import handleClickFirstLink from "@/functions/main-description/handleClickFirstLink";
-import ArticleMetaData from "@/components/main-description/HeadingLinkId/ArticleMetaData";
+import ArticleMetaData from "@/components/main/Heading/ArticleMetaData";
 
 interface HeadingLinkIdProps {
-  headingNumber: 1 | 2 | 3;
-  /**
-   * "YYYY-MM-DD"
-   */
+  number: number;
   lastUpdated?: string;
   children: string;
 }
 
 export default function HeadingLinkId({
-  headingNumber,
+  number,
   lastUpdated,
   children,
 }: HeadingLinkIdProps) {
   const addArticleHeading = useStore((state) => state.addArticleHeading);
-  const Tag = `h${headingNumber}` as "h1" | "h2" | "h3";
+  const Tag = `h${number}` as "h1" | "h2" | "h3";
   useLayoutEffect(() => {
     addArticleHeading({
       tag: Tag,
@@ -44,20 +41,18 @@ export default function HeadingLinkId({
   }, [id]);
 
   const href = `#${id}`;
+
   return (
     <Tag ref={headingRef} className="heading-link-id">
       <Link
         href={href}
         onClick={
-          headingNumber === 1 ? (e) => handleClickFirstLink(e, href) : undefined
+          number === 1 ? (e) => handleClickFirstLink(e, href) : undefined
         }
       >
         {children} <span aria-hidden="true">#</span>
       </Link>
-      <ArticleMetaData
-        headingNumber={headingNumber}
-        lastUpdated={lastUpdated}
-      />
+      <ArticleMetaData number={number} lastUpdated={lastUpdated} />
     </Tag>
   );
 }

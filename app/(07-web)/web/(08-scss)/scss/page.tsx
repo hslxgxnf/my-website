@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference, commentsCode, variablesCode, forCode } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,13 +19,15 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-20">
+            <Heading type="link-id" number={1} lastUpdated="2026-07-20">
               SCSS (Sassy CSS)
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Sass vs. SCSS</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Sass vs. SCSS
+          </Heading>
           <p>Syntactically awesome style sheets vs. Sassy CSS</p>
           <p>
             Both <Highlight type="text">Sass</Highlight> and{" "}
@@ -38,7 +40,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Files</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Files
+          </Heading>
           <p>
             An <Highlight type="text">SCSS</Highlight> file with a leading
             underscore is a partial, meaning it does not compile into a
@@ -50,11 +54,15 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Comments</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Comments
+          </Heading>
           <Highlight type="complex-code">{commentsCode}</Highlight>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Variables</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Variables
+          </Heading>
           <p>
             <Highlight type="text">SCSS</Highlight> variables are scoped to
             their defining file or block. Declaring an{" "}
@@ -67,13 +75,17 @@ export default function Page() {
           <Highlight type="complex-code">{variablesCode}</Highlight>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Interpolation</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Interpolation
+          </Heading>
           <p>
             <Highlight type="simple-code">#&#123;&#125;</Highlight>
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>At-Rules</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            At-Rules
+          </Heading>
           <ul>
             <li>
               <p>

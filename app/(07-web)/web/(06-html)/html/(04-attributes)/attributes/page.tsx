@@ -10,7 +10,7 @@ import {
 } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -26,9 +26,9 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-09-03">
+            <Heading type="link-id" number={1} lastUpdated="2026-09-03">
               Attributes
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>An attribute provides additional information to its element.</p>
           <p>
@@ -39,16 +39,18 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>
+            <Heading type="link-id" number={2}>
               Enumerated Attributes
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>An enumerated attribute accepts a predefined set of values.</p>
           <Highlight type="complex-code">{codeEnumeratedAttributes}</Highlight>
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Custom Attributes</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Custom Attributes
+            </Heading>
           </RefButton>
           <p>
             <Highlight type="text">HTML</Highlight>{" "}
@@ -62,7 +64,9 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Boolean Attributes</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Boolean Attributes
+            </Heading>
           </RefButton>
           <p>
             A boolean attribute is determined solely by its presence or absence.
@@ -75,9 +79,9 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>
+            <Heading type="link-id" number={2}>
               Attribute Reflection
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>
             <Highlight type="text">HTML</Highlight> Attributes are reflected in
@@ -86,7 +90,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Examples</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Examples
+          </Heading>
           <ul>
             <li>
               <p>

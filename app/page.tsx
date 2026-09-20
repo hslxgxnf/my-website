@@ -1,4 +1,5 @@
 import RefNav from "@/components/main/RefNav";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export default function Page() {
@@ -7,7 +8,9 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <h1>Archive of My Learning Journey</h1>
+        <Heading type="none" number={1} lastUpdated="2026-09-20">
+          Archive of My Learning Journey
+        </Heading>
         <p>Hi, I'm Hoseon Lee.</p>
         <p>
           Welcome to my digital garden for exploring, reviewing, and deepening

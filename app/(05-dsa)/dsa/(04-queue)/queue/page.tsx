@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,9 +19,9 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-09-14">
+            <Heading type="link-id" number={1} lastUpdated="2026-09-14">
               Queue
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>FIFO (First In, First Out)</p>
           <p>
@@ -38,9 +38,9 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>
+            <Heading type="link-id" number={2}>
               Double-Ended Queue (Deque)
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>
             Insertion and deletion at both ends are{" "}
@@ -49,7 +49,9 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Priority Queue</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Priority Queue
+            </Heading>
           </RefButton>
           <p>Arranges elements based on priority, not insertion order.</p>
           <p>Typically implemented with a binary heap.</p>

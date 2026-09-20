@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,9 +19,9 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-23">
+            <Heading type="link-id" number={1} lastUpdated="2026-07-23">
               Asymptotic Analysis
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>
             Asymptotic analysis evaluates the performance of an algorithm based
@@ -29,7 +29,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Time Complexity</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Time Complexity
+          </Heading>
           <p>
             Since actual execution time is machine-dependent, time complexity
             measures how many times each statement executes.
@@ -40,7 +42,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Space Complexity</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Space Complexity
+          </Heading>
           <p>
             Auxiliary space is the extra temporary space required by an
             algorithm.
@@ -55,7 +59,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Notations</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Notations
+          </Heading>
           <p>
             <Highlight type="text">Big-O</Highlight> notation measures the upper
             bound of an algorithm's complexity. It guarantees that the algorithm

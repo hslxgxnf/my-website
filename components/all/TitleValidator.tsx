@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+
 import toTitleCase from "@/functions/all/toTitleCase";
 
 export default function TitleValidator() {
@@ -34,17 +35,10 @@ export default function TitleValidator() {
         console.error("No articleH1");
         return;
       }
-
       let articleH1Text: string;
-      if (articleH1.childElementCount > 0) {
-        // main-description
-        const firstChild = articleH1.children[0].cloneNode(true) as HTMLElement;
-        firstChild.querySelector("span")?.remove();
-        articleH1Text = firstChild.textContent.trim();
-      } else {
-        // main-list
-        articleH1Text = articleH1.textContent;
-      }
+      const firstChild = articleH1.children[0].cloneNode(true) as HTMLElement;
+      firstChild.querySelector("span")?.remove();
+      articleH1Text = firstChild.textContent.trim();
       articleH1Text = articleH1Text.split("(")[0].trim();
       if (articleH1Text !== pivotPath) {
         console.error(

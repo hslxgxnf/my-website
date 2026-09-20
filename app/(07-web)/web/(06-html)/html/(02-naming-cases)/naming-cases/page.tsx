@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -16,19 +16,23 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
+          <Heading type="link-id" number={1} lastUpdated="2026-07-21">
             Naming Cases
-          </HeadingLinkId>
+          </Heading>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Elements</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Elements
+          </Heading>
           <p>
             Element tags are case-insensitive, but using{" "}
             <Highlight type="text">lowercase</Highlight> is recommended.
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Attribute Names</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Attribute Names
+          </Heading>
           <p>
             Attribute names are case-insensitive, but using{" "}
             <Highlight type="text">lowercase</Highlight> or{" "}
@@ -45,7 +49,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Attribute Values</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Attribute Values
+          </Heading>
           <p>
             Enumerated attribute values are case-insensitive, but using{" "}
             <Highlight type="text">lowercase</Highlight> or{" "}

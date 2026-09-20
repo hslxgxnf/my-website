@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -16,12 +16,14 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-21">
+          <Heading type="link-id" number={1} lastUpdated="2026-07-21">
             Naming Cases
-          </HeadingLinkId>
+          </Heading>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>At-Rules</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            At-Rules
+          </Heading>
           <p>
             At-rules are case-insensitive, but using{" "}
             <Highlight type="text">kebab-case</Highlight> is recommended (e.g.,{" "}
@@ -30,7 +32,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Selectors</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Selectors
+          </Heading>
           <p>
             Type selectors, enumerated attribute selectors, pseudo-classes, and
             pseudo-elements are case-insensitive, while ID selectors, class
@@ -41,7 +45,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Declarations</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Declarations
+          </Heading>
           <p>
             Properties and values are case-insensitive, but using{" "}
             <Highlight type="text">kebab-case</Highlight> is recommended (e.g.,{" "}
@@ -52,7 +58,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Variables</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Variables
+          </Heading>
           <p>
             Variable names are case-sensitive, and using{" "}
             <Highlight type="text">kebab-case</Highlight> is recommended. They

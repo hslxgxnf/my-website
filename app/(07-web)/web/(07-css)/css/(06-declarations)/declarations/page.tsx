@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -14,10 +14,16 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <h1>Declarations</h1>
+        <Heading type="none" number={1} lastUpdated="2026-09-20">
+          Declarations
+        </Heading>
         <hr />
-        <HeadingLinkPage>Property Vendor Prefixes</HeadingLinkPage>
-        <HeadingLinkPage>Property Arrangement</HeadingLinkPage>
+        <Heading type="link-page" number={3}>
+          Property Vendor Prefixes
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Property Arrangement
+        </Heading>
       </article>
 
       <PageNav />

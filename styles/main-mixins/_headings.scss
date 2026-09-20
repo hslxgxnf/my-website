@@ -24,7 +24,14 @@
     }
   }
 
-  h1.heading-link-id {
+  :is(h1, h2, h3).heading-none {
+    > span {
+      color: var(--color-1);
+    }
+  }
+
+  h1.heading-link-id,
+  h1.heading-none {
     position: relative;
 
     > aside {
@@ -38,10 +45,6 @@
         top: calc(var(--space-10) * -1);
       }
     }
-  }
-
-  :is(h1, h2) {
-    color: var(--color-1);
   }
 
   h3.heading-link-page {

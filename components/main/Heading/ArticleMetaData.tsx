@@ -1,15 +1,15 @@
 import { format, parseISO } from "date-fns";
 
-interface DateProps {
-  headingNumber: 1 | 2 | 3;
+interface ArticleMetaDataProps {
+  number: number;
   lastUpdated?: string;
 }
 
 export default function ArticleMetaData({
-  headingNumber,
+  number,
   lastUpdated,
-}: DateProps) {
-  if (headingNumber !== 1) {
+}: ArticleMetaDataProps) {
+  if (number !== 1) {
     return null;
   }
 
@@ -21,7 +21,7 @@ export default function ArticleMetaData({
   const dateFormat = "MMMM dd, yyyy";
 
   return (
-    <aside>
+    <aside className="last-updated">
       <small>
         Last Updated:{" "}
         <time dateTime={lastUpdated}>

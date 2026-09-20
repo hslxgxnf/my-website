@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 // import { reference, code } from "./data";
 import RefNav from "@/components/main/RefNav";
 // import RefButton from "@/components/main/RefButton";
-// import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -16,10 +16,16 @@ export default function Page() {
       <RefNav /* reference={reference} */ />
 
       <article>
-        <h1>Title</h1>
+        <Heading type="none" number={1} lastUpdated="YYYY-MM-DD">
+          Title
+        </Heading>
         <hr />
-        <h2>Sub Title</h2>
-        {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
+        <Heading type="none" number={2}>
+          Sub Title
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Link Page
+        </Heading>
       </article>
 
       <PageNav />

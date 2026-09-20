@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference, gitCommitMessageCode, gitHookCode } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,9 +19,9 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-06-30">
+            <Heading type="link-id" number={1} lastUpdated="2026-06-30">
               Git & GitHub
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>
             While <Highlight type="text">Git</Highlight> is a local version
@@ -31,7 +31,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Files & Folders</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Files & Folders
+          </Heading>
           <ul>
             <li>
               <p>
@@ -61,7 +63,9 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Git Command Lines</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Git Command Lines
+          </Heading>
           <ul>
             <li>
               <p>
@@ -656,7 +660,9 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Git Hooks</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Git Hooks
+          </Heading>
           <p>
             <Highlight type="text">Git Hooks</Highlight> are located in{" "}
             <Highlight type="text">.git/hooks</Highlight> and must not have a
@@ -679,7 +685,9 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>GitHub Actions</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              GitHub Actions
+            </Heading>
           </RefButton>
 
           <p>
@@ -708,7 +716,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Troubleshooting</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Troubleshooting
+          </Heading>
           <ul>
             <RefButton>
               <li>

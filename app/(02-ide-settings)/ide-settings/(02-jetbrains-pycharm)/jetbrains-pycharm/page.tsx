@@ -4,7 +4,7 @@ import { reference } from "./data";
 import { entities } from "../../(01-jetbrains-webstorm)/jetbrains-webstorm/data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,16 +19,18 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-07-22">
+          <Heading type="link-id" number={1} lastUpdated="2026-07-22">
             JetBrains PyCharm
-          </HeadingLinkId>
+          </Heading>
           <p>
             Settings prefixed with <strong>!</strong> are only applied to the
             current project. They have to be set again for other projects.
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Python</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Python
+          </Heading>
           <table>
             <thead>
               <tr>
@@ -52,18 +54,22 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>
+            <Heading type="link-id" number={2}>
               Appearance & Behavior
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Keymap</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Keymap
+            </Heading>
           </RefButton>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Editor</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Editor
+          </Heading>
           <table>
             <thead>
               <tr>
@@ -125,12 +131,16 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Plugins</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Plugins
+            </Heading>
           </RefButton>
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Tools</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Tools
+            </Heading>
           </RefButton>
           <table>
             <thead>
@@ -165,11 +175,15 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Backup and Sync</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Backup and Sync
+            </Heading>
           </RefButton>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Advanced Settings</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Advanced Settings
+          </Heading>
           <table>
             <thead>
               <tr>
@@ -213,7 +227,9 @@ export default function Page() {
         </section>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={2}>Rainbow Brackets</HeadingLinkId>
+            <Heading type="link-id" number={2}>
+              Rainbow Brackets
+            </Heading>
           </RefButton>
         </section>
       </article>

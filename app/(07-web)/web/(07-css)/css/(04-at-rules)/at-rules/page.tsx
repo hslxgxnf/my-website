@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,9 +19,9 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-24">
+            <Heading type="link-id" number={1} lastUpdated="2026-07-24">
               At-Rules
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>
             At-rules control how <Highlight type="text">CSS</Highlight> behaves.
@@ -42,10 +42,14 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Statement At-Rules</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Statement At-Rules
+          </Heading>
           <section>
             <RefButton>
-              <HeadingLinkId headingNumber={3}>@import</HeadingLinkId>
+              <Heading type="link-id" number={3}>
+                @import
+              </Heading>
             </RefButton>
             <p>
               <Highlight type="simple-code">@import</Highlight> imports styles
@@ -69,7 +73,9 @@ export default function Page() {
           </section>
           <section>
             <RefButton>
-              <HeadingLinkId headingNumber={3}>@layer</HeadingLinkId>
+              <Heading type="link-id" number={3}>
+                @layer
+              </Heading>
             </RefButton>
             <p>
               <Highlight type="simple-code">@layer</Highlight> declares a
@@ -86,7 +92,9 @@ export default function Page() {
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Block At-Rules</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Block At-Rules
+          </Heading>
         </section>
       </article>
 

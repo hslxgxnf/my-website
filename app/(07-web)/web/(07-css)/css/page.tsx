@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -14,16 +14,34 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <h1>CSS (Cascading Style Sheets)</h1>
+        <Heading type="none" number={1} lastUpdated="2026-09-20">
+          CSS (Cascading Style Sheets)
+        </Heading>
         <hr />
-        <HeadingLinkPage>Connecting CSS to HTML</HeadingLinkPage>
-        <HeadingLinkPage>Comments</HeadingLinkPage>
-        <HeadingLinkPage>Naming Cases</HeadingLinkPage>
-        <HeadingLinkPage>At-Rules</HeadingLinkPage>
-        <HeadingLinkPage>Rulesets</HeadingLinkPage>
-        {/*<HeadingLinkPage>Selectors and Combinators</HeadingLinkPage>*/}
-        <HeadingLinkPage>Declarations</HeadingLinkPage>
-        {/*<HeadingLinkPage>Error Handling</HeadingLinkPage>*/}
+        <Heading type="link-page" number={3}>
+          Connecting CSS to HTML
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Comments
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Naming Cases
+        </Heading>
+        <Heading type="link-page" number={3}>
+          At-Rules
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Rulesets
+        </Heading>
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  Selectors and Combinators*/}
+        {/*</Heading>*/}
+        <Heading type="link-page" number={3}>
+          Declarations
+        </Heading>
+        {/*<Heading type="link-page" number={3}>*/}
+        {/*  Error Handling*/}
+        {/*</Heading>*/}
       </article>
 
       <PageNav />

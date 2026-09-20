@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-import HeadingLinkPage from "@/components/main-list/HeadingLinkPage";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -14,14 +14,28 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <h1>HTML (HyperText Markup Language)</h1>
+        <Heading type="none" number={1} lastUpdated="2026-09-20">
+          HTML (HyperText Markup Language)
+        </Heading>
         <hr />
-        <HeadingLinkPage>Comments</HeadingLinkPage>
-        <HeadingLinkPage>Naming Cases</HeadingLinkPage>
-        <HeadingLinkPage>Elements</HeadingLinkPage>
-        <HeadingLinkPage>Attributes</HeadingLinkPage>
-        <HeadingLinkPage>Entities</HeadingLinkPage>
-        <HeadingLinkPage>Emmet</HeadingLinkPage>
+        <Heading type="link-page" number={3}>
+          Comments
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Naming Cases
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Elements
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Attributes
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Entities
+        </Heading>
+        <Heading type="link-page" number={3}>
+          Emmet
+        </Heading>
       </article>
 
       <PageNav />

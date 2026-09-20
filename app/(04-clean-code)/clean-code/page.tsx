@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference, paramterOptimizationCode, lawOfDemeterCode } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,17 +19,21 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-23">
+            <Heading type="link-id" number={1} lastUpdated="2026-07-23">
               Clean Code
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
           <p>Clean code should be readable.</p>
           <p>Clean code should be maintainable.</p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Formatting</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Formatting
+          </Heading>
           <section>
-            <HeadingLinkId headingNumber={3}>Vertical</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Vertical
+            </Heading>
             <p>
               Different concepts should be separated by blank lines, while
               closely related concepts should be kept together without blank
@@ -37,7 +41,9 @@ export default function Page() {
             </p>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Horizontal</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Horizontal
+            </Heading>
             <p>Indentation</p>
             <p>
               Horizontally long statements should be broken down into multiple
@@ -46,7 +52,9 @@ export default function Page() {
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Comments</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Comments
+          </Heading>
           <p>
             Comments which cannot be replaced by good naming are good comments.
             Legal information, warnings, and to-do notes are legitimate reasons
@@ -54,7 +62,9 @@ export default function Page() {
           </p>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Naming</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Naming
+          </Heading>
           <p>Names should be meaningful.</p>
           <p>Names should be distinctive.</p>
           <p>Names should be consistent.</p>
@@ -63,9 +73,9 @@ export default function Page() {
             slang, or unclear abbreviations.
           </p>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Step 1: Choose a Case
-            </HeadingLinkId>
+            </Heading>
             <ul>
               <li>
                 <p>
@@ -142,9 +152,9 @@ export default function Page() {
             </ul>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Step 2: Choose a Part of Speech
-            </HeadingLinkId>
+            </Heading>
             <ul>
               <li>
                 <p>Use nouns or noun phrases for variables and constants.</p>
@@ -183,16 +193,18 @@ export default function Page() {
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Functions</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Functions
+          </Heading>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Don't Repeat Yourself (DRY)
-            </HeadingLinkId>
+            </Heading>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Parameter Optimization
-            </HeadingLinkId>
+            </Heading>
             <p>
               Multiple parameters can be consolidated into a single object
               parameter. This eliminates the need to maintain the strict order
@@ -203,9 +215,9 @@ export default function Page() {
             </Highlight>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Function Single Responsibility
-            </HeadingLinkId>
+            </Heading>
             <p>
               A bloated function should be split into smaller functions that do
               only one thing. Smaller functions should maintain the same level
@@ -213,7 +225,9 @@ export default function Page() {
             </p>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Side Effects</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Side Effects
+            </Heading>
             <p>
               When a function affects the outside of its scope, it is called a
               side effect. If a function has a side effect, its name should
@@ -223,7 +237,9 @@ export default function Page() {
             </p>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Pure Functions</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Pure Functions
+            </Heading>
             <p>
               Pure functions yield the same output for the same input and have
               no side effects.
@@ -231,21 +247,27 @@ export default function Page() {
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Classes</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Classes
+          </Heading>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Class Single Responsibility
-            </HeadingLinkId>
+            </Heading>
             <p>Classes should have a single responsibility.</p>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Open/Closed</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Open/Closed
+            </Heading>
             <p>
               Classes should be open for extension but closed for modification.
             </p>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Cohesion</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Cohesion
+            </Heading>
             <p>
               Classes should be highly cohesive. Cohesion describes the extent
               to which methods rely on properties. Maximum cohesion occurs when
@@ -254,7 +276,9 @@ export default function Page() {
             </p>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Law of Demeter</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Law of Demeter
+            </Heading>
             <p>
               An object should communicate only with its immediate neighbors.
             </p>
@@ -262,7 +286,9 @@ export default function Page() {
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Control Structures</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Control Structures
+          </Heading>
           <p>
             Avoid deep nesting by using error guards to fail fast, factory
             functions, and polymorphism.

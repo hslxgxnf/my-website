@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { reference, code } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -19,20 +19,24 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <HeadingLinkId headingNumber={1} lastUpdated="2026-07-22">
+            <Heading type="link-id" number={1} lastUpdated="2026-07-22">
               Find Next Permutation
-            </HeadingLinkId>
+            </Heading>
           </RefButton>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Problem</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Problem
+          </Heading>
           <p>
             Given an array. Find the next permutation that rearranges the array
             into the next lexicographical order. If there is no next
             permutation, rearrange the array into the lowest possible order.
           </p>
           <section>
-            <HeadingLinkId headingNumber={3}>Examples</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Examples
+            </Heading>
             <ul>
               <li>
                 <p>
@@ -75,7 +79,9 @@ export default function Page() {
             </ul>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>Constraints</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Constraints
+            </Heading>
             <ul>
               <li>
                 <p>
@@ -90,25 +96,29 @@ export default function Page() {
             </ul>
           </section>
           <section>
-            <HeadingLinkId headingNumber={3}>
+            <Heading type="link-id" number={3}>
               Expected Complexities
-            </HeadingLinkId>
+            </Heading>
             <ul>
               <li>
                 <p>
-                  Time Complexity: <Highlight type="math">{`\\mathcal{O}(n)`}</Highlight>
+                  Time Complexity:{" "}
+                  <Highlight type="math">{`\\mathcal{O}(n)`}</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  Auxiliary Space: <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>
+                  Auxiliary Space:{" "}
+                  <Highlight type="math">{`\\mathcal{O}(1)`}</Highlight>
                 </p>
               </li>
             </ul>
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>Solution</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            Solution
+          </Heading>
           <Highlight type="complex-code">{code}</Highlight>
         </section>
       </article>

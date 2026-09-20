@@ -8,7 +8,7 @@ import {
 } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -23,14 +23,18 @@ export default function Page() {
 
       <article>
         <section>
-          <HeadingLinkId headingNumber={1} lastUpdated="2026-09-14">
+          <Heading type="link-id" number={1} lastUpdated="2026-09-14">
             Windows
-          </HeadingLinkId>
+          </Heading>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>PowerShell</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            PowerShell
+          </Heading>
           <section>
-            <HeadingLinkId headingNumber={3}>Suggestion Tab</HeadingLinkId>
+            <Heading type="link-id" number={3}>
+              Suggestion Tab
+            </Heading>
             <ul>
               <li>
                 <p>
@@ -106,7 +110,9 @@ export default function Page() {
           </section>
           <section>
             <RefButton>
-              <HeadingLinkId headingNumber={3}>Oh My Posh</HeadingLinkId>
+              <Heading type="link-id" number={3}>
+                Oh My Posh
+              </Heading>
             </RefButton>
             <ul>
               <li>
@@ -228,10 +234,14 @@ export default function Page() {
           </section>
         </section>
         <section>
-          <HeadingLinkId headingNumber={2}>PowerToys</HeadingLinkId>
+          <Heading type="link-id" number={2}>
+            PowerToys
+          </Heading>
           <section>
             <RefButton>
-              <HeadingLinkId headingNumber={3}>PowerRename</HeadingLinkId>
+              <Heading type="link-id" number={3}>
+                PowerRename
+              </Heading>
             </RefButton>
           </section>
         </section>

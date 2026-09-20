@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 // import { reference, code } from "./data";
 import RefNav from "@/components/main/RefNav";
 // import ReferenceButton from "@/components/main/ReferenceButton";
-import HeadingLinkId from "@/components/main-description/HeadingLinkId/HeadingLinkId";
+import Heading from "@/components/main/Heading/Heading";
 // import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
@@ -17,9 +17,9 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <HeadingLinkId headingNumber={1} lastUpdated="2026-07-14">
+        <Heading type="link-id" number={1} lastUpdated="2026-07-14">
           TypeScript
-        </HeadingLinkId>
+        </Heading>
       </article>
 
       <PageNav />

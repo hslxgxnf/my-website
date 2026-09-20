@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import RefNav from "@/components/main/RefNav";
-// import HeadingLinkPage from "@/components/junction-page/HeadingLinkPage";
+import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -14,10 +14,13 @@ export default function Page() {
       <RefNav />
 
       <article>
-        <h1>AI</h1>
+        <Heading type="none" number={1} lastUpdated="2026-09-20">
+          AI
+        </Heading>
         <hr />
-        <h2>Preparing...</h2>
-        {/*<HeadingLinkPage>Target Page</HeadingLinkPage>*/}
+        <Heading type="none" number={2}>
+          Preparing...
+        </Heading>
       </article>
 
       <PageNav />
