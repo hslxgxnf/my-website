@@ -1,0 +1,196 @@
+export default function copyRange(range?: Range): string {
+  const tempDiv = document.createElement("div");
+
+  if (range) {
+    const fragment = range.cloneContents();
+    tempDiv.append(fragment);
+  } else {
+    const selectors = ["header", "main", "footer"];
+    selectors.forEach((selector) => {
+      const element = document.body.querySelector(selector);
+      if (!element) {
+        console.error("No element");
+        return;
+      }
+      tempDiv.append(element.cloneNode(true));
+    });
+  }
+
+  const necessaryAriaLabels = [
+    "Scroll main navigation",
+    "Breadcrumb navigation",
+    "All reference navigation",
+    "Page navigation",
+  ];
+  const redundantNavs = Array.from(tempDiv.querySelectorAll("nav")).filter(
+    (nav) => {
+      const ariaLabel = nav.getAttribute("aria-label") ?? "";
+      return !necessaryAriaLabels.includes(ariaLabel);
+    },
+  );
+  redundantNavs.forEach((nav) => {
+    nav.remove();
+  });
+
+  const lastUpdated = tempDiv.querySelector(".last-updated");
+  if (lastUpdated) {
+    lastUpdated.prepend(" [");
+    lastUpdated.append("]");
+  }
+
+  const mathElements = tempDiv.querySelectorAll(".math");
+  for (const mathElement of mathElements) {
+    const annotation = mathElement.querySelector("annotation");
+    if (annotation) {
+      mathElement.replaceWith(`$${annotation.textContent}$`);
+    } else {
+      mathElement.remove();
+    }
+  }
+
+  const tableRows = tempDiv.querySelectorAll("tr");
+  tableRows.forEach((tableRow) => {
+    const tableColumns = Array.from(tableRow.querySelectorAll("th, td"));
+
+    tableColumns.forEach((tableColumn) => {
+      const breaks = Array.from(tableColumn.querySelectorAll("br"));
+      breaks.forEach((br) => br.replaceWith(" "));
+
+      if (!tableColumn.textContent) {
+        tableColumn.textContent = "X";
+      }
+    });
+
+    let text = "";
+    for (let i = 1; i < tableColumns.length; i++) {
+      text += ` | ${tableColumns[i].textContent}`;
+      tableColumns[i].textContent = "";
+    }
+    tableColumns[0].textContent += text;
+  });
+
+  const newLineElements = tempDiv.querySelectorAll(
+    "header, nav, article, h1, h2, h3, p, li, br, .complex-code-container, table, caption, tr",
+  );
+  newLineElements.forEach((newLineElement) => {
+    if (newLineElement.localName === "nav") {
+      const ariaLabel = newLineElement.getAttribute("aria-label") ?? "";
+
+      switch (ariaLabel) {
+        case necessaryAriaLabels[0]:
+          newLineElement.prepend("Main Navigation\n");
+          newLineElement.append("\n");
+          return;
+        case necessaryAriaLabels[1]:
+          if (newLineElement.textContent === "") {
+            newLineElement.prepend("Home");
+          }
+          newLineElement.prepend("Article Navigation\n");
+          newLineElement.append("\n");
+          return;
+        case necessaryAriaLabels[2]:
+          newLineElement.querySelector("h2")!.textContent =
+            "Reference Navigation";
+          newLineElement.append("\n");
+          return;
+        case necessaryAriaLabels[3]:
+          newLineElement.prepend("Page Navigation\n");
+          newLineElement.append("\n");
+          return;
+        default:
+          return;
+      }
+    }
+
+    if (newLineElement.localName === "article") {
+      newLineElement.prepend("Article\n");
+      newLineElement.append("\n");
+      return;
+    }
+
+    if (newLineElement.localName === "p") {
+      // JetBrains WebStorm Plugins
+      if (
+        newLineElement.childElementCount === 1 &&
+        newLineElement.children[0].localName === "svg"
+      ) {
+        newLineElement.textContent = newLineElement.children[0].ariaLabel ?? "";
+      }
+
+      newLineElement.append("\n");
+      return;
+    }
+
+    if (newLineElement.localName === "li") {
+      if (newLineElement.querySelector("a")) {
+        newLineElement.append("\n");
+      }
+      return;
+    }
+
+    if (newLineElement.classList.contains("complex-code-container")) {
+      newLineElement.querySelector("span")?.append("\n");
+      newLineElement.querySelector("button")?.remove();
+      newLineElement.prepend("```code\n");
+      newLineElement.append("```\n");
+      return;
+    }
+
+    if (newLineElement.localName === "table") {
+      newLineElement.prepend("```table\n");
+      newLineElement.append("```\n");
+      return;
+    }
+
+    newLineElement.append("\n"); // header, h1, h2, h3, br, caption, tr
+  });
+
+  let formattedText = tempDiv.textContent;
+
+  const lines = [];
+  let isCodeBlock = false;
+  for (const line of formattedText.split("\n")) {
+    const trimmedLine = line.trim();
+
+    if (!isCodeBlock && trimmedLine === "```code") {
+      isCodeBlock = true;
+      lines.push(line);
+      continue;
+    }
+
+    if (isCodeBlock && trimmedLine === "```") {
+      isCodeBlock = false;
+      lines.push(line);
+      continue;
+    }
+
+    if (isCodeBlock) {
+      lines.push(line);
+    } else {
+      lines.push(trimmedLine);
+    }
+  }
+
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i].endsWith("#") && lines[i - 1] !== "") {
+      lines[i - 1] += "\n";
+    }
+  }
+
+  formattedText = lines.join("\n");
+
+  formattedText = formattedText.trim();
+
+  formattedText = formattedText.replace(
+    /(```code[\s\S]*?```)|((\n\s*){2,})/g,
+    (_, codeBlock) => {
+      if (codeBlock) {
+        return codeBlock;
+      }
+
+      return "\n\n";
+    },
+  );
+
+  return formattedText;
+}
