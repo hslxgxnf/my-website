@@ -38,7 +38,7 @@ export default function HighlightComplexCode({
         setIsProcessing(false);
       }, 1000);
     } catch (error) {
-      console.error(`Could not copy due to ${error}.`);
+      console.error(`Failed to copy: ${error}.`);
     }
   }
 

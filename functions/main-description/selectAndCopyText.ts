@@ -15,6 +15,6 @@ export default async function selectAndCopyText(element: HTMLElement) {
   try {
     await navigator.clipboard.writeText(text);
   } catch (error) {
-    console.error(`Could not copy due to ${error}.`);
+    console.error(`Failed to copy: ${error}.`);
   }
 }
