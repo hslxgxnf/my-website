@@ -37,6 +37,5 @@ def move_all_zeroes_to_end(arr: list[Numeric]) -> list[Numeric]:
 print(move_all_zeroes_to_end([1, 2, 0, 4, 3, 0, 5, 0]))
 print(move_all_zeroes_to_end([0, 0, 0, 3, 1, 4]))
 print(move_all_zeroes_to_end([10, 20, 30]))
-print(move_all_zeroes_to_end([0, 0]))
-`,
+print(move_all_zeroes_to_end([0, 0]))`,
 };

@@ -22,6 +22,5 @@ export const code: Code = {
 <!-- 
  Multiline
  Comment
--->
-`,
+-->`,
 };

@@ -70,6 +70,5 @@ def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]
 
 
 print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5, 6], 2))
-print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5], 4))
-`,
+print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5], 4))`,
 };

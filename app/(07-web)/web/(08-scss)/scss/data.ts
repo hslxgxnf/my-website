@@ -33,8 +33,7 @@ export const commentsCode: Code = {
 /*
  * Multiline
  * Comment
- */
-`,
+ */`,
 };
 
 export const variablesCode: Code = {
@@ -48,8 +47,7 @@ html {
 p {
   $color-second: pink;
   color: $color-second;
-}
-`,
+}`,
 };
 
 export const forCode: Code = {
@@ -66,6 +64,5 @@ export const forCode: Code = {
   .to:nth-child(#{$i}) {
     width: 20px * $i;
   }
-}
-`,
+}`,
 };

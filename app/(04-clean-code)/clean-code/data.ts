@@ -32,8 +32,7 @@ function printUserInfo2(user: UserData) {
   console.log(\`Name: \${user.name}, Age: \${user.age}\`);
 }
 
-printUserInfo2({ age: 30, name: "John" });
-`,
+printUserInfo2({ age: 30, name: "John" });`,
 };
 
 export const lawOfDemeterCode: Code = {
@@ -42,6 +41,5 @@ export const lawOfDemeterCode: Code = {
 const userAddress = user.getWallet().getCard().getAddress();
 
 // ⭕
-const userAddress = user.getAddress();
-`,
+const userAddress = user.getAddress();`,
 };

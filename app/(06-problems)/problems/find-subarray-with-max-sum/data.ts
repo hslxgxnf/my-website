@@ -45,6 +45,5 @@ def find_max_sum_subarray(arr: list[Numeric]) -> list[Numeric]:
 
 print(find_max_sum_subarray([2, 3, -8, 7, -1, 2, 3]))
 print(find_max_sum_subarray([-2, -4]))
-print(find_max_sum_subarray([5, 4, 1, 7, 8]))
-`,
+print(find_max_sum_subarray([5, 4, 1, 7, 8]))`,
 };

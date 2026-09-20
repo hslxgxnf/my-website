@@ -27,6 +27,5 @@ export const code: Code = {
 /*!
  * This comment is still maintained after deployment minification.
  * It is used for essential information that must be preserved, such as copyrights or licenses.
- */
-`,
+ */`,
 };

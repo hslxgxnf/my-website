@@ -132,7 +132,7 @@ export default function copyRange(range?: Range): string {
       newLineElement.querySelector("span")?.append("\n");
       newLineElement.querySelector("button")?.remove();
       newLineElement.prepend("```code\n");
-      newLineElement.append("```\n");
+      newLineElement.append("\n```\n");
       return;
     }
 

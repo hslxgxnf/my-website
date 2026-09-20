@@ -41,6 +41,5 @@ def reverse_array_two_pointers(arr: list[Numeric]) -> list[Numeric]:
 
 print(reverse_array_single_pointer([1, 4, 3, 2, 6, 5]))
 print(reverse_array_single_pointer([4, 5, 2]))
-print(reverse_array_single_pointer([1]))
-`,
+print(reverse_array_single_pointer([1]))`,
 };

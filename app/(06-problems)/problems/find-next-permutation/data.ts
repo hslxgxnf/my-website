@@ -50,6 +50,5 @@ def find_next_permutation(arr: list[Numeric]) -> list[Numeric]:
 
 print(find_next_permutation([2, 4, 1, 7, 5, 0]))
 print(find_next_permutation([3, 4, 2, 5, 1]))
-print(find_next_permutation([3, 2, 1]))
-`,
+print(find_next_permutation([3, 2, 1]))`,
 };

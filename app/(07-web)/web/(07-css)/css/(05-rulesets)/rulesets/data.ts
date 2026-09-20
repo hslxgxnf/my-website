@@ -27,6 +27,5 @@ h2 {
   color: black;
   font-weight: bold;
   font-size: 3rem;
-}
-`,
+}`,
 };

@@ -157,6 +157,5 @@ export const code: Code = {
     </ul>
   </li>
   <li>List 2</li>
-</ul>
-`,
+</ul>`,
 };

@@ -37,6 +37,5 @@ def find_second_largest_number(arr: list[Numeric]) -> Numeric:
 
 print(find_second_largest_number([12, 35, 1, 10, 34, 1]))
 print(find_second_largest_number([10, 5, 10]))
-print(find_second_largest_number([10, 10, 10]))
-`,
+print(find_second_largest_number([10, 10, 10]))`,
 };
