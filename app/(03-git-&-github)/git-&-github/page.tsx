@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
-import { reference, gitCommitMessageCode, gitHookCode } from "./data";
+import {
+  reference,
+  gitCommitMessageCode,
+  gitHookCommitMsgCode,
+  gitHookPrePushCode,
+} from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
+import ToggleList from "@/components/main-description/ToggleList";
 
 export const metadata: Metadata = {
   title: "Git & GitHub",
@@ -234,7 +240,8 @@ export default function Page() {
                       <Highlight type="text">style</Highlight>,{" "}
                       <Highlight type="text">docs</Highlight>,{" "}
                       <Highlight type="text">test</Highlight>,{" "}
-                      <Highlight type="text">build</Highlight>, etc.
+                      <Highlight type="text">build</Highlight>,{" "}
+                      <Highlight type="text">content</Highlight>, etc.
                     </p>
                     <p>
                       <Highlight type="text">&lt;summary&gt;</Highlight> should
@@ -670,18 +677,57 @@ export default function Page() {
           </p>
           <p>
             <Highlight type="text">Git Hooks</Highlight> are custom scripts that
-            trigger actions whenever a specified event occurs. They are divided
-            into client-side hooks and server-side hooks.
+            trigger actions when a specified event occurs. They are divided into
+            client-side hooks and server-side hooks.
           </p>
-          <p>
-            <Highlight type="text">commit-msg</Highlight> is a client-side hook
-            that runs right after the commit message is created, allowing for
-            its validation.
-            <br />
-            The following code creates a custom modal box that checks if the
-            commit message contains <Highlight type="text">content</Highlight>.
-          </p>
-          <Highlight type="complex-code">{gitHookCode}</Highlight>
+          <ul>
+            <ToggleList
+              summary={
+                <p>
+                  <Highlight type="text">commit-msg</Highlight>
+                </p>
+              }
+              content={
+                <>
+                  <p>
+                    The following code creates a custom{" "}
+                    <Highlight type="text">Windows</Highlight> modal dialog that
+                    checks if the commit message contains the{" "}
+                    <Highlight type="text">content</Highlight> type, prompting
+                    the user to confirm whether the{" "}
+                    <Highlight type="simple-code">lastUpdated</Highlight> prop
+                    was updated.
+                  </p>
+                  <Highlight type="complex-code">
+                    {gitHookCommitMsgCode}
+                  </Highlight>
+                </>
+              }
+            />
+            <ToggleList
+              summary={
+                <p>
+                  <Highlight type="text">pre-push</Highlight>
+                </p>
+              }
+              content={
+                <>
+                  <p>
+                    The following code creates a custom{" "}
+                    <Highlight type="text">Windows</Highlight> modal dialog that
+                    checks if the commit messages to push contain the{" "}
+                    <Highlight type="text">content</Highlight> type, prompting
+                    the user to confirm whether the{" "}
+                    <Highlight type="text">search/pages</Highlight> folder was
+                    updated.
+                  </p>
+                  <Highlight type="complex-code">
+                    {gitHookPrePushCode}
+                  </Highlight>
+                </>
+              }
+            />
+          </ul>
         </section>
         <section>
           <RefButton>
