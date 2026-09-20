@@ -1,0 +1,46 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+DSA
+Queue
+
+Reference Navigation
+Queue
+GeeksforGeeks | Queue Data Structure
+Double-Ended Queue (Deque)
+GeeksforGeeks | Deque Data Structure
+Priority Queue
+GeeksforGeeks | Heap Data Structure
+
+Article
+Queue # [Last Updated: September 14, 2026]
+FIFO (First In, First Out)
+Access at the front and back is $\mathcal{O}(1)$.
+Insertion at the back is $\mathcal{O}(1)$, and deletion at the front is $\mathcal{O}(1)$.
+Types: Simple Queue, Double-Ended Queue (Deque), Priority Queue
+
+Double-Ended Queue (Deque) #
+Insertion and deletion at both ends are $\mathcal{O}(1)$.
+
+Priority Queue #
+Arranges elements based on priority, not insertion order.
+Typically implemented with a binary heap.
+Access to the highest-priority element is $\mathcal{O}(1)$.
+Insertion is $\mathcal{O}(\log n)$ due to priority rearrangement.
+Deletion of the highest-priority element is $\mathcal{O}(\log n)$ due to priority rearrangement.
+
+Page Navigation
+On this page
+Queue
+Double-Ended Queue (Deque)
+Priority Queue
+
+© 2026 HSLee Dev

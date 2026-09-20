@@ -1,0 +1,19 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+IDE Settings
+
+Article
+IDE Settings [Last Updated: September 20, 2026]
+JetBrains WebStorm
+JetBrains PyCharm
+
+© 2026 HSLee Dev

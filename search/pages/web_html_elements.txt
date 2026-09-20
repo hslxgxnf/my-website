@@ -1,0 +1,189 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+HTML
+Elements
+
+Reference Navigation
+Elements
+MDN | Element
+MDN | Tag
+MDN | HTML elements reference
+Void Elements
+MDN | Void element
+MDN | The <label>, <input>, and <textarea> elements
+Content Categories
+MDN | Content categories
+<dialog>
+MDN | <dialog>: The Dialog element
+MDN | HTMLDialogElement
+<form>
+MDN | <form>: The Form element
+W3Schools | HTML <form> method Attribute
+YouTube | 8-2. Form 태그 요청의 처리 - GET, POST
+<table>
+MDN | <table>: The Table element
+MDN | HTML table basics
+MDN | HTML table accessibility
+MDN | Styling tables
+<a>
+Attributes | rel="noopener"
+
+Article
+Elements # [Last Updated: July 20, 2026]
+
+Normal Elements #
+<Opening Tag>Nested Content</Closing Tag>
+Normal elements can have nested elements and text nodes.
+Nested Content sets the default value (e.g., <textarea>Default</textarea>).
+
+Void Elements #
+<Tag />
+The trailing slash is not required, but it makes XHTML-compatible and more readable.
+Void elements cannot have nested elements and text nodes.
+The value attribute sets the default value (e.g., <input value="Default" />).
+
+Content Categories #
+<!doctype html>
+<html>
+<head>
+<meta>
+<title>
+<link>
+External CSS, Favicon
+<style>
+Internal CSS
+<script> <noscript>
+Can be nested in the <body> element.
+<body>
+<header>
+<main>
+<footer>
+<aside>
+<nav>
+<article>
+Independent Content
+<section>
+Semantic Block Grouping
+<div>
+Non-Semantic Block Grouping
+<span>
+Non-Semantic Inline Grouping
+<dialog>
+Creates a modal or non-modal dialog.
+The open attribute is a boolean attribute that controls the visibility of a dialog. Rather than manipulating this attribute directly in HTML, it is recommended to use the JavaScript methods: HTMLDialogElement: showModal(), HTMLDialogElement: show(), and HTMLDialogElement: close().
+HTMLDialogElement: showModal() opens a modal dialog, whereas HTMLDialogElement: show() opens a non-modal dialog. Lastly, HTMLDialogElement: close() closes the dialog regardless of how it was opened.
+The closedby attribute controls how a dialog can be closed.
+The any value closes a dialog by clicking the backdrop, pressing Esc, or a developer-specified mechanism.
+The closerequest value closes a dialog by pressing Esc or a developer-specified mechanism. This option is the default for modal dialogs.
+The none value closes a dialog only by a developer-specified mechanism. This option is the default for non-modal dialogs.
+<form>
+The action attribute defines a URL to which form data will be submitted. After submission, the current URL will be updated to the defined URL.
+The method="get" attribute sends form data as a query string after the existing URL.
+<fieldset> <legend>
+<label>
+<input>
+<button>
+<datalist> <select> <optgroup> <option>
+<textarea>
+<output>
+<table>
+<caption>
+Must be the first child of its parent <table> element.
+<colgroup>
+Column Group
+The span attribute can be used when the <colgroup> has no <col> elements.
+<col>
+Column
+The span attribute can be used when its parent <colgroup> element does not have the span attribute.
+<thead>
+Table Head
+<tbody>
+Table Body
+<tfoot>
+Table Foot
+<tr>
+Table Row
+<th>
+Table Header
+Attributes: scope headers rowspan colspan aria-sort
+<td>
+Table Data
+Attributes: headers rowspan colspan
+<hgroup>
+<h1>~<h6>
+<p>
+<strong> <b>
+Bold
+<em> <i>
+Italic
+<s>
+Strikethrough
+<mark>
+Highlight
+<del> <ins>
+Delete and Insert
+<small>
+<var> <sub> <sup>
+Variable
+<kbd>
+Keyboard
+<samp>
+Program Sample Output
+<pre> <code>
+<bdo> <bdi>
+<hr> <br>
+<ul> <ol> <li>
+When creating nested lists, any nested <ul> or <ol> must be placed inside <li>.
+```code
+HTML
+<!-- ❌ -->
+<ul>
+  <li>List 1</li>
+  <ul>
+    <li>Sub-List 1</li>
+    <li>Sub-List 2</li>
+  </ul>
+  <li>List 2</li>
+</ul>
+
+<!-- ✅ -->
+<ul>
+  <li>
+    List 1
+    <ul>
+      <li>Sub-List 1</li>
+      <li>Sub-List 2</li>
+    </ul>
+  </li>
+  <li>List 2</li>
+</ul>
+```
+<dl> <dt> <dd>
+<details> <summary>
+<data> <time>
+<a>
+<figure> <figcaption>
+<img> <map>
+<area><picture> <source>
+<video> <source>
+<audio> <source>
+<iframe>
+
+Page Navigation
+On this page
+Elements
+Normal Elements
+Void Elements
+Content Categories
+
+© 2026 HSLee Dev

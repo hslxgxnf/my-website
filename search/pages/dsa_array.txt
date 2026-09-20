@@ -1,0 +1,26 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+DSA
+Array
+
+Reference Navigation
+Array
+GeeksforGeeks | Array Data Structure
+
+Article
+Array # [Last Updated: September 14, 2026]
+Access by index is $\mathcal{O}(1)$.
+While insertion and deletion at the end are $\mathcal{O}(1)$, those at arbitrary positions are $\mathcal{O}(n)$ due to element shifting.
+Types by Size: Fixed-Size Array, Dynamic-Size Array
+Types by Dimension: One-Dimensional Array, Multi-Dimensional Array
+
+© 2026 HSLee Dev

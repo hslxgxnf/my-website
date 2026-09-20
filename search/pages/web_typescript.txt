@@ -1,0 +1,18 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+TypeScript
+
+Article
+TypeScript # [Last Updated: July 14, 2026]
+
+© 2026 HSLee Dev

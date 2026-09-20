@@ -1,0 +1,34 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+CSS
+Declarations
+Property Vendor Prefixes
+
+Reference Navigation
+Property Vendor Prefixes
+MDN | Vendor prefix
+
+Article
+Property Vendor Prefixes # [Last Updated: February 20, 2026]
+-webkit-
+Almost All Browsers
+-moz-
+Firefox
+-o-
+Old Opera
+-ms-
+Old Edge and IE
+
+Page Navigation
+
+© 2026 HSLee Dev

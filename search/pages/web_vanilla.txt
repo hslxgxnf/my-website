@@ -1,0 +1,24 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+Vanilla
+
+Reference Navigation
+Vanilla
+MDN | JavaScript
+JAVASCRIPT.INFO | The Modern JavaScript Tutorial
+
+Article
+Vanilla [Last Updated: September 20, 2026]
+Properties & Methods
+
+© 2026 HSLee Dev

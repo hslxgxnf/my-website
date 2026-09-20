@@ -1,0 +1,87 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+IDE Settings
+JetBrains PyCharm
+
+Reference Navigation
+Appearance & Behavior
+JetBrains WebStorm | Appearance & Behavior
+Keymap
+JetBrains WebStorm | Keymap
+Plugins
+JetBrains WebStorm | Plugins
+Tools
+Windows | Oh My Posh
+Backup and Sync
+JetBrains WebStorm | Backup and Sync
+Rainbow Brackets
+JetBrains WebStorm | Rainbow Brackets
+
+Article
+JetBrains PyCharm # [Last Updated: July 22, 2026]
+Settings prefixed with ! are only applied to the current project. They have to be set again for other projects.
+
+Python #
+```table
+Left Section | Right Section | Value
+! Tools ↪ Black | Use Black formatter: On save | ☑
+```
+
+Appearance & Behavior #
+
+Keymap #
+
+Editor #
+```table
+Left Section | Right Section | Value
+General ↪ Code Completion ↪ Popup | Match case: | ☐
+General ↪ Editor Tabs | Appearance ↪ Tab placement: | Left
+General ↪ Editor Tabs | Appearance ↪ Mark modified | ☑
+Inlay Hints | Parameter names | ☐
+Inlay Hints | Types | ☐
+```
+
+Plugins #
+
+Tools #
+```table
+Left Section | Right Section | Value
+! Actions on Save | Run Black | ☑
+! Terminal | Font Settings ↪ Font: | MesloLGM Nerd Font
+```
+
+Backup and Sync #
+
+Advanced Settings #
+```table
+Left Section | Right Section | Value
+X | Run/Debug ↪ Confirm rerun with process termination | ☐
+X | Version Control ↪ Open Diff as Editor Tab | ☐
+X | Welcome Screen ↪ Show the Welcome screen in non-modal mode termination | ☐
+```
+
+Rainbow Brackets #
+
+Page Navigation
+On this page
+JetBrains PyCharm
+Python
+Appearance & Behavior
+Keymap
+Editor
+Plugins
+Tools
+Backup and Sync
+Advanced Settings
+Rainbow Brackets
+
+© 2026 HSLee Dev

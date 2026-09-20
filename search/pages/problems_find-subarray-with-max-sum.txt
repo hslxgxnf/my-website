@@ -1,0 +1,81 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Problems
+Find Subarray with Max Sum
+
+Reference Navigation
+Find Subarray with Max Sum
+GeeksforGeeks | Print subarray with maximum sum
+
+Article
+Find Subarray with Max Sum # [Last Updated: July 13, 2026]
+
+Problem #
+Given an array. Find the subarray with the max sum containing at least one element.
+
+Examples #
+[2, 3, -8, 7, -1, 2, 3] ➜ [7, -1, 2, 3]
+[-2, -4] ➜ [-2]
+[5, 4, 1, 7, 8] ➜ [5, 4, 1, 7, 8]
+
+Constraints #
+1 ≤ arr.size() ≤ 10⁵
+-10⁴ ≤ arr[i] ≤ 10⁴
+
+Expected Complexities #
+Time Complexity: $\mathcal{O}(n)$
+Auxiliary Space: $\mathcal{O}(n)$
+
+Solution #
+```code
+Python
+Numeric = int | float
+
+
+def find_max_sum_subarray(arr: list[Numeric]) -> list[Numeric]:
+    current_sum: Numeric = arr[0]
+    max_sum: Numeric = arr[0]
+
+    current_start_index: int = 0
+    max_sum_start_index: int = 0
+    max_sum_end_index: int = 0
+
+    for i in range(1, len(arr)):
+        if current_sum < 0:
+            current_sum = arr[i]
+            current_start_index = i
+        else:
+            current_sum += arr[i]
+
+        if current_sum > max_sum:
+            max_sum = current_sum
+            max_sum_start_index = current_start_index
+            max_sum_end_index = i
+
+    return arr[max_sum_start_index : max_sum_end_index + 1]
+
+
+print(find_max_sum_subarray([2, 3, -8, 7, -1, 2, 3]))
+print(find_max_sum_subarray([-2, -4]))
+print(find_max_sum_subarray([5, 4, 1, 7, 8]))
+```
+
+Page Navigation
+On this page
+Find Subarray with Max Sum
+Problem
+Examples
+Constraints
+Expected Complexities
+Solution
+
+© 2026 HSLee Dev

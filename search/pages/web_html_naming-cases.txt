@@ -1,0 +1,37 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+HTML
+Naming Cases
+
+Article
+Naming Cases # [Last Updated: July 21, 2026]
+
+Elements #
+Element tags are case-insensitive, but using lowercase is recommended.
+
+Attribute Names #
+Attribute names are case-insensitive, but using lowercase or kebab-case is recommended (e.g., tabindex, popover-target).
+Custom attribute names are case-insensitive, but using kebab-case is recommended. They must start with data- (e.g., data-is-clicked).
+
+Attribute Values #
+Enumerated attribute values are case-insensitive, but using lowercase or kebab-case is recommended (e.g., formaction, user-credentials).
+Non-enumerated attribute values are case-sensitive, and using kebab-case is recommended (e.g., id="target-container").
+
+Page Navigation
+On this page
+Naming Cases
+Elements
+Attribute Names
+Attribute Values
+
+© 2026 HSLee Dev

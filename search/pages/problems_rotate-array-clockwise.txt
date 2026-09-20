@@ -1,0 +1,100 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Problems
+Rotate Array Clockwise
+
+Reference Navigation
+Rotate Array Clockwise
+GeeksforGeeks | Rotate Array Clockwise
+GeeksforGeeks | Juggling Algorithm for Array Rotation
+
+Article
+Rotate Array Clockwise # [Last Updated: July 13, 2026]
+
+Problem #
+Given an array. Rotate the array clockwise by d steps, where d is a positive integer. Consider the array as circular. Do the mentioned change in the array in place.
+
+Examples #
+[1, 2, 3, 4, 5, 6], 2 ➜ [5, 6, 1, 2, 3, 4]
+[1, 2, 3, 4, 5], 4 ➜ [2, 3, 4, 5, 1]
+
+Constraints #
+1 ≤ arr.size(), d ≤ 10⁵
+0 ≤ arr[i] ≤ 10⁵
+
+Expected Complexities #
+Time Complexity: $\mathcal{O}(n)$
+Auxiliary Space: $\mathcal{O}(1)$
+
+Solution #
+```code
+Python
+Numeric = int | float
+
+
+def rotate_array_clockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]:
+    n: int = len(arr)
+    d %= n
+
+    def reverse(start_index: int, end_index: int) -> None:
+        while start_index < end_index:
+            arr[start_index], arr[end_index] = arr[end_index], arr[start_index]
+            start_index += 1
+            end_index -= 1
+
+    reverse(0, n - d - 1)
+    reverse(n - d, n - 1)
+    reverse(0, n - 1)
+
+    return arr
+
+
+import math
+
+
+def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]:
+    n: int = len(arr)
+    d %= n
+    cycles: int = math.gcd(n, d)
+
+    for i in range(cycles):
+        start = arr[i]
+        current_index = i
+
+        while True:
+            next_index = (current_index - d) % n
+
+            if next_index == i:
+                break
+
+            arr[current_index] = arr[next_index]
+            current_index = next_index
+
+        arr[current_index] = start
+
+    return arr
+
+
+print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5, 6], 2))
+print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5], 4))
+```
+
+Page Navigation
+On this page
+Rotate Array Clockwise
+Problem
+Examples
+Constraints
+Expected Complexities
+Solution
+
+© 2026 HSLee Dev

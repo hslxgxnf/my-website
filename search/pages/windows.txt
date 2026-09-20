@@ -1,0 +1,149 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Windows
+
+Reference Navigation
+Oh My Posh
+Oh My Posh
+JetBrains WebStorm | Tools
+JetBrains PyCharm | Tools
+PowerRename
+Microsoft | PowerRename utility for Windows
+YouTube | How to use Windows PowerToys' PowerRename utility
+
+Article
+Windows # [Last Updated: September 14, 2026]
+
+PowerShell #
+
+Suggestion Tab #
+Open Microsoft.PowerShell_profile.ps1.
+notepad $PROFILE
+If it doesn't exist, create it. New-Item -Path $PROFILE -Type File -Force
+Modify Microsoft.PowerShell_profile.ps1.
+```code
+PowerShell | Microsoft.PowerShell_profile.ps1
+# Press the Tab key to accept the cloudy gray suggestion.
+Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestion
+```
+If the version of PSReadLine is outdated, errors can occur. Upgrade it. Install-Module PSReadLine -Force -AllowClobber
+Refresh Microsoft.PowerShell_profile.ps1.
+. $PROFILE
+
+Oh My Posh #
+Install Oh My Posh.
+winget install JanDeDobbeleer.OhMyPosh --source winget
+Install a font.
+oh-my-posh font install meslo
+Set the installed font as the PowerShell default font.
+MesloLGM Nerd Font
+Apply Oh My Posh.
+Open Microsoft.PowerShell_profile.ps1.
+notepad $PROFILE
+Modify Microsoft.PowerShell_profile.ps1.
+```code
+PowerShell | Microsoft.PowerShell_profile.ps1
+# Find your local configuration file.
+$MyThemePath = Join-Path (Split-Path $PROFILE) "cert.omp.json"
+oh-my-posh init pwsh --config $MyThemePath | Invoke-Expression
+```
+Create cert.omp.json in the same directory as Microsoft.PowerShell_profile.ps1.
+```code
+JSON | cert.omp.json
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#E36464",
+          "foreground": "#fff",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": "{{ .UserName }} ",
+          "trailing_diamond": "",
+          "type": "session"
+        },
+        {
+          "background": "green",
+          "foreground": "#fff",
+          "leading_diamond": "",
+          "options": {
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": " {{ .Path }} ",
+          "trailing_diamond": "",
+          "type": "path"
+        },
+        {
+          "background": "lightCyan",
+          "foreground": "#fff",
+          "leading_diamond": "",
+          "options": {
+            "branch_icon": ""
+          },
+          "style": "diamond",
+          "template": " git({{ .HEAD }}) ",
+          "trailing_diamond": "",
+          "type": "git"
+        },
+        {
+          "background": "lightMagenta",
+          "foreground": "#fff",
+          "leading_diamond": "",
+          "options": {
+            "time_format": "15:04"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#fff",
+          "style": "plain",
+          "template": "\n❯",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 4
+}
+```
+Refresh Microsoft.PowerShell_profile.ps1.
+. $PROFILE
+
+PowerToys #
+
+PowerRename #
+
+Page Navigation
+On this page
+Windows
+PowerShell
+Suggestion Tab
+Oh My Posh
+PowerToys
+PowerRename
+
+© 2026 HSLee Dev

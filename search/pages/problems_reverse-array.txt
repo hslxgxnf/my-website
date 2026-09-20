@@ -1,0 +1,77 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Problems
+Reverse Array
+
+Reference Navigation
+Reverse Array
+GeeksforGeeks | Reverse an Array
+
+Article
+Reverse Array # [Last Updated: July 13, 2026]
+
+Problem #
+Given an array. Reverse the array in place.
+
+Examples #
+[1, 4, 3, 2, 6, 5] ➜ [5, 6, 2, 3, 4, 1]
+[4, 5, 2] ➜ [2, 5, 4]
+[1] ➜ [1]
+
+Constraints #
+1 ≤ arr.size() ≤ 10⁵
+0 ≤ arr[i] ≤ 10⁵
+
+Expected Complexities #
+Time Complexity: $\mathcal{O}(n)$
+Auxiliary Space: $\mathcal{O}(1)$
+
+Solution #
+```code
+Python
+Numeric = int | float
+
+
+def reverse_array_single_pointer(arr: list[Numeric]) -> list[Numeric]:
+    for i in range(0, len(arr) // 2):
+        arr[i], arr[-1 - i] = arr[-1 - i], arr[i]
+
+    return arr
+
+
+def reverse_array_two_pointers(arr: list[Numeric]) -> list[Numeric]:
+    left_index: int = 0
+    right_index: int = len(arr) - 1
+
+    while left_index < right_index:
+        arr[left_index], arr[right_index] = arr[right_index], arr[left_index]
+        left_index += 1
+        right_index -= 1
+
+    return arr
+
+
+print(reverse_array_single_pointer([1, 4, 3, 2, 6, 5]))
+print(reverse_array_single_pointer([4, 5, 2]))
+print(reverse_array_single_pointer([1]))
+```
+
+Page Navigation
+On this page
+Reverse Array
+Problem
+Examples
+Constraints
+Expected Complexities
+Solution
+
+© 2026 HSLee Dev

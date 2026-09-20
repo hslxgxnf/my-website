@@ -1,0 +1,49 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+npm
+
+Reference Navigation
+npm
+npm
+
+Article
+npm # [Last Updated: June 13, 2026]
+npm manages Node.js packages.
+npm init
+Initializes a project and creates package.json through interactive prompts.
+npm init --yes (-y)
+Initializes a project, skips interactive prompts, and creates package.json with default values.
+npm install (i)
+Installs packages in package.json.
+npm install (i) <package-names>
+Installs the specified packages into dependencies.
+npm install (i) --save-dev (-D) <package-names>
+Installs the specified packages into devDependencies.
+npm install (i) --global (-g) <package-names>
+Installs the specified packages globally.
+npm list (ls)
+Lists installed packages.
+npm list (ls) <package-names>
+Lists installed packages related to the specified packages.
+npm uninstall (un) <package-names>
+Uninstalls the specified packages.
+npm run
+Lists scripts.
+npm run <script-name>
+Runs the specified script.
+npm root
+Shows the absolute path to node_modules.
+
+Page Navigation
+
+© 2026 HSLee Dev

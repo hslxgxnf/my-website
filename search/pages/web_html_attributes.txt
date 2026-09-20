@@ -1,0 +1,116 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+HTML
+Attributes
+
+Reference Navigation
+Attributes
+MDN | Attribute
+MDN | HTML attribute reference
+MDN | Global attributes
+Enumerated Attributes
+MDN | Enumerated
+Custom Attributes
+MDN | Use data attributes
+MDN | HTML data-* global attribute
+MDN | HTMLElement: dataset property
+JAVASCRIPT.INFO | Attributes and properties
+Boolean Attributes
+MDN | Boolean attribute (HTML)
+Attribute Reflection
+MDN | Attribute reflection
+JAVASCRIPT.INFO | Attributes and properties
+rel="noopener"
+Stack Overflow | Link with target="_blank" and rel="noopener noreferrer" still vulnerable?
+tistory | [HTML] noopener noreferrer란?
+MDN | rel="noopener"
+MDN | rel="noreferrer"
+Elements | <a>
+aria-*
+MDN | ARIA states and properties (attributes)
+role
+MDN | WAI-ARIA Roles
+
+Article
+Attributes # [Last Updated: September 03, 2026]
+An attribute provides additional information to its element.
+An attribute is written as name="value" inside the opening tag of an element.
+
+Enumerated Attributes #
+An enumerated attribute accepts a predefined set of values.
+```code
+HTML
+<input type="text" />
+<input type="password" />
+<input type="email" />```
+
+Custom Attributes #
+HTML data-* ⇄ JavaScript HTMLElement.dataset
+```code
+HTML
+<div data-weight="100">Box</div>```
+```code
+TypeScript
+const div = document.querySelector<HTMLDivElement>("div");
+console.log(div?.dataset.weight); // "100"```
+
+Boolean Attributes #
+A boolean attribute is determined solely by its presence or absence. When the attribute is present, it is considered true; when it is absent, it is considered false. The actual value assigned does not matter.
+```code
+HTML
+<!-- All checkboxes will be checked. -->
+<input type="checkbox" checked />
+<input type="checkbox" checked="" />
+<input type="checkbox" checked="true" />
+<input type="checkbox" checked="false" />```
+
+Attribute Reflection #
+HTML Attributes are reflected in corresponding JavaScript properties.
+
+Examples #
+id
+Elements cannot share the same id value.
+class
+Elements can share the same class value and have multiple class values.
+```code
+HTML
+<div class="common"></div>
+<div class="common another"></div>```
+title
+Displays a tooltip on mouse hover.
+rel
+rel="noopener"
+rel="noreferrer"
+Contains rel="noopener".
+aria-*
+aria-label
+aria-hidden
+aria-disabled
+aria-checked
+aria-pressed
+aria-sort
+aria-expanded
+aria-controls
+aria-current
+role
+
+Page Navigation
+On this page
+Attributes
+Enumerated Attributes
+Custom Attributes
+Boolean Attributes
+Attribute Reflection
+Examples
+
+© 2026 HSLee Dev

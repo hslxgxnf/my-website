@@ -1,0 +1,39 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+npm-check-updates
+
+Reference Navigation
+npm-check-updates
+npm | npm-check-updates
+
+Article
+npm-check-updates # [Last Updated: June 13, 2026]
+npm-check-updates manages the versions of installed packages in package.json.
+npm i -g npm-check-updates
+ncu
+Checks for the latest versions of installed packages in dependencies, devDependencies, peerDependencies, optionalDependencies, and packageManager.
+ncu --upgrade (-u)
+Only upgrades the versions in package.json to the latest versions. It does not upgrade package-lock.json or node_modules. To upgrade them, run npm i.
+ncu --interactive (-i)
+Runs in interactive mode to choose which packages to upgrade.
+Options
+--target (-t) <version-name>
+Scopes packages to the specified version.
+--dep <section-names>
+Scopes packages to the specified dependency sections.
+--global (-g)
+Scopes global packages.
+
+Page Navigation
+
+© 2026 HSLee Dev

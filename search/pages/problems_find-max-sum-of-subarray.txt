@@ -1,0 +1,72 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Problems
+Find Max Sum of Subarray
+
+Reference Navigation
+Find Max Sum of Subarray
+GeeksforGeeks | Kadane's Algorithm
+
+Article
+Find Max Sum of Subarray # [Last Updated: July 13, 2026]
+
+Problem #
+Given an array. Find the max sum of a subarray containing at least one element.
+
+Examples #
+[2, 3, -8, 7, -1, 2, 3] ➜ 11
+The subarray [7, -1, 2, 3] has the largest sum.
+[-2, -4] ➜ -2
+The subarray [-2] has the largest sum.
+[5, 4, 1, 7, 8] ➜ 25
+The subarray [5, 4, 1, 7, 8] has the largest sum.
+
+Constraints #
+$1 \le \text{Array Size} \le 10^5$
+$-10^4 \le \text{Array Element} \le 10^4$
+
+Expected Complexities #
+Time Complexity: $\mathcal{O}(n)$
+Auxiliary Space: $\mathcal{O}(1)$
+
+Solution #
+```code
+Python
+Numeric = int | float
+
+
+def find_max_subarray_sum(arr: list[Numeric]) -> Numeric:
+    current_sum: Numeric = arr[0]
+    max_sum: Numeric = arr[0]
+
+    for i in range(1, len(arr)):
+        current_sum = max(current_sum + arr[i], arr[i])
+        max_sum = max(max_sum, current_sum)
+
+    return max_sum
+
+
+print(find_max_subarray_sum([2, 3, -8, 7, -1, 2, 3]))
+print(find_max_subarray_sum([-2, -4]))
+print(find_max_subarray_sum([5, 4, 1, 7, 8]))
+```
+
+Page Navigation
+On this page
+Find Max Sum of Subarray
+Problem
+Examples
+Constraints
+Expected Complexities
+Solution
+
+© 2026 HSLee Dev

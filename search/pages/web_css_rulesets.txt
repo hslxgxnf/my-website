@@ -1,0 +1,42 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+CSS
+Rulesets
+
+Reference Navigation
+Rulesets
+MDN | Introduction to CSS syntax: declarations, rulesets, and statements
+
+Article
+Rulesets # [Last Updated: July 21, 2026]
+A ruleset consists of a selector (or a group of selectors) paired with a declaration block.
+A declaration block {} contains one or more declarations.
+A declaration Property: Value; sets a value for a property.
+Declarations must end with a semicolon, except for the last one. Adding a semicolon to it is recommended, though.
+```code
+CSS
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  color: black;
+  font-weight: bold;
+  font-size: 3rem;
+}
+```
+
+Page Navigation
+
+© 2026 HSLee Dev

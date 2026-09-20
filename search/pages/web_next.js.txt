@@ -1,0 +1,23 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+Next.js
+
+Reference Navigation
+Next.js
+Next.js
+Udemy | Next.js & React - The Complete Guide
+
+Article
+Next.js # [Last Updated: June 26, 2026]
+
+© 2026 HSLee Dev

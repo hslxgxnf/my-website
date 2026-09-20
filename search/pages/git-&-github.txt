@@ -1,0 +1,242 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Git & GitHub
+
+Reference Navigation
+Git & GitHub
+Git
+GitHub
+GitHub Docs
+git commit --message (-m) <summary> --message (-m) <description>
+Naver Blog | git commit 할 때 description 추가하기
+Medium | The Art of Writing Meaningful Git Commit Messages
+GitHub Actions
+GitHub Docs | GitHub Actions documentation
+Udemy | GitHub Actions - The Complete Guide
+Korean comments are garbled in GitHub.
+tistory | Github, Bitbucket에서 한글이 깨지는 문제
+The connection between a local repository and GitHub is lost.
+velog | git에 push하려는데, remote: Permission to <git주소> denied to <user이름> 403 error 해결 방법 [AI 웹 개발] 다섯째 주_2일차
+
+Article
+Git & GitHub # [Last Updated: June 30, 2026]
+While Git is a local version control system, GitHub is a cloud-based platform for hosting Git repositories.
+
+Files & Folders #
+README.md
+.gitignore
+.gitattributes
+.git/hooks
+.github/workflows/*.yml
+
+Git Command Lines #
+git version
+git config list --show-origin
+Lists system, global, and local configurations and their origin.
+git config --global user.name <name>
+git config --global user.email <email>
+git clone <url>
+git init
+git status
+git stash
+Cuts the changes in the current project and pastes them into the stash archive.
+git stash push <file-name>
+Cuts the changes in the specified file and pastes them into the stash archive.
+git stash list
+Lists stashes.
+git stash show
+Shows the changes in the latest stash.
+git stash pop
+Cuts the latest stash in the stash archive and pastes it into the current project.
+git stash apply
+Copies the latest stash in the stash archive into the current project.
+git stash drop
+Deletes the latest stash in the stash archive.
+git add .
+Stages changes.
+git commit
+Creates a commit with staged changes.
+One task per commit. Avoid combining multiple tasks into a single commit.
+git commit --message (-m) <summary> --message (-m) <description>
+In IDEs, a blank line is required between the summary and the description.
+```code
+Text
+<type>(optional scope): <summary>
+
+<description>```
+<type> can be feat, fix, refactor, chore, style, docs, test, build, etc.
+<summary> should use the imperative mood, start with a lowercase letter, and end without a period.
+git commit --amend
+Adds staged changes to the latest commit and updates its message.
+git revert <commit-id>
+Creates a commit that undoes the changes of the specified commit.
+git reset <commit-id>
+Deletes commits after the specified commit, keeps the changes unstaged, and preserves the specified commit. This has the implicit --mixed flag, which is the default.
+git reset --soft <commit-id>
+Deletes commits after the specified commit, keeps the changes staged, and preserves the specified commit.
+git reset --hard <commit-id>
+Deletes commits after the specified commit, also deletes the changes, and preserves the specified commit.
+git log
+Lists the commit history.
+git log -S <string>
+Finds commits where the specified string was added or removed.
+git show
+Shows the latest commit with its diff.
+git branch
+Lists local branches.
+git branch --verbose (-v)
+Lists local branches verbosely.
+git branch --verbose --verbose (-vv)
+Lists local branches more verbosely.
+git branch --all (-a)
+Lists local branches and remote repository branches.
+git branch <branch-name>
+Creates the specified branch.
+git branch --delete (-d) <branch-name>
+Deletes the specified branch.
+git branch --move (-m) <specified-branch-name> <new-branch-name>
+Renames the specified branch.
+git checkout
+Shows a brief status of the current branch.
+git checkout <branch-name>, git switch <branch-name>
+Moves from the current branch to the specified branch.
+Uncommited changes are carried over to the specified branch if there is no conflict.
+git checkout -, git switch -
+Moves to the previous branch or commit.
+git checkout -b <branch-name>, git switch --create (-c) <branch-name>
+Creates the specified branch and moves to it.
+git checkout <commit-id>, git switch --detach <commit-id>
+Moves HEAD directly to the specified commit without being attached to any branch.
+git checkout -- <file-name>, git restore <file-name>
+Restores the specified file to the last commit state.
+git merge <branch-name>
+Merges the specified branch into the current branch.
+git merge --abort
+git merge --continue
+git rebase <branch-name>
+Cuts the commits of the current branch that diverge from the specified branch and pastes them onto the specified branch to create a linear history. After rebasing, the specified branch should be fast-forward merged.
+git rebase --interactive (-i) HEAD~<number>
+Goes back to the specified number of commits and modifies them interactively (pick, edit, squash, fixup, reword, drop, etc.).
+git rebase --abort
+git rebase --continue
+git remote
+Lists remote repository aliases.
+git remote --verbose (-v)
+Lists remote repository aliases and their URLs.
+git remote add <remote-repository-alias> <remote-repository-url>
+Creates the alias for the remote repository and connects the current project to it.
+git remote remove (rm) <remote-repository-alias>
+Disconnects the current project from the specified remote repository.
+git remote set-url <remote-repository-alias> <remote-repository-url>
+Updates the URL of the specified remote repository.
+git push <remote-repository-alias> <branch-name>
+Uploads the local branch to the remote repository branch that has the same name as the local branch. If the local and remote names are different, <branch-name> will be <local-branch-name>:<remote-repository-branch-name>
+git push --set-upstream (-u) <remote-repository-alias> <branch-name>
+Uploads and remembers this connection. Thereafter, you can simply run git push, git fetch, or git pull without arguments.
+git fetch <remote-repository-alias> <remote-branch-name>
+Downloads the changes from the specified remote repository branch without merging them.
+git pull <remote-repository-alias> <remote-branch-name>
+Downloads the changes from the specified remote repository branch and merges them into the current branch.
+
+Git Hooks #
+Git Hooks are located in .git/hooks and must not have a file extension.
+Git Hooks are custom scripts that trigger actions whenever a specified event occurs. They are divided into client-side hooks and server-side hooks.
+commit-msg is a client-side hook that runs right after the commit message is created, allowing for its validation.
+The following code creates a custom modal box that checks if the commit message contains content.
+```code
+Bash | commit-msg
+#!/bin/sh
+COMMIT_MSG=$(cat "$1")
+if echo "$COMMIT_MSG" | grep -iq "content"; then
+    USER_CHOICE=$(powershell.exe -Command "
+        [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null;
+        [System.Reflection.Assembly]::LoadWithPartialName('System.Drawing') | Out-Null;
+
+        # Play default notification sound (Asterisk) when the window appears
+        [System.Media.SystemSounds]::Asterisk.Play();
+
+        # 1. Create the main window form
+        \$form = New-Object System.Windows.Forms.Form;
+        \$form.Text = '⚠️ Git Hook commit-msg';
+        \$form.Size = New-Object System.Drawing.Size(550, 260);
+        \$form.StartPosition = 'CenterScreen';
+        \$form.FormBorderStyle = 'FixedDialog';
+        \$form.MaximizeBox = \$false;
+        \$form.MinimizeBox = \$false;
+        \$form.TopMost = \$true;
+
+        # 2. Create the message text label
+        \$label = New-Object System.Windows.Forms.Label;
+        \$label.Text = \"The 'content' type has been detected!
+
+Did you update the 'lastUpdated' variable?\";
+        \$label.Location = New-Object System.Drawing.Point(30, 30);
+        \$label.Size = New-Object System.Drawing.Size(490, 100);
+        \$label.Font = New-Object System.Drawing.Font('Malgun Gothic', 14, [System.Drawing.FontStyle]::Bold); 
+
+        # 3. Create the [Yes] button (No click sound)
+        \$btnYes = New-Object System.Windows.Forms.Button;
+        \$btnYes.Text = 'Yes';
+        \$btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes;
+        \$btnYes.Location = New-Object System.Drawing.Point(140, 150);
+        \$btnYes.Size = New-Object System.Drawing.Size(120, 45);
+        \$btnYes.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+
+        # 4. Create the [No] button
+        \$btnNo = New-Object System.Windows.Forms.Button;
+        \$btnNo.Text = 'No';
+        \$btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No;
+        \$btnNo.Location = New-Object System.Drawing.Point(280, 150);
+        \$btnNo.Size = New-Object System.Drawing.Size(120, 45);
+        \$btnNo.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Play heavy error sound (Hand) when [No] is clicked
+        \$btnNo.Add_Click({ [System.Media.SystemSounds]::Hand.Play() });
+
+        # 5. Add components to the window form
+        \$form.Controls.Add(\$label);
+        \$form.Controls.Add(\$btnYes);
+        \$form.Controls.Add(\$btnNo);
+
+        # 6. Open the window and output the user click result
+        \$result = \$form.ShowDialog();
+        Write-Output \$result;
+    " | tr -d '\r')
+
+    if [ "$USER_CHOICE" = "No" ] || [ -z "$USER_CHOICE" ]; then
+        echo "❌ The commit was canceled. Please update the 'lastUpdated' variable."
+        exit 1
+    fi
+fi
+exit 0
+```
+
+GitHub Actions #
+GitHub Actions is a continuous integration and continuous deployment (CI/CD) service.
+GitHub Actions provides secrets, variables, artifacts, and outputs.
+GitHub Actions consists of workflows that are located in .github/workflows with .yml. Workflows are triggered by specific events and contain one or more jobs.
+Jobs run on a runner and contain one or more steps. Jobs run in parallel by default but can run sequentially by specifying needs.
+Steps execute a shell command, a custom action, or a third-party action. Steps run in order.
+
+Troubleshooting #
+Korean comments are garbled in GitHub.
+The connection between a local repository and GitHub is lost.
+
+Page Navigation
+On this page
+Git & GitHub
+Files & Folders
+Git Command Lines
+Git Hooks
+GitHub Actions
+Troubleshooting
+
+© 2026 HSLee Dev

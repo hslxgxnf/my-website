@@ -1,0 +1,62 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+CSS
+Connecting CSS to HTML
+
+Reference Navigation
+Connecting CSS to HTML
+MDN | Adding CSS to our document
+
+Article
+Connecting CSS to HTML # [Last Updated: February 17, 2026]
+
+External CSS #
+Use the <link> element in the <head> element.
+This way is used a lot.
+```code
+HTML
+<head>
+  <link rel="stylesheet" href="path" />
+</head>```
+```code
+CSS
+body {
+  background-color: gray;
+}```
+
+Internal CSS #
+Use the <style> element in the <head> element.
+```code
+HTML
+<head>
+  <style>
+    body {
+      background-color: gray;
+    }
+  </style>
+</head>```
+
+Inline CSS #
+Use the <style> attribute.
+```code
+HTML
+<body style="background-color: gray"></body>```
+
+Page Navigation
+On this page
+Connecting CSS to HTML
+External CSS
+Internal CSS
+Inline CSS
+
+© 2026 HSLee Dev

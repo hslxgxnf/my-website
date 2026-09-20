@@ -1,0 +1,146 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Clean Code
+
+Reference Navigation
+Clean Code
+Udemy | Clean Code
+
+Article
+Clean Code # [Last Updated: July 23, 2026]
+Clean code should be readable.
+Clean code should be maintainable.
+
+Formatting #
+
+Vertical #
+Different concepts should be separated by blank lines, while closely related concepts should be kept together without blank lines.
+
+Horizontal #
+Indentation
+Horizontally long statements should be broken down into multiple shorter ones.
+
+Comments #
+Comments which cannot be replaced by good naming are good comments. Legal information, warnings, and to-do notes are legitimate reasons to write comments.
+
+Naming #
+Names should be meaningful.
+Names should be distinctive.
+Names should be consistent.
+Names should not include redundant information, disinformation, slang, or unclear abbreviations.
+
+Step 1: Choose a Case #
+lowercase
+isclicked
+kebab-case
+is-clicked
+camelCase
+isClicked
+snake_case
+is_clicked
+UPPERCASE
+ISCLICKED
+PascalCase
+IsClicked
+
+Step 2: Choose a Part of Speech #
+Use nouns or noun phrases for variables and constants.
+user, isValid
+Use verbs or verb phrases for functions.
+print, printInfo
+Use nouns or noun phrases for classes.
+User, UserAuth
+
+Functions #
+
+Don't Repeat Yourself (DRY) #
+
+Parameter Optimization #
+Multiple parameters can be consolidated into a single object parameter. This eliminates the need to maintain the strict order of arguments.
+```code
+TypeScript
+function printUserInfo(name: string, age: number) {
+  console.log(`Name: ${name}, Age: ${age}`);
+}
+
+printUserInfo("John", 30);
+
+interface UserData {
+  name: string;
+  age: number;
+}
+
+function printUserInfo2(user: UserData) {
+  console.log(`Name: ${user.name}, Age: ${user.age}`);
+}
+
+printUserInfo2({ age: 30, name: "John" });
+```
+
+Function Single Responsibility #
+A bloated function should be split into smaller functions that do only one thing. Smaller functions should maintain the same level of abstraction.
+
+Side Effects #
+When a function affects the outside of its scope, it is called a side effect. If a function has a side effect, its name should imply the impact (e.g., saveUser, showErrorMessage).
+
+Pure Functions #
+Pure functions yield the same output for the same input and have no side effects.
+
+Classes #
+
+Class Single Responsibility #
+Classes should have a single responsibility.
+
+Open/Closed #
+Classes should be open for extension but closed for modification.
+
+Cohesion #
+Classes should be highly cohesive. Cohesion describes the extent to which methods rely on properties. Maximum cohesion occurs when every method uses every property, while minimum cohesion occurs when methods do not use any properties.
+
+Law of Demeter #
+An object should communicate only with its immediate neighbors.
+```code
+TypeScript
+// ❌
+const userAddress = user.getWallet().getCard().getAddress();
+
+// ⭕
+const userAddress = user.getAddress();
+```
+
+Control Structures #
+Avoid deep nesting by using error guards to fail fast, factory functions, and polymorphism.
+
+Page Navigation
+On this page
+Clean Code
+Formatting
+Vertical
+Horizontal
+Comments
+Naming
+Step 1: Choose a Case
+Step 2: Choose a Part of Speech
+Functions
+Don't Repeat Yourself (DRY)
+Parameter Optimization
+Function Single Responsibility
+Side Effects
+Pure Functions
+Classes
+Class Single Responsibility
+Open/Closed
+Cohesion
+Law of Demeter
+Control Structures
+
+© 2026 HSLee Dev

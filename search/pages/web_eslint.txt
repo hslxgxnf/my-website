@@ -1,0 +1,61 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+ESLint
+
+Reference Navigation
+ESLint
+ESLint
+ESLint | Include .gitignore Files
+GitHub | react/no-unescaped-entities
+JetBrains WebStorm | Languages & Frameworks
+
+Article
+ESLint # [Last Updated: July 20, 2026]
+ESLint lints JavaScript, TypeScript, etc.
+The below config file can be used in Next.js projects.
+npm i -D eslint eslint-config-next @eslint/compat
+```code
+JavaScript | eslint.config.mjs
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "eslint/config";
+import { includeIgnoreFile } from "@eslint/compat";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const gitignorePath = fileURLToPath(new URL(".gitignore", import.meta.url));
+
+const eslintConfig = defineConfig([
+  includeIgnoreFile(gitignorePath),
+
+  ...nextVitals,
+  ...nextTs,
+
+  {
+    files: ["**/*.tsx"],
+    rules: {
+      "react/no-unescaped-entities": [
+        "error",
+        {
+          forbid: [">", "<"],
+        },
+      ],
+    },
+  },
+]);
+
+export default eslintConfig;
+```
+
+Page Navigation
+
+© 2026 HSLee Dev

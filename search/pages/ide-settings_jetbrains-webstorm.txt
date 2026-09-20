@@ -1,0 +1,183 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+IDE Settings
+JetBrains WebStorm
+
+Reference Navigation
+Appearance & Behavior
+JetBrains PyCharm | Appearance & Behavior
+Keymap
+JetBrains PyCharm | Keymap
+Plugins
+JetBrains PyCharm | Plugins
+Languages & Frameworks
+ESLint
+Prettier
+Stylelint
+Tools
+Stylelint
+Prettier
+Windows | Oh My Posh
+Backup and Sync
+JetBrains PyCharm | Backup and Sync
+Rainbow Brackets
+JetBrains PyCharm | Rainbow Brackets
+
+Article
+JetBrains WebStorm # [Last Updated: September 14, 2026]
+Settings prefixed with ! are only applied to the current project. They have to be set again for other projects.
+
+Appearance & Behavior #
+```table
+Left Section | Right Section | Value
+Appearance | Tree Views ↪ Show indent guides | ☑
+System Settings | Confirm before exiting the IDE | ☐
+System Settings | When closing a tool window with a running process: | Terminate process
+System Settings | Project ↪ Reopen projects on startup | ☐
+System Settings | Project ↪ Open project in | New window
+```
+
+Keymap #
+```table
+Visual Studio 2022
+Name | Shortcut  | Custom
+Create Rectangular Selection on Mouse Drag | Alt + Click | X
+Move Line Down | Alt + Down | X
+Show Context Actions | Alt + Enter, Ctrl + . | X
+Surround With... | Alt + T | ☑
+Move Line Up | Alt + Up | X
+Add or Remove Caret | Ctrl + Alt + Click | X
+Clone Caret Below | Ctrl + Alt + Down | ☑
+Settings | Ctrl + Alt + S | X
+Clone Caret Above | Ctrl + Alt + Up | ☑
+Go to Declaration or Usages | Ctrl + Click | X
+Duplicate Line or Selection | Ctrl + D | X
+Select Last Row | Ctrl + End | X
+Find | Ctrl + F | X
+Run | Ctrl + F5 | X
+Replace | Ctrl + H | X
+Select First Row | Ctrl + Home | X
+Comment with Line Comment | Ctrl + K ➜ C | X
+Reformat Code | Ctrl + K ➜ D | X
+Rename | Ctrl + R ➜ R | X
+Find in Files | Ctrl + Shift + F | X
+Replace in Files | Ctrl + Shift + H | X
+Parameter Info | Ctrl + Shift + Space | X
+Reopen Closed Tab | Ctrl + Shift + T | ☑, Remove Go to File...
+Code Completion ↪ Basic | Ctrl + Space | X
+Close Tab | Ctrl + W | ☑, Remove Extend Selection
+Toggle Line Breakpoint | F9 | X
+Step Over | F10 | X
+Step Into | F11 | X
+Search Everywhere | Shift + Shift, Ctrl + T | X
+```
+
+Editor #
+```table
+Left Section | Right Section | Value
+General | Soft Wraps ↪ Soft-wrap these files: *.md; *.txt; *.rst; *.adoc | ☑
+General ↪ Appearance | Show method separators | ☑
+General ↪ Appearance | Show CSS color preview as background | ☑
+General ↪ Code Completion ↪ Popup | Match case: | ☐
+General ↪ Editor Tabs | Appearance ↪ Tab placement: | Left
+General ↪ Editor Tabs | Appearance ↪ Mark modified | ☑
+Live Templates | JavaScript ➜ + ➜ 1 Live Template | X
+X | Abbreviation: | edf
+X | Description: | export default function
+X | Template text: | export default function $NAME$() {
+$END$
+}
+X | Edit Variables... ↪ Expression | complete()
+X | Define  Everywhere ↪ JavaScript ↪ Top level statement, Everywhere ↪ TypeScript ↪ Top level statement | ☑
+X | Options ↪ Reformat according to style | ☑
+Live Templates | React ➜ + ➜ 1 Live Template | X
+X | Abbreviation: | uc
+X | Description: | "use client";
+X | Template text: | "use client";
+$END$
+X | Define  Everywhere ↪ JavaScript ↪ Top level statement, Everywhere ↪ TypeScript ↪ Top level statement | ☑
+X | Options ↪ Reformat according to style | ☑
+Inlay Hints | Parameter names | ☐
+Inlay Hints | Types | ☐
+Inlay Hints | Method chains | ☐
+Emmet ↪ HTML | Enable abbreviation preview | ☑
+```
+
+Plugins #
+Marketplace
+Visual Studio 2022 Keymap
+Rainbow Brackets
+Settings icon
+Update Plugins Automatically
+
+Languages & Frameworks #
+```table
+Left Section | Right Section | Value
+! JavaScript ↪ Code Quality Tools ↪ ESLint | Automatic ESLint configuration | ☑
+! JavaScript ↪ Prettier | Automatic Prettier configuration | ☑
+! JavaScript ↪ Prettier | Run for files: | **/*.{html,css,scss,js,ts,cjs,cts,mjs,mts,jsx,tsx,vue,astro,json,md}
+! JavaScript ↪ Prettier | Run on save | ☑
+! JavaScript ↪ Prettier | Run on paste | ☑
+! JavaScript ↪ Prettier | Prefer Prettier configuration to IDE code style | ☑
+! JavaScript Runtime | Node.js ↪ Coding assistance for Node.js | ☑
+! Style Sheets ↪ Stylelint | Enable | ☑
+! Style Sheets ↪ Stylelint | Run for files: | **/*.{css,scss}
+! Style Sheets ↪ Stylelint | Run stylelint --fix on save | ☑
+```
+
+Tools #
+```table
+Left Section | Right Section | Value
+! Actions on Save | Run stylelint --fix | ☑
+! Actions on Save | Run Prettier | ☑
+! Terminal | Font Settings ↪ Font: | MesloLGM Nerd Font
+```
+
+Backup and Sync #
+```table
+Left Section | Right Section | Value
+X | Enable backup and sync: | ☑
+```
+
+Advanced Settings #
+```table
+Left Section | Right Section | Value
+X | Run/Debug ↪ Confirm rerun with process termination | ☐
+X | Version Control ↪ Open Diff as Editor Tab | ☐
+```
+
+Rainbow Brackets #
+```table
+Left Section | Right Section | Value
+Color | Color ↪ Cycle count on all brackets | ☑
+Indent guidelines Highlighting | Indent guidelines Highlighting ↪ Focus mode | ☑
+Language Specific | Language Specific ↪ Rainbowify tag name in XML/HTML/template files | ☑
+Language Specific | Language Specific ↪ Rainbowify Python keywords | ☑
+Rainbow Variables | Enable Rainbow Variables(restart required) | ☑
+Scope Highlighting | Scope Highlighting ↪ Border | ☑
+Scope Highlighting | Scope Highlighting ↪ Suppress scope highlighting when diffing | ☑
+```
+
+Page Navigation
+On this page
+JetBrains WebStorm
+Appearance & Behavior
+Keymap
+Editor
+Plugins
+Languages & Frameworks
+Tools
+Backup and Sync
+Advanced Settings
+Rainbow Brackets
+
+© 2026 HSLee Dev

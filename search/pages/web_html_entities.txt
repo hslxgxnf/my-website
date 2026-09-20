@@ -1,0 +1,51 @@
+Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+
+Article Navigation
+Web
+HTML
+Entities
+
+Reference Navigation
+Entities
+MDN | Entity
+MDN | Character reference
+WHATWG | 13.5 Named character references
+HTML Arrows | A delightful reference for HTML Symbols, Entities and ASCII Character Codes
+Non-Breaking Space   &nbsp; &#160;
+DaleSeo | HTML에서 &nbsp;를 언제, 왜 써야할까?
+
+Article
+Entities # [Last Updated: June 13, 2026]
+
+Named Entities #
+Named entities can use both the named format and the numeric format.
+Less-Than < &lt; &#60;
+Greater-Than > &gt; &#62;
+Copyright © &copy; &#169;
+Trade Mark ™ &trade; &#8482;
+Non-Breaking Space   &nbsp; &#160;
+The &nbsp; entity is a space without creating a new line and can be used to write two or more spaces in a row.
+Ampersand & &amp; &#38;
+Quotation Mark " &quot; &#34;
+Apostrophe ' &apos; &#39;
+
+Unnamed Entities #
+Unnamed entities only can use the numeric format.
+Left Brace { &#123;
+Right Brace } &#125;
+
+Page Navigation
+On this page
+Entities
+Named Entities
+Unnamed Entities
+
+© 2026 HSLee Dev
