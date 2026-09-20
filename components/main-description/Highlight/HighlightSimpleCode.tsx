@@ -2,7 +2,7 @@
 
 import type { MouseEvent, KeyboardEvent } from "react";
 
-import selectAndCopyText from "@/functions/main-description/selectAndCopyText";
+import selectAndCopyElement from "@/functions/main-description/selectAndCopyElement";
 
 interface HighlightSimpleCodeProps {
   copy?: boolean;
@@ -15,13 +15,13 @@ export default function HighlightSimpleCode({
   children,
 }: HighlightSimpleCodeProps) {
   async function handleClick(event: MouseEvent<HTMLElement>) {
-    await selectAndCopyText(event.currentTarget);
+    await selectAndCopyElement(event.currentTarget);
   }
 
   async function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      await selectAndCopyText(event.currentTarget);
+      await selectAndCopyElement(event.currentTarget);
     }
   }
 

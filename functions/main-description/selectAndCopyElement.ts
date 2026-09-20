@@ -1,4 +1,4 @@
-export default async function selectAndCopyText(element: HTMLElement) {
+export default async function selectAndCopyElement(element: HTMLElement) {
   // Select
   const range = document.createRange();
   range.selectNodeContents(element);
