@@ -25,7 +25,7 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <Heading type="link-id" number={1} lastUpdated="2026-06-30">
+            <Heading type="link-id" number={1} lastUpdated="2026-09-21">
               Git & GitHub
             </Heading>
           </RefButton>
@@ -204,19 +204,45 @@ export default function Page() {
               </p>
               <p>Stages changes.</p>
             </li>
-            <li>
-              <p>
-                <Highlight type="simple-code" copy={true}>
-                  git commit
+            <RefButton>
+              <li>
+                <p>
+                  <Highlight type="simple-code" copy={true}>
+                    git commit
+                  </Highlight>
+                </p>
+                <p>Creates a commit with staged changes.</p>
+                <p>
+                  One task per commit. Avoid combining multiple tasks into a
+                  single commit.
+                </p>
+                <Highlight type="complex-code">
+                  {gitCommitMessageCode}
                 </Highlight>
-              </p>
-              <p>Creates a commit with staged changes.</p>
-              <p>
-                One task per commit. Avoid combining multiple tasks into a
-                single commit.
-              </p>
-              <ul>
-                <RefButton>
+                <p>
+                  <Highlight type="text">&lt;type&gt;</Highlight> can be{" "}
+                  <Highlight type="text">feat</Highlight>,{" "}
+                  <Highlight type="text">fix</Highlight>,{" "}
+                  <Highlight type="text">refactor</Highlight>,{" "}
+                  <Highlight type="text">chore</Highlight>,{" "}
+                  <Highlight type="text">style</Highlight>,{" "}
+                  <Highlight type="text">docs</Highlight>,{" "}
+                  <Highlight type="text">test</Highlight>,{" "}
+                  <Highlight type="text">build</Highlight>,{" "}
+                  <Highlight type="text">content</Highlight>, etc.
+                </p>
+                <p>
+                  <Highlight type="text">&lt;summary&gt;</Highlight> should use
+                  the imperative mood, start with a lowercase letter, omit
+                  articles, and not end with a period.
+                </p>
+
+                <p>
+                  A blank line is recommended between{" "}
+                  <Highlight type="text">&lt;summary&gt;</Highlight> and{" "}
+                  <Highlight type="text">&lt;description&gt;</Highlight>.
+                </p>
+                <ul>
                   <li>
                     <p>
                       <Highlight type="simple-code" copy={true}>
@@ -224,45 +250,21 @@ export default function Page() {
                         &lt;description&gt;
                       </Highlight>
                     </p>
+                  </li>
+                  <li>
                     <p>
-                      In IDEs, a blank line is required between the summary and
-                      the description.
-                    </p>
-                    <Highlight type="complex-code">
-                      {gitCommitMessageCode}
-                    </Highlight>
-                    <p>
-                      <Highlight type="text">&lt;type&gt;</Highlight> can be{" "}
-                      <Highlight type="text">feat</Highlight>,{" "}
-                      <Highlight type="text">fix</Highlight>,{" "}
-                      <Highlight type="text">refactor</Highlight>,{" "}
-                      <Highlight type="text">chore</Highlight>,{" "}
-                      <Highlight type="text">style</Highlight>,{" "}
-                      <Highlight type="text">docs</Highlight>,{" "}
-                      <Highlight type="text">test</Highlight>,{" "}
-                      <Highlight type="text">build</Highlight>,{" "}
-                      <Highlight type="text">content</Highlight>, etc.
+                      <Highlight type="simple-code" copy={true}>
+                        git commit --amend
+                      </Highlight>
                     </p>
                     <p>
-                      <Highlight type="text">&lt;summary&gt;</Highlight> should
-                      use the imperative mood, start with a lowercase letter,
-                      and end without a period.
+                      Adds staged changes to the latest commit and updates its
+                      message.
                     </p>
                   </li>
-                </RefButton>
-                <li>
-                  <p>
-                    <Highlight type="simple-code" copy={true}>
-                      git commit --amend
-                    </Highlight>
-                  </p>
-                  <p>
-                    Adds staged changes to the latest commit and updates its
-                    message.
-                  </p>
-                </li>
-              </ul>
-            </li>
+                </ul>
+              </li>
+            </RefButton>
             <li>
               <p>
                 <Highlight type="simple-code" copy={true}>
