@@ -2,10 +2,12 @@ export default function copyRange(range?: Range): string {
   const tempDiv = document.createElement("div");
 
   if (range) {
+    // GlobalEvents.tsx
     const fragment = range.cloneContents();
     tempDiv.append(fragment);
   } else {
-    const selectors = ["header", "main", "footer"];
+    // crawl.ts
+    const selectors = ["header", "main"];
     selectors.forEach((selector) => {
       const element = document.body.querySelector(selector);
       if (!element) {
@@ -16,19 +18,23 @@ export default function copyRange(range?: Range): string {
     });
   }
 
-  const necessaryAriaLabels = [
+  const navAriaLabelsToRemain = [
     "Scroll main navigation",
     "Breadcrumb navigation",
     "All reference navigation",
     "Page navigation",
   ];
-  const redundantNavs = Array.from(tempDiv.querySelectorAll("nav")).filter(
+  const navsToRemove = Array.from(tempDiv.querySelectorAll("nav")).filter(
     (nav) => {
+      if (nav.textContent === "") {
+        return true;
+      }
+
       const ariaLabel = nav.getAttribute("aria-label") ?? "";
-      return !necessaryAriaLabels.includes(ariaLabel);
+      return !navAriaLabelsToRemain.includes(ariaLabel);
     },
   );
-  redundantNavs.forEach((nav) => {
+  navsToRemove.forEach((nav) => {
     nav.remove();
   });
 
@@ -77,18 +83,18 @@ export default function copyRange(range?: Range): string {
       const ariaLabel = newLineElement.getAttribute("aria-label") ?? "";
 
       switch (ariaLabel) {
-        case necessaryAriaLabels[0]:
-          newLineElement.prepend("Main Navigation\n");
-          newLineElement.append("\n");
+        case navAriaLabelsToRemain[0]:
+          newLineElement.prepend("***Main Navigation\n");
+          newLineElement.append("***\n\n");
           return;
-        case necessaryAriaLabels[1]:
+        case navAriaLabelsToRemain[1]:
           if (newLineElement.textContent === "") {
             newLineElement.prepend("Home");
           }
           newLineElement.prepend("Article Navigation\n");
           newLineElement.append("\n");
           return;
-        case necessaryAriaLabels[2]:
+        case navAriaLabelsToRemain[2]:
           newLineElement.querySelector("h2")!.textContent =
             "Reference Navigation";
           newLineElement.append("\n");
