@@ -76,7 +76,7 @@ export default function copyRange(range?: Range): string {
   });
 
   const newLineElements = tempDiv.querySelectorAll(
-    "header, nav, article, h1, h2, h3, p, li, br, .complex-code-container, table, caption, tr",
+    "nav, article, h1, h2, h3, p, li, br, .complex-code-container, table, caption, tr",
   );
   newLineElements.forEach((newLineElement) => {
     if (newLineElement.localName === "nav") {
@@ -91,17 +91,17 @@ export default function copyRange(range?: Range): string {
           if (newLineElement.textContent === "") {
             newLineElement.prepend("Home");
           }
-          newLineElement.prepend("Article Navigation\n");
-          newLineElement.append("\n");
+          newLineElement.prepend("***Article Navigation\n");
+          newLineElement.append("\n***\n\n");
           return;
         case navAriaLabelsToRemain[2]:
           newLineElement.querySelector("h2")!.textContent =
-            "Reference Navigation";
-          newLineElement.append("\n");
+            "***Reference Navigation";
+          newLineElement.append("***\n\n");
           return;
-        case necessaryAriaLabels[3]:
-          newLineElement.prepend("Page Navigation\n");
-          newLineElement.append("\n");
+        case navAriaLabelsToRemain[3]:
+          newLineElement.prepend("***Page Navigation\n");
+          newLineElement.append("***\n\n");
           return;
         default:
           return;
@@ -109,21 +109,8 @@ export default function copyRange(range?: Range): string {
     }
 
     if (newLineElement.localName === "article") {
-      newLineElement.prepend("Article\n");
-      newLineElement.append("\n");
-      return;
-    }
-
-    if (newLineElement.localName === "p") {
-      // JetBrains WebStorm Plugins
-      if (
-        newLineElement.childElementCount === 1 &&
-        newLineElement.children[0].localName === "svg"
-      ) {
-        newLineElement.textContent = newLineElement.children[0].ariaLabel ?? "";
-      }
-
-      newLineElement.append("\n");
+      newLineElement.prepend("***Article\n");
+      newLineElement.append("***\n\n");
       return;
     }
 
@@ -148,11 +135,12 @@ export default function copyRange(range?: Range): string {
       return;
     }
 
-    newLineElement.append("\n"); // header, h1, h2, h3, br, caption, tr
+    newLineElement.append("\n"); // h1, h2, h3, p, br, caption, tr
   });
 
   let formattedText = tempDiv.textContent;
 
+  // Horizontal Trim
   const lines = [];
   let isCodeBlock = false;
   for (const line of formattedText.split("\n")) {
@@ -176,17 +164,12 @@ export default function copyRange(range?: Range): string {
       lines.push(trimmedLine);
     }
   }
-
-  for (let i = 1; i < lines.length; i++) {
-    if (lines[i].endsWith("#") && lines[i - 1] !== "") {
-      lines[i - 1] += "\n";
-    }
-  }
-
   formattedText = lines.join("\n");
 
+  // Vertical Trim
   formattedText = formattedText.trim();
 
+  // Maximum Blank Line: 1
   formattedText = formattedText.replace(
     /(```code[\s\S]*?```)|((\n\s*){2,})/g,
     (_, codeBlock) => {
