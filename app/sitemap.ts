@@ -1,29 +1,14 @@
-import fs from "fs";
-import path from "path";
 import type { MetadataRoute } from "next";
+import path from "path";
+import fs from "fs";
 
 interface UrlInfo {
   url: string;
   lastModified: string;
 }
 
-function escapeXml(unsafe: string): string {
-  return unsafe.replace(/[<>&'"]/g, (char) => {
-    switch (char) {
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case "&":
-        return "&amp;";
-      case "'":
-        return "&apos;";
-      case '"':
-        return "&quot;";
-      default:
-        return char;
-    }
-  });
+export default function sitemap(): MetadataRoute.Sitemap {
+  return getStaticUrls(path.join(process.cwd(), "app"));
 }
 
 function getStaticUrls(dir: string, baseDir = dir): UrlInfo[] {
@@ -71,8 +56,21 @@ function getStaticUrls(dir: string, baseDir = dir): UrlInfo[] {
   return urlInfos;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const appDirectory = path.join(process.cwd(), "app");
-
-  return getStaticUrls(appDirectory);
+function escapeXml(unsafe: string): string {
+  return unsafe.replace(/[<>&'"]/g, (char) => {
+    switch (char) {
+      case "<":
+        return "&lt;";
+      case ">":
+        return "&gt;";
+      case "&":
+        return "&amp;";
+      case "'":
+        return "&apos;";
+      case '"':
+        return "&quot;";
+      default:
+        return char;
+    }
+  });
 }

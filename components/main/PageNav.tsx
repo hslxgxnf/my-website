@@ -4,9 +4,8 @@ import { useState, useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { FaAngleDoubleUp, FaAngleDoubleDown } from "react-icons/fa";
 
-import handleClickFirstLink from "@/functions/main-description/handleClickFirstLink";
-
 import { useStore } from "@/stores/useStore";
+import handleClickFirstLink from "@/functions/main-description/handleClickFirstLink";
 
 export default function PageNav() {
   // ResizeObserver isScrollable
