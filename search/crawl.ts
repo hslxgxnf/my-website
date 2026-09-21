@@ -28,14 +28,14 @@ async function run() {
     console.error("Failed to fetch sitemap.xml:", error);
   }
 
-  const targetDirPath = path.join(process.cwd(), "search", "pages");
-  if (!fs.existsSync(targetDirPath)) {
-    fs.mkdirSync(targetDirPath, { recursive: true });
+  const baseDirPath = path.join(process.cwd(), "search", "pages");
+  if (!fs.existsSync(baseDirPath)) {
+    fs.mkdirSync(baseDirPath, { recursive: true });
   } else {
-    const allRelativePaths = fs.readdirSync(targetDirPath);
+    const allRelativePaths = fs.readdirSync(baseDirPath);
     for (const relativePath of allRelativePaths) {
       if (relativePath.endsWith(".txt")) {
-        fs.unlinkSync(path.join(targetDirPath, relativePath));
+        fs.unlinkSync(path.join(baseDirPath, relativePath));
       }
     }
   }
@@ -43,19 +43,19 @@ async function run() {
     const pathName = new URL(url).pathname;
 
     try {
+      let fileName = pathName.replace(/^\/|\/$/g, "").replace(/\//g, "_");
+      if (!fileName) {
+        fileName = "home";
+      }
+      const targetFilePath = path.join(baseDirPath, `${fileName}.txt`);
+
       await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
       const content = await page.evaluate((fnSource) => {
         const fn = new Function(`return (${fnSource})()`);
         return fn();
       }, copyRange.toString());
 
-      let fileName = pathName.replace(/^\/|\/$/g, "").replace(/\//g, "_");
-      if (!fileName) {
-        fileName = "home";
-      }
-
-      const filePath = path.join(targetDirPath, `${fileName}.txt`);
-      fs.writeFileSync(filePath, content, "utf8");
+      fs.writeFileSync(targetFilePath, content, "utf8");
     } catch (error) {
       console.error(`Failed to scrape ${pathName}:`, error);
     }
