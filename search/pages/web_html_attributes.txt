@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,13 +7,15 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 HTML
 Attributes
+***
 
-Reference Navigation
+***Reference Navigation
 Attributes
 MDN | Attribute
 MDN | HTML attribute reference
@@ -40,12 +42,12 @@ aria-*
 MDN | ARIA states and properties (attributes)
 role
 MDN | WAI-ARIA Roles
+***
 
-Article
+***Article
 Attributes # [Last Updated: September 03, 2026]
 An attribute provides additional information to its element.
 An attribute is written as name="value" inside the opening tag of an element.
-
 Enumerated Attributes #
 An enumerated attribute accepts a predefined set of values.
 ```code
@@ -54,7 +56,6 @@ HTML
 <input type="password" />
 <input type="email" />
 ```
-
 Custom Attributes #
 HTML data-* ⇄ JavaScript HTMLElement.dataset
 ```code
@@ -66,7 +67,6 @@ TypeScript
 const div = document.querySelector<HTMLDivElement>("div");
 console.log(div?.dataset.weight); // "100"
 ```
-
 Boolean Attributes #
 A boolean attribute is determined solely by its presence or absence. When the attribute is present, it is considered true; when it is absent, it is considered false. The actual value assigned does not matter.
 ```code
@@ -77,10 +77,8 @@ HTML
 <input type="checkbox" checked="true" />
 <input type="checkbox" checked="false" />
 ```
-
 Attribute Reflection #
 HTML Attributes are reflected in corresponding JavaScript properties.
-
 Examples #
 id
 Elements cannot share the same id value.
@@ -108,8 +106,9 @@ aria-expanded
 aria-controls
 aria-current
 role
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Attributes
 Enumerated Attributes
@@ -117,5 +116,4 @@ Custom Attributes
 Boolean Attributes
 Attribute Reflection
 Examples
-
-© 2026 HSLee Dev
+***

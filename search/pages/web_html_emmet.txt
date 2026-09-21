@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,20 +7,22 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 HTML
 Emmet
+***
 
-Reference Navigation
+***Reference Navigation
 Emmet
 Emmet | Emmet — the essential toolkit for web-developers
 Inpa Dev | 🏷️ 에멧(Emmet) 문법 모음 - 한눈에 정리
+***
 
-Article
+***Article
 Emmet # [Last Updated: February 10, 2026]
 div.container{content}
 p>lorem100
-
-© 2026 HSLee Dev
+***

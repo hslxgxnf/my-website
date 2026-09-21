@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,17 +7,20 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 CSS
 Rulesets
+***
 
-Reference Navigation
+***Reference Navigation
 Rulesets
 MDN | Introduction to CSS syntax: declarations, rulesets, and statements
+***
 
-Article
+***Article
 Rulesets # [Last Updated: July 21, 2026]
 A ruleset consists of a selector (or a group of selectors) paired with a declaration block.
 A declaration block {} contains one or more declarations.
@@ -36,7 +39,4 @@ h2 {
   font-size: 3rem;
 }
 ```
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

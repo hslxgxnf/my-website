@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,13 +7,14 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 IDE Settings
+***
 
-Article
+***Article
 IDE Settings [Last Updated: September 20, 2026]
 JetBrains WebStorm
 JetBrains PyCharm
-
-© 2026 HSLee Dev
+***

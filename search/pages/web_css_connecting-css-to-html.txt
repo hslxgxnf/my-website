@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,19 +7,21 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 CSS
 Connecting CSS to HTML
+***
 
-Reference Navigation
+***Reference Navigation
 Connecting CSS to HTML
 MDN | Adding CSS to our document
+***
 
-Article
+***Article
 Connecting CSS to HTML # [Last Updated: February 17, 2026]
-
 External CSS #
 Use the <link> element in the <head> element.
 This way is used a lot.
@@ -35,7 +37,6 @@ body {
   background-color: gray;
 }
 ```
-
 Internal CSS #
 Use the <style> element in the <head> element.
 ```code
@@ -48,19 +49,18 @@ HTML
   </style>
 </head>
 ```
-
 Inline CSS #
 Use the <style> attribute.
 ```code
 HTML
 <body style="background-color: gray"></body>
 ```
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Connecting CSS to HTML
 External CSS
 Internal CSS
 Inline CSS
-
-© 2026 HSLee Dev
+***

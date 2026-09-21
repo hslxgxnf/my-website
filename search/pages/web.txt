@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,11 +7,13 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
+***
 
-Article
+***Article
 Web [Last Updated: September 20, 2026]
 Overall
 Initialization
@@ -31,5 +33,4 @@ TypeScript
 Next.js
 Databases
 SQL
-
-© 2026 HSLee Dev
+***

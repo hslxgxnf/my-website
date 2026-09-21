@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,12 +7,14 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 CSS
+***
 
-Article
+***Article
 CSS (Cascading Style Sheets) [Last Updated: September 20, 2026]
 Connecting CSS to HTML
 Comments
@@ -20,5 +22,4 @@ Naming Cases
 At-Rules
 Rulesets
 Declarations
-
-© 2026 HSLee Dev
+***

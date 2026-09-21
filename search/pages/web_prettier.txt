@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,20 +7,22 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 Prettier
+***
 
-Reference Navigation
+***Reference Navigation
 Prettier
 Prettier
 JetBrains WebStorm | Languages & Frameworks
 JetBrains WebStorm | Tools
+***
 
-Article
+***Article
 Prettier # [Last Updated: April 15, 2026]
 Prettier formats HTML, CSS, JavaScript, JSON, Markdown, etc.
 npm i -D prettier
-
-© 2026 HSLee Dev
+***

@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,11 +7,13 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 DSA
+***
 
-Reference Navigation
+***Reference Navigation
 DSA (Data Structures and Algorithms)
 GeeksforGeeks | DSA Tutorial
 Linear Data Structures
@@ -19,8 +21,9 @@ GeeksforGeeks | Difference between Linear and Non-linear Data Structures
 GeeksforGeeks | Introduction to Linear Data Structures
 Non-Linear Data Structures
 GeeksforGeeks | Introduction to Hierarchical Data Structure
+***
 
-Article
+***Article
 DSA (Data Structures and Algorithms) [Last Updated: September 20, 2026]
 Linear Data Structures
 Array
@@ -30,5 +33,4 @@ Queue
 Non-Linear Data Structures
 Algorithms
 Asymptotic Analysis
-
-© 2026 HSLee Dev
+***

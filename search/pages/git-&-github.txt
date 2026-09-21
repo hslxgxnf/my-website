@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,11 +7,13 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Git & GitHub
+***
 
-Reference Navigation
+***Reference Navigation
 Git & GitHub
 Git
 GitHub
@@ -26,18 +28,17 @@ Korean comments are garbled in GitHub.
 tistory | Github, Bitbucket에서 한글이 깨지는 문제
 The connection between a local repository and GitHub is lost.
 velog | git에 push하려는데, remote: Permission to <git주소> denied to <user이름> 403 error 해결 방법 [AI 웹 개발] 다섯째 주_2일차
+***
 
-Article
+***Article
 Git & GitHub # [Last Updated: September 21, 2026]
 While Git is a local version control system, GitHub is a cloud-based platform for hosting Git repositories.
-
 Files & Folders #
 README.md
 .gitignore
 .gitattributes
 .git/hooks
 .github/workflows/*.yml
-
 Git Command Lines #
 git version
 git config list --show-origin
@@ -147,78 +148,80 @@ git fetch <remote-repository-alias> <remote-branch-name>
 Downloads the changes from the specified remote repository branch without merging them.
 git pull <remote-repository-alias> <remote-branch-name>
 Downloads the changes from the specified remote repository branch and merges them into the current branch.
-
 Git Hooks #
 Git Hooks are located in .git/hooks and must not have a file extension.
 Git Hooks are custom scripts that trigger actions when a specified event occurs. They are divided into client-side hooks and server-side hooks.
 commit-msg
-The following code creates a custom Windows modal dialog that checks if the commit message contains the content type, prompting the user to confirm whether the lastUpdated prop was updated.
+The following code creates a custom Windows modal dialog that checks if the message summary to commit contains the content type, prompting the user to confirm whether the lastUpdated prop was updated.
 ```code
 Bash | commit-msg
 #!/bin/sh
 
-COMMIT_TITLE=$(head -n 1 "$1")
+SUMMARY=$(head -n 1 "$1")
 
-if echo "$COMMIT_TITLE" | grep -iq "^content"; then
-    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null;
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Drawing') | Out-Null;
+if echo "$SUMMARY" | grep -iq "^content"; then
+    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '
+        # Play the notification sound.
+        [System.Media.SystemSounds]::Asterisk.Play()
 
-        # 1. Play default notification sound when the window appears
-        [System.Media.SystemSounds]::Asterisk.Play();
+        # Load the required assemblies.
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") | Out-Null
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") | Out-Null
 
-        # 2. Create the main window form
-        \$form = New-Object System.Windows.Forms.Form;
-        \$form.Text = '⚠️ Git Hook commit-msg';
-        \$form.Size = New-Object System.Drawing.Size(550, 260);
-        \$form.StartPosition = 'CenterScreen';
-        \$form.FormBorderStyle = 'FixedDialog';
-        \$form.MaximizeBox = \$false;
-        \$form.MinimizeBox = \$false;
-        \$form.TopMost = \$true;
+        # Create the window form.
+        $form = New-Object System.Windows.Forms.Form
+        $form.Text = "⚠️ Git Hook commit-msg"
+        $form.Size = New-Object System.Drawing.Size(550, 260)
+        $form.StartPosition = "CenterScreen"
+        $form.FormBorderStyle = "FixedDialog"
+        $form.MaximizeBox = $false
+        $form.MinimizeBox = $false
+        $form.TopMost = $true
 
-        # 3. Create the message text label
-        \$label = New-Object System.Windows.Forms.Label;
-        \$label.Text = \"The 'content' type has been detected!
+        # Create the message label.
+        $label = New-Object System.Windows.Forms.Label
+        $label.Text = "The [content] type has been detected!`n`nDid you update the [lastUpdated] variable?"
+        $label.Location = New-Object System.Drawing.Point(30, 30)
+        $label.Size = New-Object System.Drawing.Size(490, 100)
+        $label.Font = New-Object System.Drawing.Font("Malgun Gothic", 14, [System.Drawing.FontStyle]::Bold)
 
-Did you update the 'lastUpdated' variable?\";
-        \$label.Location = New-Object System.Drawing.Point(30, 30);
-        \$label.Size = New-Object System.Drawing.Size(490, 100);
-        \$label.Font = New-Object System.Drawing.Font('Malgun Gothic', 14, [System.Drawing.FontStyle]::Bold);
+        # Create the "Yes" button.
+        $btnYes = New-Object System.Windows.Forms.Button
+        $btnYes.Text = "Yes"
+        $btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes
+        $btnYes.Location = New-Object System.Drawing.Point(140, 150)
+        $btnYes.Size = New-Object System.Drawing.Size(120, 45)
+        $btnYes.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 4. Create the [Yes] button
-        \$btnYes = New-Object System.Windows.Forms.Button;
-        \$btnYes.Text = 'Yes';
-        \$btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes;
-        \$btnYes.Location = New-Object System.Drawing.Point(140, 150);
-        \$btnYes.Size = New-Object System.Drawing.Size(120, 45);
-        \$btnYes.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Create the "No" button.
+        $btnNo = New-Object System.Windows.Forms.Button
+        $btnNo.Text = "No"
+        $btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No
+        $btnNo.Location = New-Object System.Drawing.Point(280, 150)
+        $btnNo.Size = New-Object System.Drawing.Size(120, 45)
+        $btnNo.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 5. Create the [No] button
-        \$btnNo = New-Object System.Windows.Forms.Button;
-        \$btnNo.Text = 'No';
-        \$btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No;
-        \$btnNo.Location = New-Object System.Drawing.Point(280, 150);
-        \$btnNo.Size = New-Object System.Drawing.Size(120, 45);
-        \$btnNo.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Set the keyboard shortcuts (Enter -> "Yes", Esc -> "No").
+        $form.AcceptButton = $btnYes
+        $form.CancelButton = $btnNo
 
-        # 6. Set Keyboard Shortcuts (Enter -> Yes, Esc -> No)
-        \$form.AcceptButton = \$btnYes;
-        \$form.CancelButton = \$btnNo;
+        # Add the created components to the window form.
+        $form.Controls.Add($label)
+        $form.Controls.Add($btnYes)
+        $form.Controls.Add($btnNo)
 
-        # 7. Add components to the window form
-        \$form.Controls.Add(\$label);
-        \$form.Controls.Add(\$btnYes);
-        \$form.Controls.Add(\$btnNo);
+        # Open the window.
+        $result = $form.ShowDialog()
 
-        # 8. Open the window and output the user click result
-        \$result = \$form.ShowDialog();
-        Write-Output \$result;
-    " | tr -d '\r')
+        # Return result to USER_CHOICE.
+        Write-Output $result
+    ' | tr -d '\r')
 
-    if [ "$USER_CHOICE" = "No" ] || [ "$USER_CHOICE" != "Yes" ]; then
+    # Cancel the current message if the user selects anything other than "Yes"
+    if [ "$USER_CHOICE" != "Yes" ]; then
         powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[System.Media.SystemSounds]::Hand.Play()"
-        echo "❌ The commit was canceled. Please update the 'lastUpdated' variable."
+        echo "❌ The commit was canceled. Please update the [lastUpdated] variable."
+
         exit 1
     fi
 fi
@@ -226,96 +229,98 @@ fi
 exit 0
 ```
 pre-push
-The following code creates a custom Windows modal dialog that checks if the commit messages to push contain the content type, prompting the user to confirm whether the search/pages folder was updated.
+The following code creates a custom Windows modal dialog that checks if the commit message summaries to push contain the content type, prompting the user to confirm whether the search/pages folder was updated.
 ```code
 Bash | pre-push
 #!/bin/sh
 
-COMMIT_TITLES=$(git log @{u}..HEAD --pretty=format:"%s" 2>/dev/null)
+SUMMARIES=$(git log @{u}..HEAD --pretty=format:"%s" 2>/dev/null)
 
-if [ -z "$COMMIT_TITLES" ]; then
-    COMMIT_TITLES=$(git log -n 5 --pretty=format:"%s")
+if [ -z "$SUMMARIES" ]; then
+    SUMMARIES=$(git log -n 5 --pretty=format:"%s")
 fi
 
-if echo "$COMMIT_TITLES" | grep -iq "^content"; then
-    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms') | Out-Null;
-        [System.Reflection.Assembly]::LoadWithPartialName('System.Drawing') | Out-Null;
+if echo "$SUMMARIES" | grep -iq "^content"; then
+    USER_CHOICE=$(powershell.exe -NoProfile -ExecutionPolicy Bypass -Command '
+        # Play the notification sound.
+        [System.Media.SystemSounds]::Asterisk.Play()
 
-        # 1. Play default notification sound when the window appears
-        [System.Media.SystemSounds]::Asterisk.Play();
+        # Load the required assemblies.
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") | Out-Null
+        [System.Reflection.Assembly]::LoadWithPartialName("System.Drawing") | Out-Null
 
-        # 2. Create the main window form
-        \$form = New-Object System.Windows.Forms.Form;
-        \$form.Text = '⚠️ Git Hook pre-push';
-        \$form.Size = New-Object System.Drawing.Size(550, 260);
-        \$form.StartPosition = 'CenterScreen';
-        \$form.FormBorderStyle = 'FixedDialog';
-        \$form.MaximizeBox = \$false;
-        \$form.MinimizeBox = \$false;
-        \$form.TopMost = \$true;
+        # Create the window form.
+        $form = New-Object System.Windows.Forms.Form
+        $form.Text = "⚠️ Git Hook pre-push"
+        $form.Size = New-Object System.Drawing.Size(550, 260)
+        $form.StartPosition = "CenterScreen"
+        $form.FormBorderStyle = "FixedDialog"
+        $form.MaximizeBox = $false
+        $form.MinimizeBox = $false
+        $form.TopMost = $true
 
-        # 3. Create the message text label
-        \$label = New-Object System.Windows.Forms.Label;
-        \$label.Text = \"The 'content' type has been detected!
+        # Create the message label.
+        $label = New-Object System.Windows.Forms.Label
+        $label.Text = "The [content] type has been detected!`n`nDid you update the [search/pages] folder?`n[npm run crawl]"
+        $label.Location = New-Object System.Drawing.Point(30, 30)
+        $label.Size = New-Object System.Drawing.Size(490, 100)
+        $label.Font = New-Object System.Drawing.Font("Malgun Gothic", 14, [System.Drawing.FontStyle]::Bold)
 
-Did you update the 'search/pages' folder?\";
-        \$label.Location = New-Object System.Drawing.Point(30, 30);
-        \$label.Size = New-Object System.Drawing.Size(490, 100);
-        \$label.Font = New-Object System.Drawing.Font('Malgun Gothic', 13, [System.Drawing.FontStyle]::Bold);
+        # Create the "Yes" button.
+        $btnYes = New-Object System.Windows.Forms.Button
+        $btnYes.Text = "Yes"
+        $btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes
+        $btnYes.Location = New-Object System.Drawing.Point(140, 150)
+        $btnYes.Size = New-Object System.Drawing.Size(120, 45)
+        $btnYes.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 4. Create the [Yes] button
-        \$btnYes = New-Object System.Windows.Forms.Button;
-        \$btnYes.Text = 'Yes';
-        \$btnYes.DialogResult = [System.Windows.Forms.DialogResult]::Yes;
-        \$btnYes.Location = New-Object System.Drawing.Point(140, 150);
-        \$btnYes.Size = New-Object System.Drawing.Size(120, 45);
-        \$btnYes.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Create the "No" button.
+        $btnNo = New-Object System.Windows.Forms.Button
+        $btnNo.Text = "No"
+        $btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No
+        $btnNo.Location = New-Object System.Drawing.Point(280, 150)
+        $btnNo.Size = New-Object System.Drawing.Size(120, 45)
+        $btnNo.Font = New-Object System.Drawing.Font("Malgun Gothic", 11)
 
-        # 5. Create the [No] button
-        \$btnNo = New-Object System.Windows.Forms.Button;
-        \$btnNo.Text = 'No';
-        \$btnNo.DialogResult = [System.Windows.Forms.DialogResult]::No;
-        \$btnNo.Location = New-Object System.Drawing.Point(280, 150);
-        \$btnNo.Size = New-Object System.Drawing.Size(120, 45);
-        \$btnNo.Font = New-Object System.Drawing.Font('Malgun Gothic', 11);
+        # Set the keyboard shortcuts (Enter -> "Yes", Esc -> "No").
+        $form.AcceptButton = $btnYes
+        $form.CancelButton = $btnNo
 
-        # 6. Set Keyboard Shortcuts (Enter -> Yes, Esc -> No)
-        \$form.AcceptButton = \$btnYes;
-        \$form.CancelButton = \$btnNo;
+        # Add the created components to the window form.
+        $form.Controls.Add($label)
+        $form.Controls.Add($btnYes)
+        $form.Controls.Add($btnNo)
 
-        # 7. Add components to the window form
-        \$form.Controls.Add(\$label);
-        \$form.Controls.Add(\$btnYes);
-        \$form.Controls.Add(\$btnNo);
+        # Open the window.
+        $result = $form.ShowDialog()
 
-        # 8. Open the window and output the user click result
-        \$result = \$form.ShowDialog();
-        Write-Output \$result;
-    " | tr -d '\r')
+        # Return result to USER_CHOICE.
+        Write-Output $result
+    ' | tr -d '\r')
 
-    if [ "$USER_CHOICE" = "No" ] || [ "$USER_CHOICE" != "Yes" ]; then
+    # Cancel the current push if the user selects anything other than "Yes"
+    if [ "$USER_CHOICE" != "Yes" ]; then
         powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[System.Media.SystemSounds]::Hand.Play()"
-        echo "❌ The push was canceled. Please update the 'search/pages' folder. npm run crawl"
+        echo "❌ The push was canceled. Please update the [search/pages] folder. [npm run crawl]"
+
         exit 1
     fi
 fi
 
 exit 0
 ```
-
 GitHub Actions #
 GitHub Actions is a continuous integration and continuous deployment (CI/CD) service.
 GitHub Actions provides secrets, variables, artifacts, and outputs.
 GitHub Actions consists of workflows that are located in .github/workflows with .yml. Workflows are triggered by specific events and contain one or more jobs.
 Jobs run on a runner and contain one or more steps. Jobs run in parallel by default but can run sequentially by specifying needs.
 Steps execute a shell command, a custom action, or a third-party action. Steps run in order.
-
 Troubleshooting #
 Korean comments are garbled in GitHub.
 The connection between a local repository and GitHub is lost.
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Git & GitHub
 Files & Folders
@@ -323,5 +328,4 @@ Git Command Lines
 Git Hooks
 GitHub Actions
 Troubleshooting
-
-© 2026 HSLee Dev
+***

@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,11 +7,13 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Problems
+***
 
-Article
+***Article
 Problems [Last Updated: September 20, 2026]
 Find Max Sum of Subarray
 Find Next Permutation
@@ -21,5 +23,4 @@ Move All Zeroes to End
 Reverse Array
 Rotate Array Clockwise
 Rotate Array Counterclockwise
-
-© 2026 HSLee Dev
+***

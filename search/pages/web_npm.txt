@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,16 +7,19 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 npm
+***
 
-Reference Navigation
+***Reference Navigation
 npm
 npm
+***
 
-Article
+***Article
 npm # [Last Updated: June 13, 2026]
 npm manages Node.js packages.
 npm init
@@ -43,7 +46,4 @@ npm run <script-name>
 Runs the specified script.
 npm root
 Shows the absolute path to node_modules.
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

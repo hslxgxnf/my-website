@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,13 +7,15 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 Vanilla
 Properties & Methods
+***
 
-Reference Navigation
+***Reference Navigation
 Properties & Methods
 JAVASCRIPT.INFO | Document
 Element.className
@@ -22,8 +24,9 @@ MDN | String.prototype.includes()
 Element.classList
 MDN | Element: classList property
 MDN | DOMTokenList: contains() method
+***
 
-Article
+***Article
 Properties & Methods # [Last Updated: April 18, 2026]
 window
 document
@@ -41,7 +44,4 @@ The String.prototype.includes() method doesn't matter the exact match of an argu
 Element.classList
 The DOMTokenList.contains() method matters the exact match of an argument.
 DOMTokenList.add() DOMTokenList.remove() DOMTokenList.toggle() DOMTokenList.replace()
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

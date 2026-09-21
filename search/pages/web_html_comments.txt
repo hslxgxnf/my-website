@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,17 +7,20 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 HTML
 Comments
+***
 
-Reference Navigation
+***Reference Navigation
 Comments
 MDN | Using HTML comments <!-- … -->
+***
 
-Article
+***Article
 Comments # [Last Updated: July 20, 2026]
 ```code
 HTML
@@ -28,7 +31,4 @@ HTML
  Comment
 -->
 ```
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,24 +7,26 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 CSS
 Declarations
 Property Arrangement
+***
 
-Reference Navigation
+***Reference Navigation
 Property Arrangement
 Stack Overflow | Conventional Order of CSS properties
 Rhodes Mill | Concentric CSS
+***
 
-Article
+***Article
 Property Arrangement # [Last Updated: February 22, 2026]
-
 Custom Properties #
 ```code
-Text
+Text | custom-properties.txt
 --space-10
 --space-20
 --space-30
@@ -64,10 +66,9 @@ Text
 --color-3
 --color-4
 ```
-
 Non-Custom Properties #
 ```code
-Text
+Text | non-custom-properties.txt
 color-scheme
 content
 display
@@ -315,11 +316,11 @@ pointer-events
 user-select
 tap-highlight-color
 ```
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Property Arrangement
 Custom Properties
 Non-Custom Properties
-
-© 2026 HSLee Dev
+***

@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,19 +7,21 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 DSA
 Linked List
+***
 
-Reference Navigation
+***Reference Navigation
 Linked List
 GeeksforGeeks | Linked List Data Structure
+***
 
-Article
+***Article
 Linked List # [Last Updated: September 14, 2026]
 Access is $\mathcal{O}(n)$.
 While insertion and deletion at known positions are $\mathcal{O}(1)$, those at arbitrary positions are $\mathcal{O}(n)$ due to traversal.
 Types: Singly Linked List, Doubly Linked List, Circular Linked List
-
-© 2026 HSLee Dev
+***

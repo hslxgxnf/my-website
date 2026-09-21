@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,17 +7,20 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 CSS
 Comments
+***
 
-Reference Navigation
+***Reference Navigation
 Comments
 MDN | Comments
+***
 
-Article
+***Article
 Comments # [Last Updated: July 20, 2026]
 ```code
 CSS
@@ -33,7 +36,4 @@ CSS
  * It is used for essential information that must be preserved, such as copyrights or licenses.
  */
 ```
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

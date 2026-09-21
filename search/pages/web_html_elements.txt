@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,13 +7,15 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 HTML
 Elements
+***
 
-Reference Navigation
+***Reference Navigation
 Elements
 MDN | Element
 MDN | Tag
@@ -37,21 +39,19 @@ MDN | HTML table accessibility
 MDN | Styling tables
 <a>
 Attributes | rel="noopener"
+***
 
-Article
+***Article
 Elements # [Last Updated: July 20, 2026]
-
 Normal Elements #
 <Opening Tag>Nested Content</Closing Tag>
 Normal elements can have nested elements and text nodes.
 Nested Content sets the default value (e.g., <textarea>Default</textarea>).
-
 Void Elements #
 <Tag />
 The trailing slash is not required, but it makes XHTML-compatible and more readable.
 Void elements cannot have nested elements and text nodes.
 The value attribute sets the default value (e.g., <input value="Default" />).
-
 Content Categories #
 <!doctype html>
 <html>
@@ -178,12 +178,12 @@ HTML
 <video> <source>
 <audio> <source>
 <iframe>
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Elements
 Normal Elements
 Void Elements
 Content Categories
-
-© 2026 HSLee Dev
+***

@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,12 +7,14 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 HTML
+***
 
-Article
+***Article
 HTML (HyperText Markup Language) [Last Updated: September 20, 2026]
 Comments
 Naming Cases
@@ -20,5 +22,4 @@ Elements
 Attributes
 Entities
 Emmet
-
-© 2026 HSLee Dev
+***

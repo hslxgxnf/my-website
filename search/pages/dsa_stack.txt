@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,19 +7,21 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 DSA
 Stack
+***
 
-Reference Navigation
+***Reference Navigation
 Stack
 GeeksforGeeks | Stack Data Structure
+***
 
-Article
+***Article
 Stack # [Last Updated: September 14, 2026]
 LIFO (Last In, First Out)
 Access at the top is $\mathcal{O}(1)$.
 Insertion and deletion at the top are $\mathcal{O}(1)$.
-
-© 2026 HSLee Dev
+***

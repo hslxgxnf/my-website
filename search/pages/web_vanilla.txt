@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,18 +7,20 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 Vanilla
+***
 
-Reference Navigation
+***Reference Navigation
 Vanilla
 MDN | JavaScript
 JAVASCRIPT.INFO | The Modern JavaScript Tutorial
+***
 
-Article
+***Article
 Vanilla [Last Updated: September 20, 2026]
 Properties & Methods
-
-© 2026 HSLee Dev
+***

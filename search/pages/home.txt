@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,13 +7,10 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
-Home
-
-Article
+***Article
 Archive of My Learning Journey [Last Updated: September 20, 2026]
 Hi, I'm Hoseon Lee.
 Welcome to my digital garden for exploring, reviewing, and deepening engineering insights.
-
-© 2026 HSLee Dev
+***

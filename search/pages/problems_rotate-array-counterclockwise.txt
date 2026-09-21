@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,35 +7,33 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Problems
 Rotate Array Counterclockwise
+***
 
-Reference Navigation
+***Reference Navigation
 Rotate Array Counterclockwise
 GeeksforGeeks | Rotate Array
 GeeksforGeeks | Juggling Algorithm for Array Rotation
+***
 
-Article
+***Article
 Rotate Array Counterclockwise # [Last Updated: July 13, 2026]
-
 Problem #
 Given an array. Rotate the array counterclockwise by d steps, where d is a positive integer. Consider the array as circular. Do the mentioned change in the array in place.
-
 Examples #
 [1, 2, 3, 4, 5], 2 ➜ [3, 4, 5, 1, 2]
 [2, 4, 6, 8, 10, 12, 14, 16, 18, 20], 3 ➜ [8, 10, 12, 14, 16, 18, 20, 2, 4, 6]
 [7, 3, 9, 1], 9 ➜ [3, 9, 1, 7]
-
 Constraints #
 1 ≤ arr.size(), d ≤ 10⁵
 0 ≤ arr[i] ≤ 10⁵
-
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$
-
 Solution #
 ```code
 Python
@@ -89,8 +87,9 @@ print(rotate_array_counterclockwise_reversal([1, 2, 3, 4, 5], 2))
 print(rotate_array_counterclockwise_reversal([2, 4, 6, 8, 10, 12, 14, 16, 18, 20], 3))
 print(rotate_array_counterclockwise_reversal([7, 3, 9, 1], 9))
 ```
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Rotate Array Counterclockwise
 Problem
@@ -98,5 +97,4 @@ Examples
 Constraints
 Expected Complexities
 Solution
-
-© 2026 HSLee Dev
+***

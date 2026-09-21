@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,19 +7,22 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 Stylelint
+***
 
-Reference Navigation
+***Reference Navigation
 Stylelint
 Stylelint
 GitHub | properties-order
 JetBrains WebStorm | Languages & Frameworks
 JetBrains WebStorm | Tools
+***
 
-Article
+***Article
 Stylelint # [Last Updated: July 20, 2026]
 Stylelint lints CSS, SCSS, etc.
 If the default IDE arrangement feature fails to arrange properties within nested at-rules and SCSS at-rules, the "order/properties-order" rule ensures consistent arrangement except for custom properties.
@@ -290,7 +293,4 @@ const config = {
 
 export default config;
 ```
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

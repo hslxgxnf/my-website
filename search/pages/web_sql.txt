@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,21 +7,23 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 SQL
+***
 
-Reference Navigation
+***Reference Navigation
 SQL (Structured Query Language)
 Udemy | SQL - The Complete Developer's Guide (MySQL, PostgreSQL)
+***
 
-Article
+***Article
 SQL (Structured Query Language) # [Last Updated: July 23, 2026]
 SQL is used for managing data in Relational Database Management Systems (RDBMS). It allows users to create, read, update, and delete (CRUD) data.
 Data is normalized, meaning it is split across related tables rather than stored in a single large table. Tables are connected to each other using keys.
 Vertical data elements are called columns or fields. Horizontal data elements are called rows, records, or entries.
-
 Comments #
 ```code
 SQL
@@ -32,14 +34,11 @@ SQL
  * Comment
  */
 ```
-
 Naming Cases #
 SQL is case-insensitive, but using UPPERCASE for keywords and snake_case for identifiers is recommended.
 Use double quotes around identifiers to avoid conflicts with reserved keywords.
-
 Statement Delimiter #
 Statements must end with a semicolon, except for a single statement. Adding a semicolon to it is recommended, though.
-
 Statements #
 A statement consists of clauses, and a clause consists of keywords, identifiers, operators, and values (expressions).
 The order of clauses must be maintained. SELECT → FROM → WHERE
@@ -60,7 +59,6 @@ Operators
 >
 Values (Expressions)
 5000
-
 Data Types #
 String
 Number
@@ -68,8 +66,9 @@ Date
 Time
 Boolean
 File
+***
 
-Page Navigation
+***Page Navigation
 On this page
 SQL (Structured Query Language)
 Comments
@@ -77,5 +76,4 @@ Naming Cases
 Statement Delimiter
 Statements
 Data Types
-
-© 2026 HSLee Dev
+***

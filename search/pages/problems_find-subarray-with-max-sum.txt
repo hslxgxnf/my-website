@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,34 +7,32 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Problems
 Find Subarray with Max Sum
+***
 
-Reference Navigation
+***Reference Navigation
 Find Subarray with Max Sum
 GeeksforGeeks | Print subarray with maximum sum
+***
 
-Article
+***Article
 Find Subarray with Max Sum # [Last Updated: July 13, 2026]
-
 Problem #
 Given an array. Find the subarray with the max sum containing at least one element.
-
 Examples #
 [2, 3, -8, 7, -1, 2, 3] ➜ [7, -1, 2, 3]
 [-2, -4] ➜ [-2]
 [5, 4, 1, 7, 8] ➜ [5, 4, 1, 7, 8]
-
 Constraints #
 1 ≤ arr.size() ≤ 10⁵
 -10⁴ ≤ arr[i] ≤ 10⁴
-
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(n)$
-
 Solution #
 ```code
 Python
@@ -68,8 +66,9 @@ print(find_max_sum_subarray([2, 3, -8, 7, -1, 2, 3]))
 print(find_max_sum_subarray([-2, -4]))
 print(find_max_sum_subarray([5, 4, 1, 7, 8]))
 ```
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Find Subarray with Max Sum
 Problem
@@ -77,5 +76,4 @@ Examples
 Constraints
 Expected Complexities
 Solution
-
-© 2026 HSLee Dev
+***

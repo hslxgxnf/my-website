@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,27 +7,27 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 SCSS
+***
 
-Reference Navigation
+***Reference Navigation
 SCSS (Sassy CSS)
 Sass
 HEROPY.DEV | SCSS/Sass 완벽 가이드
+***
 
-Article
+***Article
 SCSS (Sassy CSS) # [Last Updated: July 20, 2026]
-
 Sass vs. SCSS #
 Syntactically awesome style sheets vs. Sassy CSS
 Both Sass and SCSS are CSS preprocessors. Although SCSS was introduced after Sass, it is now more widely recommended due to its full compatibility with standard CSS.
-
 Files #
 An SCSS file with a leading underscore is a partial, meaning it does not compile into a standalone CSS file.
 _index.scss is reserved for gathering partials.
-
 Comments #
 ```code
 SCSS
@@ -43,7 +43,6 @@ SCSS
  * Comment
  */
 ```
-
 Variables #
 SCSS variables are scoped to their defining file or block. Declaring an SCSS variable inside a selector, such as :root, makes it local to that block and inaccessible from the outside. To make an SCSS variable global, define it outside of all selectors and import it where needed.
 ```code
@@ -59,10 +58,8 @@ p {
   color: $color-second;
 }
 ```
-
 Interpolation #
 #{}
-
 At-Rules #
 @at-root
 @mixin
@@ -94,8 +91,9 @@ SCSS
 }
 ```
 @while
+***
 
-Page Navigation
+***Page Navigation
 On this page
 SCSS (Sassy CSS)
 Sass vs. SCSS
@@ -104,5 +102,4 @@ Comments
 Variables
 Interpolation
 At-Rules
-
-© 2026 HSLee Dev
+***

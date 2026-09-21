@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,35 +7,33 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Problems
 Find Next Permutation
+***
 
-Reference Navigation
+***Reference Navigation
 Find Next Permutation
 GeeksforGeeks | Next Permutation
+***
 
-Article
+***Article
 Find Next Permutation # [Last Updated: July 22, 2026]
-
 Problem #
 Given an array. Find the next permutation that rearranges the array into the next lexicographical order. If there is no next permutation, rearrange the array into the lowest possible order.
-
 Examples #
 [2, 4, 1, 7, 5, 0] ➜ [2, 4, 5, 0, 1, 7]
 [3, 4, 2, 5, 1] ➜ [3, 4, 5, 1, 2]
 [3, 2, 1] ➜ [1, 2, 3]
 As [3, 2, 1] is the last permutation, the next permutation is the lowest one.
-
 Constraints #
 1 ≤ arr.size() ≤ 10⁵
 0 ≤ arr[i] ≤ 10⁵
-
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$
-
 Solution #
 ```code
 Python
@@ -74,8 +72,9 @@ print(find_next_permutation([2, 4, 1, 7, 5, 0]))
 print(find_next_permutation([3, 4, 2, 5, 1]))
 print(find_next_permutation([3, 2, 1]))
 ```
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Find Next Permutation
 Problem
@@ -83,5 +82,4 @@ Examples
 Constraints
 Expected Complexities
 Solution
-
-© 2026 HSLee Dev
+***

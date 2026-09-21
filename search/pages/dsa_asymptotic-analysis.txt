@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,38 +7,38 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 DSA
 Asymptotic Analysis
+***
 
-Reference Navigation
+***Reference Navigation
 Asymptotic Analysis
 GeeksforGeeks | Analysis of Algorithms
+***
 
-Article
+***Article
 Asymptotic Analysis # [Last Updated: July 23, 2026]
 Asymptotic analysis evaluates the performance of an algorithm based on input size by measuring its time or space complexity.
-
 Time Complexity #
 Since actual execution time is machine-dependent, time complexity measures how many times each statement executes.
 Time complexity is commonly expressed using Big-O notation.
-
 Space Complexity #
 Auxiliary space is the extra temporary space required by an algorithm.
 Space complexity is the total space required, including both input space and auxiliary space.
 Both auxiliary space and space complexity are commonly expressed using Big-O notation.
-
 Notations #
 Big-O notation measures the upper bound of an algorithm's complexity. It guarantees that the algorithm will not take more time or space than this limit.
 Big-Ω notation measures the lower bound of an algorithm's complexity. It guarantees that the algorithm will require at least this much time or space.
 Big-Θ notation measures the tight bound of an algorithm's complexity. It applies when the asymptotic upper and lower bounds match.
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Asymptotic Analysis
 Time Complexity
 Space Complexity
 Notations
-
-© 2026 HSLee Dev
+***

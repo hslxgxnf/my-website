@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,17 +7,19 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 Next.js
+***
 
-Reference Navigation
+***Reference Navigation
 Next.js
 Next.js
 Udemy | Next.js & React - The Complete Guide
+***
 
-Article
+***Article
 Next.js # [Last Updated: June 26, 2026]
-
-© 2026 HSLee Dev
+***

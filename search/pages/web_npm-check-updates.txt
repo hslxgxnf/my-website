@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,16 +7,19 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 npm-check-updates
+***
 
-Reference Navigation
+***Reference Navigation
 npm-check-updates
 npm | npm-check-updates
+***
 
-Article
+***Article
 npm-check-updates # [Last Updated: June 13, 2026]
 npm-check-updates manages the versions of installed packages in package.json.
 npm i -g npm-check-updates
@@ -33,7 +36,4 @@ Scopes packages to the specified version.
 Scopes packages to the specified dependency sections.
 --global (-g)
 Scopes global packages.
-
-Page Navigation
-
-© 2026 HSLee Dev
+***

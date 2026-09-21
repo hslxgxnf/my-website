@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,35 +7,33 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Problems
 Find Second Largest Number
+***
 
-Reference Navigation
+***Reference Navigation
 Find Second Largest Number
 GeeksforGeeks | Second Largest
+***
 
-Article
+***Article
 Find Second Largest Number # [Last Updated: July 13, 2026]
-
 Problem #
 Given an array of positive numbers. Find the second largest number from the array. If the second largest number doesn't exist then return -1.
-
 Examples #
 [12, 35, 1, 10, 34, 1] ➜ 34
 [10, 5, 10] ➜ 5
 [10, 10, 10] ➜ -1
 The largest is 10 and the second largest does not exist.
-
 Constraints #
 2 ≤ arr.size() ≤ 10⁵
 1 ≤ arr[i] ≤ 10⁵
-
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$
-
 Solution #
 ```code
 Python
@@ -61,8 +59,9 @@ print(find_second_largest_number([12, 35, 1, 10, 34, 1]))
 print(find_second_largest_number([10, 5, 10]))
 print(find_second_largest_number([10, 10, 10]))
 ```
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Find Second Largest Number
 Problem
@@ -70,5 +69,4 @@ Examples
 Constraints
 Expected Complexities
 Solution
-
-© 2026 HSLee Dev
+***

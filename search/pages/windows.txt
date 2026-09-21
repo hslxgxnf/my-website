@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,11 +7,13 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Windows
+***
 
-Reference Navigation
+***Reference Navigation
 Oh My Posh
 Oh My Posh
 JetBrains WebStorm | Tools
@@ -19,12 +21,11 @@ JetBrains PyCharm | Tools
 PowerRename
 Microsoft | PowerRename utility for Windows
 YouTube | How to use Windows PowerToys' PowerRename utility
+***
 
-Article
+***Article
 Windows # [Last Updated: September 14, 2026]
-
 PowerShell #
-
 Suggestion Tab #
 Open Microsoft.PowerShell_profile.ps1.
 notepad $PROFILE
@@ -38,7 +39,6 @@ Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestion
 If the version of PSReadLine is outdated, errors can occur. Upgrade it. Install-Module PSReadLine -Force -AllowClobber
 Refresh Microsoft.PowerShell_profile.ps1.
 . $PROFILE
-
 Oh My Posh #
 Install Oh My Posh.
 winget install JanDeDobbeleer.OhMyPosh --source winget
@@ -132,12 +132,11 @@ JSON | cert.omp.json
 ```
 Refresh Microsoft.PowerShell_profile.ps1.
 . $PROFILE
-
 PowerToys #
-
 PowerRename #
+***
 
-Page Navigation
+***Page Navigation
 On this page
 Windows
 PowerShell
@@ -145,5 +144,4 @@ Suggestion Tab
 Oh My Posh
 PowerToys
 PowerRename
-
-© 2026 HSLee Dev
+***

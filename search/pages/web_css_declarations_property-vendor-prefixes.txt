@@ -1,4 +1,4 @@
-Main Navigation
+***Main Navigation
 Windows
 IDE Settings
 Git & GitHub
@@ -7,18 +7,21 @@ DSA
 Problems
 Web
 AI
+***
 
-Article Navigation
+***Article Navigation
 Web
 CSS
 Declarations
 Property Vendor Prefixes
+***
 
-Reference Navigation
+***Reference Navigation
 Property Vendor Prefixes
 MDN | Vendor prefix
+***
 
-Article
+***Article
 Property Vendor Prefixes # [Last Updated: February 20, 2026]
 -webkit-
 Almost All Browsers
@@ -28,7 +31,4 @@ Firefox
 Old Opera
 -ms-
 Old Edge and IE
-
-Page Navigation
-
-© 2026 HSLee Dev
+***
