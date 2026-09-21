@@ -1,6 +1,5 @@
 import type { Reference, Code } from "@/types/main/interfaces";
 import { favicons } from "@/assets/main-description/favicons/favicons";
-import readFile from "@/functions/main-description/readFile";
 
 export const reference: Reference = [
   {
@@ -24,10 +23,12 @@ export const reference: Reference = [
 
 export const customPropertiesCode: Code = {
   language: "text",
-  content: `${await readFile("custom-properties.txt")}`,
+  fileName: "custom-properties.txt",
+  content: ``,
 };
 
 export const nonCustomPropertiesCode: Code = {
   language: "text",
-  content: `${await readFile("non-custom-properties.txt")}`,
+  fileName: "non-custom-properties.txt",
+  content: ``,
 };

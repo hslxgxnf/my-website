@@ -1,6 +1,5 @@
 import type { Reference, Code } from "@/types/main/interfaces";
 import { favicons } from "@/assets/main-description/favicons/favicons";
-import readFile from "@/functions/main-description/readFile";
 
 export const reference: Reference = [
   {
@@ -37,5 +36,5 @@ export const reference: Reference = [
 export const code: Code = {
   language: "javascript",
   fileName: "stylelint.config.mjs",
-  content: `${await readFile("stylelint.config.mjs")}`,
+  content: ``,
 };
