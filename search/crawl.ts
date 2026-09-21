@@ -28,14 +28,14 @@ async function run() {
     console.error("Failed to fetch sitemap.xml:", error);
   }
 
-  const targetDir = path.join(process.cwd(), "search", "pages");
-  if (!fs.existsSync(targetDir)) {
-    fs.mkdirSync(targetDir, { recursive: true });
+  const targetDirPath = path.join(process.cwd(), "search", "pages");
+  if (!fs.existsSync(targetDirPath)) {
+    fs.mkdirSync(targetDirPath, { recursive: true });
   } else {
-    const files = fs.readdirSync(targetDir);
-    for (const file of files) {
-      if (file.endsWith(".txt")) {
-        fs.unlinkSync(path.join(targetDir, file));
+    const allRelativePaths = fs.readdirSync(targetDirPath);
+    for (const relativePath of allRelativePaths) {
+      if (relativePath.endsWith(".txt")) {
+        fs.unlinkSync(path.join(targetDirPath, relativePath));
       }
     }
   }
@@ -54,7 +54,7 @@ async function run() {
         fileName = "home";
       }
 
-      const filePath = path.join(targetDir, `${fileName}.txt`);
+      const filePath = path.join(targetDirPath, `${fileName}.txt`);
       fs.writeFileSync(filePath, content, "utf8");
     } catch (error) {
       console.error(`Failed to scrape ${pathName}:`, error);
