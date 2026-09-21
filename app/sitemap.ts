@@ -2,58 +2,46 @@ import type { MetadataRoute } from "next";
 import path from "path";
 import fs from "fs";
 
-interface UrlInfo {
-  url: string;
-  lastModified: string;
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  return getStaticUrls(path.join(process.cwd(), "app"));
-}
+  const baseDirPath = path.join(process.cwd(), "app");
+  const allRelativePaths = fs.readdirSync(baseDirPath, {
+    recursive: true,
+  }) as string[];
 
-function getStaticUrls(dir: string, baseDir = dir): UrlInfo[] {
-  let urlInfos: UrlInfo[] = [];
+  const matchedRelativePaths = allRelativePaths.filter((relativePath) => {
+    const isPage = path.basename(relativePath) === "page.tsx";
 
-  if (!fs.existsSync(dir)) {
-    return urlInfos;
-  }
+    const normalizedPath = relativePath.replaceAll("\\", "/");
+    const hasPrivateFolder = normalizedPath
+      .split("/")
+      .some((part) => part.startsWith("_"));
 
-  const items = fs.readdirSync(dir, { withFileTypes: true });
-  for (const item of items) {
-    const fullPath = path.join(dir, item.name);
+    return isPage && !hasPrivateFolder;
+  });
 
-    if (item.isDirectory()) {
-      if (item.name.startsWith("[") || item.name.startsWith("_")) {
-        continue;
-      }
+  return matchedRelativePaths.map((matchedRelativePath) => {
+    const normalizedPath = matchedRelativePath.replaceAll("\\", "/");
+    let cleanUrl = normalizedPath
+      .split("/")
+      .filter((part) => !part.startsWith("(") && part !== "page.tsx")
+      .join("/");
+    cleanUrl = cleanUrl === "" ? "" : `/${cleanUrl}`;
+    const url = escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${cleanUrl}`);
 
-      urlInfos = urlInfos.concat(getStaticUrls(fullPath, baseDir));
-    } else if (item.isFile() && item.name === "page.tsx") {
-      const relativePath = path.relative(baseDir, dir);
-      const normalizedPath = relativePath.replaceAll("\\", "/");
-      let cleanUrl = normalizedPath
-        .split("/")
-        .filter((segment) => !/^\([^)]+\)$/.test(segment))
-        .join("/");
-      cleanUrl = cleanUrl === "" ? "" : `/${cleanUrl}`;
-      const url = escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${cleanUrl}`);
+    const fullPath = path.join(baseDirPath, matchedRelativePath);
+    const fileContent = fs.readFileSync(fullPath, "utf8");
+    const match = fileContent.match(/lastUpdated=["']([^"']+)["']/);
+    const fileStats = fs.statSync(fullPath);
+    const lastModified =
+      match && match[1]
+        ? match[1]
+        : fileStats.mtime.toISOString().split("T")[0];
 
-      const fileContent = fs.readFileSync(fullPath, "utf-8");
-      const match = fileContent.match(/lastUpdated=["']([^"']+)["']/);
-      const fileStats = fs.statSync(fullPath);
-      const lastModified =
-        match && match[1]
-          ? match[1]
-          : fileStats.mtime.toISOString().split("T")[0];
-
-      urlInfos.push({
-        url,
-        lastModified,
-      });
-    }
-  }
-
-  return urlInfos;
+    return {
+      url,
+      lastModified,
+    };
+  });
 }
 
 function escapeXml(unsafe: string): string {
