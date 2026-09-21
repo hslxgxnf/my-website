@@ -1,5 +1,4 @@
 import type { StaticImageData } from "next/image";
-import { JSX } from "react";
 
 export interface Site {
   url: string;
@@ -33,14 +32,3 @@ export interface Code {
   fileName?: string;
   content: string;
 }
-
-/**
- * - **Key**: `Slug`
- * - **Value**: `Page`
- *
- * @example
- * const pages: Pages = new Map([
- *   ['@import', <ImportPage />]
- * ]);
- */
-export type Pages = Map<string, JSX.Element>;
