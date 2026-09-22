@@ -22,6 +22,12 @@ const SPECIAL_FILES = [
 export default function HighlightComplexCode({
   children,
 }: HighlightComplexCodeProps) {
+  let fileInfo: string = children.language;
+  fileInfo = toTitleCase(fileInfo);
+  if (children.fileName) {
+    fileInfo = `${fileInfo} | ${children.fileName}`;
+  }
+
   const fileName = children.fileName;
   let content = children.content;
   if (fileName && SPECIAL_FILES.includes(fileName)) {
@@ -43,7 +49,7 @@ export default function HighlightComplexCode({
       );
       if (matchedRelativePaths.length !== 1) {
         console.error(
-          `[${fileName}] matchedRelativePaths.Length: ${matchedRelativePaths.length} must be 1.`,
+          `[${fileName}] matchedRelativePaths.length: ${matchedRelativePaths.length} must be 1.`,
         );
         content = "";
       } else {
@@ -53,6 +59,7 @@ export default function HighlightComplexCode({
       }
     }
 
+    // Validate non-custom properties.
     // Compare "stylelint.config.mjs" with "non-custom-properties.txt".
     if (fileName === SPECIAL_FILES[1] || fileName === SPECIAL_FILES[3]) {
       const stylelintConfigProperties = stylelintConfig.rules![
@@ -68,7 +75,7 @@ export default function HighlightComplexCode({
       );
       if (matchedRelativePaths.length !== 1) {
         console.error(
-          `[${SPECIAL_FILES[3]}] matchedRelativePaths.Length: ${matchedRelativePaths.length} must be 1.`,
+          `[${SPECIAL_FILES[3]}] matchedRelativePaths.length: ${matchedRelativePaths.length} must be 1.`,
         );
         content = "";
       } else {
@@ -83,7 +90,7 @@ export default function HighlightComplexCode({
         let success = true;
         if (stylelintConfigProperties.length !== nonCustomProperties.length) {
           console.error(
-            `stylelintConfigProperties.Length: ${stylelintConfigProperties.length} must be the same as nonCustomProperties.Length: ${nonCustomProperties.length}.`,
+            `stylelintConfigProperties.length: ${stylelintConfigProperties.length} must be the same as nonCustomProperties.length: ${nonCustomProperties.length}.`,
           );
           content = "";
           success = false;
@@ -112,12 +119,6 @@ export default function HighlightComplexCode({
   }
   content = content.trim();
 
-  let fileInfo: string = children.language;
-  fileInfo = toTitleCase(fileInfo);
-  if (children.fileName) {
-    fileInfo = `${fileInfo} | ${children.fileName}`;
-  }
-
   let language: string = children.language;
   if (children.language === "html") {
     language = "handlebars";
@@ -127,7 +128,6 @@ export default function HighlightComplexCode({
     <div className="complex-code-container">
       <div>
         <span>{fileInfo}</span>
-
         <HighlightComplexCodeButton content={content} />
       </div>
 

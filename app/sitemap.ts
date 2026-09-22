@@ -30,11 +30,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const fullPath = path.join(baseDirPath, matchedRelativePath);
     const fileContent = fs.readFileSync(fullPath, "utf8");
-    const match = fileContent.match(/lastUpdated=["']([^"']+)["']/);
+    const matchedLastUpdated = fileContent.match(
+      /lastUpdated=["']([^"']+)["']/,
+    );
     const fileStats = fs.statSync(fullPath);
     const lastModified =
-      match && match[1]
-        ? match[1]
+      matchedLastUpdated && matchedLastUpdated[1]
+        ? matchedLastUpdated[1]
         : fileStats.mtime.toISOString().split("T")[0];
 
     return {
