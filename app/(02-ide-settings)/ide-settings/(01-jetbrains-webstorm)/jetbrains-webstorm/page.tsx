@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { FaSortAlphaDown } from "react-icons/fa";
-import { PiCaretDownBold } from "react-icons/pi";
-import { IoSettingsOutline } from "react-icons/io5";
 
-import {
-  reference,
-  entities,
-  liveTemplateTextEdf,
-  liveTemplateTextUc,
-} from "./data";
+import { reference, liveTemplateTextEdf, liveTemplateTextUc } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
+import SRHelper from "@/components/main-description/SRHelper";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -26,12 +19,13 @@ export default function Page() {
 
       <article>
         <section>
-          <Heading type="link-id" number={1} lastUpdated="2026-09-14">
+          <Heading type="link-id" number={1} lastUpdated="2026-09-21">
             JetBrains WebStorm
           </Heading>
           <p>
-            Settings prefixed with <strong>!</strong> are only applied to the
-            current project. They have to be set again for other projects.
+            Settings prefixed with <SRHelper type="project-specificity" /> are
+            only applied to the current project. They have to be set again for
+            other projects.
           </p>
         </section>
         <section>
@@ -54,14 +48,18 @@ export default function Page() {
                 <td>
                   Tree Views
                   <br />
-                  {entities.rightSubArrow} Show indent guides
+                  <SRHelper type="subcategory" /> Show indent guides
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>System Settings</td>
                 <td>Confirm before exiting the IDE</td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
                 <td>System Settings</td>
@@ -73,16 +71,18 @@ export default function Page() {
                 <td>
                   Project
                   <br />
-                  {entities.rightSubArrow} Reopen projects on startup
+                  <SRHelper type="subcategory" /> Reopen projects on startup
                 </td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
                 <td>System Settings</td>
                 <td>
                   Project
                   <br />
-                  {entities.rightSubArrow} Open project in
+                  <SRHelper type="subcategory" /> Open project in
                 </td>
                 <td>New window</td>
               </tr>
@@ -100,8 +100,8 @@ export default function Page() {
             <thead>
               <tr>
                 <th scope="col">Name</th>
-                <th scope="col">
-                  Shortcut <FaSortAlphaDown />
+                <th scope="col" aria-sort="ascending">
+                  Shortcut <SRHelper type="ascending-sort" />
                 </th>
                 <th scope="col">Custom</th>
               </tr>
@@ -110,120 +110,211 @@ export default function Page() {
               {/*Alt*/}
               <tr>
                 <td>Create Rectangular Selection on Mouse Drag</td>
-                <td>Alt + Click</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Alt + Click</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Move Line Down</td>
-                <td>Alt + Down</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Alt + Down</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Show Context Actions</td>
-                <td>Alt + Enter, Ctrl + .</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Alt + Enter</Highlight>,{" "}
+                  <Highlight type="keyboard">Ctrl + .</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Surround With...</td>
-                <td>Alt + T</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <Highlight type="keyboard">Alt + T</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Move Line Up</td>
-                <td>Alt + Up</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Alt + Up</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               {/*Ctrl*/}
               <tr>
                 <td>Add or Remove Caret</td>
-                <td>Ctrl + Alt + Click</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Alt + Click</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Clone Caret Below</td>
-                <td>Ctrl + Alt + Down</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Alt + Down</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Settings</td>
-                <td>Ctrl + Alt + S</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Alt + S</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Clone Caret Above</td>
-                <td>Ctrl + Alt + Up</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Alt + Up</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Go to Declaration or Usages</td>
-                <td>Ctrl + Click</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Click</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Duplicate Line or Selection</td>
-                <td>Ctrl + D</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + D</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Select Last Row</td>
-                <td>Ctrl + End</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + End</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Find</td>
-                <td>Ctrl + F</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + F</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Run</td>
-                <td>Ctrl + F5</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + F5</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Replace</td>
-                <td>Ctrl + H</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + H</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Select First Row</td>
-                <td>Ctrl + Home</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Home</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Comment with Line Comment</td>
-                <td>Ctrl + K {entities.rightStraightArrow} C</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + K * C</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Reformat Code</td>
-                <td>Ctrl + K {entities.rightStraightArrow} D</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + K * D</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Rename</td>
-                <td>Ctrl + R {entities.rightStraightArrow} R</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + R * R</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Find in Files</td>
-                <td>Ctrl + Shift + F</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Shift + F</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Replace in Files</td>
-                <td>Ctrl + Shift + H</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Shift + H</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Parameter Info</td>
-                <td>Ctrl + Shift + Space</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Shift + Space</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Reopen Closed Tab</td>
-                <td>Ctrl + Shift + T</td>
                 <td>
-                  {entities.checkedBox}, Remove{" "}
+                  <Highlight type="keyboard">Ctrl + Shift + T</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="checked" />, Remove{" "}
                   <Highlight type="text">Go to File...</Highlight>
                 </td>
               </tr>
@@ -231,40 +322,63 @@ export default function Page() {
                 <td>
                   Code Completion
                   <br />
-                  {entities.rightSubArrow} Basic
+                  <SRHelper type="subcategory" /> Basic
                 </td>
-                <td>Ctrl + Space</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Ctrl + Space</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Close Tab</td>
-                <td>Ctrl + W</td>
                 <td>
-                  {entities.checkedBox}, Remove{" "}
+                  <Highlight type="keyboard">Ctrl + W</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="checked" />, Remove{" "}
                   <Highlight type="text">Extend Selection</Highlight>
                 </td>
               </tr>
               {/*F*/}
               <tr>
                 <td>Toggle Line Breakpoint</td>
-                <td>F9</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">F9</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Step Over</td>
-                <td>F10</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">F10</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
                 <td>Step Into</td>
-                <td>F11</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">F11</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               {/*Shift*/}
               <tr>
                 <td>Search Everywhere</td>
-                <td>Shift + Shift, Ctrl + T</td>
-                <td></td>
+                <td>
+                  <Highlight type="keyboard">Shift + Shift</Highlight>,{" "}
+                  <Highlight type="keyboard">Ctrl + T</Highlight>
+                </td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -287,50 +401,59 @@ export default function Page() {
                 <td>
                   Soft Wraps
                   <br />
-                  {entities.rightSubArrow} Soft-wrap these files: *.md; *.txt;
-                  *.rst; *.adoc
+                  <SRHelper type="subcategory" /> Soft-wrap these files: *.md;
+                  *.txt; *.rst; *.adoc
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
                   General
                   <br />
-                  {entities.rightSubArrow} Appearance
+                  <SRHelper type="subcategory" /> Appearance
                 </td>
                 <td>Show method separators</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
                   General
                   <br />
-                  {entities.rightSubArrow} Appearance
+                  <SRHelper type="subcategory" /> Appearance
                 </td>
                 <td>Show CSS color preview as background</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
                   General
                   <br />
-                  {entities.rightSubArrow} Code Completion
+                  <SRHelper type="subcategory" /> Code Completion
                   <br />
-                  {entities.rightSubArrow} Popup
+                  <SRHelper type="subcategory" />
+                  <SRHelper type="subcategory" /> Popup
                 </td>
                 <td>Match case:</td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
                 <td>
                   General
                   <br />
-                  {entities.rightSubArrow} Editor Tabs
+                  <SRHelper type="subcategory" /> Editor Tabs
                 </td>
                 <td>
                   Appearance
                   <br />
-                  {entities.rightSubArrow} Tab placement:
+                  <SRHelper type="subcategory" /> Tab placement:
                 </td>
                 <td>Left</td>
               </tr>
@@ -338,26 +461,31 @@ export default function Page() {
                 <td>
                   General
                   <br />
-                  {entities.rightSubArrow} Editor Tabs
+                  <SRHelper type="subcategory" /> Editor Tabs
                 </td>
                 <td>
                   Appearance
                   <br />
-                  {entities.rightSubArrow} Mark modified
+                  <SRHelper type="subcategory" /> Mark modified
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Live Templates</td>
                 <td>
-                  JavaScript {entities.rightStraightArrow} +{" "}
-                  {entities.rightStraightArrow}{" "}
+                  JavaScript <SRHelper type="next" /> + <SRHelper type="next" />{" "}
                   <Highlight type="underline">1</Highlight> Live Template
                 </td>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   A<Highlight type="underline">b</Highlight>breviation:
                 </td>
@@ -368,7 +496,9 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   <Highlight type="underline">D</Highlight>escription:
                 </td>
@@ -379,7 +509,9 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   <Highlight type="underline">T</Highlight>emplate text:
                 </td>
@@ -390,11 +522,13 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   Edit Variables...
                   <br />
-                  {entities.rightSubArrow} Expression
+                  <SRHelper type="subcategory" /> Expression
                 </td>
                 <td>
                   <Highlight type="text" copy={true}>
@@ -403,42 +537,59 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
                 <td>
-                  Define <PiCaretDownBold />
-                  <br />
-                  Everywhere
-                  <br />
-                  {entities.rightSubArrow} JavaScript
-                  <br />
-                  {entities.rightSubArrow} Top level statement, Everywhere
-                  <br />
-                  {entities.rightSubArrow} TypeScript
-                  <br />
-                  {entities.rightSubArrow} Top level statement
+                  <SRHelper type="empty" />
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  Define <SRHelper type="option-toggle" />
+                  <br />
+                  <SRHelper type="subcategory" /> Everywhere
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> JavaScript
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> Top level statement
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> TypeScript
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> Top level statement
+                </td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   Options
                   <br />
-                  {entities.rightSubArrow} Reformat according to style
+                  <SRHelper type="subcategory" /> Reformat according to style
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Live Templates</td>
                 <td>
-                  React {entities.rightStraightArrow} +{" "}
-                  {entities.rightStraightArrow}{" "}
+                  React <SRHelper type="next" /> + <SRHelper type="next" />{" "}
                   <Highlight type="underline">1</Highlight> Live Template
                 </td>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   A<Highlight type="underline">b</Highlight>breviation:
                 </td>
@@ -449,7 +600,9 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   <Highlight type="underline">D</Highlight>escription:
                 </td>
@@ -460,7 +613,9 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   <Highlight type="underline">T</Highlight>emplate text:
                 </td>
@@ -471,54 +626,76 @@ export default function Page() {
                 </td>
               </tr>
               <tr>
-                <td></td>
                 <td>
-                  Define <PiCaretDownBold />
-                  <br />
-                  Everywhere
-                  <br />
-                  {entities.rightSubArrow} JavaScript
-                  <br />
-                  {entities.rightSubArrow} Top level statement, Everywhere
-                  <br />
-                  {entities.rightSubArrow} TypeScript
-                  <br />
-                  {entities.rightSubArrow} Top level statement
+                  <SRHelper type="empty" />
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  Define <SRHelper type="option-toggle" />
+                  <br />
+                  <SRHelper type="subcategory" /> Everywhere
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> JavaScript
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> Top level statement
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> TypeScript
+                  <br />
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" /> Top level statement
+                </td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   Options
                   <br />
-                  {entities.rightSubArrow} Reformat according to style
+                  <SRHelper type="subcategory" /> Reformat according to style
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Inlay Hints</td>
                 <td>Parameter names</td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
                 <td>Inlay Hints</td>
                 <td>Types</td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
                 <td>Inlay Hints</td>
                 <td>Method chains</td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
                 <td>
                   Emmet
                   <br />
-                  {entities.rightSubArrow} HTML
+                  <SRHelper type="subcategory" /> HTML
                 </td>
                 <td>Enable abbreviation preview</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -551,7 +728,7 @@ export default function Page() {
             </li>
             <li>
               <p>
-                <IoSettingsOutline aria-label="Settings icon" />
+                <SRHelper type="settings" />
               </p>
               <ul>
                 <li>
@@ -578,29 +755,33 @@ export default function Page() {
             <tbody>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript
+                  <SRHelper type="project-specificity" /> JavaScript
                   <br />
-                  {entities.rightSubArrow} Code Quality Tools
+                  <SRHelper type="subcategory" /> Code Quality Tools
                   <br />
-                  {entities.rightSubArrow} ESLint
+                  <SRHelper type="subcategory" /> ESLint
                 </td>
                 <td>Automatic ESLint configuration</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript
+                  <SRHelper type="project-specificity" /> JavaScript
                   <br />
-                  {entities.rightSubArrow} Prettier
+                  <SRHelper type="subcategory" /> Prettier
                 </td>
                 <td>Automatic Prettier configuration</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript
+                  <SRHelper type="project-specificity" /> JavaScript
                   <br />
-                  {entities.rightSubArrow} Prettier
+                  <SRHelper type="subcategory" /> Prettier
                 </td>
                 <td>
                   Run for <Highlight type="underline">f</Highlight>iles:
@@ -615,56 +796,66 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript
+                  <SRHelper type="project-specificity" /> JavaScript
                   <br />
-                  {entities.rightSubArrow} Prettier
+                  <SRHelper type="subcategory" /> Prettier
                 </td>
                 <td>Run on save</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript
+                  <SRHelper type="project-specificity" /> JavaScript
                   <br />
-                  {entities.rightSubArrow} Prettier
+                  <SRHelper type="subcategory" /> Prettier
                 </td>
                 <td>Run on paste</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript
+                  <SRHelper type="project-specificity" /> JavaScript
                   <br />
-                  {entities.rightSubArrow} Prettier
+                  <SRHelper type="subcategory" /> Prettier
                 </td>
                 <td>Prefer Prettier configuration to IDE code style</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> JavaScript Runtime
+                  <SRHelper type="project-specificity" /> JavaScript Runtime
                 </td>
                 <td>
                   Node.js
                   <br />
-                  {entities.rightSubArrow} Coding assistance for Node.js
+                  <SRHelper type="subcategory" /> Coding assistance for Node.js
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> Style Sheets
+                  <SRHelper type="project-specificity" /> Style Sheets
                   <br />
-                  {entities.rightSubArrow} Stylelint
+                  <SRHelper type="subcategory" /> Stylelint
                 </td>
                 <td>Enable</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> Style Sheets
+                  <SRHelper type="project-specificity" /> Style Sheets
                   <br />
-                  {entities.rightSubArrow} Stylelint
+                  <SRHelper type="subcategory" /> Stylelint
                 </td>
                 <td>
                   Run for <Highlight type="underline">f</Highlight>iles:
@@ -677,12 +868,14 @@ export default function Page() {
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> Style Sheets
+                  <SRHelper type="project-specificity" /> Style Sheets
                   <br />
-                  {entities.rightSubArrow} Stylelint
+                  <SRHelper type="subcategory" /> Stylelint
                 </td>
                 <td>Run stylelint --fix on save</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -704,26 +897,30 @@ export default function Page() {
             <tbody>
               <tr>
                 <td>
-                  <strong>!</strong> Actions on Save
+                  <SRHelper type="project-specificity" /> Actions on Save
                 </td>
                 <td>Run stylelint --fix</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> Actions on Save
+                  <SRHelper type="project-specificity" /> Actions on Save
                 </td>
                 <td>Run Prettier</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>!</strong> Terminal
+                  <SRHelper type="project-specificity" /> Terminal
                 </td>
                 <td>
                   Font Settings
                   <br />
-                  {entities.rightSubArrow}{" "}
+                  <SRHelper type="subcategory" />{" "}
                   <Highlight type="underline">F</Highlight>ont:
                 </td>
                 <td>MesloLGM Nerd Font</td>
@@ -747,9 +944,13 @@ export default function Page() {
             </thead>
             <tbody>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>Enable backup and sync:</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -768,23 +969,31 @@ export default function Page() {
             </thead>
             <tbody>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   Run/Debug
                   <br />
-                  {entities.rightSubArrow} Confirm rerun with process
+                  <SRHelper type="subcategory" /> Confirm rerun with process
                   termination
                 </td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
               <tr>
-                <td></td>
+                <td>
+                  <SRHelper type="empty" />
+                </td>
                 <td>
                   Version Control
                   <br />
-                  {entities.rightSubArrow} Open Diff as Editor Tab
+                  <SRHelper type="subcategory" /> Open Diff as Editor Tab
                 </td>
-                <td>{entities.emptyBox}</td>
+                <td>
+                  <SRHelper type="unchecked" />
+                </td>
               </tr>
             </tbody>
           </table>
@@ -809,61 +1018,75 @@ export default function Page() {
                 <td>
                   Color
                   <br />
-                  {entities.rightSubArrow} Cycle count on all brackets
+                  <SRHelper type="subcategory" /> Cycle count on all brackets
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Indent guidelines Highlighting</td>
                 <td>
                   Indent guidelines Highlighting
                   <br />
-                  {entities.rightSubArrow} Focus mode
+                  <SRHelper type="subcategory" /> Focus mode
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Language Specific</td>
                 <td>
                   Language Specific
                   <br />
-                  {entities.rightSubArrow} Rainbowify tag name in
+                  <SRHelper type="subcategory" /> Rainbowify tag name in
                   XML/HTML/template files
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Language Specific</td>
                 <td>
                   Language Specific
                   <br />
-                  {entities.rightSubArrow} Rainbowify Python keywords
+                  <SRHelper type="subcategory" /> Rainbowify Python keywords
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Rainbow Variables</td>
                 <td>Enable Rainbow Variables(restart required)</td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Scope Highlighting</td>
                 <td>
                   Scope Highlighting
                   <br />
-                  {entities.rightSubArrow} Border
+                  <SRHelper type="subcategory" /> Border
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
               <tr>
                 <td>Scope Highlighting</td>
                 <td>
                   Scope Highlighting
                   <br />
-                  {entities.rightSubArrow} Suppress scope highlighting when
-                  diffing
+                  <SRHelper type="subcategory" /> Suppress scope highlighting
+                  when diffing
                 </td>
-                <td>{entities.checkedBox}</td>
+                <td>
+                  <SRHelper type="checked" />
+                </td>
               </tr>
             </tbody>
           </table>

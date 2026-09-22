@@ -1,20 +1,6 @@
 import type { Reference } from "@/types/main/interfaces";
 import { favicons } from "@/assets/main-description/favicons/favicons";
 
-export const entities = {
-  checkedBox: "☑", // "\u2611"
-  emptyBox: "☐", // "\u2610"
-  rightSubArrow: "↪", // "\u21AA"
-  rightStraightArrow: "➜", // "\u279C"
-};
-
-export const liveTemplateTextEdf = `export default function $NAME$() {
-  $END$
-}`;
-
-export const liveTemplateTextUc = `"use client";
-$END$`;
-
 export const reference: Reference = [
   {
     target: "Appearance & Behavior",
@@ -118,3 +104,10 @@ export const reference: Reference = [
     ],
   },
 ];
+
+export const liveTemplateTextEdf = `export default function $NAME$() {
+  $END$
+}`;
+
+export const liveTemplateTextUc = `"use client";
+$END$`;
