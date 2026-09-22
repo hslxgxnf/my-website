@@ -35,7 +35,7 @@
 
       @include mixins.table;
 
-      @include mixins.code;
+      @include mixins.highlight;
 
       @include mixins.reference-button;
     }

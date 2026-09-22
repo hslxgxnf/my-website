@@ -1,19 +1,26 @@
 @use "../media" as *;
 
-@mixin code {
+@mixin highlight {
   span.underline {
     text-decoration: underline;
   }
 
+  span.keyboard {
+    * {
+      color: var(--color-3);
+      font-family: var(--font-roboto-mono), monospace;
+    }
+  }
+
   em {
-    color: var(--color-2);
+    color: var(--color-4);
   }
 
   code {
-    color: var(--color-3);
+    color: var(--color-5);
   }
 
-  :is(em.plain, em.copy, code.plain, code.copy) {
+  :is(span.keyboard, em.plain, em.copy, code.plain, code.copy) {
     border-radius: var(--border-radius);
     padding: 0 var(--space-10);
     background-color: var(--background-color-2);

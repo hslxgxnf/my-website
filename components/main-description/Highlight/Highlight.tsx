@@ -1,11 +1,13 @@
 import type { Code } from "@/types/main/interfaces";
 import HighlightMath from "@/components/main-description/Highlight/HighlightMath";
+import HighlightKeyboard from "@/components/main-description/Highlight/HighlightKeyboard";
 import HighlightText from "@/components/main-description/Highlight/HighlightText";
 import HighlightSimpleCode from "@/components/main-description/Highlight/HighlightSimpleCode";
 import HighlightComplexCode from "@/components/main-description/Highlight/HighlightComplexCode";
 
 interface HighlightProps {
-  type: "underline" | "math" | "text" | "simple-code" | "complex-code";
+  type:
+    "underline" | "math" | "keyboard" | "text" | "simple-code" | "complex-code";
   copy?: boolean;
   pre?: boolean;
   children: string | Code;
@@ -33,6 +35,15 @@ export default function Highlight({
     }
 
     return <HighlightMath>{children}</HighlightMath>;
+  }
+
+  if (type === "keyboard" && typeof children === "string") {
+    if (copy || pre) {
+      console.error('type="keyboard" does not support copy and pre.');
+      return null;
+    }
+
+    return <HighlightKeyboard>{children}</HighlightKeyboard>;
   }
 
   if (type === "text" && typeof children === "string") {
