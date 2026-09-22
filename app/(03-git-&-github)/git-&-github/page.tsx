@@ -25,7 +25,7 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <Heading type="link-id" number={1} lastUpdated="2026-09-21">
+            <Heading type="link-id" number={1} lastUpdated="2026-09-22">
               Git & GitHub
             </Heading>
           </RefButton>
@@ -229,7 +229,8 @@ export default function Page() {
                   <Highlight type="text">docs</Highlight>,{" "}
                   <Highlight type="text">test</Highlight>,{" "}
                   <Highlight type="text">build</Highlight>,{" "}
-                  <Highlight type="text">content</Highlight>, etc.
+                  <Highlight type="text">content</Highlight>,{" "}
+                  <Highlight type="text">crawl</Highlight>, etc.
                 </p>
                 <p>
                   <Highlight type="text">&lt;summary&gt;</Highlight> should use
