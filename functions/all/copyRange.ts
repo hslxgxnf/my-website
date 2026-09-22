@@ -38,10 +38,10 @@ export default function copyRange(range?: Range): string {
     nav.remove();
   });
 
-  const lastUpdated = tempDiv.querySelector(".last-updated");
-  if (lastUpdated) {
-    lastUpdated.prepend(" [");
-    lastUpdated.append("]");
+  const lastUpdatedElement = tempDiv.querySelector(".last-updated");
+  if (lastUpdatedElement) {
+    lastUpdatedElement.prepend(" [");
+    lastUpdatedElement.append("]");
   }
 
   const mathElements = tempDiv.querySelectorAll(".math");
@@ -54,17 +54,23 @@ export default function copyRange(range?: Range): string {
     }
   }
 
+  const visualOnlyElements = tempDiv.querySelectorAll(".visual-only");
+  visualOnlyElements.forEach((visualOnlyElement) => {
+    const screenReaderOnlyElement = visualOnlyElement.nextElementSibling;
+    if (screenReaderOnlyElement) {
+      screenReaderOnlyElement.prepend("[");
+      screenReaderOnlyElement.append("]");
+      visualOnlyElement.remove();
+    }
+  });
+
   const tableRows = tempDiv.querySelectorAll("tr");
   tableRows.forEach((tableRow) => {
     const tableColumns = Array.from(tableRow.querySelectorAll("th, td"));
-
     tableColumns.forEach((tableColumn) => {
+      // <br>
       const breaks = Array.from(tableColumn.querySelectorAll("br"));
       breaks.forEach((br) => br.replaceWith(" "));
-
-      if (!tableColumn.textContent) {
-        tableColumn.textContent = "X";
-      }
     });
 
     let text = "";
@@ -72,6 +78,7 @@ export default function copyRange(range?: Range): string {
       text += ` | ${tableColumns[i].textContent}`;
       tableColumns[i].textContent = "";
     }
+
     tableColumns[0].textContent += text;
   });
 
