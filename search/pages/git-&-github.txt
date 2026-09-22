@@ -31,7 +31,7 @@ velog | git에 push하려는데, remote: Permission to <git주소> denied to <us
 ***
 
 ***Article
-Git & GitHub # [Last Updated: September 21, 2026]
+Git & GitHub # [Last Updated: September 22, 2026]
 While Git is a local version control system, GitHub is a cloud-based platform for hosting Git repositories.
 Files & Folders #
 README.md
@@ -73,7 +73,7 @@ Text
 
 <description>
 ```
-<type> can be feat, fix, refactor, chore, style, docs, test, build, content, etc.
+<type> can be feat, fix, refactor, chore, style, docs, test, build, content, crawl, etc.
 <summary> should use the imperative mood, start with a lowercase letter, omit articles, and not end with a period.
 A blank line is recommended between <summary> and <description>.
 git commit --message (-m) <summary> --message (-m) <description>
