@@ -37,128 +37,128 @@ JetBrains PyCharm | Rainbow Brackets
 
 ***Article
 JetBrains WebStorm # [Last Updated: September 21, 2026]
-Settings prefixed with ! are only applied to the current project. They have to be set again for other projects.
+Settings prefixed with [Project Specificity] are only applied to the current project. They have to be set again for other projects.
 Appearance & Behavior #
 ```table
 Left Section | Right Section | Value
-Appearance | Tree Views ↪ Show indent guides | ☑
-System Settings | Confirm before exiting the IDE | ☐
+Appearance | Tree Views [Subcategory] Show indent guides | [Checked]
+System Settings | Confirm before exiting the IDE | [Unchecked]
 System Settings | When closing a tool window with a running process: | Terminate process
-System Settings | Project ↪ Reopen projects on startup | ☐
-System Settings | Project ↪ Open project in | New window
+System Settings | Project [Subcategory] Reopen projects on startup | [Unchecked]
+System Settings | Project [Subcategory] Open project in | New window
 ```
 Keymap #
 ```table
 Visual Studio 2022
-Name | Shortcut Ascending Sort | Custom
-Create Rectangular Selection on Mouse Drag | Alt + Click | X
-Move Line Down | Alt + Down | X
-Show Context Actions | Alt + Enter, Ctrl + . | X
-Surround With... | Alt + T | ☑
-Move Line Up | Alt + Up | X
-Add or Remove Caret | Ctrl + Alt + Click | X
-Clone Caret Below | Ctrl + Alt + Down | ☑
-Settings | Ctrl + Alt + S | X
-Clone Caret Above | Ctrl + Alt + Up | ☑
-Go to Declaration or Usages | Ctrl + Click | X
-Duplicate Line or Selection | Ctrl + D | X
-Select Last Row | Ctrl + End | X
-Find | Ctrl + F | X
-Run | Ctrl + F5 | X
-Replace | Ctrl + H | X
-Select First Row | Ctrl + Home | X
-Comment with Line Comment | Ctrl + K ➜ C | X
-Reformat Code | Ctrl + K ➜ D | X
-Rename | Ctrl + R ➜ R | X
-Find in Files | Ctrl + Shift + F | X
-Replace in Files | Ctrl + Shift + H | X
-Parameter Info | Ctrl + Shift + Space | X
-Reopen Closed Tab | Ctrl + Shift + T | ☑, Remove Go to File...
-Code Completion ↪ Basic | Ctrl + Space | X
-Close Tab | Ctrl + W | ☑, Remove Extend Selection
-Toggle Line Breakpoint | F9 | X
-Step Over | F10 | X
-Step Into | F11 | X
-Search Everywhere | Shift + Shift, Ctrl + T | X
+Name | Shortcut [Ascending Sort] | Custom
+Create Rectangular Selection on Mouse Drag | Alt + Click | [Empty]
+Move Line Down | Alt + Down | [Empty]
+Show Context Actions | Alt + Enter, Ctrl + . | [Empty]
+Surround With... | Alt + T | [Checked]
+Move Line Up | Alt + Up | [Empty]
+Add or Remove Caret | Ctrl + Alt + Click | [Empty]
+Clone Caret Below | Ctrl + Alt + Down | [Checked]
+Settings | Ctrl + Alt + S | [Empty]
+Clone Caret Above | Ctrl + Alt + Up | [Checked]
+Go to Declaration or Usages | Ctrl + Click | [Empty]
+Duplicate Line or Selection | Ctrl + D | [Empty]
+Select Last Row | Ctrl + End | [Empty]
+Find | Ctrl + F | [Empty]
+Run | Ctrl + F5 | [Empty]
+Replace | Ctrl + H | [Empty]
+Select First Row | Ctrl + Home | [Empty]
+Comment with Line Comment | Ctrl + K [Next] C | [Empty]
+Reformat Code | Ctrl + K [Next] D | [Empty]
+Rename | Ctrl + R [Next] R | [Empty]
+Find in Files | Ctrl + Shift + F | [Empty]
+Replace in Files | Ctrl + Shift + H | [Empty]
+Parameter Info | Ctrl + Shift + Space | [Empty]
+Reopen Closed Tab | Ctrl + Shift + T | [Checked], Remove Go to File...
+Code Completion [Subcategory] Basic | Ctrl + Space | [Empty]
+Close Tab | Ctrl + W | [Checked], Remove Extend Selection
+Toggle Line Breakpoint | F9 | [Empty]
+Step Over | F10 | [Empty]
+Step Into | F11 | [Empty]
+Search Everywhere | Shift + Shift, Ctrl + T | [Empty]
 ```
 Editor #
 ```table
 Left Section | Right Section | Value
-General | Soft Wraps ↪ Soft-wrap these files: *.md; *.txt; *.rst; *.adoc | ☑
-General ↪ Appearance | Show method separators | ☑
-General ↪ Appearance | Show CSS color preview as background | ☑
-General ↪ Code Completion ↪↪ Popup | Match case: | ☐
-General ↪ Editor Tabs | Appearance ↪ Tab placement: | Left
-General ↪ Editor Tabs | Appearance ↪ Mark modified | ☑
-Live Templates | JavaScript ➜ + ➜ 1 Live Template | X
-X | Abbreviation: | edf
-X | Description: | export default function
-X | Template text: | export default function $NAME$() {
+General | Soft Wraps [Subcategory] Soft-wrap these files: *.md; *.txt; *.rst; *.adoc | [Checked]
+General [Subcategory] Appearance | Show method separators | [Checked]
+General [Subcategory] Appearance | Show CSS color preview as background | [Checked]
+General [Subcategory] Code Completion [Subcategory][Subcategory] Popup | Match case: | [Unchecked]
+General [Subcategory] Editor Tabs | Appearance [Subcategory] Tab placement: | Left
+General [Subcategory] Editor Tabs | Appearance [Subcategory] Mark modified | [Checked]
+Live Templates | JavaScript [Next] + [Next] 1 Live Template | [Empty]
+[Empty] | Abbreviation: | edf
+[Empty] | Description: | export default function
+[Empty] | Template text: | export default function $NAME$() {
 $END$
 }
-X | Edit Variables... ↪ Expression | complete()
-X | Define Option Toggle ↪ Everywhere ↪↪ JavaScript ↪↪↪ Top level statement ↪↪ TypeScript ↪↪↪ Top level statement | ☑
-X | Options ↪ Reformat according to style | ☑
-Live Templates | React ➜ + ➜ 1 Live Template | X
-X | Abbreviation: | uc
-X | Description: | "use client";
-X | Template text: | "use client";
+[Empty] | Edit Variables... [Subcategory] Expression | complete()
+[Empty] | Define [Option Toggle] [Subcategory] Everywhere [Subcategory] [Subcategory] JavaScript [Subcategory] [Subcategory] [Subcategory] Top level statement [Subcategory] [Subcategory] TypeScript [Subcategory] [Subcategory] [Subcategory] Top level statement | [Checked]
+[Empty] | Options [Subcategory] Reformat according to style | [Checked]
+Live Templates | React [Next] + [Next] 1 Live Template | [Empty]
+[Empty] | Abbreviation: | uc
+[Empty] | Description: | "use client";
+[Empty] | Template text: | "use client";
 $END$
-X | Define Option Toggle ↪ Everywhere ↪↪ JavaScript ↪↪↪ Top level statement ↪↪ TypeScript ↪↪↪ Top level statement | ☑
-X | Options ↪ Reformat according to style | ☑
-Inlay Hints | Parameter names | ☐
-Inlay Hints | Types | ☐
-Inlay Hints | Method chains | ☐
-Emmet ↪ HTML | Enable abbreviation preview | ☑
+[Empty] | Define [Option Toggle] [Subcategory] Everywhere [Subcategory] [Subcategory] JavaScript [Subcategory] [Subcategory] [Subcategory] Top level statement [Subcategory] [Subcategory] TypeScript [Subcategory] [Subcategory] [Subcategory] Top level statement | [Checked]
+[Empty] | Options [Subcategory] Reformat according to style | [Checked]
+Inlay Hints | Parameter names | [Unchecked]
+Inlay Hints | Types | [Unchecked]
+Inlay Hints | Method chains | [Unchecked]
+Emmet [Subcategory] HTML | Enable abbreviation preview | [Checked]
 ```
 Plugins #
 Marketplace
 Visual Studio 2022 Keymap
 Rainbow Brackets
-⚙
+[Settings]
 Update Plugins Automatically
 Languages & Frameworks #
 ```table
 Left Section | Right Section | Value
-! JavaScript ↪ Code Quality Tools ↪ ESLint | Automatic ESLint configuration | ☑
-! JavaScript ↪ Prettier | Automatic Prettier configuration | ☑
-! JavaScript ↪ Prettier | Run for files: | **/*.{html,css,scss,js,ts,cjs,cts,mjs,mts,jsx,tsx,vue,astro,json,md}
-! JavaScript ↪ Prettier | Run on save | ☑
-! JavaScript ↪ Prettier | Run on paste | ☑
-! JavaScript ↪ Prettier | Prefer Prettier configuration to IDE code style | ☑
-! JavaScript Runtime | Node.js ↪ Coding assistance for Node.js | ☑
-! Style Sheets ↪ Stylelint | Enable | ☑
-! Style Sheets ↪ Stylelint | Run for files: | **/*.{css,scss}
-! Style Sheets ↪ Stylelint | Run stylelint --fix on save | ☑
+[Project Specificity] JavaScript [Subcategory] Code Quality Tools [Subcategory] ESLint | Automatic ESLint configuration | [Checked]
+[Project Specificity] JavaScript [Subcategory] Prettier | Automatic Prettier configuration | [Checked]
+[Project Specificity] JavaScript [Subcategory] Prettier | Run for files: | **/*.{html,css,scss,js,ts,cjs,cts,mjs,mts,jsx,tsx,vue,astro,json,md}
+[Project Specificity] JavaScript [Subcategory] Prettier | Run on save | [Checked]
+[Project Specificity] JavaScript [Subcategory] Prettier | Run on paste | [Checked]
+[Project Specificity] JavaScript [Subcategory] Prettier | Prefer Prettier configuration to IDE code style | [Checked]
+[Project Specificity] JavaScript Runtime | Node.js [Subcategory] Coding assistance for Node.js | [Checked]
+[Project Specificity] Style Sheets [Subcategory] Stylelint | Enable | [Checked]
+[Project Specificity] Style Sheets [Subcategory] Stylelint | Run for files: | **/*.{css,scss}
+[Project Specificity] Style Sheets [Subcategory] Stylelint | Run stylelint --fix on save | [Checked]
 ```
 Tools #
 ```table
 Left Section | Right Section | Value
-! Actions on Save | Run stylelint --fix | ☑
-! Actions on Save | Run Prettier | ☑
-! Terminal | Font Settings ↪ Font: | MesloLGM Nerd Font
+[Project Specificity] Actions on Save | Run stylelint --fix | [Checked]
+[Project Specificity] Actions on Save | Run Prettier | [Checked]
+[Project Specificity] Terminal | Font Settings [Subcategory] Font: | MesloLGM Nerd Font
 ```
 Backup and Sync #
 ```table
 Left Section | Right Section | Value
-X | Enable backup and sync: | ☑
+[Empty] | Enable backup and sync: | [Checked]
 ```
 Advanced Settings #
 ```table
 Left Section | Right Section | Value
-X | Run/Debug ↪ Confirm rerun with process termination | ☐
-X | Version Control ↪ Open Diff as Editor Tab | ☐
+[Empty] | Run/Debug [Subcategory] Confirm rerun with process termination | [Unchecked]
+[Empty] | Version Control [Subcategory] Open Diff as Editor Tab | [Unchecked]
 ```
 Rainbow Brackets #
 ```table
 Left Section | Right Section | Value
-Color | Color ↪ Cycle count on all brackets | ☑
-Indent guidelines Highlighting | Indent guidelines Highlighting ↪ Focus mode | ☑
-Language Specific | Language Specific ↪ Rainbowify tag name in XML/HTML/template files | ☑
-Language Specific | Language Specific ↪ Rainbowify Python keywords | ☑
-Rainbow Variables | Enable Rainbow Variables(restart required) | ☑
-Scope Highlighting | Scope Highlighting ↪ Border | ☑
-Scope Highlighting | Scope Highlighting ↪ Suppress scope highlighting when diffing | ☑
+Color | Color [Subcategory] Cycle count on all brackets | [Checked]
+Indent guidelines Highlighting | Indent guidelines Highlighting [Subcategory] Focus mode | [Checked]
+Language Specific | Language Specific [Subcategory] Rainbowify tag name in XML/HTML/template files | [Checked]
+Language Specific | Language Specific [Subcategory] Rainbowify Python keywords | [Checked]
+Rainbow Variables | Enable Rainbow Variables(restart required) | [Checked]
+Scope Highlighting | Scope Highlighting [Subcategory] Border | [Checked]
+Scope Highlighting | Scope Highlighting [Subcategory] Suppress scope highlighting when diffing | [Checked]
 ```
 ***
 

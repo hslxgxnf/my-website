@@ -31,37 +31,37 @@ JetBrains WebStorm | Rainbow Brackets
 
 ***Article
 JetBrains PyCharm # [Last Updated: July 22, 2026]
-Settings prefixed with ! are only applied to the current project. They have to be set again for other projects.
+Settings prefixed with [Project Specificity] are only applied to the current project. They have to be set again for other projects.
 Python #
 ```table
 Left Section | Right Section | Value
-! Tools ↪ Black | Use Black formatter: On save | ☑
+[Project Specificity] Tools [Subcategory] Black | Use Black formatter: On save | [Checked]
 ```
 Appearance & Behavior #
 Keymap #
 Editor #
 ```table
 Left Section | Right Section | Value
-General ↪ Code Completion ↪ Popup | Match case: | ☐
-General ↪ Editor Tabs | Appearance ↪ Tab placement: | Left
-General ↪ Editor Tabs | Appearance ↪ Mark modified | ☑
-Inlay Hints | Parameter names | ☐
-Inlay Hints | Types | ☐
+General [Subcategory] Code Completion [Subcategory] Popup | Match case: | [Unchecked]
+General [Subcategory] Editor Tabs | Appearance [Subcategory] Tab placement: | Left
+General [Subcategory] Editor Tabs | Appearance [Subcategory] Mark modified | [Checked]
+Inlay Hints | Parameter names | [Unchecked]
+Inlay Hints | Types | [Unchecked]
 ```
 Plugins #
 Tools #
 ```table
 Left Section | Right Section | Value
-! Actions on Save | Run Black | ☑
-! Terminal | Font Settings ↪ Font: | MesloLGM Nerd Font
+[Project Specificity] Actions on Save | Run Black | [Checked]
+[Project Specificity] Terminal | Font Settings [Subcategory] Font: | MesloLGM Nerd Font
 ```
 Backup and Sync #
 Advanced Settings #
 ```table
 Left Section | Right Section | Value
-X | Run/Debug ↪ Confirm rerun with process termination | ☐
-X | Version Control ↪ Open Diff as Editor Tab | ☐
-X | Welcome Screen ↪ Show the Welcome screen in non-modal mode termination | ☐
+[Empty] | Run/Debug [Subcategory] Confirm rerun with process termination | [Unchecked]
+[Empty] | Version Control [Subcategory] Open Diff as Editor Tab | [Unchecked]
+[Empty] | Welcome Screen [Subcategory] Show the Welcome screen in non-modal mode termination | [Unchecked]
 ```
 Rainbow Brackets #
 ***
