@@ -46,11 +46,11 @@ const hyphenatedWords = new Map<string, string>([
   ["npm Check Updates", "npm-check-updates"],
 ]);
 
-function toCapitalized(word: string): string {
+function capitalize(word: string): string {
   return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
-export default function toTitleCase(wordChunk: string): string {
+export default function titleize(wordChunk: string): string {
   const interimResult = wordChunk
     .split("-")
     .map((word) => {
@@ -62,7 +62,7 @@ export default function toTitleCase(wordChunk: string): string {
         return word.toLowerCase();
       }
 
-      return properNouns.get(word) ?? toCapitalized(word);
+      return properNouns.get(word) ?? capitalize(word);
     })
     .join(" ");
 

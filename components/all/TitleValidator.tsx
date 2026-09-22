@@ -3,14 +3,14 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-import toTitleCase from "@/functions/all/toTitleCase";
+import titleize from "@/functions/all/titleize";
 
 export default function TitleValidator() {
   const path = usePathname();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      const pivotPath = toTitleCase(path.split("/").pop()!);
+      const pivotPath = titleize(path.split("/").pop()!);
       if (!pivotPath) {
         return; // Home
       }

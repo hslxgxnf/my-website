@@ -5,7 +5,7 @@ import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import type { Code } from "@/types/main/interfaces";
 import stylelintConfig from "@/stylelint.config.mjs";
-import toTitleCase from "@/functions/all/toTitleCase";
+import titleize from "@/functions/all/titleize";
 import HighlightComplexCodeButton from "@/components/main-description/Highlight/HighlightComplexCodeButton";
 
 interface HighlightComplexCodeProps {
@@ -23,7 +23,7 @@ export default function HighlightComplexCode({
   children,
 }: HighlightComplexCodeProps) {
   let fileInfo: string = children.language;
-  fileInfo = toTitleCase(fileInfo);
+  fileInfo = titleize(fileInfo);
   if (children.fileName) {
     fileInfo = `${fileInfo} | ${children.fileName}`;
   }

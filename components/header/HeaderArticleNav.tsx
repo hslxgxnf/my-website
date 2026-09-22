@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 
-import toTitleCase from "@/functions/all/toTitleCase";
+import titleize from "@/functions/all/titleize";
 import HeaderArticleNavSubNav1 from "@/components/header/HeaderArticleNavSubNav1";
 import HeaderArticleNavSubNav2 from "@/components/header/HeaderArticleNavSubNav2";
 import HeaderArticleNavSubNav3 from "@/components/header/HeaderArticleNavSubNav3";
@@ -22,7 +22,7 @@ export default function HeaderArticleNav() {
       href = `${href}/${slicedPath[j]}`;
     }
 
-    const name = toTitleCase(slicedPath[i]);
+    const name = titleize(slicedPath[i]);
 
     processedPath.push({
       href,

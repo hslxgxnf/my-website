@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { FaSortAlphaDown } from "react-icons/fa";
 import { PiCaretDownBold } from "react-icons/pi";
 
-import toTitleCase from "@/functions/all/toTitleCase";
+import titleize from "@/functions/all/titleize";
 
 type SRHelperType =
   | "project-specificity"
@@ -37,7 +37,7 @@ export default function SRHelper({ type }: SRHelperProps) {
       <span className="visual-only" aria-hidden="true">
         {data.get(type)}
       </span>
-      <span className="sr-only">{toTitleCase(type)}</span>
+      <span className="sr-only">{titleize(type)}</span>
     </>
   );
 }
