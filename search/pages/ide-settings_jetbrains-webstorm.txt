@@ -36,7 +36,7 @@ JetBrains PyCharm | Rainbow Brackets
 ***
 
 ***Article
-JetBrains WebStorm # [Last Updated: September 21, 2026]
+JetBrains WebStorm # [Last Updated: September 23, 2026]
 Settings prefixed with [Project Specificity] are only applied to the current project. They have to be set again for other projects.
 Appearance & Behavior #
 ```table
@@ -84,7 +84,7 @@ Search Everywhere | Shift + Shift, Ctrl + T | [Empty]
 Editor #
 ```table
 Left Section | Right Section | Value
-General | Soft Wraps [Subcategory] Soft-wrap these files: *.md; *.txt; *.rst; *.adoc | [Checked]
+General | Soft Wraps [Subcategory] Soft-wrap these files: | [Checked], *.ts; *.tsx; *.json; *.md; *.txt
 General [Subcategory] Appearance | Show method separators | [Checked]
 General [Subcategory] Appearance | Show CSS color preview as background | [Checked]
 General [Subcategory] Code Completion [Subcategory][Subcategory] Popup | Match case: | [Unchecked]
@@ -97,14 +97,14 @@ Live Templates | JavaScript [Next] + [Next] 1 Live Template | [Empty]
 $END$
 }
 [Empty] | Edit Variables... [Subcategory] Expression | complete()
-[Empty] | Define [Option Toggle] [Subcategory] Everywhere [Subcategory] [Subcategory] JavaScript [Subcategory] [Subcategory] [Subcategory] Top level statement [Subcategory] [Subcategory] TypeScript [Subcategory] [Subcategory] [Subcategory] Top level statement | [Checked]
+[Empty] | Define [Option Toggle] [Subcategory] Everywhere [Subcategory][Subcategory] JavaScript [Subcategory][Subcategory][Subcategory] Top level statement [Subcategory][Subcategory] TypeScript [Subcategory][Subcategory][Subcategory] Top level statement | [Checked]
 [Empty] | Options [Subcategory] Reformat according to style | [Checked]
 Live Templates | React [Next] + [Next] 1 Live Template | [Empty]
 [Empty] | Abbreviation: | uc
 [Empty] | Description: | "use client";
 [Empty] | Template text: | "use client";
 $END$
-[Empty] | Define [Option Toggle] [Subcategory] Everywhere [Subcategory] [Subcategory] JavaScript [Subcategory] [Subcategory] [Subcategory] Top level statement [Subcategory] [Subcategory] TypeScript [Subcategory] [Subcategory] [Subcategory] Top level statement | [Checked]
+[Empty] | Define [Option Toggle] [Subcategory] Everywhere [Subcategory][Subcategory] JavaScript [Subcategory][Subcategory][Subcategory] Top level statement [Subcategory][Subcategory] TypeScript [Subcategory][Subcategory][Subcategory] Top level statement | [Checked]
 [Empty] | Options [Subcategory] Reformat according to style | [Checked]
 Inlay Hints | Parameter names | [Unchecked]
 Inlay Hints | Types | [Unchecked]
