@@ -1,5 +1,5 @@
-import type { Reference, Code } from "@/types/main/interfaces";
-import { favicons } from "@/assets/main-description/favicons/favicons";
+import type { Reference, Code } from "@/types/interfaces";
+import { favicons } from "@/assets/favicons/favicons";
 
 export const reference: Reference = [
   {

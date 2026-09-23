@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import type { Site } from "@/types/main/interfaces";
+import type { Site } from "@/types/interfaces";
 import setTooltip from "@/functions/main/setTooltip";
 
 interface ReferenceNavImageProps {

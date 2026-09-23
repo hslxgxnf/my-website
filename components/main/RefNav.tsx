@@ -2,7 +2,7 @@
 
 import { useLayoutEffect } from "react";
 
-import type { Reference, Site } from "@/types/main/interfaces";
+import type { Reference, Site } from "@/types/interfaces";
 import { useStore } from "@/stores/useStore";
 import RefNavLink from "@/components/main/RefNavLink";
 import setTooltip from "@/functions/main/setTooltip";

@@ -1,4 +1,4 @@
-import type { Code } from "@/types/main/interfaces";
+import type { Code } from "@/types/interfaces";
 import HighlightMath from "@/components/main-description/Highlight/HighlightMath";
 import HighlightKeyboard from "@/components/main-description/Highlight/HighlightKeyboard";
 import HighlightText from "@/components/main-description/Highlight/HighlightText";

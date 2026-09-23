@@ -3,7 +3,7 @@ import fs from "fs";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import type { Code } from "@/types/main/interfaces";
+import type { Code } from "@/types/interfaces";
 import stylelintConfig from "@/stylelint.config.mjs";
 import titleize from "@/functions/all/titleize";
 import HighlightComplexCodeButton from "@/components/main-description/Highlight/HighlightComplexCodeButton";
