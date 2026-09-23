@@ -1,8 +1,8 @@
 import type { Reference, Code } from "@/types/interfaces";
 import { favicons } from "@/assets/images/favicons";
 import {
-  custom_properties_txt,
-  non_custom_properties_txt,
+  custom_properties$txt,
+  non_custom_properties$txt,
 } from "@/assets/files/exportFiles";
 
 export const reference: Reference = [
@@ -28,11 +28,11 @@ export const reference: Reference = [
 export const customPropertiesCode: Code = {
   language: "text",
   fileName: "custom-properties.txt",
-  content: `${custom_properties_txt}`,
+  content: `${custom_properties$txt}`,
 };
 
 export const nonCustomPropertiesCode: Code = {
   language: "text",
   fileName: "non-custom-properties.txt",
-  content: `${non_custom_properties_txt}`,
+  content: `${non_custom_properties$txt}`,
 };

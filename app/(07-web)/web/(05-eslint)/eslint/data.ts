@@ -1,6 +1,6 @@
 import type { Reference, Code } from "@/types/interfaces";
 import { favicons } from "@/assets/images/favicons";
-import { eslint_config_txt } from "@/assets/files/exportFiles";
+import { eslint$config$txt } from "@/assets/files/exportFiles";
 
 export const reference: Reference = [
   {
@@ -37,5 +37,5 @@ export const reference: Reference = [
 export const code: Code = {
   language: "javascript",
   fileName: "eslint.config.mjs",
-  content: `${eslint_config_txt}`,
+  content: `${eslint$config$txt}`,
 };

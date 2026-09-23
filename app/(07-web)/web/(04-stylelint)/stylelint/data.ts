@@ -1,6 +1,6 @@
 import type { Reference, Code } from "@/types/interfaces";
 import { favicons } from "@/assets/images/favicons";
-import { stylelint_config_txt } from "@/assets/files/exportFiles";
+import { stylelint$config$txt } from "@/assets/files/exportFiles";
 
 export const reference: Reference = [
   {
@@ -37,5 +37,5 @@ export const reference: Reference = [
 export const code: Code = {
   language: "javascript",
   fileName: "stylelint.config.mjs",
-  content: `${stylelint_config_txt}`,
+  content: `${stylelint$config$txt}`,
 };
