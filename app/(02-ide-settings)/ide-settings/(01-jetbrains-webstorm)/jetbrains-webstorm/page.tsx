@@ -19,7 +19,7 @@ export default function Page() {
 
       <article>
         <section>
-          <Heading type="link-id" number={1} lastUpdated="2026-09-21">
+          <Heading type="link-id" number={1} lastUpdated="2026-09-23">
             JetBrains WebStorm
           </Heading>
           <p>
@@ -401,11 +401,13 @@ export default function Page() {
                 <td>
                   Soft Wraps
                   <br />
-                  <SRHelper type="subcategory" /> Soft-wrap these files: *.md;
-                  *.txt; *.rst; *.adoc
+                  <SRHelper type="subcategory" /> Soft-wrap these files:
                 </td>
                 <td>
-                  <SRHelper type="checked" />
+                  <SRHelper type="checked" />,{" "}
+                  <Highlight type="text" copy={true}>
+                    *.ts; *.tsx; *.json; *.md; *.txt
+                  </Highlight>
                 </td>
               </tr>
               <tr>
@@ -545,18 +547,18 @@ export default function Page() {
                   <br />
                   <SRHelper type="subcategory" /> Everywhere
                   <br />
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> JavaScript
                   <br />
-                  <SRHelper type="subcategory" />{" "}
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> Top level statement
                   <br />
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> TypeScript
                   <br />
-                  <SRHelper type="subcategory" />{" "}
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> Top level statement
                 </td>
                 <td>
@@ -634,18 +636,18 @@ export default function Page() {
                   <br />
                   <SRHelper type="subcategory" /> Everywhere
                   <br />
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> JavaScript
                   <br />
-                  <SRHelper type="subcategory" />{" "}
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> Top level statement
                   <br />
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> TypeScript
                   <br />
-                  <SRHelper type="subcategory" />{" "}
-                  <SRHelper type="subcategory" />{" "}
+                  <SRHelper type="subcategory" />
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> Top level statement
                 </td>
                 <td>
