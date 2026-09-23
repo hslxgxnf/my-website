@@ -28,17 +28,11 @@ async function run() {
     console.error("Failed to fetch sitemap.xml:", error);
   }
 
+  // Clear existing files to prevent deleted pages from lingering.
   const baseDirPath = path.join(process.cwd(), "search", "pages");
-  if (!fs.existsSync(baseDirPath)) {
-    fs.mkdirSync(baseDirPath, { recursive: true });
-  } else {
-    const allRelativePaths = fs.readdirSync(baseDirPath);
-    for (const relativePath of allRelativePaths) {
-      if (relativePath.endsWith(".txt")) {
-        fs.unlinkSync(path.join(baseDirPath, relativePath));
-      }
-    }
-  }
+  fs.rmSync(baseDirPath, { recursive: true, force: true });
+  fs.mkdirSync(baseDirPath, { recursive: true });
+
   for (const url of urls) {
     const pathName = new URL(url).pathname;
 
