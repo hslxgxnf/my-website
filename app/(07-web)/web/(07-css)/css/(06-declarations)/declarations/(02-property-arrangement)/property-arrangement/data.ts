@@ -1,5 +1,9 @@
 import type { Reference, Code } from "@/types/interfaces";
 import { favicons } from "@/assets/favicons/favicons";
+import {
+  custom_properties_txt,
+  non_custom_properties_txt,
+} from "@/assets/texts/exportFiles";
 
 export const reference: Reference = [
   {
@@ -24,11 +28,11 @@ export const reference: Reference = [
 export const customPropertiesCode: Code = {
   language: "text",
   fileName: "custom-properties.txt",
-  content: ``,
+  content: `${custom_properties_txt}`,
 };
 
 export const nonCustomPropertiesCode: Code = {
   language: "text",
   fileName: "non-custom-properties.txt",
-  content: ``,
+  content: `${non_custom_properties_txt}`,
 };
