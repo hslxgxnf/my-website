@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate-files": "tsx assets/texts/generateFiles.ts",
-    "validate-files": "tsx assets/texts/validateFiles.ts",
+    "generate-files": "tsx assets/files/generateTexts.ts && tsx assets/files/generateSitemap.ts",
+    "validate-files": "tsx assets/files/validateFiles.ts",
     "predev": "npm run generate-files && npm run validate-files",
     "dev": "next dev",
     "crawl": "tsx search/crawl.ts",

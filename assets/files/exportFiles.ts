@@ -3,7 +3,7 @@ import fs from "fs";
 
 function readFile(fileName: string) {
   return fs
-    .readFileSync(path.join(process.cwd(), "assets", "texts", fileName), "utf8")
+    .readFileSync(path.join(process.cwd(), "assets", "files", fileName), "utf8")
     .trim();
 }
 

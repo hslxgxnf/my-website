@@ -1,30 +1,9 @@
+import { loadEnvConfig } from "@next/env";
 import path from "path";
 import fs from "fs";
-import { loadEnvConfig } from "@next/env";
-
-type PageName = string;
-type FileName = string;
-const data = new Map<PageName, FileName>([
-  // The page needs the copied file content.
-  ["ESLint", "eslint.config.mjs"],
-  ["Stylelint", "stylelint.config.mjs"],
-]);
-
-generateFiles();
-
-function generateFiles() {
-  for (const file of data.values()) {
-    const targetFileName = file.replace(".mjs", ".txt");
-    const targetFilePath = path.join(__dirname, targetFileName);
-
-    const copyFilePath = path.join(process.cwd(), file);
-    const content = fs.readFileSync(copyFilePath, "utf8").trim();
-
-    fs.writeFileSync(targetFilePath, content, "utf8");
-  }
-}
 
 loadEnvConfig(process.cwd());
+
 generateSitemap();
 
 function generateSitemap() {

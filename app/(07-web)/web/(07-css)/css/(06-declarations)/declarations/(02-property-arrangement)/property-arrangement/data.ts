@@ -1,9 +1,9 @@
 import type { Reference, Code } from "@/types/interfaces";
-import { favicons } from "@/assets/favicons/favicons";
+import { favicons } from "@/assets/images/favicons";
 import {
   custom_properties_txt,
   non_custom_properties_txt,
-} from "@/assets/texts/exportFiles";
+} from "@/assets/files/exportFiles";
 
 export const reference: Reference = [
   {
