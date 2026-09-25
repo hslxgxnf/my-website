@@ -17,7 +17,7 @@ export default function Page() {
 
       <article>
         <RefButton>
-          <Heading type="none" number={1} lastUpdated="2026-09-20">
+          <Heading type="none" number={1} lastUpdated="2026-09-25">
             DSA (Data Structures and Algorithms)
           </Heading>
         </RefButton>
@@ -45,10 +45,10 @@ export default function Page() {
             Non-Linear Data Structures
           </Heading>
         </RefButton>
-        {/*<Heading type="none" number={3}>*/}
-        {/*  Graph*/}
-        {/*</Heading>*/}
-        {/*<Heading type="none" number={3}>*/}
+        <Heading type="link-page" number={3}>
+          Graph
+        </Heading>
+        {/*<Heading type="link-page" number={3}>*/}
         {/*  Tree*/}
         {/*</Heading>*/}
         <hr />
