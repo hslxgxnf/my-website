@@ -23,17 +23,24 @@ async function validateElements() {
   for (const url of urls) {
     await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
 
+    // Ensure <li> contains <p> for compatibility with other components.
     await page.evaluate((currentUrl) => {
       const lists = document.querySelectorAll("body > main > article li");
 
       for (const list of lists) {
-        if (list.querySelector(".complex-code-container")) {
+        if (list.classList.contains("toggle-list")) {
+          if (!list.children[1]?.firstElementChild?.matches("p")) {
+            console.log(`[${currentUrl}] ${list.textContent}`);
+          }
+
           continue;
         }
 
-        // Ensure <li> contains <p> for compatibility with other components.
-        const p = list.querySelector("p");
-        if (!p) {
+        if (list.firstElementChild?.matches(".complex-code-container")) {
+          continue;
+        }
+
+        if (!list.firstElementChild?.matches("p")) {
           console.log(`[${currentUrl}] ${list.textContent}`);
         }
       }
