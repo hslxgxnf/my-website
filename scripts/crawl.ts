@@ -19,23 +19,19 @@ async function run() {
   for (const url of urls) {
     const pathName = new URL(url).pathname;
 
-    try {
-      let fileName = pathName.replace(/^\/|\/$/g, "").replace(/\//g, "_");
-      if (!fileName) {
-        fileName = "home";
-      }
-      const targetFilePath = path.join(baseDirPath, `${fileName}.txt`);
-
-      await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
-      const content = await page.evaluate((fnSource) => {
-        const fn = new Function(`return (${fnSource})()`);
-        return fn();
-      }, copyRange.toString());
-
-      fs.writeFileSync(targetFilePath, content, "utf8");
-    } catch (error) {
-      console.error(`Failed to crawl ${pathName}:`, error);
+    let fileName = pathName.replace(/^\/|\/$/g, "").replace(/\//g, "_");
+    if (!fileName) {
+      fileName = "home";
     }
+    const targetFilePath = path.join(baseDirPath, `${fileName}.txt`);
+
+    await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
+    const content = await page.evaluate((fnSource) => {
+      const fn = new Function(`return (${fnSource})()`);
+      return fn();
+    }, copyRange.toString());
+
+    fs.writeFileSync(targetFilePath, content, "utf8");
   }
 
   await browser.close();
