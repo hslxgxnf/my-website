@@ -9,12 +9,17 @@ const data = new Map<PageName, FileName>([
   ["Stylelint", "stylelint.config.mjs"],
 ]);
 
-generateTexts();
+generateConfigTexts();
 
-function generateTexts() {
+function generateConfigTexts() {
   for (const file of data.values()) {
     const targetFileName = file.replace(".mjs", ".txt");
-    const targetFilePath = path.join(__dirname, targetFileName);
+    const targetFilePath = path.join(
+      process.cwd(),
+      "assets",
+      "files",
+      targetFileName,
+    );
 
     const copyFilePath = path.join(process.cwd(), file);
     const content = fs.readFileSync(copyFilePath, "utf8").trim();

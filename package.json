@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate-files": "tsx assets/files/generateTexts.ts && tsx assets/files/generateSitemap.ts",
-    "validate-files": "tsx assets/files/validateFiles.ts",
-    "predev": "npm run generate-files && npm run validate-files",
+    "predev": "tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts",
     "dev": "next dev",
-    "crawl": "tsx search/crawl.ts",
+    "dev-content-change": "tsx scripts/generateSitemap.ts && tsx scripts/crawl.ts",
     "playwright-binary-install-update": "npx playwright install",
     "build": "next build",
     "start": "next start"

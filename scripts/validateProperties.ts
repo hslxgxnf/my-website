@@ -2,14 +2,19 @@ import stylelintConfig from "@/stylelint.config.mjs";
 import path from "path";
 import fs from "fs";
 
-validateFiles();
+validateProperties();
 
-function validateFiles() {
+function validateProperties() {
   const stylelintConfigProperties = stylelintConfig.rules![
     "order/properties-order"
   ][0] as string[];
 
-  const targetFilePath = path.join(__dirname, "non-custom-properties.txt");
+  const targetFilePath = path.join(
+    process.cwd(),
+    "assets",
+    "files",
+    "non-custom-properties.txt",
+  );
   const nonCustomProperties = fs
     .readFileSync(targetFilePath, "utf8")
     .trim()
