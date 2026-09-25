@@ -45,7 +45,7 @@ export default function RefButton({ children }: ReferenceButtonProps) {
       return;
     }
     let articleTarget: string;
-    if (articleTargetElement.className.includes("toggle-list")) {
+    if (articleTargetElement.classList.contains("toggle-list")) {
       articleTarget = articleTargetElement.children[1].textContent;
     } else if (articleTargetElement.children[0]) {
       const firstChild = articleTargetElement.children[0].cloneNode(
