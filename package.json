@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts",
+    "predev": "tsx scripts/generateSitemap.ts && tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts",
     "dev": "next dev",
     "dev-validate-elements": "tsx scripts/validateElements.ts",
     "dev-content-change": "tsx scripts/generateSitemap.ts && tsx scripts/crawl.ts",
