@@ -24,13 +24,14 @@ GeeksforGeeks | Introduction to Hierarchical Data Structure
 ***
 
 ***Article
-DSA (Data Structures and Algorithms) [Last Updated: September 20, 2026]
+DSA (Data Structures and Algorithms) [Last Updated: September 25, 2026]
 Linear Data Structures
 Array
 Linked List
 Stack
 Queue
 Non-Linear Data Structures
+Graph
 Algorithms
 Asymptotic Analysis
 ***

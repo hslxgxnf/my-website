@@ -1,0 +1,87 @@
+***Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+***
+
+***Article Navigation
+DSA
+Graph
+***
+
+***Reference Navigation
+Graph
+GeeksforGeeks | Graph Data Structure
+GeeksforGeeks | Graph Algorithms
+Types
+GeeksforGeeks | Types of Graphs with Examples
+***
+
+***Article
+Graph # [Last Updated: September 25, 2026]
+A graph is a set of vertices (nodes) and edges (links).
+The degree of a vertex is the number of edges connected to it.
+Types #
+Size
+Finite Graph
+Infinite Graph
+Structure
+Trivial Graph
+A trivial graph has only one vertex without edges.
+Null Graph
+A null graph has vertices without edges.
+Simple Graph
+A simple graph does not have parallel and self-loop edges. If two vertices are connected with more than one edge, such edges are called parallel edges.
+Complete (Full) Graph
+A complete graph is a kind of simple graph in which every vertex is connected to every other vertex.
+Multi Graph
+A multi graph has parallel edges and does not have self-loop edges.
+Pseudo Graph
+A pseudo graph has parallel and self-loop edges.
+Regular Graph
+A regular graph has all vertices with the same degree.
+Weight
+Unweighted Graph
+Weighted Graph
+Direction
+Undirected Graph
+Directed Graph
+Density
+Sparse Graph
+A sparse graph has a small number of edges compared to the number of vertices.
+Dense Graph
+A dense graph has a large number of edges compared to the number of vertices.
+Connectivity
+Disconnected Graph
+A disconnected graph is a graph in which there is no path between at least one pair of vertices.
+Connected Graph
+A connected graph is a graph in which there is a path between every pair of vertices.
+Cycle
+Cyclic Graph
+A cyclic graph has at least one cycle. A cycle is a closed path that starts and ends at the same vertex, with no other repeated vertices or edges.
+Acyclic Graph
+An acyclic graph does not have cycles. An undirected acyclic graph is also known as a forest, and if it is connected, it is called a tree.
+Representation #
+Adjacency Matrix
+Adjacency List
+Traversal #
+DFS (Depth First Search)
+Explores as far as possible along each branch before backtracking.
+Uses a stack or recursion.
+BFS (Breadth First Search)
+Explores all neighbors of a vertex before moving to the next vertex.
+Uses a queue.
+***
+
+***Page Navigation
+On this page
+Graph
+Types
+Representation
+Traversal
+***
