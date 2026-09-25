@@ -3,7 +3,7 @@ import { favicons } from "@/assets/images/favicons";
 import {
   custom_properties$txt,
   non_custom_properties$txt,
-} from "@/assets/files/exportFiles";
+} from "@/assets/files/texts";
 
 export const reference: Reference = [
   {

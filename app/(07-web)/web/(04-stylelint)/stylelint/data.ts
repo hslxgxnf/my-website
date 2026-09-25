@@ -1,6 +1,6 @@
 import type { Reference, Code } from "@/types/interfaces";
 import { favicons } from "@/assets/images/favicons";
-import { stylelint$config$txt } from "@/assets/files/exportFiles";
+import { stylelint$config$txt } from "@/assets/files/texts";
 
 export const reference: Reference = [
   {
