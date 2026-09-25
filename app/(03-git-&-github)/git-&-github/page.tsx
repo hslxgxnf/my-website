@@ -25,7 +25,7 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <Heading type="link-id" number={1} lastUpdated="2026-09-22">
+            <Heading type="link-id" number={1} lastUpdated="2026-09-25">
               Git & GitHub
             </Heading>
           </RefButton>

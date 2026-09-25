@@ -200,7 +200,7 @@ if echo "$SUMMARIES" | grep -iq "^content"; then
 
         # Create the message label.
         $label = New-Object System.Windows.Forms.Label
-        $label.Text = "The [content] type has been detected!\`n\`nDid you update the [search/pages] folder?\`n[npm run crawl]"
+        $label.Text = "The [content] type has been detected!\`n\`nDid you do [npm run dev-content-change]?"
         $label.Location = New-Object System.Drawing.Point(30, 30)
         $label.Size = New-Object System.Drawing.Size(490, 100)
         $label.Font = New-Object System.Drawing.Font("Malgun Gothic", 14, [System.Drawing.FontStyle]::Bold)
@@ -240,7 +240,7 @@ if echo "$SUMMARIES" | grep -iq "^content"; then
     # Cancel the current push if the user selects anything other than "Yes"
     if [ "$USER_CHOICE" != "Yes" ]; then
         powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "[System.Media.SystemSounds]::Hand.Play()"
-        echo "❌ The push was canceled. Please update the [search/pages] folder. [npm run crawl]"
+        echo "❌ The push was canceled. Please do [npm run dev-content-change]."
 
         exit 1
     fi
