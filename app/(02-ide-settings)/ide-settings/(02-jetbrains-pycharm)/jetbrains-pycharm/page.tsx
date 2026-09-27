@@ -19,8 +19,8 @@ export default function Page() {
 
       <article>
         <section>
-          <Heading type="link-id" number={1} lastUpdated="2026-07-22">
-            JetBrains PyCharm
+          <Heading type="link-id" number={1} lastUpdated="2026-09-27">
+            JetBrains PyCharm (2026.2.3)
           </Heading>
           <p>
             Settings prefixed with <SRHelper type="project-specificity" /> are
@@ -45,9 +45,9 @@ export default function Page() {
                 <td>
                   <SRHelper type="project-specificity" /> Tools
                   <br />
-                  <SRHelper type="subcategory" /> Black
+                  <SRHelper type="subcategory" /> External Tools
                 </td>
-                <td>Use Black formatter: On save</td>
+                <td>Ruff</td>
                 <td>
                   <SRHelper type="checked" />
                 </td>
@@ -88,6 +88,7 @@ export default function Page() {
                   <br />
                   <SRHelper type="subcategory" /> Code Completion
                   <br />
+                  <SRHelper type="subcategory" />
                   <SRHelper type="subcategory" /> Popup
                 </td>
                 <td>Match case:</td>
@@ -166,7 +167,7 @@ export default function Page() {
                 <td>
                   <SRHelper type="project-specificity" /> Actions on Save
                 </td>
-                <td>Run Black</td>
+                <td>Reformat code</td>
                 <td>
                   <SRHelper type="checked" />
                 </td>
