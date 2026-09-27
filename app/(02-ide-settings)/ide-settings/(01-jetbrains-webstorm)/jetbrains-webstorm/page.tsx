@@ -19,8 +19,8 @@ export default function Page() {
 
       <article>
         <section>
-          <Heading type="link-id" number={1} lastUpdated="2026-09-23">
-            JetBrains WebStorm
+          <Heading type="link-id" number={1} lastUpdated="2026-09-27">
+            JetBrains WebStorm (2026.2.3)
           </Heading>
           <p>
             Settings prefixed with <SRHelper type="project-specificity" /> are
