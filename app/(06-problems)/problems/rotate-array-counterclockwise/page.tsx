@@ -76,14 +76,12 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="simple-code">
-                    1 ≤ arr.size(), d ≤ 10⁵
-                  </Highlight>
+                  <Highlight type="math">{`1 \\le \\text{Array Size, Step} \\le 10^5`}</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  <Highlight type="simple-code">0 ≤ arr[i] ≤ 10⁵</Highlight>
+                  <Highlight type="math">{`0 \\le \\text{Array Element} \\le 10^5`}</Highlight>
                 </p>
               </li>
             </ul>
