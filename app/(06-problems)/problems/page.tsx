@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
+import { reference } from "./data";
 import RefNav from "@/components/main/RefNav";
 import Heading from "@/components/main/Heading/Heading";
 import PageNav from "@/components/main/PageNav";
+import RefButton from "@/components/main/RefButton";
 
 export const metadata: Metadata = {
   title: "Problems",
@@ -11,12 +13,14 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main>
-      <RefNav />
+      <RefNav reference={reference} />
 
       <article>
-        <Heading type="none" number={1} lastUpdated="2026-09-20">
-          Problems
-        </Heading>
+        <RefButton>
+          <Heading type="none" number={1} lastUpdated="2026-09-29">
+            Problems
+          </Heading>
+        </RefButton>
         <hr />
         <Heading type="link-page" number={3}>
           Find Max Sum of Subarray
