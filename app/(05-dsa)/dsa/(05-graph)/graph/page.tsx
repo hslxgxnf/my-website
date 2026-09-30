@@ -4,7 +4,6 @@ import { reference } from "./data";
 import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
-import Highlight from "@/components/main-description/Highlight/Highlight";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -23,7 +22,10 @@ export default function Page() {
               Graph
             </Heading>
           </RefButton>
-          <p>A graph is a set of vertices (nodes) and edges (links).</p>
+          <p>
+            A graph is a set of vertices (nodes) and edges (links, lines, arcs,
+            connections).
+          </p>
           <p>The degree of a vertex is the number of edges connected to it.</p>
         </section>
         <section>
@@ -225,9 +227,11 @@ export default function Page() {
           </ul>
         </section>
         <section>
-          <Heading type="link-id" number={2}>
-            Representation
-          </Heading>
+          <RefButton>
+            <Heading type="link-id" number={2}>
+              Representation
+            </Heading>
+          </RefButton>
           <ul>
             <li>
               <p>Adjacency Matrix</p>

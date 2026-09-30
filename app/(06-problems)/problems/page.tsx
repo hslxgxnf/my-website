@@ -17,11 +17,14 @@ export default function Page() {
 
       <article>
         <RefButton>
-          <Heading type="none" number={1} lastUpdated="2026-09-29">
+          <Heading type="none" number={1} lastUpdated="2026-09-30">
             Problems
           </Heading>
         </RefButton>
         <hr />
+        <Heading type="link-page" number={3}>
+          BFS
+        </Heading>
         <Heading type="link-page" number={3}>
           Find Max Sum of Subarray
         </Heading>

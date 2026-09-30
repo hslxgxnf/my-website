@@ -30,4 +30,15 @@ export const reference: Reference = [
       },
     ],
   },
+  {
+    target: "Representation",
+    sites: [
+      {
+        url: "https://www.geeksforgeeks.org/dsa/graph-and-its-representations/",
+        favicon: favicons.GeeksforGeeks.image,
+        name: favicons.GeeksforGeeks.name,
+        title: "Representation of Graph",
+      },
+    ],
+  },
 ];
