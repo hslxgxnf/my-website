@@ -25,7 +25,7 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <Heading type="link-id" number={1} lastUpdated="2026-09-25">
+            <Heading type="link-id" number={1} lastUpdated="2026-09-30">
               Git & GitHub
             </Heading>
           </RefButton>
@@ -110,6 +110,32 @@ export default function Page() {
                   git clone &lt;url&gt;
                 </Highlight>
               </p>
+            </li>
+            <li>
+              <p>
+                <Highlight type="simple-code" copy={true}>
+                  git ls-files
+                </Highlight>
+              </p>
+              <p>Lists tracked files.</p>
+              <ul>
+                <li>
+                  <p>
+                    <Highlight type="simple-code" copy={true}>
+                      git ls-files --eol
+                    </Highlight>
+                  </p>
+                  <p>Lists tracked files with end-of-line information.</p>
+                </li>
+                <li>
+                  <p>
+                    <Highlight type="simple-code" copy={true}>
+                      git ls-files --others (-o) --exclude-standard
+                    </Highlight>
+                  </p>
+                  <p>Lists untracked files excluding ignored files.</p>
+                </li>
+              </ul>
             </li>
             <hr />
             <li>
