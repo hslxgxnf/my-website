@@ -19,7 +19,7 @@ export default function Page() {
 
       <article>
         <section>
-          <Heading type="link-id" number={1} lastUpdated="2026-09-27">
+          <Heading type="link-id" number={1} lastUpdated="2026-09-30">
             JetBrains WebStorm (2026.2.3)
           </Heading>
           <p>
@@ -473,6 +473,15 @@ export default function Page() {
                 <td>
                   <SRHelper type="checked" />
                 </td>
+              </tr>
+              <tr>
+                <td>Code Style</td>
+                <td>
+                  General
+                  <br />
+                  <SRHelper type="subcategory" /> Line separator:
+                </td>
+                <td>Unix and macOS (\n)</td>
               </tr>
               <tr>
                 <td>Live Templates</td>
