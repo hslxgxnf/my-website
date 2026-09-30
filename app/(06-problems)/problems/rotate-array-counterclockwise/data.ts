@@ -23,10 +23,12 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `Numeric = int | float
+  content: `from typing import TypeVar
+
+T = TypeVar("T")
 
 
-def rotate_array_counterclockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]:
+def rotate_array_counterclockwise_reversal(arr: list[T], d: int) -> list[T]:
     n: int = len(arr)
     d %= n
 
@@ -46,7 +48,7 @@ def rotate_array_counterclockwise_reversal(arr: list[Numeric], d: int) -> list[N
 import math
 
 
-def rotate_array_counterclockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]:
+def rotate_array_counterclockwise_juggling(arr: list[T], d: int) -> list[T]:
     n: int = len(arr)
     d %= n
     cycles: int = math.gcd(n, d)
@@ -71,5 +73,5 @@ def rotate_array_counterclockwise_juggling(arr: list[Numeric], d: int) -> list[N
 
 print(rotate_array_counterclockwise_reversal([1, 2, 3, 4, 5], 2))
 print(rotate_array_counterclockwise_reversal([2, 4, 6, 8, 10, 12, 14, 16, 18, 20], 3))
-print(rotate_array_counterclockwise_reversal([7, 3, 9, 1], 9))`,
+print(rotate_array_counterclockwise_juggling([7, 3, 9, 1], 9))`,
 };

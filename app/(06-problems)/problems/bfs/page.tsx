@@ -61,13 +61,32 @@ export default function Page() {
           </section>
           <section>
             <Heading type="link-id" number={3}>
+              Constraints
+            </Heading>
+            <ul>
+              <li>
+                <p>
+                  <Highlight type="math">
+                    {`1 \\le V \\le 10^4 \\ (\\text{where } V \\text{ is the number of vertices})`}
+                  </Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="math">{`0 \\le \\text{Vertex Index} \\le 10^4`}</Highlight>
+                </p>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <Heading type="link-id" number={3}>
               Expected Complexities
             </Heading>
             <ul>
               <li>
                 <p>
                   Time Complexity:{" "}
-                  <Highlight type="math">{`\\mathcal{O}(V + E)`}</Highlight>
+                  <Highlight type="math">{`\\mathcal{O}(V + E) \\ (\\text{where } E \\text{ is the number of edges})`}</Highlight>{" "}
                 </p>
               </li>
               <li>
