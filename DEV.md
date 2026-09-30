@@ -24,6 +24,8 @@ Set up project-specific IDE settings.
 - ESLint
 - Prettier
 - Stylelint
+- Terminal
+- Plugins
 
 # Vercel
 
@@ -38,20 +40,20 @@ Download project-specific environment variables from Vercel.
 
 Otherwise, you may encounter data loss.
 
-# Pages
+# Pages💕
 
 - DSA 1
 - Problem 1
 
 ## Components
 
-## Design
+## Functions
 
-## Documentation Search
+## Design
 
 # Later...
 
 - Documentation Search
   - ~~Search Archive~~
-  - Search Logic
+  - Search Logic💕
   - Search Icon
