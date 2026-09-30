@@ -13,6 +13,7 @@ type SRHelperType =
   | "unchecked"
   | "empty"
   | "next"
+  | "output"
   | "settings";
 
 interface SRHelperProps {
@@ -28,6 +29,7 @@ const data = new Map<SRHelperType, ReactNode>([
   ["unchecked", "☐"], // &#9744;
   ["empty", ""],
   ["next", "➜"], // &#10140;
+  ["output", "➜"], // &#10140;
   ["settings", "⚙"], // &#9881;
 ]);
 
