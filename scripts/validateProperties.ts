@@ -21,23 +21,23 @@ function validateProperties() {
     .split("\n")
     .map((line) => line.trim());
 
-  let success = true;
+  let isFailed = false;
   if (stylelintConfigProperties.length !== nonCustomProperties.length) {
+    isFailed = true;
     console.error(
       `stylelintConfigProperties.length: ${stylelintConfigProperties.length} must be the same as nonCustomProperties.length: ${nonCustomProperties.length}.`,
     );
-    success = false;
   } else {
     stylelintConfigProperties.forEach((property, index) => {
       if (property !== nonCustomProperties[index]) {
+        isFailed = true;
         console.error(
           `stylelintConfigProperties[${index}]: ${property} must be the same as nonCustomProperties[${index}]: ${nonCustomProperties[index]}.`,
         );
-        success = false;
       }
     });
   }
-  if (!success) {
+  if (isFailed) {
     // If you need the full array version of the non-custom properties to use in stylelint.config.mjs, uncomment the following lines.
     // const text = JSON.stringify(nonCustomProperties, null, 2);
     // console.log(text);
