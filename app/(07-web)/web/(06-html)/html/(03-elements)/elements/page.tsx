@@ -619,9 +619,11 @@ export default function Page() {
                 <li>
                   <p>
                     <Highlight type="simple-code">&lt;img&gt;</Highlight>{" "}
-                    <Highlight type="simple-code">&lt;map&gt;</Highlight>{" "}
+                    <Highlight type="simple-code">&lt;map&gt;</Highlight>
                   </p>
-                  <Highlight type="simple-code">&lt;area&gt;</Highlight>
+                  <p>
+                    <Highlight type="simple-code">&lt;area&gt;</Highlight>
+                  </p>
                 </li>
                 <li>
                   <p>
