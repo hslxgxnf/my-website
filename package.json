@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "tsx scripts/generateSitemap.ts && tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts",
-    "predev-find": "tsx scripts/find/findUnnecessaryBlankLines.ts",
+    "predev": "tsx scripts/generateSitemap.ts && tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts && tsx scripts/findDeletables.ts",
+    "predev-temp": "",
     "dev": "next dev",
     "dev-validate-elements": "tsx scripts/validateElements.ts",
     "dev-content-change": "tsx scripts/generateSitemap.ts && tsx scripts/crawl.ts",
