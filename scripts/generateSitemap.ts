@@ -12,7 +12,7 @@ function generateSitemap() {
     recursive: true,
   }) as string[];
 
-  const matchedRelativePaths = allRelativePaths.filter((relativePath) => {
+  const filteredRelativePaths = allRelativePaths.filter((relativePath) => {
     const isPage = path.basename(relativePath) === "page.tsx";
 
     const normalizedPath = relativePath.replaceAll("\\", "/");
@@ -23,8 +23,8 @@ function generateSitemap() {
     return isPage && !hasPrivateFolder;
   });
 
-  const sitemapItems = matchedRelativePaths.map((matchedRelativePath) => {
-    const normalizedPath = matchedRelativePath.replaceAll("\\", "/");
+  const sitemapItems = filteredRelativePaths.map((filteredRelativePath) => {
+    const normalizedPath = filteredRelativePath.replaceAll("\\", "/");
     let cleanUrl = normalizedPath
       .split("/")
       .filter((part) => !part.startsWith("(") && part !== "page.tsx")
@@ -32,11 +32,9 @@ function generateSitemap() {
     cleanUrl = cleanUrl === "" ? "" : `/${cleanUrl}`;
     const url = escapeXml(`${process.env.NEXT_PUBLIC_SITE_URL}${cleanUrl}`);
 
-    const fullPath = path.join(baseDirPath, matchedRelativePath);
-    const fileContent = fs.readFileSync(fullPath, "utf8");
-    const matchedLastUpdated = fileContent.match(
-      /lastUpdated=["']([^"']+)["']/,
-    );
+    const fullPath = path.join(baseDirPath, filteredRelativePath);
+    const content = fs.readFileSync(fullPath, "utf8");
+    const matchedLastUpdated = content.match(/lastUpdated=["']([^"']+)["']/);
     const fileStats = fs.statSync(fullPath);
     const lastModified =
       matchedLastUpdated && matchedLastUpdated[1]
