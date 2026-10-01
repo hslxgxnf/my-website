@@ -174,7 +174,8 @@ HTML
 <a>
 <figure> <figcaption>
 <img> <map>
-<area><picture> <source>
+<area>
+<picture> <source>
 <video> <source>
 <audio> <source>
 <iframe>

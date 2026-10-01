@@ -33,8 +33,8 @@ No change in array as there are no 0s.
 [0, 0] ➜ [0, 0]
 No change in array as there are all 0s.
 Constraints #
-1 ≤ arr.size() ≤ 10⁵
-0 ≤ arr[i] ≤ 10⁵
+$1 \le \text{Array Size} \le 10^5$
+$0 \le \text{Array Element} \le 10^5$
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$

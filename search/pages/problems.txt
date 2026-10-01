@@ -13,8 +13,14 @@ AI
 Problems
 ***
 
+***Reference Navigation
+Problems
+GeeksforGeeks | All Problems
+***
+
 ***Article
-Problems [Last Updated: September 20, 2026]
+Problems [Last Updated: September 30, 2026]
+BFS
 Find Max Sum of Subarray
 Find Next Permutation
 Find Second Largest Number

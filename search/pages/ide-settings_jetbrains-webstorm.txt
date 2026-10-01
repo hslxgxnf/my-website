@@ -36,7 +36,7 @@ JetBrains PyCharm | Rainbow Brackets
 ***
 
 ***Article
-JetBrains WebStorm # [Last Updated: September 23, 2026]
+JetBrains WebStorm (2026.2.3) # [Last Updated: September 30, 2026]
 Settings prefixed with [Project Specificity] are only applied to the current project. They have to be set again for other projects.
 Appearance & Behavior #
 ```table
@@ -90,6 +90,7 @@ General [Subcategory] Appearance | Show CSS color preview as background | [Check
 General [Subcategory] Code Completion [Subcategory][Subcategory] Popup | Match case: | [Unchecked]
 General [Subcategory] Editor Tabs | Appearance [Subcategory] Tab placement: | Left
 General [Subcategory] Editor Tabs | Appearance [Subcategory] Mark modified | [Checked]
+Code Style | General [Subcategory] Line separator: | Unix and macOS (\n)
 Live Templates | JavaScript [Next] + [Next] 1 Live Template | [Empty]
 [Empty] | Abbreviation: | edf
 [Empty] | Description: | export default function
@@ -164,7 +165,7 @@ Scope Highlighting | Scope Highlighting [Subcategory] Suppress scope highlightin
 
 ***Page Navigation
 On this page
-JetBrains WebStorm
+JetBrains WebStorm (2026.2.3)
 Appearance & Behavior
 Keymap
 Editor

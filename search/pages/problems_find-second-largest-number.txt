@@ -29,8 +29,8 @@ Examples #
 [10, 10, 10] ➜ -1
 The largest is 10 and the second largest does not exist.
 Constraints #
-2 ≤ arr.size() ≤ 10⁵
-1 ≤ arr[i] ≤ 10⁵
+$2 \le \text{Array Size} \le 10^5$
+$1 \le \text{Array Element} \le 10^5$
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$

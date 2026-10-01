@@ -20,11 +20,13 @@ GeeksforGeeks | Graph Data Structure
 GeeksforGeeks | Graph Algorithms
 Types
 GeeksforGeeks | Types of Graphs with Examples
+Representation
+GeeksforGeeks | Representation of Graph
 ***
 
 ***Article
 Graph # [Last Updated: September 25, 2026]
-A graph is a set of vertices (nodes) and edges (links).
+A graph is a set of vertices (nodes) and edges (links, lines, arcs, connections).
 The degree of a vertex is the number of edges connected to it.
 Types #
 Size

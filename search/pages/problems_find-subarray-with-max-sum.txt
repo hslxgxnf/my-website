@@ -28,8 +28,8 @@ Examples #
 [-2, -4] ➜ [-2]
 [5, 4, 1, 7, 8] ➜ [5, 4, 1, 7, 8]
 Constraints #
-1 ≤ arr.size() ≤ 10⁵
--10⁴ ≤ arr[i] ≤ 10⁴
+$1 \le \text{Array Size} \le 10^5$
+$-10^4 \le \text{Array Element} \le 10^4$
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(n)$

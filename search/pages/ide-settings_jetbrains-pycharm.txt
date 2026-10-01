@@ -30,19 +30,19 @@ JetBrains WebStorm | Rainbow Brackets
 ***
 
 ***Article
-JetBrains PyCharm # [Last Updated: July 22, 2026]
+JetBrains PyCharm (2026.2.3) # [Last Updated: September 27, 2026]
 Settings prefixed with [Project Specificity] are only applied to the current project. They have to be set again for other projects.
 Python #
 ```table
 Left Section | Right Section | Value
-[Project Specificity] Tools [Subcategory] Black | Use Black formatter: On save | [Checked]
+[Project Specificity] Tools [Subcategory] External Tools | Ruff | [Checked]
 ```
 Appearance & Behavior #
 Keymap #
 Editor #
 ```table
 Left Section | Right Section | Value
-General [Subcategory] Code Completion [Subcategory] Popup | Match case: | [Unchecked]
+General [Subcategory] Code Completion [Subcategory][Subcategory] Popup | Match case: | [Unchecked]
 General [Subcategory] Editor Tabs | Appearance [Subcategory] Tab placement: | Left
 General [Subcategory] Editor Tabs | Appearance [Subcategory] Mark modified | [Checked]
 Inlay Hints | Parameter names | [Unchecked]
@@ -52,7 +52,7 @@ Plugins #
 Tools #
 ```table
 Left Section | Right Section | Value
-[Project Specificity] Actions on Save | Run Black | [Checked]
+[Project Specificity] Actions on Save | Reformat code | [Checked]
 [Project Specificity] Terminal | Font Settings [Subcategory] Font: | MesloLGM Nerd Font
 ```
 Backup and Sync #
@@ -68,7 +68,7 @@ Rainbow Brackets #
 
 ***Page Navigation
 On this page
-JetBrains PyCharm
+JetBrains PyCharm (2026.2.3)
 Python
 Appearance & Behavior
 Keymap

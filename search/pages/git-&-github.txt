@@ -31,7 +31,7 @@ velog | git에 push하려는데, remote: Permission to <git주소> denied to <us
 ***
 
 ***Article
-Git & GitHub # [Last Updated: September 25, 2026]
+Git & GitHub # [Last Updated: September 30, 2026]
 While Git is a local version control system, GitHub is a cloud-based platform for hosting Git repositories.
 Files & Folders #
 README.md
@@ -46,6 +46,12 @@ Lists system, global, and local configurations and their origin.
 git config --global user.name <name>
 git config --global user.email <email>
 git clone <url>
+git ls-files
+Lists tracked files.
+git ls-files --eol
+Lists tracked files with end-of-line information.
+git ls-files --others (-o) --exclude-standard
+Lists untracked files excluding ignored files.
 git init
 git status
 git stash
