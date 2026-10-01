@@ -86,7 +86,7 @@ export default function Page() {
               <li>
                 <p>
                   Time Complexity:{" "}
-                  <Highlight type="math">{`\\mathcal{O}(V + E) \\ (\\text{where } E \\text{ is the number of edges})`}</Highlight>{" "}
+                  <Highlight type="math">{`\\mathcal{O}(V + E) \\ (\\text{where } E \\text{ is the number of edges})`}</Highlight>
                 </p>
               </li>
               <li>

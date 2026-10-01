@@ -104,7 +104,7 @@ export default function Page() {
                 </p>
                 <p>
                   Lists installed packages related to the specified packages.
-                </p>{" "}
+                </p>
               </li>
             </ul>
           </li>

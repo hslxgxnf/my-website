@@ -263,7 +263,6 @@ export default function Page() {
                   the imperative mood, start with a lowercase letter, omit
                   articles, and not end with a period.
                 </p>
-
                 <p>
                   A blank line is recommended between{" "}
                   <Highlight type="text">&lt;summary&gt;</Highlight> and{" "}
@@ -764,7 +763,6 @@ export default function Page() {
               GitHub Actions
             </Heading>
           </RefButton>
-
           <p>
             <Highlight type="text">GitHub Actions</Highlight> is a continuous
             integration and continuous deployment (CI/CD) service.
