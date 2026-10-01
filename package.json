@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "predev": "tsx scripts/generateSitemap.ts && tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts",
+    "predev-find": "tsx scripts/find/findUnnecessaryBlankLines.ts",
     "dev": "next dev",
     "dev-validate-elements": "tsx scripts/validateElements.ts",
     "dev-content-change": "tsx scripts/generateSitemap.ts && tsx scripts/crawl.ts",
