@@ -78,7 +78,12 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="math">{`1 \\le n \\le 10^5 \\ (\\text{where } n \\text{ is the length of the array})`}</Highlight>
+                  <Highlight type="math">{`1 \\le n \\le 10^5 \\ (\\text{array length})`}</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="math">{`0 \\le v \\le 10^5 \\ (\\text{element value})`}</Highlight>
                 </p>
               </li>
               <li>

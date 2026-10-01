@@ -30,9 +30,9 @@ export default function Page() {
             Problem
           </Heading>
           <p>
-            Given an adjacency list, perform BFS. Start from vertex 0, visit the
-            vertices in the exact order as they appear in the given adjacency
-            list, and ensure all vertices are visited.
+            Given a graph, perform BFS. Start from vertex 0, visit the vertices
+            in the exact order as they appear in the graph, and ensure all
+            vertices are visited.
           </p>
           <section>
             <Heading type="link-id" number={3}>
@@ -67,13 +67,20 @@ export default function Page() {
               <li>
                 <p>
                   <Highlight type="math">
-                    {`1 \\le V \\le 10^4 \\ (\\text{where } V \\text{ is the number of vertices})`}
+                    {`1 \\le V \\le 10^5 \\ (\\text{number of vertices})`}
                   </Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  <Highlight type="math">{`0 \\le \\text{Vertex Index} \\le 10^4`}</Highlight>
+                  <Highlight type="math">
+                    {`1 \\le E \\le 2 \\times 10^5 \\ (\\text{number of edges})`}
+                  </Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="math">{`0 \\le v \\le 10^5 \\ (\\text{vertex value})`}</Highlight>
                 </p>
               </li>
             </ul>
@@ -86,7 +93,7 @@ export default function Page() {
               <li>
                 <p>
                   Time Complexity:{" "}
-                  <Highlight type="math">{`\\mathcal{O}(V + E) \\ (\\text{where } E \\text{ is the number of edges})`}</Highlight>
+                  <Highlight type="math">{`\\mathcal{O}(V + E)`}</Highlight>
                 </p>
               </li>
               <li>
