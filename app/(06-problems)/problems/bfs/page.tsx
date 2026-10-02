@@ -20,7 +20,7 @@ export default function Page() {
       <article>
         <section>
           <RefButton>
-            <Heading type="link-id" number={1} lastUpdated="2026-09-30">
+            <Heading type="link-id" number={1} lastUpdated="2026-10-03">
               BFS
             </Heading>
           </RefButton>

@@ -20,18 +20,17 @@ export const code: Code = {
   content: `from collections import deque
 
 
-def bfs(adj):
-    visited = [False] * len(adj)
-    result = []
+def bfs(adj: list[list[int]]) -> list[int]:
+    visited: list[bool] = [False] * len(adj)
+    result: list[int] = []
 
     for i in range(len(adj)):
         if not visited[i]:
-            queue = deque()
-            queue.append(i)
+            queue: deque[int] = deque([i])
             visited[i] = True
 
             while queue:
-                current = queue.popleft()
+                current: int = queue.popleft()
                 result.append(current)
 
                 for neighbor in adj[current]:
