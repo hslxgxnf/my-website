@@ -5,6 +5,7 @@ import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
+import SRHelper from "@/components/main-description/SRHelper";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -29,9 +30,10 @@ export default function Page() {
             Problem
           </Heading>
           <p>
-            Given an array. Rotate the array clockwise by d steps, where d is a
-            positive integer. Consider the array as circular. Do the mentioned
-            change in the array in place.
+            Given an array, rotate it clockwise by{" "}
+            <Highlight type="math">d</Highlight> steps, where{" "}
+            <Highlight type="math">d</Highlight> is a positive integer. Array
+            indices wrap around. Modify the array in place.
           </p>
           <section>
             <Heading type="link-id" number={3}>
@@ -43,7 +45,7 @@ export default function Page() {
                   <Highlight type="simple-code" copy={true}>
                     [1, 2, 3, 4, 5, 6], 2
                   </Highlight>{" "}
-                  &#10140;{" "}
+                  <SRHelper type="output" />{" "}
                   <Highlight type="simple-code">[5, 6, 1, 2, 3, 4]</Highlight>
                 </p>
               </li>
@@ -52,7 +54,7 @@ export default function Page() {
                   <Highlight type="simple-code" copy={true}>
                     [1, 2, 3, 4, 5], 4
                   </Highlight>{" "}
-                  &#10140;{" "}
+                  <SRHelper type="output" />{" "}
                   <Highlight type="simple-code">[2, 3, 4, 5, 1]</Highlight>
                 </p>
               </li>
@@ -65,12 +67,17 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="math">{`1 \\le \\text{Array Size, Step} \\le 10^5`}</Highlight>
+                  <Highlight type="math">{`1 \\le n \\le 10^5 \\ (\\text{array length})`}</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  <Highlight type="math">{`0 \\le \\text{Array Element} \\le 10^5`}</Highlight>
+                  <Highlight type="math">{`0 \\le v \\le 10^5 \\ (\\text{element value})`}</Highlight>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Highlight type="math">{`1 \\le d \\le 10^5`}</Highlight>
                 </p>
               </li>
             </ul>

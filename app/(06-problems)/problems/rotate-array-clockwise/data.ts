@@ -23,10 +23,12 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `Numeric = int | float
+  content: `from typing import TypeVar
+
+T = TypeVar("T")
 
 
-def rotate_array_clockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]:
+def rotate_array_clockwise_reversal(arr: list[T], d: int) -> list[T]:
     n: int = len(arr)
     d %= n
 
@@ -46,17 +48,17 @@ def rotate_array_clockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]
 import math
 
 
-def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]:
+def rotate_array_clockwise_juggling(arr: list[T], d: int) -> list[T]:
     n: int = len(arr)
     d %= n
     cycles: int = math.gcd(n, d)
 
     for i in range(cycles):
-        start = arr[i]
-        current_index = i
+        start: T = arr[i]
+        current_index: int = i
 
         while True:
-            next_index = (current_index - d) % n
+            next_index: int = (current_index - d) % n
 
             if next_index == i:
                 break
@@ -70,5 +72,5 @@ def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]
 
 
 print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5, 6], 2))
-print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5], 4))`,
+print(rotate_array_clockwise_juggling([1, 2, 3, 4, 5], 4))`,
 };
