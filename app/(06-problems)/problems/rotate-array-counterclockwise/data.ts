@@ -54,11 +54,11 @@ def rotate_array_counterclockwise_juggling(arr: list[T], d: int) -> list[T]:
     cycles: int = math.gcd(n, d)
 
     for i in range(cycles):
-        start = arr[i]
-        current_index = i
+        start: T = arr[i]
+        current_index: int = i
 
         while True:
-            next_index = (current_index + d) % n
+            next_index: int = (current_index + d) % n
 
             if next_index == i:
                 break
