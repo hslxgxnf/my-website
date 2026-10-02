@@ -5,6 +5,7 @@ import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
+import SRHelper from "@/components/main-description/SRHelper";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export default function Page() {
           <Heading type="link-id" number={2}>
             Problem
           </Heading>
-          <p>Given an array. Reverse the array in place.</p>
+          <p>Given an array, reverse it in place.</p>
           <section>
             <Heading type="link-id" number={3}>
               Examples
@@ -39,7 +40,7 @@ export default function Page() {
                   <Highlight type="simple-code" copy={true}>
                     [1, 4, 3, 2, 6, 5]
                   </Highlight>{" "}
-                  &#10140;{" "}
+                  <SRHelper type="output" />{" "}
                   <Highlight type="simple-code">[5, 6, 2, 3, 4, 1]</Highlight>
                 </p>
               </li>
@@ -48,7 +49,8 @@ export default function Page() {
                   <Highlight type="simple-code" copy={true}>
                     [4, 5, 2]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">[2, 5, 4]</Highlight>
+                  <SRHelper type="output" />{" "}
+                  <Highlight type="simple-code">[2, 5, 4]</Highlight>
                 </p>
               </li>
               <li>
@@ -56,7 +58,8 @@ export default function Page() {
                   <Highlight type="simple-code" copy={true}>
                     [1]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">[1]</Highlight>
+                  <SRHelper type="output" />{" "}
+                  <Highlight type="simple-code">[1]</Highlight>
                 </p>
               </li>
             </ul>
@@ -68,12 +71,12 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="math">{`1 \\le \\text{Array Size} \\le 10^5`}</Highlight>
+                  <Highlight type="math">{`1 \\le n \\le 10^5 \\ (\\text{array length})`}</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  <Highlight type="math">{`0 \\le \\text{Array Element} \\le 10^5`}</Highlight>
+                  <Highlight type="math">{`0 \\le v \\le 10^5 \\ (\\text{element value})`}</Highlight>
                 </p>
               </li>
             </ul>

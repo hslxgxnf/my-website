@@ -17,17 +17,19 @@ export const reference: Reference = [
 
 export const code: Code = {
   language: "python",
-  content: `Numeric = int | float
+  content: `from typing import TypeVar
+
+T = TypeVar("T")
 
 
-def reverse_array_single_pointer(arr: list[Numeric]) -> list[Numeric]:
-    for i in range(0, len(arr) // 2):
+def reverse_array_single_pointer(arr: list[T]) -> list[T]:
+    for i in range(len(arr) // 2):
         arr[i], arr[-1 - i] = arr[-1 - i], arr[i]
 
     return arr
 
 
-def reverse_array_two_pointers(arr: list[Numeric]) -> list[Numeric]:
+def reverse_array_two_pointers(arr: list[T]) -> list[T]:
     left_index: int = 0
     right_index: int = len(arr) - 1
 
