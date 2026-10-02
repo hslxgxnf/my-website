@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "tsx scripts/generateSitemap.ts && tsx scripts/generateConfigTexts.ts && tsx scripts/validateProperties.ts && tsx scripts/findDeletables.ts",
-    "predev-temp": "",
+    "predev-generate": "tsx scripts/generateSitemap.ts && tsx scripts/generateConfigTexts.ts",
+    "predev-validate-properties": "tsx scripts/validateProperties.ts",
+    "predev-find": "tsx scripts/findDeletables.ts",
+    "predev": "npm run predev-generate && npm run predev-validate-properties && npm run predev-find",
     "dev": "next dev",
     "dev-validate-elements": "tsx scripts/validateElements.ts",
     "dev-content-change": "tsx scripts/generateSitemap.ts && tsx scripts/crawl.ts",
