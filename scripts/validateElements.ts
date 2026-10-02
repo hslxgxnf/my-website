@@ -1,11 +1,17 @@
 import { chromium } from "playwright";
 
-import getUrls from "@/scripts/getUrls";
+import getDevUrls from "@/scripts/getDevUrls";
 
 void validateElements();
 
+// Move to predev-temp (After finishing code, move to predev)
+// Refer findDeletables logic
+// Find <li>
+// Remove <li> and <p>
+// If there are remains, remove them
+
 async function validateElements() {
-  const urls = getUrls();
+  const urls = getDevUrls();
   const browser = await chromium.launch();
   const page = await browser.newPage();
 

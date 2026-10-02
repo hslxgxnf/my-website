@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import { chromium } from "playwright";
 
-import getUrls from "@/scripts/getUrls";
+import getDevUrls from "@/scripts/getDevUrls";
 import copyRange from "@/functions/all/copyRange";
 
 void run();
@@ -13,7 +13,7 @@ async function run() {
   fs.rmSync(baseDirPath, { recursive: true, force: true });
   fs.mkdirSync(baseDirPath, { recursive: true });
 
-  const urls = getUrls();
+  const urls = getDevUrls();
   const browser = await chromium.launch();
   const page = await browser.newPage();
   for (const url of urls) {

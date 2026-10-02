@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 
-export default function getUrls(): string[] {
+export default function getDevUrls(): string[] {
   const targetFilePath = path.join(process.cwd(), "app", "sitemap.xml");
   const sitemapText = fs.readFileSync(targetFilePath, "utf8").trim();
   const sitemapUrls = sitemapText.match(/<loc>(.*?)<\/loc>/g);
