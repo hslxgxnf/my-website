@@ -1,0 +1,63 @@
+import type { Reference, Code } from "@/types/interfaces";
+import { favicons } from "@/assets/images/favicons";
+
+export const reference: Reference = [
+  {
+    target: "Move All Zeros to End",
+    sites: [
+      {
+        url: "https://www.geeksforgeeks.org/problems/move-all-zeroes-to-end-of-array0751/1",
+        favicon: favicons.GeeksforGeeks.image,
+        name: favicons.GeeksforGeeks.name,
+        title: "Move All Zeroes to End",
+      },
+    ],
+  },
+];
+
+export const code: Code = {
+  language: "python",
+  content: `from typing import TypeVar
+
+T = TypeVar("T")
+
+
+def move_all_zeros_to_right_end(arr: list[T]) -> list[T]:
+    zero_index: int = 0
+
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            # Avoid self-swapping
+            if i != zero_index:
+                arr[i], arr[zero_index] = arr[zero_index], arr[i]
+
+            zero_index += 1
+
+    return arr
+
+
+def move_all_zeros_to_left_end(arr: list[T]) -> list[T]:
+    zero_index: int = len(arr) - 1
+
+    for i in range(len(arr) - 1, -1, -1):
+        if arr[i] != 0:
+            # Avoid self-swapping
+            if i != zero_index:
+                arr[i], arr[zero_index] = arr[zero_index], arr[i]
+
+            zero_index -= 1
+
+    return arr
+
+
+print(move_all_zeros_to_right_end([1, 2, 0, 4, 3, 0, 5, 0]))
+print(move_all_zeros_to_right_end([0, 0, 0, 3, 1, 4]))
+print(move_all_zeros_to_right_end([10, 20, 30]))
+print(move_all_zeros_to_right_end([0, 0]))
+
+print(move_all_zeros_to_left_end([1, 2, 0, 4, 3, 0, 5, 0]))
+print(move_all_zeros_to_left_end([0, 0, 0, 3, 1, 4]))
+print(move_all_zeros_to_left_end([10, 20, 30]))
+print(move_all_zeros_to_left_end([0, 0]))
+`,
+};

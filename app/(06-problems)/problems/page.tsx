@@ -38,7 +38,7 @@ export default function Page() {
           Find Subarray with Max Sum
         </Heading>
         <Heading type="link-page" number={3}>
-          Move All Zeroes to End
+          Move All Zeros to End
         </Heading>
         <Heading type="link-page" number={3}>
           Reverse Array

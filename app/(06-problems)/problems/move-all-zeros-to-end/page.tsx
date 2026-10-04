@@ -5,10 +5,11 @@ import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
+import SRHelper from "@/components/main-description/SRHelper";
 import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
-  title: "Move All Zeroes to End",
+  title: "Move All Zeros to End",
 };
 
 export default function Page() {
@@ -20,7 +21,7 @@ export default function Page() {
         <section>
           <RefButton>
             <Heading type="link-id" number={1} lastUpdated="2026-07-13">
-              Move All Zeroes to End
+              Move All Zeros to End
             </Heading>
           </RefButton>
         </section>
@@ -29,9 +30,9 @@ export default function Page() {
             Problem
           </Heading>
           <p>
-            Given an array. Move all the zeroes in the array to the right end
-            while maintaining the relative order of the non-zero elements. The
-            operation must be performed in place.
+            Given an array, move all the zeros to the right end while
+            maintaining the relative order of the non-zeros. Modify the array in
+            place.
           </p>
           <section>
             <Heading type="link-id" number={3}>
@@ -43,57 +44,38 @@ export default function Page() {
                   <Highlight type="simple-code" copy={true}>
                     [1, 2, 0, 4, 3, 0, 5, 0]
                   </Highlight>{" "}
-                  &#10140;{" "}
+                  <SRHelper type="output" />{" "}
                   <Highlight type="simple-code">
                     [1, 2, 4, 3, 5, 0, 0, 0]
                   </Highlight>
                 </p>
-                <ul>
-                  <li>
-                    <p>There are three 0s that are moved to the end.</p>
-                  </li>
-                </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
                     [0, 0, 0, 3, 1, 4]
                   </Highlight>{" "}
-                  &#10140;{" "}
+                  <SRHelper type="output" />{" "}
                   <Highlight type="simple-code">[3, 1, 4, 0, 0, 0]</Highlight>
                 </p>
-                <ul>
-                  <li>
-                    <p>There are three 0s that are moved to the end.</p>
-                  </li>
-                </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
                     [10, 20, 30]
                   </Highlight>{" "}
-                  &#10140;{" "}
+                  <SRHelper type="output" />{" "}
                   <Highlight type="simple-code">[10, 20, 30]</Highlight>
                 </p>
-                <ul>
-                  <li>
-                    <p>No change in array as there are no 0s.</p>
-                  </li>
-                </ul>
               </li>
               <li>
                 <p>
                   <Highlight type="simple-code" copy={true}>
                     [0, 0]
                   </Highlight>{" "}
-                  &#10140; <Highlight type="simple-code">[0, 0]</Highlight>
+                  <SRHelper type="output" />{" "}
+                  <Highlight type="simple-code">[0, 0]</Highlight>
                 </p>
-                <ul>
-                  <li>
-                    <p>No change in array as there are all 0s.</p>
-                  </li>
-                </ul>
               </li>
             </ul>
           </section>
@@ -104,12 +86,12 @@ export default function Page() {
             <ul>
               <li>
                 <p>
-                  <Highlight type="math">{`1 \\le \\text{Array Size} \\le 10^5`}</Highlight>
+                  <Highlight type="math">{`1 \\le n \\le 10^5 \\ (\\text{array length})`}</Highlight>
                 </p>
               </li>
               <li>
                 <p>
-                  <Highlight type="math">{`0 \\le \\text{Array Element} \\le 10^5`}</Highlight>
+                  <Highlight type="math">{`0 \\le v \\le 10^5 \\ (\\text{element value})`}</Highlight>
                 </p>
               </li>
             </ul>
