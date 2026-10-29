@@ -25,7 +25,7 @@ Find Max Sum of Subarray
 Find Next Permutation
 Find Second Largest Number
 Find Subarray with Max Sum
-Move All Zeroes to End
+Move All Zeros to End
 Reverse Array
 Rotate Array Clockwise
 Rotate Array Counterclockwise

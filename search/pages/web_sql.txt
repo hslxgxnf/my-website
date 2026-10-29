@@ -20,10 +20,10 @@ Udemy | SQL - The Complete Developer's Guide (MySQL, PostgreSQL)
 ***
 
 ***Article
-SQL (Structured Query Language) # [Last Updated: July 23, 2026]
+SQL (Structured Query Language) # [Last Updated: October 30, 2026]
 SQL is used for managing data in Relational Database Management Systems (RDBMS). It allows users to create, read, update, and delete (CRUD) data.
 Data is normalized, meaning it is split across related tables rather than stored in a single large table. Tables are connected to each other using keys.
-Vertical data elements are called columns or fields. Horizontal data elements are called rows, records, or entries.
+Horizontal items are called rows, records, or entries, whereas vertical ones are called columns or fields.
 Comments #
 ```code
 SQL
@@ -41,7 +41,7 @@ Statement Delimiter #
 Statements must end with a semicolon, except for a single statement. Adding a semicolon to it is recommended, though.
 Statements #
 A statement consists of clauses, and a clause consists of keywords, identifiers, operators, and values (expressions).
-The order of clauses must be maintained. SELECT → FROM → WHERE
+The order of clauses must be maintained. SELECT [Next] FROM [Next] WHERE
 SELECT name, salary FROM employees WHERE salary > 5000;
 Clauses
 SELECT name, salary

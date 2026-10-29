@@ -23,23 +23,26 @@ GeeksforGeeks | Juggling Algorithm for Array Rotation
 ***Article
 Rotate Array Clockwise # [Last Updated: July 13, 2026]
 Problem #
-Given an array. Rotate the array clockwise by d steps, where d is a positive integer. Consider the array as circular. Do the mentioned change in the array in place.
+Given an array, rotate it clockwise by $d$ steps, where $d$ is a positive integer. Array indices wrap around. Modify the array in place.
 Examples #
-[1, 2, 3, 4, 5, 6], 2 ➜ [5, 6, 1, 2, 3, 4]
-[1, 2, 3, 4, 5], 4 ➜ [2, 3, 4, 5, 1]
+[1, 2, 3, 4, 5, 6], 2 [Output] [5, 6, 1, 2, 3, 4]
+[1, 2, 3, 4, 5], 4 [Output] [2, 3, 4, 5, 1]
 Constraints #
-$1 \le \text{Array Size, Step} \le 10^5$
-$0 \le \text{Array Element} \le 10^5$
+$1 \le n \le 10^5 \ (\text{array length})$
+$0 \le v \le 10^5 \ (\text{element value})$
+$1 \le d \le 10^5$
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$
 Solution #
 ```code
 Python
-Numeric = int | float
+from typing import TypeVar
+
+T = TypeVar("T")
 
 
-def rotate_array_clockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]:
+def rotate_array_clockwise_reversal(arr: list[T], d: int) -> list[T]:
     n: int = len(arr)
     d %= n
 
@@ -59,17 +62,17 @@ def rotate_array_clockwise_reversal(arr: list[Numeric], d: int) -> list[Numeric]
 import math
 
 
-def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]:
+def rotate_array_clockwise_juggling(arr: list[T], d: int) -> list[T]:
     n: int = len(arr)
     d %= n
     cycles: int = math.gcd(n, d)
 
     for i in range(cycles):
-        start = arr[i]
-        current_index = i
+        start: T = arr[i]
+        current_index: int = i
 
         while True:
-            next_index = (current_index - d) % n
+            next_index: int = (current_index - d) % n
 
             if next_index == i:
                 break
@@ -83,7 +86,7 @@ def rotate_array_clockwise_juggling(arr: list[Numeric], d: int) -> list[Numeric]
 
 
 print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5, 6], 2))
-print(rotate_array_clockwise_reversal([1, 2, 3, 4, 5], 4))
+print(rotate_array_clockwise_juggling([1, 2, 3, 4, 5], 4))
 ```
 ***
 

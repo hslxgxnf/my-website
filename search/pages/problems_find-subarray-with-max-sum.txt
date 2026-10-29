@@ -22,7 +22,7 @@ GeeksforGeeks | Print subarray with maximum sum
 ***Article
 Find Subarray with Max Sum # [Last Updated: July 13, 2026]
 Problem #
-Given an array. Find the subarray with the max sum containing at least one element.
+Given an array, find the subarray with the max sum containing at least one element.
 Examples #
 [2, 3, -8, 7, -1, 2, 3] ➜ [7, -1, 2, 3]
 [-2, -4] ➜ [-2]

@@ -22,31 +22,33 @@ GeeksforGeeks | Reverse an Array
 ***Article
 Reverse Array # [Last Updated: July 13, 2026]
 Problem #
-Given an array. Reverse the array in place.
+Given an array, reverse it in place.
 Examples #
-[1, 4, 3, 2, 6, 5] ➜ [5, 6, 2, 3, 4, 1]
-[4, 5, 2] ➜ [2, 5, 4]
-[1] ➜ [1]
+[1, 4, 3, 2, 6, 5] [Output] [5, 6, 2, 3, 4, 1]
+[4, 5, 2] [Output] [2, 5, 4]
+[1] [Output] [1]
 Constraints #
-$1 \le \text{Array Size} \le 10^5$
-$0 \le \text{Array Element} \le 10^5$
+$1 \le n \le 10^5 \ (\text{array length})$
+$0 \le v \le 10^5 \ (\text{element value})$
 Expected Complexities #
 Time Complexity: $\mathcal{O}(n)$
 Auxiliary Space: $\mathcal{O}(1)$
 Solution #
 ```code
 Python
-Numeric = int | float
+from typing import TypeVar
+
+T = TypeVar("T")
 
 
-def reverse_array_single_pointer(arr: list[Numeric]) -> list[Numeric]:
-    for i in range(0, len(arr) // 2):
+def reverse_array_single_pointer(arr: list[T]) -> list[T]:
+    for i in range(len(arr) // 2):
         arr[i], arr[-1 - i] = arr[-1 - i], arr[i]
 
     return arr
 
 
-def reverse_array_two_pointers(arr: list[Numeric]) -> list[Numeric]:
+def reverse_array_two_pointers(arr: list[T]) -> list[T]:
     left_index: int = 0
     right_index: int = len(arr) - 1
 

@@ -20,7 +20,7 @@ GeeksforGeeks | BFS of Graph
 ***
 
 ***Article
-BFS # [Last Updated: September 30, 2026]
+BFS # [Last Updated: October 03, 2026]
 Problem #
 Given a graph, perform BFS. Start from vertex 0, visit the vertices in the exact order as they appear in the graph, and ensure all vertices are visited.
 Examples #
@@ -39,18 +39,17 @@ Python
 from collections import deque
 
 
-def bfs(adj):
-    visited = [False] * len(adj)
-    result = []
+def bfs(adj: list[list[int]]) -> list[int]:
+    visited: list[bool] = [False] * len(adj)
+    result: list[int] = []
 
     for i in range(len(adj)):
         if not visited[i]:
-            queue = deque()
-            queue.append(i)
+            queue: deque[int] = deque([i])
             visited[i] = True
 
             while queue:
-                current = queue.popleft()
+                current: int = queue.popleft()
                 result.append(current)
 
                 for neighbor in adj[current]:

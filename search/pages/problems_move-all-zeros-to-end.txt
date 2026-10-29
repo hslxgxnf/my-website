@@ -1,0 +1,93 @@
+***Main Navigation
+Windows
+IDE Settings
+Git & GitHub
+Clean Code
+DSA
+Problems
+Web
+AI
+***
+
+***Article Navigation
+Problems
+Move All Zeros to End
+***
+
+***Reference Navigation
+Move All Zeros to End
+GeeksforGeeks | Move All Zeroes to End
+***
+
+***Article
+Move All Zeros to End # [Last Updated: July 13, 2026]
+Problem #
+Given an array, move all the zeros to the right end while maintaining the relative order of the non-zeros. Modify the array in place.
+Examples #
+[1, 2, 0, 4, 3, 0, 5, 0] [Output] [1, 2, 4, 3, 5, 0, 0, 0]
+[0, 0, 0, 3, 1, 4] [Output] [3, 1, 4, 0, 0, 0]
+[10, 20, 30] [Output] [10, 20, 30]
+[0, 0] [Output] [0, 0]
+Constraints #
+$1 \le n \le 10^5 \ (\text{array length})$
+$0 \le v \le 10^5 \ (\text{element value})$
+Expected Complexities #
+Time Complexity: $\mathcal{O}(n)$
+Auxiliary Space: $\mathcal{O}(1)$
+Solution #
+```code
+Python
+from typing import TypeVar
+
+T = TypeVar("T")
+
+
+def move_all_zeros_to_right_end(arr: list[T]) -> list[T]:
+    zero_index: int = 0
+
+    for i in range(len(arr)):
+        if arr[i] != 0:
+            # Avoid self-swapping
+            if i != zero_index:
+                arr[i], arr[zero_index] = arr[zero_index], arr[i]
+
+            zero_index += 1
+
+    return arr
+
+
+def move_all_zeros_to_left_end(arr: list[T]) -> list[T]:
+    zero_index: int = len(arr) - 1
+
+    for i in range(len(arr) - 1, -1, -1):
+        if arr[i] != 0:
+            # Avoid self-swapping
+            if i != zero_index:
+                arr[i], arr[zero_index] = arr[zero_index], arr[i]
+
+            zero_index -= 1
+
+    return arr
+
+
+print(move_all_zeros_to_right_end([1, 2, 0, 4, 3, 0, 5, 0]))
+print(move_all_zeros_to_right_end([0, 0, 0, 3, 1, 4]))
+print(move_all_zeros_to_right_end([10, 20, 30]))
+print(move_all_zeros_to_right_end([0, 0]))
+
+print(move_all_zeros_to_left_end([1, 2, 0, 4, 3, 0, 5, 0]))
+print(move_all_zeros_to_left_end([0, 0, 0, 3, 1, 4]))
+print(move_all_zeros_to_left_end([10, 20, 30]))
+print(move_all_zeros_to_left_end([0, 0]))
+```
+***
+
+***Page Navigation
+On this page
+Move All Zeros to End
+Problem
+Examples
+Constraints
+Expected Complexities
+Solution
+***
