@@ -14,8 +14,8 @@ Set up project-specific Git hooks.
 # npm
 
 - `npm i`
-- `npm i -g npm-check-updates`
 - `npm i -g vercel`
+- `npm i -g npm-check-updates`
 
 # IDE Settings
 
