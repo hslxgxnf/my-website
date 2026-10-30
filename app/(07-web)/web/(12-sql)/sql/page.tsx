@@ -55,10 +55,6 @@ export default function Page() {
             <Highlight type="text">snake_case</Highlight> for identifiers is
             recommended.
           </p>
-          <p>
-            Use double quotes around identifiers to avoid conflicts with
-            reserved keywords.
-          </p>
         </section>
         <section>
           <Heading type="link-id" number={2}>
@@ -83,13 +79,29 @@ export default function Page() {
             <SRHelper type="next" />{" "}
             <Highlight type="simple-code">FROM</Highlight>{" "}
             <SRHelper type="next" />{" "}
-            <Highlight type="simple-code">WHERE</Highlight>
+            <Highlight type="simple-code">JOIN</Highlight>{" "}
+            <SRHelper type="next" />{" "}
+            <Highlight type="simple-code">WHERE</Highlight>{" "}
+            <SRHelper type="next" />{" "}
+            <Highlight type="simple-code">GROUP BY</Highlight>{" "}
+            <SRHelper type="next" />{" "}
+            <Highlight type="simple-code">HAVING</Highlight>{" "}
+            <SRHelper type="next" />{" "}
+            <Highlight type="simple-code">ORDER BY</Highlight>{" "}
+            <SRHelper type="next" />{" "}
+            <Highlight type="simple-code">LIMIT</Highlight>
           </p>
+          <p>
+            Use double quotes around identifiers to avoid conflicts with
+            reserved keywords.
+          </p>
+          <p>Use single quotes around string values.</p>
           <ul>
             <li>
               <p>
                 <Highlight type="simple-code">
-                  SELECT name, salary FROM employees WHERE salary &gt; 5000;
+                  SELECT * FROM employees WHERE name = 'Bob' AND salary &gt;
+                  5000;
                 </Highlight>
               </p>
               <ul>
@@ -98,9 +110,7 @@ export default function Page() {
                   <ul>
                     <li>
                       <p>
-                        <Highlight type="simple-code">
-                          SELECT name, salary
-                        </Highlight>
+                        <Highlight type="simple-code">SELECT *</Highlight>
                       </p>
                     </li>
                     <li>
@@ -111,7 +121,7 @@ export default function Page() {
                     <li>
                       <p>
                         <Highlight type="simple-code">
-                          WHERE salary &gt; 5000;
+                          WHERE name = 'Bob' AND salary &gt; 5000
                         </Highlight>
                       </p>
                     </li>
@@ -135,11 +145,21 @@ export default function Page() {
                         <Highlight type="simple-code">WHERE</Highlight>
                       </p>
                     </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">AND</Highlight>
+                      </p>
+                    </li>
                   </ul>
                 </li>
                 <li>
                   <p>Identifiers</p>
                   <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">employees</Highlight>
+                      </p>
+                    </li>
                     <li>
                       <p>
                         <Highlight type="simple-code">name</Highlight>
@@ -150,16 +170,21 @@ export default function Page() {
                         <Highlight type="simple-code">salary</Highlight>
                       </p>
                     </li>
-                    <li>
-                      <p>
-                        <Highlight type="simple-code">employees</Highlight>
-                      </p>
-                    </li>
                   </ul>
                 </li>
                 <li>
                   <p>Operators</p>
                   <ul>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">*</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <Highlight type="simple-code">=</Highlight>
+                      </p>
+                    </li>
                     <li>
                       <p>
                         <Highlight type="simple-code">&gt;</Highlight>
@@ -172,37 +197,17 @@ export default function Page() {
                   <ul>
                     <li>
                       <p>
+                        <Highlight type="simple-code">'Bob'</Highlight>
+                      </p>
+                    </li>
+                    <li>
+                      <p>
                         <Highlight type="simple-code">5000</Highlight>
                       </p>
                     </li>
                   </ul>
                 </li>
               </ul>
-            </li>
-          </ul>
-        </section>
-        <section>
-          <Heading type="link-id" number={2}>
-            Data Types
-          </Heading>
-          <ul>
-            <li>
-              <p>String</p>
-            </li>
-            <li>
-              <p>Number</p>
-            </li>
-            <li>
-              <p>Date</p>
-            </li>
-            <li>
-              <p>Time</p>
-            </li>
-            <li>
-              <p>Boolean</p>
-            </li>
-            <li>
-              <p>File</p>
             </li>
           </ul>
         </section>
