@@ -10,8 +10,8 @@ import RefNav from "@/components/main/RefNav";
 import RefButton from "@/components/main/RefButton";
 import Heading from "@/components/main/Heading/Heading";
 import Highlight from "@/components/main-description/Highlight/Highlight";
-import PageNav from "@/components/main/PageNav";
 import ToggleList from "@/components/main-description/ToggleList";
+import PageNav from "@/components/main/PageNav";
 
 export const metadata: Metadata = {
   title: "Git & GitHub",
