@@ -86,7 +86,6 @@ function findDeletables() {
       logDeletable(match, content, fullPath, regex);
     }
   }
-
   if (isFailed) {
     process.exit(1);
   }
