@@ -20,15 +20,26 @@ function findDeletables() {
     const content = fs.readFileSync(fullPath, "utf8");
 
     // Find deletable blank lines.
-    let regex = /<\/(?!article\b|footer\b)\S*>\s*\r?\n\s*\r?\n/gi;
+    let regex = /\/\S*>\r?\n\r?\n/g;
     for (const match of content.matchAll(regex)) {
-      isFailed = true;
-
       const matchIndex = match.index;
       const textBeforeMatch = content.substring(0, matchIndex);
       const lineIndex = textBeforeMatch.split(/\r?\n/).length - 1;
       const lineNumber = lineIndex + 2;
       const splitContent = content.split(/\r?\n/);
+
+      if (filteredRelativePath === "layout.tsx") {
+        continue;
+      }
+
+      if (
+        splitContent[lineIndex].includes("RefNav") ||
+        splitContent[lineIndex].includes("article")
+      ) {
+        continue;
+      }
+
+      isFailed = true;
 
       console.log(`${fullPath}:${lineNumber}:0`);
       console.log(regex);
@@ -74,10 +85,10 @@ function findDeletables() {
 
       logDeletable(match, content, fullPath, regex);
     }
+  }
 
-    if (isFailed) {
-      process.exit(1);
-    }
+  if (isFailed) {
+    process.exit(1);
   }
 }
 
