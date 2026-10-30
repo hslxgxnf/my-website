@@ -56,7 +56,7 @@ function findDeletables() {
     regex = />{" "}\s*</g;
     for (const match of content.matchAll(regex)) {
       const matchIndex = match.index;
-      const textBeforeMatch = content.substring(0, matchIndex);
+      const textBeforeMatch = content.substring(0, matchIndex + 1);
 
       const openPCount = (textBeforeMatch.match(/<p\b[^>]*>/gi) || []).length;
       const closePCount = (textBeforeMatch.match(/<\/p>/gi) || []).length;
