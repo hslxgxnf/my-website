@@ -38,13 +38,22 @@ function findDeletables() {
     }
 
     // Find deletable JSX spaces.
-    regex = />\{" "}\s*<\//g;
+    // <Open>{" "}...
+    regex = /<[^/]*>\s*{" "}/g;
     for (const match of content.matchAll(regex)) {
       isFailed = true;
 
       logDeletable(match, content, fullPath, regex);
     }
-    regex = />\{" "}\s*</g;
+    // </Close>{" "}...</Close>
+    regex = />{" "}\s*<\//g;
+    for (const match of content.matchAll(regex)) {
+      isFailed = true;
+
+      logDeletable(match, content, fullPath, regex);
+    }
+    // </Close>{" "}...<Open>
+    regex = />{" "}\s*</g;
     for (const match of content.matchAll(regex)) {
       const matchIndex = match.index;
       const textBeforeMatch = content.substring(0, matchIndex);
