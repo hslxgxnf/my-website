@@ -20,7 +20,7 @@ Udemy | SQL - The Complete Developer's Guide (MySQL, PostgreSQL)
 ***
 
 ***Article
-SQL (Structured Query Language) # [Last Updated: October 30, 2026]
+SQL (Structured Query Language) # [Last Updated: October 31, 2026]
 SQL is used for managing data in Relational Database Management Systems (RDBMS). It allows users to create, read, update, and delete (CRUD) data.
 Data is normalized, meaning it is split across related tables rather than stored in a single large table. Tables are connected to each other using keys.
 Horizontal items are called rows, records, or entries, whereas vertical ones are called columns or fields.
@@ -36,36 +36,47 @@ SQL
 ```
 Naming Cases #
 SQL is case-insensitive, but using UPPERCASE for keywords and snake_case for identifiers is recommended.
-Use double quotes around identifiers to avoid conflicts with reserved keywords.
 Statement Delimiter #
 Statements must end with a semicolon, except for a single statement. Adding a semicolon to it is recommended, though.
 Statements #
 A statement consists of clauses, and a clause consists of keywords, identifiers, operators, and values (expressions).
-The order of clauses must be maintained. SELECT [Next] FROM [Next] WHERE
-SELECT name, salary FROM employees WHERE salary > 5000;
+The order of clauses must be maintained.
+Use double quotes around identifiers to avoid conflicts with reserved keywords.
+Use single quotes around string values.
+DCL (Data Control Language) #
+GRANT
+REVOKE
+DDL (Data Definition Language) #
+CREATE
+ALTER
+DROP
+DML (Data Manipulation Language) #
+SELECT
+SELECT [Next] FROM [Next] JOIN [Next] WHERE [Next] GROUP BY [Next] HAVING [Next] ORDER BY [Next] LIMIT
+SELECT * FROM employees WHERE name = 'Bob' AND salary > 5000;
 Clauses
-SELECT name, salary
+SELECT *
 FROM employees
-WHERE salary > 5000;
+WHERE name = 'Bob' AND salary > 5000
 Keywords
 SELECT
 FROM
 WHERE
+AND
 Identifiers
+employees
 name
 salary
-employees
 Operators
+*
+=
 >
 Values (Expressions)
+'Bob'
 5000
-Data Types #
-String
-Number
-Date
-Time
-Boolean
-File
+INSERT
+UPDATE
+DELETE
 ***
 
 ***Page Navigation
@@ -75,5 +86,7 @@ Comments
 Naming Cases
 Statement Delimiter
 Statements
-Data Types
+DCL (Data Control Language)
+DDL (Data Definition Language)
+DML (Data Manipulation Language)
 ***
