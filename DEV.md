@@ -43,7 +43,12 @@ Otherwise, you may encounter data loss.
 # Pages💕
 
 - DSA 1
+  - Graph💕
 - Problem 1
+  - Change problem content grammatically.
+  - Change hard-coding entities to SRHelper.
+  - Change constraints meaningfully.
+  - Change types to generic.
 
 ## Components
 
